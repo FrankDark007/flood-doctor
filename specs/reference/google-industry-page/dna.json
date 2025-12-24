@@ -1,0 +1,87 @@
+{
+  "source": "https://workspace.google.com/industries/healthcare/",
+  "pageType": "industry-vertical",
+  "extractedAt": "2025-12-24",
+  "description": "Industry/vertical landing page with tab navigation",
+
+  "header": {
+    "height": 64,
+    "navDropdown": "Industries"
+  },
+
+  "tabNavigation": {
+    "tabs": ["Overview", "Benefits", "Security", "Success stories"],
+    "container": {
+      "backgroundColor": "#f8f9fa",
+      "borderRadius": "100px",
+      "centered": true
+    },
+    "tab": {
+      "fontSize": "16px",
+      "fontWeight": 500,
+      "padding": "12px 24px"
+    }
+  },
+
+  "hero": {
+    "layout": "two-column",
+    "productIcons": { "size": 48, "gap": 16 },
+    "title": {
+      "fontSize": "54px",
+      "fontWeight": 700,
+      "lineHeight": "64px"
+    },
+    "subtitle": {
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "color": "#5f6368"
+    },
+    "illustration": {
+      "type": "composite",
+      "includesProductUI": true
+    }
+  },
+
+  "statementSection": {
+    "illustration": { "centered": true, "maxWidth": 400 },
+    "text": {
+      "fontSize": "32px",
+      "fontWeight": 500,
+      "lineHeight": "40px",
+      "textAlign": "center",
+      "maxWidth": 1000
+    }
+  },
+
+  "benefitsSection": {
+    "title": {
+      "fontSize": "40px",
+      "fontWeight": 500,
+      "lineHeight": "50px",
+      "textAlign": "center"
+    },
+    "featureCard": {
+      "layout": "horizontal",
+      "image": { "width": "50%", "borderRadius": "24px" },
+      "content": { "width": "50%" },
+      "title": { "fontSize": "20px", "fontWeight": 500 },
+      "text": { "fontSize": "16px", "color": "#5f6368" }
+    }
+  },
+
+  "buttons": {
+    "primary": {
+      "fontSize": "14px",
+      "fontWeight": 500,
+      "padding": "8px 16px",
+      "borderRadius": "100px",
+      "backgroundColor": "#1a73e8"
+    }
+  },
+
+  "colors": {
+    "primary": "#1a73e8",
+    "text": "#202124",
+    "muted": "#5f6368"
+  }
+}

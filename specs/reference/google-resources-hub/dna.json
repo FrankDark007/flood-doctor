@@ -1,0 +1,96 @@
+{
+  "source": "https://business.google.com/us/resources/",
+  "pageType": "resources-hub",
+  "extractedAt": "2025-12-24",
+  "description": "Resource hub with filters sidebar and card grid",
+
+  "hero": {
+    "layout": "centered",
+    "title": {
+      "fontSize": "60px",
+      "fontWeight": 400,
+      "lineHeight": "72px",
+      "textAlign": "center",
+      "coloredAccent": true
+    },
+    "subtitle": {
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "textAlign": "center",
+      "maxWidth": "800px"
+    }
+  },
+
+  "filterSidebar": {
+    "width": 280,
+    "position": "sticky",
+    "label": {
+      "fontSize": "12px",
+      "fontWeight": 400,
+      "color": "#5f6368",
+      "textTransform": "uppercase",
+      "letterSpacing": "0.5px"
+    },
+    "filterGroup": {
+      "fontSize": "18px",
+      "fontWeight": 400,
+      "expandable": true
+    }
+  },
+
+  "cardGrid": {
+    "columns": { "desktop": 3, "tablet": 2, "mobile": 1 },
+    "gap": 24
+  },
+
+  "featuredCard": {
+    "width": 616,
+    "height": 340,
+    "borderRadius": "20px",
+    "backgroundColor": "#e8f0fe",
+    "title": {
+      "fontSize": "48px",
+      "fontWeight": 400,
+      "lineHeight": "56px"
+    }
+  },
+
+  "articleCard": {
+    "width": 276,
+    "height": 340,
+    "borderRadius": "20px",
+    "backgroundColor": "#ffffff",
+    "overflow": "hidden",
+    "image": {
+      "aspectRatio": "16/9",
+      "borderRadius": "20px 20px 0 0"
+    },
+    "badge": {
+      "fontSize": "14px",
+      "fontWeight": 500,
+      "display": "flex",
+      "alignItems": "center",
+      "gap": 8
+    },
+    "title": {
+      "fontSize": "20px",
+      "fontWeight": 400,
+      "lineHeight": "28px"
+    },
+    "contentType": {
+      "fontSize": "16px",
+      "color": "#5f6368"
+    },
+    "arrow": true
+  },
+
+  "colors": {
+    "primary": "#1a73e8",
+    "text": "#202124",
+    "muted": "#5f6368",
+    "cardBg": {
+      "blue": "#e8f0fe",
+      "white": "#ffffff"
+    }
+  }
+}

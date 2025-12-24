@@ -1,0 +1,73 @@
+{
+  "source": "https://workspace.google.com/blog/gmail",
+  "pageType": "blog-list",
+  "extractedAt": "2025-12-24",
+  "description": "Blog category page with article list",
+
+  "header": {
+    "height": 64,
+    "subNav": {
+      "items": ["Blog", "Topics", "Product News"],
+      "search": true
+    }
+  },
+
+  "categoryHeader": {
+    "productIcons": {
+      "display": "flex",
+      "gap": 16,
+      "size": 48,
+      "centered": true
+    },
+    "title": {
+      "fontSize": "48px",
+      "fontWeight": 700,
+      "lineHeight": "56px",
+      "textAlign": "center"
+    }
+  },
+
+  "articleList": {
+    "layout": "horizontal",
+    "gap": 48,
+    "divider": "1px solid #e8eaed"
+  },
+
+  "articleItem": {
+    "layout": "row",
+    "contentWidth": "60%",
+    "imageWidth": "35%",
+    "gap": 32,
+    "padding": "32px 0",
+
+    "badge": {
+      "fontSize": "14px",
+      "fontWeight": 500,
+      "padding": "6px 12px",
+      "border": "1px solid #dadce0",
+      "borderRadius": "4px"
+    },
+    "title": {
+      "fontSize": "28px",
+      "fontWeight": 400,
+      "lineHeight": "36px",
+      "color": "#202124"
+    },
+    "meta": {
+      "fontSize": "14px",
+      "color": "#5f6368",
+      "format": "By {author} • {readTime}"
+    },
+    "thumbnail": {
+      "width": 220,
+      "aspectRatio": "4/3",
+      "borderRadius": "16px"
+    }
+  },
+
+  "typography": {
+    "pageTitle": { "fontSize": "48px", "fontWeight": 700 },
+    "articleTitle": { "fontSize": "28px", "fontWeight": 400 },
+    "meta": { "fontSize": "14px", "color": "#5f6368" }
+  }
+}

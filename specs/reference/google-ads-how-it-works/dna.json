@@ -1,0 +1,81 @@
+{
+  "source": "https://business.google.com/us/google-ads/how-ads-work/",
+  "pageType": "feature-steps",
+  "extractedAt": "2025-12-24",
+  "description": "Step-by-step feature explanation page with numbered sections",
+
+  "header": {
+    "height": 104,
+    "levels": 2,
+    "mainNav": { "height": 56 },
+    "subNav": { "height": 48 }
+  },
+
+  "hero": {
+    "layout": "two-column",
+    "contentSide": "right",
+    "mediaSide": "left",
+    "padding": { "top": 80, "bottom": 80 },
+    "productIcon": true,
+    "videoPlayButton": true
+  },
+
+  "typography": {
+    "h1": {
+      "fontSize": "60px",
+      "fontWeight": 400,
+      "lineHeight": "72px",
+      "fontFamily": "Google Sans Display"
+    },
+    "h2": {
+      "fontSize": "40px",
+      "fontWeight": 400,
+      "lineHeight": "48px"
+    },
+    "sectionTitle": {
+      "fontSize": "20px",
+      "fontWeight": 400,
+      "lineHeight": "28px"
+    },
+    "body": {
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "color": "#5f6368"
+    }
+  },
+
+  "stepSection": {
+    "layout": "alternating",
+    "stepBadge": {
+      "shape": "circle",
+      "size": 48,
+      "backgroundColor": "#e8f0fe",
+      "color": "#1a73e8",
+      "fontSize": "20px",
+      "fontWeight": 500
+    },
+    "illustrationCard": {
+      "backgroundColor": "#e9eef6",
+      "borderRadius": "28px"
+    }
+  },
+
+  "buttons": {
+    "primary": {
+      "fontSize": "16px",
+      "fontWeight": 500,
+      "padding": "12px 24px",
+      "borderRadius": "1000px",
+      "backgroundColor": "#1a73e8",
+      "color": "#ffffff"
+    }
+  },
+
+  "colors": {
+    "primary": "#1a73e8",
+    "text": "#202124",
+    "muted": "#5f6368",
+    "surface": "#ffffff",
+    "accent": "#e8f0fe"
+  }
+}

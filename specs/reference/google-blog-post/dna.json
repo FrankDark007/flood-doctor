@@ -1,0 +1,94 @@
+{
+  "source": "https://workspace.google.com/blog/small-business/make-time-things-matter-your-small-business-using-google-workspace",
+  "pageType": "blog-post",
+  "extractedAt": "2025-12-24",
+  "description": "Blog article template with sidebar and social sharing",
+
+  "header": {
+    "height": 64,
+    "subNav": true
+  },
+
+  "articleHeader": {
+    "layout": "centered",
+    "maxWidth": 1100,
+
+    "categoryBadge": {
+      "fontSize": "16px",
+      "fontWeight": 500,
+      "padding": "6px 16px",
+      "border": "1px solid #dadce0",
+      "borderRadius": "4px",
+      "color": "#5f6368"
+    },
+    "title": {
+      "fontSize": "48px",
+      "fontWeight": 700,
+      "lineHeight": "56px",
+      "textAlign": "center",
+      "maxWidth": 1070
+    },
+    "date": {
+      "fontSize": "14px",
+      "color": "#5f6368",
+      "textAlign": "center"
+    }
+  },
+
+  "heroImage": {
+    "maxWidth": 1296,
+    "aspectRatio": "2/1",
+    "borderRadius": "32px"
+  },
+
+  "articleBody": {
+    "maxWidth": 843,
+    "margin": "0 auto",
+
+    "authorBlock": {
+      "name": { "fontSize": "16px", "fontWeight": 500 },
+      "title": { "fontSize": "14px", "color": "#5f6368" },
+      "textAlign": "center"
+    },
+
+    "text": {
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "color": "#5f6368"
+    },
+    "link": {
+      "color": "#1a73e8",
+      "textDecoration": "underline"
+    },
+    "h2": {
+      "fontSize": "28px",
+      "fontWeight": 500,
+      "marginTop": 48,
+      "marginBottom": 24
+    }
+  },
+
+  "sidebar": {
+    "position": "fixed",
+    "left": true,
+    "width": 240,
+
+    "newsletter": {
+      "title": { "fontSize": "20px", "fontWeight": 500 },
+      "text": { "fontSize": "14px", "color": "#5f6368" },
+      "button": {
+        "text": "SIGN UP",
+        "backgroundColor": "#1a73e8",
+        "borderRadius": "100px"
+      }
+    }
+  },
+
+  "socialShare": {
+    "position": "fixed",
+    "right": true,
+    "icons": ["twitter", "linkedin", "facebook", "email"],
+    "iconSize": 24,
+    "gap": 16
+  }
+}
