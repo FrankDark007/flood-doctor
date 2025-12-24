@@ -1,0 +1,86 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "fd": {
+          "primary": {
+            "DEFAULT": "#1a73e8",
+            "hover": "#1557b0",
+            "light": "#e8f0fe"
+          },
+          "text": {
+            "primary": "#202124",
+            "secondary": "#5f6368",
+            "inverse": "#ffffff"
+          },
+          "surface": {
+            "white": "#ffffff",
+            "subtle": "#f8f9fa",
+            "muted": "#f1f3f4"
+          },
+          "border": {
+            "DEFAULT": "#dadce0",
+            "light": "#e8eaed",
+            "focus": "#1a73e8"
+          }
+        }
+      },
+      "fontFamily": {
+        "display": ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        "body": ["Inter", "system-ui", "sans-serif"]
+      },
+      "fontSize": {
+        "fd-xs": ["0.75rem", { "lineHeight": "1rem" }],
+        "fd-sm": ["0.875rem", { "lineHeight": "1.25rem" }],
+        "fd-base": ["1rem", { "lineHeight": "1.5rem" }],
+        "fd-lg": ["1.125rem", { "lineHeight": "1.75rem" }],
+        "fd-xl": ["1.25rem", { "lineHeight": "1.75rem" }],
+        "fd-2xl": ["1.5rem", { "lineHeight": "2rem" }],
+        "fd-3xl": ["2.25rem", { "lineHeight": "2.75rem" }],
+        "fd-4xl": ["3.75rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.5px" }]
+      },
+      "spacing": {
+        "fd-1": "0.25rem",
+        "fd-2": "0.5rem",
+        "fd-3": "0.75rem",
+        "fd-4": "1rem",
+        "fd-5": "1.25rem",
+        "fd-6": "1.5rem",
+        "fd-8": "2rem",
+        "fd-10": "2.5rem",
+        "fd-12": "3rem",
+        "fd-16": "4rem",
+        "fd-20": "5rem",
+        "fd-24": "6rem"
+      },
+      "maxWidth": {
+        "fd-container": "75rem",
+        "fd-hero": "38.5rem",
+        "fd-card": "24.3rem"
+      },
+      "height": {
+        "fd-header": "4rem",
+        "fd-button": "3.125rem"
+      },
+      "boxShadow": {
+        "fd-sm": "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+        "fd-md": "0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)",
+        "fd-lg": "0 1px 3px 0 rgba(60,64,67,0.3), 0 8px 16px 6px rgba(60,64,67,0.15)",
+        "fd-button": "0 1px 2px 0 rgba(0,0,0,0.05)"
+      },
+      "borderRadius": {
+        "fd-sm": "0.25rem",
+        "fd-md": "0.5rem",
+        "fd-lg": "1rem",
+        "fd-xl": "1.5rem",
+        "fd-button": "3rem",
+        "fd-card": "0.5rem"
+      },
+      "transitionDuration": {
+        "fd-fast": "150ms",
+        "fd-default": "250ms",
+        "fd-slow": "350ms"
+      }
+    }
+  }
+}

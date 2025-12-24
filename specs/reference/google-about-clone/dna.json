@@ -1,0 +1,58 @@
+{
+  "source": "https://about.google/",
+  "extractedAt": "2025-12-24",
+  "brand": "Flood Doctor",
+  "primaryColor": "#1a73e8",
+
+  "colors": {
+    "primary": {
+      "default": "#1a73e8",
+      "hover": "#1557b0",
+      "rgb": "rgb(26, 115, 232)"
+    },
+    "text": {
+      "primary": "#202124",
+      "secondary": "#5f6368",
+      "inverse": "#ffffff"
+    },
+    "surface": {
+      "white": "#ffffff",
+      "subtle": "#f8f9fa",
+      "muted": "#f1f3f4"
+    },
+    "border": {
+      "default": "#dadce0",
+      "light": "#e8eaed"
+    }
+  },
+
+  "spacing": {
+    "base": 8,
+    "scale": [0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 120],
+    "sectionPadding": {
+      "desktop": { "top": 80, "bottom": 80 },
+      "mobile": { "top": 48, "bottom": 48 }
+    },
+    "containerPadding": {
+      "desktop": 24,
+      "mobile": 16
+    },
+    "cardGap": {
+      "desktop": 64,
+      "mobile": 24
+    }
+  },
+
+  "breakpoints": {
+    "mobile": 390,
+    "tablet": 768,
+    "desktop": 1024,
+    "wide": 1440
+  },
+
+  "container": {
+    "maxWidth": 1200,
+    "heroMaxWidth": 616,
+    "cardWidth": 389
+  }
+}

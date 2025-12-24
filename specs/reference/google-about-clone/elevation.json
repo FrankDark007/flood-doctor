@@ -1,0 +1,49 @@
+{
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+    "md": "0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)",
+    "lg": "0 1px 3px 0 rgba(60,64,67,0.3), 0 8px 16px 6px rgba(60,64,67,0.15)",
+    "button": "0 1px 2px 0 rgba(0,0,0,0.05)"
+  },
+
+  "borderRadius": {
+    "none": "0",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px",
+    "button": "48px",
+    "card": "8px",
+    "cardImage": "8px 8px 0 0"
+  },
+
+  "borders": {
+    "default": "1px solid #dadce0",
+    "light": "1px solid #e8eaed",
+    "focus": "2px solid #1a73e8"
+  },
+
+  "transitions": {
+    "fast": "150ms ease",
+    "default": "250ms ease",
+    "slow": "350ms ease",
+    "card": "box-shadow 0.25s"
+  },
+
+  "focus": {
+    "outline": "2px solid #1a73e8",
+    "outlineOffset": "2px"
+  },
+
+  "hover": {
+    "card": {
+      "boxShadow": "0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)",
+      "transform": "none"
+    },
+    "button": {
+      "backgroundColor": "#1557b0"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+/**
+ * Flood Doctor Design Tokens
+ * Based on Google About page DNA - Material Design 3 aesthetic
+ */
+
+:root {
+  /* ===== COLORS ===== */
+
+  /* Primary */
+  --fd-primary: #1a73e8;
+  --fd-primary-hover: #1557b0;
+  --fd-primary-light: #e8f0fe;
+
+  /* Text */
+  --fd-text-primary: #202124;
+  --fd-text-secondary: #5f6368;
+  --fd-text-inverse: #ffffff;
+
+  /* Surfaces */
+  --fd-surface-white: #ffffff;
+  --fd-surface-subtle: #f8f9fa;
+  --fd-surface-muted: #f1f3f4;
+
+  /* Borders */
+  --fd-border-default: #dadce0;
+  --fd-border-light: #e8eaed;
+  --fd-border-focus: #1a73e8;
+
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Font Families */
+  --fd-font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --fd-font-body: 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --fd-text-xs: 0.75rem;    /* 12px */
+  --fd-text-sm: 0.875rem;   /* 14px */
+  --fd-text-base: 1rem;     /* 16px */
+  --fd-text-lg: 1.125rem;   /* 18px */
+  --fd-text-xl: 1.25rem;    /* 20px */
+  --fd-text-2xl: 1.5rem;    /* 24px */
+  --fd-text-3xl: 2.25rem;   /* 36px */
+  --fd-text-4xl: 3.75rem;   /* 60px */
+
+  /* Line Heights */
+  --fd-leading-tight: 1.2;
+  --fd-leading-snug: 1.375;
+  --fd-leading-normal: 1.5;
+  --fd-leading-relaxed: 1.556;
+
+  /* Font Weights */
+  --fd-font-normal: 400;
+  --fd-font-medium: 500;
+  --fd-font-semibold: 600;
+  --fd-font-bold: 700;
+
+  /* ===== SPACING ===== */
+
+  --fd-space-0: 0;
+  --fd-space-1: 0.25rem;    /* 4px */
+  --fd-space-2: 0.5rem;     /* 8px */
+  --fd-space-3: 0.75rem;    /* 12px */
+  --fd-space-4: 1rem;       /* 16px */
+  --fd-space-5: 1.25rem;    /* 20px */
+  --fd-space-6: 1.5rem;     /* 24px */
+  --fd-space-8: 2rem;       /* 32px */
+  --fd-space-10: 2.5rem;    /* 40px */
+  --fd-space-12: 3rem;      /* 48px */
+  --fd-space-16: 4rem;      /* 64px */
+  --fd-space-20: 5rem;      /* 80px */
+  --fd-space-24: 6rem;      /* 96px */
+  --fd-space-30: 7.5rem;    /* 120px */
+
+  /* ===== LAYOUT ===== */
+
+  --fd-container-max: 75rem;      /* 1200px */
+  --fd-container-padding: 1.5rem; /* 24px */
+  --fd-header-height: 4rem;       /* 64px */
+  --fd-hero-max-width: 38.5rem;   /* 616px */
+  --fd-card-width: 24.3rem;       /* 389px */
+
+  /* ===== ELEVATION ===== */
+
+  --fd-shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --fd-shadow-md: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+  --fd-shadow-lg: 0 1px 3px 0 rgba(60,64,67,0.3), 0 8px 16px 6px rgba(60,64,67,0.15);
+  --fd-shadow-button: 0 1px 2px 0 rgba(0,0,0,0.05);
+
+  /* ===== BORDER RADIUS ===== */
+
+  --fd-radius-sm: 0.25rem;   /* 4px */
+  --fd-radius-md: 0.5rem;    /* 8px */
+  --fd-radius-lg: 1rem;      /* 16px */
+  --fd-radius-xl: 1.5rem;    /* 24px */
+  --fd-radius-full: 9999px;
+  --fd-radius-button: 3rem;  /* 48px - pill */
+  --fd-radius-card: 0.5rem;  /* 8px */
+
+  /* ===== TRANSITIONS ===== */
+
+  --fd-transition-fast: 150ms ease;
+  --fd-transition-default: 250ms ease;
+  --fd-transition-slow: 350ms ease;
+}
+
+/* ===== MOBILE OVERRIDES ===== */
+@media (max-width: 767px) {
+  :root {
+    --fd-container-padding: 1rem;  /* 16px */
+    --fd-text-4xl: 2.25rem;        /* 36px - mobile h1 */
+  }
+}
