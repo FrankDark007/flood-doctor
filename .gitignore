@@ -1,0 +1,17 @@
+# deps
+node_modules/
+
+# builds
+dist/
+build/
+.out/
+.next/
+out/
+
+# env
+.env
+.env.local
+.env.*
+
+# OS / editor
+.DS_Store
