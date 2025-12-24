@@ -41,6 +41,9 @@ import Careers from './pages/Careers';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 
+// Clone Pages
+import GoogleAboutClone from './pages/clone/GoogleAboutClone';
+
 // Data
 import { SERVICES } from './data/services';
 
@@ -138,6 +141,9 @@ const App: React.FC = () => {
           <Route path="/careers/" element={<Careers />} />
           <Route path="/privacy-policy/" element={<PrivacyPolicy />} />
           <Route path="/terms/" element={<Terms />} />
+
+          {/* Clone Pages - Design System Reference */}
+          <Route path="/clone/google-about-clone/" element={<GoogleAboutClone />} />
 
           {/* 404 Fallback */}
           <Route path="*" element={<NotFound />} />

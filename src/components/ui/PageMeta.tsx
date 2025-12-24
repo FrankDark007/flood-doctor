@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { siteConfig } from '../../config/site';
+import { siteConfig } from '../../../config/site';
 
 interface PageMetaProps {
   // IMPORTANT: Pass a plain page title (e.g., "About Us"). 
