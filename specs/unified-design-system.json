@@ -1,0 +1,246 @@
+{
+  "brand": "Flood Doctor",
+  "tagline": "Turn water damage into a fresh start",
+  "extractedFrom": [
+    "google-about-clone",
+    "google-ads-how-it-works",
+    "google-resources-hub",
+    "google-workspace-landing",
+    "google-blog-list",
+    "google-blog-post",
+    "google-industry-page"
+  ],
+  "createdAt": "2025-12-24",
+
+  "colors": {
+    "primary": {
+      "default": "#1a73e8",
+      "hover": "#1557b0",
+      "light": "#e8f0fe",
+      "rgb": "rgb(26, 115, 232)"
+    },
+    "success": "#34a853",
+    "warning": "#fbbc04",
+    "error": "#ea4335",
+    "text": {
+      "primary": "#202124",
+      "secondary": "#3c4043",
+      "muted": "#5f6368",
+      "inverse": "#ffffff"
+    },
+    "surface": {
+      "white": "#ffffff",
+      "subtle": "#f8f9fa",
+      "muted": "#f1f3f4",
+      "elevated": "#ffffff"
+    },
+    "border": {
+      "default": "#dadce0",
+      "light": "#e8eaed",
+      "focus": "#1a73e8"
+    },
+    "water": {
+      "light": "#e3f2fd",
+      "medium": "#64b5f6",
+      "dark": "#1976d2",
+      "gradient": "linear-gradient(135deg, #e3f2fd 0%, #1a73e8 100%)"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "display": "'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+      "body": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+      "mono": "'SF Mono', 'Monaco', 'Consolas', monospace"
+    },
+    "scale": {
+      "hero": {
+        "desktop": { "fontSize": "60px", "lineHeight": "72px", "fontWeight": 400 },
+        "tablet": { "fontSize": "44px", "lineHeight": "52px", "fontWeight": 400 },
+        "mobile": { "fontSize": "32px", "lineHeight": "40px", "fontWeight": 400 }
+      },
+      "h1": {
+        "desktop": { "fontSize": "48px", "lineHeight": "56px", "fontWeight": 700 },
+        "mobile": { "fontSize": "32px", "lineHeight": "40px", "fontWeight": 700 }
+      },
+      "h2": {
+        "desktop": { "fontSize": "36px", "lineHeight": "44px", "fontWeight": 400 },
+        "mobile": { "fontSize": "28px", "lineHeight": "36px", "fontWeight": 400 }
+      },
+      "h3": {
+        "desktop": { "fontSize": "28px", "lineHeight": "36px", "fontWeight": 500 },
+        "mobile": { "fontSize": "22px", "lineHeight": "28px", "fontWeight": 500 }
+      },
+      "h4": {
+        "desktop": { "fontSize": "20px", "lineHeight": "28px", "fontWeight": 500 },
+        "mobile": { "fontSize": "18px", "lineHeight": "24px", "fontWeight": 500 }
+      },
+      "body": { "fontSize": "16px", "lineHeight": "24px", "fontWeight": 400 },
+      "bodyLarge": { "fontSize": "18px", "lineHeight": "28px", "fontWeight": 400 },
+      "caption": { "fontSize": "14px", "lineHeight": "20px", "fontWeight": 400 },
+      "eyebrow": { "fontSize": "14px", "lineHeight": "20px", "fontWeight": 500, "letterSpacing": "0.02em" }
+    }
+  },
+
+  "spacing": {
+    "base": 8,
+    "scale": [0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 120],
+    "section": {
+      "desktop": { "paddingY": 80 },
+      "mobile": { "paddingY": 48 }
+    },
+    "container": {
+      "maxWidth": 1296,
+      "paddingX": { "desktop": 64, "tablet": 32, "mobile": 16 }
+    },
+    "cardGap": { "desktop": 24, "mobile": 16 },
+    "componentGap": { "desktop": 16, "mobile": 12 }
+  },
+
+  "breakpoints": {
+    "mobile": 390,
+    "tablet": 768,
+    "desktop": 1024,
+    "wide": 1440
+  },
+
+  "elevation": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(60,64,67,0.1)",
+    "md": "0 1px 3px rgba(60,64,67,0.1), 0 4px 8px rgba(60,64,67,0.08)",
+    "lg": "0 2px 6px rgba(60,64,67,0.1), 0 8px 24px rgba(60,64,67,0.12)",
+    "xl": "0 4px 12px rgba(60,64,67,0.1), 0 16px 32px rgba(60,64,67,0.15)",
+    "hover": "0 1px 3px rgba(60,64,67,0.1), 0 8px 16px rgba(60,64,67,0.12)"
+  },
+
+  "borderRadius": {
+    "none": "0",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "2xl": "32px",
+    "full": "100px",
+    "circle": "50%"
+  },
+
+  "animation": {
+    "duration": {
+      "fast": "150ms",
+      "normal": "200ms",
+      "slow": "300ms",
+      "slower": "500ms"
+    },
+    "easing": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "in": "cubic-bezier(0.4, 0, 1, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    }
+  },
+
+  "components": {
+    "button": {
+      "primary": {
+        "height": 48,
+        "paddingX": 24,
+        "borderRadius": "100px",
+        "fontSize": "14px",
+        "fontWeight": 500,
+        "backgroundColor": "#1a73e8",
+        "hoverBackgroundColor": "#1557b0"
+      },
+      "secondary": {
+        "height": 48,
+        "paddingX": 24,
+        "borderRadius": "100px",
+        "fontSize": "14px",
+        "fontWeight": 500,
+        "backgroundColor": "#ffffff",
+        "border": "1px solid #dadce0"
+      }
+    },
+    "card": {
+      "borderRadius": "16px",
+      "padding": 24,
+      "shadow": "0 1px 3px rgba(60,64,67,0.1), 0 4px 8px rgba(60,64,67,0.08)",
+      "hoverShadow": "0 1px 3px rgba(60,64,67,0.1), 0 8px 16px rgba(60,64,67,0.12)"
+    },
+    "badge": {
+      "paddingX": 16,
+      "paddingY": 6,
+      "borderRadius": "4px",
+      "fontSize": "14px",
+      "fontWeight": 500
+    },
+    "input": {
+      "height": 48,
+      "paddingX": 16,
+      "borderRadius": "8px",
+      "border": "1px solid #dadce0",
+      "focusBorder": "2px solid #1a73e8"
+    }
+  },
+
+  "layouts": {
+    "hero": {
+      "split": {
+        "description": "Two-column layout with content left, visual right",
+        "contentMaxWidth": 550,
+        "gap": { "desktop": 64, "mobile": 32 }
+      },
+      "centered": {
+        "description": "Centered content with visual below",
+        "contentMaxWidth": 768,
+        "visualMaxWidth": 1000
+      }
+    },
+    "section": {
+      "standard": {
+        "maxWidth": 1200,
+        "paddingY": { "desktop": 80, "mobile": 48 }
+      },
+      "narrow": {
+        "maxWidth": 843,
+        "paddingY": { "desktop": 64, "mobile": 40 }
+      },
+      "wide": {
+        "maxWidth": 1296,
+        "paddingY": { "desktop": 96, "mobile": 64 }
+      }
+    },
+    "grid": {
+      "twoColumn": { "columns": 2, "gap": 32 },
+      "threeColumn": { "columns": 3, "gap": 24 },
+      "fourColumn": { "columns": 4, "gap": 24 }
+    }
+  },
+
+  "pagePatterns": {
+    "home": {
+      "sections": ["hero-split", "trust-bar", "how-it-works", "feature-alternating", "services-grid", "faq", "cta-banner"]
+    },
+    "servicesHub": {
+      "sections": ["hero-split", "filter-chips", "services-grid"]
+    },
+    "serviceDetail": {
+      "sections": ["hero-split", "tabs-nav", "feature-alternating", "process-steps", "faq", "related-services", "cta-banner"]
+    },
+    "about": {
+      "sections": ["hero-centered", "statement", "values-grid", "team", "cta-banner"]
+    },
+    "contact": {
+      "sections": ["hero-split", "form", "locations-map", "faq"]
+    },
+    "blog": {
+      "list": ["category-header", "article-list", "pagination"],
+      "post": ["article-header", "hero-image", "author-block", "article-body", "social-share", "related-posts"]
+    },
+    "resources": {
+      "sections": ["hero-centered", "filter-sidebar", "resource-cards-grid"]
+    },
+    "industry": {
+      "sections": ["tabs-nav", "hero-split", "statement", "benefits-alternating", "case-studies", "cta-banner"]
+    }
+  }
+}

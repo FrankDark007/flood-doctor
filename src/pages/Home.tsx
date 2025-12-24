@@ -20,16 +20,27 @@ import DispatchEtaCard from '../components/ui/illustrations/DispatchEtaCard';
 import SupportChatCard from '../components/ui/illustrations/SupportChatCard';
 import HeroOrbitPhone from '../components/ui/illustrations/service-hero/HeroOrbitPhone';
 
+// Google Style Graphics
+import {
+  AssessmentDashboardGraphic,
+  FleetMapGraphic,
+  ProcessStepsGraphic,
+  FloatingCirclesBackground,
+} from '../components/graphics';
+
 const Home: React.FC = () => {
   const featuredServices = SERVICES.slice(0, 6);
 
   return (
-    <main id="main-content" className="flex-grow bg-white">
+    <main id="main-content" className="flex-grow bg-white relative overflow-hidden">
       <PageMeta
         title="Emergency Water Damage Restoration & Flood Cleanup"
         description="24/7 Emergency water damage restoration in Northern Virginia. We arrive in 60 minutes. Licensed, insured, and trusted by thousands of homeowners."
         schema={FAQ_SCHEMA}
       />
+
+      {/* Decorative Background */}
+      <FloatingCirclesBackground className="opacity-50 z-0" />
 
       {/* Hero - Google style split layout */}
       <Hero

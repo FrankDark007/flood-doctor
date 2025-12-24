@@ -8,3 +8,21 @@ export { default as ContactHeroAnimation } from './ContactHeroAnimation';
 export { default as ServiceDetailHeroAnimation } from './ServiceDetailHeroAnimation';
 export { default as ProcessStepsAnimation } from './ProcessStepsAnimation';
 export { useReducedMotion } from './useReducedMotion';
+
+// Google Material Design 3 Style Graphics
+export {
+  AssessmentDashboardGraphic,
+  FleetMapGraphic,
+  ProcessStepsGraphic,
+  TechnologyStackGraphic,
+} from './GoogleStyleGraphics';
+
+// Google Style Backgrounds
+export {
+  HeroWaveBackground,
+  FloatingCirclesBackground,
+  GridPatternBackground,
+  WaterRippleBackground,
+  GradientMeshBackground,
+  IsometricGridBackground,
+} from './GoogleStyleBackgrounds';
