@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        allowedHosts: ['.lvh.me', '.localhost', '.flood.doctor'],
       },
       plugins: [react()],
       define: {
@@ -18,6 +19,21 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              // Vendor chunks - rarely change, cached long-term
+              'vendor-react': ['react', 'react-dom'],
+              'vendor-router': ['react-router-dom'],
+              // Icons - large, tree-shakeable
+              'vendor-icons': ['lucide-react'],
+            }
+          }
+        },
+        // Increase warning limit slightly since we're now code-splitting
+        chunkSizeWarningLimit: 300,
       }
     };
 });

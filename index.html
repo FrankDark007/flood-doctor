@@ -5,106 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Flood Doctor | Emergency Water Damage Restoration</title>
     <meta name="description" content="24/7 Emergency water damage restoration in Northern Virginia. We arrive in 60 minutes." />
-    
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Flood Doctor" />
+    <meta name="geo.region" content="US-VA" />
+    <meta name="geo.placename" content="Northern Virginia" />
+
+    <!-- Preconnect to font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-              display: ['Outfit', 'system-ui', 'sans-serif'], // Google Sans alternative
-            },
-            colors: {
-              primary: '#1a73e8', // Official Google Blue
-              primaryHover: '#1557b0',
-              text: '#202124',    // Google "Almost Black"
-              muted: '#5f6368',   // Google "Medium Gray"
-              subtle: '#f2f2f2',  // Google "Light Gray" bg
-              border: '#dadce0',  // Google Border color
-              green: '#1e8e3e',   // Google Green
-              red: '#d93025',     // Google Red
-              yellow: '#fbbc04',  // Google Yellow
-            },
-            borderRadius: {
-              '4xl': '32px', // Material 3 large curve
-            },
-            boxShadow: {
-              'google': '0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)',
-              'google-hover': '0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)',
-            }
-          }
-        }
-      }
-    </script>
+
+    <!-- Non-blocking font loading with font-display: optional to prevent CLS -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=optional">
+    </noscript>
+
+    <!-- Critical CSS: fonts + above-fold hero shell -->
     <style>
-      :focus-visible {
-        outline: 2px solid #1a73e8;
-        outline-offset: 2px;
+      /* Fallback font metrics to minimize CLS */
+      @font-face {
+        font-family: 'Outfit Fallback';
+        src: local('Arial');
+        ascent-override: 95%;
+        descent-override: 25%;
+        line-gap-override: 0%;
+        size-adjust: 105%;
       }
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: geometricPrecision;
-        font-weight: 400;
-        line-height: 1.6;
-        color: #202124; 
+      @font-face {
+        font-family: 'Inter Fallback';
+        src: local('Arial');
+        ascent-override: 90%;
+        descent-override: 22%;
+        line-gap-override: 0%;
+        size-adjust: 107%;
       }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Outfit', sans-serif;
-        font-weight: 500;
-        color: #202124; 
+      /* Critical hero shell - instant paint before React */
+      #hero-shell {
+        min-height: calc(100vh - 64px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
       }
-      
-      /* Global Smooth Scroll */
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 150px; 
+      #hero-shell .loader {
+        width: 32px;
+        height: 32px;
+        border: 2px solid #1a73e8;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
       }
-
-      /* Custom Text Selection Highlight */
-      ::selection {
-        background: rgba(26, 115, 232, 0.16);
-        color: inherit;
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
-      ::-moz-selection {
-        background: rgba(26, 115, 232, 0.16);
-        color: inherit;
-      }
-
-      /* Respect reduced motion preferences */
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
+      /* Hide shell once React mounts */
+      #root:not(:empty) + #hero-shell,
+      #root:has(*) ~ #hero-shell { display: none; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body class="bg-white text-text antialiased">
     <div id="root"></div>
+    <!-- Static shell for instant LCP - hidden once React mounts -->
+    <div id="hero-shell" aria-hidden="true">
+      <div class="loader"></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
