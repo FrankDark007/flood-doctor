@@ -1,10 +1,11 @@
 # Flood Doctor - robots.txt
 # https://flood.doctor
+# Wildcard subdomains: *.flood.doctor
 
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Primary Sitemap (includes all subdomains)
 Sitemap: https://flood.doctor/sitemap.xml
 
 # Crawl-delay for politeness
@@ -16,6 +17,7 @@ Disallow: /admin/
 Disallow: /clone/
 Disallow: /design-demo/
 Disallow: /home-alt/
+Disallow: /services/residential/variant-a/
 
 # Allow all major search engines
 User-agent: Googlebot
@@ -26,3 +28,24 @@ Allow: /
 
 User-agent: Slurp
 Allow: /
+
+# Location Subdomains
+# All subdomains serve the same SPA build
+# Each subdomain homepage serves location-specific content:
+# - fairfax.flood.doctor
+# - arlington.flood.doctor
+# - alexandria.flood.doctor
+# - mclean.flood.doctor
+# - vienna.flood.doctor
+# - tysons.flood.doctor
+# - reston.flood.doctor
+# - herndon.flood.doctor
+# - ashburn.flood.doctor
+# - leesburg.flood.doctor
+# - manassas.flood.doctor
+# - woodbridge.flood.doctor
+# - springfield.flood.doctor
+# - annandale.flood.doctor
+# - fallschurch.flood.doctor
+# - greatfalls.flood.doctor
+# - lorton.flood.doctor

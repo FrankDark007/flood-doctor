@@ -1,65 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============================================ -->
+  <!-- MAIN SITE - flood.doctor                    -->
+  <!-- ============================================ -->
+
+  <!-- Homepage -->
   <url>
     <loc>https://flood.doctor/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://flood.doctor/services/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Core Pages -->
   <url>
     <loc>https://flood.doctor/about/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/contact/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flood.doctor/reviews/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://flood.doctor/request/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flood.doctor/reviews/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://flood.doctor/careers/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- Service Categories -->
+  <!-- Service Hubs -->
+  <url>
+    <loc>https://flood.doctor/services/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://flood.doctor/services/residential/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -67,19 +69,19 @@
   <!-- Residential Category Pages -->
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/specialty-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -87,25 +89,25 @@
   <!-- Commercial Category Pages -->
   <url>
     <loc>https://flood.doctor/services/commercial/restoration-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/cleanup-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/technical-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/specialty-services/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -113,85 +115,85 @@
   <!-- Residential Services -->
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/water-damage-restoration/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/flood-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/storm-damage-restoration/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/structural-drying/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/mold-remediation/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/sewage-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/odor-removal/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/cleanup-services/contents-cleaning-packout/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/specialty-services/basement-flooding/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/specialty-services/crawl-space-drying/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/specialty-services/hardwood-floor-drying/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/residential/specialty-services/roof-leak-water-damage/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -199,209 +201,288 @@
   <!-- Commercial Services -->
   <url>
     <loc>https://flood.doctor/services/commercial/restoration-services/commercial-water-damage/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/restoration-services/commercial-flood-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/restoration-services/large-loss-restoration/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/cleanup-services/commercial-sewage-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/cleanup-services/commercial-mold-remediation/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/cleanup-services/commercial-fire-smoke-cleanup/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/technical-services/moisture-mapping-consulting/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/technical-services/indoor-air-quality/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/technical-services/environmental-testing/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/specialty-services/healthcare-facilities/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/specialty-services/hospitality-multifamily/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/specialty-services/municipal-education/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/services/commercial/specialty-services/industrial-facilities/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Location Pages -->
+  <!-- Locations Hub -->
   <url>
-    <loc>https://flood.doctor/locations/ashburn/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <loc>https://flood.doctor/locations/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Location Pages (Main Domain) -->
+  <url>
+    <loc>https://flood.doctor/locations/fairfax/</loc>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://fairfax.flood.doctor/" />
   </url>
   <url>
     <loc>https://flood.doctor/locations/arlington/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://arlington.flood.doctor/" />
   </url>
   <url>
     <loc>https://flood.doctor/locations/alexandria/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/falls-church/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/fairfax/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/great-falls/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/herndon/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/lorton/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://alexandria.flood.doctor/" />
   </url>
   <url>
     <loc>https://flood.doctor/locations/mclean/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/reston/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/springfield/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flood.doctor/locations/tysons/</loc>
-    <lastmod>2024-12-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mclean.flood.doctor/" />
   </url>
   <url>
     <loc>https://flood.doctor/locations/vienna/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vienna.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/tysons/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://tysons.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/reston/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://reston.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/herndon/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://herndon.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/ashburn/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ashburn.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/leesburg/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://leesburg.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/manassas/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://manassas.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/woodbridge/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://woodbridge.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/springfield/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://springfield.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/annandale/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://annandale.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/falls-church/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://fallschurch.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/great-falls/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://greatfalls.flood.doctor/" />
+  </url>
+  <url>
+    <loc>https://flood.doctor/locations/lorton/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lorton.flood.doctor/" />
   </url>
 
   <!-- Resources -->
   <url>
     <loc>https://flood.doctor/resources/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/faq/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/insurance-guide/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://flood.doctor/resources/insurance-claims-guide/</loc>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/homeowner-guides/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/emergency-checklists/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/technology/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flood.doctor/resources/communication/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://flood.doctor/resources/water-damage-cost-guide/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://flood.doctor/resources/mold-prevention-guide/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://flood.doctor/resources/water-damage-categories/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://flood.doctor/resources/signs-of-water-damage/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://flood.doctor/blog/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -409,22 +490,181 @@
   <!-- Near Me Landing -->
   <url>
     <loc>https://flood.doctor/nearme/water-damage-restoration/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Legal -->
   <url>
     <loc>https://flood.doctor/privacy-policy/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flood.doctor/terms/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- ============================================ -->
+  <!-- LOCATION SUBDOMAINS (17 total)              -->
+  <!-- High priority - dedicated location sites    -->
+  <!-- ============================================ -->
+
+  <url>
+    <loc>https://fairfax.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://fairfax.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/fairfax/" />
+  </url>
+
+  <url>
+    <loc>https://arlington.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://arlington.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/arlington/" />
+  </url>
+
+  <url>
+    <loc>https://alexandria.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://alexandria.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/alexandria/" />
+  </url>
+
+  <url>
+    <loc>https://mclean.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mclean.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/mclean/" />
+  </url>
+
+  <url>
+    <loc>https://vienna.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vienna.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/vienna/" />
+  </url>
+
+  <url>
+    <loc>https://tysons.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://tysons.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/tysons/" />
+  </url>
+
+  <url>
+    <loc>https://reston.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://reston.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/reston/" />
+  </url>
+
+  <url>
+    <loc>https://herndon.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://herndon.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/herndon/" />
+  </url>
+
+  <url>
+    <loc>https://ashburn.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ashburn.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/ashburn/" />
+  </url>
+
+  <url>
+    <loc>https://leesburg.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://leesburg.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/leesburg/" />
+  </url>
+
+  <url>
+    <loc>https://manassas.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://manassas.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/manassas/" />
+  </url>
+
+  <url>
+    <loc>https://woodbridge.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://woodbridge.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/woodbridge/" />
+  </url>
+
+  <url>
+    <loc>https://springfield.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://springfield.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/springfield/" />
+  </url>
+
+  <url>
+    <loc>https://annandale.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://annandale.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/annandale/" />
+  </url>
+
+  <url>
+    <loc>https://fallschurch.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://fallschurch.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/falls-church/" />
+  </url>
+
+  <url>
+    <loc>https://greatfalls.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://greatfalls.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/great-falls/" />
+  </url>
+
+  <url>
+    <loc>https://lorton.flood.doctor/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lorton.flood.doctor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flood.doctor/locations/lorton/" />
+  </url>
+
 </urlset>
