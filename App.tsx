@@ -28,6 +28,11 @@ import HomeownerGuides from './pages/resources/HomeownerGuides';
 import EmergencyChecklists from './pages/resources/EmergencyChecklists';
 import Technology from './pages/resources/Technology';
 import Communication from './pages/resources/Communication';
+import InsuranceClaimsGuide from './pages/resources/InsuranceClaimsGuide';
+import WaterDamageCostGuide from './pages/resources/WaterDamageCostGuide';
+import MoldPreventionGuide from './pages/resources/MoldPreventionGuide';
+import WaterDamageCategories from './pages/resources/WaterDamageCategories';
+import SignsOfWaterDamage from './pages/resources/SignsOfWaterDamage';
 import BlogIndex from './pages/BlogIndex';
 import NearMeLanding from './pages/NearMeLanding';
 import NotFound from './pages/NotFound';
@@ -131,6 +136,11 @@ const App: React.FC = () => {
             <Route path="/resources/emergency-checklists/" element={<EmergencyChecklists />} />
             <Route path="/resources/technology/" element={<Technology />} />
             <Route path="/resources/communication/" element={<Communication />} />
+            <Route path="/resources/insurance-claims-guide/" element={<InsuranceClaimsGuide />} />
+            <Route path="/resources/water-damage-cost-guide/" element={<WaterDamageCostGuide />} />
+            <Route path="/resources/mold-prevention-guide/" element={<MoldPreventionGuide />} />
+            <Route path="/resources/water-damage-categories/" element={<WaterDamageCategories />} />
+            <Route path="/resources/signs-of-water-damage/" element={<SignsOfWaterDamage />} />
             <Route path="/blog/" element={<BlogIndex />} />
             
             {/* Tools & Demos */}
