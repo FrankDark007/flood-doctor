@@ -187,7 +187,7 @@ const ResidentialVariantA: React.FC = () => {
               {/* Pause/Play Control */}
               <button 
                 onClick={() => setHeroPaused(!heroPaused)}
-                className="absolute bottom-0 right-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-500 hover:text-[#1a73e8] transition-colors z-30"
+                className="absolute bottom-0 right-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-500 hover:text-[#1a73e8] transition-colors z-30 heading-section"
               >
                 {heroPaused ? '▶' : '||'}
               </button>
@@ -547,7 +547,7 @@ const ResidentialVariantA: React.FC = () => {
                  <div key={i} className="border-b border-[#dadce0]">
                     <button 
                       onClick={() => toggleFaq(i)}
-                      className="w-full text-left py-5 flex justify-between items-center group"
+                      className="w-full text-left py-5 flex justify-between items-center group heading-section"
                     >
                        <span className={`text-lg ${faqOpen === i ? 'text-[#1a73e8]' : 'text-[#202124] group-hover:text-[#1a73e8]'}`}>
                           {faq.q}

@@ -117,7 +117,7 @@ const DryingProgressCard: React.FC = () => {
           {/* Tinted Panel Wrapper */}
           <div className="bg-subtle rounded-xl border border-gray-100 p-4">
             <div 
-                className="relative w-full aspect-[2/1] overflow-hidden"
+                className="relative w-full aspect-[2/1] overflow-hidden heading-section"
                 role="img" 
                 aria-label="Line chart showing drying progress over 7 days. Indoor RH dropped from 62% to 40%. Indoor GPP dropped from 95 to 55."
             >
@@ -155,7 +155,7 @@ const DryingProgressCard: React.FC = () => {
                     strokeLinecap="round" 
                     strokeLinejoin="round"
                     pathLength="1"
-                    className="animate-draw"
+                    className="animate-draw heading-section"
                 />
 
                 {/* Indoor RH */}
@@ -167,7 +167,7 @@ const DryingProgressCard: React.FC = () => {
                     strokeLinecap="round" 
                     strokeLinejoin="round"
                     pathLength="1"
-                    className="animate-draw"
+                    className="animate-draw heading-section"
                     style={{ animationDelay: '0.3s' }}
                 />
 

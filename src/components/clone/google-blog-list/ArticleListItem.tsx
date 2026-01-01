@@ -64,8 +64,9 @@ const ArticleListItem: React.FC<ArticleListItemProps> = ({
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-subtle">
             <img
               src={thumbnailSrc}
-              alt=""
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              alt={title}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
             />
           </div>
         </div>

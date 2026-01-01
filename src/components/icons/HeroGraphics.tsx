@@ -177,66 +177,100 @@ export const ServicesHeroGraphic: React.FC<{ className?: string }> = ({ classNam
 
 /**
  * About Page Hero Graphic
- * Team/trust illustration
+ * Google-style composite with overlapping UI elements
  */
 export const AboutHeroGraphic: React.FC<{ className?: string }> = ({ className = '' }) => (
   <svg viewBox="0 0 500 400" fill="none" className={className}>
     {/* Background */}
     <rect width="500" height="400" fill="#f8f9fa" rx="24" />
 
-    {/* Shield */}
-    <path d="M250 50 L150 90 V180 C150 260 250 320 250 320 C250 320 350 260 350 180 V90 L250 50Z" fill="#e8f0fe" stroke="#1a73e8" strokeWidth="3" />
+    {/* Main card - Team overview */}
+    <rect x="60" y="50" width="280" height="200" rx="16" fill="white" stroke="#e8eaed" strokeWidth="1" />
 
-    {/* Checkmark inside shield */}
-    <path d="M200 170 L230 200 L300 130" stroke="#1a73e8" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
-      <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="1.5s" fill="freeze" />
-    </path>
+    {/* Team avatars row */}
+    <circle cx="110" cy="100" r="28" fill="#e8f0fe" />
+    <circle cx="110" cy="100" r="22" fill="#4285f4" />
+    <circle cx="110" cy="95" r="8" fill="white" />
+    <path d="M98 112 Q110 125 122 112" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
 
-    {/* Trust badges */}
+    <circle cx="170" cy="100" r="28" fill="#e6f4ea" />
+    <circle cx="170" cy="100" r="22" fill="#34a853" />
+    <circle cx="170" cy="95" r="8" fill="white" />
+    <path d="M158 112 Q170 125 182 112" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+    <circle cx="230" cy="100" r="28" fill="#fef7e0" />
+    <circle cx="230" cy="100" r="22" fill="#fbbc04" />
+    <circle cx="230" cy="95" r="8" fill="white" />
+    <path d="M218 112 Q230 125 242 112" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+    <circle cx="290" cy="100" r="28" fill="#fce8e6" />
+    <circle cx="290" cy="100" r="22" fill="#ea4335" />
+    <text x="290" y="105" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">+12</text>
+
+    {/* Team info */}
+    <text x="85" y="165" fill="#202124" fontSize="16" fontWeight="500">Certified Restoration Team</text>
+    <text x="85" y="185" fill="#5f6368" fontSize="12">IICRC certified technicians</text>
+    <rect x="85" y="200" width="230" height="8" rx="4" fill="#e8eaed" />
+    <rect x="85" y="200" width="180" height="8" rx="4" fill="#4285f4">
+      <animate attributeName="width" values="120;180;120" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <text x="85" y="230" fill="#34a853" fontSize="12" fontWeight="500">15+ years serving Northern Virginia</text>
+
+    {/* Floating stats card - top right */}
     <g>
-      <rect x="40" y="150" width="80" height="30" rx="15" fill="white" stroke="#34a853" strokeWidth="2">
-        <animate attributeName="y" values="150;145;150" dur="3s" repeatCount="indefinite" />
+      <rect x="300" y="30" width="160" height="90" rx="12" fill="white" stroke="#e8eaed" strokeWidth="1">
+        <animate attributeName="y" values="30;25;30" dur="3s" repeatCount="indefinite" />
       </rect>
-      <text x="80" y="170" textAnchor="middle" fill="#34a853" fontSize="11" fontWeight="500">IICRC</text>
+      <text x="320" y="55" fill="#5f6368" fontSize="11">Response Time</text>
+      <text x="320" y="85" fill="#4285f4" fontSize="32" fontWeight="600">60</text>
+      <text x="370" y="85" fill="#4285f4" fontSize="14">min</text>
+      <circle cx="430" cy="60" r="15" fill="#e6f4ea" />
+      <path d="M424 60L428 64L436 56" stroke="#34a853" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </g>
 
+    {/* Floating certification badge - left */}
     <g>
-      <rect x="380" y="150" width="80" height="30" rx="15" fill="white" stroke="#1a73e8" strokeWidth="2">
-        <animate attributeName="y" values="150;155;150" dur="3.5s" repeatCount="indefinite" />
+      <rect x="30" y="270" width="140" height="70" rx="12" fill="white" stroke="#34a853" strokeWidth="2">
+        <animate attributeName="y" values="270;275;270" dur="3.5s" repeatCount="indefinite" />
       </rect>
-      <text x="420" y="170" textAnchor="middle" fill="#1a73e8" fontSize="11" fontWeight="500">Licensed</text>
+      <circle cx="65" cy="305" r="20" fill="#e6f4ea" />
+      <path d="M55 305L62 312L75 299" stroke="#34a853" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <text x="95" y="300" fill="#202124" fontSize="11" fontWeight="500">IICRC</text>
+      <text x="95" y="315" fill="#5f6368" fontSize="10">Certified</text>
     </g>
 
+    {/* Floating rating card - center bottom */}
     <g>
-      <rect x="60" y="260" width="90" height="30" rx="15" fill="white" stroke="#fbbc04" strokeWidth="2">
-        <animate attributeName="y" values="260;265;260" dur="4s" repeatCount="indefinite" />
+      <rect x="180" y="280" width="160" height="80" rx="12" fill="white" stroke="#e8eaed" strokeWidth="1">
+        <animate attributeName="y" values="280;285;280" dur="4s" repeatCount="indefinite" />
       </rect>
-      <text x="105" y="280" textAnchor="middle" fill="#fbbc04" fontSize="11" fontWeight="500">5-Star Rating</text>
+      <text x="200" y="305" fill="#5f6368" fontSize="11">Customer Rating</text>
+      {/* Stars */}
+      <path d="M200 325 L203 332 L211 333 L206 338 L207 346 L200 342 L193 346 L194 338 L189 333 L197 332 Z" fill="#fbbc04" />
+      <path d="M220 325 L223 332 L231 333 L226 338 L227 346 L220 342 L213 346 L214 338 L209 333 L217 332 Z" fill="#fbbc04" />
+      <path d="M240 325 L243 332 L251 333 L246 338 L247 346 L240 342 L233 346 L234 338 L229 333 L237 332 Z" fill="#fbbc04" />
+      <path d="M260 325 L263 332 L271 333 L266 338 L267 346 L260 342 L253 346 L254 338 L249 333 L257 332 Z" fill="#fbbc04" />
+      <path d="M280 325 L283 332 L291 333 L286 338 L287 346 L280 342 L273 346 L274 338 L269 333 L277 332 Z" fill="#fbbc04" />
+      <text x="305" y="340" fill="#202124" fontSize="14" fontWeight="600">5.0</text>
     </g>
 
+    {/* Floating insurance card - right */}
     <g>
-      <rect x="350" y="260" width="100" height="30" rx="15" fill="white" stroke="#34a853" strokeWidth="2">
-        <animate attributeName="y" values="260;255;260" dur="3.2s" repeatCount="indefinite" />
+      <rect x="350" y="200" width="130" height="60" rx="12" fill="white" stroke="#1a73e8" strokeWidth="2">
+        <animate attributeName="y" values="200;195;200" dur="3.2s" repeatCount="indefinite" />
       </rect>
-      <text x="400" y="280" textAnchor="middle" fill="#34a853" fontSize="11" fontWeight="500">Google Verified</text>
+      <rect x="365" y="215" width="30" height="20" rx="4" fill="#e8f0fe" />
+      <text x="380" y="230" textAnchor="middle" fill="#4285f4" fontSize="10" fontWeight="600">INS</text>
+      <text x="405" y="230" fill="#202124" fontSize="11" fontWeight="500">Direct Billing</text>
+      <text x="365" y="248" fill="#5f6368" fontSize="10">All major insurers</text>
     </g>
 
-    {/* Years of experience */}
-    <g>
-      <circle cx="250" cy="360" r="35" fill="#1a73e8" />
-      <text x="250" y="355" textAnchor="middle" fill="white" fontSize="20" fontWeight="700">15+</text>
-      <text x="250" y="372" textAnchor="middle" fill="white" fontSize="10">Years</text>
-    </g>
-
-    {/* Floating icons */}
-    <circle cx="100" cy="100" r="15" fill="#e3f2fd">
-      <animate attributeName="cy" values="100;90;100" dur="2.5s" repeatCount="indefinite" />
+    {/* Decorative elements */}
+    <circle cx="470" cy="350" r="20" fill="#e8f0fe" opacity="0.6">
+      <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite" />
     </circle>
-    <circle cx="400" cy="80" r="12" fill="#e8f5e9">
-      <animate attributeName="cy" values="80;90;80" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="450" cy="200" r="10" fill="#ffebee">
-      <animate attributeName="cx" values="450;455;450" dur="2s" repeatCount="indefinite" />
+    <circle cx="30" y="180" r="15" fill="#e6f4ea" opacity="0.6">
+      <animate attributeName="r" values="15;18;15" dur="2.5s" repeatCount="indefinite" />
     </circle>
   </svg>
 );

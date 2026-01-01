@@ -38,7 +38,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             <img
               src={imageSrc}
               alt={imageAlt || ''}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover heading-section"
             />
           </div>
         ) : (

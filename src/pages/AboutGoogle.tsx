@@ -57,8 +57,8 @@ const AboutGoogle: React.FC = () => {
             {/* Content */}
             <AnimatedSection>
               <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-section"
+                
               >
                 Restoring homes,<br />
                 <span className="text-[#1a73e8]">rebuilding peace of mind</span>
@@ -69,13 +69,13 @@ const AboutGoogle: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/request/"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1a73e8] text-white text-base font-medium rounded-full hover:bg-[#1557b0] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1a73e8] text-white text-base font-medium rounded-full hover:bg-[#1557b0] transition-colors heading-section"
                 >
                   Get started
                 </Link>
                 <Link
                   to="/contact/"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#1a73e8] text-base font-medium rounded-full border border-[#dadce0] hover:bg-[#f8f9fa] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#1a73e8] text-base font-medium rounded-full border border-[#dadce0] hover:bg-[#f8f9fa] transition-colors heading-section"
                 >
                   Contact us
                 </Link>
@@ -88,7 +88,7 @@ const AboutGoogle: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop"
                   alt="Flood Doctor team"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover heading-section"
                 />
               </div>
             </AnimatedSection>
@@ -118,8 +118,8 @@ const AboutGoogle: React.FC = () => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 Why choose Flood Doctor
               </h2>
@@ -156,8 +156,8 @@ const AboutGoogle: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-6 heading-section"
+                
               >
                 Certified and insured
               </h2>
@@ -206,8 +206,8 @@ const AboutGoogle: React.FC = () => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 Serving Northern Virginia
               </h2>
@@ -235,8 +235,8 @@ const AboutGoogle: React.FC = () => {
         <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[28px] lg:text-[36px] font-normal text-white mb-4"
-              style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+              className="text-[28px] lg:text-[36px] font-normal text-white mb-4 heading-section"
+              
             >
               Ready to get started?
             </h2>
@@ -246,14 +246,14 @@ const AboutGoogle: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:8774970007"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a73e8] text-base font-medium rounded-full hover:bg-[#f8f9fa] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a73e8] text-base font-medium rounded-full hover:bg-[#f8f9fa] transition-colors heading-section"
               >
                 <Phone size={18} />
                 (877) 497-0007
               </a>
               <Link
                 to="/request/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white text-base font-medium rounded-full border-2 border-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white text-base font-medium rounded-full border-2 border-white hover:bg-white/10 transition-colors heading-section"
               >
                 Schedule assessment
               </Link>

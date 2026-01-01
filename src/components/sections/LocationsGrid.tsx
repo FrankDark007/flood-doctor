@@ -21,7 +21,7 @@ const LocationsGrid: React.FC<LocationsGridProps> = ({ locations, id }) => {
                 <a 
                   key={loc.title} 
                   href={loc.url} 
-                  className="group flex items-center justify-between p-6 bg-white border border-gray-200 rounded-xl shadow-none hover:shadow-md hover:border-gray-300 transition-all duration-200"
+                  className="group flex items-center justify-between p-6 bg-white border border-gray-200 rounded-xl shadow-none hover:shadow-md hover:border-gray-300 transition-all duration-200 heading-section"
                 >
                   <span className="font-medium text-lg text-gray-900 group-hover:text-primary">{loc.title}</span>
                   <ExternalLink size={18} className="text-gray-400 group-hover:text-primary transition-colors" />

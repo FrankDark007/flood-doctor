@@ -65,7 +65,7 @@ const SocialShare: React.FC<SocialShareProps> = ({ url, title }) => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-subtle hover:bg-border text-muted hover:text-text transition-colors"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-subtle hover:bg-border text-muted hover:text-text transition-colors heading-section"
           aria-label={`Share on ${link.name}`}
         >
           {link.icon}

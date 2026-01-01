@@ -31,7 +31,7 @@ const SERVICE_IMAGES: Record<string, string> = {
   'storm-damage-restoration': 'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=600&h=400&fit=crop',
   'structural-drying': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
   'odor-removal': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
-  'contents-cleaning-packout': 'https://images.unsplash.com/photo-1558618047-f4b511e7c439?w=600&h=400&fit=crop',
+  'contents-cleaning-packout': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
   'crawl-space-remediation': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
   'roof-leak-response': 'https://images.unsplash.com/photo-1632153979760-dac5cc6dbde1?w=600&h=400&fit=crop',
   'default': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
@@ -74,10 +74,7 @@ const ServicesHubGoogle: React.FC = () => {
         <div className="max-w-[1296px] mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
-              >
+              <h1 className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-hero">
                 Find answers and solutions
               </h1>
               <p className="text-lg lg:text-xl text-[#5f6368] leading-relaxed">
@@ -95,7 +92,7 @@ const ServicesHubGoogle: React.FC = () => {
             {/* Mobile filter toggle */}
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="lg:hidden flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] rounded-full text-sm font-medium text-[#3c4043]"
+              className="lg:hidden flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] rounded-full text-sm font-medium text-[#3c4043] heading-section"
             >
               <Filter size={16} />
               Filters
@@ -145,7 +142,7 @@ const ServicesHubGoogle: React.FC = () => {
             {activeFiltersCount > 0 && (
               <button
                 onClick={() => { setAudienceFilter('all'); setCategoryFilter('all'); }}
-                className="flex items-center gap-1 px-3 py-2 text-sm text-[#1a73e8] hover:underline"
+                className="flex items-center gap-1 px-3 py-2 text-sm text-[#1a73e8] hover:underline heading-section"
               >
                 <X size={14} />
                 Reset filters
@@ -174,14 +171,14 @@ const ServicesHubGoogle: React.FC = () => {
                 <AnimatedSection key={service.id} delay={Math.min(index * 50, 300)}>
                   <Link
                     to={service.slug}
-                    className="group bg-white rounded-[16px] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full"
+                    className="group bg-white rounded-[16px] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full heading-section"
                   >
                     {/* Image */}
                     <div className="aspect-[16/10] bg-[#f8f9fa] overflow-hidden">
                       <img
                         src={imageUrl}
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
                       />
                     </div>
 
@@ -190,7 +187,7 @@ const ServicesHubGoogle: React.FC = () => {
                       {/* Category badge */}
                       <div className="flex items-center gap-2 mb-3">
                         <span
-                          className="px-2 py-0.5 text-xs font-medium rounded"
+                          className="px-2 py-0.5 text-xs font-medium rounded heading-section"
                           style={{ backgroundColor: categoryColor.bg, color: categoryColor.text }}
                         >
                           {service.category.charAt(0) + service.category.slice(1).toLowerCase()}
@@ -230,7 +227,7 @@ const ServicesHubGoogle: React.FC = () => {
               <p className="text-[#5f6368] mb-6">Try adjusting your filters to see more results.</p>
               <button
                 onClick={() => { setAudienceFilter('all'); setCategoryFilter('all'); }}
-                className="px-6 py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors"
+                className="px-6 py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors heading-section"
               >
                 Reset all filters
               </button>
@@ -244,8 +241,8 @@ const ServicesHubGoogle: React.FC = () => {
         <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-              style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+              
             >
               Not sure which service you need?
             </h2>

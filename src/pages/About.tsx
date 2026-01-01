@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import PageMeta from '../components/ui/PageMeta';
-import { 
-  ShieldCheck, Heart, MapPin, Award, Users, Clock, 
-  Pause, Play, Phone, FileText, Zap, Star 
+import { generateAboutPageSchema } from '../utils/schema';
+import {
+  ShieldCheck, Heart, MapPin, Award, Users, Clock,
+  Pause, Play, Phone, FileText, Zap, Star
 } from 'lucide-react';
 
 // --- 1. HERO WRAPPER ---
@@ -48,7 +49,7 @@ const HeroSection = () => {
         <div className="relative w-full overflow-hidden bg-white rounded-[4px] h-[445px] flex items-center justify-center mb-[80px] group border border-[#dadce0]">
             <video
                 ref={videoRef}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover heading-section"
                 autoPlay
                 loop
                 muted
@@ -69,7 +70,7 @@ const HeroSection = () => {
 
             <button 
                 onClick={togglePlay}
-                className="absolute bottom-[18px] right-[14px] w-[48px] h-[48px] flex items-center justify-center rounded-full z-10 hover:bg-black/5 transition-all focus:outline-none cursor-pointer"
+                className="absolute bottom-[18px] right-[14px] w-[48px] h-[48px] flex items-center justify-center rounded-full z-10 hover:bg-black/5 transition-all focus:outline-none cursor-pointer heading-section"
                 aria-label={isPaused ? "Play animation" : "Pause animation"}
             >
                 <div className="w-[28px] h-[28px] bg-[rgba(32,33,36,0.75)] rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -180,10 +181,11 @@ const WinnersSection = () => {
             {/* Image Area: Padding 24px 24px 16px */}
             <div className="pt-[24px] px-[24px] pb-[16px]">
                {/* Exact Height 80px */}
-               <img 
-                 src={card.image} 
-                 alt="" 
-                 className="h-[80px] w-auto object-contain block"
+               <img
+                 src={card.image}
+                 alt={card.title}
+                 loading="lazy"
+                 className="h-[80px] w-auto object-contain block heading-section"
                  // Fallback to ensure layout holds even if image breaks
                  onError={(e) => {
                     e.currentTarget.style.display = 'none';
@@ -317,9 +319,10 @@ const About: React.FC = () => {
 
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="About Us" 
-        description="Locally owned and operated restoration experts serving Northern Virginia since 2010." 
+      <PageMeta
+        title="About Us"
+        description="Locally owned and operated restoration experts serving Northern Virginia since 2010."
+        schema={generateAboutPageSchema()}
       />
       
       {/* 1. Hero */}

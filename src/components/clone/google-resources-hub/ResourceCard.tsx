@@ -55,8 +55,9 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
         <div className="aspect-video overflow-hidden">
           <img
             src={imageSrc}
-            alt=""
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            alt={title}
+            loading="lazy"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
           />
         </div>
       ) : (
@@ -91,7 +92,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
           <span className="text-base">{contentType}</span>
           <ArrowRight
             size={20}
-            className="transform group-hover:translate-x-1 transition-transform"
+            className="transform group-hover:translate-x-1 transition-transform heading-section"
           />
         </div>
       </div>

@@ -61,7 +61,7 @@ const SupportChatCard: React.FC = () => {
             {/* Message 1: User (Blue) - Outgoing */}
             <div className="ml-auto max-w-[70%] mb-4 animate-message opacity-0 flex flex-col items-end" style={{ animationDelay: '0.2s' }}>
                 <div 
-                    className="bg-[#1a73e8] text-white px-4 py-3 rounded-2xl rounded-tr-sm text-[15px] leading-snug shadow-sm break-words whitespace-normal" 
+                    className="bg-[#1a73e8] text-white px-4 py-3 rounded-2xl rounded-tr-sm text-[15px] leading-snug shadow-sm break-words whitespace-normal heading-section"
                     style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
                 >
                     When will you arrive?
@@ -71,7 +71,7 @@ const SupportChatCard: React.FC = () => {
             {/* Message 2: Agent (Gray) - Incoming */}
             <div className="self-start max-w-[75%] mb-2 animate-message opacity-0 flex flex-col items-start" style={{ animationDelay: '1.2s' }}>
                 <div 
-                    className="bg-[#e5e5ea] text-black px-4 py-3 rounded-2xl rounded-tl-sm text-[15px] leading-snug break-words whitespace-normal"
+                    className="bg-[#e5e5ea] text-black px-4 py-3 rounded-2xl rounded-tl-sm text-[15px] leading-snug break-words whitespace-normal heading-section"
                     style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
                 >
                     We’re dispatching now. ETA about 40 minutes.
@@ -81,7 +81,7 @@ const SupportChatCard: React.FC = () => {
             {/* Message 3: Agent (Gray) - Incoming */}
             <div className="self-start max-w-[75%] mb-4 animate-message opacity-0 flex flex-col items-start" style={{ animationDelay: '2.5s' }}>
                 <div 
-                    className="bg-[#e5e5ea] text-black px-4 py-3 rounded-2xl rounded-tl-sm text-[15px] leading-snug break-words whitespace-normal"
+                    className="bg-[#e5e5ea] text-black px-4 py-3 rounded-2xl rounded-tl-sm text-[15px] leading-snug break-words whitespace-normal heading-section"
                     style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
                 >
                     Next: extraction, drying setup, and documentation.

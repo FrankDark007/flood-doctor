@@ -19,13 +19,13 @@ const FloatingInput = ({ label, id, type = "text", required = false }: any) => (
     <input
       type={type}
       id={id}
-      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent"
+      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent heading-section"
       placeholder=" "
       required={required}
     />
     <label
       htmlFor={id}
-      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none"
+      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none heading-section"
     >
       {label} {required && <span className="text-red-500">*</span>}
     </label>
@@ -184,13 +184,13 @@ const Contact: React.FC = () => {
                                 <textarea
                                   id="message"
                                   rows={4}
-                                  className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent resize-none"
+                                  className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent resize-none heading-section"
                                   placeholder=" "
                                   required
                                 />
                                 <label
                                   htmlFor="message"
-                                  className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none"
+                                  className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none heading-section"
                                 >
                                   How can we help? *
                                 </label>

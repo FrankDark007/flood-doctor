@@ -19,20 +19,20 @@ export const HeroWaveBackground: React.FC<{ className?: string }> = ({ className
   >
     <defs>
       <linearGradient id="heroWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#4285f4" stopOpacity="0.05" />
-        <stop offset="50%" stopColor="#34a853" stopOpacity="0.03" />
-        <stop offset="100%" stopColor="#4285f4" stopOpacity="0.05" />
+        <stop offset="0%" stopColor="#4285f4" stopOpacity="0.15" />
+        <stop offset="50%" stopColor="#34a853" stopOpacity="0.1" />
+        <stop offset="100%" stopColor="#4285f4" stopOpacity="0.15" />
       </linearGradient>
     </defs>
 
-    {/* Back wave */}
+    {/* Back wave - now visible */}
     <path
       d="M0,200 C360,280 720,120 1080,200 C1260,240 1380,200 1440,200 L1440,400 L0,400 Z"
       fill="url(#heroWaveGrad)"
     >
       <animate
         attributeName="d"
-        dur="10s"
+        dur="12s"
         repeatCount="indefinite"
         values="
           M0,200 C360,280 720,120 1080,200 C1260,240 1380,200 1440,200 L1440,400 L0,400 Z;
@@ -42,9 +42,27 @@ export const HeroWaveBackground: React.FC<{ className?: string }> = ({ className
       />
     </path>
 
+    {/* Middle wave */}
+    <path
+      d="M0,250 C300,290 600,210 900,250 C1100,280 1300,220 1440,250 L1440,400 L0,400 Z"
+      fill="#e8f0fe"
+      opacity="0.6"
+    >
+      <animate
+        attributeName="d"
+        dur="10s"
+        repeatCount="indefinite"
+        values="
+          M0,250 C300,290 600,210 900,250 C1100,280 1300,220 1440,250 L1440,400 L0,400 Z;
+          M0,250 C300,210 600,290 900,250 C1100,220 1300,280 1440,250 L1440,400 L0,400 Z;
+          M0,250 C300,290 600,210 900,250 C1100,280 1300,220 1440,250 L1440,400 L0,400 Z
+        "
+      />
+    </path>
+
     {/* Front wave */}
     <path
-      d="M0,280 C240,320 480,240 720,280 C960,320 1200,240 1440,280 L1440,400 L0,400 Z"
+      d="M0,300 C240,340 480,260 720,300 C960,340 1200,260 1440,300 L1440,400 L0,400 Z"
       fill="#f8f9fa"
     >
       <animate
@@ -52,9 +70,9 @@ export const HeroWaveBackground: React.FC<{ className?: string }> = ({ className
         dur="8s"
         repeatCount="indefinite"
         values="
-          M0,280 C240,320 480,240 720,280 C960,320 1200,240 1440,280 L1440,400 L0,400 Z;
-          M0,280 C240,240 480,320 720,280 C960,240 1200,320 1440,280 L1440,400 L0,400 Z;
-          M0,280 C240,320 480,240 720,280 C960,320 1200,240 1440,280 L1440,400 L0,400 Z
+          M0,300 C240,340 480,260 720,300 C960,340 1200,260 1440,300 L1440,400 L0,400 Z;
+          M0,300 C240,260 480,340 720,300 C960,260 1200,340 1440,300 L1440,400 L0,400 Z;
+          M0,300 C240,340 480,260 720,300 C960,340 1200,260 1440,300 L1440,400 L0,400 Z
         "
       />
     </path>
@@ -135,23 +153,27 @@ export const WaterRippleBackground: React.FC<{ className?: string }> = ({ classN
     className={className}
     style={{ position: 'absolute', pointerEvents: 'none' }}
   >
-    <circle cx="200" cy="200" r="20" fill="none" stroke="#4285f4" strokeWidth="2" opacity="0">
-      <animate attributeName="r" values="20;180;20" dur="4s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite" />
+    {/* Slower, more elegant ripples */}
+    <circle cx="200" cy="200" r="25" fill="none" stroke="#4285f4" strokeWidth="1.5" opacity="0">
+      <animate attributeName="r" values="25;180" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0" dur="8s" repeatCount="indefinite" />
     </circle>
-    <circle cx="200" cy="200" r="20" fill="none" stroke="#4285f4" strokeWidth="2" opacity="0">
-      <animate attributeName="r" values="20;180;20" dur="4s" begin="1s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="1s" repeatCount="indefinite" />
+    <circle cx="200" cy="200" r="25" fill="none" stroke="#4285f4" strokeWidth="1.5" opacity="0">
+      <animate attributeName="r" values="25;180" dur="8s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0" dur="8s" begin="2s" repeatCount="indefinite" />
     </circle>
-    <circle cx="200" cy="200" r="20" fill="none" stroke="#4285f4" strokeWidth="2" opacity="0">
-      <animate attributeName="r" values="20;180;20" dur="4s" begin="2s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="2s" repeatCount="indefinite" />
+    <circle cx="200" cy="200" r="25" fill="none" stroke="#4285f4" strokeWidth="1.5" opacity="0">
+      <animate attributeName="r" values="25;180" dur="8s" begin="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0" dur="8s" begin="4s" repeatCount="indefinite" />
     </circle>
-    <circle cx="200" cy="200" r="20" fill="none" stroke="#4285f4" strokeWidth="2" opacity="0">
-      <animate attributeName="r" values="20;180;20" dur="4s" begin="3s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="3s" repeatCount="indefinite" />
+    <circle cx="200" cy="200" r="25" fill="none" stroke="#4285f4" strokeWidth="1.5" opacity="0">
+      <animate attributeName="r" values="25;180" dur="8s" begin="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0" dur="8s" begin="6s" repeatCount="indefinite" />
     </circle>
-    <circle cx="200" cy="200" r="25" fill="#4285f4" />
+    {/* Center droplet */}
+    <circle cx="200" cy="200" r="20" fill="#e8f0fe" />
+    <circle cx="200" cy="200" r="12" fill="#4285f4" />
+    <ellipse cx="196" cy="196" rx="4" ry="3" fill="white" opacity="0.6" />
   </svg>
 );
 

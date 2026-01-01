@@ -56,7 +56,7 @@ const CloneHeader: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 -mr-2 text-muted hover:text-text"
+          className="md:hidden p-2 -mr-2 text-muted hover:text-text heading-section"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -21,7 +21,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ src, alt }) => {
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover heading-section"
         />
       </div>
     </div>

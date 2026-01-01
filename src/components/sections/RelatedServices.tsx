@@ -31,7 +31,7 @@ const RelatedServices: React.FC<RelatedServicesProps> = ({ currentServiceId, cat
         <Link
           key={service.id}
           to={service.slug}
-          className="group block bg-white p-8 rounded-[24px] text-center transition-all duration-200 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)]"
+          className="group block bg-white p-8 rounded-[24px] text-center transition-all duration-200 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] heading-section"
         >
           {/* Title - Google: 20px/28px */}
           <h3 className="text-[20px] font-medium text-[#202124] mb-2 leading-7 group-hover:text-[#1a73e8] transition-colors">

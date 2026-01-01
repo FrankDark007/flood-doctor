@@ -65,7 +65,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
         <div key={group.label} className="border-b border-border py-4">
           <button
             onClick={() => toggleGroup(group.label)}
-            className="w-full flex items-center justify-between text-left"
+            className="w-full flex items-center justify-between text-left heading-section"
           >
             <span className="text-lg font-normal text-text">
               {group.label}
@@ -82,13 +82,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
               {group.options.map((option) => (
                 <label
                   key={option.value}
-                  className="flex items-center gap-3 cursor-pointer group"
+                  className="flex items-center gap-3 cursor-pointer group heading-section"
                 >
                   <input
                     type="checkbox"
                     checked={selectedFilters[group.label]?.includes(option.value) || false}
                     onChange={() => toggleFilter(group.label, option.value)}
-                    className="w-5 h-5 rounded border-border text-primary focus:ring-primary"
+                    className="w-5 h-5 rounded border-border text-primary focus:ring-primary heading-section"
                   />
                   <span className="text-base text-muted group-hover:text-text transition-colors">
                     {option.label}

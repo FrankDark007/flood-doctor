@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const DEFAULT_FAQ_DATA = [
+export const DEFAULT_FAQ_DATA = [
   {
     question: "How fast can you arrive for emergency water damage in the DMV?",
     answer: "In Northern Virginia, Maryland, and DC, our response time depends on traffic, weather, and call volume. For emergencies, we prioritize rapid dispatch and aim to get a crew moving as quickly as possible. The fastest way to start is to submit a request or call right away."
@@ -111,7 +111,7 @@ const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
           <div className="flex justify-end mb-2">
             <button
               onClick={toggleAll}
-              className="flex items-center gap-1.5 text-sm font-medium text-[#1a73e8] hover:bg-[#e8f0fe] px-3 py-1.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#1a73e8]/20"
+              className="flex items-center gap-1.5 text-sm font-medium text-[#1a73e8] hover:bg-[#e8f0fe] px-3 py-1.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#1a73e8]/20 heading-section"
               aria-expanded={allOpen}
               aria-label={allOpen ? "Collapse all questions" : "Expand all questions"}
             >
@@ -131,7 +131,7 @@ const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
                 <div key={index} className="border-b border-[#dadce0]">
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full text-left py-5 group flex justify-between items-start gap-4 focus:outline-none hover:bg-[#f8f9fa] -mx-4 px-4 rounded-lg transition-all duration-200"
+                    className="w-full text-left py-5 group flex justify-between items-start gap-4 focus:outline-none hover:bg-[#f8f9fa] -mx-4 px-4 rounded-lg transition-all duration-200 heading-section"
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                   >

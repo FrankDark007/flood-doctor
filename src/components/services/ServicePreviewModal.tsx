@@ -58,7 +58,7 @@ const ServicePreviewModal: React.FC<ServicePreviewModalProps> = ({ service, isOp
 
   const content = (
     <div 
-        className="fixed inset-0 z-[9999] flex items-end justify-center lg:items-center pointer-events-auto"
+        className="fixed inset-0 z-[9999] flex items-end justify-center lg:items-center pointer-events-auto heading-section"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
@@ -92,7 +92,7 @@ const ServicePreviewModal: React.FC<ServicePreviewModalProps> = ({ service, isOp
 
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-overlay"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-overlay heading-section"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -131,7 +131,7 @@ const ServicePreviewModal: React.FC<ServicePreviewModalProps> = ({ service, isOp
         {/* Close Button (Floating top-right) */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-black/5 hover:bg-black/10 rounded-full text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary lg:top-5 lg:right-5"
+          className="absolute top-4 right-4 z-20 p-2 bg-black/5 hover:bg-black/10 rounded-full text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary lg:top-5 lg:right-5 heading-section"
           aria-label="Close preview"
         >
           <X size={24} />
@@ -194,7 +194,7 @@ const ServicePreviewModal: React.FC<ServicePreviewModalProps> = ({ service, isOp
                   </Button>
                   <Link 
                     to={service.slug} 
-                    className="inline-flex items-center justify-center h-12 px-6 rounded-full border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 hover:text-primary hover:border-gray-300 transition-colors w-full sm:w-auto whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-12 px-6 rounded-full border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 hover:text-primary hover:border-gray-300 transition-colors w-full sm:w-auto whitespace-nowrap heading-section"
                   >
                      View full page <ArrowRight size={16} className="ml-2" />
                   </Link>

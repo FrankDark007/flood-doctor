@@ -203,7 +203,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
               {service.whenToCall.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-[24px] p-6 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200"
+                  className="bg-white rounded-[24px] p-6 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 heading-section"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-[#e8f0fe] rounded-full flex items-center justify-center shrink-0">

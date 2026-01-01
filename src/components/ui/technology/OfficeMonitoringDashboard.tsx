@@ -77,7 +77,7 @@ const OfficeMonitoringDashboard: React.FC = () => {
                {/* Map Mock */}
                <div className="bg-slate-900 rounded-lg p-4 h-40 relative overflow-hidden">
                    {/* Map Grid */}
-                   <div className="absolute inset-0 opacity-20" 
+                   <div className="absolute inset-0 opacity-20 heading-section"
                         style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '10px 10px' }}>
                    </div>
                    
@@ -95,7 +95,7 @@ const OfficeMonitoringDashboard: React.FC = () => {
                    {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75].map((h, i) => (
                        <div key={i} className="w-full bg-blue-100 rounded-t-sm relative h-full">
                            <div 
-                               className="absolute bottom-0 w-full bg-primary rounded-t-sm animate-bar" 
+                               className="absolute bottom-0 w-full bg-primary rounded-t-sm animate-bar heading-section"
                                style={{ height: `${h}%`, animationDelay: `${i * 0.1}s` }}
                            ></div>
                        </div>

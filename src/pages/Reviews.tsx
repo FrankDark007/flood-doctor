@@ -1,6 +1,7 @@
 import React from 'react';
 import PageMeta from '../components/ui/PageMeta';
 import AnimatedSection from '../components/ui/AnimatedSection';
+import { generateReviewsPageSchema, ReviewData } from '../utils/schema';
 import { Star, ThumbsUp, CheckCircle2, MoreVertical, MessageCircle } from 'lucide-react';
 import Button from '../components/ui/Button';
 
@@ -69,11 +70,20 @@ const Reviews: React.FC = () => {
     }
   ];
 
+  // Transform reviews for structured data
+  const reviewSchemaData: ReviewData[] = reviews.map(review => ({
+    author: review.author,
+    rating: review.rating,
+    reviewBody: review.text,
+    datePublished: undefined, // Could parse relative dates if needed
+  }));
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Customer Reviews & Ratings" 
-        description="See why neighbors in Northern Virginia rate Flood Doctor 4.9/5 stars. Verified reviews for water damage, mold, and fire restoration." 
+      <PageMeta
+        title="Customer Reviews & Ratings"
+        description="See why neighbors in Northern Virginia rate Flood Doctor 4.9/5 stars. Verified reviews for water damage, mold, and fire restoration."
+        schema={generateReviewsPageSchema(reviewSchemaData)}
       />
       
       <div className="max-w-[1440px] mx-auto px-6 py-12 md:py-20">

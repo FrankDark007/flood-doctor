@@ -118,8 +118,8 @@ const BlogIndexGoogle: React.FC = () => {
           <AnimatedSection>
             <div className="max-w-3xl">
               <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-section"
+                
               >
                 Insights & guides
               </h1>
@@ -140,13 +140,13 @@ const BlogIndexGoogle: React.FC = () => {
                 <AnimatedSection key={post.id} delay={index * 100}>
                   <Link
                     to={`/blog/${post.slug}/`}
-                    className="group bg-[#f8f9fa] rounded-[24px] overflow-hidden hover:shadow-lg transition-all duration-300 block h-full"
+                    className="group bg-[#f8f9fa] rounded-[24px] overflow-hidden hover:shadow-lg transition-all duration-300 block h-full heading-section"
                   >
                   <div className="aspect-[16/9] overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 heading-section"
                     />
                   </div>
                   <div className="p-6 lg:p-8">
@@ -211,13 +211,13 @@ const BlogIndexGoogle: React.FC = () => {
               <AnimatedSection key={post.id} delay={Math.min(index * 50, 300)}>
                 <Link
                   to={`/blog/${post.slug}/`}
-                  className="group bg-white rounded-[16px] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full"
+                  className="group bg-white rounded-[16px] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full heading-section"
                 >
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
                   />
                 </div>
                 <div className="p-6">
@@ -256,8 +256,8 @@ const BlogIndexGoogle: React.FC = () => {
         <div className="max-w-[600px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-              style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+              
             >
               Stay informed
             </h2>
@@ -268,11 +268,11 @@ const BlogIndexGoogle: React.FC = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-[#dadce0] rounded-full focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-[#dadce0] rounded-full focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent heading-section"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors"
+                className="px-6 py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors heading-section"
               >
                 Subscribe
               </button>

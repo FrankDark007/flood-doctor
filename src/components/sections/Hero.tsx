@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../ui/Button';
 import { ArrowRight, Phone } from 'lucide-react';
 
@@ -19,10 +19,18 @@ const Hero: React.FC<HeroProps> = ({
   variant = 'split',
   background = 'white'
 }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger entrance animations after mount
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const bgClasses = {
     white: 'bg-white',
     subtle: 'bg-[#f8f9fa]',
-    gradient: 'bg-gradient-to-br from-white via-blue-50/30 to-white'
+    gradient: 'hero-gradient-blue'
   };
 
   if (variant === 'centered') {
@@ -78,36 +86,71 @@ const Hero: React.FC<HeroProps> = ({
 
   // Default: Split layout (Google Business Profile style)
   return (
-    <section className={`${bgClasses[background]} overflow-hidden`}>
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 min-h-[calc(100vh-64px)] lg:min-h-[640px]">
+    <section className={`${bgClasses[background]} overflow-hidden relative`}>
+      {/* Decorative background elements */}
+      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#1a73e8] opacity-[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#34a853] opacity-[0.03] rounded-full blur-3xl pointer-events-none" />
 
-          {/* Left: Content */}
-          <div className="flex flex-col justify-center py-12 lg:py-20">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-8 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 min-h-[calc(100vh-64px)] lg:min-h-[700px]">
+
+          {/* Left: Content with staggered entrance */}
+          <div className="flex flex-col justify-center py-12 lg:py-24">
             <div className="max-w-xl">
               {/* Eyebrow chip */}
               {eyebrow && (
-                <div className="mb-8">
-                  <span className="inline-flex items-center gap-2 bg-[#e8f0fe] text-primary text-sm font-medium px-4 py-2 rounded-full">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                <div
+                  className="mb-8"
+                  style={{
+                    opacity: isLoaded ? 1 : 0,
+                    transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+                  }}
+                >
+                  <span className="inline-flex items-center gap-2 bg-[#e8f0fe] text-primary text-sm font-medium px-4 py-2 rounded-full shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     {eyebrow}
                   </span>
                 </div>
               )}
 
-              {/* Display Large heading - Google: 60px/72px desktop, 44px/52px tablet, 32px/40px mobile */}
-              <h1 className="text-[32px] md:text-[44px] lg:text-[60px] leading-[40px] md:leading-[52px] lg:leading-[72px] font-normal tracking-[-0.5px] text-[#202124] mb-6">
+              {/* Display Large heading */}
+              <h1
+                className="text-[32px] md:text-[48px] lg:text-[60px] leading-[40px] md:leading-[56px] lg:leading-[72px] font-normal tracking-[-0.5px] text-[#202124] mb-6 heading-hero"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transform: isLoaded ? 'translateY(0)' : 'translateY(30px)',
+                  transition: 'opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.05, 0.7, 0.1, 1)',
+                  transitionDelay: '100ms',
+                }}
+              >
                 {title}
               </h1>
 
-              {/* Body text - Google: 16px/24px */}
-              <p className="text-base text-[#3c4043] leading-6 mb-10 max-w-md">
+              {/* Subtitle */}
+              <p
+                className="text-lg text-[#5f6368] leading-relaxed mb-10 max-w-lg"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+                  transitionDelay: '200ms',
+                }}
+              >
                 {subtitle}
               </p>
 
-              {/* Actions - Hidden on mobile, single sticky CTA at bottom */}
-              <div className="hidden lg:flex flex-row gap-4">
-                <Button to="/request/" variant="primary" size="lg">
+              {/* Actions */}
+              <div
+                className="hidden lg:flex flex-row gap-4"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
+                  transitionDelay: '300ms',
+                }}
+              >
+                <Button to="/request/" variant="primary" size="lg" className="btn-ripple">
                   Request Service
                   <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-0.5" />
                 </Button>
@@ -117,8 +160,15 @@ const Hero: React.FC<HeroProps> = ({
                 </Button>
               </div>
 
-              {/* Trust indicators - Hidden on mobile */}
-              <div className="hidden lg:block mt-10 pt-8 border-t border-[#dadce0]">
+              {/* Trust indicators */}
+              <div
+                className="hidden lg:block mt-10 pt-8 border-t border-[#e8eaed]"
+                style={{
+                  opacity: isLoaded ? 1 : 0,
+                  transition: 'opacity 0.6s ease-out',
+                  transitionDelay: '500ms',
+                }}
+              >
                 <div className="flex flex-wrap items-center gap-6 text-sm text-[#5f6368]">
                   <div className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-[#34a853]" fill="currentColor" viewBox="0 0 20 20">
@@ -143,11 +193,19 @@ const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-          {/* Right: Visual */}
+          {/* Right: Visual with float animation */}
           <div className="relative flex items-center justify-center lg:pr-10 py-8 lg:py-16">
-            <div className="relative w-full max-w-lg lg:max-w-xl">
+            <div
+              className="relative w-full max-w-lg lg:max-w-xl animate-float-slow"
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)',
+                transition: 'opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1)',
+                transitionDelay: '200ms',
+              }}
+            >
               {/* Subtle background shape */}
-              <div className="absolute inset-0 bg-[#f8f9fa] rounded-[32px] -rotate-3 scale-105 opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e8f0fe] to-[#f8f9fa] rounded-[40px] -rotate-3 scale-110 opacity-60" />
               <div className="relative z-10">
                 {visual}
               </div>

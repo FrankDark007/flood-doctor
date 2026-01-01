@@ -132,35 +132,42 @@ export const CommunicationTimelineIllustration: React.FC<{ className?: string }>
     <rect width="400" height="300" rx="16" fill="#f8f9fa" />
 
     {/* Timeline line */}
-    <line x1="80" y1="40" x2="80" y2="260" stroke="#e8eaed" strokeWidth="2" />
+    <line x1="50" y1="40" x2="50" y2="260" stroke="#e8eaed" strokeWidth="2" />
 
     {/* Timeline items */}
     {/* Item 1 */}
-    <circle cx="80" cy="60" r="12" fill="#1a73e8" />
-    <circle cx="80" cy="60" r="6" fill="white" />
-    <rect x="110" y="45" width="260" height="50" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
-    <text x="125" y="65" fill="#202124" fontSize="12" fontWeight="500">Assessment Complete</text>
-    <text x="125" y="82" fill="#5f6368" fontSize="10">Moisture levels documented - 6 affected areas found</text>
-    <text x="340" y="65" fill="#5f6368" fontSize="10">9:00 AM</text>
+    <circle cx="50" cy="55" r="10" fill="#1a73e8" />
+    <circle cx="50" cy="55" r="5" fill="white" />
+    <rect x="75" y="40" width="305" height="45" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
+    <text x="88" y="58" fill="#202124" fontSize="11" fontWeight="500">Assessment Complete</text>
+    <text x="88" y="73" fill="#5f6368" fontSize="9">6 areas documented</text>
+    <text x="330" y="58" fill="#5f6368" fontSize="9">9:00 AM</text>
 
     {/* Item 2 */}
-    <circle cx="80" cy="130" r="12" fill="#34a853" />
-    <path d="M74 130L78 134L86 126" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <rect x="110" y="115" width="260" height="50" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
-    <text x="125" y="135" fill="#202124" fontSize="12" fontWeight="500">Equipment Deployed</text>
-    <text x="125" y="152" fill="#5f6368" fontSize="10">4 dehumidifiers, 8 air movers placed</text>
-    <text x="340" y="135" fill="#5f6368" fontSize="10">10:30 AM</text>
+    <circle cx="50" cy="115" r="10" fill="#34a853" />
+    <path d="M45 115L48 118L55 111" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <rect x="75" y="100" width="305" height="45" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
+    <text x="88" y="118" fill="#202124" fontSize="11" fontWeight="500">Equipment Deployed</text>
+    <text x="88" y="133" fill="#5f6368" fontSize="9">12 units active</text>
+    <text x="330" y="118" fill="#5f6368" fontSize="9">10:30 AM</text>
 
     {/* Item 3 */}
-    <circle cx="80" cy="200" r="12" fill="#1a73e8" />
-    <rect x="110" y="185" width="260" height="50" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
-    <text x="125" y="205" fill="#202124" fontSize="12" fontWeight="500">Progress Update</text>
-    <text x="125" y="222" fill="#5f6368" fontSize="10">Moisture reduced from 45% to 32%</text>
-    <text x="340" y="205" fill="#5f6368" fontSize="10">2:00 PM</text>
+    <circle cx="50" cy="175" r="10" fill="#fbbc04" />
+    <rect x="75" y="160" width="305" height="45" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
+    <text x="88" y="178" fill="#202124" fontSize="11" fontWeight="500">Progress Update</text>
+    <text x="88" y="193" fill="#5f6368" fontSize="9">Moisture: 45% → 32%</text>
+    <text x="330" y="178" fill="#5f6368" fontSize="9">2:00 PM</text>
 
-    {/* Pending item */}
-    <circle cx="80" cy="260" r="12" fill="#dadce0" stroke="#1a73e8" strokeWidth="2" strokeDasharray="4 2">
-      <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
+    {/* Item 4 */}
+    <circle cx="50" cy="235" r="10" fill="#1a73e8" />
+    <rect x="75" y="220" width="305" height="45" rx="8" fill="white" stroke="#e8eaed" strokeWidth="1" />
+    <text x="88" y="238" fill="#202124" fontSize="11" fontWeight="500">Insurance Filed</text>
+    <text x="88" y="253" fill="#5f6368" fontSize="9">Claim submitted</text>
+    <text x="330" y="238" fill="#5f6368" fontSize="9">3:15 PM</text>
+
+    {/* Pending indicator */}
+    <circle cx="50" cy="280" r="6" fill="#dadce0" stroke="#1a73e8" strokeWidth="2" strokeDasharray="3 2">
+      <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite" />
     </circle>
   </svg>
 );

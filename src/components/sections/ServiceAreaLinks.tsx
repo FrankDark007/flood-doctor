@@ -19,7 +19,7 @@ const ServiceAreaLinks: React.FC = () => {
               <a
                 key={loc.title}
                 href={loc.url}
-                className="text-sm text-[#3c4043] hover:text-[#1a73e8] transition-colors"
+                className="text-sm text-[#3c4043] hover:text-[#1a73e8] transition-colors heading-section"
               >
                 {loc.title} Water Damage Restoration
               </a>

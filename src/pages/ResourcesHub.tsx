@@ -217,7 +217,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ label, options, selecte
               <button
                 key={option.value}
                 onClick={() => toggleOption(option.value)}
-                className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-[#f8f9fa] transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-[#f8f9fa] transition-colors heading-section"
               >
                 <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                   selected.includes(option.value)
@@ -248,7 +248,7 @@ const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
   return (
     <Link
       to={resource.link}
-      className="group bg-white rounded-[16px] border border-[#dadce0] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200"
+      className="group bg-white rounded-[16px] border border-[#dadce0] overflow-hidden hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 heading-section"
     >
       {/* Card Image/Placeholder */}
       <div className="aspect-[16/9] bg-[#f8f9fa] flex items-center justify-center border-b border-[#dadce0]">
@@ -384,7 +384,7 @@ const ResourcesHub: React.FC = () => {
             {hasActiveFilters && (
               <button
                 onClick={clearAllFilters}
-                className="flex items-center gap-1 px-3 py-2 text-sm text-[#1a73e8] font-medium hover:bg-[#f8f9fa] rounded-full transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm text-[#1a73e8] font-medium hover:bg-[#f8f9fa] rounded-full transition-colors heading-section"
               >
                 Clear all
               </button>
@@ -398,7 +398,7 @@ const ResourcesHub: React.FC = () => {
                 <button
                   key={`${filter.type}-${filter.value}`}
                   onClick={() => removeFilter(filter.type, filter.value)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f0fe] text-[#1a73e8] rounded-full text-sm font-medium hover:bg-[#d2e3fc] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f0fe] text-[#1a73e8] rounded-full text-sm font-medium hover:bg-[#d2e3fc] transition-colors heading-section"
                 >
                   {filter.label}
                   <X size={14} />
@@ -432,7 +432,7 @@ const ResourcesHub: React.FC = () => {
               <p className="text-sm text-[#5f6368] mb-4">Try adjusting your filters to find what you're looking for.</p>
               <button
                 onClick={clearAllFilters}
-                className="text-[#1a73e8] font-medium hover:underline"
+                className="text-[#1a73e8] font-medium hover:underline heading-section"
               >
                 Clear all filters
               </button>

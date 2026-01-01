@@ -41,7 +41,7 @@ const HeroCommercialSewage: React.FC = () => {
                   {[...Array(8)].map((_, i) => (
                       <div 
                         key={i} 
-                        className="absolute w-1.5 h-1.5 rounded-full bg-red-400 opacity-60 animate-particle"
+                        className="absolute w-1.5 h-1.5 rounded-full bg-red-400 opacity-60 animate-particle heading-section"
                         style={{ 
                             left: `${20 + Math.random() * 40}%`, 
                             top: `${20 + Math.random() * 60}%`, 

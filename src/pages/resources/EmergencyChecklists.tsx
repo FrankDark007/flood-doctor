@@ -101,7 +101,7 @@ const EmergencyChecklists: React.FC = () => {
               <span className="text-red-600 font-bold text-lg">Need help now?</span>
               <a 
                 href="tel:8774970007" 
-                className="flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-colors"
+                className="flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-colors heading-section"
               >
                 <Phone size={18} /> Call (877) 497-0007
               </a>

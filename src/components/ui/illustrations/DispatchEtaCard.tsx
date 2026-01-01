@@ -80,7 +80,7 @@ const DispatchEtaCard: React.FC = () => {
             stroke="#1a73e8" 
             strokeWidth="2" 
             strokeLinecap="round"
-            className="animate-route"
+            className="animate-route heading-section"
           />
 
           {/* Start Point (Dispatch) */}

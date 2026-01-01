@@ -44,7 +44,7 @@ const OrbitDots: React.FC = () => {
               stroke="#e5e7eb" 
               strokeWidth="2" 
               strokeDasharray="4 12" 
-              className="animate-spin-cw-slow" 
+              className="animate-spin-cw-slow heading-section"
             />
             
             {/* Middle Ring + Yellow Orbiter */}

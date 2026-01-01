@@ -6,6 +6,9 @@ import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import AnimatedSection from '../../components/ui/AnimatedSection';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import RelatedServices from '../../components/sections/RelatedServices';
+import ProcessInfographic from '../../components/sections/ProcessInfographic';
+import { getProcessSteps } from '../../data/processTileMapping';
+import { generateServicePageSchema } from '../../utils/schema';
 import { Phone, ArrowRight, Play, CheckCircle2, ChevronRight, Zap, BarChart3, CreditCard } from 'lucide-react';
 
 interface ServiceDetailProps {
@@ -85,31 +88,40 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
   const slugName = service.slug.split('/').filter(Boolean).pop() || 'default';
   const stats = SERVICE_STATS[slugName as keyof typeof SERVICE_STATS] || SERVICE_STATS.default;
 
-  // Simplified process steps (max 4)
-  const processSteps = [
-    { title: 'Assessment', desc: 'Free inspection and moisture mapping within 60 minutes of your call.' },
-    { title: 'Extraction', desc: 'Industrial-grade equipment removes standing water and excess moisture.' },
-    { title: 'Drying', desc: 'Commercial dehumidifiers and air movers restore optimal conditions.' },
-    { title: 'Restoration', desc: 'Final repairs and verification that your property is fully restored.' },
+  // Get process steps from tile mapping for this service
+  const processSteps = getProcessSteps(service.id);
+
+  // Build structured data schema (BreadcrumbList + Service + FAQPage)
+  const breadcrumbItems = [
+    { label: 'Services', path: '/services/' },
+    {
+      label: service.audience === 'RESIDENTIAL' ? 'Residential' : 'Commercial',
+      path: `/services/${service.audience.toLowerCase()}/`
+    },
+    { label: service.title, path: service.slug }
   ];
 
-  // FAQ Schema
-  const faqSchema = service.faqs ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": service.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-    }))
-  } : undefined;
+  const combinedSchema = generateServicePageSchema(
+    {
+      name: service.title,
+      description: service.shortDescription,
+      slug: service.slug,
+      serviceType: service.category === 'RESTORATION' ? 'Water Damage Restoration'
+        : service.category === 'CLEANUP' ? 'Cleanup Services'
+        : service.category === 'SPECIALTY' ? 'Specialty Services'
+        : 'Technical Services',
+    },
+    breadcrumbItems,
+    service.faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title={`${service.title} | Flood Doctor`}
         description={service.shortDescription}
-        schema={faqSchema}
+        schema={combinedSchema}
+        canonicalPath={service.slug}
       />
 
       {/* Hero Section - Google Style 50/50 Split */}
@@ -122,10 +134,7 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
               <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
               {/* Headline - Google: 48-60px */}
-              <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
-              >
+              <h1 className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-hero">
                 {service.heroHeading || service.title}
               </h1>
 
@@ -208,8 +217,8 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 Why choose Flood Doctor
               </h2>
@@ -254,68 +263,12 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
         </div>
       </section>
 
-      {/* How It Works - Alternating Layout */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fa]">
-        <div className="max-w-[1296px] mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
-              >
-                How it works
-              </h2>
-              <p className="text-lg text-[#5f6368]">
-                A simple, proven process from emergency call to complete restoration.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="space-y-16 lg:space-y-24">
-            {processSteps.map((step, i) => (
-              <AnimatedSection key={i} animation={i % 2 === 0 ? 'fade-up' : 'slide-right'}>
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                    i % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                  }`}
-                >
-                  {/* Image */}
-                  <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="bg-white rounded-[24px] p-8 shadow-sm">
-                      <img
-                        src={Object.values(FEATURE_IMAGES)[i % 3]}
-                        alt={step.title}
-                        className="w-full h-auto rounded-lg"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-[#1a73e8] rounded-full flex items-center justify-center text-white text-xl font-medium">
-                        {i + 1}
-                      </div>
-                      <h3 className="text-2xl font-medium text-[#202124]">{step.title}</h3>
-                    </div>
-                    <p className="text-lg text-[#5f6368] leading-relaxed mb-6">
-                      {step.desc}
-                    </p>
-                    {i === processSteps.length - 1 && (
-                      <Link
-                        to="/request/"
-                        className="inline-flex items-center gap-2 text-[#1a73e8] font-medium hover:underline"
-                      >
-                        Get started <ChevronRight size={18} />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Process Infographic - Visual step-by-step with isometric tiles */}
+      <ProcessInfographic
+        steps={processSteps}
+        title="Our restoration process"
+        subtitle="A proven, systematic approach tailored to your specific situation."
+      />
 
       {/* Testimonial Section */}
       <section className="py-16 lg:py-24">
@@ -323,8 +276,8 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 What our customers say
               </h2>
@@ -401,8 +354,8 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
         <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-              style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+              
             >
               Ready to get started?
             </h2>
@@ -434,8 +387,8 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 Related services
               </h2>
@@ -451,24 +404,7 @@ const ServiceDetailGoogle: React.FC<ServiceDetailProps> = ({ service }) => {
         </div>
       </section>
 
-      {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-[#dadce0] px-4 py-3 lg:hidden z-40">
-        <div className="flex gap-2">
-          <a
-            href="tel:8774970007"
-            className="flex-1 inline-flex items-center justify-center gap-2 py-3 bg-[#1a73e8] text-white text-sm font-medium rounded-full"
-          >
-            <Phone size={16} />
-            Call now
-          </a>
-          <Link
-            to="/request/"
-            className="flex-1 inline-flex items-center justify-center py-3 bg-white text-[#1a73e8] text-sm font-medium rounded-full border border-[#dadce0]"
-          >
-            Get quote
-          </Link>
-        </div>
-      </div>
+      {/* Mobile spacer for global sticky CTA */}
       <div className="h-20 lg:hidden" />
     </main>
   );

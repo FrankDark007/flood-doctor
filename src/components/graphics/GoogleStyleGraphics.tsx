@@ -204,114 +204,125 @@ export const FleetMapGraphic: React.FC<{ className?: string }> = ({ className = 
 
 /**
  * Process Steps Visualization
- * Google Workspace onboarding style
+ * Google style numbered steps (like Google Analytics "How to get started")
  */
 export const ProcessStepsGraphic: React.FC<{ className?: string }> = ({ className = '' }) => (
-  <svg viewBox="0 0 951 400" fill="none" className={className}>
+  <svg viewBox="0 0 951 380" fill="none" className={className}>
     {/* Background */}
-    <rect width="951" height="400" fill="white" />
-
-    {/* Connection line */}
-    <path
-      d="M160 200 H790"
-      stroke="#e8eaed"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
+    <rect width="951" height="380" fill="white" />
 
     {/* Step 1: Call */}
     <g>
-      <circle cx="160" cy="200" r="50" fill="#4285f4" />
-      <rect x="145" y="185" width="20" height="30" rx="4" fill="white" />
-      <rect x="150" y="190" width="10" height="15" rx="2" fill="#4285f4" opacity="0.3" />
-      <circle cx="155" cy="210" r="3" fill="#4285f4" />
+      {/* Number badge */}
+      <rect x="100" y="50" width="70" height="70" rx="16" fill="#d2e3fc" />
+      <text x="135" y="100" textAnchor="middle" fill="#4285f4" fontSize="36" fontWeight="500">1</text>
 
+      {/* Icon below */}
+      <circle cx="135" cy="170" r="35" fill="#e8f0fe" />
+      <rect x="120" y="155" width="20" height="30" rx="4" fill="#4285f4" />
+      <rect x="125" y="160" width="10" height="15" rx="2" fill="white" opacity="0.4" />
+      <circle cx="130" cy="180" r="3" fill="white" />
       {/* Signal waves */}
-      <path d="M168 188 Q175 195 168 202" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round">
+      <path d="M143 158 Q150 165 143 172" stroke="#4285f4" strokeWidth="2" fill="none" strokeLinecap="round">
         <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
       </path>
-      <path d="M175 183 Q185 195 175 207" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round">
-        <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.3s" repeatCount="indefinite" />
-      </path>
 
-      <text x="160" y="280" textAnchor="middle" fill="#202124" fontSize="16" fontWeight="500">Call Us</text>
-      <text x="160" y="300" textAnchor="middle" fill="#5f6368" fontSize="12">24/7 Hotline</text>
-
-      <rect x="120" y="310" width="80" height="24" rx="12" fill="#e8f0fe" />
-      <text x="160" y="327" textAnchor="middle" fill="#4285f4" fontSize="12" fontWeight="500">60 min</text>
+      <text x="135" y="235" textAnchor="middle" fill="#202124" fontSize="18" fontWeight="500">Call Us</text>
+      <text x="135" y="258" textAnchor="middle" fill="#5f6368" fontSize="14">24/7 emergency hotline</text>
+      <text x="135" y="278" textAnchor="middle" fill="#5f6368" fontSize="14">for immediate response.</text>
     </g>
 
     {/* Step 2: Dispatch */}
     <g>
-      <circle cx="370" cy="200" r="50" fill="#fbbc04" />
-      <rect x="350" y="188" width="28" height="18" rx="3" fill="white" />
-      <rect x="378" y="192" width="12" height="14" rx="2" fill="white" />
-      <circle cx="358" cy="210" r="5" fill="#fbbc04" />
-      <circle cx="382" cy="210" r="5" fill="#fbbc04" />
+      {/* Number badge */}
+      <rect x="310" y="50" width="70" height="70" rx="16" fill="#fef7e0" />
+      <text x="345" y="100" textAnchor="middle" fill="#f9ab00" fontSize="36" fontWeight="500">2</text>
 
+      {/* Icon below */}
+      <circle cx="345" cy="170" r="35" fill="#fef7e0" />
+      <rect x="325" y="158" width="28" height="18" rx="3" fill="#fbbc04" />
+      <rect x="353" y="162" width="12" height="14" rx="2" fill="#fbbc04" />
+      <circle cx="333" cy="180" r="4" fill="white" />
+      <circle cx="357" cy="180" r="4" fill="white" />
       {/* Motion lines */}
-      <line x1="340" y1="195" x2="330" y2="195" stroke="white" strokeWidth="2" strokeLinecap="round">
-        <animate attributeName="x2" values="330;325;330" dur="0.5s" repeatCount="indefinite" />
+      <line x1="318" y1="165" x2="308" y2="165" stroke="#fbbc04" strokeWidth="2" strokeLinecap="round" opacity="0.6">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="0.8s" repeatCount="indefinite" />
       </line>
-      <line x1="340" y1="200" x2="325" y2="200" stroke="white" strokeWidth="2" strokeLinecap="round">
-        <animate attributeName="x2" values="325;320;325" dur="0.5s" begin="0.1s" repeatCount="indefinite" />
-      </line>
-      <line x1="340" y1="205" x2="330" y2="205" stroke="white" strokeWidth="2" strokeLinecap="round">
-        <animate attributeName="x2" values="330;325;330" dur="0.5s" begin="0.2s" repeatCount="indefinite" />
+      <line x1="318" y1="172" x2="305" y2="172" stroke="#fbbc04" strokeWidth="2" strokeLinecap="round" opacity="0.4">
+        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="0.8s" begin="0.2s" repeatCount="indefinite" />
       </line>
 
-      <text x="370" y="280" textAnchor="middle" fill="#202124" fontSize="16" fontWeight="500">Dispatch</text>
-      <text x="370" y="300" textAnchor="middle" fill="#5f6368" fontSize="12">Nearest crew</text>
+      <text x="345" y="235" textAnchor="middle" fill="#202124" fontSize="18" fontWeight="500">Dispatch</text>
+      <text x="345" y="258" textAnchor="middle" fill="#5f6368" fontSize="14">Nearest crew dispatched</text>
+      <text x="345" y="278" textAnchor="middle" fill="#5f6368" fontSize="14">within 60 minutes.</text>
     </g>
 
     {/* Step 3: Assessment */}
     <g>
-      <circle cx="580" cy="200" r="50" fill="#ea4335" />
-      <rect x="560" y="175" width="30" height="40" rx="4" fill="white" />
-      <rect x="573" y="170" width="14" height="8" rx="2" fill="white" />
+      {/* Number badge */}
+      <rect x="520" y="50" width="70" height="70" rx="16" fill="#e6f4ea" />
+      <text x="555" y="100" textAnchor="middle" fill="#34a853" fontSize="36" fontWeight="500">3</text>
 
+      {/* Icon below */}
+      <circle cx="555" cy="170" r="35" fill="#e6f4ea" />
+      <rect x="540" y="150" width="22" height="30" rx="3" fill="#34a853" />
+      <rect x="550" y="145" width="10" height="6" rx="2" fill="#34a853" />
       {/* Checkmarks */}
-      <rect x="565" y="185" width="6" height="6" rx="1" fill="#34a853">
+      <rect x="545" y="158" width="5" height="5" rx="1" fill="white">
         <animate attributeName="opacity" values="0;1;1" dur="2s" repeatCount="indefinite" />
       </rect>
-      <rect x="565" y="195" width="6" height="6" rx="1" fill="#34a853">
+      <rect x="545" y="167" width="5" height="5" rx="1" fill="white">
         <animate attributeName="opacity" values="0;0;1;1" dur="2s" repeatCount="indefinite" />
       </rect>
-      <rect x="565" y="205" width="6" height="6" rx="1" fill="#34a853">
+      <rect x="545" y="176" width="5" height="5" rx="1" fill="white">
         <animate attributeName="opacity" values="0;0;0;1" dur="2s" repeatCount="indefinite" />
       </rect>
+      <line x1="553" y1="160" x2="558" y2="160" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      <line x1="553" y1="169" x2="558" y2="169" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      <line x1="553" y1="178" x2="558" y2="178" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
 
-      <line x1="575" y1="188" x2="585" y2="188" stroke="white" strokeWidth="2" opacity="0.5" strokeLinecap="round" />
-      <line x1="575" y1="198" x2="583" y2="198" stroke="white" strokeWidth="2" opacity="0.5" strokeLinecap="round" />
-      <line x1="575" y1="208" x2="580" y2="208" stroke="white" strokeWidth="2" opacity="0.5" strokeLinecap="round" />
-
-      <text x="580" y="280" textAnchor="middle" fill="#202124" fontSize="16" fontWeight="500">Assess</text>
-      <text x="580" y="300" textAnchor="middle" fill="#5f6368" fontSize="12">Full inspection</text>
+      <text x="555" y="235" textAnchor="middle" fill="#202124" fontSize="18" fontWeight="500">Assess</text>
+      <text x="555" y="258" textAnchor="middle" fill="#5f6368" fontSize="14">Complete damage inspection</text>
+      <text x="555" y="278" textAnchor="middle" fill="#5f6368" fontSize="14">and restoration plan.</text>
     </g>
 
     {/* Step 4: Restore */}
     <g>
-      <circle cx="790" cy="200" r="50" fill="#34a853" />
-      <path d="M770 210 L790 185 L810 210 V225 H770 V210Z" fill="white" strokeLinejoin="round" />
-      <rect x="782" y="210" width="16" height="15" rx="2" fill="#34a853" opacity="0.5" />
+      {/* Number badge */}
+      <rect x="730" y="50" width="70" height="70" rx="16" fill="#d2e3fc" />
+      <text x="765" y="100" textAnchor="middle" fill="#4285f4" fontSize="36" fontWeight="500">4</text>
 
+      {/* Icon below */}
+      <circle cx="765" cy="170" r="35" fill="#e8f0fe" />
+      <path d="M750 185 L765 160 L780 185 V195 H750 V185Z" fill="#4285f4" />
+      <rect x="758" y="185" width="14" height="10" rx="1" fill="white" opacity="0.4" />
       {/* Sparkles */}
-      <path d="M820 170 L823 178 L831 181 L823 184 L820 192 L817 184 L809 181 L817 178 Z" fill="#fbbc04">
-        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+      <path d="M795 145 L797 150 L802 152 L797 154 L795 159 L793 154 L788 152 L793 150 Z" fill="#fbbc04">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
       </path>
-      <path d="M750 180 L752 185 L757 187 L752 189 L750 194 L748 189 L743 187 L748 185 Z" fill="#fbbc04">
-        <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
+      <path d="M738 155 L740 159 L744 160 L740 161 L738 165 L736 161 L732 160 L736 159 Z" fill="#fbbc04">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.7s" repeatCount="indefinite" />
       </path>
 
-      <text x="790" y="280" textAnchor="middle" fill="#202124" fontSize="16" fontWeight="500">Restore</text>
-      <text x="790" y="300" textAnchor="middle" fill="#5f6368" fontSize="12">Good as new</text>
+      <text x="765" y="235" textAnchor="middle" fill="#202124" fontSize="18" fontWeight="500">Restore</text>
+      <text x="765" y="258" textAnchor="middle" fill="#5f6368" fontSize="14">Property restored to</text>
+      <text x="765" y="278" textAnchor="middle" fill="#5f6368" fontSize="14">pre-damage condition.</text>
     </g>
 
-    {/* Progress indicators */}
-    <circle cx="265" cy="200" r="8" fill="#34a853" />
-    <circle cx="475" cy="200" r="8" fill="#34a853" />
-    <circle cx="685" cy="200" r="8" fill="#dadce0" stroke="#34a853" strokeWidth="2" strokeDasharray="3 2">
-      <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite" />
+    {/* Connection line with animated dots */}
+    <line x1="185" y1="85" x2="300" y2="85" stroke="#e8eaed" strokeWidth="2" />
+    <line x1="395" y1="85" x2="510" y2="85" stroke="#e8eaed" strokeWidth="2" />
+    <line x1="605" y1="85" x2="720" y2="85" stroke="#e8eaed" strokeWidth="2" />
+
+    {/* Animated progress dots */}
+    <circle cx="242" cy="85" r="4" fill="#34a853">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="452" cy="85" r="4" fill="#34a853">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="662" cy="85" r="4" fill="#34a853">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite" />
     </circle>
   </svg>
 );

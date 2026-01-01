@@ -50,7 +50,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
                     <img
                       src={benefit.imageSrc}
                       alt={benefit.imageAlt || ''}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover heading-section"
                     />
                   </div>
                 ) : (

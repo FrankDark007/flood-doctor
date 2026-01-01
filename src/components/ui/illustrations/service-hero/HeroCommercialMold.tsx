@@ -30,7 +30,7 @@ const HeroCommercialMold: React.FC = () => {
                   {[...Array(6)].map((_, i) => (
                       <div 
                         key={i}
-                        className="absolute w-1.5 h-1.5 bg-green-500/60 rounded-full animate-particle"
+                        className="absolute w-1.5 h-1.5 bg-green-500/60 rounded-full animate-particle heading-section"
                         style={{ 
                             left: `${Math.random() * 40}px`, 
                             top: `${Math.random() * 40}px`, 

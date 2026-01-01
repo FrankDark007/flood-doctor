@@ -1,0 +1,28 @@
+# Flood Doctor - robots.txt
+# https://flood.doctor
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://flood.doctor/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Block development/internal paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /clone/
+Disallow: /design-demo/
+Disallow: /home-alt/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

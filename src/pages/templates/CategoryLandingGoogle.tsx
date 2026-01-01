@@ -78,14 +78,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
     <AnimatedSection delay={Math.min(index * 50, 200)}>
       <Link
         to={service.slug}
-        className="group block h-full rounded-[16px] bg-[#f8f9fa] overflow-hidden transition-all duration-200 hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)] focus:outline-none focus:ring-2 focus:ring-[#1a73e8]"
+        className="group block h-full rounded-[16px] bg-[#f8f9fa] overflow-hidden transition-all duration-200 hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)] focus:outline-none focus:ring-2 focus:ring-[#1a73e8] heading-section"
       >
         {/* Large landscape image on top */}
         <div className="aspect-[16/9] w-full overflow-hidden">
           <img
             src={imageUrl}
             alt={service.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
           />
         </div>
 
@@ -93,16 +93,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
         <div className="p-5">
           {/* Category label */}
           <p
-            className="text-[12px] leading-[1.5] font-medium tracking-[0.25px] uppercase text-[#5f6368] mb-2"
-            style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+            className="text-[12px] leading-[1.5] font-medium tracking-[0.25px] uppercase text-[#5f6368] mb-2 heading-section"
+            
           >
             {categoryLabel}
           </p>
 
           {/* Title */}
           <h3
-            className="text-[16px] leading-[1.5] font-medium text-[#202124] group-hover:text-[#1a73e8] transition-colors"
-            style={{ fontFamily: '"Google Sans", Arial, Helvetica, sans-serif' }}
+            className="text-[16px] leading-[1.5] font-medium text-[#202124] group-hover:text-[#1a73e8] transition-colors heading-section"
+            
           >
             {service.title}
           </h3>
@@ -141,14 +141,14 @@ const CategorySection: React.FC<CategorySectionProps> = ({
         <div className="max-w-[1296px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[32px] lg:text-[40px] leading-[1.2] font-normal text-[#202124] m-0"
-              style={{ fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif' }}
+              className="text-[32px] lg:text-[40px] leading-[1.2] font-normal text-[#202124] m-0 heading-section"
+              
             >
               {displayConfig.label}
             </h2>
             <p
-              className="mt-[24px] text-[14px] lg:text-[16px] leading-[1.5] text-[#5f6368]"
-              style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+              className="mt-[24px] text-[14px] lg:text-[16px] leading-[1.5] text-[#5f6368] heading-section"
+              
             >
               {displayConfig.description}
             </p>
@@ -170,8 +170,8 @@ const CategorySection: React.FC<CategorySectionProps> = ({
             <div className="mt-10 mb-[60px] flex justify-center">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center justify-center px-6 py-3 min-w-[96px] min-h-[48px] text-[14px] leading-[1.5] font-medium text-[#1a73e8] bg-white border border-[#dadce0] rounded-full hover:bg-[#f8f9fa] hover:border-[#dadce0] focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:ring-offset-2 transition-all duration-200"
-                style={{ fontFamily: '"Google Sans", Arial, Helvetica, sans-serif' }}
+                className="inline-flex items-center justify-center px-6 py-3 min-w-[96px] min-h-[48px] text-[14px] leading-[1.5] font-medium text-[#1a73e8] bg-white border border-[#dadce0] rounded-full hover:bg-[#f8f9fa] hover:border-[#dadce0] focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:ring-offset-2 transition-all duration-200 heading-section"
+                
               >
                 {showAll ? 'Show less' : 'See more'}
               </button>
@@ -195,7 +195,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ service }) => {
   return (
     <Link
       to={service.slug}
-      className="group block rounded-[16px] bg-[#f8f9fa] overflow-hidden transition-all duration-200 hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)]"
+      className="group block rounded-[16px] bg-[#f8f9fa] overflow-hidden transition-all duration-200 hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)] heading-section"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Large image */}
@@ -203,27 +203,27 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ service }) => {
           <img
             src={imageUrl}
             alt={service.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 heading-section"
           />
         </div>
 
         {/* Content */}
         <div className="p-6 lg:p-8 flex flex-col justify-center">
           <p
-            className="text-[12px] leading-[1.5] font-medium tracking-[0.25px] uppercase text-[#5f6368] mb-2"
-            style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+            className="text-[12px] leading-[1.5] font-medium tracking-[0.25px] uppercase text-[#5f6368] mb-2 heading-section"
+            
           >
             Featured
           </p>
           <h3
-            className="text-[24px] lg:text-[28px] leading-[1.25] font-normal text-[#202124] mb-3 group-hover:text-[#1a73e8] transition-colors"
-            style={{ fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif' }}
+            className="text-[24px] lg:text-[28px] leading-[1.25] font-normal text-[#202124] mb-3 group-hover:text-[#1a73e8] transition-colors heading-section"
+            
           >
             {service.title}
           </h3>
           <p
-            className="text-[14px] lg:text-[16px] leading-[1.5] text-[#5f6368]"
-            style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+            className="text-[14px] lg:text-[16px] leading-[1.5] text-[#5f6368] heading-section"
+            
           >
             {service.shortDescription}
           </p>
@@ -259,7 +259,7 @@ const StickySubNav: React.FC<StickySubNavProps> = ({ categories, activeCategory 
       <div className="max-w-[1296px] mx-auto px-6 lg:px-8 py-3">
         <div className="flex justify-center">
           <nav
-            className="inline-flex items-center gap-1 px-2 py-1.5 bg-white rounded-full shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)]"
+            className="inline-flex items-center gap-1 px-2 py-1.5 bg-white rounded-full shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)] heading-section"
           >
             {categories.map((cat) => {
               const displayConfig = CATEGORY_DISPLAY[cat];
@@ -274,7 +274,7 @@ const StickySubNav: React.FC<StickySubNavProps> = ({ categories, activeCategory 
                       ? 'bg-[#e8f0fe] text-[#1a73e8]'
                       : 'text-[#3c4043] hover:bg-[#f1f3f4]'
                   }`}
-                  style={{ fontFamily: '"Google Sans", Arial, Helvetica, sans-serif' }}
+                  
                 >
                   {displayConfig?.label || cat}
                 </button>
@@ -348,16 +348,16 @@ const CategoryLandingGoogle: React.FC<CategoryLandingProps> = ({ audience, categ
             <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
               {/* Pre-title label */}
               <p
-                className="text-[14px] leading-[1.5] font-medium text-[#5f6368] mb-3"
-                style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+                className="text-[14px] leading-[1.5] font-medium text-[#5f6368] mb-3 heading-section"
+                
               >
                 Flood Doctor
               </p>
 
               {/* Main title */}
               <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif' }}
+                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 {audience === 'RESIDENTIAL' ? (
                   <>
@@ -372,8 +372,8 @@ const CategoryLandingGoogle: React.FC<CategoryLandingProps> = ({ audience, categ
 
               {/* Description */}
               <p
-                className="text-[16px] lg:text-[18px] leading-[1.5] text-[#5f6368]"
-                style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+                className="text-[16px] lg:text-[18px] leading-[1.5] text-[#5f6368] heading-section"
+                
               >
                 {info.description}
               </p>
@@ -412,14 +412,14 @@ const CategoryLandingGoogle: React.FC<CategoryLandingProps> = ({ audience, categ
           <AnimatedSection>
             <div className="max-w-xl">
               <h2
-                className="text-[32px] lg:text-[40px] leading-[1.2] font-normal text-white mb-4"
-                style={{ fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif' }}
+                className="text-[32px] lg:text-[40px] leading-[1.2] font-normal text-white mb-4 heading-section"
+                
               >
                 Get Flood Doctor<br />in your inbox
               </h2>
               <p
-                className="text-[16px] leading-[1.5] text-[#9aa0a6] mb-8"
-                style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+                className="text-[16px] leading-[1.5] text-[#9aa0a6] mb-8 heading-section"
+                
               >
                 Stay updated with restoration tips, emergency guides, and industry insights.
               </p>
@@ -429,13 +429,13 @@ const CategoryLandingGoogle: React.FC<CategoryLandingProps> = ({ audience, categ
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 min-h-[48px] text-[16px] bg-white text-[#202124] rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-[#1a73e8]"
-                  style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+                  className="flex-1 px-4 py-3 min-h-[48px] text-[16px] bg-white text-[#202124] rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-[#1a73e8] heading-section"
+                  
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 min-h-[48px] text-[14px] font-medium text-[#202124] bg-white rounded-full hover:bg-[#f1f3f4] transition-colors"
-                  style={{ fontFamily: '"Google Sans", Arial, Helvetica, sans-serif' }}
+                  className="px-6 py-3 min-h-[48px] text-[14px] font-medium text-[#202124] bg-white rounded-full hover:bg-[#f1f3f4] transition-colors heading-section"
+                  
                 >
                   Subscribe
                 </button>
@@ -444,15 +444,15 @@ const CategoryLandingGoogle: React.FC<CategoryLandingProps> = ({ audience, categ
               {/* Alternative CTA */}
               <div className="mt-6 pt-6 border-t border-[#3c4043]">
                 <p
-                  className="text-[14px] text-[#9aa0a6] mb-3"
-                  style={{ fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif' }}
+                  className="text-[14px] text-[#9aa0a6] mb-3 heading-section"
+                  
                 >
                   Need immediate assistance?
                 </p>
                 <a
                   href="tel:8774970007"
-                  className="inline-flex items-center gap-2 text-[16px] font-medium text-white hover:text-[#8ab4f8] transition-colors"
-                  style={{ fontFamily: '"Google Sans", Arial, Helvetica, sans-serif' }}
+                  className="inline-flex items-center gap-2 text-[16px] font-medium text-white hover:text-[#8ab4f8] transition-colors heading-section"
+                  
                 >
                   <Phone size={18} />
                   (877) 497-0007

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
 import AnimatedSection from '../components/ui/AnimatedSection';
+import { generateContactPageSchema } from '../utils/schema';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Calendar, CheckCircle2, ArrowRight } from 'lucide-react';
 
 const ContactGoogle: React.FC = () => {
@@ -22,8 +23,9 @@ const ContactGoogle: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Contact Us | Flood Doctor"
+        title="Contact Us"
         description="Contact Flood Doctor for 24/7 emergency water damage restoration. Call (877) 497-0007 or schedule a free assessment online."
+        schema={generateContactPageSchema()}
       />
 
       {/* Hero Section - Google Ads Expert Style */}
@@ -32,10 +34,7 @@ const ContactGoogle: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left: Content */}
             <AnimatedSection>
-              <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
-              >
+              <h1 className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-hero">
                 Get expert help<br />
                 <span className="text-[#1a73e8]">when you need it</span>
               </h1>
@@ -47,7 +46,7 @@ const ContactGoogle: React.FC = () => {
               <div className="space-y-4 mb-8">
                 <a
                   href="tel:8774970007"
-                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group"
+                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group heading-section"
                 >
                   <div className="w-12 h-12 bg-[#e8f0fe] rounded-full flex items-center justify-center">
                     <Phone size={24} className="text-[#1a73e8]" />
@@ -63,7 +62,7 @@ const ContactGoogle: React.FC = () => {
 
                 <Link
                   to="/request/"
-                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group"
+                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group heading-section"
                 >
                   <div className="w-12 h-12 bg-[#e6f4ea] rounded-full flex items-center justify-center">
                     <Calendar size={24} className="text-[#1e8e3e]" />
@@ -79,7 +78,7 @@ const ContactGoogle: React.FC = () => {
 
                 <a
                   href="mailto:help@flood.doctor"
-                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group"
+                  className="flex items-center gap-4 p-4 bg-[#f8f9fa] rounded-[16px] hover:bg-[#e8eaed] transition-colors group heading-section"
                 >
                   <div className="w-12 h-12 bg-[#fef7e0] rounded-full flex items-center justify-center">
                     <Mail size={24} className="text-[#f29900]" />
@@ -117,7 +116,7 @@ const ContactGoogle: React.FC = () => {
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent heading-section"
                       placeholder="Your name"
                       required
                     />
@@ -133,7 +132,7 @@ const ContactGoogle: React.FC = () => {
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent heading-section"
                         placeholder="you@email.com"
                         required
                       />
@@ -147,7 +146,7 @@ const ContactGoogle: React.FC = () => {
                         id="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent heading-section"
                         placeholder="(555) 555-5555"
                       />
                     </div>
@@ -161,7 +160,7 @@ const ContactGoogle: React.FC = () => {
                       id="service"
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent heading-section"
                     >
                       <option value="">Select a service</option>
                       <option value="water-damage">Water Damage Restoration</option>
@@ -182,14 +181,14 @@ const ContactGoogle: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-transparent resize-none heading-section"
                       placeholder="Tell us about your situation..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors"
+                    className="w-full py-3 bg-[#1a73e8] text-white font-medium rounded-full hover:bg-[#1557b0] transition-colors heading-section"
                   >
                     Send message
                   </button>
@@ -206,8 +205,8 @@ const ContactGoogle: React.FC = () => {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+                
               >
                 What to expect
               </h2>
@@ -255,8 +254,8 @@ const ContactGoogle: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <h2
-                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-6 heading-section"
+                
               >
                 Serving Northern Virginia
               </h2>

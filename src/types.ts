@@ -75,11 +75,58 @@ export interface ServiceData {
   infographicType?: 'DRYING_TREND' | 'FLOOD_TIMELINE' | 'SEWAGE_CONTAINMENT' | 'MOLD_AIRFLOW' | 'STRUCTURAL_DRYING';
 }
 
+export interface GeoCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
 export interface LocationData {
   title: string;
+  slug: string; // Internal path (e.g., /locations/ashburn/)
   url: string; // External subdomain
-  region: 'NOVA' | 'NEARBY'; // NEARBY usually just has paths, but we normalized to url/path in logic
-  path?: string; // Internal fallback
+  region: 'NOVA' | 'NEARBY';
+  path?: string; // Internal fallback (deprecated, use slug)
+  county?: string;
+  zip?: string;
+  population?: string;
+  responseTime?: string;
+  description?: string;
+  faqs?: FAQItem[];
+  // Geo data for schema.org LocalBusiness
+  geo?: GeoCoordinates;
+}
+
+/**
+ * Extended location data for subdomain architecture
+ * Includes rich local content for SEO
+ */
+export interface ExtendedLocationData extends LocationData {
+  // Subdomain key (e.g., 'fairfax' -> fairfax.flood.doctor)
+  subdomain: string;
+
+  // Local context for SEO content
+  neighborhoods?: string[];
+  landmarks?: string[];
+  commonIssues?: string[];
+
+  // Top services for this area (prioritized)
+  topServices?: Array<{
+    title: string;
+    path: string;
+    reason?: string;
+  }>;
+
+  // Local testimonials
+  testimonials?: Array<{
+    quote: string;
+    author: string;
+    neighborhood?: string;
+    service?: string;
+  }>;
+
+  // SEO meta overrides
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface NavItem {

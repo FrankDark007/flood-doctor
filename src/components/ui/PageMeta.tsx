@@ -2,27 +2,37 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { siteConfig } from '../../../config/site';
 
+interface GeoMeta {
+  region?: string;      // e.g., "US-VA"
+  placename?: string;   // e.g., "Alexandria"
+  position?: string;    // e.g., "38.8048;-77.0469"
+}
+
 interface PageMetaProps {
-  // IMPORTANT: Pass a plain page title (e.g., "About Us"). 
+  // IMPORTANT: Pass a plain page title (e.g., "About Us").
   // DO NOT append " | Flood Doctor". The component appends the brand name automatically.
   title: string;
   description: string;
   image?: string;
   type?: 'website' | 'article';
   schema?: Record<string, any>; // Support for JSON-LD
+  canonicalPath?: string; // Override for canonical URL (for short URL aliases)
+  geo?: GeoMeta; // Geo meta tags for local SEO
 }
 
-const PageMeta: React.FC<PageMetaProps> = ({ 
-  title, 
-  description, 
-  image = `${siteConfig.SITE_URL}/og-image-default.jpg`, 
+const PageMeta: React.FC<PageMetaProps> = ({
+  title,
+  description,
+  image = `${siteConfig.SITE_URL}/og-image-default.jpg`,
   type = 'website',
-  schema
+  schema,
+  canonicalPath,
+  geo,
 }) => {
   const location = useLocation();
-  
-  // Calculate Canonical URL based on config
-  let pathname = location.pathname;
+
+  // Calculate Canonical URL based on config (or use override)
+  let pathname = canonicalPath || location.pathname;
 
   if (siteConfig.CANONICAL_TRAILING_SLASH) {
     if (!pathname.endsWith('/')) {
@@ -78,7 +88,15 @@ const PageMeta: React.FC<PageMetaProps> = ({
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', image);
 
-    // 7. JSON-LD Schema
+    // 7. Geo Meta Tags (for local SEO)
+    if (geo) {
+      if (geo.region) setMetaTag('geo.region', geo.region);
+      if (geo.placename) setMetaTag('geo.placename', geo.placename);
+      if (geo.position) setMetaTag('geo.position', geo.position);
+      if (geo.position) setMetaTag('ICBM', geo.position.replace(';', ', '));
+    }
+
+    // 8. JSON-LD Schema
     if (schema) {
       let script = document.getElementById('json-ld-schema');
       if (!script) {
@@ -100,7 +118,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
        }
     };
 
-  }, [title, description, canonicalUrl, image, type, schema]);
+  }, [title, description, canonicalUrl, image, type, schema, canonicalPath, geo]);
 
   return null;
 };

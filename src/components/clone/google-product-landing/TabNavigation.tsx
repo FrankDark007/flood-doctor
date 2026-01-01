@@ -37,7 +37,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   return (
     <div className={`${centered ? 'flex justify-center' : ''}`}>
       <nav
-        className="inline-flex bg-subtle rounded-full p-1"
+        className="inline-flex bg-subtle rounded-full p-1 heading-section"
         role="tablist"
       >
         {tabs.map((tab) => (

@@ -37,7 +37,7 @@ const GoogleGuaranteedBadge: React.FC = () => {
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              className="flex-shrink-0"
+              className="flex-shrink-0 heading-section"
             >
               {/* Outer shield */}
               <path 

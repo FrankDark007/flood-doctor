@@ -19,7 +19,7 @@ export const PerformanceMock: React.FC = () => (
             {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
                 <div key={i} className="w-full bg-blue-50 rounded-t-lg relative group">
                     <div 
-                        className="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-1000"
+                        className="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-1000 heading-section"
                         style={{ height: `${h}%` }}
                     ></div>
                 </div>

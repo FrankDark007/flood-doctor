@@ -174,7 +174,7 @@ const InsuranceGuide: React.FC = () => {
                   <GoogleStyleFAQ 
                     data={faqs} 
                     title="Common Insurance Questions" 
-                    className="border-none p-0"
+                    className="border-none p-0 heading-section"
                   />
               </div>
 

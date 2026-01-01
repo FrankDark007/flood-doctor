@@ -84,7 +84,7 @@ const AnimatedTabButton: React.FC<AnimatedTabButtonProps> = ({
       aria-selected={isActive}
       aria-controls={panelId}
       tabIndex={isActive ? 0 : -1}
-      className="relative flex items-center justify-center whitespace-nowrap box-border transition-colors duration-200"
+      className="relative flex items-center justify-center whitespace-nowrap box-border transition-colors duration-200 heading-section"
       style={{
         height: '52px',
         padding: '14px 24px',
@@ -99,7 +99,7 @@ const AnimatedTabButton: React.FC<AnimatedTabButtonProps> = ({
         fontSize: '16px',
         fontWeight: 500,
         lineHeight: 1.5,
-        fontFamily: '"Google Sans", Roboto, Arial, Helvetica, sans-serif',
+        fontFamily: 'var(--font-heading)',
         cursor: 'pointer',
         '--total-path-length': pathLength,
       } as React.CSSProperties}
@@ -117,7 +117,7 @@ const AnimatedTabButton: React.FC<AnimatedTabButtonProps> = ({
       {/* SVG Border Animation - shows on the NEXT tab */}
       {showProgressAnimation && (
         <svg
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none heading-section"
           style={{
             left: '-1px',
             top: '0',
@@ -500,7 +500,7 @@ const HomeAlt: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4">
           {/* Pill-shaped banner container */}
           <button
-            className="w-full flex items-center justify-center gap-3 px-7 py-1.5 mx-auto rounded-full bg-[#e8f0fe] hover:bg-[#d2e3fc] transition-colors cursor-pointer"
+            className="w-full flex items-center justify-center gap-3 px-7 py-1.5 mx-auto rounded-full bg-[#e8f0fe] hover:bg-[#d2e3fc] transition-colors cursor-pointer heading-section"
             style={{ height: '48px', maxWidth: 'fit-content' }}
             onClick={() => window.location.href = '/request/'}
           >
@@ -509,16 +509,17 @@ const HomeAlt: React.FC = () => {
               <div className="w-9 h-9 flex-shrink-0" aria-hidden="true">
                 <img
                   src="https://www.gstatic.com/marketing-cms/assets/images/ads/b0/43/758e11a2431593d15efc3ef7d717/bluehorn-unselected.png"
-                  alt=""
+                  alt="Get started with Flood Doctor"
                   width="36"
                   height="36"
-                  className="w-9 h-9"
+                  loading="lazy"
+                  className="w-9 h-9 heading-section"
                 />
               </div>
 
               {/* Copy text */}
               <span
-                className="text-[16px] leading-6"
+                className="text-[16px] leading-6 heading-section"
                 style={{ color: '#1967d2' }}
               >
                 <strong className="font-medium">New to Flood Doctor?</strong>{' '}
@@ -539,7 +540,7 @@ const HomeAlt: React.FC = () => {
 
       {/* Hero Section - Google Ads style with drop animation */}
       <section
-        className="relative overflow-visible bg-white"
+        className="relative overflow-visible bg-white heading-section"
         style={{ marginTop: '60px', marginBottom: '60px' }}
       >
         {/* CSS for drop animation */}
@@ -584,14 +585,14 @@ const HomeAlt: React.FC = () => {
 
             {/* Mobile Circle - shown ABOVE text on smaller screens (like Google) */}
             <div
-              className="lg:hidden relative mb-4"
+              className="lg:hidden relative mb-4 heading-section"
               style={{
                 width: '240px',
                 height: '240px',
               }}
             >
               <div
-                className="absolute inset-0 grid place-items-center"
+                className="absolute inset-0 grid place-items-center heading-section"
                 style={{
                   clipPath: 'circle(50%)',
                   backgroundColor: ROTATING_HEADLINES[headlineIndex].circleBg,
@@ -601,7 +602,7 @@ const HomeAlt: React.FC = () => {
                 {HERO_IMAGES.map((src, index) => (
                   <div
                     key={index}
-                    className="transition-opacity duration-500"
+                    className="transition-opacity duration-500 heading-section"
                     style={{
                       gridColumnStart: 1,
                       gridRowStart: 1,
@@ -610,8 +611,9 @@ const HomeAlt: React.FC = () => {
                   >
                     <img
                       src={src}
-                      alt=""
-                      className="max-w-[190px] max-h-[170px] object-contain"
+                      alt={`Water damage restoration illustration ${index + 1}`}
+                      loading="lazy"
+                      className="max-w-[190px] max-h-[170px] object-contain heading-section"
                     />
                   </div>
                 ))}
@@ -623,7 +625,7 @@ const HomeAlt: React.FC = () => {
 
               {/* Animated Headlines Container - with overflow hidden for drop effect */}
               <div
-                className="relative text-center lg:text-right"
+                className="relative text-center lg:text-right heading-section"
                 style={{ overflow: 'hidden', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 {/* Visually hidden h1 for accessibility */}
@@ -649,7 +651,7 @@ const HomeAlt: React.FC = () => {
                           gridRowStart: 1,
                           position: 'relative',
                           zIndex: 2, // Above the circle
-                          fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif',
+                          fontFamily: 'var(--font-display)',
                           fontWeight: 700,
                           lineHeight: 1,
                           letterSpacing: '-2.5px',
@@ -666,7 +668,7 @@ const HomeAlt: React.FC = () => {
 
               {/* Circular Animated Image - positioned to overlap on the right (LARGER like Google ~400px) */}
               <div
-                className="relative flex-shrink-0 hidden lg:block"
+                className="relative flex-shrink-0 hidden lg:block heading-section"
                 style={{
                   width: '400px',
                   height: '400px',
@@ -675,7 +677,7 @@ const HomeAlt: React.FC = () => {
                 }}
               >
                 <div
-                  className="absolute inset-0 grid place-items-center"
+                  className="absolute inset-0 grid place-items-center heading-section"
                   style={{
                     clipPath: 'circle(50%)',
                     backgroundColor: ROTATING_HEADLINES[headlineIndex].circleBg,
@@ -687,7 +689,7 @@ const HomeAlt: React.FC = () => {
                   {HERO_IMAGES.map((src, index) => (
                     <div
                       key={index}
-                      className="transition-opacity duration-500"
+                      className="transition-opacity duration-500 heading-section"
                       style={{
                         gridColumnStart: 1,
                         gridRowStart: 1,
@@ -696,8 +698,9 @@ const HomeAlt: React.FC = () => {
                     >
                       <img
                         src={src}
-                        alt=""
-                        className="max-w-[320px] max-h-[280px] object-contain"
+                        alt={`Water damage restoration illustration ${index + 1}`}
+                        loading="lazy"
+                        className="max-w-[320px] max-h-[280px] object-contain heading-section"
                       />
                     </div>
                   ))}
@@ -708,9 +711,9 @@ const HomeAlt: React.FC = () => {
             {/* Static Text Row - "with Flood Doctor." - stays fixed */}
             <div className="w-full text-center relative mt-6 lg:mt-4">
               <p
-                className="m-0 p-0 text-[40px] sm:text-[80px] lg:text-[110px] inline-block"
+                className="m-0 p-0 text-[40px] sm:text-[80px] lg:text-[110px] inline-block heading-section"
                 style={{
-                  fontFamily: '"Google Sans Display", Arial, Helvetica, sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-2.5px',
@@ -723,7 +726,7 @@ const HomeAlt: React.FC = () => {
               {/* Play/Pause Button - circular outline style like Google */}
               <button
                 onClick={() => setIsAnimating(!isAnimating)}
-                className="hidden lg:inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#dadce0] bg-transparent hover:bg-[#f1f3f4] transition-colors ml-4 align-middle"
+                className="hidden lg:inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#dadce0] bg-transparent hover:bg-[#f1f3f4] transition-colors ml-4 align-middle heading-section"
                 style={{ verticalAlign: 'middle', marginBottom: '20px' }}
                 aria-label={isAnimating ? 'Pause animation' : 'Play animation'}
               >
@@ -739,13 +742,13 @@ const HomeAlt: React.FC = () => {
 
         {/* Description Container */}
         <div
-          className="text-center mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]"
+          className="text-center mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px] heading-section"
           style={{ marginTop: '48px', marginBottom: '36px' }}
         >
           <div
-            className="relative text-center"
+            className="relative text-center heading-section"
             style={{
-              fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif',
+              fontFamily: 'var(--font-sans)',
               fontSize: '18px',
               fontWeight: 400,
               lineHeight: 1.55556,
@@ -757,15 +760,15 @@ const HomeAlt: React.FC = () => {
 
           {/* CTA Buttons Container */}
           <div
-            className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 mt-9"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 mt-9 heading-section"
             style={{ minWidth: '185px' }}
           >
             {/* Primary CTA - Start now */}
             <Link
               to="/request/"
-              className="inline-flex items-center justify-center sm:justify-around px-6 py-3 min-w-[96px] min-h-[48px] text-white bg-[#1a73e8] rounded-full border border-transparent transition-all duration-200 hover:bg-[#185abc] hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)]"
+              className="inline-flex items-center justify-center sm:justify-around px-6 py-3 min-w-[96px] min-h-[48px] text-white bg-[#1a73e8] rounded-full border border-transparent transition-all duration-200 hover:bg-[#185abc] hover:shadow-[0_1px_2px_0_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)] heading-section"
               style={{
-                fontFamily: '"Google Sans", Arial, Helvetica, sans-serif',
+                fontFamily: 'var(--font-heading)',
                 fontSize: '16px',
                 fontWeight: 500,
                 letterSpacing: '0.5px',
@@ -777,9 +780,9 @@ const HomeAlt: React.FC = () => {
 
             {/* Secondary CTA - Chat */}
             <button
-              className="inline-flex items-center justify-center gap-2 px-4 py-3 min-w-[96px] min-h-[48px] text-[#1a73e8] bg-white rounded-full border border-[#dadce0] transition-all duration-200 hover:bg-[#f6f9fe] hover:border-[#1a73e8] hover:text-[#174ea6]"
+              className="inline-flex items-center justify-center gap-2 px-4 py-3 min-w-[96px] min-h-[48px] text-[#1a73e8] bg-white rounded-full border border-[#dadce0] transition-all duration-200 hover:bg-[#f6f9fe] hover:border-[#1a73e8] hover:text-[#174ea6] heading-section"
               style={{
-                fontFamily: '"Google Sans", Arial, Helvetica, sans-serif',
+                fontFamily: 'var(--font-heading)',
                 fontSize: '16px',
                 fontWeight: 500,
                 letterSpacing: '0.5px',
@@ -796,7 +799,7 @@ const HomeAlt: React.FC = () => {
         <div className="absolute right-4 bottom-4 lg:hidden">
           <button
             onClick={() => setIsAnimating(!isAnimating)}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#dadce0] bg-white hover:bg-[#f1f3f4] transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#dadce0] bg-white hover:bg-[#f1f3f4] transition-colors heading-section"
             aria-label={isAnimating ? 'Pause animation' : 'Play animation'}
           >
             {isAnimating ? (
@@ -833,7 +836,7 @@ const HomeAlt: React.FC = () => {
               ].map((starter, i) => (
                 <button
                   key={i}
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-[#dadce0] rounded-full text-sm text-[#202124] hover:bg-[#f8f9fa] hover:border-[#c4c7c5] transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-[#dadce0] rounded-full text-sm text-[#202124] hover:bg-[#f8f9fa] hover:border-[#c4c7c5] transition-colors heading-section"
                 >
                   <span>✨</span>
                   {starter}
@@ -987,7 +990,7 @@ const HomeAlt: React.FC = () => {
             grid-column: span 4;
             text-align: center;
             margin-bottom: 60px;
-            font-family: "Google Sans Display", Arial, Helvetica, sans-serif;
+            font-family: var(--font-display);
             font-size: 48px;
             font-weight: 500;
             line-height: 1.28571;
@@ -1008,7 +1011,7 @@ const HomeAlt: React.FC = () => {
             }
           }
           .tab-h3 {
-            font-family: "Google Sans", Arial, Helvetica, sans-serif;
+            font-family: var(--font-heading);
             font-size: 36px;
             font-weight: 400;
             line-height: 1.33333;
@@ -1136,7 +1139,7 @@ const HomeAlt: React.FC = () => {
 
                       <p
                         style={{
-                          fontFamily: '"Google Sans Text", Arial, Helvetica, sans-serif',
+                          fontFamily: 'var(--font-sans)',
                           fontSize: '16px',
                           fontWeight: 400,
                           lineHeight: 1.5,
@@ -1153,12 +1156,12 @@ const HomeAlt: React.FC = () => {
                       <div className="tab-cta-container">
                         <Link
                           to={tab.link}
-                          className="group"
+                          className="group heading-section"
                           style={{
                             display: 'flex',
                             alignItems: 'center',
                             gap: '12px',
-                            fontFamily: '"Google Sans", Arial, Helvetica, sans-serif',
+                            fontFamily: 'var(--font-heading)',
                             fontSize: '16px',
                             fontWeight: 500,
                             lineHeight: 1.5,
@@ -1174,7 +1177,7 @@ const HomeAlt: React.FC = () => {
                           {/* Arrow Circle */}
                           <span className="relative" style={{ width: '48px', height: '48px' }}>
                             <span
-                              className="block transition-colors duration-200"
+                              className="block transition-colors duration-200 heading-section"
                               style={{
                                 width: '48px',
                                 height: '48px',
@@ -1184,7 +1187,7 @@ const HomeAlt: React.FC = () => {
                             />
                             <ArrowRight
                               size={24}
-                              className="absolute"
+                              className="absolute heading-section"
                               style={{ top: '12px', left: '12px', color: '#fff' }}
                             />
                           </span>
@@ -1210,7 +1213,7 @@ const HomeAlt: React.FC = () => {
             {/* Text link style like Google */}
             <Link
               to="/services/"
-              className="text-sm font-medium text-[#1a73e8] hover:text-[#174ea6] hover:underline transition-colors"
+              className="text-sm font-medium text-[#1a73e8] hover:text-[#174ea6] hover:underline transition-colors heading-section"
             >
               Learn more
             </Link>
@@ -1223,10 +1226,10 @@ const HomeAlt: React.FC = () => {
                 <Link
                   key={index}
                   to={goal.link}
-                  className="flex-shrink-0 w-[200px] lg:w-auto bg-white rounded-[16px] p-6 text-center hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 group"
+                  className="flex-shrink-0 w-[200px] lg:w-auto bg-white rounded-[16px] p-6 text-center hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 group heading-section"
                 >
                   <div
-                    className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl"
+                    className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl heading-section"
                     style={{ backgroundColor: goal.iconBg }}
                   >
                     {goal.icon}
@@ -1273,7 +1276,7 @@ const HomeAlt: React.FC = () => {
                         ].map((item, i) => (
                           <div key={i} className="flex flex-col items-center gap-2">
                             <div
-                              className="w-16 h-16 rounded-2xl shadow-sm flex items-center justify-center text-2xl"
+                              className="w-16 h-16 rounded-2xl shadow-sm flex items-center justify-center text-2xl heading-section"
                               style={{ backgroundColor: item.bg }}
                             >
                               {item.icon}
@@ -1375,7 +1378,7 @@ const HomeAlt: React.FC = () => {
             {/* Text link style like Google */}
             <Link
               to="/reviews/"
-              className="text-sm font-medium text-[#1a73e8] hover:text-[#174ea6] hover:underline transition-colors"
+              className="text-sm font-medium text-[#1a73e8] hover:text-[#174ea6] hover:underline transition-colors heading-section"
             >
               View all success stories
             </Link>
@@ -1385,7 +1388,7 @@ const HomeAlt: React.FC = () => {
           <div className="relative mt-12">
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-500 ease-out"
+                className="flex transition-transform duration-500 ease-out heading-section"
                 style={{ transform: `translateX(-${currentStory * 100}%)` }}
               >
                 {SUCCESS_STORIES.map((story, index) => (
@@ -1408,7 +1411,7 @@ const HomeAlt: React.FC = () => {
                           <img
                             src={story.photo}
                             alt={story.author}
-                            className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                            className="w-16 h-16 rounded-full object-cover flex-shrink-0 heading-section"
                           />
                           <div>
                             <blockquote className="text-lg lg:text-xl text-[#202124] leading-relaxed mb-4">
@@ -1433,7 +1436,7 @@ const HomeAlt: React.FC = () => {
               <button
                 onClick={() => setCurrentStory(Math.max(0, currentStory - 1))}
                 disabled={currentStory === 0}
-                className="w-10 h-10 rounded-full border border-[#dadce0] bg-white flex items-center justify-center text-[#5f6368] hover:bg-[#f8f9fa] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="w-10 h-10 rounded-full border border-[#dadce0] bg-white flex items-center justify-center text-[#5f6368] hover:bg-[#f8f9fa] disabled:opacity-30 disabled:cursor-not-allowed transition-colors heading-section"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -1443,7 +1446,7 @@ const HomeAlt: React.FC = () => {
               <button
                 onClick={() => setCurrentStory(Math.min(SUCCESS_STORIES.length - 1, currentStory + 1))}
                 disabled={currentStory === SUCCESS_STORIES.length - 1}
-                className="w-10 h-10 rounded-full border border-[#dadce0] bg-white flex items-center justify-center text-[#5f6368] hover:bg-[#f8f9fa] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="w-10 h-10 rounded-full border border-[#dadce0] bg-white flex items-center justify-center text-[#5f6368] hover:bg-[#f8f9fa] disabled:opacity-30 disabled:cursor-not-allowed transition-colors heading-section"
               >
                 <ChevronRight size={20} />
               </button>
@@ -1464,7 +1467,7 @@ const HomeAlt: React.FC = () => {
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <a
               href="tel:8774970007"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[#dadce0] rounded-[4px] text-[#202124] font-medium hover:bg-[#f8f9fa] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#dadce0] rounded-[4px] text-[#202124] font-medium hover:bg-[#f8f9fa] transition-colors heading-section"
             >
               <Phone size={18} />
               (877) 497-0007
@@ -1486,7 +1489,7 @@ const HomeAlt: React.FC = () => {
             </h2>
             <button
               onClick={toggleAllFaqs}
-              className="hidden sm:inline-flex items-center gap-2 text-sm text-[#5f6368] hover:text-[#202124] transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 text-sm text-[#5f6368] hover:text-[#202124] transition-colors heading-section"
             >
               {expandedFaqs.length === FAQS.length ? 'Collapse all' : 'Expand all'}
               <ChevronDown size={18} className={expandedFaqs.length === FAQS.length ? 'rotate-180' : ''} />
@@ -1498,7 +1501,7 @@ const HomeAlt: React.FC = () => {
               <div key={index} className="border-b border-[#dadce0]">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full text-left py-5 flex justify-between items-start gap-4 group"
+                  className="w-full text-left py-5 flex justify-between items-start gap-4 group heading-section"
                   aria-expanded={expandedFaqs.includes(index)}
                 >
                   <span className={`text-base lg:text-lg font-medium transition-colors ${

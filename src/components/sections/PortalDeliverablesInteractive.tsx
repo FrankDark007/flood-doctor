@@ -155,7 +155,7 @@ const PortalDeliverablesInteractive: React.FC = () => {
                <div className="bg-white rounded-2xl border border-gray-200 shadow-soft p-8 md:p-12 relative animate-in fade-in slide-in-from-top-4 duration-500">
                   <button 
                     onClick={handleClose}
-                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary heading-section"
                     aria-label="Close detail panel"
                   >
                      <X size={24} />

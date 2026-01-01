@@ -59,6 +59,10 @@ const HomeownerGuides = React.lazy(() => import('./pages/resources/HomeownerGuid
 const EmergencyChecklists = React.lazy(() => import('./pages/resources/EmergencyChecklists'));
 const Technology = React.lazy(() => import('./pages/resources/Technology'));
 const Communication = React.lazy(() => import('./pages/resources/Communication'));
+const WaterDamageCostGuide = React.lazy(() => import('./pages/resources/WaterDamageCostGuide'));
+const MoldPreventionGuide = React.lazy(() => import('./pages/resources/MoldPreventionGuide'));
+const WaterDamageCategories = React.lazy(() => import('./pages/resources/WaterDamageCategories'));
+const SignsOfWaterDamage = React.lazy(() => import('./pages/resources/SignsOfWaterDamage'));
 const NearMeLanding = React.lazy(() => import('./pages/NearMeLanding'));
 
 // Legal & Company
@@ -190,6 +194,10 @@ const App: React.FC = () => {
             <Route path="/resources/emergency-checklists/" element={<EmergencyChecklists />} />
             <Route path="/resources/technology/" element={<Technology />} />
             <Route path="/resources/communication/" element={<Communication />} />
+            <Route path="/resources/water-damage-cost-guide/" element={<WaterDamageCostGuide />} />
+            <Route path="/resources/mold-prevention-guide/" element={<MoldPreventionGuide />} />
+            <Route path="/resources/water-damage-categories/" element={<WaterDamageCategories />} />
+            <Route path="/resources/signs-of-water-damage/" element={<SignsOfWaterDamage />} />
             <Route path="/blog/" element={<BlogIndexGoogle />} />
 
             {/* Legal & Company */}

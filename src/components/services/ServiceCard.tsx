@@ -12,7 +12,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
   return (
     <div
       onClick={() => onClick(service)}
-      className="group relative flex flex-col bg-white rounded-[8px] overflow-hidden cursor-pointer transition-all duration-200 shadow-[0_1px_2px_0_rgba(0,0,0,0.3),0_1px_3px_1px_rgba(0,0,0,0.15)] hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] h-full"
+      className="group relative flex flex-col bg-white rounded-[8px] overflow-hidden cursor-pointer transition-all duration-200 shadow-[0_1px_2px_0_rgba(0,0,0,0.3),0_1px_3px_1px_rgba(0,0,0,0.15)] hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] h-full heading-section"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -27,7 +27,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
       <div className="relative w-full aspect-square bg-[#f8f9fa] overflow-hidden">
         <ServiceCardThumb
           visualKey={service.thumbVisualKey}
-          className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-[1.02]"
+          className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-[1.02] heading-section"
         />
       </div>
 

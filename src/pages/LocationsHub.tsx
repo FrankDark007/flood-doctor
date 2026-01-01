@@ -41,7 +41,7 @@ const LocationsHub: React.FC = () => {
                 <input 
                    type="text"
                    placeholder="Search your city or zip code..."
-                   className="block w-full pl-16 pr-6 py-5 rounded-full border-2 border-transparent bg-white shadow-google text-lg placeholder-gray-400 focus:outline-none focus:border-primary/30 focus:shadow-lg transition-all"
+                   className="block w-full pl-16 pr-6 py-5 rounded-full border-2 border-transparent bg-white shadow-google text-lg placeholder-gray-400 focus:outline-none focus:border-primary/30 focus:shadow-lg transition-all heading-section"
                    value={searchQuery}
                    onChange={(e) => setSearchQuery(e.target.value)}
                 />

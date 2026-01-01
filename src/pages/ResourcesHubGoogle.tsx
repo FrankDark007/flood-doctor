@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
 import AnimatedSection from '../components/ui/AnimatedSection';
-import { ArrowRight, BookOpen, FileText, HelpCircle, Shield, Wrench, MessageSquare } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, HelpCircle, Shield, Wrench, MessageSquare, Scale, DollarSign, AlertTriangle, Layers, Eye } from 'lucide-react';
 
 // Resource categories with icons
 const RESOURCES = [
@@ -16,6 +16,17 @@ const RESOURCES = [
     readTime: '8 min read',
     color: '#1a73e8',
     bgColor: '#e8f0fe',
+  },
+  {
+    id: 'insurance-claims',
+    title: 'Insurance Claims Guide',
+    description: 'Complete step-by-step guide to filing water damage claims. Coverage details, documentation checklist, and how to handle adjuster disputes.',
+    icon: Scale,
+    link: '/resources/insurance-claims-guide/',
+    category: 'Guide',
+    readTime: '12 min read',
+    color: '#1e8e3e',
+    bgColor: '#e6f4ea',
   },
   {
     id: 'emergency',
@@ -72,6 +83,50 @@ const RESOURCES = [
     color: '#1a73e8',
     bgColor: '#e8f0fe',
   },
+  {
+    id: 'cost-guide',
+    title: 'Water Damage Cost Guide',
+    description: 'Understand restoration pricing, cost factors, and what to expect for your budget. Includes service-by-service breakdown.',
+    icon: DollarSign,
+    link: '/resources/water-damage-cost-guide/',
+    category: 'Guide',
+    readTime: '10 min read',
+    color: '#1e8e3e',
+    bgColor: '#e6f4ea',
+  },
+  {
+    id: 'mold-prevention',
+    title: 'Mold Prevention Guide',
+    description: 'How to prevent mold after water damage. Timeline, warning signs, and critical steps to take within 24-48 hours.',
+    icon: AlertTriangle,
+    link: '/resources/mold-prevention-guide/',
+    category: 'Guide',
+    readTime: '8 min read',
+    color: '#f29900',
+    bgColor: '#fef7e0',
+  },
+  {
+    id: 'water-categories',
+    title: 'Water Damage Categories',
+    description: 'Understanding Category 1, 2, and 3 water damage. Health risks, cleanup requirements, and cost implications.',
+    icon: Layers,
+    link: '/resources/water-damage-categories/',
+    category: 'Guide',
+    readTime: '7 min read',
+    color: '#1a73e8',
+    bgColor: '#e8f0fe',
+  },
+  {
+    id: 'signs-damage',
+    title: 'Signs of Water Damage',
+    description: 'How to detect hidden water damage in walls, floors, and ceilings. Room-by-room inspection checklist included.',
+    icon: Eye,
+    link: '/resources/signs-of-water-damage/',
+    category: 'Guide',
+    readTime: '9 min read',
+    color: '#9334e6',
+    bgColor: '#f3e8fd',
+  },
 ];
 
 const FILTER_OPTIONS = [
@@ -102,8 +157,8 @@ const ResourcesHubGoogle: React.FC = () => {
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <h1
-                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6"
-                style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+                className="text-[36px] sm:text-[44px] lg:text-[56px] leading-[1.1] font-normal text-[#202124] mb-6 heading-section"
+                
               >
                 Resources & guides
               </h1>
@@ -146,11 +201,11 @@ const ResourcesHubGoogle: React.FC = () => {
                 <AnimatedSection key={resource.id} delay={Math.min(index * 100, 300)}>
                   <Link
                     to={resource.link}
-                    className="group bg-white rounded-[16px] p-6 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full"
+                    className="group bg-white rounded-[16px] p-6 hover:shadow-[0_1px_3px_rgba(60,64,67,0.3),0_4px_8px_3px_rgba(60,64,67,0.15)] transition-all duration-200 block h-full heading-section"
                   >
                     {/* Icon */}
                     <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                      className="w-12 h-12 rounded-full flex items-center justify-center mb-4 heading-section"
                       style={{ backgroundColor: resource.bgColor }}
                     >
                       <Icon size={24} style={{ color: resource.color }} />
@@ -193,8 +248,8 @@ const ResourcesHubGoogle: React.FC = () => {
         <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2
-              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4"
-              style={{ fontFamily: '"Google Sans Display", "Google Sans", Arial, sans-serif' }}
+              className="text-[28px] lg:text-[36px] font-normal text-[#202124] mb-4 heading-section"
+              
             >
               Have questions?
             </h2>
@@ -204,13 +259,13 @@ const ResourcesHubGoogle: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:8774970007"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1a73e8] text-white text-base font-medium rounded-full hover:bg-[#1557b0] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1a73e8] text-white text-base font-medium rounded-full hover:bg-[#1557b0] transition-colors heading-section"
               >
                 (877) 497-0007
               </a>
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a73e8] text-base font-medium rounded-full border border-[#dadce0] hover:bg-[#f8f9fa] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a73e8] text-base font-medium rounded-full border border-[#dadce0] hover:bg-[#f8f9fa] transition-colors heading-section"
               >
                 Contact us
               </Link>
