@@ -111,7 +111,7 @@ const Header: React.FC = () => {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 -ml-2 text-[#5f6368] hover:bg-[#f1f3f4] rounded-full transition-colors"
+                className="p-2 -ml-2 text-[#5f6368] hover:bg-[#f1f3f4] rounded-full transition-colors heading-section"
                 aria-label="Open menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -120,11 +120,11 @@ const Header: React.FC = () => {
             </div>
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-[#1a73e8] text-white">
+            <Link to="/" className="flex items-center gap-2" aria-label="Flood Doctor - Home">
+              <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-[#1a73e8] text-white" aria-hidden="true">
                 <Droplets size={18} />
               </div>
-              <span className="hidden sm:flex items-center gap-0.5 text-[20px]">
+              <span className="hidden sm:flex items-center gap-0.5 text-[20px]" aria-hidden="true">
                 <span className="font-medium text-[#1a73e8]">Flood</span>
                 <span className="font-medium text-[#202124]">Doctor</span>
               </span>
@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                       <div>
                         <Link
                           to="/services/residential/"
-                          className="flex items-center gap-2 text-base font-medium text-[#202124] mb-4 hover:text-[#1a73e8] transition-colors"
+                          className="flex items-center gap-2 text-base font-medium text-[#202124] mb-4 hover:text-[#1a73e8] transition-colors heading-section"
                         >
                           Residential Services
                           <ArrowRight size={16} />
@@ -170,7 +170,7 @@ const Header: React.FC = () => {
                                   <li key={service.id}>
                                     <Link
                                       to={service.slug}
-                                      className="block text-sm text-[#3c4043] hover:text-[#1a73e8] py-1 transition-colors"
+                                      className="block text-sm text-[#3c4043] hover:text-[#1a73e8] py-1 transition-colors heading-section"
                                     >
                                       {service.title}
                                     </Link>
@@ -186,7 +186,7 @@ const Header: React.FC = () => {
                       <div>
                         <Link
                           to="/services/commercial/"
-                          className="flex items-center gap-2 text-base font-medium text-[#202124] mb-4 hover:text-[#1a73e8] transition-colors"
+                          className="flex items-center gap-2 text-base font-medium text-[#202124] mb-4 hover:text-[#1a73e8] transition-colors heading-section"
                         >
                           Commercial Services
                           <ArrowRight size={16} />
@@ -200,7 +200,7 @@ const Header: React.FC = () => {
                                   <li key={service.id}>
                                     <Link
                                       to={service.slug}
-                                      className="block text-sm text-[#3c4043] hover:text-[#1a73e8] py-1 transition-colors"
+                                      className="block text-sm text-[#3c4043] hover:text-[#1a73e8] py-1 transition-colors heading-section"
                                     >
                                       {service.title}
                                     </Link>
@@ -217,7 +217,7 @@ const Header: React.FC = () => {
                     <div className="mt-6 pt-4 border-t border-[#dadce0]">
                       <Link
                         to="/services/"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline heading-section"
                       >
                         View all services
                         <ArrowRight size={14} />
@@ -254,7 +254,7 @@ const Header: React.FC = () => {
                           href={loc.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-[#3c4043] hover:text-[#1a73e8] py-2 transition-colors"
+                          className="flex items-center gap-2 text-sm text-[#3c4043] hover:text-[#1a73e8] py-2 transition-colors heading-section"
                         >
                           <MapPin size={14} className="text-[#5f6368]" />
                           {loc.title}
@@ -266,7 +266,7 @@ const Header: React.FC = () => {
                     <div className="mt-6 pt-4 border-t border-[#dadce0]">
                       <Link
                         to="/locations/"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline heading-section"
                       >
                         View all service areas
                         <ArrowRight size={14} />
@@ -314,7 +314,7 @@ const Header: React.FC = () => {
               {/* Phone - Desktop only */}
               <a
                 href="tel:8774970007"
-                className="hidden lg:flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline"
+                className="hidden lg:flex items-center gap-2 text-sm font-medium text-[#1a73e8] hover:underline heading-section"
               >
                 <Phone size={16} />
                 (877) 497-0007
@@ -323,7 +323,7 @@ const Header: React.FC = () => {
               {/* Mobile: Phone Button */}
               <a
                 href="tel:8774970007"
-                className="lg:hidden p-2 text-[#1a73e8] hover:bg-[#e8f0fe] rounded-full transition-colors"
+                className="lg:hidden p-2 text-[#1a73e8] hover:bg-[#e8f0fe] rounded-full transition-colors heading-section"
                 aria-label="Call Now"
               >
                 <Phone size={22} />
@@ -332,7 +332,7 @@ const Header: React.FC = () => {
               {/* CTA Button - Desktop only */}
               <Link
                 to="/request/"
-                className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-[#1a73e8] rounded-full hover:bg-[#1557b0] transition-colors"
+                className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-[#1a73e8] rounded-full hover:bg-[#1557b0] transition-colors heading-section"
               >
                 Get Started
               </Link>

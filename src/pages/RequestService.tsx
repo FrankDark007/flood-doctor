@@ -30,14 +30,14 @@ const FloatingInput = ({
       name={id}
       value={value}
       onChange={onChange}
-      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent"
+      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent heading-section"
       placeholder={placeholder}
       required={required}
       autoComplete={autoComplete}
     />
     <label
       htmlFor={id}
-      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none"
+      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none heading-section"
     >
       {label} {required && <span className="text-red-500">*</span>}
     </label>
@@ -52,13 +52,13 @@ const FloatingTextArea = ({ id, label, value, onChange, required }: any) => (
       value={value}
       onChange={onChange}
       rows={4}
-      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent resize-none"
+      className="block px-4 pb-2.5 pt-5 w-full text-[16px] text-text bg-white rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary focus:border-2 peer transition-colors placeholder-transparent resize-none heading-section"
       placeholder=" "
       required={required}
     />
     <label
       htmlFor={id}
-      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none"
+      className="absolute text-[15px] text-muted duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-primary bg-white px-1 pointer-events-none heading-section"
     >
       {label}
     </label>
@@ -75,7 +75,7 @@ const GoogleRadio = ({ id, name, label, checked, onChange, value }: any) => (
         value={value}
         checked={checked} 
         onChange={onChange}
-        className="peer appearance-none w-5 h-5 border-2 border-muted rounded-full checked:border-primary checked:border-[6px] transition-all"
+        className="peer appearance-none w-5 h-5 border-2 border-muted rounded-full checked:border-primary checked:border-[6px] transition-all heading-section"
       />
     </div>
     <span className={`text-[15px] font-medium ${checked ? 'text-primary' : 'text-text'}`}>{label}</span>
@@ -174,17 +174,25 @@ const RequestService: React.FC = () => {
            <span className="text-sm font-medium text-muted">
              {isSuccess ? 'Completed' : `Step ${step} of ${formData.isCoveredLoss === 'no' ? '3' : '4'}`}
            </span>
-           <div className="flex gap-1.5">
+           <div
+              className="flex gap-1.5"
+              role="progressbar"
+              aria-valuenow={step}
+              aria-valuemin={1}
+              aria-valuemax={formData.isCoveredLoss === 'no' ? 3 : 4}
+              aria-label={isSuccess ? 'Form completed' : `Step ${step} of ${formData.isCoveredLoss === 'no' ? '3' : '4'}`}
+           >
               {/* Dynamic Progress Dots */}
               {[1, 2, 3, 4].map(i => {
                  // Hide step 3 dot if we are skipping insurance
                  if (formData.isCoveredLoss === 'no' && i === 3) return null;
                  return (
-                    <div 
-                        key={i} 
+                    <div
+                        key={i}
                         className={`h-1.5 rounded-full transition-all duration-300 ${
                             step >= i || isSuccess ? 'w-8 bg-primary' : 'w-4 bg-gray-200'
                         }`}
+                        aria-hidden="true"
                     />
                  )
               })}
@@ -291,7 +299,7 @@ const RequestService: React.FC = () => {
                                     name="dateOfLoss"
                                     value={formData.dateOfLoss}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none heading-section"
                                 />
                             </div>
                         </div>
@@ -351,16 +359,28 @@ const RequestService: React.FC = () => {
                             required 
                         />
 
-                        {/* File Upload Visual Mock */}
+                        {/* File Upload */}
                         <div>
-                            <label className="block text-sm font-semibold text-text mb-3">Upload Photos or Video</label>
-                            <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:bg-gray-50 hover:border-primary transition-colors cursor-pointer group">
-                                <div className="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <label htmlFor="file-upload" className="block text-sm font-semibold text-text mb-3">Upload Photos or Video</label>
+                            <label
+                                htmlFor="file-upload"
+                                className="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:bg-gray-50 hover:border-primary transition-colors cursor-pointer group block focus-within:ring-2 focus-within:ring-primary focus-within:border-primary"
+                            >
+                                <input
+                                    type="file"
+                                    id="file-upload"
+                                    name="files"
+                                    multiple
+                                    accept="image/*,video/*"
+                                    className="sr-only"
+                                    aria-describedby="file-upload-hint"
+                                />
+                                <div className="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform" aria-hidden="true">
                                     <UploadCloud size={24} />
                                 </div>
                                 <p className="text-sm font-medium text-text">Click to upload or drag and drop</p>
-                                <p className="text-xs text-muted mt-1">Max file size: 128MB</p>
-                            </div>
+                                <p id="file-upload-hint" className="text-xs text-muted mt-1">Max file size: 128MB</p>
+                            </label>
                         </div>
                     </div>
                 )}
@@ -371,7 +391,7 @@ const RequestService: React.FC = () => {
                         <button
                             type="button"
                             onClick={handleBack}
-                            className="h-12 px-6 rounded-full border border-gray-300 text-text font-medium hover:bg-gray-50 transition-colors"
+                            className="h-12 px-6 rounded-full border border-gray-300 text-text font-medium hover:bg-gray-50 transition-colors heading-section"
                         >
                             Back
                         </button>
@@ -381,7 +401,7 @@ const RequestService: React.FC = () => {
                         <Button 
                             type="button" 
                             variant="primary" 
-                            className="h-12 px-8 flex-1 sm:flex-none ml-auto"
+                            className="h-12 px-8 flex-1 sm:flex-none ml-auto heading-section"
                             onClick={handleNext}
                         >
                             Next Step <ArrowRight size={18} className="ml-2" />

@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Google+Sans+Text:wght@400;500&display=swap');
+/* Google Fonts loaded via index.html with preload for non-blocking render */
 
 /* ============================================
-   GOOGLE ADS KEYWORD PLANNER - DESIGN SYSTEM
-   Extracted from actual Google pages
+   FLOOD DOCTOR DESIGN SYSTEM
+   Based on Google Material Design 3
+   Using Outfit (display) + Inter (body)
    ============================================ */
 
 @theme {
   /* ========== TYPOGRAPHY ========== */
 
-  /* Font Families - Exact Google values */
-  --font-display: 'Google Sans Display', 'Google Sans', Arial, Helvetica, sans-serif;
-  --font-heading: 'Google Sans', Arial, Helvetica, sans-serif;
-  --font-sans: 'Google Sans Text', Arial, Helvetica, sans-serif;
+  /* Font Families - Using accessible alternatives to Google Sans */
+  /* Fallback fonts with size-adjust defined in index.html to minimize CLS */
+  --font-display: 'Outfit', 'Outfit Fallback', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Outfit Fallback', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
 
   /* ========== COLORS ========== */
 
@@ -23,10 +24,11 @@
   --color-primary-hover: #174ea6;
   --color-primary-light: #e8f0fe;
 
-  /* Text Colors - Exact Google values */
+  /* Text Colors - Google values with improved contrast */
   --color-text-primary: #202124;
   --color-text-secondary: #3c4043;
-  --color-text-tertiary: #5f6368;
+  --color-text-tertiary: #4d5156; /* Darkened from #5f6368 for WCAG AA (5.7:1 ratio) */
+  --color-text-muted: #3c4043; /* Improved from #5f6368 for better contrast */
 
   /* Background Colors */
   --color-bg-primary: #ffffff;
@@ -479,7 +481,7 @@ p, .body-text {
 
 .stat-label {
   font-size: 14px;
-  color: #5f6368;
+  color: var(--color-text-secondary);
   margin-top: 8px;
 }
 
@@ -556,7 +558,7 @@ p, .body-text {
   padding-top: 16px;
   font-size: 16px;
   line-height: 1.6;
-  color: #5f6368;
+  color: var(--color-text-secondary);
 }
 
 /* ========== GOOGLE-STYLE VIDEO THUMBNAIL ========== */
@@ -614,4 +616,389 @@ p, .body-text {
   background: linear-gradient(135deg, #e8f0fe 0%, #f8f9fa 50%, #e6f4ea 100%);
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
+}
+
+/* ========== TYPOGRAPHY UTILITY CLASSES ========== */
+/* Use these instead of inline style={{ fontFamily: }} */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-sans);
+}
+
+/* Heading classes with proper font and weight */
+.heading-hero {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.heading-section {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.heading-card {
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+/* Text color utilities with improved contrast */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ========== TRUST BADGES ========== */
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 1000px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.trust-badge-icon {
+  color: var(--color-primary);
+}
+
+.license-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--color-bg-secondary);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* ========== GOOGLE-STYLE SCROLL ANIMATIONS ========== */
+
+/* Fade up with longer travel distance */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.05, 0.7, 0.1, 1),
+              transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.animate-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s cubic-bezier(0.05, 0.7, 0.1, 1),
+              transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.animate-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from right */
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.05, 0.7, 0.1, 1),
+              transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.animate-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale in with bounce */
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s cubic-bezier(0.05, 0.7, 0.1, 1),
+              transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Blur in effect */
+.animate-blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out,
+              filter 0.8s ease-out,
+              transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.animate-blur-in.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Stagger delay utilities */
+.stagger-delay-1 { transition-delay: 100ms !important; }
+.stagger-delay-2 { transition-delay: 200ms !important; }
+.stagger-delay-3 { transition-delay: 300ms !important; }
+.stagger-delay-4 { transition-delay: 400ms !important; }
+.stagger-delay-5 { transition-delay: 500ms !important; }
+.stagger-delay-6 { transition-delay: 600ms !important; }
+
+/* ========== PARALLAX UTILITIES ========== */
+
+.parallax-slow {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========== BUTTON RIPPLE EFFECT ========== */
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 0;
+}
+
+.btn-ripple:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* ========== CARD HOVER EFFECTS ========== */
+
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(60, 64, 67, 0.15), 0 4px 12px rgba(60, 64, 67, 0.1);
+}
+
+/* Card with image zoom on hover */
+.card-image-zoom {
+  overflow: hidden;
+}
+
+.card-image-zoom img,
+.card-image-zoom .card-image {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-image-zoom:hover img,
+.card-image-zoom:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* ========== GOOGLE-STYLE HERO GRADIENTS ========== */
+
+.hero-gradient-blue {
+  background: linear-gradient(135deg, #e8f0fe 0%, #f8f9fa 50%, #e6f4ea 100%);
+}
+
+.hero-gradient-warm {
+  background: linear-gradient(135deg, #fef7e0 0%, #fff 50%, #fce8e6 100%);
+}
+
+.hero-gradient-cool {
+  background: linear-gradient(135deg, #e6f4ea 0%, #fff 50%, #e8f0fe 100%);
+}
+
+.hero-gradient-animated {
+  background: linear-gradient(135deg, #e8f0fe, #f8f9fa, #e6f4ea, #fef7e0);
+  background-size: 400% 400%;
+  animation: gradient-flow 15s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
+
+/* ========== FLOATING ELEMENTS ========== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* ========== REVEAL LINE ANIMATION ========== */
+
+.reveal-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.reveal-line:hover::after,
+.reveal-line.is-visible::after {
+  transform: scaleX(1);
+}
+
+/* ========== TEXT REVEAL ANIMATION ========== */
+
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal-inner {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.text-reveal.is-visible .text-reveal-inner {
+  transform: translateY(0);
+}
+
+/* ========== SPLIT TEXT ANIMATION ========== */
+
+.split-chars > span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.split-chars.is-visible > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== SKELETON LOADING ========== */
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== IMAGE BLUR-UP LOADING ========== */
+
+.blur-up {
+  filter: blur(20px);
+  transition: filter 0.5s ease-out;
+}
+
+.blur-up.loaded {
+  filter: blur(0);
+}
+
+/* ========== SCROLL INDICATOR ========== */
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.5; }
+}
+
+.scroll-indicator {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-fade-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in,
+  .animate-blur-in {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }

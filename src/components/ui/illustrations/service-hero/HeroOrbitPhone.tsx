@@ -37,7 +37,7 @@ const HeroOrbitPhone: React.FC = () => {
               <Shield size={48} className="text-[#1a73e8]" />
            </div>
            <div className="p-4">
-              <h3 className="text-lg font-medium text-[#202124]">Flood Doctor</h3>
+              <p className="text-lg font-medium text-[#202124]" aria-hidden="true">Flood Doctor</p>
               <div className="flex items-center gap-1 text-sm mt-1">
                 <span className="font-bold">4.9</span>
                 <div className="flex text-[#fbbc04]"><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /></div>
@@ -46,9 +46,9 @@ const HeroOrbitPhone: React.FC = () => {
               <div className="text-xs text-gray-500 mt-1">Water Damage Restoration · Northern Virginia</div>
               
               {/* Google Guaranteed Badge */}
-              <div className="mt-3 inline-flex items-center gap-2 bg-[#f0fdf4] px-2 py-1 rounded border border-[#e6f4ea]">
+              <div className="mt-3 inline-flex items-center gap-2 bg-[#f0fdf4] px-2 py-1 rounded border border-[#e6f4ea]" aria-hidden="true">
                  <div className="w-4 h-4 bg-[#34a853] rounded-full flex items-center justify-center text-white text-[8px] font-bold">✔</div>
-                 <span className="text-[10px] font-medium text-[#1e8e3e]">Google Guaranteed</span>
+                 <span className="text-[10px] font-medium text-[#15803d]">Google Guaranteed</span>
               </div>
 
               {/* Action Buttons */}
@@ -70,7 +70,7 @@ const HeroOrbitPhone: React.FC = () => {
               <div className="mt-3 space-y-2">
                  <div className="flex items-center gap-2 text-xs text-gray-600">
                     <Clock size={14} />
-                    <span><span className="text-[#1e8e3e] font-bold">Open</span> · 24/7 Emergency Service</span>
+                    <span><span className="text-[#15803d] font-bold">Open</span> · 24/7 Emergency Service</span>
                  </div>
               </div>
            </div>
@@ -113,7 +113,7 @@ const HeroOrbitPhone: React.FC = () => {
       {/* Pause/Play Control */}
       <button 
         onClick={() => setHeroPaused(!heroPaused)}
-        className="absolute bottom-0 right-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-500 hover:text-[#1a73e8] transition-colors z-30"
+        className="absolute bottom-0 right-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-500 hover:text-[#1a73e8] transition-colors z-30 heading-section"
         aria-label={heroPaused ? "Play animation" : "Pause animation"}
       >
         {heroPaused ? '▶' : '||'}

@@ -38,6 +38,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
   const [isFocused, setIsFocused] = useState(false);
   const hasValue = props.value !== undefined && props.value !== '';
   const inputId = id || `input-${label.toLowerCase().replace(/\s+/g, '-')}`;
+  const errorId = `${inputId}-error`;
 
   const isActive = isFocused || hasValue;
 
@@ -47,6 +48,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
         <input
           ref={ref}
           id={inputId}
+          aria-invalid={!!error}
+          aria-describedby={error || helperText ? errorId : undefined}
           {...props}
           onFocus={(e) => {
             setIsFocused(true);
@@ -90,7 +93,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
       </div>
 
       {(error || helperText) && (
-        <p className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`}>
+        <p id={errorId} className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`} role={error ? 'alert' : undefined}>
           {error || helperText}
         </p>
       )}
@@ -114,6 +117,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
   const [isFocused, setIsFocused] = useState(false);
   const hasValue = props.value !== undefined && props.value !== '';
   const inputId = id || `textarea-${label.toLowerCase().replace(/\s+/g, '-')}`;
+  const errorId = `${inputId}-error`;
 
   const isActive = isFocused || hasValue;
 
@@ -124,6 +128,8 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
           ref={ref}
           id={inputId}
           rows={rows}
+          aria-invalid={!!error}
+          aria-describedby={error || helperText ? errorId : undefined}
           {...props}
           onFocus={(e) => {
             setIsFocused(true);
@@ -167,7 +173,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
       </div>
 
       {(error || helperText) && (
-        <p className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`}>
+        <p id={errorId} className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`} role={error ? 'alert' : undefined}>
           {error || helperText}
         </p>
       )}
@@ -191,6 +197,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   const [isFocused, setIsFocused] = useState(false);
   const hasValue = props.value !== undefined && props.value !== '';
   const inputId = id || `select-${label.toLowerCase().replace(/\s+/g, '-')}`;
+  const errorId = `${inputId}-error`;
 
   const isActive = isFocused || hasValue;
 
@@ -200,6 +207,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
         <select
           ref={ref}
           id={inputId}
+          aria-invalid={!!error}
+          aria-describedby={error || helperText ? errorId : undefined}
           {...props}
           onFocus={(e) => {
             setIsFocused(true);
@@ -230,7 +239,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
         </select>
 
         {/* Dropdown Arrow */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
           <svg width="10" height="5" viewBox="0 0 10 5" fill="currentColor" className="text-[#5f6368]">
             <path d="M0 0l5 5 5-5z" />
           </svg>
@@ -257,7 +266,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
       </div>
 
       {(error || helperText) && (
-        <p className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`}>
+        <p id={errorId} className={`mt-1 text-xs ${error ? 'text-[#d93025]' : 'text-[#5f6368]'}`} role={error ? 'alert' : undefined}>
           {error || helperText}
         </p>
       )}
@@ -291,7 +300,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
             type="checkbox"
             id={inputId}
             {...props}
-            className="peer sr-only"
+            className="peer sr-only heading-section"
           />
           <div className={`
             w-5 h-5 border-2 rounded transition-all duration-200
@@ -300,26 +309,28 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
             ${error ? 'border-[#d93025]' : 'border-[#5f6368] group-hover:border-[#202124]'}
           `}>
             <svg
-              className="w-full h-full text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+              className="w-full h-full text-white opacity-0 peer-checked:opacity-100 transition-opacity heading-section"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
           {/* Checkmark overlay for checked state */}
           <svg
-            className="absolute inset-0 w-full h-full text-white opacity-0 peer-checked:opacity-100 transition-opacity p-0.5"
+            className="absolute inset-0 w-full h-full text-white opacity-0 peer-checked:opacity-100 transition-opacity p-0.5 heading-section"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <polyline points="20 6 9 17 4 12" />
           </svg>
@@ -361,14 +372,14 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
             type="radio"
             id={inputId}
             {...props}
-            className="peer sr-only"
+            className="peer sr-only heading-section"
           />
           <div className={`
             w-5 h-5 border-2 rounded-full transition-all duration-200
             peer-checked:border-[#1a73e8]
             peer-focus:ring-2 peer-focus:ring-[#1a73e8]/30
             ${error ? 'border-[#d93025]' : 'border-[#5f6368] group-hover:border-[#202124]'}
-          `}>
+          `} aria-hidden="true">
             <div className="
               absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
               w-2.5 h-2.5 rounded-full bg-[#1a73e8]
@@ -382,7 +393,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(({
             w-2.5 h-2.5 rounded-full bg-[#1a73e8]
             opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100
             transition-all duration-200
-          " />
+          " aria-hidden="true" />
         </div>
         <span className={`text-sm ${error ? 'text-[#d93025]' : 'text-[#202124]'}`}>
           {label}

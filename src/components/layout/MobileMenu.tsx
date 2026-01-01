@@ -91,18 +91,21 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
       {/* Slide-Over Panel */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-menu-title"
         className={`fixed inset-y-0 right-0 w-full sm:max-w-sm bg-white z-[70] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 h-[64px] border-b border-[#dadce0] shrink-0">
-          <Link to="/" onClick={onClose} className="flex items-center gap-0.5 text-[20px]">
+          <Link to="/" onClick={onClose} id="mobile-menu-title" className="flex items-center gap-0.5 text-[20px]">
             <span className="font-medium text-[#1a73e8]">Flood</span>
             <span className="font-medium text-[#202124]">Doctor</span>
           </Link>
           <button
             onClick={onClose}
-            className="p-2 -mr-2 text-[#5f6368] hover:bg-[#f1f3f4] rounded-full transition-colors"
+            className="p-2 -mr-2 text-[#5f6368] hover:bg-[#f1f3f4] rounded-full transition-colors heading-section"
             aria-label="Close menu"
           >
             <X size={24} />
@@ -118,7 +121,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               to="/"
               className={`flex items-center w-full px-4 py-4 text-base font-medium rounded-xl transition-colors ${
                 location.pathname === '/'
-                  ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                  ? 'bg-[#e8f0fe] text-[#185abc]'
                   : 'text-[#202124] hover:bg-[#f8f9fa]'
               }`}
             >
@@ -131,9 +134,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleAccordion('Services')}
+                aria-expanded={isExpanded('Services')}
+                aria-controls="mobile-menu-services"
                 className={`flex items-center justify-between w-full px-4 py-4 text-base font-medium transition-colors rounded-xl ${
                   isExpanded('Services') || location.pathname.startsWith('/services/')
-                    ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                    ? 'bg-[#e8f0fe] text-[#185abc]'
                     : 'text-[#202124] hover:bg-[#f8f9fa]'
                 }`}
               >
@@ -147,7 +152,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 />
               </button>
 
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Services') ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div id="mobile-menu-services" className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Services') ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="bg-[#f8f9fa] rounded-b-xl pb-2 px-4">
                   {/* All Services */}
                   <Link to="/services/" className="block py-3 pl-10 text-sm text-[#3c4043] hover:text-[#1a73e8] font-medium">
@@ -165,7 +170,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                           <Link
                             key={service.id}
                             to={service.slug}
-                            className="block py-1.5 text-sm text-[#5f6368] hover:text-[#1a73e8]"
+                            className="block py-3 min-h-[44px] text-sm text-[#5f6368] hover:text-[#1a73e8] heading-section"
                           >
                             {service.title}
                           </Link>
@@ -185,7 +190,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                           <Link
                             key={service.id}
                             to={service.slug}
-                            className="block py-1.5 text-sm text-[#5f6368] hover:text-[#1a73e8]"
+                            className="block py-3 min-h-[44px] text-sm text-[#5f6368] hover:text-[#1a73e8] heading-section"
                           >
                             {service.title}
                           </Link>
@@ -201,9 +206,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleAccordion('Locations')}
+                aria-expanded={isExpanded('Locations')}
+                aria-controls="mobile-menu-locations"
                 className={`flex items-center justify-between w-full px-4 py-4 text-base font-medium transition-colors rounded-xl ${
                   isExpanded('Locations') || location.pathname.startsWith('/locations/')
-                    ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                    ? 'bg-[#e8f0fe] text-[#185abc]'
                     : 'text-[#202124] hover:bg-[#f8f9fa]'
                 }`}
               >
@@ -217,7 +224,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 />
               </button>
 
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Locations') ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div id="mobile-menu-locations" className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Locations') ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="bg-[#f8f9fa] rounded-b-xl pb-2">
                   <Link to="/locations/" className="block py-3 pl-14 text-sm text-[#3c4043] hover:text-[#1a73e8] font-medium">
                     All Service Areas
@@ -228,7 +235,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                       href={loc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 py-2 pl-14 pr-4 text-sm text-[#5f6368] hover:text-[#1a73e8]"
+                      className="flex items-center gap-2 py-3 min-h-[44px] pl-14 pr-4 text-sm text-[#5f6368] hover:text-[#1a73e8] heading-section"
                     >
                       <MapPin size={14} />
                       {loc.title}
@@ -242,9 +249,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleAccordion('Resources')}
+                aria-expanded={isExpanded('Resources')}
+                aria-controls="mobile-menu-resources"
                 className={`flex items-center justify-between w-full px-4 py-4 text-base font-medium transition-colors rounded-xl ${
                   isExpanded('Resources') || location.pathname.startsWith('/resources/')
-                    ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                    ? 'bg-[#e8f0fe] text-[#185abc]'
                     : 'text-[#202124] hover:bg-[#f8f9fa]'
                 }`}
               >
@@ -258,24 +267,24 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 />
               </button>
 
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Resources') ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div id="mobile-menu-resources" className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded('Resources') ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="bg-[#f8f9fa] rounded-b-xl pb-2">
                   <Link to="/resources/" className="block py-3 pl-14 text-sm text-[#3c4043] hover:text-[#1a73e8] font-medium">
                     Resource Hub
                   </Link>
-                  <Link to="/resources/faq/" className="block py-2 pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
+                  <Link to="/resources/faq/" className="block py-3 min-h-[44px] pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
                     FAQ
                   </Link>
-                  <Link to="/resources/insurance-guide/" className="block py-2 pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
+                  <Link to="/resources/insurance-guide/" className="block py-3 min-h-[44px] pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
                     Insurance Guide
                   </Link>
-                  <Link to="/resources/homeowner-guides/" className="block py-2 pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
+                  <Link to="/resources/homeowner-guides/" className="block py-3 min-h-[44px] pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
                     Homeowner Guides
                   </Link>
-                  <Link to="/resources/emergency-checklists/" className="block py-2 pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
+                  <Link to="/resources/emergency-checklists/" className="block py-3 min-h-[44px] pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
                     Emergency Checklists
                   </Link>
-                  <Link to="/blog/" className="block py-2 pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
+                  <Link to="/blog/" className="block py-3 min-h-[44px] pl-14 text-sm text-[#5f6368] hover:text-[#1a73e8]">
                     Blog
                   </Link>
                 </div>
@@ -287,7 +296,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               to="/reviews/"
               className={`flex items-center w-full px-4 py-4 text-base font-medium rounded-xl transition-colors ${
                 location.pathname === '/reviews/'
-                  ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                  ? 'bg-[#e8f0fe] text-[#185abc]'
                   : 'text-[#202124] hover:bg-[#f8f9fa]'
               }`}
             >
@@ -299,7 +308,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               to="/about/"
               className={`flex items-center w-full px-4 py-4 text-base font-medium rounded-xl transition-colors ${
                 location.pathname === '/about/'
-                  ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                  ? 'bg-[#e8f0fe] text-[#185abc]'
                   : 'text-[#202124] hover:bg-[#f8f9fa]'
               }`}
             >
@@ -311,7 +320,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               to="/contact/"
               className={`flex items-center w-full px-4 py-4 text-base font-medium rounded-xl transition-colors ${
                 location.pathname === '/contact/'
-                  ? 'bg-[#e8f0fe] text-[#1a73e8]'
+                  ? 'bg-[#e8f0fe] text-[#185abc]'
                   : 'text-[#202124] hover:bg-[#f8f9fa]'
               }`}
             >

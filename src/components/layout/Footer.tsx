@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, MapPin } from 'lucide-react';
+import { ChevronDown, MapPin, BadgeCheck, Award, Shield } from 'lucide-react';
 import { LOCATIONS } from '../../data/locations';
+import { CREDENTIALS, SITE_PHONE, SITE_INFO } from '../../../config/constants';
 
 interface FooterSectionProps {
   title: string;
@@ -11,19 +12,27 @@ interface FooterSectionProps {
 }
 
 const FooterSection: React.FC<FooterSectionProps> = ({ title, isOpen, onToggle, children }) => {
+  const sectionId = `footer-section-${title.toLowerCase().replace(/\s+/g, '-')}`;
+
   return (
     <div className="border-b border-[#dadce0] lg:border-none">
       <button
         onClick={onToggle}
-        className="flex items-center justify-between w-full py-4 text-left lg:py-0 lg:cursor-default lg:pointer-events-none"
+        aria-expanded={isOpen}
+        aria-controls={sectionId}
+        className="flex items-center justify-between w-full py-4 text-left lg:py-0 lg:cursor-default lg:pointer-events-none heading-section"
       >
         <h3 className="text-sm font-medium text-[#202124] lg:mb-5">{title}</h3>
         <ChevronDown
           size={20}
           className={`text-[#5f6368] transition-transform duration-200 lg:hidden ${isOpen ? 'rotate-180' : ''}`}
+          aria-hidden="true"
         />
       </button>
-      <div className={`overflow-hidden transition-all duration-300 lg:h-auto lg:opacity-100 ${isOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0 lg:max-h-none'}`}>
+      <div
+        id={sectionId}
+        className={`overflow-hidden transition-all duration-300 lg:h-auto lg:opacity-100 ${isOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0 lg:max-h-none'}`}
+      >
         {children}
       </div>
     </div>
@@ -43,7 +52,7 @@ const Footer: React.FC = () => {
   const linkClass = "block text-sm text-[#5f6368] hover:text-[#1a73e8] transition-colors py-2 lg:py-1.5";
 
   return (
-    <footer className="bg-[#f8f9fa] border-t border-[#dadce0] mt-auto">
+    <footer className="bg-[#f8f9fa] border-t border-[#dadce0] mt-auto" aria-label="Site footer">
       <div className="max-w-[1296px] mx-auto px-4 sm:px-8 lg:px-16 py-10 lg:py-16">
 
         {/* Link Columns */}
@@ -141,6 +150,32 @@ const Footer: React.FC = () => {
 
       </div>
 
+      {/* Credentials Bar */}
+      <div className="border-t border-[#dadce0] bg-[#f1f3f4]">
+        <div className="max-w-[1296px] mx-auto px-4 sm:px-8 lg:px-16 py-4">
+          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-8 text-xs text-[#3c4043]">
+            <div className="flex items-center gap-2">
+              <BadgeCheck size={16} className="text-[#1a73e8]" aria-hidden="true" />
+              <span className="font-medium">{CREDENTIALS.dpor.display}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Award size={16} className="text-[#1a73e8]" aria-hidden="true" />
+              <span>{CREDENTIALS.iicrc.display}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Shield size={16} className="text-[#1a73e8]" aria-hidden="true" />
+              <span>{CREDENTIALS.insurance.display}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#5f6368]">24/7 Emergency:</span>
+              <a href={SITE_PHONE.tel} className="font-medium text-[#185abc] hover:underline">
+                {SITE_PHONE.display}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-[#dadce0]">
         <div className="max-w-[1296px] mx-auto px-4 sm:px-8 lg:px-16 py-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -151,7 +186,7 @@ const Footer: React.FC = () => {
             <Link to="/contact/" className="hover:text-[#1a73e8] transition-colors">Contact</Link>
           </div>
           <p className="text-xs text-[#5f6368]">
-            &copy; {new Date().getFullYear()} Flood Doctor. All rights reserved.
+            &copy; {new Date().getFullYear()} {SITE_INFO.legalName}. All rights reserved. Licensed in Virginia.
           </p>
         </div>
       </div>
