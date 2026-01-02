@@ -140,9 +140,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <span className="font-display font-bold text-lg text-gray-900 tracking-tight">
             FLOOD DOCTOR
           </span>
-          <button 
+          <button
             onClick={onClose}
-            className="p-2 -mr-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors"
+            className="touch-target p-2 -mr-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center"
             aria-label="Close menu"
           >
             <X size={24} />

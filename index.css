@@ -27,7 +27,7 @@
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
+
   /* Hide scrollbar but keep functionality */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -35,5 +35,71 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* ============================================================================
+     NOISE TEXTURE OVERLAY
+     Usage: Add to any element with relative positioning
+     Example: <div className="relative noise-texture">
+     ============================================================================ */
+  .noise-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* ============================================================================
+     GRADIENT UTILITIES
+     Primary gradients used across the site
+     ============================================================================ */
+  .gradient-primary {
+    @apply bg-gradient-to-br from-blue-600 to-blue-700;
+  }
+  .gradient-primary-dark {
+    @apply bg-gradient-to-br from-blue-700 to-blue-900;
+  }
+  .gradient-success {
+    @apply bg-gradient-to-br from-emerald-600 to-teal-700;
+  }
+  .gradient-slate {
+    @apply bg-gradient-to-br from-slate-700 to-slate-800;
+  }
+  .gradient-hero {
+    @apply bg-gradient-to-br from-blue-700 to-cyan-600;
+  }
+
+  /* ============================================================================
+     TOUCH TARGET UTILITIES
+     Ensures minimum 44x44px touch targets per WCAG 2.5.5
+     ============================================================================ */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  .touch-target-sm {
+    @apply min-h-[36px] min-w-[36px];
+  }
+  .touch-target-lg {
+    @apply min-h-[48px] min-w-[48px];
+  }
+
+  /* Touch-friendly link/button for mobile */
+  .touch-link {
+    @apply touch-target inline-flex items-center justify-center;
+  }
+
+  /* ============================================================================
+     CUSTOM SCROLLBAR (for mega menus, modals)
+     ============================================================================ */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
   }
 }

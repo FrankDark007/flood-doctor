@@ -125,16 +125,16 @@ const Header: React.FC = () => {
         Skip to content
       </a>
 
-      {/* Header: 64px on mobile (h-16), 80px on desktop (h-20) */}
+      {/* Header: Consistent 80px height to prevent CLS */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex justify-between items-center h-20">
             
             {/* Mobile: Left Menu Button */}
             <div className="flex items-center md:hidden">
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 -ml-2 text-gray-700 hover:bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                className="touch-target p-2 -ml-2 text-gray-700 hover:bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                 aria-label="Open menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -312,9 +312,9 @@ const Header: React.FC = () => {
 
             {/* Mobile: Phone Button */}
             <div className="flex items-center md:hidden">
-              <a 
-                 href="tel:8774970007" 
-                 className={`p-2 -mr-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary ${
+              <a
+                 href="tel:8774970007"
+                 className={`touch-target p-2 -mr-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary flex items-center justify-center ${
                      isEmergencyMode ? 'text-red-600 bg-red-50' : 'text-primary hover:bg-blue-50'
                  }`}
                  aria-label="Call Now"
