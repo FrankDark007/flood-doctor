@@ -279,24 +279,20 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button
+              <a
                 href="tel:8774970007"
-                variant="primary"
-                size="lg"
-                className="bg-white text-slate-900 hover:bg-gray-100 h-16 px-10 text-lg"
+                className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-16 px-10 text-lg rounded-full transition-all"
               >
                 <Phone size={22} className="mr-3" />
                 Emergency Line
-              </Button>
-              <Button
+              </a>
+              <Link
                 to="/request/"
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10 h-16 px-10 text-lg"
+                className="inline-flex items-center justify-center font-display font-medium border border-white/30 text-white hover:bg-white/10 h-16 px-10 text-lg rounded-full transition-all"
               >
                 Schedule Assessment
                 <ArrowRight size={20} className="ml-3" />
-              </Button>
+              </Link>
             </div>
           </div>
 
