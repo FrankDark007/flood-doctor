@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
@@ -57,6 +57,33 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
     { id: 'expertise', label: 'Our Expertise' },
     { id: 'faq', label: 'FAQ' }
   ];
+
+  // Track active section on scroll using Intersection Observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all section elements
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Process steps - derived from service data or defaults
   const processSteps = service?.whatWeDo?.slice(0, 4).map((step, idx) => ({
@@ -300,29 +327,27 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
         </div>
       </section>
 
-      {/* Sticky Section Navigation - scrolls with page, sticks below header */}
-      <div className="sticky top-20 z-30 bg-white border-y border-gray-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-center h-12">
-            <nav className="flex items-center gap-1 overflow-x-auto">
-              {sections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    setActiveSection(section.id);
-                    document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors whitespace-nowrap ${
-                    activeSection === section.id
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted hover:text-text hover:bg-gray-50'
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
-            </nav>
-          </div>
+      {/* Sticky Section Navigation - Google Workspace style pill container */}
+      <div className="sticky top-20 z-30 py-3">
+        <div className="max-w-6xl mx-auto px-6 flex justify-center">
+          <nav className="inline-flex items-center gap-1 bg-white rounded-full px-2 py-1.5 shadow-lg shadow-black/5 ring-1 ring-gray-900/5">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => {
+                  setActiveSection(section.id);
+                  document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className={`px-5 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${
+                  activeSection === section.id
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                {section.label}
+              </button>
+            ))}
+          </nav>
         </div>
       </div>
 
