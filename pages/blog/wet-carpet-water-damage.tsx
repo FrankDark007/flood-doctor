@@ -1,6 +1,9 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -230,6 +233,8 @@ const WetCarpetWaterDamage: React.FC = () => {
             </p>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Water Category Classifications */}
         <section className="mb-12">
@@ -1559,7 +1564,8 @@ const WetCarpetWaterDamage: React.FC = () => {
           </div>
         </section>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/wet-carpet-water-damage/" />
+      </main>
   );
 };
 

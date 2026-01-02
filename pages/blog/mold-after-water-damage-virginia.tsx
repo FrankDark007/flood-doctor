@@ -3,6 +3,9 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 import {
   Phone,
   AlertTriangle,
@@ -391,6 +394,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
             { label: 'Blog', path: '/blog/' },
             { label: 'Mold After Water Damage', path: '#' }
           ]} />
+        <ArticleAuthor datePublished="2025-01-02" readTime="10 min read" />
 
           <div className="max-w-3xl mt-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wider mb-6">
@@ -547,6 +551,8 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
                 ))}
               </div>
             </section>
+
+          <MidArticleCTA variant="emergency" />
 
             {/* Health Effects */}
             <section className="mb-24">
@@ -775,7 +781,9 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
 
             {/* FAQ Section */}
             <section className="mb-16">
-              <GoogleStyleFAQ
+              <RelatedArticles categories={['mold', 'water-damage']} currentSlug="/blog/mold-after-water-damage-virginia/" />
+
+        <GoogleStyleFAQ
                 data={faqs}
                 title="Frequently Asked Questions"
                 className="border-none p-0"

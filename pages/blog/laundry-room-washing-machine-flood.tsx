@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const LaundryRoomWashingMachineFlood: React.FC = () => {
   const schemaMarkup = {
@@ -279,6 +282,8 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
             </div>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 pb-2 border-b-4 border-[#1a73e8]">
@@ -1207,7 +1212,8 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
           </ul>
         </aside>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/laundry-room-washing-machine-flood/" />
+      </main>
   );
 };
 

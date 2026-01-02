@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const SumpPumpFailureBasementFloodingNova: React.FC = () => {
   const schemaMarkup = {
@@ -137,6 +140,8 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
             This pressure intensifies during wet seasons, forcing water through any crack or weakness in your foundation. Homes built in the 1960s-1980s—common throughout NoVA suburbs—often have foundation drainage systems that no longer meet current demands, making sump pumps absolutely critical for basement protection.
           </p>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Warning Signs Section */}
         <section className="mb-12">
@@ -542,7 +547,8 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
           </p>
         </section>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/sump-pump-failure-basement-flooding-nova/" />
+      </main>
   );
 };
 

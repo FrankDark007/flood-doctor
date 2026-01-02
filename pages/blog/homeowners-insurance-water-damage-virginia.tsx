@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
   return (
@@ -59,6 +62,10 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li><strong>Mold growth:</strong> Limited coverage unless directly related to a covered peril</li>
           <li><strong>Foundation water intrusion:</strong> Rising groundwater, hydrostatic pressure</li>
         </ul>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>Flood Insurance vs. Homeowners Insurance in Virginia</h2>
 
@@ -481,7 +488,8 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Consider your deductible, damage extent, and claim history. If repair costs are only slightly above your deductible, paying out of pocket may be better for your long-term rates and insurability. For significant damage exceeding your deductible by $2,000+, filing a claim typically makes sense. Consult with your agent for guidance.
         </p>
       </article>
-    </main>
+      <RelatedArticles categories={['insurance', 'water-damage']} currentSlug="/blog/homeowners-insurance-water-damage-virginia/" />
+      </main>
   );
 };
 

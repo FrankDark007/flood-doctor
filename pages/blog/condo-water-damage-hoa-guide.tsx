@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const CondoWaterDamageHOAGuide: React.FC = () => {
   const schemaMarkup = {
@@ -354,6 +357,8 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
             </ol>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 pb-2 border-b-4 border-[#1a73e8]">
@@ -1220,7 +1225,8 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
           </ul>
         </aside>
       </article>
-    </main>
+      <RelatedArticles categories={['insurance', 'water-damage']} currentSlug="/blog/condo-water-damage-hoa-guide/" />
+      </main>
   );
 };
 

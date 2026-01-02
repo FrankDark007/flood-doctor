@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const WaterDamageHomeWarrantyCoverage: React.FC = () => {
   const faqSchema = {
@@ -216,6 +219,8 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
             </p>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* What Home Warranties Cover */}
         <section className="mb-10">
@@ -1036,7 +1041,8 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
           </ul>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['insurance', 'water-damage']} currentSlug="/blog/water-damage-home-warranty-coverage/" />
+      </main>
   );
 };
 

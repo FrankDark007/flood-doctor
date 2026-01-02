@@ -1,5 +1,8 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const WaterDamagedElectronicsGuide: React.FC = () => {
   const faqSchema = {
@@ -331,6 +334,8 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
               </div>
             </div>
           </section>
+
+          <MidArticleCTA variant="emergency" />
 
           {/* Section 3: Device-Specific Guidance */}
           <section>
@@ -1214,7 +1219,8 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
           </div>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/water-damaged-electronics-guide/" />
+      </main>
   );
 };
 

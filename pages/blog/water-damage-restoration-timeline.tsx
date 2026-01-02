@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const WaterDamageRestorationTimeline: React.FC = () => {
   return (
@@ -98,6 +101,10 @@ const WaterDamageRestorationTimeline: React.FC = () => {
           <li>Permit requirements for major reconstruction add 1-4 weeks</li>
           <li>Insurance approval processes may add 3-7 days before work begins</li>
         </ul>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>Complete Water Damage Restoration Timeline: Phase by Phase</h2>
 
@@ -629,7 +636,8 @@ const WaterDamageRestorationTimeline: React.FC = () => {
           Professional restoration companies provide documentation showing moisture readings have returned to normal levels (typically 12-15% for wood and drywall). You should receive a completion certificate confirming work meets IICRC standards, clearance testing if mold remediation was performed, before-and-after photos documenting restoration, and warranty information for completed work. Never consider restoration complete based on appearance alone—verify with moisture testing.
         </p>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/water-damage-restoration-timeline/" />
+      </main>
   );
 };
 

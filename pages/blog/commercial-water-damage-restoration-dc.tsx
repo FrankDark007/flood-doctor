@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const CommercialWaterDamageRestorationDC: React.FC = () => {
   return (
@@ -47,6 +50,10 @@ const CommercialWaterDamageRestorationDC: React.FC = () => {
         <p>
           According to the <a href="https://www.fema.gov/emergency-managers/risk-management/building-science/business-continuity" target="_blank" rel="noopener noreferrer">Federal Emergency Management Agency</a>, 40% of businesses never reopen after major disasters, and 25% fail within one year. While water damage may seem less catastrophic than fire or natural disasters, extended closures create the same existential threats to business continuity.
         </p>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>Common Causes of Commercial Water Damage in DC</h2>
 
@@ -624,7 +631,8 @@ const CommercialWaterDamageRestorationDC: React.FC = () => {
           Costs vary dramatically based on damage severity, property size, and required restoration scope. Minor incidents may cost $5,000-$15,000. Moderate damage typically ranges $15,000-$50,000. Severe flooding requiring extensive drying and reconstruction can exceed $100,000. Most costs are covered by commercial property insurance when damage results from covered perils. We provide detailed estimates after assessment and work directly with insurance carriers for billing.
         </p>
       </article>
-    </main>
+      <RelatedArticles categories={['commercial', 'water-damage']} currentSlug="/blog/commercial-water-damage-restoration-dc/" />
+      </main>
   );
 };
 

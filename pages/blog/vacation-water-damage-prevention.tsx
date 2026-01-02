@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const VacationWaterDamagePrevention: React.FC = () => {
   const faqSchema = {
@@ -229,6 +232,8 @@ const VacationWaterDamagePrevention: React.FC = () => {
             </blockquote>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Pre-Vacation Checklist */}
         <section className="mb-12">
@@ -900,7 +905,8 @@ const VacationWaterDamagePrevention: React.FC = () => {
           </ul>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['prevention', 'water-damage']} currentSlug="/blog/vacation-water-damage-prevention/" />
+      </main>
   );
 };
 

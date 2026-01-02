@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const SewageCleanupAlexandriaVA: React.FC = () => {
   return (
@@ -40,6 +43,10 @@ const SewageCleanupAlexandriaVA: React.FC = () => {
         <p>
           <a href="https://www.alexandriava.gov/Transportation-Environmental-Services" target="_blank" rel="noopener noreferrer">Alexandria Transportation and Environmental Services</a> has undertaken significant infrastructure improvements, including the RiverRenew tunnel project to reduce combined sewer overflows, but many private lateral lines remain vulnerable.
         </p>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>Common Causes of Sewage Backups in Alexandria Homes</h2>
 
@@ -659,7 +666,8 @@ const SewageCleanupAlexandriaVA: React.FC = () => {
           Old Town's aging infrastructure creates elevated risk. Prevention strategies include: annual video camera sewer line inspections, professional root treatment for tree intrusion, backwater valve installation (one-way valve preventing reverse flow), proper disposal practices (never flush wipes or grease), regular professional drain cleaning every 2-3 years, and eventual lateral replacement if you have clay or cast iron pipes showing deterioration. Consider service line insurance coverage for repair costs.
         </p>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'mold']} currentSlug="/blog/sewage-cleanup-alexandria-va/" />
+      </main>
   );
 };
 

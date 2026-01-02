@@ -1,6 +1,9 @@
 import React from 'react';
 import { Phone, AlertTriangle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -217,6 +220,8 @@ const HardwoodFloorWaterDamage: React.FC = () => {
             </div>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Critical Time Window */}
         <section className="mb-12">
@@ -1199,7 +1204,8 @@ const HardwoodFloorWaterDamage: React.FC = () => {
           </div>
         </section>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/hardwood-floor-water-damage/" />
+      </main>
   );
 };
 

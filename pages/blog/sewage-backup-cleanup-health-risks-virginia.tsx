@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
   const faqSchema = {
@@ -684,7 +687,8 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
           </div>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'mold']} currentSlug="/blog/sewage-backup-cleanup-health-risks-virginia/" />
+      </main>
   );
 };
 

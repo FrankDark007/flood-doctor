@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -191,6 +194,10 @@ const CommercialWaterDamageBusinessContinuity: React.FC = () => {
         <p>
           Professional service firms in Arlington face different challenges: client billing stops, but overhead continues. A law firm with 10 attorneys billing an average of $3,000 per day loses $30,000 in revenue daily during closure, while still paying salaries, rent, and fixed expenses totaling $8,000-$12,000 daily.
         </p>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>The Critical First 24-48 Hours: Emergency Response Protocol</h2>
 
@@ -1058,7 +1065,8 @@ const CommercialWaterDamageBusinessContinuity: React.FC = () => {
           </div>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['commercial', 'water-damage']} currentSlug="/blog/commercial-water-damage-business-continuity/" />
+      </main>
   );
 };
 

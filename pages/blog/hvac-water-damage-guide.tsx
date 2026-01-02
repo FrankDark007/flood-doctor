@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const HVACWaterDamageGuide: React.FC = () => {
   const faqSchema = {
@@ -229,6 +232,8 @@ const HVACWaterDamageGuide: React.FC = () => {
             </div>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Warning Signs Section */}
         <section className="mb-10">
@@ -933,7 +938,8 @@ const HVACWaterDamageGuide: React.FC = () => {
           </ul>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/hvac-water-damage-guide/" />
+      </main>
   );
 };
 

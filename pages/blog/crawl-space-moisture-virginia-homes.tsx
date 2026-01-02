@@ -1,5 +1,8 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -127,6 +130,8 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
             Areas including Fairfax County, Arlington, Alexandria, Prince William County, and Richmond see particularly severe issues due to development density, older housing stock, and high water tables in certain neighborhoods.
           </p>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -709,7 +714,8 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
           </div>
         </section>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/crawl-space-moisture-virginia-homes/" />
+      </main>
   );
 };
 

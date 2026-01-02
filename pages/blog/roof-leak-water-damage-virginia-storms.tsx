@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
   const schemaMarkup = {
@@ -213,6 +216,8 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
             Use a high-powered flashlight and check all areas of the attic, paying special attention to chimneys, skylights, vents, and roof valleys where leaks commonly develop.
           </p>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -861,7 +866,8 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
           </ul>
         </aside>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/roof-leak-water-damage-virginia-storms/" />
+      </main>
   );
 };
 

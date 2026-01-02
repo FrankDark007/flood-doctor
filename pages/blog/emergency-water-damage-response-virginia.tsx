@@ -1,5 +1,8 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const EmergencyWaterDamageArticle: React.FC = () => {
   const faqSchema = {
@@ -285,6 +288,8 @@ const EmergencyWaterDamageArticle: React.FC = () => {
             </li>
           </ol>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Section 3 */}
         <section>
@@ -820,7 +825,8 @@ const EmergencyWaterDamageArticle: React.FC = () => {
         </section>
       </div>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/emergency-water-damage-response-virginia/" />
+      </main>
   );
 };
 

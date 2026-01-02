@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const ApplianceWaterDamageGuide: React.FC = () => {
   const faqSchema = {
@@ -113,6 +116,8 @@ const ApplianceWaterDamageGuide: React.FC = () => {
             Northern Virginia homes face unique challenges due to our region's hard water content, temperature fluctuations, and the age of housing stock in areas like Old Town Alexandria and historic neighborhoods. These factors can accelerate wear on appliance seals, gaskets, and hoses.
           </p>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Dishwasher Leaks Section */}
         <section className="mb-10">
@@ -631,7 +636,8 @@ const ApplianceWaterDamageGuide: React.FC = () => {
           </ul>
         </div>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/appliance-water-damage-dishwasher-washing-machine/" />
+      </main>
   );
 };
 

@@ -3,6 +3,9 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 import {
   Phone,
   AlertTriangle,
@@ -250,6 +253,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
             { label: 'Blog', path: '/blog/' },
             { label: 'Water Damage Guide', path: '#' }
           ]} />
+        <ArticleAuthor datePublished="2025-01-02" readTime="10 min read" />
 
           <div className="max-w-3xl mt-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-6">
@@ -367,6 +371,8 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
                 ))}
               </div>
             </section>
+
+          <MidArticleCTA variant="emergency" />
 
             {/* Why Speed Matters */}
             <section className="mb-24">
@@ -571,7 +577,9 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
 
             {/* FAQ Section */}
             <section className="mb-16">
-              <GoogleStyleFAQ
+              <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/water-damage-northern-virginia-guide/" />
+
+        <GoogleStyleFAQ
                 data={faqs}
                 title="Frequently Asked Questions"
                 className="border-none p-0"

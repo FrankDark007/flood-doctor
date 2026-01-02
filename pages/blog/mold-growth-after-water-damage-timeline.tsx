@@ -1,6 +1,9 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -179,6 +182,8 @@ const MoldGrowthTimelineArticle: React.FC = () => {
             </div>
           </div>
         </section>
+
+          <MidArticleCTA variant="emergency" />
 
         {/* Day-by-Day Timeline */}
         <section className="mb-12">
@@ -582,7 +587,8 @@ const MoldGrowthTimelineArticle: React.FC = () => {
           </div>
         </section>
       </article>
-    </main>
+      <RelatedArticles categories={['mold', 'water-damage']} currentSlug="/blog/mold-growth-after-water-damage-timeline/" />
+      </main>
   );
 };
 

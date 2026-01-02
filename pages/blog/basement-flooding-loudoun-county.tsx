@@ -1,6 +1,9 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -64,6 +67,10 @@ const BasementFloodingLoudounCounty: React.FC = () => {
         <p>
           Areas like Ashburn, Leesburg, and Sterling are particularly vulnerable due to their development on former agricultural land with modified drainage patterns. The rapid suburbanization of eastern Loudoun County over the past two decades has increased impervious surfaces, exacerbating runoff issues.
         </p>
+
+        
+
+          <MidArticleCTA variant="emergency" />
 
         <h2>Primary Causes of Basement Flooding in Northern Virginia</h2>
 
@@ -365,7 +372,8 @@ const BasementFloodingLoudounCounty: React.FC = () => {
           A primary sump pump runs on household electricity and handles routine water removal. A battery backup system activates during power outages or if the primary pump fails, ensuring continuous protection during severe storms when you're most vulnerable to flooding.
         </p>
       </article>
-    </main>
+      <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/basement-flooding-loudoun-county/" />
+      </main>
   );
 };
 
