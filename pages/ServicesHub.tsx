@@ -162,7 +162,7 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       subtitle: 'Emergency extraction & drying',
       description: 'Every minute counts when water invades your home. Our crews arrive within 60 minutes with industrial extractors and drying equipment.',
       icon: Droplets,
-      link: '/services/residential/restoration-services/water-damage/',
+      link: '/services/residential/restoration-services/water-damage-restoration/',
       featured: true,
       PatternComponent: WaterPatternSVG
     },
@@ -172,7 +172,7 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       subtitle: 'Complete remediation',
       description: 'From soot removal to odor elimination, we restore properties after fire damage.',
       icon: Flame,
-      link: '/services/residential/cleanup-services/fire-smoke/',
+      link: '/services/residential/cleanup-services/fire-smoke-cleanup/',
       PatternComponent: FirePatternSVG
     },
     {
@@ -181,21 +181,21 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       subtitle: '24/7 emergency response',
       description: 'Immediate response for wind, hail, and weather-related property damage.',
       icon: Wind,
-      link: '/services/residential/restoration-services/storm-damage/',
+      link: '/services/residential/restoration-services/storm-damage-restoration/',
       PatternComponent: StormPatternSVG
     }
   ], []);
 
   const residentialRemediation = useMemo(() => [
-    { id: 'mold', title: 'Mold Remediation', description: 'Professional testing, containment, and safe removal for healthy indoor air.', icon: Bug, link: '/services/residential/cleanup-services/mold/' },
-    { id: 'sewage', title: 'Sewage Cleanup', description: 'Category 3 black water cleanup with full sanitization and decontamination.', icon: Waves, link: '/services/residential/cleanup-services/sewage/' },
-    { id: 'biohazard', title: 'Biohazard', description: 'Safe handling and disposal of biohazardous materials.', icon: Shield, link: '/services/residential/cleanup-services/biohazard/' }
+    { id: 'mold', title: 'Mold Remediation', description: 'Professional testing, containment, and safe removal for healthy indoor air.', icon: Bug, link: '/services/residential/cleanup-services/mold-remediation/' },
+    { id: 'sewage', title: 'Sewage Cleanup', description: 'Category 3 black water cleanup with full sanitization and decontamination.', icon: Waves, link: '/services/residential/cleanup-services/sewage-cleanup/' },
+    { id: 'biohazard', title: 'Biohazard', description: 'Safe handling and disposal of biohazardous materials.', icon: Shield, link: '/services/residential/cleanup-services/sewage-cleanup/' }
   ], []);
 
   const residentialSpecialty = useMemo(() => [
-    { id: 'content', title: 'Content Restoration', description: 'Document drying, electronics recovery, and personal property restoration.', icon: Box, link: '/services/residential/specialty-services/content/' },
+    { id: 'content', title: 'Content Restoration', description: 'Document drying, electronics recovery, and personal property restoration.', icon: Box, link: '/services/residential/cleanup-services/contents-cleaning-packout/' },
     { id: 'odor', title: 'Odor Removal', description: 'Hydroxyl, ozone, and thermal fogging for persistent odors.', icon: Sparkles, link: '/services/residential/cleanup-services/odor-removal/' },
-    { id: 'reconstruction', title: 'Reconstruction', description: 'From drywall to complete rebuilds—we finish what we start.', icon: Hammer, link: '/services/residential/specialty-services/reconstruction/' }
+    { id: 'reconstruction', title: 'Reconstruction', description: 'From drywall to complete rebuilds—we finish what we start.', icon: Hammer, link: '/services/residential/restoration-services/structural-drying/' }
   ], []);
 
   // COMMERCIAL Services
