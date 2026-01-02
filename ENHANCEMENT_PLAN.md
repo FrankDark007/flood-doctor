@@ -130,15 +130,28 @@
 | Add custom scrollbar | index.css | ✅ `.custom-scrollbar` |
 | Apply touch targets | Header.tsx, MobileMenu.tsx | ✅ Mobile buttons |
 
-### Testing Infrastructure
+### Testing Infrastructure — ✅ SETUP COMPLETE
 **Source:** Testing Specialist Agent
+**Status:** Infrastructure ready, sample tests passing
 
-1. **Add Vitest + RTL** — Unit testing setup
-2. **Add Playwright** — E2E testing
-3. **Priority tests:**
-   - Cost calculator logic (95% coverage)
-   - Form validation (90% coverage)
-   - Service navigation (80% coverage)
+| Action | File | Status |
+|--------|------|--------|
+| Vitest + RTL setup | vitest.config.ts | ✅ Done |
+| Test setup with mocks | test/setup.ts | ✅ Done |
+| Playwright setup | playwright.config.ts | ✅ Done |
+| Package.json scripts | package.json | ✅ test, test:run, test:ui, e2e |
+| Sample unit tests | test/*.test.ts | ✅ 23 tests passing |
+| Sample E2E tests | e2e/*.spec.ts | ✅ Navigation tests |
+
+**Commands:**
+- `npm run test` — Watch mode unit tests
+- `npm run test:run` — Single run unit tests
+- `npm run test:ui` — Vitest UI
+- `npm run e2e` — Run Playwright tests
+- `npm run e2e:ui` — Playwright UI
+- `npm run e2e:install` — Install browsers
+
+**Remaining:** Add more tests for cost calculator, forms, critical paths
 
 ### CI/CD Pipeline
 **Source:** CI/CD Engineer Agent
