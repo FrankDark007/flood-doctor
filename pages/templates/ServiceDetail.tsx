@@ -81,41 +81,49 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Process steps with colored backgrounds
+  // Process steps with colored backgrounds - Google style
+  // Badge colors match container backgrounds, text is darker shade
+  const stepColors = [
+    { bg: 'bg-[#e8f0fe]', badgeBg: 'bg-[#e8f0fe]', badgeText: 'text-[#1a73e8]' }, // Blue
+    { bg: 'bg-[#fef7e0]', badgeBg: 'bg-[#fef7e0]', badgeText: 'text-[#b06000]' }, // Yellow/Amber
+    { bg: 'bg-[#e6f4ea]', badgeBg: 'bg-[#e6f4ea]', badgeText: 'text-[#137333]' }, // Green
+    { bg: 'bg-[#fce8e6]', badgeBg: 'bg-[#fce8e6]', badgeText: 'text-[#c5221f]' }  // Red
+  ];
+
   const processSteps = service?.whatWeDo?.slice(0, 4).map((step, idx) => ({
     number: idx + 1,
     title: step.title,
     description: step.description,
     details: step.substeps || [],
-    bgColor: ['bg-[#e8f0fe]', 'bg-[#fef7e0]', 'bg-[#e6f4ea]', 'bg-[#fce8e6]'][idx % 4]
+    ...stepColors[idx % 4]
   })) || [
     {
       number: 1,
       title: 'Emergency Assessment',
       description: 'Our certified technicians arrive within 60 minutes to assess the damage using thermal cameras and moisture meters.',
       details: ['24/7 emergency response', 'Advanced detection equipment', 'Detailed damage report'],
-      bgColor: 'bg-[#e8f0fe]'
+      ...stepColors[0]
     },
     {
       number: 2,
       title: 'Water Extraction',
       description: 'Industrial-grade pumps remove standing water quickly, minimizing structural damage and preventing mold growth.',
       details: ['Commercial-grade equipment', 'Up to 10,000 gallons/hour', 'Prevents secondary damage'],
-      bgColor: 'bg-[#fef7e0]'
+      ...stepColors[1]
     },
     {
       number: 3,
       title: 'Drying & Dehumidification',
       description: 'Strategic placement of air movers and dehumidifiers ensures complete moisture removal with daily monitoring.',
       details: ['Scientific drying protocols', 'Daily moisture readings', 'IICRC standards followed'],
-      bgColor: 'bg-[#e6f4ea]'
+      ...stepColors[2]
     },
     {
       number: 4,
       title: 'Restoration & Repair',
       description: 'From minor repairs to full reconstruction, we restore your property to pre-loss condition with quality materials.',
       details: ['Licensed contractors', 'Insurance coordination', 'Quality guarantee'],
-      bgColor: 'bg-[#fce8e6]'
+      ...stepColors[3]
     }
   ];
 
@@ -284,8 +292,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
               >
                 {/* Text Content */}
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  {/* Small blue number badge */}
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#1a73e8] text-white text-sm font-medium mb-6">
+                  {/* Number badge - Google style: rounded square, matches container color */}
+                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${step.badgeBg} ${step.badgeText} text-2xl font-medium mb-6`}>
                     {step.number}
                   </div>
 
@@ -311,7 +319,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
 
                 {/* Image with colored background container */}
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className={`aspect-[4/3] rounded-3xl overflow-hidden ${step.bgColor} p-6 lg:p-8`}>
+                  <div className={`aspect-[4/3] rounded-3xl overflow-hidden ${step.bg} p-6 lg:p-8`}>
                     <img
                       src={[
                         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80',
