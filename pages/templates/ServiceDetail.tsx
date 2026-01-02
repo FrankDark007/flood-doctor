@@ -217,10 +217,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
         schema={faqSchema}
       />
 
-      {/* Sticky Navigation */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      {/* Sticky Navigation - positioned below header (80px) */}
+      <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center justify-center h-12">
             <nav className="flex items-center gap-1 overflow-x-auto">
               {sections.map((section) => (
                 <button
@@ -239,15 +239,6 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                 </button>
               ))}
             </nav>
-            <div className="flex items-center gap-3 flex-shrink-0 ml-4">
-              <a href="tel:8774970007" className="text-sm text-muted hover:text-primary flex items-center gap-2">
-                <Phone size={16} />
-                <span className="hidden sm:inline">(877) 497-0007</span>
-              </a>
-              <Button to="/request/" variant="primary" size="sm">
-                Get Help Now
-              </Button>
-            </div>
           </div>
         </div>
       </div>
