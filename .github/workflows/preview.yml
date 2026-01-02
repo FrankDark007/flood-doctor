@@ -70,7 +70,7 @@ jobs:
         continue-on-error: true
 
       - name: Comment PR
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           PREVIEW_URL: ${{ steps.deploy.outputs.url }}
           LIGHTHOUSE_FAILED: ${{ steps.lighthouse.outputs.lighthouse_failed }}
