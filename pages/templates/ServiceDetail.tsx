@@ -643,7 +643,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
 
       {/* FAQ Accordion - Google Style */}
       <section id="faq" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">
