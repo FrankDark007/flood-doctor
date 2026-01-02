@@ -37,9 +37,9 @@ const MENU_STRUCTURE = [
     type: 'accordion',
     children: [
       { label: 'All Services', path: '/services/' },
-      { label: 'Water Damage', path: '/services/residential/water-damage' },
-      { label: 'Fire & Smoke', path: '/services/residential/fire-smoke' },
-      { label: 'Mold Remediation', path: '/services/residential/mold' },
+      { label: 'Water Damage', path: '/services/residential/restoration-services/water-damage-restoration/' },
+      { label: 'Fire & Smoke', path: '/services/residential/cleanup-services/fire-smoke-cleanup/' },
+      { label: 'Mold Remediation', path: '/services/residential/cleanup-services/mold-remediation/' },
       { label: 'Commercial Services', path: '/services/commercial/' },
     ]
   },
