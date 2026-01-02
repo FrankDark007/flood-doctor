@@ -7,11 +7,7 @@ import {
   ChevronUp,
   ChevronsUpDown,
   CheckCircle2,
-  ArrowRight,
-  MessageSquare,
-  MapPin,
-  BookOpen,
-  FileText
+  ArrowRight
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
@@ -90,13 +86,37 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
     { bg: 'bg-[#fce8e6]', badgeBg: 'bg-[#fce8e6]', badgeText: 'text-[#c5221f]' }  // Red
   ];
 
-  const processSteps = service?.whatWeDo?.slice(0, 4).map((step, idx) => ({
-    number: idx + 1,
-    title: step.title,
-    description: step.description,
-    details: step.substeps || [],
-    ...stepColors[idx % 4]
-  })) || [
+  // Parse whatWeDo - handles both string format "Title: Description" and object format
+  const processSteps = service?.whatWeDo?.slice(0, 4).map((step, idx) => {
+    // Handle string format: "Title: Description"
+    if (typeof step === 'string') {
+      const colonIndex = step.indexOf(':');
+      if (colonIndex > 0) {
+        return {
+          number: idx + 1,
+          title: step.substring(0, colonIndex).trim(),
+          description: step.substring(colonIndex + 1).trim(),
+          details: [],
+          ...stepColors[idx % 4]
+        };
+      }
+      return {
+        number: idx + 1,
+        title: step,
+        description: '',
+        details: [],
+        ...stepColors[idx % 4]
+      };
+    }
+    // Handle object format
+    return {
+      number: idx + 1,
+      title: step.title,
+      description: step.description,
+      details: step.substeps || [],
+      ...stepColors[idx % 4]
+    };
+  }) || [
     {
       number: 1,
       title: 'Emergency Assessment',
@@ -151,19 +171,19 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
     }
   ];
 
-  // Resources for the resources section
+  // Resources for the resources section - with images like Google
   const resources = [
     {
       title: 'Water Damage Insurance Guide',
       description: 'Learn how to navigate the claims process and maximize your coverage.',
       link: '/resources/insurance-guide/',
-      icon: FileText
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80'
     },
     {
       title: 'Emergency Action Checklist',
       description: 'What to do in the first 24 hours after discovering water damage.',
       link: '/resources/emergency-checklists/',
-      icon: BookOpen
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&q=80'
     }
   ];
 
@@ -292,8 +312,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
               >
                 {/* Text Content */}
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  {/* Number badge - Google style: rounded square, matches container color */}
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${step.badgeBg} ${step.badgeText} text-2xl font-medium mb-6`}>
+                  {/* Number badge - Google style: small square with slight rounding */}
+                  <div className={`inline-flex items-center justify-center w-8 h-8 rounded-lg ${step.badgeBg} ${step.badgeText} text-sm font-medium mb-4`}>
                     {step.number}
                   </div>
 
@@ -359,13 +379,13 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
       <section id="expertise" className="py-20 lg:py-28 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image on LEFT */}
+            {/* Image on LEFT - no colored container, just rounded image */}
             <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-[#fef7e0] p-6 lg:p-8">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80"
                   alt="Flood Doctor restoration expert"
-                  className="w-full h-full object-cover rounded-2xl shadow-md"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -426,21 +446,27 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
               <Link
                 key={idx}
                 to={resource.link}
-                className="bg-white rounded-2xl p-8 hover:shadow-md transition-shadow group"
+                className="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
               >
-                <div className="aspect-[16/9] rounded-xl bg-[#e8f0fe] mb-6 flex items-center justify-center">
-                  <resource.icon size={48} className="text-[#1a73e8]" />
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={resource.image}
+                    alt={resource.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                  {resource.title}
-                </h3>
-                <p className="text-[16px] text-[#5f6368] mb-4">
-                  {resource.description}
-                </p>
-                <span className="inline-flex items-center text-[#1a73e8] font-medium text-[14px]">
-                  Learn more
-                  <ArrowRight size={16} className="ml-1" />
-                </span>
+                <div className="p-6">
+                  <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
+                    {resource.title}
+                  </h3>
+                  <p className="text-[16px] text-[#5f6368] mb-4">
+                    {resource.description}
+                  </p>
+                  <span className="inline-flex items-center text-[#1a73e8] font-medium text-[14px]">
+                    Learn more
+                    <ArrowRight size={16} className="ml-1" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

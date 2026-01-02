@@ -1,3 +1,14 @@
+## SESSION CONTINUITY — READ FIRST
+
+**Before doing anything:**
+1. Read `.claude/session.md` — Current task, blockers, next steps
+2. Read `.claude/project-history.md` — Complete record of all work done
+
+**Before any restart:** Update both files with current state.
+**After completing work:** Log it in project-history.md. Never lose progress.
+
+---
+
 Flood Doctor — Water Damage Restoration (Northern VA + Washington, DC)
 
 Design system:

@@ -1,9 +1,8 @@
-import React, { useState, useMemo, memo } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
   ArrowRight,
-  ArrowUpRight,
   Droplets,
   Flame,
   Bug,
@@ -18,131 +17,28 @@ import {
   Star,
   Clock,
   Shield,
-  Quote,
-  Zap,
-  Activity,
+  Briefcase,
   Thermometer,
   FileSearch,
   Hotel,
   GraduationCap,
   Factory,
-  Stethoscope
+  Stethoscope,
+  Activity
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import { generateBreadcrumbSchema, combineSchemas, generateLocalBusinessSchema } from '../utils/schema';
-import Button from '../components/ui/Button';
 
 /**
- * ServicesHub - Editorial/Magazine Style
- * Now audience-aware: shows different content for RESIDENTIAL vs COMMERCIAL
+ * ServicesHub - Google Business/Workspace Style Redesign
+ *
+ * Key changes from original:
+ * - Light backgrounds (no dark hero)
+ * - Real images instead of SVG patterns
+ * - Lighter typography (font-normal headlines)
+ * - Consistent Google spacing and colors
+ * - Clean, minimal aesthetic
  */
-
-// SVG Pattern Components for service card backgrounds - memoized to prevent re-renders
-const WaterPatternSVG = memo(() => (
-  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#0369a1" />
-        <stop offset="50%" stopColor="#0891b2" />
-        <stop offset="100%" stopColor="#06b6d4" />
-      </linearGradient>
-      <pattern id="waterWaves" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse">
-        <path d="M0 10 Q25 0 50 10 T100 10" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-      </pattern>
-      <filter id="waterGlow">
-        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#waterGrad)"/>
-    <rect width="100%" height="100%" fill="url(#waterWaves)"/>
-    <circle cx="80" cy="80" r="40" fill="rgba(255,255,255,0.08)" filter="url(#waterGlow)"/>
-    <circle cx="320" cy="150" r="60" fill="rgba(255,255,255,0.06)"/>
-    <circle cx="150" cy="300" r="80" fill="rgba(255,255,255,0.05)"/>
-    <circle cx="350" cy="350" r="30" fill="rgba(255,255,255,0.1)"/>
-    <path d="M0 200 Q100 180 200 200 T400 200" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3"/>
-    <path d="M0 250 Q100 230 200 250 T400 250" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-    <path d="M0 300 Q100 280 200 300 T400 300" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2"/>
-  </svg>
-));
-WaterPatternSVG.displayName = 'WaterPatternSVG';
-
-const FirePatternSVG = memo(() => (
-  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#dc2626" />
-        <stop offset="40%" stopColor="#ea580c" />
-        <stop offset="100%" stopColor="#f59e0b" />
-      </linearGradient>
-      <filter id="fireGlow">
-        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#fireGrad)"/>
-    <ellipse cx="100" cy="350" rx="60" ry="100" fill="rgba(255,255,255,0.08)" filter="url(#fireGlow)"/>
-    <ellipse cx="200" cy="380" rx="80" ry="120" fill="rgba(255,255,255,0.06)"/>
-    <ellipse cx="300" cy="360" rx="50" ry="90" fill="rgba(255,255,255,0.07)"/>
-    <circle cx="50" cy="100" r="4" fill="rgba(255,255,255,0.3)"/>
-    <circle cx="150" cy="60" r="3" fill="rgba(255,255,255,0.25)"/>
-    <circle cx="280" cy="80" r="5" fill="rgba(255,255,255,0.2)"/>
-    <circle cx="350" cy="120" r="3" fill="rgba(255,255,255,0.3)"/>
-    <circle cx="120" cy="150" r="2" fill="rgba(255,255,255,0.35)"/>
-    <path d="M0 150 Q50 140 100 150 T200 150 T300 150 T400 150" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-    <path d="M0 100 Q50 90 100 100 T200 100 T300 100 T400 100" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
-  </svg>
-));
-FirePatternSVG.displayName = 'FirePatternSVG';
-
-const StormPatternSVG = memo(() => (
-  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#4c1d95" />
-        <stop offset="50%" stopColor="#6366f1" />
-        <stop offset="100%" stopColor="#818cf8" />
-      </linearGradient>
-      <filter id="stormGlow">
-        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#stormGrad)"/>
-    <ellipse cx="80" cy="80" rx="70" ry="40" fill="rgba(255,255,255,0.08)"/>
-    <ellipse cx="140" cy="70" rx="50" ry="35" fill="rgba(255,255,255,0.06)"/>
-    <ellipse cx="320" cy="100" rx="80" ry="45" fill="rgba(255,255,255,0.07)"/>
-    <path d="M200 50 L180 150 L220 150 L190 280" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="4" filter="url(#stormGlow)"/>
-    <path d="M280 80 L265 160 L295 160 L270 250" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3"/>
-    <line x1="50" y1="200" x2="40" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
-    <line x1="100" y1="180" x2="90" y2="220" stroke="rgba(255,255,255,0.12)" strokeWidth="2"/>
-    <line x1="150" y1="220" x2="140" y2="260" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-    <line x1="320" y1="200" x2="310" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
-    <line x1="360" y1="180" x2="350" y2="220" stroke="rgba(255,255,255,0.12)" strokeWidth="2"/>
-    <path d="M0 300 Q100 290 150 300 Q200 310 250 300" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-    <path d="M100 340 Q150 330 200 340 Q250 350 300 340" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
-  </svg>
-));
-StormPatternSVG.displayName = 'StormPatternSVG';
-
-// Commercial-specific pattern
-const CommercialPatternSVG = memo(() => (
-  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="comGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#1e3a5f" />
-        <stop offset="50%" stopColor="#2563eb" />
-        <stop offset="100%" stopColor="#3b82f6" />
-      </linearGradient>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#comGrad)"/>
-    <rect x="50" y="150" width="80" height="200" fill="rgba(255,255,255,0.08)" rx="4"/>
-    <rect x="160" y="100" width="80" height="250" fill="rgba(255,255,255,0.06)" rx="4"/>
-    <rect x="270" y="180" width="80" height="170" fill="rgba(255,255,255,0.07)" rx="4"/>
-    <line x1="0" y1="350" x2="400" y2="350" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
-  </svg>
-));
-CommercialPatternSVG.displayName = 'CommercialPatternSVG';
 
 interface ServicesHubProps {
   title?: string;
@@ -151,29 +47,39 @@ interface ServicesHubProps {
 }
 
 const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudience }) => {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const isCommercial = filterAudience === 'COMMERCIAL';
+
+  // Service images from Unsplash
+  const serviceImages = {
+    water: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
+    fire: 'https://images.unsplash.com/photo-1486915309854-ab252002f5f3?w=600&q=80',
+    storm: 'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=600&q=80',
+    mold: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80',
+    sewage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    commercial: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
+    residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+  };
 
   // RESIDENTIAL Services
   const residentialRestoration = useMemo(() => [
     {
       id: 'water',
-      title: 'Water Damage',
+      title: 'Water Damage Restoration',
       subtitle: 'Emergency extraction & drying',
       description: 'Every minute counts when water invades your home. Our crews arrive within 60 minutes with industrial extractors and drying equipment.',
       icon: Droplets,
       link: '/services/residential/restoration-services/water-damage-restoration/',
+      image: serviceImages.water,
       featured: true,
-      PatternComponent: WaterPatternSVG
     },
     {
       id: 'fire',
-      title: 'Fire & Smoke',
+      title: 'Fire & Smoke Cleanup',
       subtitle: 'Complete remediation',
       description: 'From soot removal to odor elimination, we restore properties after fire damage.',
       icon: Flame,
       link: '/services/residential/cleanup-services/fire-smoke-cleanup/',
-      PatternComponent: FirePatternSVG
+      image: serviceImages.fire,
     },
     {
       id: 'storm',
@@ -182,7 +88,7 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       description: 'Immediate response for wind, hail, and weather-related property damage.',
       icon: Wind,
       link: '/services/residential/restoration-services/storm-damage-restoration/',
-      PatternComponent: StormPatternSVG
+      image: serviceImages.storm,
     }
   ], []);
 
@@ -207,8 +113,8 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       description: 'Fast water restoration for businesses. We scale to handle any size loss, from office floods to retail leaks.',
       icon: Droplets,
       link: '/services/commercial/restoration-services/commercial-water-damage/',
+      image: serviceImages.commercial,
       featured: true,
-      PatternComponent: WaterPatternSVG
     },
     {
       id: 'com-flood',
@@ -217,7 +123,7 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       description: 'Large-scale flood extraction for warehouses, offices, and industrial facilities.',
       icon: Waves,
       link: '/services/commercial/restoration-services/commercial-flood-cleanup/',
-      PatternComponent: CommercialPatternSVG
+      image: serviceImages.water,
     },
     {
       id: 'com-large',
@@ -226,7 +132,7 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       description: 'Scalable disaster recovery for hospitals, universities, and high-rises.',
       icon: Building2,
       link: '/services/commercial/restoration-services/large-loss-restoration/',
-      PatternComponent: StormPatternSVG
+      image: serviceImages.storm,
     }
   ], []);
 
@@ -257,23 +163,13 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
   const testimonial = useMemo(() => isCommercial ? {
     quote: "After a sprinkler malfunction flooded three floors, Flood Doctor had crews on-site within an hour. They worked around the clock so we could reopen in just 4 days.",
     author: 'Michael Chen',
-    location: 'Arlington, VA',
-    service: 'Commercial Water Damage'
+    role: 'Facility Manager',
+    location: 'Arlington, VA'
   } : {
     quote: "The Flood Doctor team arrived within 45 minutes and immediately started extracting water. They saved our hardwood floors and handled our insurance claim from start to finish.",
     author: 'Jennifer Martinez',
-    location: 'Vienna, VA',
-    service: 'Water Damage Restoration'
-  }, [isCommercial]);
-
-  const heroContent = useMemo(() => isCommercial ? {
-    label: 'Enterprise Restoration Services',
-    title: <>Enterprise-grade<br /><span className="italic font-normal">restoration</span> for<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary">your business.</span></>,
-    description: 'Minimize downtime with rapid commercial restoration. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
-  } : {
-    label: 'Complete Restoration Services',
-    title: <>When disaster strikes,<br /><span className="italic font-normal">we restore</span> what<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary">matters most.</span></>,
-    description: 'Water, fire, mold, or storm—our certified technicians are ready 24/7 to restore your property and your peace of mind.'
+    role: 'Homeowner',
+    location: 'Vienna, VA'
   }, [isCommercial]);
 
   return (
@@ -290,63 +186,84 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         )}
       />
 
-      {/* Hero - Editorial Bold */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-          <div
-            className="absolute inset-0 opacity-[0.15]"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-            }}
-          />
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
-        </div>
+      {/* Hero Section - Google Style (Light Background) */}
+      <section className="pt-12 pb-20 lg:pt-16 lg:pb-28 bg-white">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Content */}
+            <div>
+              {/* Breadcrumb */}
+              <nav className="flex items-center gap-2 text-sm text-[#5f6368] mb-8">
+                <Link to="/" className="hover:text-[#1a73e8]">Home</Link>
+                <span>/</span>
+                <Link to="/services/" className="hover:text-[#1a73e8]">Services</Link>
+                <span>/</span>
+                <span className="text-[#202124]">{isCommercial ? 'Commercial' : 'Residential'}</span>
+              </nav>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-12 bg-white/40" />
-              <span className="text-white/60 text-sm tracking-widest uppercase">{heroContent.label}</span>
+              {/* Audience Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
+                {isCommercial ? <Briefcase size={16} /> : <Home size={16} />}
+                {isCommercial ? 'Commercial Services' : 'Residential Services'}
+              </div>
+
+              <h1 className="text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6">
+                {isCommercial
+                  ? 'Enterprise restoration for your business'
+                  : 'Professional restoration for your home'
+                }
+              </h1>
+
+              <p className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-10 max-w-xl">
+                {isCommercial
+                  ? 'Minimize downtime with rapid commercial restoration. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
+                  : 'Water, fire, mold, or storm—our certified technicians are ready 24/7 to restore your property and your peace of mind.'
+                }
+              </p>
+
+              {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
+              <div className="hidden lg:flex flex-row gap-4">
+                <a
+                  href="tel:8774970007"
+                  className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
+                >
+                  <Phone size={18} className="mr-2" />
+                  (877) 497-0007
+                </a>
+                <Link
+                  to="/request/"
+                  className="inline-flex items-center justify-center border border-[#dadce0] hover:bg-[#f8f9fa] text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+                >
+                  Get free estimate
+                  <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </div>
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-8 leading-[0.95]">
-              {heroContent.title}
-            </h1>
-
-            <p className="text-xl lg:text-2xl text-white/60 mb-12 max-w-2xl leading-relaxed">
-              {heroContent.description}
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="tel:8774970007"
-                className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-16 px-10 text-lg rounded-full transition-all"
-              >
-                <Phone size={22} className="mr-3" />
-                Emergency Line
-              </a>
-              <Link
-                to="/request/"
-                className="inline-flex items-center justify-center font-display font-medium border border-white/30 text-white hover:bg-white/10 h-16 px-10 text-lg rounded-full transition-all"
-              >
-                {isCommercial ? 'Request Quote' : 'Schedule Assessment'}
-                <ArrowRight size={20} className="ml-3" />
-              </Link>
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-[#e8f0fe] p-6 lg:p-8">
+                <img
+                  src={isCommercial ? serviceImages.commercial : serviceImages.residential}
+                  alt={isCommercial ? 'Commercial restoration services' : 'Residential restoration services'}
+                  className="w-full h-full object-cover rounded-2xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-16 pt-16 border-t border-white/10">
+          {/* Stats Row */}
+          <div className="mt-16 pt-8 border-t border-[#dadce0]">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: '60 min', label: 'Response Time' },
-                { value: '10,000+', label: 'Projects Completed' },
-                { value: '4.9/5', label: 'Customer Rating' },
-                { value: '15+', label: 'Years Experience' }
+                { value: '60 min', label: 'Response time' },
+                { value: '10,000+', label: 'Projects completed' },
+                { value: '4.9/5', label: 'Customer rating' },
+                { value: '15+', label: 'Years experience' }
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="font-display text-4xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/50">{stat.label}</div>
+                  <div className="text-[32px] font-normal text-[#202124] mb-1">{stat.value}</div>
+                  <div className="text-[14px] text-[#5f6368]">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -354,96 +271,57 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         </div>
       </section>
 
-      {/* Section 1: Restoration Services - Bento Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-px w-8 bg-primary" />
-                <span className="text-primary text-sm font-semibold tracking-widest uppercase">01</span>
-              </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-text">
-                Restoration
-              </h2>
-              <p className="text-lg text-muted mt-2">
-                {isCommercial ? 'Rapid response to minimize business interruption' : 'Emergency response when every minute matters'}
-              </p>
-            </div>
-            <Link
-              to={isCommercial ? '/services/commercial/restoration-services/' : '/services/residential/restoration-services/'}
-              className="hidden md:flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
-            >
-              View all
-              <ArrowUpRight size={18} />
-            </Link>
+      {/* Section 1: Restoration Services - Image Cards */}
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+          <div className="text-center mb-12">
+            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+              {isCommercial ? 'Emergency restoration services' : 'Restoration services'}
+            </h2>
+            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
+              {isCommercial
+                ? 'Rapid response to minimize business interruption'
+                : 'Emergency response when every minute matters'
+              }
+            </p>
           </div>
 
-          {/* Bento Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Featured Large Card */}
-            {(() => {
-              const featuredService = restorationServices[0];
-              const FeaturedIcon = featuredService.icon;
-              const FeaturedPattern = featuredService.PatternComponent;
-              return (
-                <Link
-                  to={featuredService.link}
-                  className="md:col-span-2 lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-3xl p-8 lg:p-12 min-h-[400px] flex flex-col justify-end"
-                  onMouseEnter={() => setHoveredCard(featuredService.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  <FeaturedPattern />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute top-8 right-8">
-                    <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <FeaturedIcon className="text-white" size={40} />
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <div className="text-white/60 text-sm uppercase tracking-wider mb-2">{featuredService.subtitle}</div>
-                    <h3 className="font-display text-3xl lg:text-4xl font-semibold text-white mb-4">
-                      {featuredService.title}
-                    </h3>
-                    <p className="text-white/80 text-lg mb-6 max-w-lg">
-                      {featuredService.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-white font-medium">
-                      Learn more
-                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })()}
-
-            {/* Smaller Cards */}
-            {restorationServices.slice(1).map((service) => {
+          {/* Cards Grid with Real Images */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {restorationServices.map((service) => {
               const ServiceIcon = service.icon;
-              const ServicePattern = service.PatternComponent;
               return (
                 <Link
                   key={service.id}
                   to={service.link}
-                  className="group relative overflow-hidden rounded-3xl p-6 lg:p-8 flex flex-col justify-between min-h-[200px]"
-                  onMouseEnter={() => setHoveredCard(service.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
+                  className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
                 >
-                  <ServicePattern />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <div className="relative">
-                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-                      <ServiceIcon className="text-white" size={24} />
-                    </div>
+                  {/* Image */}
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="relative">
-                    <h3 className="font-display text-xl lg:text-2xl font-semibold text-white mb-2">
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-[#e8f0fe] flex items-center justify-center">
+                        <ServiceIcon className="text-[#1a73e8]" size={20} />
+                      </div>
+                      <span className="text-[12px] text-[#5f6368] uppercase tracking-wide">{service.subtitle}</span>
+                    </div>
+                    <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
                       {service.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
+                    <p className="text-[14px] text-[#5f6368] mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
                       Learn more
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
+                      <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
                 </Link>
               );
@@ -452,62 +330,39 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         </div>
       </section>
 
-      {/* Testimonial Break */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="relative bg-white rounded-3xl p-8 lg:p-12 shadow-sm">
-            <Quote className="absolute top-8 right-8 text-slate-100" size={64} />
-            <div className="relative">
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="text-amber-400 fill-amber-400" size={20} />
-                ))}
-              </div>
-              <p className="font-display text-2xl lg:text-3xl text-text leading-relaxed mb-8">
-                "{testimonial.quote}"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center text-white font-semibold text-lg">
-                  {testimonial.author.charAt(0)}
-                </div>
-                <div>
-                  <div className="font-semibold text-text">{testimonial.author}</div>
-                  <div className="text-sm text-muted">{testimonial.location} • {testimonial.service}</div>
-                </div>
-              </div>
+      {/* Testimonial Section - Clean Style */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
+          <div className="text-center">
+            <div className="flex justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="text-[#fbbc04] fill-[#fbbc04]" size={20} />
+              ))}
+            </div>
+            <blockquote className="text-[24px] lg:text-[28px] font-normal text-[#202124] leading-[1.4] mb-8">
+              "{testimonial.quote}"
+            </blockquote>
+            <div className="text-[16px] text-[#5f6368]">
+              <span className="font-medium text-[#202124]">{testimonial.author}</span>
+              <span className="mx-2">·</span>
+              <span>{testimonial.role}</span>
+              <span className="mx-2">·</span>
+              <span>{testimonial.location}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Cleanup/Remediation Services */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-12">
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-px w-8 bg-emerald-500" />
-                <span className="text-emerald-600 text-sm font-semibold tracking-widest uppercase">02</span>
-              </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-text mb-4">
-                {isCommercial ? 'Cleanup Services' : 'Remediation'}
-              </h2>
-              <p className="text-lg text-muted leading-relaxed">
-                {isCommercial
-                  ? 'Mold, sewage, and fire damage require specialized commercial treatment. Our certified technicians follow IICRC protocols with minimal business disruption.'
-                  : 'Mold, sewage, and biohazard contamination require specialized treatment. Our certified technicians follow IICRC protocols for safe, thorough remediation.'}
-              </p>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {cleanupServices.map((service, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mx-auto mb-3">
-                    <service.icon className="text-emerald-600" size={28} />
-                  </div>
-                  <div className="font-medium text-text text-sm">{service.title}</div>
-                </div>
-              ))}
-            </div>
+      {/* Section 2: Cleanup Services - Icon Cards */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+          <div className="text-center mb-12">
+            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+              {isCommercial ? 'Cleanup services' : 'Remediation services'}
+            </h2>
+            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
+              Specialized treatment following IICRC protocols for safe, thorough remediation.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -515,19 +370,21 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
               <Link
                 key={idx}
                 to={service.link}
-                className="group bg-slate-50 rounded-2xl p-6 lg:p-8 hover:bg-white hover:shadow-lg transition-all border border-transparent hover:border-gray-100"
+                className="group p-6 lg:p-8 rounded-2xl border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all bg-white"
               >
-                <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-5 group-hover:bg-emerald-500 group-hover:scale-110 transition-all">
-                  <service.icon className="text-emerald-600 group-hover:text-white transition-colors" size={28} />
+                <div className="w-12 h-12 rounded-xl bg-[#e6f4ea] flex items-center justify-center mb-5">
+                  <service.icon className="text-[#137333]" size={24} />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-text mb-2 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted mb-4">{service.description}</p>
-                <div className="flex items-center gap-2 text-emerald-600 font-medium text-sm">
+                <p className="text-[14px] text-[#5f6368] mb-4">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
                   Learn more
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </div>
+                  <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                </span>
               </Link>
             ))}
           </div>
@@ -535,23 +392,18 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       </section>
 
       {/* Section 3: Specialty Services */}
-      <section className="py-20 lg:py-28 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-8 bg-violet-400" />
-            <span className="text-violet-400 text-sm font-semibold tracking-widest uppercase">03</span>
-          </div>
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-white mb-4">
-                {isCommercial ? 'Industry Specialists' : 'Specialty Services'}
-              </h2>
-              <p className="text-xl text-white/60 max-w-lg">
-                {isCommercial
-                  ? 'Vertical expertise for healthcare, hospitality, education, and industrial facilities.'
-                  : 'Focused solutions for unique restoration challenges—from document recovery to complete reconstruction.'}
-              </p>
-            </div>
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+          <div className="text-center mb-12">
+            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+              {isCommercial ? 'Industry specialists' : 'Specialty services'}
+            </h2>
+            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
+              {isCommercial
+                ? 'Vertical expertise for healthcare, hospitality, education, and industrial facilities.'
+                : 'Focused solutions for unique restoration challenges.'
+              }
+            </p>
           </div>
 
           <div className={`grid gap-6 ${isCommercial ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
@@ -559,19 +411,17 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
               <Link
                 key={idx}
                 to={service.link}
-                className="group bg-slate-800 rounded-2xl p-6 lg:p-8 border border-slate-700 hover:bg-slate-700 hover:border-violet-500/50 transition-all"
+                className="group p-6 rounded-2xl bg-white border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all"
               >
-                <div className="w-14 h-14 rounded-xl bg-violet-500/30 flex items-center justify-center mb-5 group-hover:bg-violet-500 group-hover:scale-110 transition-all">
-                  <service.icon className="text-violet-400 group-hover:text-white transition-colors" size={28} />
+                <div className="w-12 h-12 rounded-xl bg-[#fce8e6] flex items-center justify-center mb-5">
+                  <service.icon className="text-[#c5221f]" size={24} />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors">
+                <h3 className="text-[18px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-slate-400 mb-4">{service.description}</p>
-                <div className="flex items-center gap-2 text-violet-400 font-medium text-sm">
-                  Learn more
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-[14px] text-[#5f6368]">
+                  {service.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -580,21 +430,15 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
 
       {/* Section 4: Technical Services (Commercial Only) */}
       {isCommercial && (
-        <section className="py-20 lg:py-28">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-8 bg-amber-500" />
-              <span className="text-amber-600 text-sm font-semibold tracking-widest uppercase">04</span>
-            </div>
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <h2 className="font-display text-4xl lg:text-5xl font-semibold text-text mb-4">
-                  Technical Services
-                </h2>
-                <p className="text-lg text-muted max-w-lg">
-                  Advanced diagnostics, consulting, and environmental testing for complex commercial projects.
-                </p>
-              </div>
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+            <div className="text-center mb-12">
+              <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+                Technical services
+              </h2>
+              <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
+                Advanced diagnostics, consulting, and environmental testing for complex commercial projects.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -602,19 +446,21 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
                 <Link
                   key={idx}
                   to={service.link}
-                  className="group bg-amber-50 rounded-2xl p-6 lg:p-8 hover:bg-white hover:shadow-lg transition-all border border-transparent hover:border-amber-200"
+                  className="group p-6 lg:p-8 rounded-2xl border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all bg-white"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:scale-110 transition-all">
-                    <service.icon className="text-amber-600 group-hover:text-white transition-colors" size={28} />
+                  <div className="w-12 h-12 rounded-xl bg-[#fef7e0] flex items-center justify-center mb-5">
+                    <service.icon className="text-[#b06000]" size={24} />
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-text mb-2 group-hover:text-amber-600 transition-colors">
+                  <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted mb-4">{service.description}</p>
-                  <div className="flex items-center gap-2 text-amber-600 font-medium text-sm">
+                  <p className="text-[14px] text-[#5f6368] mb-4">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
                     Learn more
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
+                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Link>
               ))}
             </div>
@@ -622,81 +468,68 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         </section>
       )}
 
-      {/* Cross-sell Section: Show opposite audience */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Cross-sell Section */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-px w-8 bg-slate-300" />
-                <span className="text-muted text-sm font-semibold tracking-widest uppercase">
-                  {isCommercial ? 'For Homeowners' : 'For Business'}
-                </span>
+            {/* Image */}
+            <div className="order-2 lg:order-1">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <img
+                  src={isCommercial ? serviceImages.residential : serviceImages.commercial}
+                  alt={isCommercial ? 'Residential services' : 'Commercial services'}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-text mb-6">
-                {isCommercial ? (
-                  <>Residential<br /><span className="italic font-normal">restoration</span></>
-                ) : (
-                  <>Commercial<br /><span className="italic font-normal">restoration</span></>
-                )}
+            </div>
+
+            {/* Content */}
+            <div className="order-1 lg:order-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f8f9fa] text-[#5f6368] text-sm mb-6">
+                {isCommercial ? <Home size={14} /> : <Briefcase size={14} />}
+                {isCommercial ? 'For Homeowners' : 'For Business'}
+              </div>
+
+              <h2 className="text-[32px] lg:text-[40px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
+                {isCommercial ? 'Residential restoration' : 'Commercial restoration'}
               </h2>
-              <p className="text-lg text-muted leading-relaxed mb-8">
+
+              <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
                 {isCommercial
                   ? 'Expert home restoration with the same quality and care. 24/7 emergency response for homeowners throughout Northern Virginia.'
-                  : 'Enterprise-grade restoration with minimal business disruption. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'}
+                  : 'Enterprise-grade restoration with minimal business disruption. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
+                }
               </p>
-
-              <div className="flex flex-wrap gap-3 mb-8">
-                {(isCommercial
-                  ? ['Water Damage', 'Fire & Smoke', 'Mold', 'Storm Damage', 'Content Restoration']
-                  : ['Office Buildings', 'Healthcare', 'Retail', 'Industrial', 'Multi-Family', 'Education']
-                ).map((type) => (
-                  <span key={type} className="px-4 py-2 rounded-full bg-slate-100 text-sm text-text">
-                    {type}
-                  </span>
-                ))}
-              </div>
 
               <Link
                 to={isCommercial ? '/services/residential/' : '/services/commercial/'}
-                className="inline-flex items-center justify-center font-display font-medium bg-primary text-white hover:bg-primaryHover h-14 px-8 rounded-full transition-all"
+                className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
               >
-                {isCommercial ? 'Residential Services' : 'Commercial Services'}
+                {isCommercial ? 'View residential services' : 'View commercial services'}
                 <ArrowRight size={18} className="ml-2" />
               </Link>
-            </div>
-
-            <div className="aspect-square rounded-3xl relative overflow-hidden">
-              <img
-                src={isCommercial
-                  ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
-                  : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80"}
-                alt={isCommercial ? "Residential home - restoration services" : "Commercial building - office restoration services"}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-12 bg-slate-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Trust Section */}
+      <section className="py-12 bg-[#f8f9fa] border-y border-[#dadce0]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Clock, title: '60-Minute Response', description: 'Guaranteed arrival time' },
-              { icon: Shield, title: 'IICRC Certified', description: 'Industry-leading standards' },
-              { icon: Star, title: '4.9/5 Rating', description: '500+ verified reviews' },
-              { icon: CheckCircle2, title: 'Licensed & Insured', description: 'Full coverage protection' }
+              { icon: Clock, title: '60-minute response', description: 'Guaranteed' },
+              { icon: Shield, title: 'IICRC certified', description: 'Industry standard' },
+              { icon: Star, title: '4.9/5 rating', description: '500+ reviews' },
+              { icon: CheckCircle2, title: 'Licensed & insured', description: 'Full protection' }
             ].map((badge, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <badge.icon className="text-primary" size={24} />
+                <div className="w-10 h-10 rounded-lg bg-white border border-[#dadce0] flex items-center justify-center flex-shrink-0">
+                  <badge.icon className="text-[#1a73e8]" size={20} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-text mb-1">{badge.title}</h3>
-                  <p className="text-sm text-muted">{badge.description}</p>
+                  <div className="text-[14px] font-medium text-[#202124]">{badge.title}</div>
+                  <div className="text-[12px] text-[#5f6368]">{badge.description}</div>
                 </div>
               </div>
             ))}
@@ -704,40 +537,29 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-600 to-cyan-500">
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-            }}
-          />
-        </div>
-
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl lg:text-6xl font-semibold text-white mb-6 leading-tight">
-            Ready to restore
-            <br />
-            <span className="italic font-normal">{isCommercial ? 'your facility?' : 'your property?'}</span>
+      {/* Bottom CTA - Google Blue */}
+      <section className="py-20 lg:py-28 bg-[#1a73e8]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
+          <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
+            Ready to get started?
           </h2>
-          <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+          <p className="text-[18px] text-white/80 mb-10">
             Free assessments. 60-minute response. Direct insurance billing.
           </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
+          <div className="hidden lg:flex flex-row justify-center gap-4">
             <a
               href="tel:8774970007"
-              className="inline-flex items-center justify-center font-display font-medium bg-white text-primary hover:bg-gray-100 h-16 px-10 text-lg rounded-full transition-all"
+              className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
             >
-              <Phone size={22} className="mr-3" />
+              <Phone size={18} className="mr-2" />
               (877) 497-0007
             </a>
             <Link
               to="/request/"
-              className="inline-flex items-center justify-center font-display font-medium border-2 border-white text-white hover:bg-white/10 h-16 px-10 text-lg rounded-full transition-all"
+              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
             >
-              Request Assessment
+              Request estimate
             </Link>
           </div>
         </div>

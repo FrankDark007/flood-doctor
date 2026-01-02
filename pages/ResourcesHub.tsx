@@ -1,16 +1,34 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
-import { 
-  FileText, 
-  HelpCircle, 
-  ShieldAlert, 
-  BookOpen, 
-  Search, 
-  ArrowRight, 
-  MessageSquare 
+import {
+  FileText,
+  HelpCircle,
+  ShieldAlert,
+  BookOpen,
+  Search,
+  ArrowRight,
+  MessageSquare,
+  Phone
 } from 'lucide-react';
-import Button from '../components/ui/Button';
+
+/**
+ * ResourcesHub - Google Support/Help Center Style Redesign
+ *
+ * Key changes:
+ * - Real images for featured resource cards
+ * - Google typography (font-normal, tracking-[-0.5px])
+ * - Google colors (#202124, #5f6368, #1a73e8)
+ * - 72px side margins
+ * - Cleaner, simpler design without decorative SVGs
+ */
+
+// Resource images from Unsplash
+const resourceImages = {
+  insurance: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
+  categories: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
+  signs: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+};
 
 const ResourcesHub: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -22,27 +40,21 @@ const ResourcesHub: React.FC = () => {
       description: "Complete step-by-step guide to filing and maximizing your water damage insurance claim.",
       icon: FileText,
       link: "/resources/insurance-claims-guide/",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
-      featured: true
+      image: resourceImages.insurance,
     },
     {
       title: "Water Damage Categories",
       description: "Understand Category 1, 2, and 3 water damage and what each means for your property.",
       icon: ShieldAlert,
       link: "/resources/water-damage-categories/",
-      color: "text-blue-600",
-      bg: "bg-blue-50",
-      featured: true
+      image: resourceImages.categories,
     },
     {
       title: "Signs of Water Damage",
       description: "Early detection guide: spot hidden water damage before it becomes a major problem.",
       icon: Search,
       link: "/resources/signs-of-water-damage/",
-      color: "text-amber-600",
-      bg: "bg-amber-50",
-      featured: true
+      image: resourceImages.signs,
     }
   ];
 
@@ -53,61 +65,44 @@ const ResourcesHub: React.FC = () => {
       description: "Transparent pricing: what water damage restoration really costs in Northern Virginia.",
       icon: FileText,
       link: "/resources/water-damage-cost-guide/",
-      color: "text-green-600",
-      bg: "bg-green-50"
     },
     {
       title: "Mold Prevention",
       description: "How to prevent mold growth after water damage and when remediation is needed.",
       icon: ShieldAlert,
       link: "/resources/mold-prevention-guide/",
-      color: "text-red-600",
-      bg: "bg-red-50"
     },
     {
       title: "Common Questions",
       description: "Answers about costs, timing, insurance, and safety.",
       icon: HelpCircle,
       link: "/resources/faq/",
-      color: "text-blue-600",
-      bg: "bg-blue-50"
     },
     {
       title: "Insurance Basics",
       description: "Overview of navigating your property insurance claim.",
       icon: FileText,
       link: "/resources/insurance-guide/",
-      color: "text-teal-600",
-      bg: "bg-teal-50"
     },
     {
       title: "Homeowner Guides",
       description: "Maintenance tips to prevent future water damage.",
       icon: BookOpen,
       link: "/resources/homeowner-guides/",
-      color: "text-yellow-600",
-      bg: "bg-yellow-50"
     },
     {
       title: "Emergency Checklists",
       description: "Immediate steps to take while waiting for our crew.",
       icon: ShieldAlert,
       link: "/resources/emergency-checklists/",
-      color: "text-rose-600",
-      bg: "bg-rose-50"
     },
     {
       title: "Communication",
       description: "How we keep you updated throughout the project.",
       icon: MessageSquare,
       link: "/resources/communication/",
-      color: "text-purple-600",
-      bg: "bg-purple-50"
     }
   ];
-
-  // Combine all resources for search
-  const allResources = [...primaryResources, ...resources];
 
   // Filter logic for search
   const filteredPrimary = primaryResources.filter(r =>
@@ -126,186 +121,188 @@ const ResourcesHub: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Resources & Guides | Insurance Claims Help"
-        description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners." 
+        description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners."
       />
-      
-      {/* 1. Search Hero (Google Support Style) */}
-      <div className="bg-subtle border-b border-border py-20 lg:py-24 relative overflow-hidden">
-        {/* Background Decor */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-            <svg width="100%" height="100%" viewBox="0 0 800 400">
-                <circle cx="800" cy="0" r="300" fill="#e8f0fe" />
-                <circle cx="0" cy="400" r="200" fill="#e6f4ea" />
-            </svg>
-        </div>
 
-        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-           <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-8">
-             How can we help you?
-           </h1>
-           
-           <div className="relative group max-w-2xl mx-auto">
-              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                 <Search size={24} className="text-muted group-focus-within:text-primary transition-colors" />
-              </div>
-              <input 
-                 type="text"
-                 placeholder="Search help topics (e.g. 'Insurance', 'Cost', 'Mold')..."
-                 className="block w-full pl-16 pr-6 py-5 rounded-full border border-transparent bg-white shadow-google text-lg placeholder-gray-400 focus:outline-none focus:border-primary/30 focus:shadow-google-hover transition-all"
-                 value={searchQuery}
-                 onChange={(e) => setSearchQuery(e.target.value)}
-              />
-           </div>
-        </div>
-      </div>
+      {/* Search Hero - Google Style */}
+      <section className="pt-20 pb-16 lg:pt-28 lg:pb-20 bg-[#f8f9fa]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
+          <h1 className="text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-8">
+            How can we help you?
+          </h1>
 
-      {/* 2. Featured Guides (Large Cards) */}
-      {filteredPrimary.length > 0 && (
-        <div className="py-16 lg:py-20 bg-gradient-to-b from-white to-slate-50/50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-1 h-8 bg-primary rounded-full" />
-              <h2 className="font-display text-2xl font-medium text-text">Essential Guides</h2>
+          <div className="relative max-w-2xl mx-auto">
+            <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+              <Search size={24} className="text-[#5f6368]" />
             </div>
+            <input
+              type="text"
+              placeholder="Search help topics..."
+              className="block w-full pl-16 pr-6 py-5 rounded-full border border-[#dadce0] bg-white text-[18px] placeholder-[#5f6368] focus:outline-none focus:border-[#1a73e8] focus:shadow-lg transition-all"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Guides - Image Cards */}
+      {filteredPrimary.length > 0 && (
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+            <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8">
+              Essential guides
+            </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {filteredPrimary.map((res, idx) => (
                 <Link
                   key={res.title}
                   to={res.link}
-                  className={`group relative overflow-hidden rounded-3xl border-2 border-transparent hover:border-primary/20 transition-all duration-300 ${
+                  className={`group bg-white rounded-2xl overflow-hidden border border-[#dadce0] hover:shadow-lg hover:border-[#1a73e8] transition-all ${
                     idx === 0 ? 'lg:col-span-2 lg:row-span-2' : ''
                   }`}
                 >
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 ${res.bg} opacity-60`} />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-transparent" />
-
-                  {/* Content */}
-                  <div className={`relative p-8 ${idx === 0 ? 'lg:p-12' : ''} h-full flex flex-col`}>
-                    <div className={`w-14 h-14 ${res.bg} ${res.color} rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                      <res.icon size={28} />
-                    </div>
-
-                    <div className="flex-grow">
-                      <h3 className={`font-display font-semibold text-text mb-3 group-hover:text-primary transition-colors ${
-                        idx === 0 ? 'text-2xl lg:text-3xl' : 'text-xl'
-                      }`}>
-                        {res.title}
-                      </h3>
-                      <p className={`text-muted leading-relaxed ${idx === 0 ? 'text-lg max-w-xl' : ''}`}>
-                        {res.description}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-6 text-primary font-medium">
-                      Read guide
-                      <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
-                    </div>
+                  {/* Image */}
+                  <div className={`overflow-hidden ${idx === 0 ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
+                    <img
+                      src={res.image}
+                      alt={res.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
 
-                  {/* Decorative Elements */}
-                  <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-primary/5 to-transparent" />
+                  {/* Content */}
+                  <div className={`p-6 ${idx === 0 ? 'lg:p-8' : ''}`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#e8f0fe] flex items-center justify-center">
+                        <res.icon className="text-[#1a73e8]" size={20} />
+                      </div>
+                    </div>
+
+                    <h3 className={`font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors ${
+                      idx === 0 ? 'text-[24px] lg:text-[28px]' : 'text-[20px]'
+                    }`}>
+                      {res.title}
+                    </h3>
+                    <p className={`text-[#5f6368] leading-relaxed ${idx === 0 ? 'text-[16px]' : 'text-[14px]'}`}>
+                      {res.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-4 text-[#1a73e8] text-[14px] font-medium">
+                      Read guide
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
+        </section>
       )}
 
-      {/* 3. More Resources Grid */}
+      {/* More Resources Grid */}
       {filteredResources.length > 0 && (
-        <div className="py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-1 h-8 bg-gray-300 rounded-full" />
-              <h2 className="font-display text-2xl font-medium text-text">More Resources</h2>
-            </div>
+        <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+            <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8">
+              More resources
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filteredResources.map((res) => (
                 <Link
                   key={res.title}
                   to={res.link}
-                  className="group flex items-start gap-4 p-5 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all bg-white"
+                  className="group p-5 rounded-2xl bg-white border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all"
                 >
-                  <div className={`w-11 h-11 ${res.bg} ${res.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <res.icon size={20} />
+                  <div className="w-11 h-11 rounded-xl bg-[#e8f0fe] flex items-center justify-center mb-4">
+                    <res.icon className="text-[#1a73e8]" size={20} />
                   </div>
-                  <div className="flex-grow min-w-0">
-                    <h3 className="font-display text-base font-medium text-text mb-1 group-hover:text-primary transition-colors truncate">
-                      {res.title}
-                    </h3>
-                    <p className="text-sm text-muted line-clamp-2">
-                      {res.description}
-                    </p>
-                  </div>
+                  <h3 className="text-[16px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
+                    {res.title}
+                  </h3>
+                  <p className="text-[14px] text-[#5f6368] line-clamp-2">
+                    {res.description}
+                  </p>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
+        </section>
       )}
 
       {/* No Results */}
       {!hasResults && (
-        <div className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center py-20 bg-gray-50 rounded-3xl">
-              <p className="text-muted">No topics found matching "{searchQuery}"</p>
+        <section className="py-20 bg-white">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
+            <div className="text-center py-16 bg-[#f8f9fa] rounded-2xl">
+              <p className="text-[#5f6368] mb-4">No topics found matching "{searchQuery}"</p>
               <button
                 onClick={() => setSearchQuery('')}
-                className="text-primary font-medium mt-2 hover:underline"
+                className="text-[#1a73e8] font-medium hover:underline"
               >
                 Clear search
               </button>
             </div>
           </div>
-        </div>
+        </section>
       )}
 
-      {/* 3. Popular Articles (Quick Links) */}
-      <div className="border-t border-gray-100 bg-white py-20">
-          <div className="max-w-4xl mx-auto px-6">
-              <h2 className="font-display text-2xl font-medium text-text mb-8 text-center">Popular Articles</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                      { label: "Does insurance cover water damage?", url: "/resources/faq/" },
-                      { label: "What to do immediately after a flood", url: "/resources/emergency-checklists/" },
-                      { label: "Understanding the drying process", url: "/resources/technology/" },
-                      { label: "How to read your moisture map", url: "/resources/technology/" },
-                      { label: "Preventing frozen pipes", url: "/resources/homeowner-guides/" },
-                      { label: "Our communication promise", url: "/resources/communication/" },
-                  ].map((article, i) => (
-                      <Link 
-                        key={i} 
-                        to={article.url}
-                        className="flex items-center justify-between p-4 rounded-xl hover:bg-subtle transition-colors group border border-transparent hover:border-gray-100"
-                      >
-                          <span className="text-text font-medium group-hover:text-primary transition-colors">{article.label}</span>
-                          <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
-                      </Link>
-                  ))}
-              </div>
+      {/* Popular Articles */}
+      <section className="py-16 lg:py-20 bg-white border-t border-[#dadce0]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
+          <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8 text-center">
+            Popular questions
+          </h2>
+          <div className="space-y-2">
+            {[
+              { label: "Does insurance cover water damage?", url: "/resources/faq/" },
+              { label: "What to do immediately after a flood", url: "/resources/emergency-checklists/" },
+              { label: "Understanding the drying process", url: "/resources/technology/" },
+              { label: "How to read your moisture map", url: "/resources/technology/" },
+              { label: "Preventing frozen pipes", url: "/resources/homeowner-guides/" },
+              { label: "Our communication promise", url: "/resources/communication/" },
+            ].map((article, i) => (
+              <Link
+                key={i}
+                to={article.url}
+                className="flex items-center justify-between p-4 rounded-xl hover:bg-[#f8f9fa] transition-colors group"
+              >
+                <span className="text-[#202124] group-hover:text-[#1a73e8] transition-colors">{article.label}</span>
+                <ArrowRight size={16} className="text-[#dadce0] group-hover:text-[#1a73e8] transition-colors" />
+              </Link>
+            ))}
           </div>
-      </div>
+        </div>
+      </section>
 
-      {/* 4. Need more help? */}
-      <div className="bg-subtle border-t border-gray-100 py-20 text-center">
-          <div className="max-w-2xl mx-auto px-6">
-              <h2 className="font-display text-2xl font-medium text-text mb-4">Still need help?</h2>
-              <p className="text-muted mb-8">Our project managers are available 24/7 to answer your questions.</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <Button to="/contact/" variant="outline" className="h-12 px-8">
-                      Contact Support
-                  </Button>
-                  <Button href="tel:8774970007" variant="primary" className="h-12 px-8">
-                      Call (877) 497-0007
-                  </Button>
-              </div>
+      {/* Need Help CTA - Google Blue */}
+      <section className="py-20 lg:py-28 bg-[#1a73e8]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
+          <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
+            Still need help?
+          </h2>
+          <p className="text-[18px] text-white/80 mb-10">
+            Our project managers are available 24/7 to answer your questions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:8774970007"
+              className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+            >
+              <Phone size={18} className="mr-2" />
+              (877) 497-0007
+            </a>
+            <Link
+              to="/contact/"
+              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
+            >
+              Contact support
+            </Link>
           </div>
-      </div>
-
+        </div>
+      </section>
     </main>
   );
 };

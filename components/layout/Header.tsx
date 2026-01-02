@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Phone, ChevronDown, Home, Briefcase, AlertTriangle } from 'lucide-react';
 import { MAIN_NAV_ITEMS } from '../../data/nav';
@@ -39,6 +39,11 @@ const Header: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
+  // Memoize onClose to prevent MobileMenu useEffect from re-running on every render
+  const handleMobileMenuClose = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
   // Close dropdowns on outside click or route change
   useEffect(() => {
     setActiveDropdown(null);
@@ -54,7 +59,7 @@ const Header: React.FC = () => {
     const handleEsc = (event: KeyboardEvent) => {
         if (event.key === 'Escape') {
             setActiveDropdown(null);
-            setMobileMenuOpen(false);
+            handleMobileMenuClose();
         }
     }
 
@@ -327,7 +332,7 @@ const Header: React.FC = () => {
         </div>
       </header>
       
-      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      <MobileMenu isOpen={mobileMenuOpen} onClose={handleMobileMenuClose} />
     </>
   );
 };
