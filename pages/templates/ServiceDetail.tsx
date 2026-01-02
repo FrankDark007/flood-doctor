@@ -689,11 +689,13 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                     }}
                     className="w-full py-5 flex items-center justify-between text-left"
                   >
-                    <span className="text-[18px] lg:text-[20px] font-normal text-[#1a73e8] pr-8 leading-relaxed">
+                    <span className={`text-[18px] lg:text-[20px] font-normal pr-8 leading-relaxed ${
+                      isOpen ? 'text-[#174ea6]' : 'text-[#1a73e8]'
+                    }`}>
                       {faq.question}
                     </span>
                     {isOpen ? (
-                      <ChevronUp size={24} className="text-[#1a73e8] flex-shrink-0" />
+                      <ChevronUp size={24} className="text-[#174ea6] flex-shrink-0" />
                     ) : (
                       <ChevronDown size={24} className="text-[#1a73e8] flex-shrink-0" />
                     )}
