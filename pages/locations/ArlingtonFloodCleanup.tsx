@@ -25,7 +25,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
   const faqs = [
     {
       question: "How quickly can you respond to flooding emergencies in Arlington, VA?",
-      answer: "We provide 24/7 emergency flood cleanup throughout Arlington with 60-90 minute response times. Our teams are strategically positioned to serve Ballston, Clarendon, Rosslyn, Crystal City, Pentagon City, and all Arlington neighborhoods. When flooding occurs, immediate response is critical—call 703-665-0505 anytime for emergency dispatch."
+      answer: "We provide 24/7 emergency flood cleanup throughout Arlington with 60-90 minute response times. Our teams are strategically positioned to serve Ballston, Clarendon, Rosslyn, Crystal City, Pentagon City, and all Arlington neighborhoods. When flooding occurs, immediate response is critical—call (877) 497-0007 anytime for emergency dispatch."
     },
     {
       question: "What causes flooding in Arlington homes and businesses?",
@@ -53,7 +53,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
     },
     {
       question: "What should I do immediately after flooding in my Arlington property?",
-      answer: "First, call us at 703-665-0505 for emergency dispatch. If safe, shut off electricity to flooded areas, stop the water source if possible, move valuables to dry areas, and document damage with photos. Do NOT enter water above ankle-deep or water that may be electrically charged. Our team will guide you through safe next steps when we arrive."
+      answer: "First, call us at (877) 497-0007 for emergency dispatch. If safe, shut off electricity to flooded areas, stop the water source if possible, move valuables to dry areas, and document damage with photos. Do NOT enter water above ankle-deep or water that may be electrically charged. Our team will guide you through safe next steps when we arrive."
     }
   ];
 
@@ -77,7 +77,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
     "image": "https://flooddoctor.com/images/logo.png",
     "@id": "https://flooddoctor.com/locations/arlington-flood-cleanup/",
     "url": "https://flooddoctor.com/locations/arlington-flood-cleanup/",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -158,7 +158,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Flood Cleanup in Arlington, VA | 24/7 Response"
-        description="24/7 emergency flood cleanup in Arlington, VA. Rapid water extraction, structural drying & restoration. Serving all Arlington neighborhoods. Call 703-665-0505 now."
+        description="24/7 emergency flood cleanup in Arlington, VA. Rapid water extraction, structural drying & restoration. Serving all Arlington neighborhoods. Call (877) 497-0007 now."
         schema={[faqSchema, localBusinessSchema]}
       />
 
@@ -184,9 +184,9 @@ const ArlingtonFloodCleanup: React.FC = () => {
               When flooding strikes, every minute counts. 24/7 emergency response serving all Arlington neighborhoods. IICRC-certified teams arrive within 60-90 minutes with industrial extraction equipment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
                 <Phone size={20} className="mr-2" />
-                CALL NOW: 703-665-0505
+                CALL NOW: (877) 497-0007
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Request Emergency Service
@@ -240,7 +240,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
                   Arlington's location along the Potomac River and proximity to Four Mile Run, Donaldson Run, and other waterways makes flooding a real risk during heavy rainfall. From historic neighborhoods in Clarendon and Ballston to modern developments in Crystal City and Pentagon City, we've helped Arlington property owners recover from floods of all sizes.
                 </p>
                 <p>
-                  Our IICRC-certified flood cleanup teams respond 24/7/365 with truck-mounted extraction equipment, industrial drying systems, and complete restoration capabilities. We handle everything from initial water removal to final reconstruction—all while working directly with your insurance company. Call <a href="tel:703-665-0505" className="text-[#1a73e8] font-medium hover:underline">703-665-0505</a> for immediate emergency dispatch.
+                  Our IICRC-certified flood cleanup teams respond 24/7/365 with truck-mounted extraction equipment, industrial drying systems, and complete restoration capabilities. We handle everything from initial water removal to final reconstruction—all while working directly with your insurance company. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for immediate emergency dispatch.
                 </p>
               </div>
             </section>
@@ -273,7 +273,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
                   {
                     step: "1",
                     title: "Emergency Contact & Dispatch",
-                    description: "Call 703-665-0505 anytime. We'll dispatch a certified team to your Arlington property within 60-90 minutes—even in the middle of the night."
+                    description: "Call (877) 497-0007 anytime. We'll dispatch a certified team to your Arlington property within 60-90 minutes—even in the middle of the night."
                   },
                   {
                     step: "2",
@@ -332,7 +332,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
                   <span className="font-medium">Safety first:</span> Don't enter flooded areas if water is above ankle-deep or if electricity is on
                 </li>
                 <li className="text-gray-800">
-                  <span className="font-medium">Call immediately:</span> <a href="tel:703-665-0505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a> — we'll dispatch emergency crews and advise on next steps
+                  <span className="font-medium">Call immediately:</span> <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> — we'll dispatch emergency crews and advise on next steps
                 </li>
                 <li className="text-gray-800">
                   <span className="font-medium">Shut off power:</span> Turn off electricity to flooded areas if you can access the breaker safely
@@ -446,9 +446,9 @@ const ArlingtonFloodCleanup: React.FC = () => {
                     Don't wait. Every minute increases damage. Call now for immediate emergency dispatch.
                   </p>
 
-                  <Button href="tel:703-665-0505" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50 mb-4">
+                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50 mb-4">
                     <Phone size={18} className="mr-2" />
-                    703-665-0505
+                    (877) 497-0007
                   </Button>
 
                   <div className="text-xs text-red-100 text-center">
@@ -547,9 +547,9 @@ const ArlingtonFloodCleanup: React.FC = () => {
           <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
             24/7 emergency response. 60-90 minute arrival. IICRC certified teams. Call now.
           </p>
-          <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
             <Phone size={20} className="mr-2" />
-            703-665-0505
+            (877) 497-0007
           </Button>
         </div>
       </div>

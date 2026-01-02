@@ -22,7 +22,7 @@ const FairfaxMoldRemoval: React.FC = () => {
   const faqs = [
     {
       question: "How quickly can you start mold removal in Fairfax?",
-      answer: "We provide same-day mold inspections and can begin containment and removal within 24 hours for Fairfax properties. Our IICRC-certified mold remediation specialists are available 24/7. Call 703-665-0505 for immediate assessment."
+      answer: "We provide same-day mold inspections and can begin containment and removal within 24 hours for Fairfax properties. Our IICRC-certified mold remediation specialists are available 24/7. Call (877) 497-0007 for immediate assessment."
     },
     {
       question: "What areas of Fairfax do you serve for mold removal?",
@@ -74,7 +74,7 @@ const FairfaxMoldRemoval: React.FC = () => {
     "image": "https://flood.doctor/images/logo.png",
     "@id": "https://flood.doctor/locations/fairfax-mold-removal",
     "url": "https://flood.doctor/locations/fairfax-mold-removal",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -232,7 +232,7 @@ const FairfaxMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal Services in Fairfax, VA | IICRC Certified"
-        description="Professional mold remediation in Fairfax, Burke, Mantua & Fair Oaks. IICRC certified. Safe containment. Insurance approved. Call 703-665-0505 for free inspection."
+        description="Professional mold remediation in Fairfax, Burke, Mantua & Fair Oaks. IICRC certified. Safe containment. Insurance approved. Call (877) 497-0007 for free inspection."
       />
 
       <script type="application/ld+json">
@@ -271,7 +271,7 @@ const FairfaxMoldRemoval: React.FC = () => {
                 className="bg-primary hover:bg-blue-700 text-lg h-14 px-8 shadow-lg"
               >
                 <Phone size={20} className="mr-2" />
-                Call 703-665-0505
+                Call (877) 497-0007
               </Button>
               <Button
                 href="/request-service"
@@ -580,7 +580,7 @@ const FairfaxMoldRemoval: React.FC = () => {
               className="bg-primary hover:bg-blue-700 text-xl h-16 px-10 shadow-lg"
             >
               <Phone size={24} className="mr-3" />
-              Call 703-665-0505
+              Call (877) 497-0007
             </Button>
           </div>
           <div className="mt-8 text-gray-300">

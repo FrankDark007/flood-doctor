@@ -68,7 +68,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
     "name": "Flood Doctor",
     "description": "24/7 Emergency Water Damage Restoration serving Northern Virginia and Washington DC",
     "url": "https://flooddoctor.com",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -125,7 +125,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage While on Vacation: Prevention Guide for Northern Virginia Homeowners"
-        description="Essential guide to preventing water damage during vacations in Northern Virginia. Learn pre-vacation checklists, smart monitoring systems, emergency response, and insurance considerations. 24/7 help: 703-665-0505"
+        description="Essential guide to preventing water damage during vacations in Northern Virginia. Learn pre-vacation checklists, smart monitoring systems, emergency response, and insurance considerations. 24/7 help: (877) 497-0007"
         structuredData={combinedSchema}
       />
 
@@ -154,10 +154,10 @@ const VacationWaterDamagePrevention: React.FC = () => {
                 <p className="text-lg">24/7 emergency water restoration for vacation-related damage in Northern Virginia</p>
               </div>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap"
               >
-                Call: 703-665-0505
+                Call: (877) 497-0007
               </a>
             </div>
           </div>
@@ -521,7 +521,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
                 <div>
                   <strong className="text-lg">Call Emergency Restoration Services</strong>
                   <p className="text-gray-700 mt-1">
-                    Contact <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a> for immediate professional water extraction and damage assessment. Extended water damage requires industrial equipment—shop vacuums are insufficient. Professional response within hours dramatically reduces total damage and costs.
+                    Contact <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> for immediate professional water extraction and damage assessment. Extended water damage requires industrial equipment—shop vacuums are insufficient. Professional response within hours dramatically reduces total damage and costs.
                   </p>
                 </div>
               </li>
@@ -669,7 +669,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
             <ul className="space-y-2 text-gray-700">
               <li><strong>Your contact information:</strong> Phone numbers, email, messaging apps</li>
               <li><strong>Alternative emergency contact:</strong> Family member or friend who can make decisions if you're unreachable</li>
-              <li><strong>Water damage restoration:</strong> Flood Doctor - <a href="tel:7036650505" className="text-[#1a73e8] font-bold">703-665-0505</a></li>
+              <li><strong>Water damage restoration:</strong> Flood Doctor - <a href="tel:7036650505" className="text-[#1a73e8] font-bold">(877) 497-0007</a></li>
               <li><strong>Plumber:</strong> Your regular plumber's 24/7 number</li>
               <li><strong>Electrician:</strong> Emergency electrical service</li>
               <li><strong>Insurance agent:</strong> Direct line and after-hours claims number</li>
@@ -785,7 +785,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
                 What should I do if I discover water damage after returning from vacation?
               </h3>
               <p className="text-gray-700">
-                Turn off the main water supply immediately, document all damage with photos and videos, turn off electricity to affected areas, contact your insurance company within 24 hours, call a professional water damage restoration company at <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a>, and begin emergency water removal. Do not delay—extended water damage is exponentially worse than fresh damage.
+                Turn off the main water supply immediately, document all damage with photos and videos, turn off electricity to affected areas, contact your insurance company within 24 hours, call a professional water damage restoration company at <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a>, and begin emergency water removal. Do not delay—extended water damage is exponentially worse than fresh damage.
               </p>
             </div>
 
@@ -878,10 +878,10 @@ const VacationWaterDamagePrevention: React.FC = () => {
             <p className="text-lg">✓ IICRC-Certified Restoration Specialists</p>
           </div>
           <a
-            href="tel:703-665-0505"
+            href="tel:8774970007"
             className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Call Now: 703-665-0505
+            Call Now: (877) 497-0007
           </a>
           <p className="mt-4 text-lg">
             Serving Arlington, Alexandria, Fairfax, Loudoun, and Prince William Counties

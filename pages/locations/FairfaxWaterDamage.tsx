@@ -22,7 +22,7 @@ const FairfaxWaterDamage: React.FC = () => {
   const faqs = [
     {
       question: "How quickly can you respond to water damage in Fairfax?",
-      answer: "We provide 24/7 emergency water damage restoration throughout Fairfax, VA and surrounding areas including Burke, Mantua, Fairfax Station, and Fair Oaks. Our average response time is under 60 minutes. Call 703-665-0505 immediately for emergency dispatch."
+      answer: "We provide 24/7 emergency water damage restoration throughout Fairfax, VA and surrounding areas including Burke, Mantua, Fairfax Station, and Fair Oaks. Our average response time is under 60 minutes. Call (877) 497-0007 immediately for emergency dispatch."
     },
     {
       question: "What areas of Fairfax do you serve?",
@@ -66,7 +66,7 @@ const FairfaxWaterDamage: React.FC = () => {
     "image": "https://flood.doctor/images/logo.png",
     "@id": "https://flood.doctor/locations/fairfax-water-damage",
     "url": "https://flood.doctor/locations/fairfax-water-damage",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -196,7 +196,7 @@ const FairfaxWaterDamage: React.FC = () => {
     {
       number: "1",
       title: "Emergency Call",
-      description: "Contact us 24/7 at 703-665-0505. We dispatch immediately to your Fairfax location."
+      description: "Contact us 24/7 at (877) 497-0007. We dispatch immediately to your Fairfax location."
     },
     {
       number: "2",
@@ -224,7 +224,7 @@ const FairfaxWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration in Fairfax, VA | 24/7 Emergency Service"
-        description="Expert water damage restoration in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Insurance approved. Call 703-665-0505 now."
+        description="Expert water damage restoration in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Insurance approved. Call (877) 497-0007 now."
       />
 
       <script type="application/ld+json">
@@ -263,7 +263,7 @@ const FairfaxWaterDamage: React.FC = () => {
                 className="bg-white text-primary hover:bg-gray-50 text-lg h-14 px-8 shadow-lg"
               >
                 <Phone size={20} className="mr-2" />
-                Call 703-665-0505 Now
+                Call (877) 497-0007 Now
               </Button>
               <Button
                 href="/request-service"
@@ -307,7 +307,7 @@ const FairfaxWaterDamage: React.FC = () => {
               className="h-12 px-6"
             >
               <Phone size={18} className="mr-2" />
-              703-665-0505
+              (877) 497-0007
             </Button>
           </div>
         </div>
@@ -506,7 +506,7 @@ const FairfaxWaterDamage: React.FC = () => {
               className="bg-white text-primary hover:bg-gray-50 text-xl h-16 px-10 shadow-lg"
             >
               <Phone size={24} className="mr-3" />
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </Button>
           </div>
           <div className="mt-8 text-blue-100">

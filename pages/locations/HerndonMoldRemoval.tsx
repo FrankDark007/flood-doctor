@@ -12,7 +12,7 @@ export default function HerndonMoldRemoval() {
         "image": "https://flooddoctor.com/logo.png",
         "@id": "https://flooddoctor.com/locations/herndon-mold-removal",
         "url": "https://flooddoctor.com/locations/herndon-mold-removal",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -56,7 +56,7 @@ export default function HerndonMoldRemoval() {
             "name": "How quickly can you respond to mold emergencies in Herndon?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer 24/7 emergency mold inspection and remediation services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our certified mold specialists can typically arrive within 60 minutes of your call to 703-665-0505."
+              "text": "We offer 24/7 emergency mold inspection and remediation services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our certified mold specialists can typically arrive within 60 minutes of your call to (877) 497-0007."
             }
           },
           {
@@ -107,8 +107,8 @@ export default function HerndonMoldRemoval() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Herndon VA | Certified Remediation | 24/7 Service | 703-665-0505"
-        description="Professional mold removal & remediation in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. Certified specialists. Call 703-665-0505!"
+        title="Mold Removal Herndon VA | Certified Remediation | 24/7 Service | (877) 497-0007"
+        description="Professional mold removal & remediation in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. Certified specialists. Call (877) 497-0007!"
         schema={schema}
       />
 
@@ -124,10 +124,10 @@ export default function HerndonMoldRemoval() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -216,7 +216,7 @@ export default function HerndonMoldRemoval() {
             </h2>
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
               <p className="text-lg text-gray-800">
-                <strong>Warning:</strong> Mold exposure can cause serious health issues. If you see or smell mold in your Herndon home, contact our certified specialists immediately at 703-665-0505.
+                <strong>Warning:</strong> Mold exposure can cause serious health issues. If you see or smell mold in your Herndon home, contact our certified specialists immediately at (877) 497-0007.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
@@ -471,10 +471,10 @@ export default function HerndonMoldRemoval() {
               Professional mold inspection, testing, and remediation throughout Herndon, VA. Our certified specialists are available 24/7 to protect your property and family.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-50 transition inline-block"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-6 text-blue-100">
               Free Mold Inspection | Certified Specialists | Insurance Approved

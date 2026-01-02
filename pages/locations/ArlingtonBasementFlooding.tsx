@@ -37,7 +37,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
     },
     {
       question: "How quickly can you respond to basement flooding in Arlington?",
-      answer: "We provide 24/7 emergency response to basement flooding throughout Arlington with typical arrival times of 60-90 minutes. Our teams serve all neighborhoods including Ballston, Clarendon, Rosslyn, Crystal City, Pentagon City, and surrounding areas. Call 703-665-0505 anytime for immediate dispatch."
+      answer: "We provide 24/7 emergency response to basement flooding throughout Arlington with typical arrival times of 60-90 minutes. Our teams serve all neighborhoods including Ballston, Clarendon, Rosslyn, Crystal City, Pentagon City, and surrounding areas. Call (877) 497-0007 anytime for immediate dispatch."
     },
     {
       question: "Can you repair basement flooding damage permanently?",
@@ -77,7 +77,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
     "image": "https://flooddoctor.com/images/logo.png",
     "@id": "https://flooddoctor.com/locations/arlington-basement-flooding/",
     "url": "https://flooddoctor.com/locations/arlington-basement-flooding/",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -185,7 +185,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair in Arlington, VA | 24/7 Emergency Service"
-        description="Expert basement flooding repair in Arlington, VA. Emergency water removal, structural drying, waterproofing & permanent solutions. Call 703-665-0505 now."
+        description="Expert basement flooding repair in Arlington, VA. Emergency water removal, structural drying, waterproofing & permanent solutions. Call (877) 497-0007 now."
         schema={[faqSchema, localBusinessSchema]}
       />
 
@@ -211,9 +211,9 @@ const ArlingtonBasementFlooding: React.FC = () => {
               24/7 emergency basement flooding services in Arlington. Rapid water extraction, complete drying, and permanent waterproofing solutions. IICRC certified. Prevent future flooding.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
                 <Phone size={20} className="mr-2" />
-                703-665-0505
+                (877) 497-0007
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Get Free Estimate
@@ -267,7 +267,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
                   Arlington's location along the Potomac River, clay-heavy soil composition, and aging infrastructure make basement flooding a common problem. From historic neighborhoods like Lyon Village to modern developments in Crystal City and Pentagon City, we've helped thousands of Arlington homeowners recover from basement flooding and prevent recurrence.
                 </p>
                 <p>
-                  Our IICRC-certified team provides complete basement flooding solutions: emergency water extraction, structural drying, mold prevention, and permanent waterproofing. We don't just clean up the mess—we fix the underlying problem so it doesn't happen again. Call <a href="tel:703-665-0505" className="text-[#1a73e8] font-medium hover:underline">703-665-0505</a> for 24/7 emergency service.
+                  Our IICRC-certified team provides complete basement flooding solutions: emergency water extraction, structural drying, mold prevention, and permanent waterproofing. We don't just clean up the mess—we fix the underlying problem so it doesn't happen again. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for 24/7 emergency service.
                 </p>
               </div>
             </section>
@@ -374,7 +374,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
                   <span className="font-medium">Safety first:</span> Don't enter a flooded basement if water is near electrical outlets or you suspect electrical hazards
                 </li>
                 <li className="text-gray-800">
-                  <span className="font-medium">Call for help:</span> <a href="tel:703-665-0505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a> — our 24/7 emergency team will dispatch immediately
+                  <span className="font-medium">Call for help:</span> <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> — our 24/7 emergency team will dispatch immediately
                 </li>
                 <li className="text-gray-800">
                   <span className="font-medium">Shut off power:</span> Turn off electricity to the basement at your breaker panel if you can do so safely from outside the flooded area
@@ -488,9 +488,9 @@ const ArlingtonBasementFlooding: React.FC = () => {
                     Emergency water removal and permanent waterproofing solutions. Call now for immediate help.
                   </p>
 
-                  <Button href="tel:703-665-0505" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
+                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
                     <Phone size={18} className="mr-2" />
-                    703-665-0505
+                    (877) 497-0007
                   </Button>
 
                   <div className="text-xs text-blue-100 text-center">
@@ -588,9 +588,9 @@ const ArlingtonBasementFlooding: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             Emergency cleanup + permanent waterproofing solutions. Protect your home and your investment.
           </p>
-          <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
             <Phone size={20} className="mr-2" />
-            703-665-0505
+            (877) 497-0007
           </Button>
         </div>
       </div>

@@ -67,7 +67,7 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
     "name": "Flood Doctor",
     "@id": "https://www.flooddoctorva.com",
     "image": "https://www.flooddoctorva.com/logo.png",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "email": "info@flooddoctorva.com",
     "address": {
       "@type": "PostalAddress",
@@ -146,10 +146,10 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
               Understanding your rights and responsibilities is crucial whether you're a tenant or landlord. Professional restoration protects property value and ensures habitability compliance.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-[#1a73e8] text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg"
             >
-              Call 703-665-0505 - 24/7 Emergency Service
+              Call (877) 497-0007 - 24/7 Emergency Service
             </a>
           </div>
         </header>
@@ -817,10 +817,10 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
               >
-                Call 703-665-0505 Now
+                Call (877) 497-0007 Now
               </a>
               <p className="text-center text-blue-100">
                 Emergency response • Professional documentation • Insurance direct billing

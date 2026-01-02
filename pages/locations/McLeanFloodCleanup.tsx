@@ -7,7 +7,7 @@ const McLeanFloodCleanup: React.FC = () => {
   const locationSchema = generateLocationPageSchema(
     {
       name: 'McLean, VA',
-      description: '24/7 emergency flood cleanup and restoration in McLean, VA. Rapid water extraction, structural drying, serving Great Falls, Langley, Pimmit Hills, and Tysons. Call 703-665-0505.',
+      description: '24/7 emergency flood cleanup and restoration in McLean, VA. Rapid water extraction, structural drying, serving Great Falls, Langley, Pimmit Hills, and Tysons. Call (877) 497-0007.',
       address: {
         addressLocality: 'McLean',
         addressRegion: 'VA',
@@ -22,7 +22,7 @@ const McLeanFloodCleanup: React.FC = () => {
     [
       {
         question: 'What should I do immediately after flooding in my McLean home?',
-        answer: 'First, ensure safety—turn off electricity if safe to do so. Avoid standing water. Call us immediately at 703-665-0505 for emergency response. Document damage with photos for insurance. Remove valuables from affected areas if possible. Do not use household vacuums on water.',
+        answer: 'First, ensure safety—turn off electricity if safe to do so. Avoid standing water. Call us immediately at (877) 497-0007 for emergency response. Document damage with photos for insurance. Remove valuables from affected areas if possible. Do not use household vacuums on water.',
       },
       {
         question: 'How quickly can you respond to flood emergencies in McLean?',
@@ -39,7 +39,7 @@ const McLeanFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Flood Cleanup in McLean, VA | 24/7 Fast Response"
-        description="24/7 emergency flood cleanup in McLean, VA. Rapid water extraction and restoration serving Great Falls, Langley, Pimmit Hills & Tysons. Call 703-665-0505 now."
+        description="24/7 emergency flood cleanup in McLean, VA. Rapid water extraction and restoration serving Great Falls, Langley, Pimmit Hills & Tysons. Call (877) 497-0007 now."
         structuredData={locationSchema}
       />
 
@@ -60,13 +60,13 @@ const McLeanFloodCleanup: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </a>
             <a
               href="/request-service/"
@@ -89,7 +89,7 @@ const McLeanFloodCleanup: React.FC = () => {
             <div className="ml-4">
               <h2 className="text-2xl font-bold text-red-900 mb-2">Flooding Emergency? Act Fast!</h2>
               <p className="text-red-800 text-lg">
-                Every minute counts during flooding. Standing water causes exponential damage to McLean properties. Call <a href="tel:703-665-0505" className="font-bold underline">703-665-0505</a> immediately for emergency response. We typically arrive in under 60 minutes.
+                Every minute counts during flooding. Standing water causes exponential damage to McLean properties. Call <a href="tel:8774970007" className="font-bold underline">(877) 497-0007</a> immediately for emergency response. We typically arrive in under 60 minutes.
               </p>
             </div>
           </div>
@@ -292,7 +292,7 @@ const McLeanFloodCleanup: React.FC = () => {
               What should I do immediately after flooding in my McLean home?
             </h3>
             <p className="text-gray-600">
-              First, ensure safety—turn off electricity if safe to do so and avoid standing water. Call us immediately at 703-665-0505 for emergency response. Document damage with photos for insurance claims. Remove valuables from affected areas if possible. Do not use household vacuums on standing water as this poses electrical hazards.
+              First, ensure safety—turn off electricity if safe to do so and avoid standing water. Call us immediately at (877) 497-0007 for emergency response. Document damage with photos for insurance claims. Remove valuables from affected areas if possible. Do not use household vacuums on standing water as this poses electrical hazards.
             </p>
           </div>
 
@@ -344,13 +344,13 @@ const McLeanFloodCleanup: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg text-lg"
             >
               <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              703-665-0505
+              (877) 497-0007
             </a>
             <a
               href="/request-service/"

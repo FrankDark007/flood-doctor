@@ -23,7 +23,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
         "name": "What should I do immediately if my water heater starts leaking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at 703-665-0505 for professional assistance."
+          "text": "Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at (877) 497-0007 for professional assistance."
         }
       },
       {
@@ -68,7 +68,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
     "image": "https://flooddoctor.com/logo.png",
     "@id": "https://flooddoctor.com",
     "url": "https://flooddoctor.com",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -110,7 +110,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Heater Failure & Flooding: Prevention and Emergency Response | Northern Virginia"
-        description="Comprehensive guide to water heater failures and flooding in Northern Virginia. Learn warning signs, failure types, emergency response, and prevention strategies. 24/7 service: 703-665-0505"
+        description="Comprehensive guide to water heater failures and flooding in Northern Virginia. Learn warning signs, failure types, emergency response, and prevention strategies. 24/7 service: (877) 497-0007"
         structuredData={combinedSchema}
       />
 
@@ -139,10 +139,10 @@ const WaterHeaterFloodingGuide: React.FC = () => {
                 <p className="text-lg">Immediate response for flooding and water damage in Northern Virginia</p>
               </div>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-red-700 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
               >
-                Call: 703-665-0505
+                Call: (877) 497-0007
               </a>
             </div>
           </div>
@@ -522,7 +522,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Call Emergency Restoration</h4>
                     <p className="text-gray-700">
-                      Contact professional water damage restoration immediately: <a href="tel:703-665-0505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a>. Don't wait to "see how bad it is"—professionals can arrive quickly and prevent secondary damage that worsens by the hour.
+                      Contact professional water damage restoration immediately: <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a>. Don't wait to "see how bad it is"—professionals can arrive quickly and prevent secondary damage that worsens by the hour.
                     </p>
                   </div>
                 </div>
@@ -992,10 +992,10 @@ const WaterHeaterFloodingGuide: React.FC = () => {
               </div>
             </div>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] font-bold text-xl px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              24/7 Emergency Service: 703-665-0505
+              24/7 Emergency Service: (877) 497-0007
             </a>
           </div>
         </section>
@@ -1021,7 +1021,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
                 What should I do immediately if my water heater starts leaking?
               </h3>
               <p className="text-gray-700">
-                Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at <a href="tel:703-665-0505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a> for professional assistance.
+                Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> for professional assistance.
               </p>
             </div>
 
@@ -1125,10 +1125,10 @@ const WaterHeaterFloodingGuide: React.FC = () => {
 
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-[#1a73e8] text-white px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-700 transition-colors shadow-lg"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-sm text-gray-300">
               Free emergency inspection • Direct insurance billing • Complete restoration services
@@ -1144,7 +1144,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
             <li>• Replace water heaters proactively at 8-10 years old—planned replacement costs far less than emergency flooding</li>
             <li>• Rusty water, strange noises, and moisture around tank are critical warning signs requiring immediate action</li>
             <li>• Attic water heater failures cause 5-10 times more damage than basement installations</li>
-            <li>• Turn off water supply and power immediately when discovering leaks—call professionals at 703-665-0505</li>
+            <li>• Turn off water supply and power immediately when discovering leaks—call professionals at (877) 497-0007</li>
             <li>• Northern Virginia's hard water accelerates sediment buildup—flush tank every 6-12 months</li>
             <li>• Install drain pans, leak detectors, and automatic shutoff valves for comprehensive protection</li>
             <li>• Most insurance covers sudden failures but excludes gradual leaks from poor maintenance</li>

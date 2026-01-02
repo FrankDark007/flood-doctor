@@ -340,8 +340,8 @@ const BasementFloodingLoudounCounty: React.FC = () => {
           <p className="mb-4 text-gray-700">
             Don't wait for minor water intrusion to become major damage. Contact Flood Doctor for immediate assistance or preventive consultation.
           </p>
-          <a href="tel:703-665-0505" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Call Now: 703-665-0505
+          <a href="tel:8774970007" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+            Call Now: (877) 497-0007
           </a>
         </div>
 

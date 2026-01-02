@@ -31,7 +31,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
         "name": "What should I do immediately if my sump pump fails during a storm?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at 703-665-0505. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water."
+          "text": "First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at (877) 497-0007. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water."
         }
       },
       {
@@ -57,7 +57,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Sump Pump Failure & Basement Flooding in Northern Virginia | Prevention Guide"
-        description="Expert guide to preventing sump pump failure and basement flooding in NoVA. Learn warning signs, emergency response steps, and seasonal protection strategies. 24/7 emergency service: 703-665-0505"
+        description="Expert guide to preventing sump pump failure and basement flooding in NoVA. Learn warning signs, emergency response steps, and seasonal protection strategies. 24/7 emergency service: (877) 497-0007"
         structuredData={schemaMarkup}
       />
 
@@ -74,7 +74,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
           </div>
           <div className="bg-blue-50 border-l-4 border-[#1a73e8] p-6 mb-8">
             <p className="text-lg text-gray-800">
-              <strong>Emergency Flooding?</strong> Northern Virginia homeowners facing basement flooding need immediate help. Our certified water restoration specialists respond 24/7 to sump pump failures and flooding emergencies. Call <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a> now.
+              <strong>Emergency Flooding?</strong> Northern Virginia homeowners facing basement flooding need immediate help. Our certified water restoration specialists respond 24/7 to sump pump failures and flooding emergencies. Call <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> now.
             </p>
           </div>
         </header>
@@ -275,7 +275,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
                 SAFETY FIRST: Turn off electricity to the basement at the circuit breaker if water is present. Never enter standing water with live electrical current.
               </li>
               <li className="font-semibold">
-                Call emergency flood restoration: <a href="tel:7036650505" className="text-[#1a73e8] hover:underline">703-665-0505</a> for immediate professional assistance
+                Call emergency flood restoration: <a href="tel:7036650505" className="text-[#1a73e8] hover:underline">(877) 497-0007</a> for immediate professional assistance
               </li>
               <li>
                 Move valuable items, electronics, and documents to higher ground
@@ -411,7 +411,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
               href="tel:7036650505"
               className="inline-block bg-white text-[#1a73e8] font-bold text-xl px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-sm">
               Free inspection • Insurance billing assistance • Licensed & insured
@@ -441,7 +441,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">What should I do immediately if my sump pump fails during a storm?</h3>
               <p className="text-gray-700 leading-relaxed">
-                First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at <a href="tel:7036650505" className="text-[#1a73e8] hover:underline">703-665-0505</a>. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water.
+                First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at <a href="tel:7036650505" className="text-[#1a73e8] hover:underline">(877) 497-0007</a>. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water.
               </p>
             </div>
 
@@ -488,7 +488,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
               <li>Review your insurance policy for water damage coverage gaps</li>
               <li>Schedule professional inspection if your pump is over 5 years old</li>
               <li>Consider backup power installation before the next storm season</li>
-              <li>Save our emergency number in your phone: <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">703-665-0505</a></li>
+              <li>Save our emergency number in your phone: <a href="tel:7036650505" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a></li>
             </ul>
             <p className="text-gray-700">
               For immediate assistance with sump pump failure or basement flooding, our certified water restoration specialists respond 24/7 throughout Northern Virginia. We provide emergency water extraction, complete system assessment, insurance documentation support, and comprehensive restoration services.
@@ -540,7 +540,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
             href="tel:7036650505"
             className="inline-block bg-[#1a73e8] text-white font-bold text-2xl px-10 py-5 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            📞 703-665-0505
+            📞 (877) 497-0007
           </a>
           <p className="mt-6 text-sm text-gray-300">
             Average emergency response time: Under 60 minutes

@@ -11,7 +11,7 @@ const RestonMoldRemoval: React.FC = () => {
         "name": "Flood Doctor Mold Removal - Reston VA",
         "image": "https://flood-doctor.com/images/flood-doctor-logo.png",
         "url": "https://flood-doctor.com/locations/reston-mold-removal",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -60,7 +60,7 @@ const RestonMoldRemoval: React.FC = () => {
             "name": "How do I know if I have mold in my Reston home?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call 703-665-0505 for a professional inspection."
+              "text": "Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call (877) 497-0007 for a professional inspection."
             }
           },
           {
@@ -103,8 +103,8 @@ const RestonMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Reston VA | Certified Mold Remediation | 703-665-0505"
-        description="Professional mold removal and remediation in Reston VA. Certified technicians, 24/7 service. Serving Reston Town Center, Lake Anne, South Lakes. Call 703-665-0505."
+        title="Mold Removal Reston VA | Certified Mold Remediation | (877) 497-0007"
+        description="Professional mold removal and remediation in Reston VA. Certified technicians, 24/7 service. Serving Reston Town Center, Lake Anne, South Lakes. Call (877) 497-0007."
         schema={schema}
       />
 
@@ -120,8 +120,8 @@ const RestonMoldRemoval: React.FC = () => {
                 Certified Mold Remediation | 24/7 Emergency Service
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:703-665-0505" className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
-                  Call Now: 703-665-0505
+                <a href="tel:8774970007" className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
+                  Call Now: (877) 497-0007
                 </a>
                 <a href="#contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1a73e8] transition">
                   Free Mold Inspection
@@ -332,8 +332,8 @@ const RestonMoldRemoval: React.FC = () => {
                 <div className="bg-[#1a73e8] text-white p-8 rounded-lg mb-8 sticky top-4">
                   <h3 className="text-2xl font-bold mb-4">24/7 Mold Emergency</h3>
                   <p className="mb-6">Mold won't wait. Get professional help now.</p>
-                  <a href="tel:703-665-0505" className="block bg-white text-[#1a73e8] text-center px-6 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition mb-4">
-                    703-665-0505
+                  <a href="tel:8774970007" className="block bg-white text-[#1a73e8] text-center px-6 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition mb-4">
+                    (877) 497-0007
                   </a>
                   <p className="text-sm text-blue-100 text-center">Free mold inspection available</p>
 
@@ -386,7 +386,7 @@ const RestonMoldRemoval: React.FC = () => {
                   How do I know if I have mold in my Reston home?
                 </h3>
                 <p className="text-gray-700">
-                  Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call 703-665-0505 for a professional inspection.
+                  Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call (877) 497-0007 for a professional inspection.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -434,8 +434,8 @@ const RestonMoldRemoval: React.FC = () => {
             <p className="text-xl mb-8 text-blue-100">
               Call now for professional mold inspection and certified remediation services
             </p>
-            <a href="tel:703-665-0505" className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition">
-              703-665-0505
+            <a href="tel:8774970007" className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition">
+              (877) 497-0007
             </a>
             <p className="mt-6 text-blue-100">
               Serving all of Reston VA | Free Mold Inspection | Insurance Claims Assistance

@@ -59,7 +59,7 @@ const schemaData = {
       "image": "https://flooddoctor.net/logo.png",
       "@id": "https://flooddoctor.net",
       "url": "https://flooddoctor.net",
-      "telephone": "703-665-0505",
+      "telephone": "(877) 497-0007",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -136,11 +136,11 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
               </p>
             </div>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-flex items-center gap-2 bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors whitespace-nowrap"
             >
               <Phone className="w-5 h-5" />
-              703-665-0505
+              (877) 497-0007
             </a>
           </div>
         </div>
@@ -1044,11 +1044,11 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-flex items-center gap-2 bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-6 h-6" />
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <a
                 href="/services/contents-restoration"
@@ -1075,7 +1075,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
             Professional contents restoration specialists bring expertise, equipment, and insurance knowledge that maximize both salvage rates and claim settlements. In Northern Virginia's challenging humid climate, that professional intervention often makes the difference between restoration success and total loss.
           </p>
           <p className="text-gray-700 mb-4 leading-relaxed">
-            Whether dealing with active water damage or planning prevention strategies, understanding furniture restoration potential helps you make informed decisions that protect what matters most. For immediate assistance with water damaged furniture, contact certified restoration professionals at <a href="tel:703-665-0505" className="text-[#1a73e8] hover:underline font-semibold">703-665-0505</a> for 24/7 emergency response across Northern Virginia.
+            Whether dealing with active water damage or planning prevention strategies, understanding furniture restoration potential helps you make informed decisions that protect what matters most. For immediate assistance with water damaged furniture, contact certified restoration professionals at <a href="tel:8774970007" className="text-[#1a73e8] hover:underline font-semibold">(877) 497-0007</a> for 24/7 emergency response across Northern Virginia.
           </p>
         </section>
 

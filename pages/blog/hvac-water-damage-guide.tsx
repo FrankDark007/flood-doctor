@@ -66,7 +66,7 @@ const HVACWaterDamageGuide: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "Flood Doctor",
     "description": "24/7 Emergency Water Damage Restoration and HVAC Water Damage Remediation in Northern Virginia",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "Northern Virginia",
@@ -95,7 +95,7 @@ const HVACWaterDamageGuide: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="HVAC Water Damage: AC Leaks, Condensation & Ductwork Issues | Northern Virginia Guide"
-        description="Comprehensive guide to HVAC water damage from AC leaks, frozen coils, and condensation issues in Northern Virginia. Learn emergency response, mold prevention, and when to replace vs repair. 24/7: 703-665-0505"
+        description="Comprehensive guide to HVAC water damage from AC leaks, frozen coils, and condensation issues in Northern Virginia. Learn emergency response, mold prevention, and when to replace vs repair. 24/7: (877) 497-0007"
         structuredData={combinedSchema}
       />
 
@@ -128,10 +128,10 @@ const HVACWaterDamageGuide: React.FC = () => {
               <p className="text-lg">24/7 emergency response for AC leaks and flooding in Northern Virginia</p>
             </div>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
             >
-              Call: 703-665-0505
+              Call: (877) 497-0007
             </a>
           </div>
         </div>
@@ -911,10 +911,10 @@ const HVACWaterDamageGuide: React.FC = () => {
             <p className="text-lg">✓ IICRC-Certified Restoration Technicians</p>
           </div>
           <a
-            href="tel:703-665-0505"
+            href="tel:8774970007"
             className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Call Now: 703-665-0505
+            Call Now: (877) 497-0007
           </a>
           <p className="mt-4 text-lg">
             Don't let HVAC water damage compromise your home's safety and value

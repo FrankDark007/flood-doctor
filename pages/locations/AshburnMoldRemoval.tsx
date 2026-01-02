@@ -24,7 +24,7 @@ export default function AshburnMoldRemoval() {
           "postalCode": "20147",
           "addressCountry": "US"
         },
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
         "url": "https://flooddoctor.com/locations/ashburn-mold-removal",
@@ -88,8 +88,8 @@ export default function AshburnMoldRemoval() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Ashburn Mold Removal & Remediation | Certified Experts | 703-665-0505"
-        description="Professional mold removal and remediation in Ashburn, VA. Serving Broadlands, One Loudoun, Brambleton, Lansdowne & Ashburn Village. Certified technicians, 24/7 service. Call 703-665-0505"
+        title="Ashburn Mold Removal & Remediation | Certified Experts | (877) 497-0007"
+        description="Professional mold removal and remediation in Ashburn, VA. Serving Broadlands, One Loudoun, Brambleton, Lansdowne & Ashburn Village. Certified technicians, 24/7 service. Call (877) 497-0007"
         schema={jsonLd}
       />
 
@@ -105,10 +105,10 @@ export default function AshburnMoldRemoval() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition text-center"
               >
-                Call 703-665-0505
+                Call (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -124,7 +124,7 @@ export default function AshburnMoldRemoval() {
         <section className="bg-red-600 text-white py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              🚨 24/7 Emergency Mold Response Available | Protect Your Family's Health: 703-665-0505
+              🚨 24/7 Emergency Mold Response Available | Protect Your Family's Health: (877) 497-0007
             </p>
           </div>
         </section>
@@ -248,7 +248,7 @@ export default function AshburnMoldRemoval() {
 
               <div className="bg-[#1a73e8] bg-opacity-5 border-l-4 border-[#1a73e8] p-6 mb-8">
                 <ol className="space-y-3 text-gray-700">
-                  <li><strong>1. Initial Contact:</strong> Call 703-665-0505 for consultation and scheduling</li>
+                  <li><strong>1. Initial Contact:</strong> Call (877) 497-0007 for consultation and scheduling</li>
                   <li><strong>2. Comprehensive Inspection:</strong> Visual assessment and moisture mapping</li>
                   <li><strong>3. Testing (if needed):</strong> Air and surface samples sent to certified lab</li>
                   <li><strong>4. Detailed Remediation Plan:</strong> Scope of work and timeline provided</li>
@@ -317,10 +317,10 @@ export default function AshburnMoldRemoval() {
                   Don't risk your family's health. Our certified mold remediation experts are available 24/7 for inspections and emergency response throughout Ashburn.
                 </p>
                 <a
-                  href="tel:703-665-0505"
+                  href="tel:8774970007"
                   className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition"
                 >
-                  Call 703-665-0505 Now
+                  Call (877) 497-0007 Now
                 </a>
               </div>
             </article>
@@ -411,10 +411,10 @@ export default function AshburnMoldRemoval() {
               Protecting Loudoun County families with safe, effective mold removal
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
             >
-              Call 703-665-0505
+              Call (877) 497-0007
             </a>
           </div>
         </section>

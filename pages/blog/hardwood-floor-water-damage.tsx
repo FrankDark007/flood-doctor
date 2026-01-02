@@ -57,7 +57,7 @@ const schemaData = {
       "@type": "LocalBusiness",
       "name": "Flood Doctor",
       "description": "Water damage restoration and hardwood floor drying specialists serving Northern Virginia",
-      "telephone": "703-665-0505",
+      "telephone": "(877) 497-0007",
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "VA",
@@ -116,11 +116,11 @@ const HardwoodFloorWaterDamage: React.FC = () => {
               </p>
             </div>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-flex items-center gap-2 bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors whitespace-nowrap"
             >
               <Phone className="w-5 h-5" />
-              703-665-0505
+              (877) 497-0007
             </a>
           </div>
         </div>
@@ -1128,11 +1128,11 @@ const HardwoodFloorWaterDamage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-flex items-center gap-2 bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-6 h-6" />
-                Emergency: 703-665-0505
+                Emergency: (877) 497-0007
               </a>
               <a
                 href="/services/residential/water-damage/"

@@ -23,7 +23,7 @@ const FairfaxBasementFlooding: React.FC = () => {
   const faqs = [
     {
       question: "How fast can you respond to basement flooding in Fairfax?",
-      answer: "We provide 24/7 emergency basement flooding response throughout Fairfax County. Our average response time is under 60 minutes with portable pumps and extraction equipment ready to deploy. Call 703-665-0505 immediately for emergency dispatch to Burke, Mantua, Fairfax Station, or Fair Oaks."
+      answer: "We provide 24/7 emergency basement flooding response throughout Fairfax County. Our average response time is under 60 minutes with portable pumps and extraction equipment ready to deploy. Call (877) 497-0007 immediately for emergency dispatch to Burke, Mantua, Fairfax Station, or Fair Oaks."
     },
     {
       question: "What causes basement flooding in Fairfax homes?",
@@ -75,7 +75,7 @@ const FairfaxBasementFlooding: React.FC = () => {
     "image": "https://flood.doctor/images/logo.png",
     "@id": "https://flood.doctor/locations/fairfax-basement-flooding",
     "url": "https://flood.doctor/locations/fairfax-basement-flooding",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -204,7 +204,7 @@ const FairfaxBasementFlooding: React.FC = () => {
     {
       number: "1",
       title: "Emergency Call & Dispatch",
-      description: "Call 703-665-0505 anytime. We dispatch immediately with portable pumps and extraction equipment for your Fairfax basement."
+      description: "Call (877) 497-0007 anytime. We dispatch immediately with portable pumps and extraction equipment for your Fairfax basement."
     },
     {
       number: "2",
@@ -253,7 +253,7 @@ const FairfaxBasementFlooding: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair in Fairfax, VA | 24/7 Emergency"
-        description="Expert basement flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. Finished basement restoration. Sump pump failure experts. Call 703-665-0505."
+        description="Expert basement flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. Finished basement restoration. Sump pump failure experts. Call (877) 497-0007."
       />
 
       <script type="application/ld+json">
@@ -292,7 +292,7 @@ const FairfaxBasementFlooding: React.FC = () => {
                 className="bg-white text-blue-900 hover:bg-gray-100 text-lg h-14 px-8 shadow-lg"
               >
                 <Phone size={20} className="mr-2" />
-                Call 703-665-0505 Now
+                Call (877) 497-0007 Now
               </Button>
               <Button
                 href="/request-service"
@@ -336,7 +336,7 @@ const FairfaxBasementFlooding: React.FC = () => {
               className="h-12 px-6"
             >
               <Phone size={18} className="mr-2" />
-              703-665-0505
+              (877) 497-0007
             </Button>
           </div>
         </div>
@@ -550,7 +550,7 @@ const FairfaxBasementFlooding: React.FC = () => {
               className="bg-white text-blue-900 hover:bg-gray-100 text-xl h-16 px-10 shadow-lg"
             >
               <Phone size={24} className="mr-3" />
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </Button>
           </div>
           <div className="mt-8 text-blue-200">

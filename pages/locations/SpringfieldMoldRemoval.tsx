@@ -11,7 +11,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         "name": "Flood Doctor - Mold Removal & Remediation Springfield VA",
         "image": "https://flood-doctor.com/images/flood-doctor-logo.jpg",
         "url": "https://flood-doctor.com/locations/springfield-mold-removal",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -109,8 +109,8 @@ const SpringfieldMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Springfield VA | Professional Remediation | 703-665-0505"
-        description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections. Call 703-665-0505 today."
+        title="Mold Removal Springfield VA | Professional Remediation | (877) 497-0007"
+        description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections. Call (877) 497-0007 today."
         schema={structuredData}
       />
 
@@ -126,10 +126,10 @@ const SpringfieldMoldRemoval: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors text-center"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -145,7 +145,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         <section className="bg-yellow-500 text-gray-900 py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              ⚠️ Mold Problem? Available 24/7 | Call <a href="tel:703-665-0505" className="underline font-bold">703-665-0505</a> for Free Inspection
+              ⚠️ Mold Problem? Available 24/7 | Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> for Free Inspection
             </p>
           </div>
         </section>
@@ -316,7 +316,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
 
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
               <p className="text-lg text-gray-800">
-                <strong>Don't wait:</strong> Mold spreads rapidly in Springfield's humid climate. What starts as a small patch can become a major contamination in days. Call 703-665-0505 for immediate professional assessment.
+                <strong>Don't wait:</strong> Mold spreads rapidly in Springfield's humid climate. What starts as a small patch can become a major contamination in days. Call (877) 497-0007 for immediate professional assessment.
               </p>
             </div>
           </div>
@@ -528,10 +528,10 @@ const SpringfieldMoldRemoval: React.FC = () => {
                 Experiencing any of these signs in your Springfield home?
               </p>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition-colors"
               >
-                Schedule Free Inspection: 703-665-0505
+                Schedule Free Inspection: (877) 497-0007
               </a>
             </div>
           </div>
@@ -612,10 +612,10 @@ const SpringfieldMoldRemoval: React.FC = () => {
               Don't let mold compromise your family's health or your property value. Get a free professional inspection today.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-xl hover:bg-blue-50 transition-colors"
             >
-              Call 703-665-0505 for Free Inspection
+              Call (877) 497-0007 for Free Inspection
             </a>
             <p className="mt-6 text-blue-100">
               Serving Springfield, Kingstowne, Franconia, West Springfield & All of Fairfax County

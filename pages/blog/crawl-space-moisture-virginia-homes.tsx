@@ -78,10 +78,10 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
             Our Virginia crawl space specialists respond 24/7 to moisture problems and flooding emergencies.
           </p>
           <a
-            href="tel:703-665-0505"
+            href="tel:8774970007"
             className="inline-block bg-[#1a73e8] text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg"
           >
-            Call Now: 703-665-0505
+            Call Now: (877) 497-0007
           </a>
         </div>
 
@@ -672,10 +672,10 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] font-bold px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors text-xl"
               >
-                Call 703-665-0505 Now
+                Call (877) 497-0007 Now
               </a>
               <p className="text-sm">
                 24/7 Emergency Response • Licensed & Insured • Free Estimates

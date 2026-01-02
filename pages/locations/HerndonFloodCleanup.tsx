@@ -2,7 +2,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
 
 export default function HerndonFloodCleanup() {
-  const phoneNumber = '703-665-0505';
+  const phoneNumber = '(877) 497-0007';
   const businessName = 'Flood Doctor';
   const serviceArea = ['Herndon', 'Reston', 'Sterling', 'Ashburn', 'Leesburg'];
   const neighborhoods = ['Downtown Herndon', 'Fox Mill', 'Franklin Farm', 'Worldgate'];
@@ -67,7 +67,7 @@ export default function HerndonFloodCleanup() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Flood Cleanup Herndon VA | 24/7 Flood Restoration"
-        description="24/7 emergency flood cleanup in Herndon, VA. Rapid water extraction, drying & restoration. Serving Downtown Herndon, Fox Mill, Franklin Farm. Call 703-665-0505 now!"
+        description="24/7 emergency flood cleanup in Herndon, VA. Rapid water extraction, drying & restoration. Serving Downtown Herndon, Fox Mill, Franklin Farm. Call (877) 497-0007 now!"
         schema={schemaData}
       />
 

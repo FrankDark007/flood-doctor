@@ -14,7 +14,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
         "name": "What should I do immediately after discovering water damage in my Virginia home?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call 703-665-0505 for 24/7 emergency response."
+          "text": "Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call (877) 497-0007 for 24/7 emergency response."
         }
       },
       {
@@ -57,7 +57,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "Flood Doctor",
     "image": "https://flooddoctor.com/logo.png",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "VA",
@@ -92,7 +92,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Water Damage Response in Virginia: First 24 Hours | Flood Doctor"
-        description="Expert guide to handling water damage emergencies in Northern Virginia. Learn critical first 24-hour response steps, IICRC-certified techniques, and when to call professionals at 703-665-0505."
+        description="Expert guide to handling water damage emergencies in Northern Virginia. Learn critical first 24-hour response steps, IICRC-certified techniques, and when to call professionals at (877) 497-0007."
         structuredData={combinedSchema}
       />
 
@@ -114,10 +114,10 @@ const EmergencyWaterDamageArticle: React.FC = () => {
           <p className="text-lg font-semibold mb-2">24/7 Emergency Water Damage Response</p>
           <p className="mb-4">Serving Northern Virginia with IICRC-certified technicians</p>
           <a
-            href="tel:703-665-0505"
+            href="tel:8774970007"
             className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
           >
-            Call Now: 703-665-0505
+            Call Now: (877) 497-0007
           </a>
         </div>
       </header>
@@ -265,8 +265,8 @@ const EmergencyWaterDamageArticle: React.FC = () => {
                 </p>
                 <div className="bg-[#1a73e8] bg-opacity-10 p-4 rounded-lg border-2 border-[#1a73e8]">
                   <p className="font-bold text-gray-900 mb-2">Northern Virginia 24/7 Emergency Response:</p>
-                  <a href="tel:703-665-0505" className="text-2xl font-bold text-[#1a73e8] hover:underline">
-                    703-665-0505
+                  <a href="tel:8774970007" className="text-2xl font-bold text-[#1a73e8] hover:underline">
+                    (877) 497-0007
                   </a>
                   <p className="text-sm text-gray-600 mt-2">IICRC-certified technicians • Average 60-minute response time</p>
                 </div>
@@ -714,7 +714,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
                 What should I do immediately after discovering water damage in my Virginia home?
               </h3>
               <p className="text-gray-700">
-                Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call 703-665-0505 for 24/7 emergency response.
+                Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call (877) 497-0007 for 24/7 emergency response.
               </p>
             </div>
 
@@ -773,10 +773,10 @@ const EmergencyWaterDamageArticle: React.FC = () => {
             </p>
             <div className="flex flex-col md:flex-row gap-4 items-center">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors inline-block"
               >
-                Emergency: 703-665-0505
+                Emergency: (877) 497-0007
               </a>
               <span className="text-lg">or</span>
               <a

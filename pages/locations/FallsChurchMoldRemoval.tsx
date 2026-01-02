@@ -9,7 +9,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
     "image": "https://flooddoctor.com/images/logo.png",
     "@id": "https://flooddoctor.com/locations/falls-church-mold-removal",
     "url": "https://flooddoctor.com/locations/falls-church-mold-removal",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -94,8 +94,8 @@ const FallsChurchMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Falls Church VA | Certified Mold Remediation | 703-665-0505"
-        description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service. Call 703-665-0505."
+        title="Mold Removal Falls Church VA | Certified Mold Remediation | (877) 497-0007"
+        description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service. Call (877) 497-0007."
         schema={[localBusinessSchema, faqSchema]}
       />
 
@@ -111,10 +111,10 @@ const FallsChurchMoldRemoval: React.FC = () => {
                 Certified Mold Specialists Serving Falls Church City & Surrounding Areas
               </p>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <p className="mt-4 text-lg">24/7 Emergency Mold Response Available</p>
             </div>
@@ -283,7 +283,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
               <div className="text-center">
                 <div className="bg-[#1a73e8] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
                 <h3 className="font-bold mb-2">Emergency Call</h3>
-                <p className="text-gray-700 text-sm">Contact us 24/7 at 703-665-0505 for immediate Falls Church response.</p>
+                <p className="text-gray-700 text-sm">Contact us 24/7 at (877) 497-0007 for immediate Falls Church response.</p>
               </div>
               <div className="text-center">
                 <div className="bg-[#1a73e8] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
@@ -385,10 +385,10 @@ const FallsChurchMoldRemoval: React.FC = () => {
               Don't let mold compromise your family's health and your property value. Our certified mold specialists are available 24/7 to provide immediate inspection and remediation services throughout Falls Church.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
             >
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </a>
             <p className="mt-4 text-lg">Free Mold Inspection • Certified Specialists • Insurance Accepted</p>
           </div>

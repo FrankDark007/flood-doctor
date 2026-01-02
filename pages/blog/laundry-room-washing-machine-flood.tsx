@@ -66,7 +66,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
         "@type": "LocalBusiness",
         "name": "Flood Doctor Water Damage Restoration",
         "description": "24/7 emergency water damage restoration serving Northern Virginia",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "VA",
@@ -90,7 +90,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Washing Machine Floods: Laundry Room Water Damage Response | Northern VA"
-        description="Complete guide to washing machine floods and laundry room water damage in Northern Virginia. Emergency response, prevention with steel braided hoses and auto shutoffs, insurance coverage. 24/7: 703-665-0505"
+        description="Complete guide to washing machine floods and laundry room water damage in Northern Virginia. Emergency response, prevention with steel braided hoses and auto shutoffs, insurance coverage. 24/7: (877) 497-0007"
         structuredData={schemaMarkup}
       />
 
@@ -116,7 +116,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
 
         <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
           <p className="text-lg font-semibold text-red-900 mb-2">
-            Washing Machine Flood Emergency? Call Now: <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+            Washing Machine Flood Emergency? Call Now: <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
           </p>
           <p className="text-red-800">
             24/7 emergency response for washing machine floods, laundry room water damage, and multi-floor restoration across Northern Virginia.
@@ -382,7 +382,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
                     Contact <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">professional water damage restoration</a> specialists within the first hour. Certified technicians provide critical services that prevent secondary damage.
                   </p>
                   <p className="text-gray-700">
-                    Call <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for 24/7 emergency response. Typical arrival time: 60-90 minutes across Northern Virginia.
+                    Call <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency response. Typical arrival time: 60-90 minutes across Northern Virginia.
                   </p>
                 </div>
               </div>
@@ -1042,7 +1042,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
 
           <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mt-6">
             <p className="text-lg font-semibold text-blue-900 mb-2">
-              Need Professional Restoration? Call <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+              Need Professional Restoration? Call <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
             </p>
             <p className="text-blue-800">
               24/7 emergency response • IICRC certified technicians • Complete restoration services • Insurance documentation assistance
@@ -1153,10 +1153,10 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
           </div>
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-lg">
               Serving Arlington, Alexandria, Fairfax, Loudoun, Prince William • Licensed & Insured • IICRC Certified
@@ -1182,7 +1182,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            Northern Virginia homeowners should never underestimate washing machine flood risks or attempt DIY restoration for significant floods. Professional restoration companies provide industrial equipment, certified expertise, insurance documentation support, and guaranteed results that DIY approaches cannot match. Contact certified water damage restoration specialists at <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for 24/7 emergency response across Northern Virginia.
+            Northern Virginia homeowners should never underestimate washing machine flood risks or attempt DIY restoration for significant floods. Professional restoration companies provide industrial equipment, certified expertise, insurance documentation support, and guaranteed results that DIY approaches cannot match. Contact certified water damage restoration specialists at <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency response across Northern Virginia.
           </p>
         </section>
 

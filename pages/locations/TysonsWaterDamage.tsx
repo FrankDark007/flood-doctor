@@ -10,7 +10,7 @@ const TysonsWaterDamage: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Tysons Water Damage Restoration",
     "url": "https://flood.doctor/locations/tysons-water-damage/",
-    "telephone": "+1-703-665-0505",
+    "telephone": "+1-(877) 497-0007",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tysons",
@@ -35,7 +35,7 @@ const TysonsWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Tysons VA | Commercial & Residential | Flood Doctor"
-        description="Professional water damage restoration in Tysons, VA. 24/7 emergency service for high-rises, offices, and residences. IICRC certified. Call 703-665-0505"
+        description="Professional water damage restoration in Tysons, VA. 24/7 emergency service for high-rises, offices, and residences. IICRC certified. Call (877) 497-0007"
         structuredData={structuredData}
       />
 
@@ -56,11 +56,11 @@ const TysonsWaterDamage: React.FC = () => {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
               >
                 <Phone className="w-6 h-6" />
-                703-665-0505
+                (877) 497-0007
               </a>
               <a
                 href="tel:877-497-0007"
@@ -225,11 +225,11 @@ const TysonsWaterDamage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all"
             >
               <Phone className="w-6 h-6" />
-              Residential: 703-665-0505
+              Residential: (877) 497-0007
             </a>
             <a
               href="tel:877-497-0007"

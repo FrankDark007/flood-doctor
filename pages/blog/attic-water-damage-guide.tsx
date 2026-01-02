@@ -60,7 +60,7 @@ const AtticWaterDamageGuide: React.FC = () => {
         "name": "Flood Doctor",
         "description": "Professional water damage restoration and mold remediation serving Northern Virginia and Washington DC",
         "url": "https://flooddoctor.com",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -123,7 +123,7 @@ const AtticWaterDamageGuide: React.FC = () => {
 
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-[#1a73e8] p-6 mb-8 rounded-r-lg">
           <p className="text-lg font-semibold text-gray-900 mb-2">
-            Attic Water Damage Emergency? Call Now: <a href="tel:703-665-0505" className="text-[#1a73e8] hover:underline">703-665-0505</a>
+            Attic Water Damage Emergency? Call Now: <a href="tel:8774970007" className="text-[#1a73e8] hover:underline">(877) 497-0007</a>
           </p>
           <p className="text-gray-700">
             24/7 emergency response for roof leaks, ice dam removal, and attic water damage restoration across Northern Virginia.
@@ -382,7 +382,7 @@ const AtticWaterDamageGuide: React.FC = () => {
               <strong>Professional Inspection Recommended:</strong> Never walk on your roof or enter attic spaces during active leaks or if structural integrity appears compromised.
             </p>
             <p className="text-gray-700">
-              Certified water damage restoration specialists use thermal imaging cameras, moisture meters, and safety equipment to conduct comprehensive attic assessments. Call <a href="tel:703-665-0505" className="text-[#1a73e8] hover:underline font-semibold">703-665-0505</a> for professional inspection across Northern Virginia.
+              Certified water damage restoration specialists use thermal imaging cameras, moisture meters, and safety equipment to conduct comprehensive attic assessments. Call <a href="tel:8774970007" className="text-[#1a73e8] hover:underline font-semibold">(877) 497-0007</a> for professional inspection across Northern Virginia.
             </p>
           </div>
         </section>
@@ -490,7 +490,7 @@ const AtticWaterDamageGuide: React.FC = () => {
               If ice dams form and cause active leaking, contact professional restoration services immediately. Never attempt to chip away ice with tools—this damages shingles and creates larger problems.
             </p>
             <p className="text-gray-700">
-              Professional ice dam removal uses low-pressure steam equipment that safely melts ice without roof damage. Call <a href="tel:703-665-0505" className="text-[#1a73e8] hover:underline font-semibold">703-665-0505</a> for 24/7 emergency ice dam services in Northern Virginia.
+              Professional ice dam removal uses low-pressure steam equipment that safely melts ice without roof damage. Call <a href="tel:8774970007" className="text-[#1a73e8] hover:underline font-semibold">(877) 497-0007</a> for 24/7 emergency ice dam services in Northern Virginia.
             </p>
           </div>
         </section>
@@ -893,10 +893,10 @@ const AtticWaterDamageGuide: React.FC = () => {
           </div>
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-lg">
               Serving Arlington, Alexandria, Fairfax, Loudoun County, Prince William County, and all of Northern Virginia
@@ -918,7 +918,7 @@ const AtticWaterDamageGuide: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            Whether you're experiencing active roof leaks, discovering signs of past water damage, or want preventive assessment before problems develop, certified water damage restoration specialists provide comprehensive solutions protecting your home and investment. Contact Flood Doctor at <a href="tel:703-665-0505" className="text-[#1a73e8] hover:underline font-semibold">703-665-0505</a> for expert attic water damage restoration across Northern Virginia.
+            Whether you're experiencing active roof leaks, discovering signs of past water damage, or want preventive assessment before problems develop, certified water damage restoration specialists provide comprehensive solutions protecting your home and investment. Contact Flood Doctor at <a href="tel:8774970007" className="text-[#1a73e8] hover:underline font-semibold">(877) 497-0007</a> for expert attic water damage restoration across Northern Virginia.
           </p>
         </section>
 

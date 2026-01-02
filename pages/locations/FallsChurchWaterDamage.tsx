@@ -9,7 +9,7 @@ const FallsChurchWaterDamage: React.FC = () => {
     "image": "https://flooddoctor.com/images/logo.png",
     "@id": "https://flooddoctor.com/locations/falls-church-water-damage",
     "url": "https://flooddoctor.com/locations/falls-church-water-damage",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -94,8 +94,8 @@ const FallsChurchWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Falls Church VA | 24/7 Emergency Service | 703-665-0505"
-        description="Expert water damage restoration in Falls Church, VA. Serving Falls Church City, Seven Corners, Bailey's Crossroads & Merrifield. 24/7 emergency response. Call 703-665-0505 now."
+        title="Water Damage Restoration Falls Church VA | 24/7 Emergency Service | (877) 497-0007"
+        description="Expert water damage restoration in Falls Church, VA. Serving Falls Church City, Seven Corners, Bailey's Crossroads & Merrifield. 24/7 emergency response. Call (877) 497-0007 now."
         schema={[localBusinessSchema, faqSchema]}
       />
 
@@ -111,10 +111,10 @@ const FallsChurchWaterDamage: React.FC = () => {
                 24/7 Emergency Response for Falls Church City & Surrounding Areas
               </p>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <p className="mt-4 text-lg">Available 24 Hours a Day, 7 Days a Week</p>
             </div>
@@ -227,7 +227,7 @@ const FallsChurchWaterDamage: React.FC = () => {
               <div className="text-center">
                 <div className="bg-[#1a73e8] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
                 <h3 className="font-bold mb-2">Emergency Contact</h3>
-                <p className="text-gray-700">Call 703-665-0505 anytime. We answer 24/7 and dispatch immediately to your Falls Church location.</p>
+                <p className="text-gray-700">Call (877) 497-0007 anytime. We answer 24/7 and dispatch immediately to your Falls Church location.</p>
               </div>
               <div className="text-center">
                 <div className="bg-[#1a73e8] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
@@ -295,10 +295,10 @@ const FallsChurchWaterDamage: React.FC = () => {
               Don't wait - water damage worsens by the hour. Our Falls Church team is ready to respond immediately to protect your property and begin the restoration process.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
             >
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </a>
             <p className="mt-4 text-lg">24/7 Emergency Service • Fast Response • Insurance Accepted</p>
           </div>

@@ -76,7 +76,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
     "image": "https://flooddoctor.com/images/logo.png",
     "@id": "https://flooddoctor.com/locations/arlington-mold-removal/",
     "url": "https://flooddoctor.com/locations/arlington-mold-removal/",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -157,7 +157,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal Services in Arlington, VA | IICRC Certified"
-        description="Professional mold removal and remediation in Arlington, VA. Serving Ballston, Clarendon, Rosslyn & all Arlington neighborhoods. IICRC certified. Call 703-665-0505."
+        description="Professional mold removal and remediation in Arlington, VA. Serving Ballston, Clarendon, Rosslyn & all Arlington neighborhoods. IICRC certified. Call (877) 497-0007."
         schema={[faqSchema, localBusinessSchema]}
       />
 
@@ -183,9 +183,9 @@ const ArlingtonMoldRemoval: React.FC = () => {
               IICRC-certified mold remediation serving all Arlington neighborhoods. Professional testing, safe removal, and guaranteed results. Protect your family's health with expert mold removal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
                 <Phone size={20} className="mr-2" />
-                703-665-0505
+                (877) 497-0007
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Schedule Inspection
@@ -239,7 +239,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
                   Arlington's proximity to the Potomac River and humid Mid-Atlantic climate creates ideal conditions for mold growth. Basements, crawl spaces, bathrooms, and HVAC systems are particularly vulnerable. Our IICRC-certified technicians understand local mold challenges and use EPA-approved protocols to safely remove contamination and prevent recurrence.
                 </p>
                 <p>
-                  We serve all Arlington neighborhoods including Crystal City, Pentagon City, Columbia Pike, Shirlington, and beyond. Call <a href="tel:703-665-0505" className="text-[#1a73e8] font-medium hover:underline">703-665-0505</a> for a free mold inspection and transparent estimate.
+                  We serve all Arlington neighborhoods including Crystal City, Pentagon City, Columbia Pike, Shirlington, and beyond. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for a free mold inspection and transparent estimate.
                 </p>
               </div>
             </section>
@@ -425,9 +425,9 @@ const ArlingtonMoldRemoval: React.FC = () => {
                     Professional mold inspection with air quality testing. Same-day service available throughout Arlington.
                   </p>
 
-                  <Button href="tel:703-665-0505" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
+                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
                     <Phone size={18} className="mr-2" />
-                    703-665-0505
+                    (877) 497-0007
                   </Button>
 
                   <div className="text-xs text-blue-100 text-center">
@@ -518,9 +518,9 @@ const ArlingtonMoldRemoval: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             IICRC-certified mold remediation. Safe, guaranteed removal. Free inspection. Call now.
           </p>
-          <Button href="tel:703-665-0505" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
             <Phone size={20} className="mr-2" />
-            703-665-0505
+            (877) 497-0007
           </Button>
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function HerndonWaterDamage() {
         "image": "https://flooddoctor.com/logo.png",
         "@id": "https://flooddoctor.com/locations/herndon-water-damage",
         "url": "https://flooddoctor.com/locations/herndon-water-damage",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -56,7 +56,7 @@ export default function HerndonWaterDamage() {
             "name": "How quickly can you respond to water damage emergencies in Herndon?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We provide 24/7 emergency water damage restoration services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our team typically arrives within 60 minutes of your call to 703-665-0505."
+              "text": "We provide 24/7 emergency water damage restoration services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our team typically arrives within 60 minutes of your call to (877) 497-0007."
             }
           },
           {
@@ -99,8 +99,8 @@ export default function HerndonWaterDamage() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Herndon VA | 24/7 Emergency Service | 703-665-0505"
-        description="Expert water damage restoration in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. 24/7 emergency response. Call 703-665-0505 now!"
+        title="Water Damage Restoration Herndon VA | 24/7 Emergency Service | (877) 497-0007"
+        description="Expert water damage restoration in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. 24/7 emergency response. Call (877) 497-0007 now!"
         schema={schema}
       />
 
@@ -116,10 +116,10 @@ export default function HerndonWaterDamage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -292,7 +292,7 @@ export default function HerndonWaterDamage() {
             </h2>
             <div className="grid md:grid-cols-4 gap-6">
               {[
-                { step: '1', title: 'Emergency Contact', description: 'Call 703-665-0505 for immediate dispatch' },
+                { step: '1', title: 'Emergency Contact', description: 'Call (877) 497-0007 for immediate dispatch' },
                 { step: '2', title: 'Inspection & Assessment', description: 'Thorough evaluation of water damage extent' },
                 { step: '3', title: 'Water Removal & Drying', description: 'Extraction and dehumidification process' },
                 { step: '4', title: 'Restoration & Repair', description: 'Complete restoration to pre-loss condition' },
@@ -359,10 +359,10 @@ export default function HerndonWaterDamage() {
               Serving all of Herndon, VA with 24/7 emergency water damage restoration. Our team is standing by to help restore your property.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-50 transition inline-block"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-6 text-blue-100">
               Available 24/7/365 | Licensed & Insured | Insurance Approved

@@ -57,7 +57,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
             "name": "What should I do immediately after discovering water damage in my condo?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation (703-665-0505 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%."
+              "text": "Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation ((877) 497-0007 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%."
             }
           }
         ]
@@ -68,7 +68,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
         "image": "https://flooddoctorva.com/logo.png",
         "@id": "https://flooddoctorva.com",
         "url": "https://flooddoctorva.com",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -156,7 +156,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
           <p className="text-lg font-semibold text-blue-900 mb-2">
-            Condo Water Damage Emergency? Call Now: <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+            Condo Water Damage Emergency? Call Now: <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
           </p>
           <p className="text-blue-800">
             24/7 emergency response for condo water damage across Northern Virginia. We handle HOA coordination, insurance documentation, and multi-unit restoration.
@@ -1127,7 +1127,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
                 What should I do immediately after discovering water damage in my condo?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation (703-665-0505 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%.
+                Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation ((877) 497-0007 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%.
               </p>
             </div>
           </div>
@@ -1170,10 +1170,10 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
           </div>
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-lg">
               Serving Northern Virginia Condos • Licensed & Insured • IICRC Certified
@@ -1195,7 +1195,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            When water damage occurs, immediate professional response makes the difference between minor inconvenience and catastrophic loss. Contact certified water damage restoration specialists at <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for 24/7 emergency service across Arlington, Alexandria, Tysons, and all Northern Virginia condo communities.
+            When water damage occurs, immediate professional response makes the difference between minor inconvenience and catastrophic loss. Contact certified water damage restoration specialists at <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency service across Arlington, Alexandria, Tysons, and all Northern Virginia condo communities.
           </p>
         </section>
 

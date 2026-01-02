@@ -24,7 +24,7 @@ export default function AshburnWaterDamage() {
           "postalCode": "20147",
           "addressCountry": "US"
         },
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
         "url": "https://flooddoctor.com/locations/ashburn-water-damage",
@@ -88,8 +88,8 @@ export default function AshburnWaterDamage() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Ashburn Water Damage Restoration | 24/7 Emergency Service | 703-665-0505"
-        description="24/7 emergency water damage restoration in Ashburn, VA. Serving Ashburn Village, Broadlands, One Loudoun, Brambleton & Lansdowne. Fast response, insurance approved. Call 703-665-0505"
+        title="Ashburn Water Damage Restoration | 24/7 Emergency Service | (877) 497-0007"
+        description="24/7 emergency water damage restoration in Ashburn, VA. Serving Ashburn Village, Broadlands, One Loudoun, Brambleton & Lansdowne. Fast response, insurance approved. Call (877) 497-0007"
         schema={jsonLd}
       />
 
@@ -105,10 +105,10 @@ export default function AshburnWaterDamage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition text-center"
               >
-                Call 703-665-0505
+                Call (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -124,7 +124,7 @@ export default function AshburnWaterDamage() {
         <section className="bg-red-600 text-white py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              🚨 24/7 Emergency Response Available | Water Damage? Call Now: 703-665-0505
+              🚨 24/7 Emergency Response Available | Water Damage? Call Now: (877) 497-0007
             </p>
           </div>
         </section>
@@ -236,7 +236,7 @@ export default function AshburnWaterDamage() {
 
               <div className="bg-[#1a73e8] bg-opacity-5 border-l-4 border-[#1a73e8] p-6 mb-8">
                 <ol className="space-y-3 text-gray-700">
-                  <li><strong>1. Emergency Contact:</strong> Call 703-665-0505 for immediate dispatch</li>
+                  <li><strong>1. Emergency Contact:</strong> Call (877) 497-0007 for immediate dispatch</li>
                   <li><strong>2. Rapid Response:</strong> Our team arrives within 60-90 minutes</li>
                   <li><strong>3. Damage Assessment:</strong> Comprehensive inspection and documentation</li>
                   <li><strong>4. Water Extraction:</strong> Industrial pumps and vacuums remove standing water</li>
@@ -269,10 +269,10 @@ export default function AshburnWaterDamage() {
                   Don't wait when water damage strikes. Our Ashburn team is standing by 24/7 to protect your home and belongings.
                 </p>
                 <a
-                  href="tel:703-665-0505"
+                  href="tel:8774970007"
                   className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition"
                 >
-                  Call 703-665-0505 Now
+                  Call (877) 497-0007 Now
                 </a>
               </div>
             </article>
@@ -363,10 +363,10 @@ export default function AshburnWaterDamage() {
               Available 24/7 for emergency water damage throughout Loudoun County
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
             >
-              Call 703-665-0505
+              Call (877) 497-0007
             </a>
           </div>
         </section>

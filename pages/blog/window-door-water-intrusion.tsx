@@ -66,7 +66,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
         "@type": "LocalBusiness",
         "name": "Flood Doctor",
         "description": "Professional water damage restoration and waterproofing services in Northern Virginia",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "areaServed": [
           "Arlington VA",
           "Alexandria VA",
@@ -145,7 +145,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
           <p className="text-lg font-semibold text-blue-900 mb-2">
-            Emergency Water Intrusion? Call Now: <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+            Emergency Water Intrusion? Call Now: <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
           </p>
           <p className="text-blue-800">
             24/7 emergency response for water damage, leak detection, professional sealing, and complete restoration services across Northern Virginia.
@@ -1117,10 +1117,10 @@ const WindowDoorWaterIntrusion: React.FC = () => {
           </div>
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-lg">
               Serving all of Northern Virginia • Licensed & Insured • IICRC Certified
@@ -1146,7 +1146,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            Whether you need emergency water damage restoration, professional window and door sealing, or preventive maintenance guidance, contact certified specialists at <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for expert service across Northern Virginia.
+            Whether you need emergency water damage restoration, professional window and door sealing, or preventive maintenance guidance, contact certified specialists at <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for expert service across Northern Virginia.
           </p>
         </section>
 

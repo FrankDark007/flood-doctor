@@ -23,11 +23,11 @@ const FairfaxFloodCleanup: React.FC = () => {
   const faqs = [
     {
       question: "How fast can you respond to flood emergencies in Fairfax?",
-      answer: "We provide 24/7 emergency flood cleanup throughout Fairfax County with response times under 60 minutes. Our rapid deployment team is always on standby for Burke, Mantua, Fairfax Station, Fair Oaks, and all Fairfax communities. Call 703-665-0505 immediately for emergency dispatch."
+      answer: "We provide 24/7 emergency flood cleanup throughout Fairfax County with response times under 60 minutes. Our rapid deployment team is always on standby for Burke, Mantua, Fairfax Station, Fair Oaks, and all Fairfax communities. Call (877) 497-0007 immediately for emergency dispatch."
     },
     {
       question: "What should I do immediately after flooding in my Fairfax home?",
-      answer: "First, ensure safety—turn off electricity if safe to do so and avoid standing water. Call 703-665-0505 immediately. Document damage with photos for insurance. Move valuables to higher ground if possible. Do not attempt major cleanup yourself, as contaminated floodwater requires professional handling and PPE."
+      answer: "First, ensure safety—turn off electricity if safe to do so and avoid standing water. Call (877) 497-0007 immediately. Document damage with photos for insurance. Move valuables to higher ground if possible. Do not attempt major cleanup yourself, as contaminated floodwater requires professional handling and PPE."
     },
     {
       question: "Does flood insurance cover cleanup costs in Fairfax?",
@@ -75,7 +75,7 @@ const FairfaxFloodCleanup: React.FC = () => {
     "image": "https://flood.doctor/images/logo.png",
     "@id": "https://flood.doctor/locations/fairfax-flood-cleanup",
     "url": "https://flood.doctor/locations/fairfax-flood-cleanup",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -167,7 +167,7 @@ const FairfaxFloodCleanup: React.FC = () => {
     {
       number: "1",
       title: "Emergency Call",
-      description: "Contact 703-665-0505 immediately. We dispatch emergency crews within minutes to your Fairfax location."
+      description: "Contact (877) 497-0007 immediately. We dispatch emergency crews within minutes to your Fairfax location."
     },
     {
       number: "2",
@@ -224,7 +224,7 @@ const FairfaxFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Flood Cleanup in Fairfax, VA | 24/7 Response"
-        description="24/7 emergency flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Flood insurance experts. Call 703-665-0505 now."
+        description="24/7 emergency flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Flood insurance experts. Call (877) 497-0007 now."
       />
 
       <script type="application/ld+json">
@@ -263,7 +263,7 @@ const FairfaxFloodCleanup: React.FC = () => {
                 className="bg-white text-red-700 hover:bg-gray-100 text-xl h-16 px-10 shadow-2xl font-bold"
               >
                 <Phone size={24} className="mr-3" />
-                CALL 703-665-0505 NOW
+                CALL (877) 497-0007 NOW
               </Button>
             </div>
             <div className="flex items-center gap-6 mt-8 text-sm bg-red-800/50 backdrop-blur-sm rounded-xl p-4 inline-flex">
@@ -286,7 +286,7 @@ const FairfaxFloodCleanup: React.FC = () => {
           <div className="flex items-center justify-center gap-3 text-center">
             <AlertTriangle size={24} className="text-gray-900" />
             <span className="font-bold text-gray-900 text-lg">
-              FLOOD EMERGENCY? Every second counts. Call 703-665-0505 for immediate dispatch.
+              FLOOD EMERGENCY? Every second counts. Call (877) 497-0007 for immediate dispatch.
             </span>
           </div>
         </div>
@@ -531,7 +531,7 @@ const FairfaxFloodCleanup: React.FC = () => {
               className="bg-white text-red-700 hover:bg-gray-100 text-2xl h-20 px-12 shadow-2xl font-bold"
             >
               <Phone size={28} className="mr-3" />
-              CALL 703-665-0505 NOW
+              CALL (877) 497-0007 NOW
             </Button>
           </div>
           <div className="mt-8 text-red-100">

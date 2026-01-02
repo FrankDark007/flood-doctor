@@ -73,7 +73,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
           <p className="text-lg font-semibold text-blue-900 mb-2">
-            Emergency Roof Leak? Call Now: <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+            Emergency Roof Leak? Call Now: <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
           </p>
           <p className="text-blue-800">
             24/7 emergency response for storm damage, emergency tarping, and water extraction services across Northern Virginia.
@@ -235,7 +235,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
                 Never enter a severely damaged structure or climb on your roof during or immediately after a storm. If you see sagging ceilings, structural damage, or electrical hazards, evacuate and call professionals immediately.
               </p>
               <p className="text-gray-700">
-                Contact emergency services if needed, then call <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for 24/7 emergency response.
+                Contact emergency services if needed, then call <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency response.
               </p>
             </div>
 
@@ -358,7 +358,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
 
           <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
             <p className="text-lg font-semibold text-blue-900 mb-2">
-              Need Emergency Roof Tarping? Call <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline">703-665-0505</a>
+              Need Emergency Roof Tarping? Call <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline">(877) 497-0007</a>
             </p>
             <p className="text-blue-800">
               Available 24/7 for emergency response across Northern Virginia. Typical arrival time: 60-90 minutes.
@@ -811,10 +811,10 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
           </div>
           <div className="text-center">
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
             <p className="mt-4 text-lg">
               Serving all of Northern Virginia • Licensed & Insured • IICRC Certified
@@ -836,7 +836,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            Whether you're dealing with active storm damage or want to prevent future problems through preventive maintenance, professional restoration companies provide the expertise, equipment, and support necessary for complete recovery. Contact certified water damage restoration specialists at <a href="tel:703-665-0505" className="text-blue-600 hover:text-blue-800 underline font-semibold">703-665-0505</a> for 24/7 emergency response across Northern Virginia.
+            Whether you're dealing with active storm damage or want to prevent future problems through preventive maintenance, professional restoration companies provide the expertise, equipment, and support necessary for complete recovery. Contact certified water damage restoration specialists at <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency response across Northern Virginia.
           </p>
         </section>
 

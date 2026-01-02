@@ -2,7 +2,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
 
 export default function HerndonBasementFlooding() {
-  const phoneNumber = '703-665-0505';
+  const phoneNumber = '(877) 497-0007';
   const businessName = 'Flood Doctor';
   const serviceArea = ['Herndon', 'Reston', 'Sterling', 'Ashburn', 'Leesburg'];
   const neighborhoods = ['Downtown Herndon', 'Fox Mill', 'Franklin Farm', 'Worldgate'];
@@ -67,7 +67,7 @@ export default function HerndonBasementFlooding() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair Herndon VA | Waterproofing Experts"
-        description="Expert basement flooding repair in Herndon, VA. Emergency water removal, complete restoration & waterproofing. Serving Fox Mill, Franklin Farm, Downtown Herndon. Call 703-665-0505!"
+        description="Expert basement flooding repair in Herndon, VA. Emergency water removal, complete restoration & waterproofing. Serving Fox Mill, Franklin Farm, Downtown Herndon. Call (877) 497-0007!"
         schema={schemaData}
       />
 

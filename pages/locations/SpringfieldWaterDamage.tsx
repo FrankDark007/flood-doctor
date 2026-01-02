@@ -11,7 +11,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         "name": "Flood Doctor - Water Damage Restoration Springfield VA",
         "image": "https://flood-doctor.com/images/flood-doctor-logo.jpg",
         "url": "https://flood-doctor.com/locations/springfield-water-damage",
-        "telephone": "703-665-0505",
+        "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -90,7 +90,7 @@ const SpringfieldWaterDamage: React.FC = () => {
             "name": "Are your water damage restoration services available 24/7 in Springfield?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call 703-665-0505 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we."
+              "text": "Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call (877) 497-0007 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we."
             }
           }
         ]
@@ -101,8 +101,8 @@ const SpringfieldWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Springfield VA | 24/7 Emergency Service | 703-665-0505"
-        description="Expert water damage restoration in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. 24/7 emergency response. Call 703-665-0505 now."
+        title="Water Damage Restoration Springfield VA | 24/7 Emergency Service | (877) 497-0007"
+        description="Expert water damage restoration in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. 24/7 emergency response. Call (877) 497-0007 now."
         schema={structuredData}
       />
 
@@ -118,10 +118,10 @@ const SpringfieldWaterDamage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors text-center"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <a
                 href="#contact"
@@ -137,7 +137,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         <section className="bg-red-600 text-white py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              🚨 EMERGENCY? We're Available 24/7/365 | Call <a href="tel:703-665-0505" className="underline font-bold">703-665-0505</a> for Immediate Assistance
+              🚨 EMERGENCY? We're Available 24/7/365 | Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> for Immediate Assistance
             </p>
           </div>
         </section>
@@ -349,7 +349,7 @@ const SpringfieldWaterDamage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Emergency Contact</h3>
                 <p className="text-gray-600">
-                  Call 703-665-0505 and speak with a live professional who will dispatch our team immediately to your Springfield location.
+                  Call (877) 497-0007 and speak with a live professional who will dispatch our team immediately to your Springfield location.
                 </p>
               </div>
 
@@ -435,7 +435,7 @@ const SpringfieldWaterDamage: React.FC = () => {
                   Are your water damage restoration services available 24/7 in Springfield?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call 703-665-0505 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we.
+                  Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call (877) 497-0007 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we.
                 </p>
               </div>
             </div>
@@ -452,10 +452,10 @@ const SpringfieldWaterDamage: React.FC = () => {
               Our emergency response team is standing by 24/7 to help you. Don't wait - water damage gets worse every hour.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-xl hover:bg-blue-50 transition-colors"
             >
-              Call 703-665-0505 Now
+              Call (877) 497-0007 Now
             </a>
             <p className="mt-6 text-blue-100">
               Serving Springfield, Kingstowne, Franconia, West Springfield & All of Fairfax County

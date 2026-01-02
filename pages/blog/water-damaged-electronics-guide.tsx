@@ -65,7 +65,7 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "Flood Doctor",
     "image": "https://flooddoctor.com/logo.png",
-    "telephone": "703-665-0505",
+    "telephone": "(877) 497-0007",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "VA",
@@ -100,7 +100,7 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damaged Electronics: What Can Be Saved? | Northern Virginia Guide"
-        description="Expert guide to salvaging water-damaged electronics in Northern Virginia. Learn immediate response steps, what NOT to do, professional restoration options, and insurance coverage. 24/7 help: 703-665-0505"
+        description="Expert guide to salvaging water-damaged electronics in Northern Virginia. Learn immediate response steps, what NOT to do, professional restoration options, and insurance coverage. 24/7 help: (877) 497-0007"
         structuredData={combinedSchema}
       />
 
@@ -122,10 +122,10 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
             <p className="text-lg font-semibold mb-2">24/7 Water Damage Emergency Response</p>
             <p className="mb-4">Professional electronics drying and content restoration services</p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
             >
-              Call Now: 703-665-0505
+              Call Now: (877) 497-0007
             </a>
           </div>
         </header>
@@ -977,7 +977,7 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
                 <li><strong>Professional Handling:</strong> IICRC Category 3 restoration requires PPE (gloves, masks, protective clothing)</li>
               </ul>
               <p className="mt-4 text-gray-700 font-bold">
-                Northern Virginia Sewage Exposure: Contact Flood Doctor 24/7 at 703-665-0505 for IICRC-certified biohazard restoration.
+                Northern Virginia Sewage Exposure: Contact Flood Doctor 24/7 at (877) 497-0007 for IICRC-certified biohazard restoration.
               </p>
             </div>
           </section>
@@ -1192,10 +1192,10 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
                 <p className="text-lg">✓ Serving Arlington, Alexandria, Fairfax, Loudoun & Prince William</p>
               </div>
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
               >
-                Call Now: 703-665-0505
+                Call Now: (877) 497-0007
               </a>
               <p className="mt-4 text-lg">
                 Every hour counts when electronics are exposed to water

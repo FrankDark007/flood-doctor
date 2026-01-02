@@ -87,10 +87,10 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
               Sewage backups pose immediate health hazards. Professional cleanup prevents disease transmission and structural damage.
             </p>
             <a
-              href="tel:703-665-0505"
+              href="tel:8774970007"
               className="inline-block bg-red-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-red-700 transition-colors text-lg"
             >
-              Call 703-665-0505 - 24/7 Emergency Response
+              Call (877) 497-0007 - 24/7 Emergency Response
             </a>
           </div>
         </header>
@@ -653,10 +653,10 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="tel:703-665-0505"
+                href="tel:8774970007"
                 className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
               >
-                Call 703-665-0505 Now
+                Call (877) 497-0007 Now
               </a>
               <p className="text-center text-blue-100">
                 Immediate dispatch • Complete containment • Professional disinfection
