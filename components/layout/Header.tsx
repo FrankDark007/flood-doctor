@@ -3,19 +3,17 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Phone, ChevronDown, Home, Briefcase, AlertTriangle } from 'lucide-react';
 import { MAIN_NAV_ITEMS } from '../../data/nav';
-import { SERVICES } from '../../data/services';
+import { getServicesByCategory } from '../../data/services-index';
 import { LOCATIONS, NEARBY_AREAS } from '../../data/locations';
 import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
-import { ServiceData } from '../../types';
+import { ServiceData, ServiceCategory } from '../../types';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
 
-// Helper to Group Services by Category within an Audience
+// Helper to Group Services by Category within an Audience - O(1) lookup
 const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
-  const audienceServices = SERVICES.filter(s => s.audience === audience);
-  
   // Define category order for array generation
-  const categoryKeys = audience === 'RESIDENTIAL' 
+  const categoryKeys: ServiceCategory[] = audience === 'RESIDENTIAL'
     ? ['RESTORATION', 'CLEANUP', 'SPECIALTY']
     : ['RESTORATION', 'CLEANUP', 'TECHNICAL', 'SPECIALTY'];
 
@@ -26,10 +24,11 @@ const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
     'TECHNICAL': 'Technical Services'
   };
 
+  // Use pre-computed index for O(1) lookup instead of O(n) filter
   return categoryKeys.map(catKey => ({
     key: catKey,
     label: labels[catKey],
-    items: audienceServices.filter(s => s.category === catKey)
+    items: getServicesByCategory(audience, catKey)
   })).filter(group => group.items.length > 0);
 };
 

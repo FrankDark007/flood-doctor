@@ -1,9 +1,9 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { Search, MapPin, Hammer, FileText, ArrowRight, X } from 'lucide-react';
-import { SERVICES } from '../../data/services';
+import { searchServices } from '../../data/services-index';
 import { LOCATIONS } from '../../data/locations';
 
 const CommandPalette: React.FC = () => {
@@ -41,11 +41,8 @@ const CommandPalette: React.FC = () => {
     }
   }, [isOpen]);
 
-  // Filter Logic
-  const filteredServices = SERVICES.filter(s => 
-    s.title.toLowerCase().includes(query.toLowerCase()) || 
-    s.shortDescription.toLowerCase().includes(query.toLowerCase())
-  ).slice(0, 3);
+  // Filter Logic - using optimized search with early termination
+  const filteredServices = useMemo(() => searchServices(query, 3), [query]);
 
   const filteredLocations = LOCATIONS.filter(l => 
     l.title.toLowerCase().includes(query.toLowerCase())

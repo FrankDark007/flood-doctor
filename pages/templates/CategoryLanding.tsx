@@ -1,6 +1,6 @@
 import React from 'react';
 import { ServiceAudience, ServiceCategory } from '../../types';
-import { SERVICES } from '../../data/services';
+import { getServicesByCategory } from '../../data/services-index';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import ServiceArchiveGrid from '../../components/services/ServiceArchiveGrid';
 import PageMeta from '../../components/ui/PageMeta';
@@ -13,8 +13,8 @@ interface CategoryLandingProps {
 }
 
 const CategoryLanding: React.FC<CategoryLandingProps> = ({ audience, category, title, description }) => {
-  // Filter services for this category
-  const categoryServices = SERVICES.filter(s => s.audience === audience && s.category === category);
+  // O(1) lookup using pre-computed index
+  const categoryServices = getServicesByCategory(audience, category);
   
   const breadcrumbs = [
     { label: 'Services', path: '/services/' },
