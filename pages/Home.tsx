@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { generateHomepageSchema } from '../utils/schema';
 import {
   Phone,
   ArrowRight,
@@ -107,11 +108,19 @@ const Home: React.FC = () => {
     { value: '4.9/5', label: 'Rating', icon: Star }
   ], []);
 
+  // Homepage schema with WebSite, Organization, LocalBusiness, AggregateRating
+  const homepageSchema = useMemo(() => generateHomepageSchema([
+    { question: 'How quickly can you respond to water damage emergencies?', answer: 'We guarantee 60-minute response time 24/7 throughout Northern Virginia and Washington DC.' },
+    { question: 'Do you work with insurance companies?', answer: 'Yes, we handle direct insurance billing and documentation for all major carriers.' },
+    { question: 'What areas do you serve?', answer: 'We serve Northern Virginia including Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties, plus Washington DC.' },
+  ]), []);
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Water Damage Restoration & Flood Cleanup"
         description="24/7 emergency water damage restoration in Northern Virginia. Real-time monitoring, direct insurance billing, 60-minute response."
+        schema={homepageSchema}
       />
 
       {/* Hero - Dashboard Preview Style */}

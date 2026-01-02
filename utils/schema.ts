@@ -612,3 +612,120 @@ export function generateWebSiteSchema() {
     inLanguage: 'en-US',
   };
 }
+
+// ============================================================================
+// Article Schema
+// ============================================================================
+
+export interface ArticleSchemaInput {
+  headline: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  image?: string;
+  wordCount?: number;
+  articleSection?: string;
+}
+
+/**
+ * Generate Article schema for blog posts
+ * Use on: Blog articles, guides, how-to pages
+ */
+export function generateArticleSchema(article: ArticleSchemaInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${siteConfig.SITE_URL}${article.slug}#article`,
+    headline: article.headline,
+    description: article.description,
+    url: `${siteConfig.SITE_URL}${article.slug}`,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified || article.datePublished,
+    author: {
+      '@type': 'Organization',
+      '@id': `${siteConfig.SITE_URL}/#organization`,
+      name: article.author || SITE_INFO.name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteConfig.SITE_URL}/#organization`,
+      name: SITE_INFO.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.SITE_URL}/logo.png`,
+      },
+    },
+    image: article.image || `${siteConfig.SITE_URL}/og-image.jpg`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.SITE_URL}${article.slug}`,
+    },
+    ...(article.wordCount && { wordCount: article.wordCount }),
+    ...(article.articleSection && { articleSection: article.articleSection }),
+    inLanguage: 'en-US',
+  };
+}
+
+/**
+ * Generate complete blog article schema
+ * Includes: Article, BreadcrumbList, FAQPage (if provided), LocalBusiness
+ */
+export function generateBlogArticleSchema(
+  article: ArticleSchemaInput,
+  faqs?: Array<{ question: string; answer: string }>
+) {
+  const breadcrumbs: BreadcrumbItem[] = [
+    { label: 'Blog', path: '/blog/' },
+    { label: article.headline.slice(0, 50), path: article.slug },
+  ];
+
+  const schemas: Array<Record<string, unknown>> = [
+    generateArticleSchema(article),
+    generateBreadcrumbSchema(breadcrumbs),
+    generateLocalBusinessSchema(),
+  ];
+
+  if (faqs && faqs.length > 0) {
+    schemas.push(generateFAQSchema(faqs));
+  }
+
+  return combineSchemas(...schemas);
+}
+
+/**
+ * Generate HowTo schema for step-by-step guides
+ * Use on: Process guides, DIY articles
+ */
+export function generateHowToSchema(input: {
+  name: string;
+  description: string;
+  slug: string;
+  steps: Array<{ name: string; text: string; image?: string }>;
+  totalTime?: string;
+  estimatedCost?: { currency: string; value: string };
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    '@id': `${siteConfig.SITE_URL}${input.slug}#howto`,
+    name: input.name,
+    description: input.description,
+    ...(input.totalTime && { totalTime: input.totalTime }),
+    ...(input.estimatedCost && {
+      estimatedCost: {
+        '@type': 'MonetaryAmount',
+        currency: input.estimatedCost.currency,
+        value: input.estimatedCost.value,
+      },
+    }),
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.image && { image: step.image }),
+    })),
+  };
+}

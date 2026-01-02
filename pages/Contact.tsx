@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import PageMeta from '../components/ui/PageMeta';
+import { generateContactPageSchema } from '../utils/schema';
 import Button from '../components/ui/Button';
 import EmergencyServiceCard from '../components/ui/EmergencyServiceCard';
 import { 
@@ -48,6 +49,7 @@ const Contact: React.FC = () => {
       <PageMeta
         title="Contact Flood Doctor - 24/7 Emergency Response"
         description="Contact Flood Doctor for 24/7 emergency water damage restoration in Northern Virginia. Call (877) 497-0007 for immediate response. Free estimates available."
+        schema={generateContactPageSchema()}
       />
       
       {/* 1. Header & Triage Section */}

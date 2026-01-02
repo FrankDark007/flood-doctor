@@ -16,6 +16,7 @@ import {
   Clock
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
+import { generateAboutPageSchema } from '../utils/schema';
 import Button from '../components/ui/Button';
 
 /**
@@ -125,6 +126,7 @@ const About: React.FC = () => {
       <PageMeta
         title="About Us - Flood Doctor Water Damage Restoration"
         description="Flood Doctor has served Northern Virginia for 15+ years with IICRC-certified water damage restoration, mold remediation, and 24/7 emergency response. Learn about our team."
+        schema={generateAboutPageSchema()}
       />
 
       {/* Hero - Workspace Industry Style */}

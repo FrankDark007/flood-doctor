@@ -22,6 +22,7 @@ import {
   Zap
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
+import { generateBreadcrumbSchema, combineSchemas, generateLocalBusinessSchema } from '../utils/schema';
 import Button from '../components/ui/Button';
 
 /**
@@ -240,6 +241,10 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       <PageMeta
         title={title || "Restoration Services | Water, Fire & Mold Restoration"}
         description={subtitle || "Professional restoration services for water damage, fire damage, mold remediation, and more. 24/7 emergency response in Northern Virginia."}
+        schema={combineSchemas(
+          generateBreadcrumbSchema([{ label: 'Services', path: '/services/' }]),
+          generateLocalBusinessSchema()
+        )}
       />
 
       {/* Hero - Editorial Bold */}
