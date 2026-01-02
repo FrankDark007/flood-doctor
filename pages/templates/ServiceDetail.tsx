@@ -642,17 +642,17 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
       </section>
 
       {/* FAQ Accordion - Google Style */}
-      <section id="faq" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="faq" className="py-12 lg:py-[60px] bg-white">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           {/* Header - Google Style */}
-          <div className="text-center mb-16">
-            <h2 className="text-[32px] lg:text-[40px] font-normal text-[#202124] tracking-tight">
+          <div className="text-center mb-8 sm:mb-[60px] lg:mb-[60px]">
+            <h2 className="text-[36px] font-normal text-[#202124] leading-[1.33] lg:leading-[1.22] tracking-[-0.25px]">
               Frequently asked questions
             </h2>
           </div>
 
           {/* Expand All Button */}
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-5 border-b border-[#dadce0] pb-5">
             <button
               onClick={() => {
                 if (allExpanded) {
@@ -663,7 +663,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                   setAllExpanded(true);
                 }
               }}
-              className="inline-flex items-center gap-1 text-[#1a73e8] hover:text-[#1557b0] text-[14px] font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-[#1a73e8] hover:text-[#174ea6] hover:bg-[rgba(26,115,232,0.04)] text-[16px] font-medium py-3 px-3 rounded-full transition-colors"
             >
               {allExpanded ? 'Collapse all' : 'Expand all'}
               <ChevronsUpDown size={18} />
@@ -671,11 +671,11 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
           </div>
 
           {/* FAQ Items */}
-          <div className="border-t border-[#e8eaed]">
+          <div>
             {faqs.map((faq, idx) => {
               const isOpen = openFaqs.has(idx);
               return (
-                <div key={idx} className="border-b border-[#e8eaed]">
+                <div key={idx} className="border-t border-[#dadce0] first:border-t-0">
                   <button
                     onClick={() => {
                       const newSet = new Set(openFaqs);
@@ -687,22 +687,24 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                       setOpenFaqs(newSet);
                       setAllExpanded(newSet.size === faqs.length);
                     }}
-                    className="w-full py-5 flex items-center justify-between text-left"
+                    className={`w-full py-6 lg:py-7 flex items-center justify-between text-left hover:text-[#174ea6] transition-colors ${
+                      isOpen ? 'text-[#174ea6]' : ''
+                    }`}
                   >
-                    <span className={`text-[20px] font-medium pr-8 leading-[1.4] ${
+                    <span className={`text-[20px] font-normal leading-[1.4] mr-2 lg:mr-6 ${
                       isOpen ? 'text-[#174ea6]' : 'text-[#1a73e8]'
                     }`}>
                       {faq.question}
                     </span>
                     {isOpen ? (
-                      <ChevronUp size={24} className="text-[#174ea6] flex-shrink-0" />
+                      <ChevronUp size={24} className="text-[#1a73e8] flex-shrink-0 lg:w-9 lg:h-9" />
                     ) : (
-                      <ChevronDown size={24} className="text-[#1a73e8] flex-shrink-0" />
+                      <ChevronDown size={24} className="text-[#1a73e8] flex-shrink-0 lg:w-9 lg:h-9" />
                     )}
                   </button>
                   {isOpen && (
-                    <div className="pb-5 pr-12 border-t border-[#e8eaed]">
-                      <p className="text-[16px] text-[#5f6368] leading-[1.75] pt-4">
+                    <div className="pb-7 pr-10 lg:pr-[60px]">
+                      <p className="text-[16px] text-[#5f6368] leading-[1.5] tracking-[0.1px]">
                         {faq.answer}
                       </p>
                     </div>
@@ -710,13 +712,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                 </div>
               );
             })}
+            {/* Bottom border */}
+            <div className="border-t border-[#dadce0]"></div>
           </div>
 
           {/* View More Button */}
-          <div className="mt-12">
+          <div className="mt-10">
             <Link
               to="/resources/faq/"
-              className="inline-flex items-center px-6 py-2.5 rounded-full border border-[#dadce0] text-[#1a73e8] text-[14px] font-medium hover:bg-[#f8f9fa] transition-colors"
+              className="inline-flex items-center px-4 py-3 rounded-full border border-transparent text-[#1a73e8] text-[16px] font-medium hover:bg-[rgba(26,115,232,0.04)] transition-colors"
             >
               View more FAQs
             </Link>
