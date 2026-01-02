@@ -1,0 +1,225 @@
+# Flood Doctor Website Enhancement Plan
+
+## Executive Summary
+
+10 specialized agents analyzed the codebase using 50+ plugins. This plan consolidates all findings into prioritized actions.
+
+---
+
+## Critical Issues (Fix First)
+
+### 1. Bundle Size Crisis — 4.3MB JS Bundle
+**Source:** Frontend Optimizer Agent
+**Impact:** Slow initial load, poor Core Web Vitals
+
+| Action | File | Effort | Impact |
+|--------|------|--------|--------|
+| Enable code splitting | vite.config.ts | 30 min | -60% bundle |
+| Lazy load hero illustrations | components/ui/illustrations/service-hero/index.tsx | 1 hr | -500KB |
+| Route-based code splitting | App.tsx | 1 hr | -15% bundle |
+| Fix EmergencyContext interval (1s → 60s) | contexts/EmergencyContext.tsx | 5 min | -98% re-renders |
+
+### 2. Zero Memoization — Excessive Re-renders
+**Source:** Frontend Optimizer Agent
+
+| Component | Issue | Fix |
+|-----------|-------|-----|
+| Home.tsx | Inline arrays recreated every render | `useMemo` for services |
+| Header.tsx | `getGroupedServices()` runs every render | `useMemo` |
+| ServicesHub.tsx | SVG patterns not memoized | `React.memo` |
+
+### 3. Missing SEO Schema
+**Source:** SEO Meta Optimizer Agent
+
+| Schema Type | Pages Affected | Priority |
+|-------------|---------------|----------|
+| BreadcrumbList | 108 pages | High |
+| LocalBusiness | All pages | High |
+| Organization | All pages | High |
+| FAQPage | 45 blog articles (partial) | Medium |
+| HowTo | Process articles | Medium |
+
+---
+
+## High Priority (Week 1)
+
+### SEO Improvements
+**Source:** SEO Agents
+
+1. **Fix meta descriptions** — 6 core pages under 150 chars
+2. **Add internal links** — 8-12 per blog article (currently 0-4)
+3. **Add author attribution** — E-E-A-T signals missing
+4. **Add mid-article CTAs** — After 40% scroll depth
+5. **Fix H3 misuse** — Card components using heading tags incorrectly
+
+### Component Architecture
+**Source:** Component Architect Agent
+
+1. **Extract Card primitive** — Consolidate 50+ implementations
+2. **Extract Badge component** — 12+ duplicates
+3. **Create IconBox wrapper** — 80+ inline icon containers
+4. **Merge Section components** — 3 → 1 with variants
+
+### Security
+**Source:** Security Sentinel Agent
+
+1. **Add CSP headers** — Missing Content Security Policy
+2. **Secure VeoGenerator API key** — Exposed in video URLs
+3. **Add security headers** — X-Frame-Options, X-Content-Type-Options
+
+---
+
+## Medium Priority (Week 2-3)
+
+### Performance Optimization
+**Source:** Performance Oracle Agent
+
+1. **Pre-compute service indices** — Eliminate O(n) filters
+2. **Split SERVICES data** — Index vs detail modules
+3. **Lazy load FAQ sections** — Intersection Observer
+
+### CSS/Tailwind
+**Source:** CSS Expert Agent
+
+1. **Enable dark mode** — Add `darkMode: 'class'` to config
+2. **Extract utility classes** — noise-texture, gradient-primary
+3. **Fix Header height CLS** — `h-16 md:h-20` → consistent `h-20`
+4. **Add touch targets** — Minimum 44px for mobile
+
+### Testing Infrastructure
+**Source:** Testing Specialist Agent
+
+1. **Add Vitest + RTL** — Unit testing setup
+2. **Add Playwright** — E2E testing
+3. **Priority tests:**
+   - Cost calculator logic (95% coverage)
+   - Form validation (90% coverage)
+   - Service navigation (80% coverage)
+
+### CI/CD Pipeline
+**Source:** CI/CD Engineer Agent
+
+Files created:
+- `.github/workflows/ci.yml` — Build/test/lint
+- `.github/workflows/deploy-production.yml` — Vercel deploy
+- `.github/workflows/preview.yml` — PR previews
+- `lighthouserc.json` — Performance gates
+
+---
+
+## Lower Priority (Week 4+)
+
+### Content Enhancements
+**Source:** SEO Content Auditor Agent
+
+1. Add testimonial modules to blog articles
+2. Create case study callout boxes
+3. Add certification badge displays
+4. Implement table of contents for long articles
+5. Add "Related Articles" sidebars
+
+### Additional Optimizations
+
+1. Add container queries plugin
+2. Create Stack/Grid layout primitives
+3. Centralize FAQ data in `/data/faq.ts`
+4. Add ThemeProvider for accent colors
+5. Implement service worker for caching
+
+---
+
+## Files Created by Agents
+
+| File | Purpose |
+|------|---------|
+| `META_TAG_AUDIT.md` | Complete meta tag analysis |
+| `META_OPTIMIZATION_TEMPLATES.md` | Optimized meta examples |
+| `SCHEMA_IMPLEMENTATION_GUIDE.md` | Schema markup guide |
+| `SEO_META_AUDIT_SUMMARY.md` | Executive SEO summary |
+| `CONTENT_STRUCTURE_ANALYSIS.md` | Header/linking analysis |
+| `CONTENT_STRUCTURE_QUICK_FIXES.md` | Ready-to-implement fixes |
+| `INTERNAL_LINKING_STRATEGY.md` | Linking architecture |
+| `.github/workflows/*.yml` | CI/CD pipelines |
+| `lighthouserc.json` | Lighthouse config |
+| `vercel.json` | Deployment config |
+| `netlify.toml` | Alternative deployment |
+| `.eslintrc.json` | Linting config |
+| `.prettierrc` | Formatting config |
+
+---
+
+## Expected Outcomes
+
+### Performance
+| Metric | Current | Target | Improvement |
+|--------|---------|--------|-------------|
+| Bundle Size | 4.3MB | <2MB | -53% |
+| LCP | ~3.5s | <2.5s | -30% |
+| Re-renders | Excessive | Minimal | -80% |
+
+### SEO
+| Metric | Current | Target | Timeline |
+|--------|---------|--------|----------|
+| Organic Traffic | Baseline | +25-40% | 90 days |
+| Featured Snippets | ~5 | 20-25 | 60 days |
+| CTR | Baseline | +15-25% | 60 days |
+
+### Quality
+| Metric | Current | Target |
+|--------|---------|--------|
+| TypeScript Errors | 0 | 0 |
+| Test Coverage | 0% | 70% |
+| Lighthouse Performance | ~60 | 80+ |
+| Lighthouse Accessibility | ~80 | 90+ |
+
+---
+
+## Quick Wins (< 1 Hour Total)
+
+1. ✅ Fix EmergencyContext interval — 5 min
+2. ✅ Add CSP meta tag — 10 min
+3. ✅ Add Organization schema — 10 min
+4. ✅ Fix About page title length — 2 min
+5. ✅ Expand Contact description — 3 min
+6. ✅ Memoize Header navigation — 15 min
+7. ✅ Add dark mode config — 5 min
+
+---
+
+## Implementation Commands
+
+```bash
+# Install testing dependencies
+npm install -D vitest @testing-library/react @testing-library/jest-dom @playwright/test
+
+# Install additional dev tools
+npm install -D @vitest/ui jsdom
+
+# Run type check
+npm run typecheck
+
+# Run lint (after adding .eslintrc.json)
+npm run lint
+
+# Run Lighthouse audit
+npx lhci autorun
+```
+
+---
+
+## Agent IDs for Follow-up
+
+| Agent | ID | Purpose |
+|-------|------|---------|
+| SEO Meta Optimizer | a01fa4a | Meta tag improvements |
+| Frontend Optimizer | a15b9e7 | Performance fixes |
+| Security Sentinel | ac08c65 | Security implementation |
+| Component Architect | ad76aae | Component refactoring |
+| SEO Structure | a09acc7 | Content structure |
+| SEO Content Auditor | a0cf013 | Blog improvements |
+| CSS Expert | a0843ee | Tailwind optimization |
+| Performance Oracle | aa8d43c | Data optimization |
+| Testing Specialist | a0f0d5b | Test implementation |
+| CI/CD Engineer | a936063 | Pipeline setup |
+
+Resume any agent with: `Task tool with resume: "<agent_id>"`
