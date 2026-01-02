@@ -217,32 +217,6 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
         schema={faqSchema}
       />
 
-      {/* Sticky Navigation - positioned below header (80px) */}
-      <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-center h-12">
-            <nav className="flex items-center gap-1 overflow-x-auto">
-              {sections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    setActiveSection(section.id);
-                    document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors whitespace-nowrap ${
-                    activeSection === section.id
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted hover:text-text hover:bg-gray-50'
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section - Clean with Stats */}
       <section id="overview" className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-6xl mx-auto px-6">
@@ -325,6 +299,32 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
           </div>
         </div>
       </section>
+
+      {/* Sticky Section Navigation - scrolls with page, sticks below header */}
+      <div className="sticky top-20 z-30 bg-white border-y border-gray-100 shadow-sm">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-center h-12">
+            <nav className="flex items-center gap-1 overflow-x-auto">
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => {
+                    setActiveSection(section.id);
+                    document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors whitespace-nowrap ${
+                    activeSection === section.id
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-muted hover:text-text hover:bg-gray-50'
+                  }`}
+                >
+                  {section.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </div>
 
       {/* How It Works - Numbered Steps with Alternating Layout */}
       <section id="process" className="py-20 lg:py-28">
