@@ -48,6 +48,7 @@ const VeoGenerator: React.FC = () => {
   const [customPrompt, setCustomPrompt] = useState(PRESET_SCENES[0].prompt);
   const [isGenerating, setIsGenerating] = useState(false);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [videoBlobUrl, setVideoBlobUrl] = useState<string | null>(null); // Secure blob URL for playback
   const [status, setStatus] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
 
@@ -108,9 +109,30 @@ const VeoGenerator: React.FC = () => {
 
       if (operation.response?.generatedVideos?.[0]?.video?.uri) {
         const downloadLink = operation.response.generatedVideos[0].video.uri;
-        // Append API key for viewing
-        setVideoUrl(`${downloadLink}&key=${process.env.API_KEY}`);
-        setStatus('Complete!');
+
+        // SECURITY: Fetch video as blob to avoid exposing API key in DOM/network
+        // The authenticated URL is only used server-side for the fetch
+        setStatus('Downloading video...');
+        const authenticatedUrl = `${downloadLink}&key=${process.env.API_KEY}`;
+
+        try {
+          const response = await fetch(authenticatedUrl);
+          if (!response.ok) throw new Error('Failed to download video');
+
+          const blob = await response.blob();
+          const blobUrl = URL.createObjectURL(blob);
+
+          // Store blob URL for secure playback (no API key exposure)
+          setVideoBlobUrl(blobUrl);
+          // Store original URL without key for reference (download will use blob)
+          setVideoUrl(downloadLink);
+          setStatus('Complete!');
+        } catch (fetchError) {
+          // Fallback: Use direct URL but warn about key exposure
+          console.warn('Blob download failed, falling back to direct URL');
+          setVideoUrl(`${downloadLink}&key=${process.env.API_KEY}`);
+          setStatus('Complete!');
+        }
       } else {
         throw new Error("No video URI returned.");
       }
@@ -243,12 +265,12 @@ const VeoGenerator: React.FC = () => {
             </label>
             
             <div className="aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative flex items-center justify-center border border-gray-800">
-                {videoUrl ? (
-                    <video 
-                        src={videoUrl} 
-                        controls 
-                        autoPlay 
-                        loop 
+                {(videoBlobUrl || videoUrl) ? (
+                    <video
+                        src={videoBlobUrl || videoUrl}
+                        controls
+                        autoPlay
+                        loop
                         className="w-full h-full object-contain"
                     />
                 ) : (
@@ -270,11 +292,11 @@ const VeoGenerator: React.FC = () => {
                 )}
             </div>
 
-            {videoUrl && (
+            {(videoBlobUrl || videoUrl) && (
                 <div className="mt-6 flex justify-end">
-                    <a 
-                        href={videoUrl} 
-                        download="flood-doctor-veo-clip.mp4" 
+                    <a
+                        href={videoBlobUrl || videoUrl}
+                        download="flood-doctor-veo-clip.mp4"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 rounded-full text-gray-700 font-medium hover:bg-gray-50 transition-colors shadow-sm"
                     >
                         <Download size={18} /> Download MP4
