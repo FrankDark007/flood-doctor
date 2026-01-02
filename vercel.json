@@ -1,8 +1,69 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "mclean.flood.doctor" }],
+      "destination": "/city/mclean"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "vienna.flood.doctor" }],
+      "destination": "/city/vienna"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "arlington.flood.doctor" }],
+      "destination": "/city/arlington"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fairfax.flood.doctor" }],
+      "destination": "/city/fairfax"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "tysons.flood.doctor" }],
+      "destination": "/city/tysons"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "alexandria.flood.doctor" }],
+      "destination": "/city/alexandria"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "ashburn.flood.doctor" }],
+      "destination": "/city/ashburn"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "dc.flood.doctor" }],
+      "destination": "/city/washington-dc"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "herndon.flood.doctor" }],
+      "destination": "/city/herndon"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "reston.flood.doctor" }],
+      "destination": "/city/reston"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "springfield.flood.doctor" }],
+      "destination": "/city/springfield"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fallschurch.flood.doctor" }],
+      "destination": "/city/falls-church"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

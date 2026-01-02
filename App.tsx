@@ -131,6 +131,20 @@ const HomeWaterproofingGuide = lazy(() => import('./pages/resources/home-waterpr
 const InsuranceDocumentationGuide = lazy(() => import('./pages/resources/insurance-documentation-guide'));
 const RestorationTimelineGuide = lazy(() => import('./pages/resources/restoration-timeline-guide'));
 
+// City Subdomain Pages (mclean.flood.doctor, vienna.flood.doctor, etc.)
+const CityMcLean = lazy(() => import('./pages/city/McLean'));
+const CityVienna = lazy(() => import('./pages/city/Vienna'));
+const CityArlington = lazy(() => import('./pages/city/Arlington'));
+const CityFairfax = lazy(() => import('./pages/city/Fairfax'));
+const CityTysons = lazy(() => import('./pages/city/Tysons'));
+const CityAlexandria = lazy(() => import('./pages/city/Alexandria'));
+const CityAshburn = lazy(() => import('./pages/city/Ashburn'));
+const CityWashingtonDC = lazy(() => import('./pages/city/WashingtonDC'));
+const CityHerndon = lazy(() => import('./pages/city/Herndon'));
+const CityReston = lazy(() => import('./pages/city/Reston'));
+const CitySpringfield = lazy(() => import('./pages/city/Springfield'));
+const CityFallsChurch = lazy(() => import('./pages/city/FallsChurch'));
+
 // Location Landing Pages
 const AlexandriaWaterDamage = lazy(() => import('./pages/locations/AlexandriaWaterDamage'));
 const AlexandriaMoldRemoval = lazy(() => import('./pages/locations/AlexandriaMoldRemoval'));
@@ -272,6 +286,20 @@ const App: React.FC = () => {
 
               {/* Near Me Landing */}
               <Route path="/nearme/water-damage-restoration/" element={<NearMeLanding />} />
+
+              {/* City Subdomain Pages - accessed via Vercel rewrites from *.flood.doctor */}
+              <Route path="/city/mclean" element={<CityMcLean />} />
+              <Route path="/city/vienna" element={<CityVienna />} />
+              <Route path="/city/arlington" element={<CityArlington />} />
+              <Route path="/city/fairfax" element={<CityFairfax />} />
+              <Route path="/city/tysons" element={<CityTysons />} />
+              <Route path="/city/alexandria" element={<CityAlexandria />} />
+              <Route path="/city/ashburn" element={<CityAshburn />} />
+              <Route path="/city/washington-dc" element={<CityWashingtonDC />} />
+              <Route path="/city/herndon" element={<CityHerndon />} />
+              <Route path="/city/reston" element={<CityReston />} />
+              <Route path="/city/springfield" element={<CitySpringfield />} />
+              <Route path="/city/falls-church" element={<CityFallsChurch />} />
 
               {/* Location Landing Pages - Alexandria */}
               <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />
