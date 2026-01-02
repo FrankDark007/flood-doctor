@@ -12,7 +12,24 @@ import {
   CostTable,
   QuickTip
 } from '../../components/ui/blog/BlogInfoGraphic';
+import { TableOfContents } from '../../components/ui/blog/TableOfContents';
 import { DollarSign, Shield, Clock, FileText, Phone, Home } from 'lucide-react';
+
+const tocItems = [
+  { id: 'understanding-coverage', title: 'Understanding Water Damage Coverage in Standard Homeowners Policies' },
+  { id: 'flood-vs-homeowners', title: 'Flood Insurance vs. Homeowners Insurance in Virginia' },
+  { id: 'water-backup-coverage', title: 'Water Backup and Sump Pump Coverage' },
+  { id: 'service-line-coverage', title: 'Service Line Coverage: Protecting Your Underground Infrastructure' },
+  { id: 'filing-claims', title: 'How to File a Successful Water Damage Claim in Virginia' },
+  { id: 'claim-denials', title: 'Common Claim Denial Reasons and How to Avoid Them' },
+  { id: 'mold-coverage', title: 'Mold Coverage Limitations in Virginia Policies' },
+  { id: 'virginia-specific', title: 'Virginia-Specific Insurance Considerations' },
+  { id: 'how-much-coverage', title: 'How Much Water Damage Coverage Do You Need?' },
+  { id: 'premium-reduction', title: 'Premium-Reduction Strategies While Maintaining Protection' },
+  { id: 'claim-denied', title: 'What to Do If Your Claim Is Denied' },
+  { id: 'preparing', title: 'Preparing for Water Damage Before It Happens' },
+  { id: 'faq', title: 'Frequently Asked Questions' },
+];
 
 const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
   return (
@@ -37,7 +54,9 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           ]}
         />
 
-        <h2>Understanding Water Damage Coverage in Standard Homeowners Policies</h2>
+        <TableOfContents items={tocItems} />
+
+        <h2 id="understanding-coverage">Understanding Water Damage Coverage in Standard Homeowners Policies</h2>
 
         <p>
           Standard homeowners insurance policies (HO-3 is most common) provide coverage for sudden and accidental water damage from specific perils. However, the source of water, how it entered your home, and the circumstances surrounding the damage determine whether your claim will be approved or denied.
@@ -103,7 +122,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
 
         <MidArticleCTA variant="emergency" />
 
-        <h2>Flood Insurance vs. Homeowners Insurance in Virginia</h2>
+        <h2 id="flood-vs-homeowners">Flood Insurance vs. Homeowners Insurance in Virginia</h2>
 
         <p>
           Many Virginia homeowners mistakenly believe their standard policy covers all water intrusion, including flooding. This misconception can lead to financial devastation when major storm events cause damage.
@@ -151,7 +170,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Important: Flood insurance requires a 30-day waiting period before coverage takes effect, so don't wait until storms are forecasted. If you're unsure about your flood risk, our <a href="/services/flood-damage-restoration">flood damage experts</a> can assess your property and recommend appropriate coverage.
         </p>
 
-        <h2>Water Backup and Sump Pump Coverage</h2>
+        <h2 id="water-backup-coverage">Water Backup and Sump Pump Coverage</h2>
 
         <p>
           One of the most valuable—and frequently overlooked—coverage endorsements for Virginia homeowners is water backup protection.
@@ -202,7 +221,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Given that sump pump failures are a leading cause of <a href="/blog/basement-flooding-loudoun-county">basement flooding in Loudoun County</a> and throughout Northern Virginia, this endorsement provides critical protection for minimal cost.
         </p>
 
-        <h2>Service Line Coverage: Protecting Your Underground Infrastructure</h2>
+        <h2 id="service-line-coverage">Service Line Coverage: Protecting Your Underground Infrastructure</h2>
 
         <p>
           Another valuable endorsement covers damage to service lines connecting your home to municipal systems:
@@ -220,7 +239,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Repairing or replacing these lines can cost $3,000-$15,000, and homeowners are typically responsible for lines on their property. This coverage (usually $50-$100 annually) can save substantial expense when tree roots, ground shifting, or age causes line failures.
         </p>
 
-        <h2>How to File a Successful Water Damage Claim in Virginia</h2>
+        <h2 id="filing-claims">How to File a Successful Water Damage Claim in Virginia</h2>
 
         <p>
           Proper claim filing procedures significantly impact approval likelihood and settlement amounts. Follow these steps for optimal results:
@@ -298,7 +317,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Our <a href="/services/water-damage-restoration">water damage restoration services</a> are designed to work seamlessly with insurance claims, reducing your stress during an already difficult time.
         </p>
 
-        <h2>Common Claim Denial Reasons and How to Avoid Them</h2>
+        <h2 id="claim-denials">Common Claim Denial Reasons and How to Avoid Them</h2>
 
         <h3>Maintenance-Related Denials</h3>
 
@@ -344,7 +363,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <strong>Prevention strategy:</strong> Report all water damage within 24-48 hours, even if you're unsure whether you'll file a claim. Reporting doesn't obligate you to proceed with a claim but protects your coverage rights.
         </p>
 
-        <h2>Mold Coverage Limitations in Virginia Policies</h2>
+        <h2 id="mold-coverage">Mold Coverage Limitations in Virginia Policies</h2>
 
         <p>
           Mold has become a contentious insurance issue, with most carriers significantly limiting coverage due to costly claims in the late 1990s and early 2000s.
@@ -373,7 +392,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           The key to maximizing mold coverage is rapid response. Professional <a href="/services/mold-remediation">mold remediation</a> within 24-48 hours of water damage significantly reduces both mold growth and associated costs, keeping claims within policy limits.
         </p>
 
-        <h2>Virginia-Specific Insurance Considerations</h2>
+        <h2 id="virginia-specific">Virginia-Specific Insurance Considerations</h2>
 
         <h3>Coastal Property Considerations</h3>
 
@@ -401,7 +420,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li>Higher replacement costs requiring adequate coverage limits</li>
         </ul>
 
-        <h2>How Much Water Damage Coverage Do You Need?</h2>
+        <h2 id="how-much-coverage">How Much Water Damage Coverage Do You Need?</h2>
 
         <p>
           Adequate coverage limits are essential for complete restoration after major water damage. Consider:
@@ -425,7 +444,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           If water damage makes your home uninhabitable, Additional Living Expense (ALE) coverage pays for temporary housing, meals, and other living costs. Ensure limits are sufficient for Northern Virginia's high cost of living.
         </p>
 
-        <h2>Premium-Reduction Strategies While Maintaining Protection</h2>
+        <h2 id="premium-reduction">Premium-Reduction Strategies While Maintaining Protection</h2>
 
         <p>
           You can reduce insurance costs without sacrificing essential water damage protection:
@@ -441,7 +460,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li><strong>Install sump pump battery backup:</strong> Demonstrates risk reduction</li>
         </ul>
 
-        <h2>What to Do If Your Claim Is Denied</h2>
+        <h2 id="claim-denied">What to Do If Your Claim Is Denied</h2>
 
         <p>
           Claim denials aren't always final. If your water damage claim is denied:
@@ -461,7 +480,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           The <a href="https://scc.virginia.gov/pages/Insurance" target="_blank" rel="noopener noreferrer">Virginia State Corporation Commission Bureau of Insurance</a> provides consumer assistance and investigates insurance complaints.
         </p>
 
-        <h2>Preparing for Water Damage Before It Happens</h2>
+        <h2 id="preparing">Preparing for Water Damage Before It Happens</h2>
 
         <p>
           Proactive preparation maximizes insurance protection and minimizes damage:
@@ -498,7 +517,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           Don't wait for a storm forecast to buy flood insurance—there's a 30-day waiting period before coverage activates. Similarly, water backup endorsements are inexpensive ($40-$100/year) but invaluable when you need them. Review your policy today and add these coverages before you need them.
         </QuickTip>
 
-        <h2>Partner with Flood Doctor for Insurance-Ready Water Damage Restoration</h2>
+        <h2 id="partner">Partner with Flood Doctor for Insurance-Ready Water Damage Restoration</h2>
 
         <p>
           Understanding insurance coverage is only half the equation—working with restoration professionals who understand the claims process is equally important. Flood Doctor provides comprehensive <a href="/services/water-damage-restoration">water damage restoration services</a> throughout Northern Virginia, from emergency extraction to complete reconstruction.
@@ -518,7 +537,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           </a>
         </div>
 
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="faq">Frequently Asked Questions</h2>
 
         <h3>Will filing a water damage claim increase my homeowners insurance rates?</h3>
         <p>
