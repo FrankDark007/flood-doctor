@@ -50,6 +50,7 @@ import WaterDamageCostGuide from './pages/resources/WaterDamageCostGuide';
 import MoldPreventionGuide from './pages/resources/MoldPreventionGuide';
 import WaterDamageCategories from './pages/resources/WaterDamageCategories';
 import SignsOfWaterDamage from './pages/resources/SignsOfWaterDamage';
+import WaterDamageCostCalculator from './pages/resources/WaterDamageCostCalculator';
 import BlogIndex from './pages/BlogIndex';
 import NearMeLanding from './pages/NearMeLanding';
 import NotFound from './pages/NotFound';
@@ -84,6 +85,43 @@ import BurstPipeEmergency from './pages/blog/burst-pipe-emergency-response';
 import MoldGrowthTimeline from './pages/blog/mold-growth-after-water-damage-timeline';
 import SewageCleanupAlexandria from './pages/blog/sewage-cleanup-alexandria-va';
 
+// Additional Blog Articles
+import BasementFloodingGuide from './pages/blog/basement-flooding-guide';
+import BathroomWaterDamageGuide from './pages/blog/bathroom-water-damage-guide';
+import WaterDamageHomeSellingDisclosure from './pages/blog/water-damage-home-selling-disclosure';
+import HvacWaterDamageGuide from './pages/blog/hvac-water-damage-guide';
+import HiddenWaterDamageSigns from './pages/blog/hidden-water-damage-signs';
+import DrywallWaterDamageGuide from './pages/blog/drywall-water-damage-guide';
+import FrozenBurstPipesGuide from './pages/blog/frozen-burst-pipes-guide';
+import HardwoodFloorWaterDamage from './pages/blog/hardwood-floor-water-damage';
+import CeilingWaterDamageGuide from './pages/blog/ceiling-water-damage-guide';
+import KitchenWaterDamageGuide from './pages/blog/kitchen-water-damage-guide';
+import AtticWaterDamageGuide from './pages/blog/attic-water-damage-guide';
+import RentalPropertyWaterDamage from './pages/blog/rental-property-water-damage-virginia';
+import WaterDamagedFurnitureRestoration from './pages/blog/water-damaged-furniture-restoration';
+import ProfessionalDryingDehumidification from './pages/blog/professional-drying-dehumidification';
+import MustySmellOdorRemovalGuide from './pages/blog/musty-smell-odor-removal-guide';
+import WaterHeaterFloodingGuide from './pages/blog/water-heater-flooding-guide';
+import WindowDoorWaterIntrusion from './pages/blog/window-door-water-intrusion';
+import WaterDamageHomeWarrantyCoverage from './pages/blog/water-damage-home-warranty-coverage';
+import VacationWaterDamagePrevention from './pages/blog/vacation-water-damage-prevention';
+import CondoWaterDamageHoaGuide from './pages/blog/condo-water-damage-hoa-guide';
+import WaterDamagedElectronicsGuide from './pages/blog/water-damaged-electronics-guide';
+import LaundryRoomWashingMachineFlood from './pages/blog/laundry-room-washing-machine-flood';
+import WetCarpetWaterDamage from './pages/blog/wet-carpet-water-damage';
+
+// Additional Resource Guides
+import WaterDamageClassesGuide from './pages/resources/WaterDamageClassesGuide';
+import VirginiaInsuranceGuide from './pages/resources/VirginiaInsuranceGuide';
+import StructuralDryingGuide from './pages/resources/StructuralDryingGuide';
+import MoldRemediationStandards from './pages/resources/MoldRemediationStandards';
+import EmergencyPreparednessNorthernVA from './pages/resources/EmergencyPreparednessNorthernVA';
+import EmergencyChecklist from './pages/resources/emergency-checklist';
+import ChoosingRestorationCompany from './pages/resources/choosing-restoration-company';
+import HomeWaterproofingGuide from './pages/resources/home-waterproofing-guide';
+import InsuranceDocumentationGuide from './pages/resources/insurance-documentation-guide';
+import RestorationTimelineGuide from './pages/resources/restoration-timeline-guide';
+
 // Location Landing Pages
 import AlexandriaWaterDamage from './pages/locations/AlexandriaWaterDamage';
 import AlexandriaMoldRemoval from './pages/locations/AlexandriaMoldRemoval';
@@ -114,6 +152,32 @@ import SpringfieldWaterDamage from './pages/locations/SpringfieldWaterDamage';
 import SpringfieldMoldRemoval from './pages/locations/SpringfieldMoldRemoval';
 import FallsChurchWaterDamage from './pages/locations/FallsChurchWaterDamage';
 import FallsChurchMoldRemoval from './pages/locations/FallsChurchMoldRemoval';
+
+// Keyword Landing Pages - Locations
+import WaterDamageRestorationArlington from './pages/landing/WaterDamageRestorationArlington';
+import WaterDamageRestorationFairfax from './pages/landing/WaterDamageRestorationFairfax';
+import WaterDamageRestorationAlexandria from './pages/landing/WaterDamageRestorationAlexandria';
+import WaterDamageRestorationSpringfield from './pages/landing/WaterDamageRestorationSpringfield';
+import WaterDamageRestorationReston from './pages/landing/WaterDamageRestorationReston';
+import WaterDamageRestorationAshburn from './pages/landing/WaterDamageRestorationAshburn';
+import WaterDamageRestorationMcLean from './pages/landing/WaterDamageRestorationMcLean';
+import WaterDamageRestorationGreatFalls from './pages/landing/WaterDamageRestorationGreatFalls';
+import WaterDamageRestorationFallsChurch from './pages/landing/WaterDamageRestorationFallsChurch';
+import WaterDamageRestorationVienna from './pages/landing/WaterDamageRestorationVienna';
+
+// Keyword Landing Pages - Services
+import WaterDamageRestorationServices from './pages/landing/WaterDamageRestorationServices';
+import WaterDamageCleanupPage from './pages/landing/WaterDamageCleanup';
+import WaterDamageRepair from './pages/landing/WaterDamageRepair';
+import FloodDamageRestoration from './pages/landing/FloodDamageRestoration';
+import WaterRestorationPage from './pages/landing/WaterRestoration';
+import FloodDamageCleanup from './pages/landing/FloodDamageCleanup';
+import EmergencyWaterDamageRestorationPage from './pages/landing/EmergencyWaterDamageRestoration';
+import WaterDamageRestorationCompany from './pages/landing/WaterDamageRestorationCompany';
+import WaterMitigation from './pages/landing/WaterMitigation';
+import BasementFloodRestoration from './pages/landing/BasementFloodRestoration';
+import FloodCleanupServices from './pages/landing/FloodCleanupServices';
+import WaterRemediation from './pages/landing/WaterRemediation';
 
 // Data
 import { SERVICES } from './data/services';
@@ -184,13 +248,10 @@ const App: React.FC = () => {
             <Route path="/commercial/healthcare/" element={<HealthcareRestoration />} />
 
             {/* Dynamic Leaf Service Pages */}
-            {SERVICES.map((service) => (
-               <Route 
-                  key={service.id} 
-                  path={service.slug} 
-                  element={<ServiceDetail service={service} />} 
-               />
-            ))}
+            {SERVICES.map((service) => {
+              const routeElement = <Route path={service.slug} element={<ServiceDetail service={service} />} />;
+              return React.cloneElement(routeElement, { key: service.id });
+            })}
 
             {/* Core Pages */}
             <Route path="/locations/" element={<LocationsHub />} />
@@ -251,6 +312,32 @@ const App: React.FC = () => {
             <Route path="/locations/falls-church-water-damage/" element={<FallsChurchWaterDamage />} />
             <Route path="/locations/falls-church-mold-removal/" element={<FallsChurchMoldRemoval />} />
 
+            {/* Keyword Landing Pages - Location Specific */}
+            <Route path="/water-damage-restoration-arlington-va/" element={<WaterDamageRestorationArlington />} />
+            <Route path="/water-damage-restoration-fairfax-va/" element={<WaterDamageRestorationFairfax />} />
+            <Route path="/water-damage-restoration-alexandria-va/" element={<WaterDamageRestorationAlexandria />} />
+            <Route path="/water-damage-restoration-springfield-va/" element={<WaterDamageRestorationSpringfield />} />
+            <Route path="/water-damage-restoration-reston-va/" element={<WaterDamageRestorationReston />} />
+            <Route path="/water-damage-restoration-ashburn-va/" element={<WaterDamageRestorationAshburn />} />
+            <Route path="/water-damage-restoration-mclean-va/" element={<WaterDamageRestorationMcLean />} />
+            <Route path="/water-damage-restoration-great-falls-va/" element={<WaterDamageRestorationGreatFalls />} />
+            <Route path="/water-damage-restoration-falls-church-va/" element={<WaterDamageRestorationFallsChurch />} />
+            <Route path="/water-damage-restoration-vienna-va/" element={<WaterDamageRestorationVienna />} />
+
+            {/* Keyword Landing Pages - Service Specific */}
+            <Route path="/water-damage-restoration-services/" element={<WaterDamageRestorationServices />} />
+            <Route path="/water-damage-cleanup/" element={<WaterDamageCleanupPage />} />
+            <Route path="/water-damage-repair/" element={<WaterDamageRepair />} />
+            <Route path="/flood-damage-restoration/" element={<FloodDamageRestoration />} />
+            <Route path="/water-restoration/" element={<WaterRestorationPage />} />
+            <Route path="/flood-damage-cleanup/" element={<FloodDamageCleanup />} />
+            <Route path="/emergency-water-damage-restoration/" element={<EmergencyWaterDamageRestorationPage />} />
+            <Route path="/water-damage-restoration-company/" element={<WaterDamageRestorationCompany />} />
+            <Route path="/water-mitigation/" element={<WaterMitigation />} />
+            <Route path="/basement-flood-restoration/" element={<BasementFloodRestoration />} />
+            <Route path="/flood-cleanup-services/" element={<FloodCleanupServices />} />
+            <Route path="/water-remediation/" element={<WaterRemediation />} />
+
             {/* Resources */}
             <Route path="/resources/" element={<ResourcesHub />} />
             <Route path="/resources/faq/" element={<FAQ />} />
@@ -264,6 +351,17 @@ const App: React.FC = () => {
             <Route path="/resources/mold-prevention-guide/" element={<MoldPreventionGuide />} />
             <Route path="/resources/water-damage-categories/" element={<WaterDamageCategories />} />
             <Route path="/resources/signs-of-water-damage/" element={<SignsOfWaterDamage />} />
+            <Route path="/resources/cost-calculator/" element={<WaterDamageCostCalculator />} />
+            <Route path="/resources/water-damage-classes-guide/" element={<WaterDamageClassesGuide />} />
+            <Route path="/resources/virginia-insurance-guide/" element={<VirginiaInsuranceGuide />} />
+            <Route path="/resources/structural-drying-guide/" element={<StructuralDryingGuide />} />
+            <Route path="/resources/mold-remediation-standards/" element={<MoldRemediationStandards />} />
+            <Route path="/resources/emergency-preparedness-northern-va/" element={<EmergencyPreparednessNorthernVA />} />
+            <Route path="/resources/emergency-checklist/" element={<EmergencyChecklist />} />
+            <Route path="/resources/choosing-restoration-company/" element={<ChoosingRestorationCompany />} />
+            <Route path="/resources/home-waterproofing-guide/" element={<HomeWaterproofingGuide />} />
+            <Route path="/resources/insurance-documentation-guide/" element={<InsuranceDocumentationGuide />} />
+            <Route path="/resources/restoration-timeline-guide/" element={<RestorationTimelineGuide />} />
             <Route path="/blog/" element={<BlogIndex />} />
 
             {/* Blog Articles */}
@@ -285,6 +383,31 @@ const App: React.FC = () => {
             <Route path="/blog/burst-pipe-emergency-response/" element={<BurstPipeEmergency />} />
             <Route path="/blog/mold-growth-after-water-damage-timeline/" element={<MoldGrowthTimeline />} />
             <Route path="/blog/sewage-cleanup-alexandria-va/" element={<SewageCleanupAlexandria />} />
+
+            {/* Additional Blog Articles */}
+            <Route path="/blog/basement-flooding-guide/" element={<BasementFloodingGuide />} />
+            <Route path="/blog/bathroom-water-damage-guide/" element={<BathroomWaterDamageGuide />} />
+            <Route path="/blog/water-damage-home-selling-disclosure/" element={<WaterDamageHomeSellingDisclosure />} />
+            <Route path="/blog/hvac-water-damage-guide/" element={<HvacWaterDamageGuide />} />
+            <Route path="/blog/hidden-water-damage-signs/" element={<HiddenWaterDamageSigns />} />
+            <Route path="/blog/drywall-water-damage-guide/" element={<DrywallWaterDamageGuide />} />
+            <Route path="/blog/frozen-burst-pipes-guide/" element={<FrozenBurstPipesGuide />} />
+            <Route path="/blog/hardwood-floor-water-damage/" element={<HardwoodFloorWaterDamage />} />
+            <Route path="/blog/ceiling-water-damage-guide/" element={<CeilingWaterDamageGuide />} />
+            <Route path="/blog/kitchen-water-damage-guide/" element={<KitchenWaterDamageGuide />} />
+            <Route path="/blog/attic-water-damage-guide/" element={<AtticWaterDamageGuide />} />
+            <Route path="/blog/rental-property-water-damage-virginia/" element={<RentalPropertyWaterDamage />} />
+            <Route path="/blog/water-damaged-furniture-restoration/" element={<WaterDamagedFurnitureRestoration />} />
+            <Route path="/blog/professional-drying-dehumidification/" element={<ProfessionalDryingDehumidification />} />
+            <Route path="/blog/musty-smell-odor-removal-guide/" element={<MustySmellOdorRemovalGuide />} />
+            <Route path="/blog/water-heater-flooding-guide/" element={<WaterHeaterFloodingGuide />} />
+            <Route path="/blog/window-door-water-intrusion/" element={<WindowDoorWaterIntrusion />} />
+            <Route path="/blog/water-damage-home-warranty-coverage/" element={<WaterDamageHomeWarrantyCoverage />} />
+            <Route path="/blog/vacation-water-damage-prevention/" element={<VacationWaterDamagePrevention />} />
+            <Route path="/blog/condo-water-damage-hoa-guide/" element={<CondoWaterDamageHoaGuide />} />
+            <Route path="/blog/water-damaged-electronics-guide/" element={<WaterDamagedElectronicsGuide />} />
+            <Route path="/blog/laundry-room-washing-machine-flood/" element={<LaundryRoomWashingMachineFlood />} />
+            <Route path="/blog/wet-carpet-water-damage/" element={<WetCarpetWaterDamage />} />
 
             {/* Tools & Demos */}
             <Route path="/tools/video-generator/" element={<VideoGenerator />} />

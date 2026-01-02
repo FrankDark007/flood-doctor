@@ -191,7 +191,7 @@ const WaterDamageClassesGuide: React.FC = () => {
     {
       icon: Droplets,
       title: "Humidity",
-      description: "Lower humidity increases evaporation potential. Target <50% relative humidity during drying."
+      description: "Lower humidity increases evaporation potential. Target &lt;50% relative humidity during drying."
     },
     {
       icon: Wind,

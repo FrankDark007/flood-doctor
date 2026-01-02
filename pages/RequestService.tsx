@@ -1,186 +1,88 @@
-
-import React, { useState, useRef, useEffect } from 'react';
-import Button from '../components/ui/Button';
-import PageMeta from '../components/ui/PageMeta';
-import EmergencyServiceCard from '../components/ui/EmergencyServiceCard';
-import { useEmergencyData } from '../contexts/EmergencyContext';
-import { 
-  ShieldCheck, 
-  CheckCircle2, 
-  AlertTriangle, 
-  UploadCloud, 
-  ArrowRight, 
-  FileText, 
-  Home, 
-  Building2, 
-  Calendar, 
-  Zap, 
-  ChevronLeft, 
-  FileCheck, 
-  MapPin, 
-  ClipboardList
+import React, { useState } from 'react';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Home,
+  Building2,
+  Droplets,
+  Flame,
+  Wind,
+  ArrowRight,
+  Star,
+  Shield,
+  FileCheck,
+  Calendar,
+  UploadCloud
 } from 'lucide-react';
+import PageMeta from '../components/ui/PageMeta';
+import Button from '../components/ui/Button';
 
-// --- UI COMPONENTS ---
-
-const ModernInput = ({ 
-  id, 
-  label, 
-  type = "text", 
-  value,
-  onChange,
-  onBlur,
-  placeholder = "", 
-  required = false,
-  autoComplete,
-  className = ""
-}: any) => (
-  <div className={`space-y-3 ${className}`}>
-    <label
-      htmlFor={id}
-      className="block text-xs font-bold text-gray-400 uppercase tracking-widest pl-1"
-    >
-      {label} {required && <span className="text-red-500">*</span>}
-    </label>
-    <input
-      type={type}
-      id={id}
-      name={id}
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-      className="block w-full h-14 px-5 rounded-2xl bg-gray-50 border-2 border-transparent text-gray-900 text-lg placeholder-gray-300 focus:bg-white focus:border-blue-100 focus:ring-4 focus:ring-blue-50/50 transition-all duration-300 outline-none font-medium"
-      placeholder={placeholder}
-      required={required}
-      autoComplete={autoComplete}
-    />
-  </div>
-);
-
-const ModernTextArea = ({ id, label, value, onChange, required, placeholder }: any) => (
-  <div className="space-y-3">
-    <label
-      htmlFor={id}
-      className="block text-xs font-bold text-gray-400 uppercase tracking-widest pl-1"
-    >
-      {label}
-    </label>
-    <textarea
-      id={id}
-      name={id}
-      value={value}
-      onChange={onChange}
-      rows={5}
-      className="block w-full p-5 rounded-2xl bg-gray-50 border-2 border-transparent text-gray-900 text-lg placeholder-gray-300 focus:bg-white focus:border-blue-100 focus:ring-4 focus:ring-blue-50/50 transition-all duration-300 outline-none font-medium resize-none"
-      placeholder={placeholder}
-      required={required}
-    />
-  </div>
-);
-
-const SelectionCard = ({ id, name, label, description, icon: Icon, checked, onChange, value, color = 'blue' }: any) => {
-  const colors: Record<string, any> = {
-    blue: {
-      activeBorder: 'border-blue-500',
-      activeBg: 'bg-blue-50',
-      activeRing: 'ring-blue-100',
-      iconBg: 'bg-blue-100',
-      iconText: 'text-blue-600',
-      checkBg: 'bg-blue-500',
-      hoverBorder: 'hover:border-blue-200',
-      hoverBg: 'group-hover:bg-blue-50/50'
-    },
-  };
-
-  const theme = colors['blue']; 
-
-  return (
-    <label className={`relative flex flex-col p-6 rounded-[2rem] border-2 cursor-pointer transition-all duration-300 group h-full hover:-translate-y-1 ${
-      checked 
-        ? `${theme.activeBorder} ${theme.activeBg} ring-4 ${theme.activeRing} shadow-lg` 
-        : `border-gray-100 bg-white hover:shadow-xl ${theme.hoverBorder} ${theme.hoverBg}`
-    }`}>
-      <input 
-        type="radio" 
-        name={name} 
-        id={id} 
-        value={value}
-        checked={checked} 
-        onChange={onChange}
-        className="sr-only" 
-      />
-      
-      <div className="flex justify-between items-start mb-6">
-        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm ${theme.iconBg} ${theme.iconText}`}>
-          <Icon size={32} strokeWidth={2} />
-        </div>
-        
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-            checked 
-            ? `${theme.checkBg} text-white scale-100 opacity-100 shadow-sm` 
-            : 'bg-gray-100 text-gray-300 scale-75 opacity-0 group-hover:opacity-100'
-        }`}>
-            <CheckCircle2 size={18} strokeWidth={3} />
-        </div>
-      </div>
-
-      <div className="mt-auto">
-        <span className={`block text-xl font-bold mb-2 transition-colors ${checked ? 'text-gray-900' : 'text-gray-900'}`}>
-            {label}
-        </span>
-        <span className={`text-base leading-relaxed block ${checked ? 'text-gray-700' : 'text-gray-500'}`}>
-            {description}
-        </span>
-      </div>
-    </label>
-  );
-};
-
-// --- MAIN PAGE ---
+/**
+ * RequestService - Multi-Step Form (contact-c layout)
+ *
+ * Key patterns:
+ * - Step-by-step guided form
+ * - Service type selection with visuals
+ * - Property type selection
+ * - Urgency indicator
+ * - Progress indicator
+ * - Sidebar with contact info and trust signals
+ */
 
 const RequestService: React.FC = () => {
-  const { triggerEmergency, resetEmergency } = useEmergencyData();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  // Form State
   const [formData, setFormData] = useState({
-    isEmergency: '', 
+    serviceType: '',
     propertyType: '',
-    fullName: '',
-    email: '',
+    urgency: '',
+    name: '',
     phone: '',
+    email: '',
     address: '',
     city: '',
     zip: '',
-    hasInsurance: 'yes',
+    hasInsurance: '',
     carrier: '',
-    description: ''
+    message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    if (name === 'isEmergency') {
-        if (value === 'yes') triggerEmergency();
-        else resetEmergency();
+  const serviceTypes = [
+    { id: 'water-damage', label: 'Water Damage', icon: Droplets, description: 'Flooding, leaks, burst pipes' },
+    { id: 'mold', label: 'Mold Removal', icon: Wind, description: 'Mold remediation & testing' },
+    { id: 'fire-damage', label: 'Fire/Smoke', icon: Flame, description: 'Fire damage restoration' },
+    { id: 'other', label: 'Other Services', icon: Home, description: 'Biohazard, storm damage' }
+  ];
+
+  const propertyTypes = [
+    { id: 'residential', label: 'Residential', icon: Home, description: 'House, townhome, condo' },
+    { id: 'commercial', label: 'Commercial', icon: Building2, description: 'Office, retail, industrial' }
+  ];
+
+  const urgencyLevels = [
+    { id: 'emergency', label: 'Emergency', description: 'Active water/damage now', color: 'rose' },
+    { id: 'urgent', label: 'Urgent', description: 'Need help within 24 hours', color: 'amber' },
+    { id: 'standard', label: 'Standard', description: 'Scheduling an estimate', color: 'emerald' }
+  ];
+
+  const totalSteps = 4;
+
+  const nextStep = () => setStep(Math.min(step + 1, totalSteps));
+  const prevStep = () => setStep(Math.max(step - 1, 1));
+
+  const canProceed = () => {
+    switch (step) {
+      case 1: return formData.serviceType !== '';
+      case 2: return formData.propertyType !== '' && formData.urgency !== '';
+      case 3: return formData.name !== '' && formData.phone !== '';
+      default: return true;
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleNext = () => {
-    setStep(prev => prev + 1);
-    scrollToTop();
-  };
-
-  const handleBack = () => {
-    setStep(prev => prev - 1);
-    scrollToTop();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -189,312 +91,554 @@ const RequestService: React.FC = () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     setIsSubmitting(false);
     setIsSuccess(true);
-    scrollToTop();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <main className="bg-white min-h-screen">
-      <PageMeta 
-        title="Request Service" 
-        description="Submit a service request for water damage restoration. 24/7 Emergency response." 
+    <main className="flex-grow bg-slate-50">
+      <PageMeta
+        title="Request Service | Flood Doctor Water Damage Restoration"
+        description="Request water damage restoration service from Flood Doctor. Free estimates, 24/7 emergency response in Northern Virginia."
       />
 
-      <div className="fixed top-0 left-0 right-0 h-1.5 z-50 bg-gray-100">
-        <div 
-          className="h-full bg-primary transition-all duration-700 ease-out" 
-          style={{ width: isSuccess ? '100%' : `${(step / 4) * 100}%` }}
-        />
-      </div>
-      
-      <div className="flex flex-col lg:flex-row min-h-screen pt-20 lg:pt-0">
-        
-        {/* === LEFT COLUMN: FORM === */}
-        <div className="w-full lg:w-2/3 xl:w-3/4 flex flex-col justify-center px-6 py-12 lg:p-24 relative">
-          
-          <div className="max-w-2xl mx-auto w-full">
-            
-            {!isSuccess && (
-              <div className="mb-12 flex items-center justify-between">
-                {step > 1 ? (
-                  <button onClick={handleBack} className="flex items-center text-gray-400 hover:text-gray-900 transition-colors text-sm font-bold uppercase tracking-wider group">
-                    <ChevronLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" /> Back
-                  </button>
-                ) : (
-                  <span className="text-gray-400 text-sm font-bold uppercase tracking-wider">Start</span>
-                )}
-                <span className="text-gray-300 font-display font-medium text-lg">
-                  <span className="text-primary">0{step}</span> / 04
-                </span>
-              </div>
-            )}
-
-            {!isSuccess ? (
-              <form onSubmit={handleSubmit} className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-                
-                {/* STEP 1 */}
-                {step === 1 && (
-                  <div className="space-y-12">
-                    <div>
-                      <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-[1.1] tracking-tight">
-                        What brings you here today?
-                      </h1>
-                      <p className="text-xl text-gray-500 font-light">
-                        We need to assess the urgency to dispatch the right crew.
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <SelectionCard 
-                        id="emergency-yes" 
-                        name="isEmergency" 
-                        value="yes" 
-                        label="Emergency Service"
-                        description="Active flooding, sewage backup, or standing water. I need a crew immediately."
-                        icon={Zap}
-                        color="blue"
-                        checked={formData.isEmergency === 'yes'} 
-                        onChange={handleChange} 
-                      />
-                      <SelectionCard 
-                        id="emergency-no" 
-                        name="isEmergency" 
-                        value="no" 
-                        label="Standard Request"
-                        description="Mold inspection, estimate for repairs, or non-urgent water damage assessment."
-                        icon={Calendar}
-                        color="blue"
-                        checked={formData.isEmergency === 'no'} 
-                        onChange={handleChange} 
-                      />
-                    </div>
-
-                    {formData.isEmergency === 'yes' && (
-                       <div className="p-6 bg-[#e6f4ea] border border-[#ceead6] rounded-2xl flex items-start gap-4 animate-in fade-in slide-in-from-top-8 duration-500 shadow-sm">
-                          <div className="bg-white p-2.5 rounded-full shadow-sm shrink-0">
-                              <AlertTriangle className="text-[#188038]" size={24} strokeWidth={2.5} />
-                          </div>
-                          <div>
-                             <h4 className="font-bold text-[#0d652d] text-lg">Priority Status Activated</h4>
-                             <p className="text-[#137333] text-sm mt-1 leading-relaxed font-medium">
-                                We are prioritizing your request. Once submitted, you will receive a Work Authorization via email to dispatch a crew instantly.
-                             </p>
-                          </div>
-                       </div>
-                    )}
-
-                    <div className="space-y-6">
-                        <h3 className="text-sm font-bold text-gray-900 uppercase tracking-widest pl-1">Property Type</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <SelectionCard 
-                                id="prop-res" 
-                                name="propertyType" 
-                                value="residential" 
-                                label="Residential"
-                                description="Single family home, condo, or apartment."
-                                icon={Home}
-                                color="blue"
-                                checked={formData.propertyType === 'residential'} 
-                                onChange={handleChange} 
-                            />
-                            <SelectionCard 
-                                id="prop-com" 
-                                name="propertyType" 
-                                value="commercial" 
-                                label="Commercial"
-                                description="Office building, retail, school, or industrial facility."
-                                icon={Building2}
-                                color="blue"
-                                checked={formData.propertyType === 'commercial'} 
-                                onChange={handleChange} 
-                            />
-                        </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* STEP 2 */}
-                {step === 2 && (
-                  <div className="space-y-10">
-                    <div>
-                      <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-[1.1] tracking-tight">Where should we go?</h1>
-                      <p className="text-xl text-gray-500 font-light">Contact details for the on-site point of contact.</p>
-                    </div>
-                    <div className="space-y-8">
-                        <ModernInput id="fullName" label="Full Name" value={formData.fullName} onChange={handleChange} autoComplete="name" required placeholder="e.g. Jane Doe" />
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <ModernInput id="email" label="Email Address" type="email" value={formData.email} onChange={handleChange} autoComplete="email" required placeholder="jane@example.com" />
-                            <ModernInput id="phone" label="Mobile Phone" type="tel" value={formData.phone} onChange={handleChange} autoComplete="tel" required placeholder="(555) 123-4567" />
-                        </div>
-                        <div className="pt-4 border-t border-gray-100 space-y-8">
-                            <ModernInput id="address" label="Property Address" value={formData.address} onChange={handleChange} autoComplete="address-line1" required placeholder="1234 Main St" />
-                            <div className="grid grid-cols-2 gap-8">
-                                <ModernInput id="city" label="City" value={formData.city} onChange={handleChange} autoComplete="address-level2" required placeholder="Arlington" />
-                                <ModernInput id="zip" label="Zip Code" value={formData.zip} onChange={handleChange} autoComplete="postal-code" required placeholder="22201" />
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* STEP 3 */}
-                {step === 3 && (
-                  <div className="space-y-10">
-                    <div>
-                      <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-[1.1] tracking-tight">Coverage details</h1>
-                      <p className="text-xl text-gray-500 font-light">Helping us with insurance info now speeds up the claims process later.</p>
-                    </div>
-                    <div className="space-y-8">
-                        <div>
-                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Will you be using insurance?</label>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <SelectionCard id="ins-yes" name="hasInsurance" value="yes" label="Yes, filing a claim" description="We will bill your carrier directly." icon={FileCheck} color="blue" checked={formData.hasInsurance === 'yes'} onChange={handleChange} />
-                                <SelectionCard id="ins-no" name="hasInsurance" value="no" label="No / Self-Pay" description="I will pay out of pocket." icon={FileText} color="slate" checked={formData.hasInsurance === 'no'} onChange={handleChange} />
-                            </div>
-                        </div>
-                        {formData.hasInsurance === 'yes' && (
-                            <div className="animate-in fade-in slide-in-from-top-4 duration-300">
-                                <ModernInput id="carrier" label="Insurance Carrier Name" value={formData.carrier} onChange={handleChange} placeholder="e.g. State Farm, USAA, Travelers" />
-                            </div>
-                        )}
-                    </div>
-                  </div>
-                )}
-
-                {/* STEP 4 */}
-                {step === 4 && (
-                  <div className="space-y-10">
-                    <div>
-                      <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-[1.1] tracking-tight">Final details</h1>
-                      <p className="text-xl text-gray-500 font-light">Tell us briefly what happened so the crew comes prepared.</p>
-                    </div>
-                    <ModernTextArea id="description" label="Description of Damage" value={formData.description} onChange={handleChange} required placeholder="e.g. Pipe burst in the basement..." />
-                    <div className="border-2 border-dashed border-gray-200 rounded-3xl p-10 text-center hover:bg-gray-50 hover:border-primary/30 transition-all cursor-pointer group">
-                        <div className="w-16 h-16 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <UploadCloud size={32} />
-                        </div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-2">Upload Photos (Optional)</h4>
-                    </div>
-                  </div>
-                )}
-
-                <div className="mt-16 pt-8 border-t border-gray-100 flex items-center gap-4">
-                    {step < 4 ? (
-                        <Button type="button" onClick={handleNext} disabled={step === 1 && (!formData.isEmergency || !formData.propertyType)} className="h-16 px-10 text-lg rounded-full bg-primary hover:bg-primaryHover text-white shadow-google hover:shadow-google-hover w-full md:w-auto disabled:opacity-50 disabled:shadow-none">
-                            Continue <ArrowRight className="ml-2" />
-                        </Button>
-                    ) : (
-                        <Button type="submit" disabled={isSubmitting} className={`h-16 px-10 text-lg rounded-full bg-primary hover:bg-primaryHover text-white shadow-google hover:shadow-google-hover w-full md:w-auto ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}>
-                            {isSubmitting ? 'Submitting...' : 'Submit Request'}
-                        </Button>
-                    )}
-                </div>
-              </form>
-            ) : (
-              <div className="animate-in fade-in zoom-in duration-700 text-center py-12">
-                  <div className="w-24 h-24 bg-green rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-xl shadow-green-200">
-                      {/* Inline SVG to guarantee visibility */}
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="48" 
-                        height="48" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="3" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                  </div>
-                  <h2 className="font-display text-4xl md:text-5xl font-medium text-gray-900 mb-6">Request Received</h2>
-                  <p className="text-xl text-gray-500 max-w-lg mx-auto mb-12 leading-relaxed">
-                      {formData.isEmergency === 'yes' ? "Our dispatch team has been alerted. You will receive a call within 5 minutes to confirm details." : "Thanks for reaching out. A project manager will review your request and contact you shortly."}
-                  </p>
-                  <Button to="/" variant="outline" className="h-14 px-8 rounded-full border-gray-300">Return to Home</Button>
-              </div>
-            )}
+      {/* Header */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="font-display text-2xl font-semibold text-text">
+                Request Service
+              </h1>
+              <p className="text-sm text-muted">Free estimate • No obligation</p>
+            </div>
+            <a
+              href="tel:8774970007"
+              className="flex items-center gap-2 bg-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-rose-600 transition-colors"
+            >
+              <Phone size={18} />
+              <span className="hidden sm:inline">Emergency?</span> Call Now
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* === RIGHT COLUMN: CONTEXT (Desktop Only) === */}
-        <div className="hidden lg:block w-1/3 xl:w-1/4 bg-gray-50 border-l border-gray-200 p-10 relative">
-            <div className="sticky top-10 space-y-10">
-                {/* Status Card (Always visible) */}
-                <EmergencyServiceCard variant="expanded" />
-
-                {/* Summary Widget (Always visible, showing placeholders if empty) */}
-                {!isSuccess && (
-                    <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl shadow-gray-200/50 animate-in fade-in slide-in-from-right-4 duration-700 relative overflow-hidden">
-                        {/* Header */}
-                        <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
-                            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Request Summary</h3>
-                            <span className="text-[10px] font-mono text-gray-300 bg-gray-50 px-2 py-1 rounded">DRAFT-001</span>
-                        </div>
-
-                        <div className="space-y-6">
-                            {/* Priority Item */}
-                            <div className="flex items-center gap-4">
-                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                                    !formData.isEmergency ? 'bg-gray-100 text-gray-300' :
-                                    formData.isEmergency === 'yes' ? 'bg-[#fce8e6] text-[#d93025] border border-[#fad2cf]' : 'bg-blue-100 text-blue-600'
-                                }`}>
-                                    {formData.isEmergency === 'yes' ? <Zap size={20} fill="currentColor" className="text-[#d93025]" /> : <Calendar size={20} />}
-                                </div>
-                                <div>
-                                    <div className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">Priority Level</div>
-                                    <div className={`font-display font-bold text-lg ${!formData.isEmergency ? 'text-gray-300' : 'text-gray-900'}`}>
-                                        {!formData.isEmergency ? 'Pending...' : (formData.isEmergency === 'yes' ? 'Emergency' : 'Standard')}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Property Item */}
-                            <div className="flex items-center gap-4">
-                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                                    !formData.propertyType ? 'bg-gray-100 text-gray-300' : 'bg-orange-100 text-orange-600'
-                                }`}>
-                                    {formData.propertyType === 'commercial' ? <Building2 size={20} /> : <Home size={20} />}
-                                </div>
-                                <div>
-                                    <div className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">Property Type</div>
-                                    <div className={`font-display font-bold text-lg capitalize ${!formData.propertyType ? 'text-gray-300' : 'text-gray-900'}`}>
-                                        {formData.propertyType || 'Pending...'}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Location Item */}
-                            <div className="flex items-center gap-4">
-                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                                    !formData.city ? 'bg-gray-100 text-gray-300' : 'bg-purple-100 text-purple-600'
-                                }`}>
-                                    <MapPin size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">Location</div>
-                                    <div className={`font-display font-bold text-lg ${!formData.city ? 'text-gray-300' : 'text-gray-900'}`}>
-                                        {formData.city || 'Pending...'}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {/* Decorative Watermark */}
-                        <div className="absolute -bottom-6 -right-6 text-gray-50 opacity-50 rotate-[-15deg]">
-                            <FileText size={120} />
-                        </div>
-                    </div>
-                )}
-
-                {/* Trust Badge */}
-                <div className="flex items-center gap-3 text-gray-400 text-xs font-medium justify-center opacity-70">
-                    <ShieldCheck size={16} />
-                    <span>SSL Encrypted & HIPAA Compliant</span>
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <div className="grid lg:grid-cols-3 gap-10">
+          {/* Main Form */}
+          <div className="lg:col-span-2">
+            {/* Progress */}
+            {!isSuccess && (
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-text">Step {step} of {totalSteps}</span>
+                  <span className="text-sm text-muted">{Math.round((step / totalSteps) * 100)}% complete</span>
                 </div>
-            </div>
-        </div>
+                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-primary rounded-full transition-all duration-300"
+                    style={{ width: `${(step / totalSteps) * 100}%` }}
+                  />
+                </div>
+              </div>
+            )}
 
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              {isSuccess ? (
+                /* Success State */
+                <div className="p-12 text-center">
+                  <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="text-emerald-600" size={40} />
+                  </div>
+                  <h2 className="font-display text-3xl font-semibold text-text mb-4">
+                    Request Submitted
+                  </h2>
+                  <p className="text-lg text-muted mb-8 max-w-md mx-auto">
+                    {formData.urgency === 'emergency'
+                      ? "Our dispatch team has been alerted. You'll receive a call within 5 minutes."
+                      : "Thanks for reaching out! A project manager will contact you within 15 minutes."}
+                  </p>
+                  <Button to="/" variant="outline">
+                    Return to Home
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  {/* Step 1: Service Type */}
+                  {step === 1 && (
+                    <div className="p-8">
+                      <h2 className="font-display text-2xl font-semibold text-text mb-2">
+                        What type of service do you need?
+                      </h2>
+                      <p className="text-muted mb-8">Select the option that best describes your situation.</p>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {serviceTypes.map((service) => (
+                          <button
+                            key={service.id}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, serviceType: service.id })}
+                            className={`text-left p-6 rounded-xl border-2 transition-all ${
+                              formData.serviceType === service.id
+                                ? 'border-primary bg-primary/5'
+                                : 'border-gray-200 hover:border-gray-300'
+                            }`}
+                          >
+                            <service.icon
+                              size={32}
+                              className={formData.serviceType === service.id ? 'text-primary' : 'text-muted'}
+                            />
+                            <h3 className={`font-semibold mt-4 mb-1 ${
+                              formData.serviceType === service.id ? 'text-primary' : 'text-text'
+                            }`}>
+                              {service.label}
+                            </h3>
+                            <p className="text-sm text-muted">{service.description}</p>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step 2: Property & Urgency */}
+                  {step === 2 && (
+                    <div className="p-8">
+                      <h2 className="font-display text-2xl font-semibold text-text mb-2">
+                        Tell us about your property
+                      </h2>
+                      <p className="text-muted mb-8">This helps us prepare the right team and equipment.</p>
+
+                      <div className="mb-8">
+                        <label className="block text-sm font-medium text-text mb-3">Property Type</label>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          {propertyTypes.map((type) => (
+                            <button
+                              key={type.id}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, propertyType: type.id })}
+                              className={`text-left p-5 rounded-xl border-2 transition-all ${
+                                formData.propertyType === type.id
+                                  ? 'border-primary bg-primary/5'
+                                  : 'border-gray-200 hover:border-gray-300'
+                              }`}
+                            >
+                              <div className="flex items-center gap-4">
+                                <type.icon
+                                  size={24}
+                                  className={formData.propertyType === type.id ? 'text-primary' : 'text-muted'}
+                                />
+                                <div>
+                                  <h3 className={`font-semibold ${
+                                    formData.propertyType === type.id ? 'text-primary' : 'text-text'
+                                  }`}>
+                                    {type.label}
+                                  </h3>
+                                  <p className="text-sm text-muted">{type.description}</p>
+                                </div>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-text mb-3">How urgent is this?</label>
+                        <div className="space-y-3">
+                          {urgencyLevels.map((level) => (
+                            <button
+                              key={level.id}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, urgency: level.id })}
+                              className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
+                                formData.urgency === level.id
+                                  ? level.color === 'rose' ? 'border-rose-500 bg-rose-50' :
+                                    level.color === 'amber' ? 'border-amber-500 bg-amber-50' :
+                                    'border-emerald-500 bg-emerald-50'
+                                  : 'border-gray-200 hover:border-gray-300'
+                              }`}
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                  <div className={`w-3 h-3 rounded-full ${
+                                    level.color === 'rose' ? 'bg-rose-500' :
+                                    level.color === 'amber' ? 'bg-amber-500' : 'bg-emerald-500'
+                                  }`} />
+                                  <div>
+                                    <span className="font-semibold text-text">{level.label}</span>
+                                    <span className="text-sm text-muted ml-2">— {level.description}</span>
+                                  </div>
+                                </div>
+                                {formData.urgency === level.id && (
+                                  <CheckCircle2 className={`${
+                                    level.color === 'rose' ? 'text-rose-500' :
+                                    level.color === 'amber' ? 'text-amber-500' : 'text-emerald-500'
+                                  }`} size={20} />
+                                )}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {formData.urgency === 'emergency' && (
+                        <div className="mt-6 p-5 bg-rose-50 border border-rose-100 rounded-xl flex items-start gap-3">
+                          <AlertCircle className="text-rose-500 flex-shrink-0" size={20} />
+                          <div>
+                            <div className="font-medium text-rose-800">Priority Dispatch Activated</div>
+                            <p className="text-sm text-rose-700 mt-1">
+                              Your request will be prioritized. A technician will call within 5 minutes of submission.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Step 3: Contact Info */}
+                  {step === 3 && (
+                    <div className="p-8">
+                      <h2 className="font-display text-2xl font-semibold text-text mb-2">
+                        Your contact information
+                      </h2>
+                      <p className="text-muted mb-8">We'll use this to reach you about your service request.</p>
+
+                      <div className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-text mb-2">
+                              Your Name *
+                            </label>
+                            <input
+                              type="text"
+                              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                              placeholder="John Smith"
+                              value={formData.name}
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-text mb-2">
+                              Phone Number *
+                            </label>
+                            <input
+                              type="tel"
+                              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                              placeholder="(555) 123-4567"
+                              value={formData.phone}
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-text mb-2">
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                            placeholder="john@example.com"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-text mb-2">
+                            Property Address *
+                          </label>
+                          <input
+                            type="text"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                            placeholder="123 Main St"
+                            value={formData.address}
+                            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-text mb-2">
+                              City
+                            </label>
+                            <input
+                              type="text"
+                              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                              placeholder="Fairfax"
+                              value={formData.city}
+                              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-text mb-2">
+                              ZIP Code
+                            </label>
+                            <input
+                              type="text"
+                              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                              placeholder="22030"
+                              value={formData.zip}
+                              onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Insurance */}
+                        <div className="pt-4 border-t border-gray-100">
+                          <label className="block text-sm font-medium text-text mb-3">Will you be using insurance?</label>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <button
+                              type="button"
+                              onClick={() => setFormData({ ...formData, hasInsurance: 'yes' })}
+                              className={`text-left p-4 rounded-xl border-2 transition-all ${
+                                formData.hasInsurance === 'yes'
+                                  ? 'border-primary bg-primary/5'
+                                  : 'border-gray-200 hover:border-gray-300'
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <FileCheck size={20} className={formData.hasInsurance === 'yes' ? 'text-primary' : 'text-muted'} />
+                                <div>
+                                  <span className={`font-medium ${formData.hasInsurance === 'yes' ? 'text-primary' : 'text-text'}`}>Yes, filing a claim</span>
+                                  <p className="text-xs text-muted">We bill your carrier directly</p>
+                                </div>
+                              </div>
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setFormData({ ...formData, hasInsurance: 'no' })}
+                              className={`text-left p-4 rounded-xl border-2 transition-all ${
+                                formData.hasInsurance === 'no'
+                                  ? 'border-primary bg-primary/5'
+                                  : 'border-gray-200 hover:border-gray-300'
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <Calendar size={20} className={formData.hasInsurance === 'no' ? 'text-primary' : 'text-muted'} />
+                                <div>
+                                  <span className={`font-medium ${formData.hasInsurance === 'no' ? 'text-primary' : 'text-text'}`}>No / Self-Pay</span>
+                                  <p className="text-xs text-muted">I'll pay out of pocket</p>
+                                </div>
+                              </div>
+                            </button>
+                          </div>
+                          {formData.hasInsurance === 'yes' && (
+                            <div className="mt-4">
+                              <input
+                                type="text"
+                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                                placeholder="Insurance carrier name (e.g., State Farm)"
+                                value={formData.carrier}
+                                onChange={(e) => setFormData({ ...formData, carrier: e.target.value })}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step 4: Review & Submit */}
+                  {step === 4 && (
+                    <div className="p-8">
+                      <h2 className="font-display text-2xl font-semibold text-text mb-2">
+                        Review your request
+                      </h2>
+                      <p className="text-muted mb-8">Make sure everything looks correct before submitting.</p>
+
+                      <div className="bg-slate-50 rounded-xl p-6 mb-6 space-y-4">
+                        <div className="flex justify-between">
+                          <span className="text-muted">Service Type</span>
+                          <span className="font-medium text-text capitalize">{formData.serviceType.replace('-', ' ')}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted">Property Type</span>
+                          <span className="font-medium text-text capitalize">{formData.propertyType}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted">Urgency</span>
+                          <span className={`font-medium capitalize ${
+                            formData.urgency === 'emergency' ? 'text-rose-600' :
+                            formData.urgency === 'urgent' ? 'text-amber-600' : 'text-emerald-600'
+                          }`}>
+                            {formData.urgency}
+                          </span>
+                        </div>
+                        <div className="border-t border-gray-200 pt-4">
+                          <div className="flex justify-between">
+                            <span className="text-muted">Name</span>
+                            <span className="font-medium text-text">{formData.name}</span>
+                          </div>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted">Phone</span>
+                          <span className="font-medium text-text">{formData.phone}</span>
+                        </div>
+                        {formData.email && (
+                          <div className="flex justify-between">
+                            <span className="text-muted">Email</span>
+                            <span className="font-medium text-text">{formData.email}</span>
+                          </div>
+                        )}
+                        {formData.address && (
+                          <div className="flex justify-between">
+                            <span className="text-muted">Address</span>
+                            <span className="font-medium text-text">
+                              {formData.address}{formData.city && `, ${formData.city}`}{formData.zip && ` ${formData.zip}`}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-text mb-2">
+                          Describe your situation (optional)
+                        </label>
+                        <textarea
+                          rows={4}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none"
+                          placeholder="Tell us what happened and any additional details that would help..."
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        />
+                      </div>
+
+                      {/* Photo Upload */}
+                      <div className="mb-6 border-2 border-dashed border-gray-200 rounded-xl p-8 text-center hover:bg-gray-50 hover:border-primary/30 transition-all cursor-pointer">
+                        <UploadCloud className="mx-auto text-muted mb-3" size={32} />
+                        <div className="font-medium text-text mb-1">Upload Photos (Optional)</div>
+                        <p className="text-sm text-muted">Photos help us prepare the right equipment</p>
+                      </div>
+
+                      <div className="flex items-start gap-3 p-4 bg-emerald-50 rounded-xl mb-6">
+                        <CheckCircle2 className="text-emerald-500 flex-shrink-0 mt-0.5" size={20} />
+                        <div className="text-sm">
+                          <span className="font-medium text-emerald-800">What happens next:</span>
+                          <span className="text-emerald-700"> We'll call you within 15 minutes to discuss your situation and schedule a free on-site assessment.</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Navigation */}
+                  <div className="px-8 py-6 bg-slate-50 border-t border-gray-100 flex items-center justify-between">
+                    {step > 1 ? (
+                      <button
+                        type="button"
+                        onClick={prevStep}
+                        className="text-muted hover:text-text font-medium"
+                      >
+                        ← Back
+                      </button>
+                    ) : (
+                      <div />
+                    )}
+
+                    {step < totalSteps ? (
+                      <Button
+                        type="button"
+                        onClick={nextStep}
+                        variant="primary"
+                        disabled={!canProceed()}
+                        className={!canProceed() ? 'opacity-50 cursor-not-allowed' : ''}
+                      >
+                        Continue
+                        <ArrowRight size={18} className="ml-2" />
+                      </Button>
+                    ) : (
+                      <Button type="submit" variant="primary" disabled={isSubmitting}>
+                        <Send size={18} className="mr-2" />
+                        {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                      </Button>
+                    )}
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Emergency Box */}
+            <div className="bg-rose-50 rounded-2xl p-6 border border-rose-100">
+              <div className="flex items-center gap-3 mb-3">
+                <AlertCircle className="text-rose-500" size={24} />
+                <span className="font-semibold text-rose-800">Water Emergency?</span>
+              </div>
+              <p className="text-sm text-rose-700 mb-4">
+                Don't wait—call us now for immediate dispatch.
+              </p>
+              <a
+                href="tel:8774970007"
+                className="block w-full bg-rose-500 text-white text-center py-3 rounded-xl font-semibold hover:bg-rose-600 transition-colors"
+              >
+                (877) 497-0007
+              </a>
+            </div>
+
+            {/* Trust Signals */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 className="font-semibold text-text mb-4">Why Flood Doctor?</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm">
+                  <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
+                  <span className="text-muted">60-minute response guarantee</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm">
+                  <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
+                  <span className="text-muted">Free, no-obligation estimates</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm">
+                  <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
+                  <span className="text-muted">Direct insurance billing</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm">
+                  <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
+                  <span className="text-muted">IICRC certified technicians</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm">
+                  <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
+                  <span className="text-muted">15+ years serving NoVA</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Rating */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} className="fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <div className="font-semibold text-text">4.9 out of 5</div>
+              <div className="text-sm text-muted">Based on 500+ reviews</div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 className="font-semibold text-text mb-4">Other Ways to Reach Us</h3>
+              <div className="space-y-3 text-sm">
+                <a href="mailto:info@flood.doctor" className="flex items-center gap-3 text-muted hover:text-primary">
+                  <Mail size={16} />
+                  info@flood.doctor
+                </a>
+                <div className="flex items-start gap-3 text-muted">
+                  <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                  <span>Northern Virginia<br />& Washington DC Metro</span>
+                </div>
+                <div className="flex items-center gap-3 text-muted">
+                  <Clock size={16} />
+                  24/7 Emergency Service
+                </div>
+              </div>
+            </div>
+
+            {/* SSL Badge */}
+            <div className="flex items-center justify-center gap-2 text-xs text-muted">
+              <Shield size={14} />
+              <span>SSL Encrypted • HIPAA Compliant</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );

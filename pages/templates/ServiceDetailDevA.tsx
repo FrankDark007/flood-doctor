@@ -14,11 +14,16 @@ import {
   Zap,
   FileText,
   MessageSquare,
-  Calendar
+  Calendar,
+  Droplets,
+  Wind,
+  Wrench,
+  Search,
+  MapPin
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
-import { ServiceData } from '../../types/service';
+import { ServiceData } from '../../types';
 import { SERVICES } from '../../data/services';
 
 /**
@@ -40,6 +45,7 @@ const ServiceDetailDevA: React.FC<ServiceDetailDevAProps> = ({ service }) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('overview');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeProcessTab, setActiveProcessTab] = useState(0);
 
   // Demo service for preview
   const demoService = service || SERVICES[0];
@@ -117,6 +123,84 @@ const ServiceDetailDevA: React.FC<ServiceDetailDevAProps> = ({ service }) => {
     {
       question: 'What certifications do your technicians have?',
       answer: 'All technicians are IICRC certified in Water Damage Restoration (WRT), Applied Structural Drying (ASD), and related specialties.'
+    }
+  ];
+
+  // Tabbed process steps
+  const tabbedProcess = [
+    {
+      id: 'assessment',
+      label: 'Assessment',
+      icon: Search,
+      title: 'Comprehensive damage assessment using advanced technology',
+      description: 'Our technicians use thermal cameras and moisture meters to detect water in walls, floors, and ceilings—even in areas that appear dry.',
+      points: [
+        'Infrared thermal imaging identifies hidden moisture',
+        'Moisture mapping documents affected areas',
+        'Category and class determination',
+        'Detailed scope of work created'
+      ]
+    },
+    {
+      id: 'extraction',
+      label: 'Extraction',
+      icon: Droplets,
+      title: 'Rapid water removal with industrial equipment',
+      description: 'We deploy commercial-grade pumps and extractors to remove standing water quickly, preventing further damage to your property.',
+      points: [
+        'Industrial pumps remove up to 10,000 gallons/hour',
+        'Truck-mounted and portable extractors',
+        'Carpet and pad water extraction',
+        'Minimizes secondary damage'
+      ]
+    },
+    {
+      id: 'drying',
+      label: 'Drying',
+      icon: Wind,
+      title: 'Scientific drying with daily monitoring',
+      description: 'Strategic placement of air movers and dehumidifiers ensures complete moisture removal. We monitor progress daily until safe levels are reached.',
+      points: [
+        'Commercial air movers and dehumidifiers',
+        'Daily moisture readings documented',
+        'IICRC drying standards followed',
+        'Prevents mold and structural issues'
+      ]
+    },
+    {
+      id: 'restoration',
+      label: 'Restoration',
+      icon: Wrench,
+      title: 'Complete repairs and reconstruction',
+      description: 'From minor repairs to full reconstruction, we restore your property to pre-loss condition with licensed contractors.',
+      points: [
+        'Drywall, flooring, and paint repairs',
+        'Licensed and insured contractors',
+        'Insurance documentation provided',
+        'Final walkthrough and sign-off'
+      ]
+    }
+  ];
+
+  // Customer testimonials
+  const testimonials = [
+    {
+      quote: "They arrived within 45 minutes of my call. The water was already an inch deep in my basement. By morning, it was completely extracted and the drying process had begun.",
+      author: 'Sarah M.',
+      location: 'Arlington, VA',
+      rating: 5
+    },
+    {
+      quote: "What impressed me most was their communication. My project manager called with updates every day and explained exactly what was happening at each stage.",
+      author: 'Michael R.',
+      location: 'Fairfax, VA',
+      rating: 5
+    },
+    {
+      quote: "They dealt with my insurance company directly. I didn't have to fight for anything—they documented everything properly and my claim was approved in full.",
+      author: 'Jennifer L.',
+      location: 'McLean, VA',
+      rating: 5
     }
   ];
 
@@ -284,6 +368,119 @@ const ServiceDetailDevA: React.FC<ServiceDetailDevAProps> = ({ service }) => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Restoration Process - Tabbed */}
+      <section className="py-20 lg:py-28 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4">
+              Our Restoration Process
+            </h2>
+            <p className="text-lg text-muted max-w-2xl mx-auto">
+              A proven 4-step approach that restores your property quickly and completely.
+            </p>
+          </div>
+
+          {/* Tab Navigation */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex items-center gap-2 p-1.5 bg-white rounded-full shadow-sm border border-gray-100">
+              {tabbedProcess.map((tab, idx) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveProcessTab(idx)}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                    activeProcessTab === idx
+                      ? 'bg-primary text-white shadow-sm'
+                      : 'text-muted hover:text-text hover:bg-gray-50'
+                  }`}
+                >
+                  <tab.icon size={16} />
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Tab Content */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="font-display text-2xl lg:text-3xl font-semibold text-text mb-4">
+                {tabbedProcess[activeProcessTab].title}
+              </h3>
+              <p className="text-lg text-muted leading-relaxed mb-8">
+                {tabbedProcess[activeProcessTab].description}
+              </p>
+              <ul className="space-y-4">
+                {tabbedProcess[activeProcessTab].points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-text">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-200 to-slate-100 shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Our Customers Say */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text">
+              What Our Customers Say
+            </h2>
+            <Link
+              to="/reviews/"
+              className="hidden md:flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+            >
+              View All Reviews
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-50 rounded-2xl p-6 lg:p-8"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="text-amber-400 fill-amber-400" size={18} />
+                  ))}
+                </div>
+                <p className="text-text leading-relaxed mb-6">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+                    <span className="text-sm font-medium text-slate-600">
+                      {testimonial.author.charAt(0)}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">{testimonial.author}</div>
+                    <div className="text-sm text-muted flex items-center gap-1">
+                      <MapPin size={12} />
+                      {testimonial.location}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8 md:hidden">
+            <Button to="/reviews/" variant="outline">
+              View All Reviews
+            </Button>
           </div>
         </div>
       </section>

@@ -14,6 +14,7 @@ import {
   Target,
   AlertTriangle,
   CheckCircle2,
+  XCircle,
   TrendingDown,
   Zap,
   BarChart3,
@@ -86,7 +87,7 @@ const StructuralDryingGuide: React.FC = () => {
       icon: Droplets,
       title: "Humidity Reduction",
       description: "Lower relative humidity increases vapor pressure difference, accelerating evaporation from wet materials.",
-      science: "Target <50% RH during drying. Dehumidifiers remove moisture from air, maintaining low humidity."
+      science: "Target &lt;50% RH during drying. Dehumidifiers remove moisture from air, maintaining low humidity."
     },
     {
       icon: Wind,
@@ -229,7 +230,7 @@ const StructuralDryingGuide: React.FC = () => {
     {
       term: "Relative Humidity (RH)",
       definition: "The amount of moisture in air relative to the maximum it can hold at a given temperature. Expressed as percentage.",
-      importance: "Target <50% RH during drying. Lower RH increases evaporation potential."
+      importance: "Target &lt;50% RH during drying. Lower RH increases evaporation potential."
     },
     {
       term: "Grains Per Pound (GPP)",

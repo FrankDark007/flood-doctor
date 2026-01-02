@@ -1,0 +1,46 @@
+import React from 'react';
+import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTemplate';
+
+const config: KeywordLandingConfig = {
+  keyword: 'Water Damage Restoration',
+  title: 'Water Damage Restoration Ashburn VA | Emergency Response | Flood Doctor',
+  metaDescription: 'Expert water damage restoration in Ashburn VA. 24/7 emergency service, IICRC certified, insurance specialists. Call (877) 497-0007.',
+  h1: 'Water Damage Restoration Ashburn Virginia',
+  heroSubtitle: 'Trusted water damage restoration for Ashburn homes. Rapid response, professional technicians, seamless insurance process.',
+  location: 'Ashburn, VA',
+  locationSlug: 'ashburn',
+  primaryService: 'water-damage',
+  heroTagline: "Ashburn's Water Damage Experts",
+  neighborhoods: [
+    { name: 'Ashburn Village', count: '280+ projects', link: '/locations/ashburn/' },
+    { name: 'Broadlands', count: '240+ projects', link: '/locations/ashburn/' },
+    { name: 'Brambleton', count: '210+ projects', link: '/locations/ashburn/' },
+    { name: 'Ashburn Farm', count: '190+ projects', link: '/locations/ashburn/' },
+    { name: 'One Loudoun', count: '160+ projects', link: '/locations/ashburn/' },
+    { name: 'Lansdowne', count: '140+ projects', link: '/locations/ashburn/' }
+  ],
+  faqs: [
+    {
+      question: 'How quickly can you respond to water damage in Ashburn?',
+      answer: 'Our Loudoun County crews can reach Ashburn within 60 minutes, even for new developments in Brambleton and Broadlands. We\'re available 24/7/365.'
+    },
+    {
+      question: 'Do you work with Ashburn HOAs and builders?',
+      answer: 'Yes, we have established relationships with many Ashburn HOAs and builders. We understand new construction warranty requirements and HOA coordination needs.'
+    },
+    {
+      question: 'What water damage issues are common in Ashburn new builds?',
+      answer: 'New Ashburn homes sometimes experience HVAC condensation issues, improper grading leading to water intrusion, and plumbing defects. We handle all types of water damage.'
+    },
+    {
+      question: 'Is water damage restoration covered by Ashburn home warranties?',
+      answer: 'Builder warranties typically cover the source of the leak but not resulting damage. Your homeowner\'s insurance usually covers the restoration. We help coordinate both.'
+    }
+  ]
+};
+
+const WaterDamageRestorationAshburn: React.FC = () => {
+  return <KeywordLandingTemplate config={config} />;
+};
+
+export default WaterDamageRestorationAshburn;

@@ -1,8 +1,17 @@
-
 import React, { useState, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import Button from '../ui/Button';
 import { Video, Loader2, Play, Download, AlertTriangle } from 'lucide-react';
+
+// Declare window.aistudio for AI Studio integration
+declare global {
+  interface Window {
+    aistudio?: {
+      hasSelectedApiKey?: () => Promise<boolean>;
+      openSelectKey?: () => Promise<void>;
+    };
+  }
+}
 
 // Define the scenes based on the user's reference video
 const PRESET_SCENES = [

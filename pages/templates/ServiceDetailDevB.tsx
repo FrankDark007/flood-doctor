@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
-import { ServiceData } from '../../types/service';
+import { ServiceData } from '../../types';
 import { SERVICES } from '../../data/services';
 
 /**

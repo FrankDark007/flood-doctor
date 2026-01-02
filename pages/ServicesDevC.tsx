@@ -36,6 +36,100 @@ import Button from '../components/ui/Button';
  * - Warm, community-focused aesthetic
  */
 
+// SVG Pattern Components for service card backgrounds
+const WaterPatternSVG = () => (
+  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#0369a1" />
+        <stop offset="50%" stopColor="#0891b2" />
+        <stop offset="100%" stopColor="#06b6d4" />
+      </linearGradient>
+      <pattern id="waterWaves" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse">
+        <path d="M0 10 Q25 0 50 10 T100 10" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+      </pattern>
+      <filter id="waterGlow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#waterGrad)"/>
+    <rect width="100%" height="100%" fill="url(#waterWaves)"/>
+    {/* Animated water droplets */}
+    <circle cx="80" cy="80" r="40" fill="rgba(255,255,255,0.08)" filter="url(#waterGlow)"/>
+    <circle cx="320" cy="150" r="60" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="150" cy="300" r="80" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="350" cy="350" r="30" fill="rgba(255,255,255,0.1)"/>
+    {/* Wave lines */}
+    <path d="M0 200 Q100 180 200 200 T400 200" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3"/>
+    <path d="M0 250 Q100 230 200 250 T400 250" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+    <path d="M0 300 Q100 280 200 300 T400 300" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2"/>
+  </svg>
+);
+
+const FirePatternSVG = () => (
+  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#dc2626" />
+        <stop offset="40%" stopColor="#ea580c" />
+        <stop offset="100%" stopColor="#f59e0b" />
+      </linearGradient>
+      <filter id="fireGlow">
+        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#fireGrad)"/>
+    {/* Abstract flame shapes */}
+    <ellipse cx="100" cy="350" rx="60" ry="100" fill="rgba(255,255,255,0.08)" filter="url(#fireGlow)"/>
+    <ellipse cx="200" cy="380" rx="80" ry="120" fill="rgba(255,255,255,0.06)"/>
+    <ellipse cx="300" cy="360" rx="50" ry="90" fill="rgba(255,255,255,0.07)"/>
+    {/* Ember particles */}
+    <circle cx="50" cy="100" r="4" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="150" cy="60" r="3" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="280" cy="80" r="5" fill="rgba(255,255,255,0.2)"/>
+    <circle cx="350" cy="120" r="3" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="120" cy="150" r="2" fill="rgba(255,255,255,0.35)"/>
+    {/* Heat waves */}
+    <path d="M0 150 Q50 140 100 150 T200 150 T300 150 T400 150" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+    <path d="M0 100 Q50 90 100 100 T200 100 T300 100 T400 100" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
+  </svg>
+);
+
+const StormPatternSVG = () => (
+  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4c1d95" />
+        <stop offset="50%" stopColor="#6366f1" />
+        <stop offset="100%" stopColor="#818cf8" />
+      </linearGradient>
+      <filter id="stormGlow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#stormGrad)"/>
+    {/* Cloud shapes */}
+    <ellipse cx="80" cy="80" rx="70" ry="40" fill="rgba(255,255,255,0.08)"/>
+    <ellipse cx="140" cy="70" rx="50" ry="35" fill="rgba(255,255,255,0.06)"/>
+    <ellipse cx="320" cy="100" rx="80" ry="45" fill="rgba(255,255,255,0.07)"/>
+    {/* Lightning bolt */}
+    <path d="M200 50 L180 150 L220 150 L190 280" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="4" filter="url(#stormGlow)"/>
+    <path d="M280 80 L265 160 L295 160 L270 250" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3"/>
+    {/* Rain drops */}
+    <line x1="50" y1="200" x2="40" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
+    <line x1="100" y1="180" x2="90" y2="220" stroke="rgba(255,255,255,0.12)" strokeWidth="2"/>
+    <line x1="150" y1="220" x2="140" y2="260" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+    <line x1="320" y1="200" x2="310" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
+    <line x1="360" y1="180" x2="350" y2="220" stroke="rgba(255,255,255,0.12)" strokeWidth="2"/>
+    {/* Wind lines */}
+    <path d="M0 300 Q100 290 150 300 Q200 310 250 300" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+    <path d="M100 340 Q150 330 200 340 Q250 350 300 340" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
+  </svg>
+);
+
 const ServicesDevC: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
@@ -48,7 +142,9 @@ const ServicesDevC: React.FC = () => {
       icon: Droplets,
       gradient: 'from-blue-600 to-cyan-500',
       link: '/services/residential/water-damage/',
-      featured: true
+      featured: true,
+      backgroundImage: null as string | null, // Set to image URL when available
+      PatternComponent: WaterPatternSVG
     },
     {
       id: 'fire',
@@ -57,7 +153,9 @@ const ServicesDevC: React.FC = () => {
       description: 'From soot removal to odor elimination, we restore properties after fire damage.',
       icon: Flame,
       gradient: 'from-orange-500 to-red-400',
-      link: '/services/residential/fire-smoke/'
+      link: '/services/residential/fire-smoke/',
+      backgroundImage: null as string | null,
+      PatternComponent: FirePatternSVG
     },
     {
       id: 'storm',
@@ -66,7 +164,9 @@ const ServicesDevC: React.FC = () => {
       description: 'Immediate response for wind, hail, and weather-related property damage.',
       icon: Wind,
       gradient: 'from-purple-500 to-indigo-400',
-      link: '/services/residential/storm-damage/'
+      link: '/services/residential/storm-damage/',
+      backgroundImage: null as string | null,
+      PatternComponent: StormPatternSVG
     }
   ];
 
@@ -230,64 +330,88 @@ const ServicesDevC: React.FC = () => {
           {/* Bento Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Featured Large Card */}
-            <Link
-              to={restorationServices[0].link}
-              className={`md:col-span-2 lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-3xl bg-gradient-to-br ${restorationServices[0].gradient} p-8 lg:p-12 min-h-[400px] flex flex-col justify-end`}
-              onMouseEnter={() => setHoveredCard(restorationServices[0].id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute top-8 right-8">
-                {(() => {
-                  const FeaturedIcon = restorationServices[0].icon;
-                  return (
+            {(() => {
+              const featuredService = restorationServices[0];
+              const FeaturedIcon = featuredService.icon;
+              const FeaturedPattern = featuredService.PatternComponent;
+              return (
+                <Link
+                  to={featuredService.link}
+                  className="md:col-span-2 lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-3xl p-8 lg:p-12 min-h-[400px] flex flex-col justify-end"
+                  onMouseEnter={() => setHoveredCard(featuredService.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {/* Background: Photo or SVG Pattern */}
+                  {featuredService.backgroundImage ? (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${featuredService.backgroundImage})` }}
+                    />
+                  ) : (
+                    <FeaturedPattern />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute top-8 right-8">
                     <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <FeaturedIcon className="text-white" size={40} />
                     </div>
-                  );
-                })()}
-              </div>
-              <div className="relative">
-                <div className="text-white/60 text-sm uppercase tracking-wider mb-2">{restorationServices[0].subtitle}</div>
-                <h3 className="font-display text-3xl lg:text-4xl font-semibold text-white mb-4">
-                  {restorationServices[0].title}
-                </h3>
-                <p className="text-white/80 text-lg mb-6 max-w-lg">
-                  {restorationServices[0].description}
-                </p>
-                <div className="flex items-center gap-2 text-white font-medium">
-                  Learn more
-                  <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                </div>
-              </div>
-            </Link>
+                  </div>
+                  <div className="relative">
+                    <div className="text-white/60 text-sm uppercase tracking-wider mb-2">{featuredService.subtitle}</div>
+                    <h3 className="font-display text-3xl lg:text-4xl font-semibold text-white mb-4">
+                      {featuredService.title}
+                    </h3>
+                    <p className="text-white/80 text-lg mb-6 max-w-lg">
+                      {featuredService.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-white font-medium">
+                      Learn more
+                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })()}
 
             {/* Smaller Cards */}
-            {restorationServices.slice(1).map((service) => (
-              <Link
-                key={service.id}
-                to={service.link}
-                className={`group relative overflow-hidden rounded-3xl p-6 lg:p-8 flex flex-col justify-between min-h-[200px] bg-gradient-to-br ${service.gradient}`}
-                onMouseEnter={() => setHoveredCard(service.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-                    <service.icon className="text-white" size={24} />
+            {restorationServices.slice(1).map((service) => {
+              const ServiceIcon = service.icon;
+              const ServicePattern = service.PatternComponent;
+              return (
+                <Link
+                  key={service.id}
+                  to={service.link}
+                  className="group relative overflow-hidden rounded-3xl p-6 lg:p-8 flex flex-col justify-between min-h-[200px]"
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {/* Background: Photo or SVG Pattern */}
+                  {service.backgroundImage ? (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${service.backgroundImage})` }}
+                    />
+                  ) : (
+                    <ServicePattern />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                      <ServiceIcon className="text-white" size={24} />
+                    </div>
                   </div>
-                </div>
-                <div className="relative">
-                  <h3 className="font-display text-xl lg:text-2xl font-semibold text-white mb-2">
-                    {service.title}
-                  </h3>
-                  <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
-                    Learn more
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="relative">
+                    <h3 className="font-display text-xl lg:text-2xl font-semibold text-white mb-2">
+                      {service.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
+                      Learn more
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

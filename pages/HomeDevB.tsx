@@ -261,7 +261,7 @@ const HomeDevB: React.FC = () => {
       <section className="py-16 bg-slate-900 text-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-2">
+            <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-2 text-white">
               From call to restoration
             </h2>
             <p className="text-white/60">Our streamlined response process</p>

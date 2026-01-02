@@ -395,7 +395,7 @@ const LandingPageB: React.FC<LandingPageBProps> = ({
         <section className="py-16 bg-slate-900 text-white overflow-hidden">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-2">
+              <h2 className="font-display text-2xl lg:text-3xl font-semibold mb-2 text-white">
                 {processTitle}
               </h2>
               <p className="text-white/60">{processSubtitle}</p>
@@ -612,8 +612,13 @@ const LandingPageB: React.FC<LandingPageBProps> = ({
                 </Button>
               </div>
 
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-slate-100 shadow-lg relative overflow-hidden">
-                <div className="absolute inset-4 border-2 border-dashed border-primary/20 rounded-xl" />
+              <div className="aspect-square rounded-2xl shadow-lg relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80"
+                  alt="Northern Virginia service area map"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 <div className="absolute top-1/4 left-1/3 w-4 h-4 rounded-full bg-primary animate-ping" />
                 <div className="absolute top-1/3 right-1/4 w-4 h-4 rounded-full bg-emerald-500 animate-ping" style={{ animationDelay: '0.5s' }} />
                 <div className="absolute bottom-1/3 left-1/4 w-4 h-4 rounded-full bg-primary animate-ping" style={{ animationDelay: '1s' }} />
