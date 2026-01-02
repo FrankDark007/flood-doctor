@@ -153,14 +153,21 @@
 
 **Remaining:** Add more tests for cost calculator, forms, critical paths
 
-### CI/CD Pipeline
+### CI/CD Pipeline — ✅ COMPLETE
 **Source:** CI/CD Engineer Agent
+**Status:** All workflows created
 
-Files created:
-- `.github/workflows/ci.yml` — Build/test/lint
-- `.github/workflows/deploy-production.yml` — Vercel deploy
-- `.github/workflows/preview.yml` — PR previews
-- `lighthouserc.json` — Performance gates
+| File | Purpose | Status |
+|------|---------|--------|
+| `.github/workflows/ci.yml` | Build/test/lint on push/PR | ✅ Done |
+| `.github/workflows/deploy-production.yml` | Vercel production deploy | ✅ Done |
+| `.github/workflows/preview.yml` | PR preview deployments | ✅ Done |
+| `lighthouserc.json` | Performance gates | ✅ Done |
+
+**Required Secrets:**
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
 
 ---
 
