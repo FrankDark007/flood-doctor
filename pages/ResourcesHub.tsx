@@ -124,9 +124,9 @@ const ResourcesHub: React.FC = () => {
 
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Help Center & Resources" 
-        description="Find answers, guides, and checklists for dealing with water damage, insurance claims, and home maintenance." 
+      <PageMeta
+        title="Water Damage Resources & Guides | Insurance Claims Help"
+        description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners." 
       />
       
       {/* 1. Search Hero (Google Support Style) */}

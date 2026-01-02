@@ -3,6 +3,9 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import RelatedArticles, { InlineArticleLink } from '../../components/ui/RelatedArticles';
 import {
   Phone,
   AlertTriangle,
@@ -73,10 +76,7 @@ const BasementFloodingGuide: React.FC = () => {
     "@type": "Article",
     "headline": "Basement Flooding in Northern Virginia: Prevention, Response & Restoration Guide",
     "description": "Comprehensive guide to basement flooding in Northern Virginia. Learn causes, immediate response steps, DIY vs professional restoration, waterproofing options, insurance coverage, and cost estimates.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
+    "author": generateAuthorSchema(),
     "publisher": {
       "@type": "Organization",
       "name": "Flood Doctor",
@@ -86,7 +86,8 @@ const BasementFloodingGuide: React.FC = () => {
       }
     },
     "datePublished": "2025-01-02",
-    "dateModified": "2025-01-02"
+    "dateModified": "2025-01-02",
+    "wordCount": 3500
   };
 
   const localBusinessSchema = {
@@ -456,13 +457,20 @@ const BasementFloodingGuide: React.FC = () => {
               </div>
             </div>
 
+            {/* Author Attribution */}
+            <ArticleAuthor
+              datePublished="January 2, 2025"
+              dateModified="January 2, 2025"
+              readTime="12 min read"
+            />
+
             {/* Introduction */}
             <section className="mb-16">
               <p className="text-lg text-muted leading-relaxed mb-4">
                 Basement flooding affects thousands of Northern Virginia homeowners annually, causing tens of thousands of dollars in damage and creating serious health hazards. Whether you're dealing with active flooding or want to prevent future incidents, understanding the unique challenges of NoVA's climate, soil conditions, and housing stock is essential.
               </p>
               <p className="text-lg text-muted leading-relaxed">
-                This comprehensive guide covers everything from immediate emergency response to long-term waterproofing solutions, helping you protect your home and make informed decisions about professional restoration services.
+                This comprehensive guide covers everything from immediate emergency response to long-term waterproofing solutions, helping you protect your home and make informed decisions about professional restoration services. If you're experiencing a <InlineArticleLink slug="/blog/burst-pipe-emergency-response/">burst pipe emergency</InlineArticleLink>, take action immediately—every hour of delay increases damage.
               </p>
             </section>
 
@@ -512,6 +520,9 @@ const BasementFloodingGuide: React.FC = () => {
                 </div>
               </div>
             </section>
+
+            {/* Mid-Article CTA - 40% scroll depth */}
+            <MidArticleCTA variant="emergency" />
 
             {/* Immediate Response Steps */}
             <section className="mb-24">
@@ -818,6 +829,14 @@ const BasementFloodingGuide: React.FC = () => {
                 </p>
               </div>
             </section>
+
+            {/* Related Articles */}
+            <RelatedArticles
+              categories={['water-damage', 'insurance', 'prevention']}
+              currentSlug="/blog/basement-flooding-guide/"
+              maxArticles={4}
+              title="Related Guides"
+            />
 
             {/* FAQ Section */}
             <section className="mb-16">

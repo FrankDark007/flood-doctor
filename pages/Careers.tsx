@@ -48,9 +48,9 @@ const Careers: React.FC = () => {
 
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Careers at Flood Doctor" 
-        description="Join the Flood Doctor team. We are looking for certified restoration technicians in Northern Virginia." 
+      <PageMeta
+        title="Restoration Careers in Northern Virginia | Flood Doctor Jobs"
+        description="Join Northern Virginia's top-rated restoration company. Competitive pay, full benefits, IICRC certification training. Technicians, project managers, and emergency responders wanted."
       />
       
       {/* 1. Hero: Impact Statement */}

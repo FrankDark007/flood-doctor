@@ -119,7 +119,7 @@ const Home: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Water Damage Restoration & Flood Cleanup"
-        description="24/7 emergency water damage restoration in Northern Virginia. Real-time monitoring, direct insurance billing, 60-minute response."
+        description="24/7 emergency water damage restoration in Northern Virginia. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007."
         schema={homepageSchema}
       />
 
