@@ -24,9 +24,10 @@ export interface ServiceData {
   title: string;
   slug: string; // Full path
   shortDescription: string;
+  metaDescription?: string; // SEO meta description
   audience: ServiceAudience;
   category: ServiceCategory;
-  
+
   // SEO Fields
   primaryKeyword?: string;
   secondaryKeywords?: string[];
@@ -45,7 +46,7 @@ export interface ServiceData {
   whenToCall?: string[]; // Bullets
   
   intro_whatWeDo?: string;
-  whatWeDo?: string[]; // Bullets
+  whatWeDo?: (string | { title: string; description: string; substeps?: string[] })[]; // Bullets or objects
   
   // Updated to allow flexible specification keys while keeping standard ones optional
   whatToExpect?: {

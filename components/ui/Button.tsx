@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'text';
+  size?: 'sm' | 'md' | 'lg'; // Added for compatibility
   to?: string;
   href?: string;
   fullWidth?: boolean;
@@ -14,6 +15,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
+  size = 'md',
   to,
   href,
   className = '',
@@ -27,9 +29,12 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = "inline-flex items-center justify-center font-display font-medium text-[15px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50 disabled:cursor-not-allowed";
   
   // Google buttons are often 48px (h-12) or 36px (h-9)
-  const dimensionStyles = icon
-     ? "h-12 w-12 p-0 rounded-full"
-     : "h-12 px-8 rounded-full"; // Pill shape is key
+  const sizeStyles = {
+    sm: icon ? "h-9 w-9 p-0 rounded-full" : "h-9 px-5 text-[13px] rounded-full",
+    md: icon ? "h-12 w-12 p-0 rounded-full" : "h-12 px-8 rounded-full",
+    lg: icon ? "h-14 w-14 p-0 rounded-full" : "h-14 px-10 text-[16px] rounded-full",
+  };
+  const dimensionStyles = sizeStyles[size];
 
   const variants = {
     // Primary: Google Blue, subtle shadow that grows on hover
