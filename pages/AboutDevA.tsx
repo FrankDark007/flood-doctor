@@ -109,9 +109,9 @@ const AboutDevA: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button to="/request/" variant="primary" size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
+              <Link to="/request/" className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-14 px-8 rounded-full transition-all">
                 Request Service
-              </Button>
+              </Link>
               <Button to="/reviews/" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                 Read Our Reviews
               </Button>

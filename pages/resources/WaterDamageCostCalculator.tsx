@@ -504,10 +504,10 @@ const WaterDamageCostCalculator: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="#calculator" variant="primary" size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
+                <a href="#calculator" className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-14 px-8 rounded-full transition-all">
                   Use Calculator
                   <ArrowRight size={18} className="ml-2" />
-                </Button>
+                </a>
                 <Button href="tel:8774970007" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                   <Phone size={18} className="mr-2" />
                   Get Exact Quote
@@ -824,10 +824,10 @@ const WaterDamageCostCalculator: React.FC = () => {
                       </div>
                     </div>
 
-                    <Button to="/request/" variant="primary" className="w-full bg-white text-slate-900 hover:bg-gray-100">
+                    <Link to="/request/" className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-12 px-6 w-full rounded-full transition-all">
                       Get Exact Quote
                       <ArrowRight size={18} className="ml-2" />
-                    </Button>
+                    </Link>
 
                     <div className="flex items-center justify-center gap-2 mt-4">
                       <span className="text-sm text-white/60">or call</span>

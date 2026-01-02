@@ -184,10 +184,10 @@ const ServiceDetailDevC: React.FC<ServiceDetailDevCProps> = ({ service }) => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button to="/request/" variant="primary" size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
+                <Link to="/request/" className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-14 px-8 rounded-full transition-all">
                   Get Free Estimate
                   <ArrowRight size={18} className="ml-2" />
-                </Button>
+                </Link>
                 <Button href="tel:8774970007" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                   <Phone size={18} className="mr-2" />
                   Call Now

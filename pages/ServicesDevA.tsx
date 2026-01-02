@@ -308,10 +308,10 @@ const ServicesDevA: React.FC = () => {
                   ))}
                 </div>
 
-                <Button to="/services/commercial/" variant="primary" size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
+                <Link to="/services/commercial/" className="inline-flex items-center justify-center font-display font-medium bg-white text-slate-900 hover:bg-gray-100 h-14 px-8 rounded-full transition-all">
                   Commercial Services
                   <ArrowRight size={18} className="ml-2" />
-                </Button>
+                </Link>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
