@@ -19,6 +19,8 @@ const CommercialWaterDamageRestorationDC: React.FC = () => {
           Every hour your commercial property remains closed due to water damage costs your business revenue, customer relationships, and competitive position. For Washington DC businesses operating in high-rent downtown locations, retail corridors, or competitive office markets, rapid restoration isn't just convenient—it's essential for survival. This comprehensive guide explains how commercial water damage restoration works, what DC business owners need to know, and proven strategies to minimize downtime and protect your bottom line.
         </p>
 
+        <ArticleAuthor datePublished="2025-01-01" readTime="15 min read" />
+
         <h2>The High Cost of Commercial Water Damage in Washington DC</h2>
 
         <p>

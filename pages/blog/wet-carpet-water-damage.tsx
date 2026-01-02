@@ -136,6 +136,8 @@ const WetCarpetWaterDamage: React.FC = () => {
           </div>
         </div>
 
+        <ArticleAuthor datePublished="2024-01-15" readTime="12 min read" />
+
         {/* Introduction Section */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 pb-2 border-b-4 border-[#1a73e8]">

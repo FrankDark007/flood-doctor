@@ -130,6 +130,8 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
           </div>
         </header>
 
+        <ArticleAuthor datePublished="2025-01-01" readTime="12 min read" />
+
         {/* Introduction */}
         <div className="prose prose-lg max-w-none mb-8">
           <p className="text-xl text-gray-700 leading-relaxed">

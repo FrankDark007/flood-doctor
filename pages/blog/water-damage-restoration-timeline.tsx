@@ -19,6 +19,8 @@ const WaterDamageRestorationTimeline: React.FC = () => {
           When water damage strikes your Northern Virginia home, one of your first questions is likely, "How long until everything is back to normal?" The answer depends on numerous factors including damage severity, affected materials, property size, and restoration complexity. This comprehensive guide provides realistic timelines for each phase of water damage restoration, helping you understand what to expect and plan accordingly during this stressful situation.
         </p>
 
+        <ArticleAuthor datePublished="2025-01-01" readTime="15 min read" />
+
         <h2>Factors That Affect Water Damage Restoration Duration</h2>
 
         <p>

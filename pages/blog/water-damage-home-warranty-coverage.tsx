@@ -145,6 +145,8 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
           </div>
         </div>
 
+        <ArticleAuthor datePublished="2025-01-01" readTime="12 min read" />
+
         {/* Lead Paragraph */}
         <section className="mb-10">
           <p className="text-xl text-gray-700 mb-4 leading-relaxed">
