@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import {
   Phone,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  ChevronsUpDown,
   Clock,
   Shield,
   CheckCircle2,
@@ -44,7 +47,8 @@ interface ServiceDetailProps {
 
 const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
   const [activeSection, setActiveSection] = useState('overview');
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaqs, setOpenFaqs] = useState<Set<number>>(new Set([0]));
+  const [allExpanded, setAllExpanded] = useState(false);
   const [activeProcessTab, setActiveProcessTab] = useState(0);
 
   const serviceName = service?.title || 'Water Damage Restoration';
@@ -637,50 +641,86 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
         </div>
       </section>
 
-      {/* FAQ Accordion */}
-      <section id="faq" className="py-20 lg:py-28 bg-slate-50">
+      {/* FAQ Accordion - Google Style */}
+      <section id="faq" className="py-20 lg:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-muted">
+            <p className="text-lg text-gray-500">
               Common questions about {serviceName.toLowerCase()}.
             </p>
           </div>
 
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl overflow-hidden shadow-sm"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-medium text-text pr-4">{faq.question}</span>
-                  <ChevronRight
-                    size={20}
-                    className={`text-muted flex-shrink-0 transition-transform ${
-                      openFaq === idx ? 'rotate-90' : ''
-                    }`}
-                  />
-                </button>
-                {openFaq === idx && (
-                  <div className="px-6 pb-5">
-                    <p className="text-muted leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Expand All Button */}
+          <div className="flex justify-end mb-2">
+            <button
+              onClick={() => {
+                if (allExpanded) {
+                  setOpenFaqs(new Set());
+                  setAllExpanded(false);
+                } else {
+                  setOpenFaqs(new Set(faqs.map((_, i) => i)));
+                  setAllExpanded(true);
+                }
+              }}
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primaryHover text-sm font-medium transition-colors"
+            >
+              {allExpanded ? 'Collapse all' : 'Expand all'}
+              <ChevronsUpDown size={16} />
+            </button>
           </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-muted mb-4">Still have questions?</p>
-            <Button to="/resources/faq/" variant="outline">
-              View All FAQs
-            </Button>
+          {/* FAQ Items */}
+          <div className="border-t border-gray-200">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaqs.has(idx);
+              return (
+                <div key={idx} className="border-b border-gray-200">
+                  <button
+                    onClick={() => {
+                      const newSet = new Set(openFaqs);
+                      if (isOpen) {
+                        newSet.delete(idx);
+                      } else {
+                        newSet.add(idx);
+                      }
+                      setOpenFaqs(newSet);
+                      setAllExpanded(newSet.size === faqs.length);
+                    }}
+                    className="w-full py-6 flex items-center justify-between text-left group"
+                  >
+                    <span className="text-[20px] lg:text-[22px] font-normal text-gray-900 pr-8 leading-snug">
+                      {faq.question}
+                    </span>
+                    {isOpen ? (
+                      <ChevronUp size={24} className="text-primary flex-shrink-0" />
+                    ) : (
+                      <ChevronDown size={24} className="text-primary flex-shrink-0" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="pb-6 pr-12">
+                      <p className="text-base text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* View More Button */}
+          <div className="mt-10">
+            <Link
+              to="/resources/faq/"
+              className="inline-flex items-center px-6 py-2.5 rounded-full border border-gray-300 text-primary text-sm font-medium hover:bg-gray-50 transition-colors"
+            >
+              View more FAQs
+            </Link>
           </div>
         </div>
       </section>
