@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Phone, ChevronDown, Home, Briefcase, AlertTriangle } from 'lucide-react';
 import { MAIN_NAV_ITEMS } from '../../data/nav';
@@ -71,8 +71,9 @@ const Header: React.FC = () => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
-  const residentialGroups = getGroupedServices('RESIDENTIAL');
-  const commercialGroups = getGroupedServices('COMMERCIAL');
+  // Memoize grouped services to prevent recalculation on every render
+  const residentialGroups = useMemo(() => getGroupedServices('RESIDENTIAL'), []);
+  const commercialGroups = useMemo(() => getGroupedServices('COMMERCIAL'), []);
 
   // Split locations for 2-column layout in dropdown
   const locationMid = Math.ceil(LOCATIONS.length / 2);

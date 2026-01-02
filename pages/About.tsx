@@ -123,8 +123,8 @@ const About: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="About Flood Doctor | Northern Virginia's Trusted Restoration Company"
-        description="Learn about Flood Doctor's 15+ years of water damage restoration expertise serving Northern Virginia and Washington DC."
+        title="About Us - Flood Doctor Water Damage Restoration"
+        description="Flood Doctor has served Northern Virginia for 15+ years with IICRC-certified water damage restoration, mold remediation, and 24/7 emergency response. Learn about our team."
       />
 
       {/* Hero - Workspace Industry Style */}
