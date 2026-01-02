@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import {
+  CoverageComparison,
+  StatsGrid,
+  ProcessTimeline,
+  AlertCallout,
+  CostTable,
+  QuickTip
+} from '../../components/ui/blog/BlogInfoGraphic';
+import { DollarSign, Shield, Clock, FileText, Phone, Home } from 'lucide-react';
 
 const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
   return (
@@ -18,6 +27,15 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         <p className="lead">
           Water damage is the second most common homeowners insurance claim in Virginia, yet many property owners discover too late that their policy doesn't cover the specific type of water intrusion they're experiencing. Understanding the complexities of water damage coverage, policy exclusions, and claim procedures can mean the difference between full restoration and devastating out-of-pocket expenses. This comprehensive guide clarifies what Virginia homeowners need to know about insurance coverage for water damage.
         </p>
+
+        <StatsGrid
+          stats={[
+            { value: '#2', label: 'Most Common Claim', icon: FileText },
+            { value: '25%', label: 'Claims Outside Flood Zones', icon: Home },
+            { value: '24-48hrs', label: 'Claim Reporting Window', icon: Clock },
+            { value: '$10K+', label: 'Average Water Damage Claim', icon: DollarSign },
+          ]}
+        />
 
         <h2>Understanding Water Damage Coverage in Standard Homeowners Policies</h2>
 
@@ -46,6 +64,22 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           The key factor is that the damage must be sudden and accidental. According to the <a href="https://www.iii.org/article/what-does-homeowners-insurance-cover" target="_blank" rel="noopener noreferrer">Insurance Information Institute</a>, these incidents are covered because they're unexpected and not the result of homeowner negligence.
         </p>
 
+        <CoverageComparison
+          title="Quick Coverage Reference: Covered vs. Not Covered"
+          items={[
+            { item: 'Burst or frozen pipes', covered: true },
+            { item: 'Appliance malfunctions (washing machine, water heater)', covered: true },
+            { item: 'Accidental overflow (bathtub, sink)', covered: true },
+            { item: 'Roof leaks from storm damage', covered: true },
+            { item: 'Ice dam water damage', covered: true },
+            { item: 'Flooding from external sources', covered: false, note: 'Requires separate flood insurance' },
+            { item: 'Groundwater seepage', covered: false },
+            { item: 'Gradual/slow leaks', covered: false, note: 'Considered maintenance issue' },
+            { item: 'Sewer backups', covered: false, note: 'Requires endorsement ($40-100/yr)' },
+            { item: 'Sump pump overflow', covered: false, note: 'Requires water backup coverage' },
+          ]}
+        />
+
         <h3>Common Water Damage Exclusions</h3>
 
         <p>
@@ -63,9 +97,11 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li><strong>Foundation water intrusion:</strong> Rising groundwater, hydrostatic pressure</li>
         </ul>
 
-        
+        <AlertCallout type="warning" title="Critical: Report Damage Within 24-48 Hours">
+          Most Virginia homeowners policies require "prompt" notification of damage. Delayed reporting that allows damage to worsen may result in partial or full denial. Report all water damage immediately, even if you're unsure whether to file a claim.
+        </AlertCallout>
 
-          <MidArticleCTA variant="emergency" />
+        <MidArticleCTA variant="emergency" />
 
         <h2>Flood Insurance vs. Homeowners Insurance in Virginia</h2>
 
@@ -135,6 +171,16 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li>Water entering through sewers or drains</li>
         </ul>
 
+        <CostTable
+          title="Water Backup Coverage Cost Comparison"
+          items={[
+            { item: 'Water Backup Endorsement', lowCost: '$40/yr', highCost: '$100/yr', notes: '$10,000-$25,000 coverage' },
+            { item: 'Service Line Coverage', lowCost: '$50/yr', highCost: '$100/yr', notes: 'Covers underground pipes' },
+            { item: 'Enhanced Mold Coverage', lowCost: '$75/yr', highCost: '$150/yr', notes: '$25,000-$50,000 limits' },
+            { item: 'Flood Insurance (NFIP)', lowCost: '$400/yr', highCost: '$3,000+/yr', notes: 'Based on flood zone' },
+          ]}
+        />
+
         <p>
           This coverage is essential for Northern Virginia homeowners given the region's aging sewer infrastructure and heavy clay soils that challenge drainage systems during severe weather. Areas like Old Town Alexandria, Arlington's older neighborhoods, and parts of Fairfax have combined sewer systems particularly vulnerable to backups.
         </p>
@@ -181,6 +227,18 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         </p>
 
         <h3>Immediate Actions After Water Damage</h3>
+
+        <ProcessTimeline
+          title="6-Step Emergency Response Checklist"
+          steps={[
+            { number: '1', title: 'Ensure Safety', description: 'Turn off electricity if standing water is present. Never enter flooded areas with electrical hazards.', icon: Shield },
+            { number: '2', title: 'Stop Water Source', description: 'Shut off main water supply for plumbing failures. Place buckets under active leaks.', icon: Home },
+            { number: '3', title: 'Document Everything', description: 'Take extensive photos and videos showing water source, damage extent, and affected property.', icon: FileText },
+            { number: '4', title: 'Prevent Further Damage', description: 'Place tarps over roof leaks, move valuables to dry areas, begin water extraction.', icon: Shield },
+            { number: '5', title: 'Call Restoration Professionals', description: 'Contact a certified water damage restoration company for immediate mitigation.', icon: Phone },
+            { number: '6', title: 'Notify Insurance', description: 'Report the claim within 24-48 hours with detailed information.', icon: FileText },
+          ]}
+        />
 
         <ol>
           <li><strong>Ensure safety:</strong> Turn off electricity if standing water is present; never enter flooded areas with electrical hazards</li>
@@ -435,6 +493,10 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
           <li>Store important documents in waterproof containers</li>
           <li>Maintain relationship with trusted restoration contractor</li>
         </ul>
+
+        <QuickTip title="Pro Tip: Get Both Policies in Place Now">
+          Don't wait for a storm forecast to buy flood insurance—there's a 30-day waiting period before coverage activates. Similarly, water backup endorsements are inexpensive ($40-$100/year) but invaluable when you need them. Review your policy today and add these coverages before you need them.
+        </QuickTip>
 
         <h2>Partner with Flood Doctor for Insurance-Ready Water Damage Restoration</h2>
 
