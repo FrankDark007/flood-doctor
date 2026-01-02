@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
@@ -43,28 +43,29 @@ const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState('residential');
   const [selectedFeature, setSelectedFeature] = useState(0);
 
-  const serviceTabs = [
+  // Memoize static data arrays to prevent recreation on every render
+  const serviceTabs = useMemo(() => [
     { id: 'residential', label: 'Residential', icon: Users },
     { id: 'commercial', label: 'Commercial', icon: FileText }
-  ];
+  ], []);
 
-  const residentialServices = [
+  const residentialServices = useMemo(() => [
     { title: 'Water Damage', icon: Droplets, description: 'Emergency extraction and structural drying', link: '/services/residential/water-damage/' },
     { title: 'Fire & Smoke', icon: Flame, description: 'Soot removal and odor elimination', link: '/services/residential/fire-smoke/' },
     { title: 'Mold Remediation', icon: Bug, description: 'Safe removal and prevention', link: '/services/residential/mold/' },
     { title: 'Storm Damage', icon: Wind, description: 'Emergency response and restoration', link: '/services/residential/storm-damage/' }
-  ];
+  ], []);
 
-  const commercialServices = [
+  const commercialServices = useMemo(() => [
     { title: 'Office Buildings', icon: FileText, description: 'Minimal disruption to operations', link: '/services/commercial/' },
     { title: 'Retail Spaces', icon: Users, description: 'Fast turnaround for business continuity', link: '/services/commercial/' },
     { title: 'Healthcare Facilities', icon: Shield, description: 'HIPAA-compliant restoration', link: '/services/commercial/' },
     { title: 'Multi-Family', icon: Users, description: 'Apartment and condo restoration', link: '/services/commercial/' }
-  ];
+  ], []);
 
   const services = activeTab === 'residential' ? residentialServices : commercialServices;
 
-  const features = [
+  const features = useMemo(() => [
     {
       icon: Gauge,
       title: 'Real-Time Monitoring',
@@ -89,22 +90,22 @@ const Home: React.FC = () => {
       description: 'Daily updates with photos, moisture readings, and timeline estimates.',
       detail: 'Never wonder about project status. Receive automated reports every 24 hours.'
     }
-  ];
+  ], []);
 
-  const processSteps = [
+  const processSteps = useMemo(() => [
     { step: '01', title: 'Call', description: '24/7 emergency line', time: '0 min' },
     { step: '02', title: 'Dispatch', description: 'Crew deployed', time: '5 min' },
     { step: '03', title: 'Arrival', description: 'On-site assessment', time: '60 min' },
     { step: '04', title: 'Mitigation', description: 'Water extraction begins', time: '90 min' },
     { step: '05', title: 'Monitoring', description: 'Daily progress tracking', time: 'Ongoing' }
-  ];
+  ], []);
 
-  const stats = [
+  const stats = useMemo(() => [
     { value: '60 min', label: 'Response Time', icon: Clock },
     { value: '24/7', label: 'Availability', icon: Radio },
     { value: '10,000+', label: 'Projects', icon: BarChart3 },
     { value: '4.9/5', label: 'Rating', icon: Star }
-  ];
+  ], []);
 
   return (
     <main className="flex-grow bg-white">

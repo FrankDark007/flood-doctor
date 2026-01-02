@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, memo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
@@ -36,8 +36,8 @@ import Button from '../components/ui/Button';
  * - Warm, community-focused aesthetic
  */
 
-// SVG Pattern Components for service card backgrounds
-const WaterPatternSVG = () => (
+// SVG Pattern Components for service card backgrounds - memoized to prevent re-renders
+const WaterPatternSVG = memo(() => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -65,9 +65,10 @@ const WaterPatternSVG = () => (
     <path d="M0 250 Q100 230 200 250 T400 250" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
     <path d="M0 300 Q100 280 200 300 T400 300" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2"/>
   </svg>
-);
+));
+WaterPatternSVG.displayName = 'WaterPatternSVG';
 
-const FirePatternSVG = () => (
+const FirePatternSVG = memo(() => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -95,9 +96,10 @@ const FirePatternSVG = () => (
     <path d="M0 150 Q50 140 100 150 T200 150 T300 150 T400 150" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
     <path d="M0 100 Q50 90 100 100 T200 100 T300 100 T400 100" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
   </svg>
-);
+));
+FirePatternSVG.displayName = 'FirePatternSVG';
 
-const StormPatternSVG = () => (
+const StormPatternSVG = memo(() => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -128,7 +130,8 @@ const StormPatternSVG = () => (
     <path d="M0 300 Q100 290 150 300 Q200 310 250 300" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
     <path d="M100 340 Q150 330 200 340 Q250 350 300 340" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
   </svg>
-);
+));
+StormPatternSVG.displayName = 'StormPatternSVG';
 
 interface ServicesHubProps {
   title?: string;
@@ -139,7 +142,8 @@ interface ServicesHubProps {
 const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudience }) => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
-  const restorationServices = [
+  // Memoize service arrays to prevent recreation on every render
+  const restorationServices = useMemo(() => [
     {
       id: 'water',
       title: 'Water Damage',
@@ -174,9 +178,9 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       backgroundImage: null as string | null,
       PatternComponent: StormPatternSVG
     }
-  ];
+  ], []);
 
-  const remediationServices = [
+  const remediationServices = useMemo(() => [
     {
       id: 'mold',
       title: 'Mold Remediation',
@@ -198,9 +202,9 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       icon: Shield,
       link: '/services/residential/biohazard/'
     }
-  ];
+  ], []);
 
-  const specialtyServices = [
+  const specialtyServices = useMemo(() => [
     {
       id: 'content',
       title: 'Content Restoration',
@@ -222,14 +226,14 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
       icon: Hammer,
       link: '/services/residential/reconstruction/'
     }
-  ];
+  ], []);
 
-  const testimonial = {
+  const testimonial = useMemo(() => ({
     quote: "The Flood Doctor team arrived within 45 minutes and immediately started extracting water. They saved our hardwood floors and handled our insurance claim from start to finish.",
     author: 'Jennifer Martinez',
     location: 'Vienna, VA',
     service: 'Water Damage Restoration'
-  };
+  }), []);
 
   return (
     <main className="flex-grow bg-white">
