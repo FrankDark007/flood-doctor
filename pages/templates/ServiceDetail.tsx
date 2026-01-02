@@ -644,18 +644,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
       {/* FAQ Accordion - Google Style */}
       <section id="faq" className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">
-              Frequently Asked Questions
+          {/* Header - Google Style */}
+          <div className="text-center mb-16">
+            <h2 className="text-[32px] lg:text-[40px] font-normal text-[#202124] tracking-tight">
+              Frequently asked questions
             </h2>
-            <p className="text-lg text-gray-500">
-              Common questions about {serviceName.toLowerCase()}.
-            </p>
           </div>
 
           {/* Expand All Button */}
-          <div className="flex justify-end mb-2">
+          <div className="flex justify-end mb-4">
             <button
               onClick={() => {
                 if (allExpanded) {
@@ -666,19 +663,19 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                   setAllExpanded(true);
                 }
               }}
-              className="inline-flex items-center gap-1.5 text-primary hover:text-primaryHover text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-1 text-[#1a73e8] hover:text-[#1557b0] text-[14px] font-medium transition-colors"
             >
               {allExpanded ? 'Collapse all' : 'Expand all'}
-              <ChevronsUpDown size={16} />
+              <ChevronsUpDown size={18} />
             </button>
           </div>
 
           {/* FAQ Items */}
-          <div className="border-t border-gray-200">
+          <div className="border-t border-[#e8eaed]">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqs.has(idx);
               return (
-                <div key={idx} className="border-b border-gray-200">
+                <div key={idx} className="border-b border-[#e8eaed]">
                   <button
                     onClick={() => {
                       const newSet = new Set(openFaqs);
@@ -690,20 +687,20 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                       setOpenFaqs(newSet);
                       setAllExpanded(newSet.size === faqs.length);
                     }}
-                    className="w-full py-6 flex items-center justify-between text-left group"
+                    className="w-full py-5 flex items-center justify-between text-left"
                   >
-                    <span className="text-[20px] lg:text-[22px] font-normal text-gray-900 pr-8 leading-snug">
+                    <span className="text-[18px] lg:text-[20px] font-normal text-[#1a73e8] pr-8 leading-relaxed">
                       {faq.question}
                     </span>
                     {isOpen ? (
-                      <ChevronUp size={24} className="text-primary flex-shrink-0" />
+                      <ChevronUp size={24} className="text-[#1a73e8] flex-shrink-0" />
                     ) : (
-                      <ChevronDown size={24} className="text-primary flex-shrink-0" />
+                      <ChevronDown size={24} className="text-[#1a73e8] flex-shrink-0" />
                     )}
                   </button>
                   {isOpen && (
-                    <div className="pb-6 pr-12">
-                      <p className="text-base text-gray-600 leading-relaxed">
+                    <div className="pb-5 pr-12 border-t border-[#e8eaed]">
+                      <p className="text-[16px] text-[#5f6368] leading-[1.75] pt-4">
                         {faq.answer}
                       </p>
                     </div>
@@ -714,10 +711,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
           </div>
 
           {/* View More Button */}
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/resources/faq/"
-              className="inline-flex items-center px-6 py-2.5 rounded-full border border-gray-300 text-primary text-sm font-medium hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-6 py-2.5 rounded-full border border-[#dadce0] text-[#1a73e8] text-[14px] font-medium hover:bg-[#f8f9fa] transition-colors"
             >
               View more FAQs
             </Link>
