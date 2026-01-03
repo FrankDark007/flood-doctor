@@ -130,6 +130,7 @@ const ChoosingRestorationCompany = lazy(() => import('./pages/resources/choosing
 const HomeWaterproofingGuide = lazy(() => import('./pages/resources/home-waterproofing-guide'));
 const InsuranceDocumentationGuide = lazy(() => import('./pages/resources/insurance-documentation-guide'));
 const RestorationTimelineGuide = lazy(() => import('./pages/resources/restoration-timeline-guide'));
+const WinterPipeProtection = lazy(() => import('./pages/resources/WinterPipeProtection'));
 
 // City Subdomain Pages (mclean.flood.doctor, vienna.flood.doctor, etc.)
 const CityMcLean = lazy(() => import('./pages/city/McLean'));
@@ -405,6 +406,7 @@ const App: React.FC = () => {
               <Route path="/resources/home-waterproofing-guide/" element={<HomeWaterproofingGuide />} />
               <Route path="/resources/insurance-documentation-guide/" element={<InsuranceDocumentationGuide />} />
               <Route path="/resources/restoration-timeline-guide/" element={<RestorationTimelineGuide />} />
+              <Route path="/resources/winter-pipe-protection/" element={<WinterPipeProtection />} />
               <Route path="/blog/" element={<BlogIndex />} />
 
               {/* Blog Articles */}
