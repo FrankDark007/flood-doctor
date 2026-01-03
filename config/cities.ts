@@ -1,4 +1,6 @@
-// City configuration for subdomain landing pages
+// City configuration for franchise-style landing pages
+// Path routing: /city/mclean, /city/bethesda (main site)
+// Future: each city will be deployed as independent subdomain site (mclean.flood.doctor, etc.)
 export interface CityConfig {
   slug: string;
   name: string;
