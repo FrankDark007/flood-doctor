@@ -272,6 +272,13 @@ const CityLanding: React.FC<CityLandingProps> = ({ city }) => {
                   </li>
                 ))}
               </ul>
+              <Link
+                to={`/city/${city.slug}/services`}
+                className="mt-6 inline-flex items-center gap-2 text-[#1a73e8] font-semibold hover:gap-3 transition-all"
+              >
+                View All {city.name} Services
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </div>

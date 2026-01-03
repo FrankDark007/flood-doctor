@@ -144,6 +144,7 @@ const CityHerndon = lazy(() => import('./pages/city/Herndon'));
 const CityReston = lazy(() => import('./pages/city/Reston'));
 const CitySpringfield = lazy(() => import('./pages/city/Springfield'));
 const CityFallsChurch = lazy(() => import('./pages/city/FallsChurch'));
+const CityServices = lazy(() => import('./pages/city/CityServices'));
 
 // Location Landing Pages
 const AlexandriaWaterDamage = lazy(() => import('./pages/locations/AlexandriaWaterDamage'));
@@ -300,6 +301,10 @@ const App: React.FC = () => {
               <Route path="/city/reston" element={<CityReston />} />
               <Route path="/city/springfield" element={<CitySpringfield />} />
               <Route path="/city/falls-church" element={<CityFallsChurch />} />
+
+              {/* City Services Pages - mclean.flood.doctor/services/ */}
+              <Route path="/city/:citySlug/services" element={<CityServices />} />
+              <Route path="/city/:citySlug/services/:serviceSlug" element={<CityServices />} />
 
               {/* Location Landing Pages - Alexandria */}
               <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />

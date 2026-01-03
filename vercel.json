@@ -5,9 +5,29 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "mclean.flood.doctor" }],
+      "destination": "/city/mclean/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "mclean.flood.doctor" }],
+      "destination": "/city/mclean/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "mclean.flood.doctor" }],
       "destination": "/city/mclean"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "vienna.flood.doctor" }],
+      "destination": "/city/vienna/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "vienna.flood.doctor" }],
+      "destination": "/city/vienna/services"
     },
     {
       "source": "/:path*",
@@ -15,9 +35,29 @@
       "destination": "/city/vienna"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "arlington.flood.doctor" }],
+      "destination": "/city/arlington/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "arlington.flood.doctor" }],
+      "destination": "/city/arlington/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "arlington.flood.doctor" }],
       "destination": "/city/arlington"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "fairfax.flood.doctor" }],
+      "destination": "/city/fairfax/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "fairfax.flood.doctor" }],
+      "destination": "/city/fairfax/services"
     },
     {
       "source": "/:path*",
@@ -25,9 +65,29 @@
       "destination": "/city/fairfax"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "tysons.flood.doctor" }],
+      "destination": "/city/tysons/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "tysons.flood.doctor" }],
+      "destination": "/city/tysons/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "tysons.flood.doctor" }],
       "destination": "/city/tysons"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "alexandria.flood.doctor" }],
+      "destination": "/city/alexandria/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "alexandria.flood.doctor" }],
+      "destination": "/city/alexandria/services"
     },
     {
       "source": "/:path*",
@@ -35,9 +95,29 @@
       "destination": "/city/alexandria"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "ashburn.flood.doctor" }],
+      "destination": "/city/ashburn/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "ashburn.flood.doctor" }],
+      "destination": "/city/ashburn/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "ashburn.flood.doctor" }],
       "destination": "/city/ashburn"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "dc.flood.doctor" }],
+      "destination": "/city/washington-dc/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "dc.flood.doctor" }],
+      "destination": "/city/washington-dc/services"
     },
     {
       "source": "/:path*",
@@ -45,9 +125,29 @@
       "destination": "/city/washington-dc"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "herndon.flood.doctor" }],
+      "destination": "/city/herndon/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "herndon.flood.doctor" }],
+      "destination": "/city/herndon/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "herndon.flood.doctor" }],
       "destination": "/city/herndon"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "reston.flood.doctor" }],
+      "destination": "/city/reston/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "reston.flood.doctor" }],
+      "destination": "/city/reston/services"
     },
     {
       "source": "/:path*",
@@ -55,9 +155,29 @@
       "destination": "/city/reston"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "springfield.flood.doctor" }],
+      "destination": "/city/springfield/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "springfield.flood.doctor" }],
+      "destination": "/city/springfield/services"
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "springfield.flood.doctor" }],
       "destination": "/city/springfield"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "fallschurch.flood.doctor" }],
+      "destination": "/city/falls-church/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "fallschurch.flood.doctor" }],
+      "destination": "/city/falls-church/services"
     },
     {
       "source": "/:path*",
