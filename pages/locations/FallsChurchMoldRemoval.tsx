@@ -6,9 +6,9 @@ const FallsChurchMoldRemoval: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor Mold Removal & Remediation - Falls Church",
-    "image": "https://flooddoctor.com/images/logo.png",
-    "@id": "https://flooddoctor.com/locations/falls-church-mold-removal",
-    "url": "https://flooddoctor.com/locations/falls-church-mold-removal",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://falls-church.flood.doctor/mold-removal",
+    "url": "https://falls-church.flood.doctor/mold-removal",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

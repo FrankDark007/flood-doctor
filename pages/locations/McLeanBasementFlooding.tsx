@@ -1,39 +1,35 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
-import { generateLocationPageSchema } from '../../utils/schema';
 
 const McLeanBasementFlooding: React.FC = () => {
-  const locationSchema = generateLocationPageSchema(
-    {
-      name: 'McLean, VA',
-      description: 'Expert basement flooding repair and waterproofing in McLean, VA. 24/7 emergency response, water extraction, structural drying serving Great Falls, Langley, Pimmit Hills. Call (877) 497-0007.',
-      address: {
-        addressLocality: 'McLean',
-        addressRegion: 'VA',
-        addressCountry: 'US',
-      },
-      slug: '/locations/mclean-basement-flooding/',
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://mclean.flood.doctor/basement-flooding",
+    "name": "Flood Doctor - Basement Flooding Repair McLean VA",
+    "image": "https://flood.doctor/logo.png",
+    "url": "https://mclean.flood.doctor/basement-flooding",
+    "telephone": "+1-877-497-0007",
+    "description": "Expert basement flooding repair and waterproofing in McLean, VA. 24/7 emergency response, water extraction, structural drying serving Great Falls, Langley, Pimmit Hills.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McLean",
+      "addressRegion": "VA",
+      "addressCountry": "US"
     },
-    [
-      { label: 'Locations', path: '/locations/' },
-      { label: 'McLean Basement Flooding', path: '/locations/mclean-basement-flooding/' },
+    "areaServed": [
+      { "@type": "City", "name": "McLean" },
+      { "@type": "City", "name": "Great Falls" },
+      { "@type": "City", "name": "Tysons" }
     ],
-    [
-      {
-        question: 'Why does my McLean basement keep flooding?',
-        answer: 'Common causes include poor drainage around foundation, high water table near the Potomac, aging sump pumps, foundation cracks, clogged gutters directing water toward foundation, and inadequate waterproofing. We identify root causes and provide permanent solutions.',
-      },
-      {
-        question: 'How fast can you respond to McLean basement flooding?',
-        answer: 'We dispatch emergency teams immediately to McLean basement flooding situations and typically arrive within 60 minutes. Our 24/7 response covers all McLean neighborhoods including Great Falls, Langley, Pimmit Hills, and Tysons.',
-      },
-      {
-        question: 'Can you prevent future basement flooding in McLean?',
-        answer: 'Yes. After emergency cleanup, we assess your McLean property for waterproofing improvements including sump pump installation or upgrades, foundation sealing, drainage systems, and backup power solutions to prevent future flooding.',
-      },
-    ]
-  );
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
 
   return (
     <main className="flex-grow bg-white">

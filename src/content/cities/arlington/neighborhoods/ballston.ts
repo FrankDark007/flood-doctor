@@ -1,0 +1,187 @@
+import type { NeighborhoodPageContent } from '../../types';
+
+export const ballstonContent: NeighborhoodPageContent = {
+  heroSection: {
+    neighborhood: "Ballston",
+    city: "Arlington",
+    state: "VA",
+    tagline: "Modern Condo & High-Rise Restoration Specialists",
+    description: "24/7 water damage restoration for Ballston's growing residential towers, modern condos, and mixed-use developments with multi-unit expertise and HOA coordination.",
+  },
+
+  introSection: {
+    header: "Ballston's Comprehensive Restoration Partner",
+    content: `Ballston's transformation into Arlington's emerging urban core has created a dense concentration of modern residential towers requiring specialized restoration expertise. Contemporary condo buildings feature complex HVAC systems where mold spreads rapidly through shared ductwork. Underground parking garages flood from groundwater surges and plumbing failures. Mixed-use developments combine retail, office, and residential occupancy where single water events impact multiple stakeholder groups.
+
+Our Ballston team specializes in modern high-density restoration challenges. We coordinate with active HOA boards managing major residential complexes, deploy simultaneous crews when pipe failures cascade through multiple floors, and navigate the insurance complexities of master policies coordinating with individual unit coverage. Our project managers understand the communication protocols, architectural review processes, and building systems unique to Ballston's contemporary development.
+
+From high-rise towers along Wilson Boulevard to mid-rise condos near Ballston Quarter, we've restored water damage throughout this rapidly evolving neighborhood. Our team brings the multi-unit coordination skills, modern building system expertise, and professional communication Ballston's residential community expects from premium restoration services.`,
+  },
+
+  servicesSection: {
+    header: "Comprehensive Restoration Services for Ballston Properties",
+    services: [
+      {
+        title: "Multi-Unit Condo Water Damage",
+        description: "Coordinated restoration when single failures affect multiple units in modern condo buildings, with simultaneous crews, unified project management, and HOA board communication.",
+      },
+      {
+        title: "Modern HVAC System Mold Remediation",
+        description: "Comprehensive mold removal from shared ventilation systems in contemporary buildings with vertical stack assessment, containment protocols, and air quality testing across affected units.",
+      },
+      {
+        title: "Underground Parking Garage Flooding",
+        description: "Industrial extraction for flooded below-grade parking with high-capacity pumps, structural assessment, vehicle damage documentation, and coordinated restoration with building management.",
+      },
+      {
+        title: "High-Rise Building Envelope Leaks",
+        description: "Expert assessment and repair when modern curtain wall systems, balcony waterproofing, or window installations fail, causing water intrusion during wind-driven rain events.",
+      },
+      {
+        title: "Mixed-Use Development Coordination",
+        description: "Specialized management for buildings combining retail, office, and residential spaces where water damage crosses occupancy boundaries requiring complex stakeholder coordination.",
+      },
+      {
+        title: "HOA & Property Management Partnership",
+        description: "Professional coordination with HOA boards and property management companies including architectural review compliance, resident communication, and master insurance policy navigation.",
+      },
+    ],
+  },
+
+  emergencySection: {
+    header: "24/7 Emergency Response Throughout Ballston",
+    availabilityContent: "Our Ballston emergency team responds within 60 minutes to any residential or commercial property, coordinating with building management and security for immediate access to affected areas day or night.",
+    ctaText: "Call (703) 656-0102 for immediate emergency water damage response in Ballston.",
+  },
+
+  buildingTypesSection: {
+    header: "Ballston Building Types We Serve",
+    buildingTypes: [
+      {
+        name: "Contemporary High-Rise Condos",
+        description: "Modern residential towers built 2000-present with shared amenities, complex building systems, and active HOA management requiring coordinated restoration approaches.",
+        commonIssues: [
+          "Vertical pipe failures cascading through multiple residential floors",
+          "HVAC system mold spreading through shared ductwork",
+          "Underground parking garage flooding from groundwater or plumbing",
+          "Building envelope leaks in curtain wall and balcony systems",
+          "Common area flooding affecting lobbies, fitness centers, and pools",
+        ],
+      },
+      {
+        name: "Mid-Rise Condo Buildings",
+        description: "4-8 story residential buildings featuring modern construction, shared building systems, and HOA governance requiring multi-unit restoration coordination.",
+        commonIssues: [
+          "Multi-unit water damage from single source failures",
+          "Shared plumbing riser failures affecting vertical stacks",
+          "Flat roof drainage issues causing top-floor water intrusion",
+          "HVAC condensate line failures in individual units",
+          "HOA architectural review requirements for restoration finishes",
+        ],
+      },
+      {
+        name: "Mixed-Use Developments",
+        description: "Buildings integrating ground-floor retail with residential condos above, requiring coordination across different ownership structures and occupancy types.",
+        commonIssues: [
+          "Retail tenant improvements damaging residential plumbing above",
+          "Restaurant equipment failures flooding apartments overhead",
+          "Complex insurance with commercial and residential policies",
+          "Coordination between commercial tenants and residential HOAs",
+          "Business continuity requirements minimizing retail closure",
+        ],
+      },
+    ],
+  },
+
+  processSection: {
+    header: "Our Ballston Restoration Process",
+    steps: [
+      {
+        title: "Emergency Response & Building Coordination",
+        description: "Within 60 minutes, our team coordinates with building management or HOA contacts, secures access to affected areas, and deploys crews with equipment appropriate for your building type. We establish communication protocols with all stakeholders before beginning emergency operations.",
+      },
+      {
+        title: "Comprehensive Multi-Unit Assessment",
+        description: "For incidents affecting multiple units, we deploy assessment teams evaluating every impacted space simultaneously. Moisture meters and thermal imaging identify hidden water in walls, ceilings, and floors. We document damage thoroughly for both master insurance policies and individual unit coverage, photographing everything for comprehensive claims support.",
+      },
+      {
+        title: "Coordinated Water Extraction & Containment",
+        description: "Simultaneous extraction crews work across all affected units using equipment transported via freight elevators. We protect common areas during operations, maintain resident access to building amenities, and contain damage preventing spread to additional units through proper protocols and negative air pressure when needed.",
+      },
+      {
+        title: "Unified Project Management",
+        description: "Single project manager coordinates all restoration activities, communicates regularly with HOA boards and property management, schedules work fairly across multiple units, and maintains master timeline ensuring equitable service. Residents receive consistent communication and clear expectations throughout restoration.",
+      },
+      {
+        title: "Building-Wide Drying Strategy",
+        description: "Coordinated drying protocols across all affected spaces with equipment positioned optimally in each unit. Daily moisture readings track progress with documentation shared across stakeholders. We work with building HVAC systems to optimize drying conditions while maintaining comfort for unaffected residents throughout the building.",
+      },
+      {
+        title: "HOA-Compliant Restoration & Closeout",
+        description: "Complete rebuild meeting HOA architectural guidelines, building codes, and individual owner preferences. We coordinate materials selection through HOA review processes, ensure consistent quality across all affected units, and provide final walkthroughs with each owner before project closeout and resident re-occupancy.",
+      },
+    ],
+  },
+
+  faqSection: {
+    header: "Ballston Restoration FAQs",
+    faqs: [
+      {
+        question: "How do you coordinate restoration when multiple condo units are affected?",
+        answer: "Multi-unit coordination is our specialty in Ballston's modern buildings. You get a dedicated project manager communicating with all affected owners, your HOA board, and property management. We deploy simultaneous crews to affected units, schedule work fairly, coordinate access efficiently, and maintain a master timeline ensuring everyone receives equitable service. One restoration company handling all units is far more efficient than individual owners hiring separate contractors."
+      },
+      {
+        question: "Who handles communication with our HOA board and property management?",
+        answer: "Your project manager serves as single point of contact for all coordination. They communicate directly with HOA boards, property management companies, building engineers, and affected residents. We provide regular progress updates, attend HOA meetings when requested, ensure architectural review compliance, and handle insurance coordination across master policies and individual HO6 coverage. You won't need to manage these communications yourself."
+      },
+      {
+        question: "Can you work around building schedules and resident needs?",
+        answer: "Absolutely. Emergency extraction happens immediately regardless of time, but we schedule reconstruction work respecting building rules and resident schedules. Noisy demolition occurs during appropriate hours, we use freight elevators when available, and we coordinate with building management on common area access. We're experienced with Ballston HOA requirements and building protocols."
+      },
+      {
+        question: "How do you handle flooded underground parking garages?",
+        answer: "We deploy industrial pumps capable of extracting thousands of gallons per hour from below-grade spaces. Our team assesses structural impacts, tests concrete for moisture penetration, coordinates with electrical contractors ensuring safety, documents vehicle damage, and deploys ventilation systems for rapid drying. We've restored parking garages throughout Ballston's high-rise corridor with minimal disruption to residents."
+      },
+      {
+        question: "What if HVAC mold affects multiple units in our building?",
+        answer: "We coordinate comprehensive mold remediation across all affected units when shared HVAC systems spread contamination. This includes vertical stack assessment identifying all impacted areas, simultaneous mold testing and remediation, containment preventing cross-contamination during cleanup, complete ductwork and air handler treatment, and post-remediation air quality testing confirming safe clearance. Your HOA receives unified project management and regular communication."
+      },
+      {
+        question: "Will restoration work disrupt other residents in the building?",
+        answer: "We minimize disruption through careful planning and professional execution. Equipment is staged in designated areas coordinated with building management. Common areas receive daily cleaning maintaining presentable conditions. Noisy work occurs during appropriate hours. We use freight elevators when available and maintain clean, safe work areas. Most unaffected residents barely notice restoration occurring in other units."
+      },
+    ],
+  },
+
+  testimonialsSection: {
+    header: "What Ballston Residents Say",
+    testimonials: [
+      {
+        author: "Andrew T.",
+        location: "Wilson Boulevard High-Rise",
+        text: "Supply line burst on the floor above ours, flooding our unit and two others below. Flood Doctor coordinated all three units simultaneously, worked directly with our HOA board, and had everything restored in under three weeks. The project manager kept everyone informed throughout. Exactly the professional service our building needed.",
+        rating: 5,
+      },
+      {
+        author: "Lisa K.",
+        location: "Ballston Quarter Resident",
+        text: "Parking garage flooded during severe weather, affecting dozens of vehicles. They brought massive pumps and had the water out within hours, documented all vehicle damage, and coordinated perfectly with building management. Impressive response to a major emergency affecting our entire community.",
+        rating: 5,
+      },
+      {
+        author: "James R.",
+        location: "Glebe Road Condo",
+        text: "HVAC mold affected four units on our vertical stack. Flood Doctor tested all units, coordinated simultaneous remediation, and ensured the entire system was properly cleaned. Worked seamlessly with our HOA and kept all affected owners informed. Professional and thorough throughout the entire project.",
+        rating: 5,
+      },
+    ],
+  },
+
+  closingSection: {
+    header: "Ballston's Premier Multi-Unit Restoration Experts",
+    content: `Water damage in Ballston's modern high-density buildings demands specialized coordination skills and contemporary building system expertise. Whether you're facing cascading pipe failures affecting multiple condo units, underground parking flooding, or HVAC mold spreading through shared systems, our team delivers the multi-unit restoration excellence Ballston's residential community expects.
+
+We've built our reputation through transparent HOA communication, quality workmanship across simultaneously restored units, and the ability to manage complex projects efficiently. From individual condo owners to property management companies overseeing major residential complexes, we provide the professional service Ballston's modern building stock requires.`,
+    ctaText: "Call (703) 656-0102 for 24/7 emergency response or expert restoration consultation for your Ballston property.",
+  },
+};

@@ -9,9 +9,9 @@ export default function HerndonMoldRemoval() {
       {
         "@type": "LocalBusiness",
         "name": "Flood Doctor - Mold Removal & Remediation Herndon VA",
-        "image": "https://flooddoctor.com/logo.png",
-        "@id": "https://flooddoctor.com/locations/herndon-mold-removal",
-        "url": "https://flooddoctor.com/locations/herndon-mold-removal",
+        "image": "https://flood.doctor/logo.png",
+        "@id": "https://herndon.flood.doctor/mold-removal",
+        "url": "https://herndon.flood.doctor/mold-removal",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

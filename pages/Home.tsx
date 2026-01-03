@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { generateHomepageSchema } from '../utils/schema';
+import { useSubdomainInfo } from '../utils/subdomain';
 import {
   Phone,
   ArrowRight,
@@ -41,6 +42,13 @@ import PageMeta from '../components/ui/PageMeta';
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState('residential');
   const [selectedFeature, setSelectedFeature] = useState(0);
+
+  // Detect subdomain for city-specific content
+  const { isSubdomain, cityName } = useSubdomainInfo();
+
+  // Dynamic location text based on subdomain
+  const locationText = isSubdomain ? cityName : 'Northern Virginia';
+  const heroLocation = isSubdomain ? `Serving ${cityName}` : 'Serving Northern Virginia';
 
   const serviceTabs = useMemo(() => [
     { id: 'residential', label: 'Residential', icon: Users },
@@ -106,16 +114,19 @@ const Home: React.FC = () => {
   ], []);
 
   const homepageSchema = useMemo(() => generateHomepageSchema([
-    { question: 'How quickly can you respond to water damage emergencies?', answer: 'We guarantee 60-minute response time 24/7 throughout Northern Virginia and Washington DC.' },
+    { question: 'How quickly can you respond to water damage emergencies?', answer: `We guarantee 60-minute response time 24/7 throughout ${locationText} and surrounding areas.` },
     { question: 'Do you work with insurance companies?', answer: 'Yes, we handle direct insurance billing and documentation for all major carriers.' },
-    { question: 'What areas do you serve?', answer: 'We serve Northern Virginia including Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties, plus Washington DC.' },
-  ]), []);
+    { question: 'What areas do you serve?', answer: isSubdomain ? `We serve ${cityName} and surrounding communities in Northern Virginia.` : 'We serve Northern Virginia including Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties, plus Washington DC.' },
+  ]), [locationText, cityName, isSubdomain]);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Emergency Water Damage Restoration & Flood Cleanup"
-        description="24/7 emergency water damage restoration in Northern Virginia. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007."
+        title={isSubdomain ? `Water Damage Restoration ${cityName} VA | 24/7 Emergency` : "Emergency Water Damage Restoration & Flood Cleanup"}
+        description={isSubdomain
+          ? `24/7 emergency water damage restoration in ${cityName}, VA. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007.`
+          : "24/7 emergency water damage restoration in Northern Virginia. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007."
+        }
         schema={homepageSchema}
       />
 
@@ -127,11 +138,11 @@ const Home: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e6f4ea] text-[#137333] text-sm font-medium mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#137333] animate-pulse" />
-                Crews available now
+                {isSubdomain ? `Crews available in ${cityName}` : 'Crews available now'}
               </div>
 
               <h1 className="text-[32px] sm:text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6">
-                Water damage restoration, simplified
+                {isSubdomain ? `Water damage restoration in ${cityName}` : 'Water damage restoration, simplified'}
               </h1>
 
               <p className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-10 max-w-xl">
@@ -468,10 +479,13 @@ const Home: React.FC = () => {
                 Coverage area
               </div>
               <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
-                Northern Virginia & DC Metro
+                {isSubdomain ? `${cityName} & Surrounding Areas` : 'Northern Virginia & DC Metro'}
               </h2>
               <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
-                Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night.
+                {isSubdomain
+                  ? `We provide 24/7 emergency water damage restoration throughout ${cityName} and nearby communities. 60-minute response guaranteed.`
+                  : 'Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night.'
+                }
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-8">

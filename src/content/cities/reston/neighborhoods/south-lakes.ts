@@ -1,0 +1,175 @@
+// src/content/cities/reston/neighborhoods/south-lakes.ts
+// Generated: January 3, 2026
+// South Lakes Neighborhood Landing Page - 100% Unique
+
+export const southLakesNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration South Lakes VA | Reston | Flood Doctor",
+    description: "South Lakes water damage restoration. 30-min response for colonials, townhomes & lakeside properties near South Lakes High School. Call (703) 656-0107.",
+    canonical: "https://reston.flood.doctor/neighborhoods/south-lakes"
+  },
+
+  h1: "Water Damage Restoration in South Lakes, Virginia",
+
+  heroSection: {
+    headline: "South Lakes' Trusted Water Damage Experts",
+    subheadline: "Protecting South Lakes families since 2005. From colonials along Soapstone Drive to townhomes near the high school—we know your neighborhood.",
+    responseTime: "30-minute response to all South Lakes addresses",
+    backgroundImage: "/images/neighborhoods/south-lakes.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: \`South Lakes represents Reston's family-friendly core—tree-lined streets, quality schools, and housing diversity from starter townhomes to established colonials. The neighborhood's proximity to Lake Thoreau and Lake Audubon creates the natural beauty Reston is known for—and the groundwater challenges that lake-adjacent properties face.
+
+Flood Doctor has served South Lakes families for nearly two decades. We've extracted flood water from basements along South Lakes Drive, dried walkout lower levels backing to nature areas, and restored townhomes in clusters throughout the neighborhood. Our crews know the shortcuts through Reston's pathway system, the water table challenges near the lakes, and the tight timelines South Lakes families expect.
+
+The housing here—ranging from 1,500-square-foot townhomes to 4,000-square-foot colonials—requires restoration approaches that adapt to each property type. We treat each South Lakes home with the same urgency, whether you're near South Lakes High School or tucked into a quiet cluster off Glade Drive.\`,
+
+    housingTypes: [
+      "Colonial single-family homes (2,500-4,000+ sq ft)",
+      "Split-level homes from 1970s-80s",
+      "Townhomes in various clusters",
+      "Contemporary homes near lake areas",
+      "Garden-style condos"
+    ],
+
+    commonIssues: [
+      "Walkout basement flooding from lake-area groundwater",
+      "Sump pump failures during summer storms",
+      "Aging plumbing in 1970s-80s construction",
+      "Tree root intrusion into sewer lines",
+      "Storm water intrusion through window wells"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "South Lakes High School",
+      "Lake Thoreau",
+      "Lake Audubon",
+      "South Lakes Village Center",
+      "Glade Pool"
+    ],
+
+    schools: [
+      "South Lakes High School",
+      "Hughes Middle School",
+      "Terraset Elementary",
+      "Forest Edge Elementary",
+      "Lake Anne Elementary"
+    ],
+
+    subdivisions: [
+      "Glades cluster",
+      "Soapstone area",
+      "Twin Branches",
+      "Autumnwood",
+      "Waterview"
+    ],
+
+    localFacts: [
+      "ZIP code: 20191",
+      "Near lakes Thoreau and Audubon",
+      "Established 1970s-1990s",
+      "Strong school district draw"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Emergency Water Extraction",
+      description: "Rapid response for South Lakes basement flooding, burst pipes, and appliance failures. Our truck-mounted systems extract thousands of gallons from finished lower levels."
+    },
+    {
+      name: "Structural Drying",
+      description: "Industrial drying equipment sized for South Lakes' diverse housing. We protect hardwood floors, finished basements, and walkout spaces with precision moisture control."
+    },
+    {
+      name: "Mold Prevention & Remediation",
+      description: "Fast drying prevents mold—critical in South Lakes' lake-adjacent humidity. When mold is present, our IICRC-certified remediation protects families and property values."
+    },
+    {
+      name: "Storm & Flood Cleanup",
+      description: "South Lakes' proximity to the lakes creates elevated flood risk during storms. We respond with extraction, contamination treatment, and complete restoration."
+    },
+    {
+      name: "Sewage Backup Cleanup",
+      description: "Aging sewer lines in established South Lakes clusters can back up during storms. We handle biohazard cleanup with full safety protocols."
+    }
+  ],
+
+  walkoutBasementFocus: {
+    headline: "Walkout Basement Flooding in South Lakes",
+    content: \`South Lakes' topography created hundreds of homes with walkout basements—lower levels with exterior access facing backyards, nature areas, or lake views. These desirable spaces face unique flooding challenges.
+
+Walkout basements sit partially below grade with exterior doors at ground level. During heavy rain, water flows downhill toward these openings. Properties backing to preserved natural areas receive runoff from woodlands. Lake-adjacent homes face higher water tables that rise during wet periods.
+
+We've restored flooded walkout basements throughout South Lakes: the family rooms off Soapstone Drive, the home offices near Twin Branches, and the recreation spaces backing to Lake Thoreau. Understanding walkout-specific vulnerabilities—both below-grade and at-grade—is essential for proper restoration.\`,
+    keywords: ["walkout basement South Lakes", "basement flooding Reston", "lake area water damage"]
+  },
+
+  testimonialSection: {
+    headline: "What South Lakes Homeowners Say",
+    testimonials: [
+      {
+        quote: "Our basement flooded during a summer storm. They were here before the rain stopped and saved our finished lower level. Knew exactly what to do for lake-area properties.",
+        author: "South Lakes Homeowner",
+        location: "Near Lake Thoreau",
+        service: "Basement Flooding"
+      },
+      {
+        quote: "Living near the lakes means higher water tables—they understood that immediately. Thorough drying, great communication, and no mold problems after.",
+        author: "South Lakes Resident",
+        location: "Soapstone Drive area",
+        service: "Water Damage Restoration"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "South Lakes Water Emergency?",
+    localContacts: [
+      {
+        name: "Fairfax Water Authority",
+        phone: "703-698-5600",
+        url: "https://www.fairfaxwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      },
+      {
+        name: "Reston Association",
+        phone: "703-435-6530",
+        url: "https://www.reston.org"
+      }
+    ],
+    responseNote: "Our crews are positioned to reach all South Lakes addresses within 30 minutes. When water threatens your colonial or townhome near the lakes, we're already nearby."
+  },
+
+  faq: [
+    {
+      question: "How fast can you reach my South Lakes home?",
+      answer: "We guarantee 30-minute response to South Lakes. Our crews are stationed throughout Reston and know the neighborhood's layout—from Soapstone Drive to the clusters near South Lakes High School."
+    },
+    {
+      question: "Why does my South Lakes basement flood when neighbors' don't?",
+      answer: "South Lakes' proximity to Lake Thoreau and Lake Audubon creates varying water table levels. Properties at lower elevations or closer to the lakes face higher groundwater. Your specific lot position, drainage, and the age of your home's waterproofing all affect flood risk."
+    },
+    {
+      question: "Does living near the lake increase drying time?",
+      answer: "Yes. Lake-adjacent properties experience higher ambient humidity, which can extend drying time. We account for this by adjusting equipment capacity and monitoring duration. A basement that dries in 4 days elsewhere might take 5-6 days near the lakes."
+    },
+    {
+      question: "Will you work with my insurance company?",
+      answer: "Yes. We handle direct billing, document everything for claims, and work with adjusters throughout the process. Our detailed documentation supports complete coverage for South Lakes homeowners."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "Reston", url: "/reston" },
+    { label: "South Lakes", url: "/neighborhoods/south-lakes" }
+  ]
+};

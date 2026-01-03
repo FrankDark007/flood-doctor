@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 import MobileStickyCTA from './components/layout/MobileStickyCTA';
 import ScrollToTop from './components/layout/ScrollToTop';
 import { EmergencyProvider } from './contexts/EmergencyContext';
+import { FranchiseProvider } from './contexts/FranchiseContext';
 import CommandPalette from './components/ui/CommandPalette';
 
 // Loading fallback component
@@ -160,6 +161,10 @@ const CityRockville = lazy(() => import('./pages/city/Rockville'));
 const CitySilverSpring = lazy(() => import('./pages/city/SilverSpring'));
 const CityServices = lazy(() => import('./pages/city/CityServices'));
 
+// V3 Dynamic City Content Pages - renders rich TypeScript content
+const DynamicServicePage = lazy(() => import('./pages/city/DynamicServicePage'));
+const DynamicNeighborhoodPage = lazy(() => import('./pages/city/DynamicNeighborhoodPage'));
+
 // Location Landing Pages
 const AlexandriaWaterDamage = lazy(() => import('./pages/locations/AlexandriaWaterDamage'));
 const AlexandriaMoldRemoval = lazy(() => import('./pages/locations/AlexandriaMoldRemoval'));
@@ -232,8 +237,9 @@ const Router = useBrowserRouter ? BrowserRouter : HashRouter;
 
 const App: React.FC = () => {
   return (
-    <EmergencyProvider>
-      <Router>
+    <FranchiseProvider>
+      <EmergencyProvider>
+        <Router>
         <ScrollToTop />
         <CommandPalette />
         {/* Main Container with padding for mobile CTA */}
@@ -324,6 +330,20 @@ const App: React.FC = () => {
               {/* City Services Pages - mclean.flood.doctor/services/ */}
               <Route path="/city/:citySlug/services" element={<CityServices />} />
               <Route path="/city/:citySlug/services/:serviceSlug" element={<CityServices />} />
+
+              {/* V3 Dynamic City Content Pages - uses rich TypeScript content */}
+              {/* Service Pages: /city/mclean/water-damage, /city/arlington/basement-flooding, etc. */}
+              <Route path="/city/:city/water-damage" element={<DynamicServicePage />} />
+              <Route path="/city/:city/basement-flooding" element={<DynamicServicePage />} />
+              <Route path="/city/:city/burst-pipe" element={<DynamicServicePage />} />
+              <Route path="/city/:city/flood-cleanup" element={<DynamicServicePage />} />
+              <Route path="/city/:city/mold-remediation" element={<DynamicServicePage />} />
+              <Route path="/city/:city/sewage-cleanup" element={<DynamicServicePage />} />
+              <Route path="/city/:city/storm-damage" element={<DynamicServicePage />} />
+              <Route path="/city/:city/fire-damage" element={<DynamicServicePage />} />
+
+              {/* Neighborhood Pages: /city/mclean/neighborhoods/langley, etc. */}
+              <Route path="/city/:city/neighborhoods/:neighborhood" element={<DynamicNeighborhoodPage />} />
 
               {/* Location Landing Pages - Alexandria */}
               <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />
@@ -513,8 +533,9 @@ const App: React.FC = () => {
           <Footer />
           <MobileStickyCTA />
         </div>
-      </Router>
-    </EmergencyProvider>
+        </Router>
+      </EmergencyProvider>
+    </FranchiseProvider>
   );
 };
 

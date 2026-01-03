@@ -1,39 +1,35 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
-import { generateLocationPageSchema } from '../../utils/schema';
 
 const McLeanMoldRemoval: React.FC = () => {
-  const locationSchema = generateLocationPageSchema(
-    {
-      name: 'McLean, VA',
-      description: 'Professional mold removal and remediation in McLean, VA. EPA-approved methods, IICRC certified, serving Great Falls, Langley, Pimmit Hills, and Tysons. Call (877) 497-0007.',
-      address: {
-        addressLocality: 'McLean',
-        addressRegion: 'VA',
-        addressCountry: 'US',
-      },
-      slug: '/locations/mclean-mold-removal/',
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://mclean.flood.doctor/mold-removal",
+    "name": "Flood Doctor - Mold Removal McLean VA",
+    "image": "https://flood.doctor/logo.png",
+    "url": "https://mclean.flood.doctor/mold-removal",
+    "telephone": "+1-877-497-0007",
+    "description": "Professional mold removal and remediation in McLean, VA. EPA-approved methods, IICRC certified, serving Great Falls, Langley, Pimmit Hills, and Tysons.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McLean",
+      "addressRegion": "VA",
+      "addressCountry": "US"
     },
-    [
-      { label: 'Locations', path: '/locations/' },
-      { label: 'McLean Mold Removal', path: '/locations/mclean-mold-removal/' },
+    "areaServed": [
+      { "@type": "City", "name": "McLean" },
+      { "@type": "City", "name": "Great Falls" },
+      { "@type": "City", "name": "Tysons" }
     ],
-    [
-      {
-        question: 'How do I know if I have mold in my McLean home?',
-        answer: 'Common signs include musty odors, visible discoloration on walls or ceilings, water stains, condensation on windows, and respiratory symptoms that improve when away from home. We provide free mold inspections for McLean properties.',
-      },
-      {
-        question: 'Is mold removal covered by insurance in McLean?',
-        answer: 'Coverage depends on the cause. Mold resulting from sudden water damage (burst pipes, storms) is typically covered. Mold from neglect or maintenance issues may not be. We work directly with McLean homeowners and their insurance providers to maximize coverage.',
-      },
-      {
-        question: 'How long does mold remediation take in McLean homes?',
-        answer: 'Most McLean mold removal projects take 2-5 days depending on the extent of contamination. Small areas may be completed in 1-2 days. Large-scale remediation can take up to a week. We provide detailed timelines after inspection.',
-      },
-    ]
-  );
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
 
   return (
     <main className="flex-grow bg-white">

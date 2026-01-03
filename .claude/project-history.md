@@ -212,4 +212,81 @@
 
 ---
 
-*Last updated: 2026-01-02 ~2:30 PM*
+---
+
+### 2026-01-03: V3 City Subdomain Architecture Complete
+
+**What:** Implemented full V3 "Digital Franchise" multi-subdomain SEO architecture
+
+**Components Created:**
+- `data/franchises.ts` - 14 franchises (HQ + 13 cities) with rich localHooks
+  - Each city has: neighborhoods, landmarks, commonIssues, architectureNotes, permitOffice
+  - Manager bios with local ties
+  - Emergency contacts and partner networks
+  - GeoCoordinates for schema
+  - Nested serviceArea (primary: <30min, secondary: <60min)
+- `hooks/useFranchise.ts` - Subdomain detection with `?city=` dev mode
+- `contexts/FranchiseContext.tsx` - Provider pattern for app-wide franchise data
+- `components/seo/PageMeta.tsx` - Dynamic canonicals, OG/Twitter, geo meta tags
+- `components/seo/LocalBusinessSchema.tsx` - SAB-compliant JSON-LD (no streetAddress)
+- `components/seo/FAQSchema.tsx` - Dynamic city-specific FAQs
+- `components/forms/ServiceRequestForm.tsx` - City-tagged form submissions
+- `scripts/generate-sitemaps.ts` - Generates 15 sitemaps (1 per subdomain + index)
+- `config/site.ts`, `config/constants.ts`, `.env.example`
+
+**SAB Compliance:**
+- No street addresses exposed in schema (per Google SAB guidelines)
+- areaServed with City type entries from franchise service areas
+- GeoCoordinates for local ranking signals
+
+**Files Changed:**
+- App.tsx - Wrapped with FranchiseProvider
+- All SEO components updated for V3 serviceArea structure
+
+**Status:** Complete - Build verified, 15 sitemaps generated
+
+---
+
+### 2026-01-03: City Blog Content Generation Complete
+
+**What:** Created 55 SEO blog articles across all 13 city subdomains
+
+**Content Distribution:**
+| City | Articles | Topics |
+|------|----------|--------|
+| McLean | 5 | Luxury estates, estate homes |
+| Arlington | 5 | Condos, townhomes, urban density |
+| Alexandria | 5 | Historic, waterfront, Old Town |
+| Fairfax | 5 | Suburban families, basements, insurance |
+| Tysons | 5 | High-rises, commercial, condos |
+| Reston | 5 | Townhomes, planned community |
+| Ashburn | 5 | New construction, data centers |
+| Vienna | 5 | Historic homes, aging plumbing |
+| Great Falls | 3 | Luxury estates, generators |
+| Herndon | 3 | Mixed housing, waterproofing |
+| Springfield | 3 | Established suburbs, basements |
+| Lorton | 3 | New construction, Laurel Hill |
+| Falls Church | 3 | Historic homes, moisture control |
+
+**Content Structure (TypeScript exports):**
+- meta: title, description, canonical URL, publishDate, author, category
+- h1, heroSection (headline, subheadline, backgroundImage)
+- content: introduction, sections array, conclusion
+- callToAction with phone: (703) 656-0103
+- breadcrumbs array
+
+**Content Differentiation Strategy:**
+- Tysons: High-rises, underground parking, commercial properties
+- Great Falls/McLean: Luxury estates, high-value finishes, generators
+- Vienna/Falls Church: Historic homes, aging plumbing, established neighborhoods
+- Ashburn/Lorton: New construction, builder warranties
+- Reston: Townhomes, HOA coordination, planned community
+- Arlington/Alexandria: Urban density, condos, historic preservation
+
+**Files Created:** 55 files in `src/content/cities/[city]/blog/`
+
+**Status:** Complete - All 13 cities have blog content
+
+---
+
+*Last updated: 2026-01-03*

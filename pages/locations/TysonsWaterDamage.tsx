@@ -9,7 +9,9 @@ const TysonsWaterDamage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Tysons Water Damage Restoration",
-    "url": "https://flood.doctor/locations/tysons-water-damage/",
+    "@id": "https://tysons.flood.doctor/water-damage",
+    "url": "https://tysons.flood.doctor/water-damage",
+    "image": "https://flood.doctor/logo.png",
     "telephone": "+1-(877) 497-0007",
     "address": {
       "@type": "PostalAddress",

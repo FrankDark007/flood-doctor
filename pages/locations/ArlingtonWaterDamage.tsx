@@ -73,9 +73,9 @@ const ArlingtonWaterDamage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor Water Damage Restoration - Arlington, VA",
-    "image": "https://flooddoctor.com/images/logo.png",
-    "@id": "https://flooddoctor.com/locations/arlington-water-damage/",
-    "url": "https://flooddoctor.com/locations/arlington-water-damage/",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://arlington.flood.doctor/water-damage",
+    "url": "https://arlington.flood.doctor/water-damage",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

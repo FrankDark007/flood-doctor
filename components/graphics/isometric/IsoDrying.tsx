@@ -35,8 +35,8 @@ const IsoDrying: React.FC<{ className?: string }> = ({ className }) => (
         <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite" />
     </circle>
     <circle cx="120" cy="90" r="2" fill="#60a5fa" opacity="0.6">
-        <animate attributeName="cy" values="90;70" dur="2s" repeatCount="indefinite" delay="0.5s" />
-        <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite" delay="0.5s" />
+        <animate attributeName="cy" values="90;70" dur="2s" repeatCount="indefinite" begin="0.5s" />
+        <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite" begin="0.5s" />
     </circle>
   </svg>
 );

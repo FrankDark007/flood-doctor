@@ -74,9 +74,10 @@ const AlexandriaWaterDamage: React.FC = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://flood.doctor/locations/alexandria-water-damage/",
+    "@id": "https://alexandria.flood.doctor/water-damage",
+    "url": "https://alexandria.flood.doctor/water-damage",
     "name": "Flood Doctor - Water Damage Restoration Alexandria VA",
-    "image": "https://flood.doctor/og-image.jpg",
+    "image": "https://flood.doctor/logo.png",
     "telephone": "(703) 665-0505",
     "priceRange": "$$",
     "address": {

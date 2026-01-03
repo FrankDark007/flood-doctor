@@ -9,9 +9,9 @@ export default function HerndonWaterDamage() {
       {
         "@type": "LocalBusiness",
         "name": "Flood Doctor - Water Damage Restoration Herndon VA",
-        "image": "https://flooddoctor.com/logo.png",
-        "@id": "https://flooddoctor.com/locations/herndon-water-damage",
-        "url": "https://flooddoctor.com/locations/herndon-water-damage",
+        "image": "https://flood.doctor/logo.png",
+        "@id": "https://herndon.flood.doctor/water-damage",
+        "url": "https://herndon.flood.doctor/water-damage",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

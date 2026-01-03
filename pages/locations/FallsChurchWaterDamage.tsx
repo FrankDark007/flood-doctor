@@ -6,9 +6,9 @@ const FallsChurchWaterDamage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor Water Damage Restoration - Falls Church",
-    "image": "https://flooddoctor.com/images/logo.png",
-    "@id": "https://flooddoctor.com/locations/falls-church-water-damage",
-    "url": "https://flooddoctor.com/locations/falls-church-water-damage",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://falls-church.flood.doctor/water-damage",
+    "url": "https://falls-church.flood.doctor/water-damage",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

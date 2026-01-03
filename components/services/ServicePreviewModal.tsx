@@ -180,7 +180,9 @@ const ServicePreviewModal: React.FC<ServicePreviewModalProps> = ({ service, isOp
                      {service.whatWeDo.slice(0, 4).map((item, i) => (
                        <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
-                         <span className="leading-relaxed">{item.split(':')[0]}</span>
+                         <span className="leading-relaxed">
+                           {typeof item === 'string' ? item.split(':')[0] : item.title}
+                         </span>
                        </li>
                      ))}
                    </ul>

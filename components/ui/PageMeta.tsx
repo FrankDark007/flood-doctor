@@ -1,26 +1,33 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { siteConfig } from '../../config/site';
+import { getCanonicalBase } from '../../utils/subdomain';
 
 interface PageMetaProps {
-  // IMPORTANT: Pass a plain page title (e.g., "About Us"). 
+  // IMPORTANT: Pass a plain page title (e.g., "About Us").
   // DO NOT append " | Flood Doctor". The component appends the brand name automatically.
   title: string;
   description: string;
   image?: string;
   type?: 'website' | 'article';
   schema?: Record<string, any>; // Support for JSON-LD
+  structuredData?: Record<string, any>; // Alias for schema
 }
 
-const PageMeta: React.FC<PageMetaProps> = ({ 
-  title, 
-  description, 
-  image = `${siteConfig.SITE_URL}/og-image-default.jpg`, 
+const PageMeta: React.FC<PageMetaProps> = ({
+  title,
+  description,
+  image = `${siteConfig.SITE_URL}/og-image-default.jpg`,
   type = 'website',
-  schema
+  schema,
+  structuredData
 }) => {
+  const finalSchema = structuredData || schema;
   const location = useLocation();
-  
+
+  // Use current origin for subdomains (e.g., https://mclean.flood.doctor)
+  const baseUrl = getCanonicalBase();
+
   // Calculate Canonical URL based on config
   let pathname = location.pathname;
 
@@ -35,7 +42,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
   }
 
   const cleanPath = pathname === '//' ? '/' : pathname;
-  const canonicalUrl = `${siteConfig.SITE_URL}${cleanPath}`;
+  const canonicalUrl = `${baseUrl}${cleanPath}`;
 
   useEffect(() => {
     // 1. Update Document Title
@@ -79,7 +86,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
     setMetaTag('twitter:image', image);
 
     // 7. JSON-LD Schema
-    if (schema) {
+    if (finalSchema) {
       let script = document.getElementById('json-ld-schema');
       if (!script) {
         script = document.createElement('script');
@@ -87,20 +94,20 @@ const PageMeta: React.FC<PageMetaProps> = ({
         script.setAttribute('type', 'application/ld+json');
         document.head.appendChild(script);
       }
-      script.textContent = JSON.stringify(schema);
+      script.textContent = JSON.stringify(finalSchema);
     }
 
     // Cleanup schema on unmount if it exists, to avoid pollution on other pages
     return () => {
-       if (schema) {
-         const script = document.getElementById('json-ld-schema');
-         if (script) {
-           script.textContent = ''; // Clear or remove
-         }
-       }
+      if (finalSchema) {
+        const script = document.getElementById('json-ld-schema');
+        if (script) {
+          script.textContent = ''; // Clear or remove
+        }
+      }
     };
 
-  }, [title, description, canonicalUrl, image, type, schema]);
+  }, [title, description, canonicalUrl, image, type, finalSchema]);
 
   return null;
 };

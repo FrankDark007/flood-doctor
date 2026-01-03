@@ -5,8 +5,9 @@ import { ArrowRight, Clock } from 'lucide-react';
 export interface RelatedArticle {
   title: string;
   slug: string;
-  category: string;
+  category?: string;
   readTime?: string;
+  excerpt?: string;
 }
 
 // Central repository of related articles for internal linking

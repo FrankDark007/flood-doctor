@@ -8,9 +8,10 @@ export default function AshburnWaterDamage() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flooddoctor.com/locations/ashburn-water-damage",
+        "@id": "https://ashburn.flood.doctor/water-damage",
         "name": "Flood Doctor - Ashburn Water Damage Restoration",
-        "image": "https://flooddoctor.com/images/ashburn-water-damage.jpg",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://ashburn.flood.doctor/water-damage",
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 39.0438,
@@ -27,7 +28,6 @@ export default function AshburnWaterDamage() {
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "url": "https://flooddoctor.com/locations/ashburn-water-damage",
         "areaServed": [
           "Ashburn Village",
           "Broadlands",

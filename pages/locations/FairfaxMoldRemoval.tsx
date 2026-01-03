@@ -71,9 +71,9 @@ const FairfaxMoldRemoval: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Fairfax Mold Removal",
-    "image": "https://flood.doctor/images/logo.png",
-    "@id": "https://flood.doctor/locations/fairfax-mold-removal",
-    "url": "https://flood.doctor/locations/fairfax-mold-removal",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://fairfax.flood.doctor/mold-removal",
+    "url": "https://fairfax.flood.doctor/mold-removal",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

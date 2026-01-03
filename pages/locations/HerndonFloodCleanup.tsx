@@ -11,9 +11,9 @@ export default function HerndonFloodCleanup() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": businessName,
-    "image": "https://www.flood-doctor.com/logo.png",
-    "@id": "https://www.flood-doctor.com",
-    "url": "https://www.flood-doctor.com",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://herndon.flood.doctor/flood-cleanup",
+    "url": "https://herndon.flood.doctor/flood-cleanup",
     "telephone": phoneNumber,
     "priceRange": "$$",
     "address": {

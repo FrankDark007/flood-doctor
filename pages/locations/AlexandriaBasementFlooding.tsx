@@ -75,9 +75,10 @@ const AlexandriaBasementFlooding: React.FC = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://flood.doctor/locations/alexandria-basement-flooding/",
+    "@id": "https://alexandria.flood.doctor/basement-flooding",
+    "url": "https://alexandria.flood.doctor/basement-flooding",
     "name": "Flood Doctor - Basement Flooding Repair Alexandria VA",
-    "image": "https://flood.doctor/og-image.jpg",
+    "image": "https://flood.doctor/logo.png",
     "telephone": "(703) 665-0505",
     "priceRange": "$$",
     "address": {

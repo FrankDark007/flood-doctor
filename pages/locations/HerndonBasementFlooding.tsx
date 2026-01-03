@@ -11,9 +11,9 @@ export default function HerndonBasementFlooding() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": businessName,
-    "image": "https://www.flood-doctor.com/logo.png",
-    "@id": "https://www.flood-doctor.com",
-    "url": "https://www.flood-doctor.com",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://herndon.flood.doctor/basement-flooding",
+    "url": "https://herndon.flood.doctor/basement-flooding",
     "telephone": phoneNumber,
     "priceRange": "$$",
     "address": {

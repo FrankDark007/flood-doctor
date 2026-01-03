@@ -1,0 +1,166 @@
+// src/content/cities/mclean/neighborhoods/the-reserve.ts
+// Generated: January 3, 2026
+// The Reserve Neighborhood Landing Page - 100% Unique
+
+export const theReserveNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration The Reserve McLean | Gated Community | Flood Doctor",
+    description: "The Reserve McLean water damage restoration. 20-min response for gated estate community. Luxury home specialists. Call (703) 656-0101.",
+    canonical: "https://mclean.flood.doctor/neighborhoods/the-reserve"
+  },
+
+  h1: "Water Damage Restoration in The Reserve, McLean",
+
+  heroSection: {
+    headline: "The Reserve's Trusted Estate Restoration Experts",
+    subheadline: "Protecting McLean's most exclusive gated community since 2005. Discrete service for The Reserve's 166 luxury estates.",
+    responseTime: "20-minute response with gate access coordination",
+    backgroundImage: "/images/neighborhoods/the-reserve-estates.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: `The Reserve represents McLean's most exclusive residential address—166 custom estates on 255 acres, accessed through secured gates, designed by renowned architects, and valued from $3 million to well over $15 million. When water threatens these properties, you need restoration experts who understand the stakes and can navigate the discrete service requirements these homes demand.
+
+Flood Doctor has protected properties within The Reserve for nearly two decades. We've extracted flood water from wine cellars designed by nationally recognized architects, dried home theaters with custom acoustic treatments, and restored finished basements that rival luxury hotels. Our crews understand The Reserve's gate protocols, work with property managers when owners travel, and maintain the discretion these homeowners expect.
+
+The homes here—7,000 to 15,000+ square feet of custom construction on 1-3 acre lots—present restoration challenges that typical companies can't handle. Custom HVAC systems distribute water damage throughout massive floor plates. Wine cellars require temperature-controlled drying. Art collections and antiques demand individual protection. We scale our response to match the property.`,
+
+    housingTypes: [
+      "Custom estates (7,000-15,000+ sq ft)",
+      "Architect-designed luxury homes",
+      "Multi-level properties with extensive basements",
+      "Pool houses and guest cottages"
+    ],
+
+    commonIssues: [
+      "Wine cellar humidity and flooding damage",
+      "Home theater water intrusion",
+      "Pool house and cabana pipe failures",
+      "Complex HVAC system water distribution",
+      "Foundation seepage in luxury finishes"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "The Reserve main gate (Old Dominion Drive)",
+      "Georgetown Pike boundary",
+      "Scott's Run Nature Preserve (adjacent)",
+      "Great Falls Park (nearby)"
+    ],
+
+    developmentInfo: {
+      developer: "Miller & Smith",
+      yearsDeveloped: "1990-early 2000s",
+      totalHomes: "166 estates",
+      acreage: "255 acres",
+      lotSizes: "1-3+ acres"
+    },
+
+    amenities: [
+      "24/7 gated security",
+      "Private roads",
+      "Community open space",
+      "Nature preserve access"
+    ],
+
+    localFacts: [
+      "ZIP code: 22102",
+      "Home values: $3M-$15M+",
+      "Lot sizes: 1-3+ acres",
+      "HOA managed community"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Estate Emergency Response",
+      description: "Coordinated response for The Reserve's unique requirements: gate access, property manager notification, homeowner travel coordination. We handle logistics while protecting your investment."
+    },
+    {
+      name: "Wine Cellar Restoration",
+      description: "Temperature-controlled wine storage requires specialized drying that won't damage your collection. We maintain cellar conditions while removing moisture from walls and floors."
+    },
+    {
+      name: "Home Theater Protection",
+      description: "Custom acoustic treatments, electronics, and seating require careful protection during water events. We extract water and protect assets simultaneously."
+    },
+    {
+      name: "Art & Collections Safeguarding",
+      description: "The Reserve's homes often contain significant art, antiques, and collections. We document, protect, and when needed, coordinate with specialty restoration services."
+    },
+    {
+      name: "Pool House & Outbuilding Service",
+      description: "Detached structures—pool houses, guest cottages, garages—face their own water risks. We service all structures on The Reserve properties."
+    }
+  ],
+
+  testimonialSection: {
+    headline: "What Reserve Homeowners Say",
+    testimonials: [
+      {
+        quote: "They coordinated with our property manager while we were traveling. Arrived within 20 minutes, protected our wine cellar, and handled everything professionally. Exactly what we needed.",
+        author: "Reserve Homeowner",
+        location: "The Reserve, McLean",
+        service: "Basement Flooding"
+      },
+      {
+        quote: "Discrete, efficient, and understood the value of what they were protecting. They treated our home with the care it deserves. Highly recommend for Reserve properties.",
+        author: "Reserve Resident",
+        location: "The Reserve, McLean",
+        service: "Water Damage Restoration"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "Water Emergency at The Reserve?",
+    localContacts: [
+      {
+        name: "The Reserve Security Gate",
+        phone: "Contact HOA for current number",
+        url: ""
+      },
+      {
+        name: "Fairfax Water Authority",
+        phone: "703-698-5600",
+        url: "https://www.fairfaxwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      }
+    ],
+    responseNote: "We're familiar with The Reserve's gate protocols and can coordinate access 24/7. If you're traveling, we work with property managers and alarm companies to respond to your home."
+  },
+
+  faq: [
+    {
+      question: "How do you access The Reserve's gated community?",
+      answer: "We maintain current protocols for The Reserve access. For established clients, we're on approved vendor lists. For new emergencies, we coordinate with security, property managers, or directly with homeowners. Gate access doesn't delay our response."
+    },
+    {
+      question: "Can you protect my wine collection during restoration?",
+      answer: "Wine cellar protection is a specialty for Reserve properties. We maintain cellar temperature and humidity while drying surrounding areas, relocate bottles when necessary, and use low-temperature methods that won't stress your collection. We've protected cellars worth more than many homes."
+    },
+    {
+      question: "What if I'm traveling when water damage occurs?",
+      answer: "Many Reserve homeowners travel frequently. We work with property managers, alarm monitoring companies, and trusted contacts to access your home and protect your investment. Comprehensive documentation keeps you informed throughout the process."
+    },
+    {
+      question: "Do you handle the entire restoration for large properties?",
+      answer: "Yes. We coordinate water extraction, drying, content protection, and reconstruction for The Reserve's larger estates. For homes exceeding 10,000 square feet, we deploy multiple crews and equipment sets to match the scale."
+    },
+    {
+      question: "How do you maintain discretion for Reserve homeowners?",
+      answer: "Unmarked vehicles, professional crews, and efficient processes minimize visibility. We don't discuss client properties and maintain confidentiality throughout the restoration process. Many Reserve homeowners value this approach."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "McLean", url: "/mclean" },
+    { label: "The Reserve", url: "/neighborhoods/the-reserve" }
+  ]
+};

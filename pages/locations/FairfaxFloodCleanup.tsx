@@ -72,9 +72,9 @@ const FairfaxFloodCleanup: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Fairfax Emergency Flood Cleanup",
-    "image": "https://flood.doctor/images/logo.png",
-    "@id": "https://flood.doctor/locations/fairfax-flood-cleanup",
-    "url": "https://flood.doctor/locations/fairfax-flood-cleanup",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://fairfax.flood.doctor/flood-cleanup",
+    "url": "https://fairfax.flood.doctor/flood-cleanup",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

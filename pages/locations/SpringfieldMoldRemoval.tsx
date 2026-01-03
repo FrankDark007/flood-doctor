@@ -7,10 +7,10 @@ const SpringfieldMoldRemoval: React.FC = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flood-doctor.com/locations/springfield-mold-removal#business",
+        "@id": "https://springfield.flood.doctor/mold-removal",
         "name": "Flood Doctor - Mold Removal & Remediation Springfield VA",
-        "image": "https://flood-doctor.com/images/flood-doctor-logo.jpg",
-        "url": "https://flood-doctor.com/locations/springfield-mold-removal",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://springfield.flood.doctor/mold-removal",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

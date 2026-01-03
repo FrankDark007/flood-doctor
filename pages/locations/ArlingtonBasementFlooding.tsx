@@ -74,9 +74,9 @@ const ArlingtonBasementFlooding: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor Basement Flooding Repair - Arlington, VA",
-    "image": "https://flooddoctor.com/images/logo.png",
-    "@id": "https://flooddoctor.com/locations/arlington-basement-flooding/",
-    "url": "https://flooddoctor.com/locations/arlington-basement-flooding/",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://arlington.flood.doctor/basement-flooding",
+    "url": "https://arlington.flood.doctor/basement-flooding",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

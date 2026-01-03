@@ -74,9 +74,10 @@ const AlexandriaFloodCleanup: React.FC = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://flood.doctor/locations/alexandria-flood-cleanup/",
+    "@id": "https://alexandria.flood.doctor/flood-cleanup",
+    "url": "https://alexandria.flood.doctor/flood-cleanup",
     "name": "Flood Doctor - Emergency Flood Cleanup Alexandria VA",
-    "image": "https://flood.doctor/og-image.jpg",
+    "image": "https://flood.doctor/logo.png",
     "telephone": "(703) 665-0505",
     "priceRange": "$$",
     "address": {

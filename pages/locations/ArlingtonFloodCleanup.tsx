@@ -74,9 +74,9 @@ const ArlingtonFloodCleanup: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor Emergency Flood Cleanup - Arlington, VA",
-    "image": "https://flooddoctor.com/images/logo.png",
-    "@id": "https://flooddoctor.com/locations/arlington-flood-cleanup/",
-    "url": "https://flooddoctor.com/locations/arlington-flood-cleanup/",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://arlington.flood.doctor/flood-cleanup",
+    "url": "https://arlington.flood.doctor/flood-cleanup",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

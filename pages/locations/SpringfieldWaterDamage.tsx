@@ -7,10 +7,10 @@ const SpringfieldWaterDamage: React.FC = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flood-doctor.com/locations/springfield-water-damage#business",
+        "@id": "https://springfield.flood.doctor/water-damage",
         "name": "Flood Doctor - Water Damage Restoration Springfield VA",
-        "image": "https://flood-doctor.com/images/flood-doctor-logo.jpg",
-        "url": "https://flood-doctor.com/locations/springfield-water-damage",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://springfield.flood.doctor/water-damage",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

@@ -126,6 +126,26 @@ const Footer: React.FC = () => {
 
             </div>
 
+            {/* Areas We Serve - Subdomain Links for SEO */}
+            <div className="mt-10 pt-8 border-t border-gray-100">
+              <h3 className="text-sm font-semibold text-gray-900 tracking-wide mb-4">Areas We Serve</h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
+                <a href="https://mclean.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">McLean</a>
+                <a href="https://arlington.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Arlington</a>
+                <a href="https://alexandria.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Alexandria</a>
+                <a href="https://fairfax.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Fairfax</a>
+                <a href="https://vienna.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Vienna</a>
+                <a href="https://tysons.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Tysons</a>
+                <a href="https://reston.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Reston</a>
+                <a href="https://herndon.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Herndon</a>
+                <a href="https://ashburn.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Ashburn</a>
+                <a href="https://springfield.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Springfield</a>
+                <a href="https://fallschurch.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Falls Church</a>
+                <a href="https://greatfalls.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Great Falls</a>
+                <a href="https://lorton.flood.doctor/" className="text-sm text-gray-500 hover:text-primary transition-colors">Lorton</a>
+              </div>
+            </div>
+
         </div>
 
         {/* Bottom Legal Bar */}

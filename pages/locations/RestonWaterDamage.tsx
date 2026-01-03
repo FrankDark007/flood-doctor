@@ -7,10 +7,10 @@ const RestonWaterDamage: React.FC = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flood-doctor.com/locations/reston-water-damage#business",
+        "@id": "https://reston.flood.doctor/water-damage",
         "name": "Flood Doctor Water Damage Restoration - Reston VA",
-        "image": "https://flood-doctor.com/images/flood-doctor-logo.png",
-        "url": "https://flood-doctor.com/locations/reston-water-damage",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://reston.flood.doctor/water-damage",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

@@ -1,0 +1,171 @@
+// src/content/cities/ashburn/neighborhoods/belmont.ts
+// Generated: January 3, 2026
+// Belmont Country Club Neighborhood Landing Page - 100% Unique
+
+export const belmontNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration Belmont Country Club VA | Ashburn | Flood Doctor",
+    description: "Belmont Country Club water damage restoration. Golf course community specialists, luxury home experts, rapid response. Serving all Belmont neighborhoods. Call (703) 656-0109.",
+    canonical: "https://ashburn.flood.doctor/neighborhoods/belmont-country-club"
+  },
+
+  h1: "Water Damage Restoration in Belmont Country Club, Virginia",
+
+  heroSection: {
+    headline: "Belmont Country Club's Water Damage Specialists",
+    subheadline: "Serving Belmont's golf course community. From luxury single-family estates to club-adjacent townhomes—we protect your investment.",
+    responseTime: "20-minute response to all Belmont addresses",
+    backgroundImage: "/images/neighborhoods/belmont-country-club.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: \`Belmont Country Club represents Ashburn's premier golf course community—luxury homes overlooking championship fairways, established neighborhoods, and a lifestyle centered around the club amenities. This upscale environment creates water damage challenges that require specialized restoration expertise.
+
+Flood Doctor has served Belmont families since the community's development in the 2000s. We've addressed water damage in luxury single-family homes where finished basements include custom features worth tens of thousands, irrigation system failures from the golf course affecting adjacent properties, basement flooding in townhomes from inadequate grading during the construction boom, and HOA drainage disputes when common area infrastructure serves the club and residential properties simultaneously. Our crews understand that Belmont restoration requires discretion, premium service, and attention to high-value finishes.
+
+This golf course community—with luxury single-family estates, upscale townhomes, and condos overlooking the course—requires restoration expertise beyond typical suburban work. Many homes feature custom millwork, premium flooring, finished basements with home theaters and wine storage, and irrigation systems serving both golf course and residential landscaping. HOA architectural review standards control all exterior work. We've navigated these requirements across every Belmont neighborhood section.\`,
+
+    housingTypes: [
+      "Luxury single-family homes (3,500-6,000+ sq ft)",
+      "Premium townhomes (2,200-3,500 sq ft)",
+      "Golf course view properties",
+      "Condominiums",
+      "Age: Primarily 2000s-2010s construction"
+    ],
+
+    commonIssues: [
+      "Finished basement flooding with high-value contents",
+      "Golf course irrigation system water intrusion",
+      "Basement seepage from clay soil",
+      "Premium material water damage requiring specialty restoration",
+      "HOA drainage serving both club and residential areas",
+      "Supply line failures in luxury bathrooms and kitchens"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "Belmont Country Club golf course",
+      "Club facilities and amenities",
+      "Community pools and recreation",
+      "Trail system along fairways",
+      "Multiple neighborhood sections"
+    ],
+
+    schools: [
+      "Mercer Middle School",
+      "Brambleton Middle School",
+      "Rock Ridge High School",
+      "Nearby elementary schools"
+    ],
+
+    subdivisions: [
+      "Golf course estates",
+      "Belmont Greene",
+      "Belmont Station",
+      "Townhome communities",
+      "Condo buildings"
+    ],
+
+    localFacts: [
+      "ZIP code: 20148",
+      "Developed: 2000s-2010s",
+      "Features: Championship golf course",
+      "HOA: Belmont Country Club Community Association",
+      "Premium: Upscale Ashburn address"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Luxury Home Water Damage Restoration",
+      description: "Specialized expertise for Belmont's upscale properties. We protect custom millwork, premium flooring, wine cellars, and high-value finishes during restoration."
+    },
+    {
+      name: "Emergency Basement Flooding Response",
+      description: "Rapid extraction for basement flooding protecting home theaters, wine storage, custom bars, and premium finished spaces common in Belmont homes."
+    },
+    {
+      name: "Premium Material Drying Protocols",
+      description: "Precision moisture control for hardwood floors, custom millwork, and specialty finishes. Our methods prevent warping, staining, and permanent damage to luxury materials."
+    },
+    {
+      name: "HOA Compliance & Discretion",
+      description: "We work within Belmont's architectural review standards while providing discrete, professional service appropriate for your upscale community."
+    },
+    {
+      name: "High-Value Asset Protection",
+      description: "Special handling for wine collections, home theater equipment, custom furniture, and valuable contents during water damage restoration."
+    }
+  ],
+
+  testimonialSection: {
+    headline: "What Belmont Homeowners Say",
+    testimonials: [
+      {
+        quote: "Our basement flooded—home theater, wine cellar, custom bar all at risk. They arrived immediately, protected everything, and restored it perfectly. True professionals.",
+        author: "Belmont Homeowner",
+        location: "Golf course view estate",
+        service: "Basement Flooding"
+      },
+      {
+        quote: "Discrete, thorough, and they understood the quality our home requires. Excellent service from start to finish.",
+        author: "Belmont Resident",
+        location: "Belmont Greene",
+        service: "Water Damage Restoration"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "Belmont Water Emergency?",
+    localContacts: [
+      {
+        name: "Loudoun Water Emergency",
+        phone: "571-291-7880",
+        url: "https://www.loudounwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      },
+      {
+        name: "Belmont Community Association",
+        phone: "703-542-5599",
+        url: "https://www.belmontcountryclub.com"
+      },
+      {
+        name: "Loudoun County Emergency",
+        phone: "703-777-1021",
+        url: "https://www.loudoun.gov"
+      }
+    ],
+    responseNote: "Our trucks reach all Belmont addresses within 20 minutes. When water threatens your golf course estate or premium townhome, we provide discrete, professional response."
+  },
+
+  faq: [
+    {
+      question: "How quickly can you respond to my Belmont home?",
+      answer: "We guarantee 20-minute response to all Belmont Country Club properties. Our crews are positioned along Route 28 and understand the discrete, professional service Belmont's upscale community expects."
+    },
+    {
+      question: "Do you have experience with luxury home restoration?",
+      answer: "Absolutely. Belmont's upscale properties require specialized expertise: protecting custom millwork, precision drying for premium hardwood floors, safeguarding wine cellars, and careful handling of high-value contents. We've restored luxury homes throughout Belmont since the community's development."
+    },
+    {
+      question: "Can you protect valuable items like wine collections and home theaters?",
+      answer: "Yes. Before water extraction begins, we identify and protect high-value assets: relocating wine racks, covering electronics, protecting custom furniture. Our restoration protects your irreplaceable investments."
+    },
+    {
+      question: "Will you work within Belmont's HOA requirements?",
+      answer: "Yes. We coordinate with Belmont's architectural review board for any exterior work, meet community standards, and provide the discrete, professional service appropriate for your upscale neighborhood."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "Ashburn", url: "/ashburn" },
+    { label: "Belmont Country Club", url: "/neighborhoods/belmont-country-club" }
+  ]
+};

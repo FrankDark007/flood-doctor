@@ -1,39 +1,35 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
-import { generateLocationPageSchema } from '../../utils/schema';
 
 const McLeanFloodCleanup: React.FC = () => {
-  const locationSchema = generateLocationPageSchema(
-    {
-      name: 'McLean, VA',
-      description: '24/7 emergency flood cleanup and restoration in McLean, VA. Rapid water extraction, structural drying, serving Great Falls, Langley, Pimmit Hills, and Tysons. Call (877) 497-0007.',
-      address: {
-        addressLocality: 'McLean',
-        addressRegion: 'VA',
-        addressCountry: 'US',
-      },
-      slug: '/locations/mclean-flood-cleanup/',
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://mclean.flood.doctor/flood-cleanup",
+    "name": "Flood Doctor - Emergency Flood Cleanup McLean VA",
+    "image": "https://flood.doctor/logo.png",
+    "url": "https://mclean.flood.doctor/flood-cleanup",
+    "telephone": "+1-877-497-0007",
+    "description": "24/7 emergency flood cleanup and restoration in McLean, VA. Rapid water extraction, structural drying, serving Great Falls, Langley, Pimmit Hills, and Tysons.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McLean",
+      "addressRegion": "VA",
+      "addressCountry": "US"
     },
-    [
-      { label: 'Locations', path: '/locations/' },
-      { label: 'McLean Flood Cleanup', path: '/locations/mclean-flood-cleanup/' },
+    "areaServed": [
+      { "@type": "City", "name": "McLean" },
+      { "@type": "City", "name": "Great Falls" },
+      { "@type": "City", "name": "Tysons" }
     ],
-    [
-      {
-        question: 'What should I do immediately after flooding in my McLean home?',
-        answer: 'First, ensure safety—turn off electricity if safe to do so. Avoid standing water. Call us immediately at (877) 497-0007 for emergency response. Document damage with photos for insurance. Remove valuables from affected areas if possible. Do not use household vacuums on water.',
-      },
-      {
-        question: 'How quickly can you respond to flood emergencies in McLean?',
-        answer: 'We dispatch emergency teams immediately to McLean flood situations and typically arrive within 60 minutes. Our 24/7 response covers all McLean neighborhoods including Great Falls, Langley, Pimmit Hills, and Tysons.',
-      },
-      {
-        question: 'Does insurance cover flood cleanup in McLean?',
-        answer: 'Standard homeowners insurance covers sudden water damage from internal sources (burst pipes, appliance failures). Natural flooding requires separate flood insurance. We work with all major carriers serving McLean to document damage and maximize your claim coverage.',
-      },
-    ]
-  );
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
 
   return (
     <main className="flex-grow bg-white">

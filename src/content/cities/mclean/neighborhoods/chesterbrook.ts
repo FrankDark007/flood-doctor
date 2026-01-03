@@ -1,0 +1,161 @@
+// src/content/cities/mclean/neighborhoods/chesterbrook.ts
+// Generated: January 3, 2026
+// Chesterbrook Neighborhood Landing Page - 100% Unique
+
+export const chesterbrookNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration Chesterbrook VA | McLean | Flood Doctor",
+    description: "Chesterbrook water damage restoration. 15-min response for Chesterbrook Elementary area & surrounding family neighborhoods. Call (703) 656-0101.",
+    canonical: "https://mclean.flood.doctor/neighborhoods/chesterbrook"
+  },
+
+  h1: "Water Damage Restoration in Chesterbrook, Virginia",
+
+  heroSection: {
+    headline: "Chesterbrook's Family-Trusted Restoration Team",
+    subheadline: "Protecting Chesterbrook families and homes since 2005. Your neighbors trust us—we've served streets throughout this community.",
+    responseTime: "15-minute response to all Chesterbrook addresses",
+    backgroundImage: "/images/neighborhoods/chesterbrook-homes.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: `Chesterbrook offers something increasingly rare in Northern Virginia: established family neighborhoods with mature trees, walkable streets, and genuine community character. The colonials and split-levels here represent decades of family memories—and significant financial investment that water damage can devastate in hours.
+
+Flood Doctor has protected Chesterbrook homes for nearly two decades. We've dried flooded basements after summer storms, extracted water from kitchens after supply line failures, and prevented mold growth in crawlspaces throughout the neighborhood. When the Chesterbrook swim club families need a recommendation, our name comes up—because we've already served their streets.
+
+The housing stock here—primarily 1960s-1980s colonials and split-levels on half-acre lots—presents specific challenges. Older sump pumps fail during heavy rain. Mature trees send roots into clay pipe sewer lines. Original copper plumbing develops pinhole leaks. We understand these Chesterbrook-specific vulnerabilities and respond accordingly.`,
+
+    housingTypes: [
+      "Colonial homes (2,500-5,000 sq ft)",
+      "Split-level homes",
+      "Raised ranches with finished basements",
+      "Some newer custom construction"
+    ],
+
+    commonIssues: [
+      "Sump pump failures in older systems",
+      "Tree root sewer line intrusion",
+      "Copper pipe corrosion and pinhole leaks",
+      "Foundation seepage in clay soil",
+      "Washing machine and dishwasher failures"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "Chesterbrook Elementary School",
+      "Chesterbrook Swim & Tennis Club",
+      "Chesterbrook Shopping Center",
+      "Kirby Road corridor",
+      "Potomac River access points"
+    ],
+
+    schools: [
+      "Chesterbrook Elementary School",
+      "Longfellow Middle School",
+      "McLean High School"
+    ],
+
+    subdivisions: [
+      "Chesterbrook Woods",
+      "Chesterbrook Gardens",
+      "Kirby Road area",
+      "Potomac Hills adjacent"
+    ],
+
+    localFacts: [
+      "ZIP code: 22101",
+      "Median home value: $1.1M+",
+      "Average lot size: 0.3-0.5 acres",
+      "Established: 1960s-1980s primarily"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Basement Flood Response",
+      description: "Chesterbrook's older sump systems fail during heavy storms. We extract water rapidly and set up drying equipment scaled for finished basements with rec rooms and home offices."
+    },
+    {
+      name: "Burst Pipe Cleanup",
+      description: "Copper plumbing in Chesterbrook's 1960s-80s homes develops corrosion. We respond within 15 minutes to burst pipes, extract water, and begin drying before damage spreads."
+    },
+    {
+      name: "Sewage Backup Cleanup",
+      description: "Tree roots in Chesterbrook's mature neighborhoods infiltrate older sewer lines. Our biohazard-certified crews handle Category 3 cleanup with proper protocols."
+    },
+    {
+      name: "Mold Remediation",
+      description: "Older Chesterbrook homes with past water issues may harbor hidden mold. We provide IICRC-certified assessment and remediation that protects families and property values."
+    },
+    {
+      name: "Storm Damage Restoration",
+      description: "Chesterbrook's tree canopy creates storm vulnerabilities. We handle emergency tarping, water extraction, and coordinate complete restoration."
+    }
+  ],
+
+  testimonialSection: {
+    headline: "What Chesterbrook Families Say",
+    testimonials: [
+      {
+        quote: "Our sump pump failed during a thunderstorm. They were here in 15 minutes and saved our finished basement. The kids' playroom would have been destroyed without their fast response.",
+        author: "Chesterbrook Family",
+        location: "Near Chesterbrook Elementary",
+        service: "Basement Flooding"
+      },
+      {
+        quote: "Tree roots blocked our sewer line and it backed up into the basement. They handled the whole messy situation professionally and quickly. Highly recommend.",
+        author: "Chesterbrook Homeowner",
+        location: "Kirby Road area",
+        service: "Sewage Cleanup"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "Chesterbrook Water Emergency?",
+    localContacts: [
+      {
+        name: "Fairfax Water Authority",
+        phone: "703-698-5600",
+        url: "https://www.fairfaxwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      },
+      {
+        name: "Fairfax County Emergency",
+        phone: "703-246-2000",
+        url: "https://www.fairfaxcounty.gov/emergencymanagement"
+      }
+    ],
+    responseNote: "We're positioned to reach Chesterbrook Elementary, Kirby Road, and all Chesterbrook addresses within 15 minutes. When water threatens your family's home, call immediately."
+  },
+
+  faq: [
+    {
+      question: "Why do Chesterbrook basements flood during storms?",
+      answer: "Chesterbrook's 1960s-80s homes often have original sump pumps that weren't sized for today's storm intensity. Clay soil holds water, creating hydrostatic pressure against foundations. We address the flooding and can recommend sump pump upgrades."
+    },
+    {
+      question: "How do you handle the older plumbing in Chesterbrook homes?",
+      answer: "Copper plumbing from the 1960s-80s develops internal corrosion causing pinhole leaks. We extract water, dry affected areas, and can connect you with plumbers who specialize in older Chesterbrook homes for repairs."
+    },
+    {
+      question: "Is mold common in Chesterbrook homes?",
+      answer: "Older homes with past water events—or chronic humidity from poor drainage—can harbor hidden mold. We provide professional assessment and IICRC-certified remediation when needed. Many Chesterbrook homes benefit from preventive assessment."
+    },
+    {
+      question: "What about tree root sewer problems?",
+      answer: "Chesterbrook's beautiful mature trees send roots into older clay sewer pipes. When these roots cause blockage and backup, we handle the biohazard cleanup. We recommend camera inspection to identify root intrusion extent."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "McLean", url: "/mclean" },
+    { label: "Chesterbrook", url: "/neighborhoods/chesterbrook" }
+  ]
+};

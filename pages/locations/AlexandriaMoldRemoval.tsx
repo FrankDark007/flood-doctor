@@ -74,9 +74,10 @@ const AlexandriaMoldRemoval: React.FC = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://flood.doctor/locations/alexandria-mold-removal/",
+    "@id": "https://alexandria.flood.doctor/mold-removal",
+    "url": "https://alexandria.flood.doctor/mold-removal",
     "name": "Flood Doctor - Mold Removal Alexandria VA",
-    "image": "https://flood.doctor/og-image.jpg",
+    "image": "https://flood.doctor/logo.png",
     "telephone": "(703) 665-0505",
     "priceRange": "$$",
     "address": {

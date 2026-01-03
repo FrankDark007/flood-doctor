@@ -7,10 +7,10 @@ const RestonMoldRemoval: React.FC = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flood-doctor.com/locations/reston-mold-removal#business",
+        "@id": "https://reston.flood.doctor/mold-removal",
         "name": "Flood Doctor Mold Removal - Reston VA",
-        "image": "https://flood-doctor.com/images/flood-doctor-logo.png",
-        "url": "https://flood-doctor.com/locations/reston-mold-removal",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://reston.flood.doctor/mold-removal",
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "address": {

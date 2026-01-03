@@ -4,9 +4,11 @@ import { ChevronRight, Home } from 'lucide-react';
 
 interface BreadcrumbsProps {
   items?: { label: string; path: string }[];
+  theme?: string;
+  className?: string;
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = "text-gray-500" }) => {
   const location = useLocation();
   
   // Default path generation if no items provided
@@ -16,7 +18,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   if (pathnames.length === 0) return null;
 
   return (
-    <nav className="flex items-center text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap pb-2 md:pb-0" aria-label="Breadcrumb">
+    <nav className={`flex items-center text-sm mb-6 overflow-x-auto whitespace-nowrap pb-2 md:pb-0 ${className}`} aria-label="Breadcrumb">
       <Link to="/" className="hover:text-primary transition-colors flex items-center">
         <Home size={16} className="mr-1" />
         <span className="sr-only">Home</span>

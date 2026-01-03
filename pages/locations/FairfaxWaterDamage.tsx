@@ -63,9 +63,9 @@ const FairfaxWaterDamage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Fairfax Water Damage Restoration",
-    "image": "https://flood.doctor/images/logo.png",
-    "@id": "https://flood.doctor/locations/fairfax-water-damage",
-    "url": "https://flood.doctor/locations/fairfax-water-damage",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://fairfax.flood.doctor/water-damage",
+    "url": "https://fairfax.flood.doctor/water-damage",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {

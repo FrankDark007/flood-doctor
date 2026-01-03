@@ -1,39 +1,35 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
-import { generateLocationPageSchema } from '../../utils/schema';
 
 const McLeanWaterDamage: React.FC = () => {
-  const locationSchema = generateLocationPageSchema(
-    {
-      name: 'McLean, VA',
-      description: '24/7 emergency water damage restoration in McLean, VA. IICRC certified technicians serving Great Falls, Langley, Pimmit Hills, and Tysons. Fast response, direct insurance billing.',
-      address: {
-        addressLocality: 'McLean',
-        addressRegion: 'VA',
-        addressCountry: 'US',
-      },
-      slug: '/locations/mclean-water-damage/',
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://mclean.flood.doctor/water-damage",
+    "name": "Flood Doctor - Water Damage Restoration McLean VA",
+    "image": "https://flood.doctor/logo.png",
+    "url": "https://mclean.flood.doctor/water-damage",
+    "telephone": "+1-877-497-0007",
+    "description": "24/7 emergency water damage restoration in McLean, VA. IICRC certified technicians serving Great Falls, Langley, Pimmit Hills, and Tysons. Fast response, direct insurance billing.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McLean",
+      "addressRegion": "VA",
+      "addressCountry": "US"
     },
-    [
-      { label: 'Locations', path: '/locations/' },
-      { label: 'McLean Water Damage', path: '/locations/mclean-water-damage/' },
+    "areaServed": [
+      { "@type": "City", "name": "McLean" },
+      { "@type": "City", "name": "Great Falls" },
+      { "@type": "City", "name": "Tysons" }
     ],
-    [
-      {
-        question: 'How fast can you respond to water damage emergencies in McLean?',
-        answer: 'We dispatch teams immediately to McLean properties and typically arrive within 60 minutes of your call. Our 24/7 emergency response covers all McLean neighborhoods including Great Falls, Langley, Pimmit Hills, and Tysons.',
-      },
-      {
-        question: 'Do you work with insurance companies in McLean?',
-        answer: 'Yes. We work directly with all major insurance providers serving McLean homeowners. We document damage thoroughly, provide detailed estimates, and communicate directly with adjusters to ensure smooth claims processing.',
-      },
-      {
-        question: 'What areas of McLean do you serve?',
-        answer: 'We serve all McLean neighborhoods including Great Falls, Langley, Pimmit Hills, Tysons, Chain Bridge, and surrounding areas in Fairfax County.',
-      },
-    ]
-  );
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
 
   return (
     <main className="flex-grow bg-white">

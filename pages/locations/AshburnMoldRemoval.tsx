@@ -8,9 +8,10 @@ export default function AshburnMoldRemoval() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://flooddoctor.com/locations/ashburn-mold-removal",
+        "@id": "https://ashburn.flood.doctor/mold-removal",
         "name": "Flood Doctor - Ashburn Mold Removal & Remediation",
-        "image": "https://flooddoctor.com/images/ashburn-mold-removal.jpg",
+        "image": "https://flood.doctor/logo.png",
+        "url": "https://ashburn.flood.doctor/mold-removal",
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 39.0438,
@@ -27,7 +28,6 @@ export default function AshburnMoldRemoval() {
         "telephone": "(877) 497-0007",
         "priceRange": "$$",
         "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "url": "https://flooddoctor.com/locations/ashburn-mold-removal",
         "areaServed": [
           "Ashburn Village",
           "Broadlands",

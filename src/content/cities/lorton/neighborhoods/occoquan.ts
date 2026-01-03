@@ -1,0 +1,188 @@
+// src/content/cities/lorton/neighborhoods/occoquan.ts
+// Generated: January 3, 2026
+
+import type { ServicePageContent } from '../services/water-damage';
+
+export const occoquanContent: ServicePageContent = {
+  meta: {
+    title: "Water Damage Restoration in Occoquan, Lorton VA | Historic Property Specialists | Flood Doctor",
+    description: "Occoquan historic property water damage experts. Riverside flooding specialists. Gentle restoration for historic homes. 30-min response. Call (703) 656-0113.",
+    canonical: "https://lorton.flood.doctor/neighborhoods/occoquan"
+  },
+
+  h1: "Water Damage Restoration in Occoquan, Lorton",
+
+  introSection: {
+    headline: "Historic Occoquan's Water Damage Restoration Specialists",
+    paragraphs: [
+      "Occoquan's historic charm comes with water challenges—your 18th or 19th-century home near the river faces flooding risks, aging foundations vulnerable to seepage, and historic materials requiring gentle restoration approaches. When water threatens your Occoquan property, you need restoration experts who understand both historic preservation and modern water damage science. Flood Doctor has served Occoquan's historic community for nearly two decades. We've restored water-damaged homes in the historic downtown district, riverside properties experiencing Occoquan River flooding, and established neighborhoods throughout your unique waterfront area.",
+      "Occoquan water damage requires specialized knowledge—stone foundations from the 1700s-1800s, original wood flooring that can't be replaced, plaster walls needing gentle drying, and proximity to the Occoquan River creating recurring flood risk during exceptional rain events."
+    ],
+    localContext: "Occoquan's historic properties and riverside location create unique restoration requirements—we balance historic preservation with thorough water damage mitigation."
+  },
+
+  processSection: {
+    headline: "Our Occoquan Restoration Process",
+    steps: [
+      {
+        number: 1,
+        title: "Historic District Emergency Response",
+        description: "We respond to Occoquan within 30 minutes via Route 123 and understand access challenges in the historic downtown district. Call (703) 656-0113 for immediate response.",
+        timeframe: "Within 30 minutes"
+      },
+      {
+        number: 2,
+        title: "Historic Property Assessment",
+        description: "We assess water damage while identifying historic materials requiring specialized care—original flooring, plaster walls, stone foundations, and period architectural features.",
+        timeframe: "First hour"
+      },
+      {
+        number: 3,
+        title: "Gentle Water Extraction",
+        description: "Historic materials require careful extraction that doesn't damage original floors or foundations. We use controlled extraction pressures appropriate for aged materials.",
+        timeframe: "Hours 1-4"
+      },
+      {
+        number: 4,
+        title: "Preservation-Focused Drying",
+        description: "Original plaster, hardwood, and masonry need controlled drying—not aggressive heat that can crack plaster or warp irreplaceable wood. We customize protocols for each material.",
+        timeframe: "Days 2-10"
+      },
+      {
+        number: 5,
+        title: "Historic Material Documentation",
+        description: "We photograph and document historic features before and during restoration—critical for insurance claims and preservation requirements.",
+        timeframe: "Throughout process"
+      },
+      {
+        number: 6,
+        title: "Period-Appropriate Restoration",
+        description: "We coordinate with craftspeople experienced in historic restoration when original materials require specialized repair or replacement.",
+        timeframe: "Week 2+"
+      }
+    ]
+  },
+
+  localChallenges: {
+    headline: "Water Challenges in Historic Occoquan",
+    challenges: [
+      {
+        title: "Occoquan River Flooding",
+        description: "Properties near the Occoquan River experience flooding during exceptional rainfall, tropical storms, and rapid snowmelt events. Historic downtown locations face particular risk during severe weather.",
+        solution: "We respond to river flood events with contamination protocols (river water often contains upstream sewage during storms) and understand flood patterns specific to Occoquan's riverside geography."
+      },
+      {
+        title: "Stone Foundation Seepage",
+        description: "Occoquan's oldest homes have stone foundations from the 1700s-1800s—porous by modern standards and vulnerable to groundwater intrusion during wet seasons.",
+        solution: "We dry stone foundations using gentle dehumidification without damaging historic masonry. We can recommend foundation specialists experienced with historic preservation when sealing is needed."
+      },
+      {
+        title: "Original Plaster Walls",
+        description: "Many historic Occoquan homes feature plaster over lath—water-damaged plaster requires gentle drying or it cracks extensively. Replacement means losing historic materials.",
+        solution: "We use controlled low-temperature drying to save plaster when possible. When replacement is necessary, we document for insurance and can connect you with plasterers experienced in historic work."
+      },
+      {
+        title: "Irreplaceable Historic Flooring",
+        description: "Original hardwood floors in 18th-19th century homes can't be replaced with matching materials. Water damage threatens flooring that's survived centuries.",
+        solution: "We prioritize rapid response and controlled drying for historic floors. Our preservation-focused approach has saved original flooring in Occoquan's oldest properties."
+      },
+      {
+        title: "Septic Systems in Historic Areas",
+        description: "Many historic Occoquan properties use septic systems (predating public sewer availability). Aging systems can fail or back up during heavy rain.",
+        solution: "We provide sewage cleanup for septic backup while coordinating with septic specialists. Historic property septic repairs may have additional considerations."
+      }
+    ]
+  },
+
+  equipmentSection: {
+    headline: "Equipment for Historic Occoquan Properties",
+    equipment: [
+      {
+        name: "Low-Temperature Dehumidifiers",
+        purpose: "Dry historic plaster and wood gently without heat damage",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Controlled Air Movers",
+        purpose: "Adjustable airflow that won't damage delicate historic finishes"
+      },
+      {
+        name: "Moisture Meters",
+        purpose: "Monitor historic materials requiring extended gentle drying"
+      },
+      {
+        name: "Thermal Imaging",
+        purpose: "Detect moisture in stone foundations and plaster walls without invasive testing",
+        brand: "FLIR"
+      },
+      {
+        name: "Gentle Extraction Systems",
+        purpose: "Remove water without damaging original floors or foundations"
+      },
+      {
+        name: "Documentation Equipment",
+        purpose: "Photograph and document historic features for insurance and preservation"
+      }
+    ],
+    localNote: "Our Occoquan response equipment emphasizes gentle, controlled restoration appropriate for historic materials—we protect your property's irreplaceable features."
+  },
+
+  pricingSection: {
+    headline: "Historic Property Restoration Costs",
+    intro: "Historic Occoquan restoration costs reflect specialized requirements—extended gentle drying, historic material care, and period-appropriate reconstruction. We provide free inspections and work with insurance carriers familiar with historic properties.",
+    factors: [
+      "Historic material preservation—saving original features requires specialized approaches",
+      "Extended drying timelines—gentle protocols take longer but protect historic materials",
+      "Craftspeople requirements—historic restoration may need period-specific expertise",
+      "River flooding vs other sources—flood insurance may apply for Occoquan River events",
+      "Documentation needs—historic properties often have additional insurance documentation requirements"
+    ],
+    cta: "Call (703) 656-0113 for free historic property assessment with expertise specific to Occoquan's unique homes."
+  },
+
+  serviceAreaSection: {
+    headline: "Serving Historic Occoquan",
+    neighborhoods: [
+      "Historic Downtown Occoquan",
+      "Occoquan Riverside",
+      "Mill Street area",
+      "Union Street historic district",
+      "Commerce Street properties",
+      "Surrounding historic areas"
+    ],
+    responseTime: "30-minute response to all Occoquan properties including historic downtown and riverside locations."
+  },
+
+  faqSection: [
+    {
+      question: "Can you restore my historic Occoquan home without damaging original features?",
+      answer: "Yes. We use gentle, controlled restoration protocols designed for historic materials—low-temperature drying for plaster, careful extraction for original floors, and preservation-focused approaches throughout. We've successfully restored Occoquan homes dating to the 1700s."
+    },
+    {
+      question: "What about flooding from the Occoquan River?",
+      answer: "We respond to river flood events immediately and understand contamination protocols for river water (often Category 2-3 during storms when upstream treatment plants overflow). We work with both homeowners and flood insurance carriers."
+    },
+    {
+      question: "Will insurance cover historic property restoration?",
+      answer: "Standard homeowners insurance typically covers water damage including historic homes. Period-appropriate restoration costs are generally covered when documented properly—we provide detailed reports supporting these specialized restoration needs."
+    },
+    {
+      question: "How do you handle stone foundations in old homes?",
+      answer: "Stone foundations from the 1700s-1800s are porous by modern standards. We dry them gently using dehumidification without damaging historic masonry. For chronic seepage, we recommend foundation specialists experienced with historic preservation."
+    }
+  ],
+
+  relatedServices: [
+    "/historic-property-restoration",
+    "/river-flooding",
+    "/basement-waterproofing",
+    "/flood-cleanup"
+  ],
+
+  finalCTA: {
+    headline: "Water Damage in Your Historic Occoquan Home?",
+    paragraph: "Your historic property deserves restoration expertise that protects irreplaceable features while thoroughly removing moisture. We respond within 30 minutes with gentle protocols designed for Occoquan's historic materials.",
+    phone: "(703) 656-0113",
+    buttonText: "Call for Historic Property Response"
+  }
+};

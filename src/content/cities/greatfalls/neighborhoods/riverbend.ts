@@ -1,0 +1,167 @@
+// src/content/cities/greatfalls/neighborhoods/riverbend.ts
+// Generated: January 3, 2026
+// Riverbend Neighborhood Landing Page - 100% Unique
+
+export const riverbendNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration Riverbend VA | Great Falls | Flood Doctor",
+    description: "Riverbend water damage restoration. 30-min response for Potomac-adjacent estates. Flood, groundwater & storm specialists. Call (703) 656-0112.",
+    canonical: "https://greatfalls.flood.doctor/neighborhoods/riverbend"
+  },
+
+  h1: "Water Damage Restoration in Riverbend, Virginia",
+
+  heroSection: {
+    headline: "Riverbend's Trusted Water Damage Experts",
+    subheadline: "Protecting Potomac-adjacent estates from flooding, groundwater, and storm damage since 2005. When river proximity becomes a liability, we respond immediately.",
+    responseTime: "30-minute response to all Riverbend addresses",
+    backgroundImage: "/images/neighborhoods/riverbend.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: `Riverbend offers what few Great Falls neighborhoods can—direct access to the Potomac River, proximity to Riverbend Park, and properties where nature meets luxury. But this proximity comes with unique water challenges. High water tables create persistent groundwater pressure against foundations. Potomac flooding affects low-lying properties during significant weather events. The very features that make Riverbend special also require specialized water damage expertise.
+
+Flood Doctor has served Riverbend families for nearly two decades. We've responded to Potomac-related flooding, addressed groundwater intrusion that other companies couldn't solve, and protected estates throughout the neighborhood from the water challenges that river proximity creates. Our crews understand that Riverbend restoration requires more than standard approaches—it requires understanding the unique hydrology of this area.
+
+Riverbend properties—often 8,000 to 15,000+ square feet on lots backing to the Potomac or Riverbend Park—combine river-view luxury with real water management challenges. Finished basements, wine cellars, and home theaters all exist in environments with elevated moisture risk. We provide the expertise these conditions demand.`,
+
+    housingTypes: [
+      "Potomac-view estates (8,000-15,000+ sq ft)",
+      "Properties backing to Riverbend Park",
+      "River-access homes",
+      "Contemporary and traditional estates"
+    ],
+
+    commonIssues: [
+      "Groundwater intrusion from high water tables",
+      "Potomac-related flooding during river events",
+      "Sump pump failures during extended wet periods",
+      "Foundation seepage from persistent moisture",
+      "Storm damage from river-corridor weather"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "Riverbend Park",
+      "Potomac River access",
+      "Jeffery Road corridor",
+      "River Bend Road",
+      "Great Falls National Park (nearby)"
+    ],
+
+    schools: [
+      "Great Falls Elementary School",
+      "Cooper Middle School",
+      "Langley High School",
+      "Forestville Elementary"
+    ],
+
+    subdivisions: [
+      "Riverbend main",
+      "River Bend Road estates",
+      "Jeffery Road properties",
+      "Potomac-view homes"
+    ],
+
+    localFacts: [
+      "ZIP code: 22066",
+      "Median home value: $1.7M+",
+      "Average lot size: 2-5 acres",
+      "High water table, Potomac proximity"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Flood Emergency Response",
+      description: "Rapid response for Potomac-related flooding and groundwater intrusion. We understand Riverbend's unique water challenges and arrive with appropriate equipment."
+    },
+    {
+      name: "Groundwater Intrusion Specialists",
+      description: "High water tables create persistent moisture pressure. We address immediate flooding and document patterns that help prevent recurrence."
+    },
+    {
+      name: "Sump Pump Failure Recovery",
+      description: "Extended wet periods overwhelm systems. We extract water, dry affected areas, and can recommend backup solutions that prevent future failures."
+    },
+    {
+      name: "River Corridor Storm Response",
+      description: "Riverbend's location creates unique storm vulnerability. We respond with tarping, extraction, and complete restoration for all damage."
+    },
+    {
+      name: "Foundation Moisture Management",
+      description: "Persistent seepage damages finishes and creates mold conditions. We address immediate moisture issues and recommend long-term solutions."
+    }
+  ],
+
+  testimonialSection: {
+    headline: "What Riverbend Homeowners Say",
+    testimonials: [
+      {
+        quote: "We've had groundwater issues for years—they finally solved it. Dried our basement completely and explained what was happening. First company that really understood the problem.",
+        author: "Riverbend Homeowner",
+        location: "Near Riverbend Park",
+        service: "Water Damage Restoration"
+      },
+      {
+        quote: "Our sump pump failed during two weeks of rain. They responded immediately, extracted everything, and saved our finished basement. Now we have a backup system too.",
+        author: "Riverbend Resident",
+        location: "River Bend Road area",
+        service: "Basement Flooding"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "Riverbend Water Emergency?",
+    localContacts: [
+      {
+        name: "Fairfax Water Authority",
+        phone: "703-698-5600",
+        url: "https://www.fairfaxwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      },
+      {
+        name: "Fairfax County Emergency",
+        phone: "703-246-2000",
+        url: "https://www.fairfaxcounty.gov/emergencymanagement"
+      },
+      {
+        name: "Potomac River Flood Info",
+        phone: "703-324-5800",
+        url: "https://www.weather.gov/lwx/"
+      }
+    ],
+    responseNote: "Our crews reach all Riverbend addresses within 30 minutes. We understand the unique water challenges of Potomac-adjacent properties and arrive prepared for Riverbend's specific conditions."
+  },
+
+  faq: [
+    {
+      question: "How fast can you reach Riverbend properties?",
+      answer: "We guarantee 30-minute response to all Riverbend addresses. Our crews are positioned throughout Great Falls—when you call about flooding near Riverbend Park or along River Bend Road, we're already nearby."
+    },
+    {
+      question: "Do you understand the groundwater issues in Riverbend?",
+      answer: "Yes—Riverbend's Potomac proximity creates high water tables that cause persistent moisture challenges. We address immediate flooding and help identify long-term solutions. Many Riverbend properties need ongoing moisture management strategies we can recommend."
+    },
+    {
+      question: "What about Potomac-related flooding?",
+      answer: "We respond to river-related flooding with appropriate protocols. Potomac overflow can carry contamination—we assess water category and apply correct remediation. For recurring risk properties, we can discuss flood prevention improvements."
+    },
+    {
+      question: "Can you help with recurring basement moisture?",
+      answer: "Yes. Beyond immediate water damage response, we document moisture patterns and recommend solutions—waterproofing, sump pump upgrades, drainage improvements. Riverbend's conditions often require ongoing management that we help you understand."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "Great Falls", url: "/great-falls" },
+    { label: "Riverbend", url: "/neighborhoods/riverbend" }
+  ]
+};

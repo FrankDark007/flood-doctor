@@ -1,0 +1,174 @@
+// src/content/cities/ashburn/neighborhoods/ashburn-farm.ts
+// Generated: January 3, 2026
+// Ashburn Farm Neighborhood Landing Page - 100% Unique
+
+export const ashburnFarmNeighborhoodContent = {
+  meta: {
+    title: "Water Damage Restoration Ashburn Farm VA | Ashburn | Flood Doctor",
+    description: "Ashburn Farm water damage restoration. Established community specialists, HOA drainage experts, rapid response. Serving all Ashburn Farm neighborhoods. Call (703) 656-0109.",
+    canonical: "https://ashburn.flood.doctor/neighborhoods/ashburn-farm"
+  },
+
+  h1: "Water Damage Restoration in Ashburn Farm, Virginia",
+
+  heroSection: {
+    headline: "Ashburn Farm's Water Damage Experts",
+    subheadline: "Serving Ashburn Farm since the 1990s. From Club at Ashburn Farm to every neighborhood section—we know your established community.",
+    responseTime: "20-minute response to all Ashburn Farm addresses",
+    backgroundImage: "/images/neighborhoods/ashburn-farm.jpg"
+  },
+
+  neighborhoodIntro: {
+    paragraph: \`Ashburn Farm represents one of Ashburn's original master-planned communities—established neighborhoods, mature landscaping, and a community that's weathered two decades of Northern Virginia growth. This maturity creates water damage patterns different from newer developments.
+
+Flood Doctor has served Ashburn Farm families since the early 2000s. We've addressed aging infrastructure water damage in homes from the 1990s development phases, tree root intrusion into sewer lines from the mature landscaping that defines the community, basement flooding from the clay soil common throughout the area, and HOA drainage system maintenance failures affecting multiple homes. Our crews know Ashburn Farm's streets, understand the community's infrastructure, and respond within 20 minutes—because we've been serving this neighborhood since many of today's homes were new construction.
+
+This established community—with its mix of townhomes, single-family homes, and condos across multiple interconnected neighborhoods—requires restoration expertise that accounts for aging infrastructure alongside newer construction. Some homes are approaching 30 years old with original plumbing and HVAC systems. Others are recent builds on infill lots. HOA common area drainage serves thousands of homes. We've worked in every Ashburn Farm section and understand the full range of water damage challenges.\`,
+
+    housingTypes: [
+      "Single-family homes (2,000-4,000 sq ft)",
+      "Townhomes (1,500-2,500 sq ft)",
+      "Condominiums",
+      "Age: Mostly 1990s-2000s construction",
+      "Mix of original and infill development"
+    ],
+
+    commonIssues: [
+      "Aging plumbing system failures",
+      "Tree root intrusion into sewer lines",
+      "Basement flooding from clay soil foundation seepage",
+      "HOA drainage system maintenance issues",
+      "Original sump pump failures",
+      "Water heater and appliance age-related failures"
+    ]
+  },
+
+  hyperLocalContent: {
+    landmarks: [
+      "The Club at Ashburn Farm",
+      "Community pools and rec centers",
+      "Ashburn Farm Elementary School",
+      "Trail system and parks",
+      "Multiple neighborhood centers"
+    ],
+
+    schools: [
+      "Ashburn Farm Elementary School",
+      "Stone Hill Middle School",
+      "Farmwell Station Middle School",
+      "Broad Run High School",
+      "Briar Woods High School"
+    ],
+
+    subdivisions: [
+      "Original Ashburn Farm sections",
+      "The Fields",
+      "The Greens",
+      "The Oaks",
+      "The Ponds",
+      "Newer infill neighborhoods",
+      "Townhome clusters"
+    ],
+
+    localFacts: [
+      "ZIP code: 20147",
+      "Developed: 1990s-2000s",
+      "Homes: 3,000+ residences",
+      "HOA: Ashburn Farm HOA",
+      "Features: Established trees, mature community"
+    ]
+  },
+
+  serviceList: [
+    {
+      name: "Aging Infrastructure Water Damage",
+      description: "Specialized expertise for Ashburn Farm's established homes. We understand original plumbing systems, aging water heaters, and infrastructure common in 1990s-2000s construction."
+    },
+    {
+      name: "Emergency Basement Flooding Response",
+      description: "Rapid extraction for basement flooding from foundation seepage, sump pump failures, or sewer backups. Our equipment handles Ashburn Farm's finished basements."
+    },
+    {
+      name: "Sewer Backup & Tree Root Issues",
+      description: "Category 3 biohazard cleanup when tree roots infiltrate sewer lines—common in Ashburn Farm's mature neighborhoods. Full antimicrobial protocols."
+    },
+    {
+      name: "HOA Drainage Documentation",
+      description: "Expert reports when HOA common area drainage failures cause water damage. We've documented dozens of Ashburn Farm HOA drainage issues."
+    },
+    {
+      name: "Comprehensive Structural Drying",
+      description: "Industrial drying equipment preventing mold and structural damage. We protect Ashburn Farm homes through thorough moisture removal and daily monitoring."
+    }
+  ],
+
+  testimonialSection: {
+    headline: "What Ashburn Farm Homeowners Say",
+    testimonials: [
+      {
+        quote: "Our basement flooded when the sump pump failed during a storm. They arrived in 20 minutes, extracted everything, and had us dried out within a week. Excellent service.",
+        author: "Ashburn Farm Homeowner",
+        location: "The Fields neighborhood",
+        service: "Basement Flooding"
+      },
+      {
+        quote: "Tree roots caused a sewer backup—terrible situation. Their crew handled the biohazard cleanup professionally and completely. Wouldn't trust anyone else.",
+        author: "Ashburn Farm Resident",
+        location: "Near Club at Ashburn Farm",
+        service: "Sewage Backup Cleanup"
+      }
+    ]
+  },
+
+  emergencySection: {
+    headline: "Ashburn Farm Water Emergency?",
+    localContacts: [
+      {
+        name: "Loudoun Water Emergency",
+        phone: "571-291-7880",
+        url: "https://www.loudounwater.org"
+      },
+      {
+        name: "Dominion Energy Outages",
+        phone: "866-366-4357",
+        url: "https://www.dominionenergy.com"
+      },
+      {
+        name: "Ashburn Farm HOA",
+        phone: "703-729-2222",
+        url: "https://www.ashburnfarm.org"
+      },
+      {
+        name: "Loudoun County Emergency",
+        phone: "703-777-1021",
+        url: "https://www.loudoun.gov"
+      }
+    ],
+    responseNote: "Our trucks reach all Ashburn Farm addresses within 20 minutes. When water threatens your home—whether original construction or newer infill—we're already nearby."
+  },
+
+  faq: [
+    {
+      question: "How fast can you reach my Ashburn Farm home?",
+      answer: "We guarantee 20-minute response to all Ashburn Farm neighborhoods—from The Club area to every section. Our crews are positioned along the Route 28 corridor and know Ashburn Farm's streets well."
+    },
+    {
+      question: "Do you have experience with older Ashburn homes?",
+      answer: "Absolutely. Ashburn Farm's homes from the 1990s and early 2000s have specific infrastructure patterns we understand: original plumbing systems, aging water heaters, mature tree root issues, and clay soil foundation challenges. We've served this community for nearly two decades."
+    },
+    {
+      question: "Can you handle sewer backups from tree root intrusion?",
+      answer: "Yes. Ashburn Farm's mature trees create systematic sewer line problems. We provide Category 3 biohazard cleanup using full antimicrobial protocols, coordinate with plumbers for line clearing, and ensure complete contamination removal."
+    },
+    {
+      question: "What if HOA drainage problems caused my water damage?",
+      answer: "We document HOA drainage failures—clogged storm drains, inadequate retention pond maintenance, or common area runoff affecting your home. Our expert reports support HOA liability claims while we handle immediate restoration."
+    }
+  ],
+
+  breadcrumbs: [
+    { label: "Home", url: "/" },
+    { label: "Ashburn", url: "/ashburn" },
+    { label: "Ashburn Farm", url: "/neighborhoods/ashburn-farm" }
+  ]
+};

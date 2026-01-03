@@ -72,9 +72,9 @@ const FairfaxBasementFlooding: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Flood Doctor - Fairfax Basement Flooding Repair",
-    "image": "https://flood.doctor/images/logo.png",
-    "@id": "https://flood.doctor/locations/fairfax-basement-flooding",
-    "url": "https://flood.doctor/locations/fairfax-basement-flooding",
+    "image": "https://flood.doctor/logo.png",
+    "@id": "https://fairfax.flood.doctor/basement-flooding",
+    "url": "https://fairfax.flood.doctor/basement-flooding",
     "telephone": "(877) 497-0007",
     "priceRange": "$$",
     "address": {
