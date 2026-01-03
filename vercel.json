@@ -185,6 +185,81 @@
       "destination": "/city/falls-church"
     },
     {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "greatfalls.flood.doctor" }],
+      "destination": "/city/great-falls/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "greatfalls.flood.doctor" }],
+      "destination": "/city/great-falls/services"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "greatfalls.flood.doctor" }],
+      "destination": "/city/great-falls"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "bethesda.flood.doctor" }],
+      "destination": "/city/bethesda/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "bethesda.flood.doctor" }],
+      "destination": "/city/bethesda/services"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "bethesda.flood.doctor" }],
+      "destination": "/city/bethesda"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "potomac.flood.doctor" }],
+      "destination": "/city/potomac/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "potomac.flood.doctor" }],
+      "destination": "/city/potomac/services"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "potomac.flood.doctor" }],
+      "destination": "/city/potomac"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "rockville.flood.doctor" }],
+      "destination": "/city/rockville/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "rockville.flood.doctor" }],
+      "destination": "/city/rockville/services"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "rockville.flood.doctor" }],
+      "destination": "/city/rockville"
+    },
+    {
+      "source": "/services/:service",
+      "has": [{ "type": "host", "value": "silverspring.flood.doctor" }],
+      "destination": "/city/silver-spring/services/:service"
+    },
+    {
+      "source": "/services",
+      "has": [{ "type": "host", "value": "silverspring.flood.doctor" }],
+      "destination": "/city/silver-spring/services"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "silverspring.flood.doctor" }],
+      "destination": "/city/silver-spring"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

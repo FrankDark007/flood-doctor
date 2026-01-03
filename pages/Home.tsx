@@ -302,9 +302,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services - Tabbed Grid */}
-      <section id="services" className="py-20 lg:py-28 bg-white">
+      <section id="services" className="py-24 lg:py-36 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
             <div>
               <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
                 Restoration services
@@ -364,23 +364,23 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features - Interactive Grid */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-24 lg:py-36 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Feature List */}
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
                 <Activity size={16} />
                 Technology
               </div>
-              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
+              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-8">
                 Stay informed at every step
               </h2>
-              <p className="text-[18px] text-[#5f6368] mb-10">
+              <p className="text-[18px] text-[#5f6368] mb-12">
                 Our client portal gives you complete visibility into your restoration project.
               </p>
 
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {features.map((feature, idx) => (
                   <button
                     key={idx}
