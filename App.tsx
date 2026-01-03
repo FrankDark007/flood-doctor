@@ -119,6 +119,12 @@ const WaterDamagedElectronicsGuide = lazy(() => import('./pages/blog/water-damag
 const LaundryRoomWashingMachineFlood = lazy(() => import('./pages/blog/laundry-room-washing-machine-flood'));
 const WetCarpetWaterDamage = lazy(() => import('./pages/blog/wet-carpet-water-damage'));
 
+// SEO Phase 3 Blog Articles
+const WhatDoesBlackMoldLookLike = lazy(() => import('./pages/blog/what-does-black-mold-look-like'));
+const MildewVsMoldDifference = lazy(() => import('./pages/blog/mildew-vs-mold-difference'));
+const DoesVinegarKillMold = lazy(() => import('./pages/blog/does-vinegar-kill-mold'));
+const SignsOfWaterDamageBehindWalls = lazy(() => import('./pages/blog/signs-of-water-damage-behind-walls'));
+
 // Additional Resource Guides
 const WaterDamageClassesGuide = lazy(() => import('./pages/resources/WaterDamageClassesGuide'));
 const VirginiaInsuranceGuide = lazy(() => import('./pages/resources/VirginiaInsuranceGuide'));
@@ -467,6 +473,12 @@ const App: React.FC = () => {
               <Route path="/blog/water-damaged-electronics-guide/" element={<WaterDamagedElectronicsGuide />} />
               <Route path="/blog/laundry-room-washing-machine-flood/" element={<LaundryRoomWashingMachineFlood />} />
               <Route path="/blog/wet-carpet-water-damage/" element={<WetCarpetWaterDamage />} />
+
+              {/* SEO Phase 3 Blog Articles */}
+              <Route path="/blog/what-does-black-mold-look-like/" element={<WhatDoesBlackMoldLookLike />} />
+              <Route path="/blog/mildew-vs-mold-difference/" element={<MildewVsMoldDifference />} />
+              <Route path="/blog/does-vinegar-kill-mold/" element={<DoesVinegarKillMold />} />
+              <Route path="/blog/signs-of-water-damage-behind-walls/" element={<SignsOfWaterDamageBehindWalls />} />
 
               {/* Tools & Demos */}
               <Route path="/tools/video-generator/" element={<VideoGenerator />} />
