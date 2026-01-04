@@ -8,3 +8,4 @@ export { default as PageMeta } from './PageMeta';
 export { default as LocalBusinessSchema } from './LocalBusinessSchema';
 export { default as FAQSchema } from './FAQSchema';
 export type { FAQItem } from './FAQSchema';
+export { default as BlogPostingSchema } from './BlogPostingSchema';

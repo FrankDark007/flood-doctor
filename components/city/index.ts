@@ -6,3 +6,6 @@ export type { ServicePageContent } from './ServicePageRenderer';
 
 export { default as NeighborhoodPageRenderer } from './NeighborhoodPageRenderer';
 export type { NeighborhoodPageContent } from './NeighborhoodPageRenderer';
+
+export { default as CityBlogIndex } from './CityBlogIndex';
+export { default as CityBlogArticle } from './CityBlogArticle';
