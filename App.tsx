@@ -164,6 +164,8 @@ const CityServices = lazy(() => import('./pages/city/CityServices'));
 // V3 Dynamic City Content Pages - renders rich TypeScript content
 const DynamicServicePage = lazy(() => import('./pages/city/DynamicServicePage'));
 const DynamicNeighborhoodPage = lazy(() => import('./pages/city/DynamicNeighborhoodPage'));
+const DynamicBlogIndex = lazy(() => import('./pages/city/DynamicBlogIndex'));
+const DynamicBlogArticle = lazy(() => import('./pages/city/DynamicBlogArticle'));
 
 // Location Landing Pages
 const AlexandriaWaterDamage = lazy(() => import('./pages/locations/AlexandriaWaterDamage'));
@@ -344,6 +346,10 @@ const App: React.FC = () => {
 
               {/* Neighborhood Pages: /city/mclean/neighborhoods/langley, etc. */}
               <Route path="/city/:city/neighborhoods/:neighborhood" element={<DynamicNeighborhoodPage />} />
+
+              {/* V3 Dynamic City Blog Pages */}
+              <Route path="/city/:city/blog" element={<DynamicBlogIndex />} />
+              <Route path="/city/:city/blog/:slug" element={<DynamicBlogArticle />} />
 
               {/* Location Landing Pages - Alexandria */}
               <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />
