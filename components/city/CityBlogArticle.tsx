@@ -139,7 +139,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
 
   const getSlugFromCanonical = (canonical: string) => {
     const parts = canonical.split('/');
-    return `/blog/${parts[parts.length - 1]}`;
+    return parts[parts.length - 1];
   };
 
   return (
@@ -302,7 +302,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
               {relatedArticles.slice(0, 3).map((related, i) => (
                 <Link
                   key={i}
-                  to={getSlugFromCanonical(related.meta.canonical)}
+                  to={`/city/${citySlug}/blog/${getSlugFromCanonical(related.meta.canonical)}`}
                   className="group bg-white rounded-xl p-6 hover:shadow-lg transition-shadow"
                 >
                   <span className="inline-block px-2 py-1 bg-[#f8f9fa] text-[#5f6368] rounded text-[11px] font-medium mb-3">
@@ -322,7 +322,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
       <section className="py-8 bg-white border-t border-[#dadce0]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[900px]">
           <Link
-            to="/blog"
+            to={`/city/${citySlug}/blog`}
             className="inline-flex items-center gap-2 text-[#1a73e8] hover:text-[#1557b0] text-[14px] font-medium"
           >
             <ArrowLeft size={16} />

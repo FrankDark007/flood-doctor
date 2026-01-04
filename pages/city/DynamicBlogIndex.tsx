@@ -68,7 +68,7 @@ const blogRegistry: Record<string, BlogArticle[]> = {
 };
 
 const DynamicBlogIndex: React.FC = () => {
-  const params = useParams();
+  const params = useParams<{ city: string }>();
 
   // Extract city from URL path or subdomain
   const pathParts = window.location.pathname.split('/');

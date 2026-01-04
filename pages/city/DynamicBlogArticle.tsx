@@ -74,7 +74,7 @@ function getSlugFromCanonical(canonical: string): string {
 }
 
 const DynamicBlogArticle: React.FC = () => {
-  const params = useParams<{ slug: string; city?: string }>();
+  const params = useParams<{ city: string; slug: string }>();
 
   // Extract city from URL path or subdomain
   const pathParts = window.location.pathname.split('/');

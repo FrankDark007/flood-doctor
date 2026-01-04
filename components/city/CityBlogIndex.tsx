@@ -78,7 +78,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
 
   const getSlugFromCanonical = (canonical: string) => {
     const parts = canonical.split('/');
-    return `/blog/${parts[parts.length - 1]}`;
+    return parts[parts.length - 1];
   };
 
   const formatDate = (dateStr: string) => {
@@ -161,7 +161,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
             {filteredArticles.map((article, i) => (
               <Link
                 key={i}
-                to={getSlugFromCanonical(article.meta.canonical)}
+                to={`/city/${citySlug}/blog/${getSlugFromCanonical(article.meta.canonical)}`}
                 className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {/* Image */}
