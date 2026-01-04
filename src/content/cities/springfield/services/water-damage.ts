@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const springfieldWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "Water Damage Restoration in Springfield, VA | Military Family Specialists | Flood Doctor",
+    title: "24/7 Emergency Water Damage Restoration Springfield, VA | Fast Response | Flood Doctor",
     description: "Springfield's trusted water damage restoration experts. 30-min response to West Springfield, Kingstowne & Franconia. Serving military families near Fort Belvoir. Call (703) 656-0110.",
     canonical: "https://springfield.flood.doctor/water-damage-restoration"
   },

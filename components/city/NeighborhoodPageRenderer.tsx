@@ -4,18 +4,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
-  Clock,
-  Shield,
-  Star,
   ArrowRight,
   MapPin,
   Home,
-  CheckCircle,
   ExternalLink,
   AlertTriangle,
-  ChevronRight
+  ChevronRight,
+  Star
 } from 'lucide-react';
 import PageMeta from '../ui/PageMeta';
+import {
+  AnimatedHeroBackground,
+  TrustBadges,
+  EmergencyBadge,
+  ServiceIconGrid,
+  AnimatedStats,
+  ProcessTimeline
+} from '../graphics';
+import { getArchetype, type Archetype } from '../../config/archetypeMapping';
 
 // NeighborhoodPageContent interface matches src/content/cities/{city}/neighborhoods/*.ts
 export interface NeighborhoodPageContent {
@@ -81,12 +87,23 @@ interface NeighborhoodPageRendererProps {
   phone: string;
 }
 
+// Map archetype to AnimatedHeroBackground variant
+const archetypeToHeroVariant: Record<Archetype, 'estate' | 'historic' | 'urban' | 'suburban'> = {
+  estate: 'estate',
+  historic: 'historic',
+  urban: 'urban',
+  suburban: 'suburban'
+};
+
 const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
   content,
   cityName,
   citySlug,
   phone
 }) => {
+  // Get archetype for this city to use appropriate visual variants
+  const archetype = getArchetype(citySlug);
+  const heroVariant = archetypeToHeroVariant[archetype];
   // Generate FAQ schema
   const faqSchema = {
     "@context": "https://schema.org",
@@ -129,9 +146,13 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+      {/* Hero Section with Animated Background */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] text-white overflow-hidden">
+        {/* Animated Background */}
+        <AnimatedHeroBackground variant={heroVariant} />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-[72px] py-16 lg:py-24">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 text-blue-400 mb-4">
               <MapPin className="w-5 h-5" />
@@ -149,8 +170,8 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
               {content.heroSection.subheadline}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-8">
+            {/* CTA Buttons with Emergency Badge */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
               <a
                 href={`tel:${phone.replace(/[^0-9]/g, '')}`}
                 className="inline-flex items-center gap-3 bg-[#1a73e8] hover:bg-blue-700 h-12 px-8 rounded-full font-semibold text-lg transition-all"
@@ -165,24 +186,19 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
                 Request Service
                 <ArrowRight className="w-5 h-5" />
               </Link>
+              <EmergencyBadge size="md" />
             </div>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 text-sm text-gray-300">
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-green-400" />
-                <span>{content.heroSection.responseTime}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-blue-400" />
-                <span>IICRC Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-400" />
-                <span>4.9 Rating</span>
-              </div>
-            </div>
+            {/* Trust Badges Component */}
+            <TrustBadges variant="horizontal" responseTime={content.heroSection.responseTime} />
           </div>
+        </div>
+      </section>
+
+      {/* Animated Stats Section */}
+      <section className="py-12 bg-white border-b border-[#dadce0]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+          <AnimatedStats variant="cards" />
         </div>
       </section>
 
@@ -282,16 +298,30 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
         </div>
       </section>
 
-      {/* Services List */}
+      {/* Our Process Timeline */}
       <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+          <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
+            Our Restoration Process
+          </h2>
+          <ProcessTimeline variant="horizontal" />
+        </div>
+      </section>
+
+      {/* Services Grid with Visual Icons */}
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             Our Services in {content.breadcrumbs[content.breadcrumbs.length - 1].label}
           </h2>
 
+          {/* Visual Service Icons Grid */}
+          <ServiceIconGrid variant="large" columns={3} className="mb-12" />
+
+          {/* Detailed Service Descriptions */}
           <div className="grid md:grid-cols-2 gap-6">
             {content.serviceList.map((service, idx) => (
-              <div key={idx} className="bg-[#f8f9fa] rounded-xl p-6 border border-[#dadce0]">
+              <div key={idx} className="bg-white rounded-xl p-6 border border-[#dadce0] hover:shadow-lg transition-shadow">
                 <h3 className="text-[18px] font-semibold text-[#202124] mb-3">{service.name}</h3>
                 <p className="text-[16px] text-[#5f6368]">{service.description}</p>
               </div>
@@ -302,7 +332,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
 
       {/* Testimonials */}
       {content.testimonialSection.testimonials.length > 0 && (
-        <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
               {content.testimonialSection.headline}
@@ -375,9 +405,20 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      {/* Final CTA with Emergency Badge */}
+      <section className="py-20 lg:py-28 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white relative overflow-hidden">
+        {/* Animated wave pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 120" fill="none">
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <div className="flex justify-center mb-6">
+            <EmergencyBadge size="lg" />
+          </div>
+
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] mb-6">
             Water Emergency in {content.breadcrumbs[content.breadcrumbs.length - 1].label}?
           </h2>
@@ -386,7 +427,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           </p>
           <a
             href={`tel:${phone.replace(/[^0-9]/g, '')}`}
-            className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] h-14 px-10 rounded-full font-bold text-xl hover:bg-blue-50 transition-all"
+            className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] h-14 px-10 rounded-full font-bold text-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
           >
             <Phone className="w-6 h-6" />
             {phone}

@@ -86,7 +86,8 @@ export default function LocalBusinessSchema({
   // Build the schema
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['HomeAndConstructionBusiness', 'EmergencyService'],
+    'additionalType': 'https://schema.org/LocalBusiness',
     '@id': `${url}/#local-business`,
     name: franchise.name,
     alternateName: SITE_INFO.name,

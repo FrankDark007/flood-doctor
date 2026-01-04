@@ -190,9 +190,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "McLean Plumbing Pros", category: "Plumber", url: "", phone: "" },
-      { name: "Tysons Insurance Group", category: "Insurance Agent", url: "", phone: "" },
-      { name: "Great Falls Roofing", category: "Roofer", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "MidAtlantic Contracting", category: "Roofer", url: "https://macontracting.com", phone: "" },
+      { name: "JES Foundation Repair", category: "Waterproofing", url: "https://www.jeswork.com", phone: "703-379-8888" },
+      { name: "Peabody Residential", category: "Property Manager", url: "https://peabodyresidential.com", phone: "" },
+      { name: "Frank D. Spicer Insurance", category: "Insurance Agent", url: "https://www.fdspicerinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -255,9 +260,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Arlington Plumbing Co.", category: "Plumber", url: "", phone: "" },
-      { name: "Rosslyn Property Management", category: "Property Manager", url: "", phone: "" },
-      { name: "Ballston Carpet & Flooring", category: "Flooring", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "Impact Roofing", category: "Roofer", url: "https://impactroofing.solutions", phone: "703-329-2959" },
+      { name: "Lux Foundation Solutions", category: "Waterproofing", url: "https://www.luxfoundationsolutions.com", phone: "" },
+      { name: "Richey Property Management", category: "Property Manager", url: "https://www.richeypm.com", phone: "703-721-4453" },
+      { name: "Preferred Insurance", category: "Insurance Agent", url: "https://www.preferredinsva.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Absolute Carpet Care", category: "Carpet Cleaning", url: "https://www.absolutecarpetcare.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -320,9 +330,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Old Town Plumbing", category: "Plumber", url: "", phone: "" },
-      { name: "Alexandria Public Adjusters", category: "Public Adjuster", url: "", phone: "" },
-      { name: "Del Ray Flooring", category: "Flooring", url: "", phone: "" }
+      { name: "Freedom Plumbers", category: "Plumber", url: "https://freedomplumbers.com", phone: "703-895-4109" },
+      { name: "A&M Roofing", category: "Roofer", url: "https://amroofingva.com", phone: "" },
+      { name: "NV Waterproofing", category: "Waterproofing", url: "https://www.nvwaterproofing.com", phone: "855-649-7594" },
+      { name: "WJD Management", category: "Property Manager", url: "https://www.wjdpm.com", phone: "" },
+      { name: "Bridge First Insurance", category: "Insurance Agent", url: "https://bridgefirstinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Prospect Hardwood Flooring", category: "Flooring Installer", url: "https://phwflooring.com", phone: "" }
     ],
 
     emergencyContacts: [
@@ -385,9 +400,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Fairfax Plumbing & Heating", category: "Plumber", url: "", phone: "" },
-      { name: "Burke Home Inspectors", category: "Inspector", url: "", phone: "" },
-      { name: "GMU Area Property Management", category: "Property Manager", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "Impact Roofing", category: "Roofer", url: "https://impactroofing.solutions", phone: "703-329-2959" },
+      { name: "JES Foundation Repair", category: "Waterproofing", url: "https://www.jeswork.com", phone: "703-379-8888" },
+      { name: "PMI of Fairfax", category: "Property Manager", url: "https://www.pmifairfax.com", phone: "" },
+      { name: "Frank D. Spicer Insurance", category: "Insurance Agent", url: "https://www.fdspicerinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -450,9 +470,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Vienna Plumbing Services", category: "Plumber", url: "", phone: "" },
-      { name: "Oakton Home Inspectors", category: "Inspector", url: "", phone: "" },
-      { name: "Church Street Antiques", category: "Art Restoration", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "MidAtlantic Contracting", category: "Roofer", url: "https://macontracting.com", phone: "703-492-4663" },
+      { name: "Lux Foundation Solutions", category: "Waterproofing", url: "https://www.luxfoundationsolutions.com", phone: "" },
+      { name: "Nomadic Real Estate", category: "Property Manager", url: "https://www.nomadicrealestate.com", phone: "" },
+      { name: "Preferred Insurance", category: "Insurance Agent", url: "https://www.preferredinsva.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -515,9 +540,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Tysons Commercial Plumbing", category: "Plumber", url: "", phone: "" },
-      { name: "Capital Property Management", category: "Property Manager", url: "", phone: "" },
-      { name: "High-Rise Building Services", category: "Building Services", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "Impact Roofing", category: "Roofer", url: "https://impactroofing.solutions", phone: "703-329-2959" },
+      { name: "JES Foundation Repair", category: "Waterproofing", url: "https://www.jeswork.com", phone: "703-379-8888" },
+      { name: "Peabody Residential", category: "Property Manager", url: "https://peabodyresidential.com", phone: "" },
+      { name: "Preferred Insurance", category: "Insurance Agent", url: "https://www.preferredinsva.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Absolute Carpet Care", category: "Carpet Cleaning", url: "https://www.absolutecarpetcare.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -580,9 +610,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Reston Plumbing & HVAC", category: "Plumber", url: "", phone: "" },
-      { name: "Reston Association", category: "HOA", url: "", phone: "" },
-      { name: "Lake Anne Restoration", category: "Restoration", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "MidAtlantic Contracting", category: "Roofer", url: "https://macontracting.com", phone: "703-492-4663" },
+      { name: "Lux Foundation Solutions", category: "Waterproofing", url: "https://www.luxfoundationsolutions.com", phone: "" },
+      { name: "Real Property Management Pros", category: "Property Manager", url: "https://www.realpropertymgt.com", phone: "" },
+      { name: "Integrated Insurance Solutions", category: "Insurance Agent", url: "https://integratedinsurancesolutions.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Prospect Hardwood Flooring", category: "Flooring Installer", url: "https://phwflooring.com", phone: "" }
     ],
 
     emergencyContacts: [
@@ -645,9 +680,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Herndon Plumbing Co.", category: "Plumber", url: "", phone: "" },
-      { name: "Dulles Commercial Services", category: "Commercial", url: "", phone: "" },
-      { name: "Fox Mill Property Management", category: "Property Manager", url: "", phone: "" }
+      { name: "Freedom Plumbers", category: "Plumber", url: "https://freedomplumbers.com", phone: "703-895-4109" },
+      { name: "Impact Roofing", category: "Roofer", url: "https://impactroofing.solutions", phone: "703-329-2959" },
+      { name: "NV Waterproofing", category: "Waterproofing", url: "https://www.nvwaterproofing.com", phone: "855-649-7594" },
+      { name: "RentSimple", category: "Property Manager", url: "https://rentsimple.com", phone: "" },
+      { name: "Integrated Insurance Solutions", category: "Insurance Agent", url: "https://integratedinsurancesolutions.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Absolute Carpet Care", category: "Carpet Cleaning", url: "https://www.absolutecarpetcare.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -710,9 +750,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Loudoun Plumbing Services", category: "Plumber", url: "", phone: "" },
-      { name: "Ashburn Home Inspectors", category: "Inspector", url: "", phone: "" },
-      { name: "Broadlands HOA", category: "HOA", url: "", phone: "" }
+      { name: "Benjamin Franklin Plumbing", category: "Plumber", url: "https://www.benjaminfranklinplumbing.com", phone: "571-488-6097" },
+      { name: "A&M Roofing", category: "Roofer", url: "https://amroofingva.com", phone: "" },
+      { name: "JES Foundation Repair", category: "Waterproofing", url: "https://www.jeswork.com", phone: "703-379-8888" },
+      { name: "Chambers Theory", category: "Property Manager", url: "https://www.chamberstheory.com", phone: "" },
+      { name: "Integrated Insurance Solutions", category: "Insurance Agent", url: "https://integratedinsurancesolutions.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Absolute Carpet Care", category: "Carpet Cleaning", url: "https://www.absolutecarpetcare.com", phone: "" },
+      { name: "Prospect Hardwood Flooring", category: "Flooring Installer", url: "https://phwflooring.com", phone: "" }
     ],
 
     emergencyContacts: [
@@ -775,9 +820,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Springfield Plumbing Co.", category: "Plumber", url: "", phone: "" },
-      { name: "Kingstowne Property Services", category: "Property Manager", url: "", phone: "" },
-      { name: "Fort Belvoir Housing", category: "Military Housing", url: "", phone: "" }
+      { name: "Freedom Plumbers", category: "Plumber", url: "https://freedomplumbers.com", phone: "703-895-4109" },
+      { name: "MidAtlantic Contracting", category: "Roofer", url: "https://macontracting.com", phone: "703-492-4663" },
+      { name: "NV Waterproofing", category: "Waterproofing", url: "https://www.nvwaterproofing.com", phone: "855-649-7594" },
+      { name: "WJD Management", category: "Property Manager", url: "https://www.wjdpm.com", phone: "" },
+      { name: "Frank D. Spicer Insurance", category: "Insurance Agent", url: "https://www.fdspicerinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -840,9 +890,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Falls Church Plumbing", category: "Plumber", url: "", phone: "" },
-      { name: "Lake Barcroft Association", category: "HOA", url: "", phone: "" },
-      { name: "Seven Corners Property Mgmt", category: "Property Manager", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "Impact Roofing", category: "Roofer", url: "https://impactroofing.solutions", phone: "703-329-2959" },
+      { name: "Lux Foundation Solutions", category: "Waterproofing", url: "https://www.luxfoundationsolutions.com", phone: "" },
+      { name: "Richey Property Management", category: "Property Manager", url: "https://www.richeypm.com", phone: "703-721-4453" },
+      { name: "Bridge First Insurance", category: "Insurance Agent", url: "https://bridgefirstinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [
@@ -905,9 +960,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Great Falls Plumbing & Well", category: "Plumber", url: "", phone: "" },
-      { name: "Estate Property Management", category: "Property Manager", url: "", phone: "" },
-      { name: "Potomac Art Conservation", category: "Art Restoration", url: "", phone: "" }
+      { name: "CroppMetcalfe", category: "Plumber", url: "https://www.croppmetcalfe.com", phone: "703-420-5030" },
+      { name: "A&M Roofing", category: "Roofer", url: "https://amroofingva.com", phone: "" },
+      { name: "JES Foundation Repair", category: "Waterproofing", url: "https://www.jeswork.com", phone: "703-379-8888" },
+      { name: "Peabody Residential", category: "Property Manager", url: "https://peabodyresidential.com", phone: "" },
+      { name: "Frank D. Spicer Insurance", category: "Insurance Agent", url: "https://www.fdspicerinsurance.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Absolute Carpet Care", category: "Carpet Cleaning", url: "https://www.absolutecarpetcare.com", phone: "" },
+      { name: "Prospect Hardwood Flooring", category: "Flooring Installer", url: "https://phwflooring.com", phone: "" }
     ],
 
     emergencyContacts: [
@@ -970,9 +1030,14 @@ export const franchises: Record<string, FranchiseData> = {
     },
 
     partners: [
-      { name: "Lorton Plumbing & Heating", category: "Plumber", url: "", phone: "" },
-      { name: "Occoquan Waterfront Services", category: "Marine", url: "", phone: "" },
-      { name: "Laurel Hill HOA", category: "HOA", url: "", phone: "" }
+      { name: "Freedom Plumbers", category: "Plumber", url: "https://freedomplumbers.com", phone: "703-895-4109" },
+      { name: "MidAtlantic Contracting", category: "Roofer", url: "https://macontracting.com", phone: "703-492-4663" },
+      { name: "NV Waterproofing", category: "Waterproofing", url: "https://www.nvwaterproofing.com", phone: "855-649-7594" },
+      { name: "WJD Management", category: "Property Manager", url: "https://www.wjdpm.com", phone: "" },
+      { name: "Advantage II Insurance", category: "Insurance Agent", url: "https://www.advantage2ins.com", phone: "" },
+      { name: "Galaxy Construction", category: "Kitchen & Bath Remodeling", url: "https://galaxy.construction", phone: "703-858-9599" },
+      { name: "Ayoub Carpet Service", category: "Carpet Cleaning", url: "https://www.ayoubcarpetservice.com", phone: "" },
+      { name: "Flooring America Fairfax", category: "Flooring Installer", url: "https://www.flooringamericastores.com", phone: "703-934-8447" }
     ],
 
     emergencyContacts: [

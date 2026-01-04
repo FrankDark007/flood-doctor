@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const greatfallsWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "Water Damage Restoration in Great Falls, VA | Ultra-Luxury Estate Specialists | Flood Doctor",
+    title: "24/7 Emergency Water Damage Restoration Great Falls, VA | Estate Specialists | Flood Doctor",
     description: "Great Falls' trusted water damage restoration experts. 30-min discrete response to all estates. Protecting wine cellars, art collections & equestrian properties. Call (703) 656-0112.",
     canonical: "https://greatfalls.flood.doctor/water-damage-restoration"
   },

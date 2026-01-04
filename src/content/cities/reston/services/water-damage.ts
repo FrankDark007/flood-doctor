@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const restonWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "Water Damage Restoration in Reston, VA | Planned Community Specialists | Flood Doctor",
+    title: "24/7 Emergency Water Damage Restoration Reston, VA | HOA Coordination | Flood Doctor",
     description: "Reston's trusted water damage restoration experts. 30-min response to Lake Anne, South Lakes & Reston Town Center. HOA coordination included. Call (703) 656-0107.",
     canonical: "https://reston.flood.doctor/water-damage-restoration"
   },

@@ -66,6 +66,7 @@ const NearMeLanding = lazy(() => import('./pages/NearMeLanding'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const VideoGenerator = lazy(() => import('./pages/VideoGenerator'));
 const ClientPortalDemo = lazy(() => import('./pages/ClientPortalDemo'));
+const VisualComponentsDemo = lazy(() => import('./pages/VisualComponentsDemo'));
 
 // Legal & Company
 const Careers = lazy(() => import('./pages/Careers'));
@@ -509,6 +510,7 @@ const App: React.FC = () => {
               {/* Tools & Demos */}
               <Route path="/tools/video-generator/" element={<VideoGenerator />} />
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
+              <Route path="/dev/visual-components/" element={<VisualComponentsDemo />} />
 
               {/* Dev Layout Previews */}
               <Route path="/dev/service-a/" element={<ServiceDetailDevA />} />

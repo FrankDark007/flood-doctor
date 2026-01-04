@@ -6,7 +6,7 @@ export const viennaWaterDamage: ServicePageContent = {
   serviceType: 'water-damage',
 
   hero: {
-    title: 'Vienna Water Damage Restoration',
+    title: '24/7 Emergency Water Damage Restoration Vienna, VA',
     subtitle: 'Expert Restoration for Historic Colonials & Luxury New Construction',
     description: '24/7 emergency water damage restoration serving Vienna Town, Oakton, Dunn Loring, and Wolf Trap. Certified technicians protecting Vienna\'s charming homes since 2005.',
     primaryCTA: 'Get Emergency Help',

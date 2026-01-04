@@ -1,10 +1,10 @@
 import type { ServicePageContent } from '../../types';
 
 export const waterDamageContent: ServicePageContent = {
-  heroH1: "Water Damage Restoration in Tysons, VA",
+  heroH1: "24/7 Emergency Water Damage Restoration in Tysons, VA",
   heroP: "Expert high-rise and commercial water damage restoration serving Tysons Corner, The Boro, and Tysons Central. Available 24/7 for emergency response to condo flooding, office building leaks, and HVAC system failures.",
 
-  searchDescription: "24/7 emergency water damage restoration in Tysons VA. Specialized in high-rise condos, Class A office buildings, and mixed-use developments. Licensed, certified technicians.",
+  searchDescription: "24/7 emergency water damage restoration in Tysons VA. Specialized in high-rise condos, Class A office buildings, and mixed-use developments. Fast 60-min response. Licensed, certified technicians.",
 
   mainContent: {
     intro: {

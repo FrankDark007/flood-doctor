@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { generateHomepageSchema } from '../utils/schema';
 import { useSubdomainInfo } from '../utils/subdomain';
+import { useFranchiseContext } from '../contexts/FranchiseContext';
 import {
   Phone,
   ArrowRight,
@@ -45,6 +46,9 @@ const Home: React.FC = () => {
 
   // Detect subdomain for city-specific content
   const { isSubdomain, cityName } = useSubdomainInfo();
+
+  // Get full franchise data for localHooks
+  const franchise = useFranchiseContext();
 
   // Dynamic location text based on subdomain
   const locationText = isSubdomain ? cityName : 'Northern Virginia';
@@ -280,6 +284,68 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Local Context Section - Only shown on city subdomains */}
+      {isSubdomain && franchise.localHooks && (
+        <section className="py-16 lg:py-20 bg-white border-b border-[#dadce0]">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+              {/* Architecture & Common Issues */}
+              <div>
+                <h2 className="text-[24px] lg:text-[28px] font-normal text-[#202124] mb-4">
+                  Water Damage in {cityName} Homes
+                </h2>
+                <p className="text-[16px] text-[#5f6368] leading-[1.7] mb-6">
+                  {franchise.localHooks.architectureNotes}
+                </p>
+                <div className="space-y-3">
+                  {franchise.localHooks.commonIssues.slice(0, 4).map((issue, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#fce8e6] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Droplets size={14} className="text-[#c5221f]" />
+                      </div>
+                      <span className="text-[15px] text-[#3c4043]">{issue}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Neighborhoods We Serve */}
+              <div>
+                <h3 className="text-[20px] font-medium text-[#202124] mb-4">
+                  Neighborhoods We Serve in {cityName}
+                </h3>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {franchise.localHooks.neighborhoods.slice(0, 8).map((neighborhood, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1.5 bg-[#e8f0fe] text-[#1a73e8] rounded-full text-[13px] font-medium"
+                    >
+                      {neighborhood}
+                    </span>
+                  ))}
+                </div>
+                {franchise.localHooks.landmarks.length > 0 && (
+                  <>
+                    <h4 className="text-[16px] font-medium text-[#5f6368] mb-3">Near Local Landmarks</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {franchise.localHooks.landmarks.slice(0, 5).map((landmark, idx) => (
+                        <span
+                          key={idx}
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-[#f8f9fa] text-[#5f6368] rounded-full text-[13px]"
+                        >
+                          <MapPin size={12} />
+                          {landmark}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Process Timeline - Light Background (Google Style) */}
       <section className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
@@ -472,51 +538,41 @@ const Home: React.FC = () => {
       {/* Locations */}
       <section id="locations" className="py-20 lg:py-28 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
-                <MapPin size={16} />
-                Coverage area
-              </div>
-              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
-                {isSubdomain ? `${cityName} & Surrounding Areas` : 'Northern Virginia & DC Metro'}
-              </h2>
-              <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
-                {isSubdomain
-                  ? `We provide 24/7 emergency water damage restoration throughout ${cityName} and nearby communities. 60-minute response guaranteed.`
-                  : 'Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night.'
-                }
-              </p>
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
+              <MapPin size={16} />
+              Coverage area
+            </div>
+            <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
+              {isSubdomain ? `${cityName} & Surrounding Areas` : 'Northern Virginia & DC Metro'}
+            </h2>
+            <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
+              {isSubdomain
+                ? `We provide 24/7 emergency water damage restoration throughout ${cityName} and nearby communities. 60-minute response guaranteed.`
+                : 'Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night.'
+              }
+            </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                {['Fairfax County', 'Arlington', 'Alexandria', 'Loudoun County', 'Prince William', 'Washington DC'].map((area) => (
-                  <Link
-                    key={area}
-                    to="/locations/"
-                    className="flex items-center gap-2 p-3 rounded-lg bg-[#f8f9fa] hover:bg-[#e8f0fe] transition-colors text-[14px] text-[#202124]"
-                  >
-                    <CheckCircle2 size={16} className="text-[#137333]" />
-                    {area}
-                  </Link>
-                ))}
-              </div>
-
-              <Link
-                to="/locations/"
-                className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
-              >
-                View all locations
-                <ArrowRight size={18} className="ml-2" />
-              </Link>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              {['Fairfax County', 'Arlington', 'Alexandria', 'Loudoun County', 'Prince William', 'Washington DC'].map((area) => (
+                <Link
+                  key={area}
+                  to="/locations/"
+                  className="flex items-center gap-2 p-3 rounded-lg bg-[#f8f9fa] hover:bg-[#e8f0fe] transition-colors text-[14px] text-[#202124]"
+                >
+                  <CheckCircle2 size={16} className="text-[#137333]" />
+                  {area}
+                </Link>
+              ))}
             </div>
 
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#e8f0fe] p-6">
-              <img
-                src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80"
-                alt="Northern Virginia service area"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              />
-            </div>
+            <Link
+              to="/locations/"
+              className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
+            >
+              View all locations
+              <ArrowRight size={18} className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>

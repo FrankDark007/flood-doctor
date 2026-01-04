@@ -5,9 +5,81 @@
 RewriteEngine On
 RewriteBase /
 
-# Force HTTPS (Cloudflare handles SSL, but enforce anyway)
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# HTTPS handled by Cloudflare at edge (Flexible SSL mode)
+# DO NOT add HTTPS redirect here - causes redirect loop with Flexible SSL
+
+# ============================================
+# SUBDOMAIN ROUTING - City Sites
+# ============================================
+# Route city subdomains to their respective folders
+# Each city has its own static build in /{city}/
+
+# McLean
+RewriteCond %{HTTP_HOST} ^mclean\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/mclean/
+RewriteRule ^(.*)$ /mclean/$1 [L]
+
+# Arlington
+RewriteCond %{HTTP_HOST} ^arlington\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/arlington/
+RewriteRule ^(.*)$ /arlington/$1 [L]
+
+# Alexandria
+RewriteCond %{HTTP_HOST} ^alexandria\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/alexandria/
+RewriteRule ^(.*)$ /alexandria/$1 [L]
+
+# Fairfax
+RewriteCond %{HTTP_HOST} ^fairfax\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/fairfax/
+RewriteRule ^(.*)$ /fairfax/$1 [L]
+
+# Vienna
+RewriteCond %{HTTP_HOST} ^vienna\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/vienna/
+RewriteRule ^(.*)$ /vienna/$1 [L]
+
+# Tysons
+RewriteCond %{HTTP_HOST} ^tysons\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/tysons/
+RewriteRule ^(.*)$ /tysons/$1 [L]
+
+# Reston
+RewriteCond %{HTTP_HOST} ^reston\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/reston/
+RewriteRule ^(.*)$ /reston/$1 [L]
+
+# Herndon
+RewriteCond %{HTTP_HOST} ^herndon\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/herndon/
+RewriteRule ^(.*)$ /herndon/$1 [L]
+
+# Ashburn
+RewriteCond %{HTTP_HOST} ^ashburn\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/ashburn/
+RewriteRule ^(.*)$ /ashburn/$1 [L]
+
+# Springfield
+RewriteCond %{HTTP_HOST} ^springfield\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/springfield/
+RewriteRule ^(.*)$ /springfield/$1 [L]
+
+# Falls Church
+RewriteCond %{HTTP_HOST} ^fallschurch\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/fallschurch/
+RewriteRule ^(.*)$ /fallschurch/$1 [L]
+
+# Great Falls
+RewriteCond %{HTTP_HOST} ^greatfalls\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/greatfalls/
+RewriteRule ^(.*)$ /greatfalls/$1 [L]
+
+# Lorton
+RewriteCond %{HTTP_HOST} ^lorton\.flood\.doctor$ [NC]
+RewriteCond %{REQUEST_URI} !^/lorton/
+RewriteRule ^(.*)$ /lorton/$1 [L]
+
+# ============================================
 
 # Security Headers
 <IfModule mod_headers.c>

@@ -579,51 +579,35 @@ const LandingPageB: React.FC<LandingPageBProps> = ({
       {/* Locations Preview */}
       {locations.length > 0 && (
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  <MapPin size={16} />
-                  {locationsEyebrow}
-                </div>
-                <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-6">
-                  {locationsTitle}
-                </h2>
-                <p className="text-lg text-muted leading-relaxed mb-8">
-                  {locationsSubtitle}
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 mb-8">
-                  {locations.map((area) => (
-                    <Link
-                      key={area}
-                      to="/locations/"
-                      className="flex items-center gap-2 p-3 rounded-lg bg-white border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all text-sm text-text"
-                    >
-                      <CheckCircle2 size={16} className="text-emerald-500" />
-                      {area}
-                    </Link>
-                  ))}
-                </div>
-
-                <Button to="/locations/" variant="primary">
-                  View All Locations
-                  <ArrowRight size={18} className="ml-2" />
-                </Button>
-              </div>
-
-              <div className="aspect-square rounded-2xl shadow-lg relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80"
-                  alt="Northern Virginia service area map"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute top-1/4 left-1/3 w-4 h-4 rounded-full bg-primary animate-ping" />
-                <div className="absolute top-1/3 right-1/4 w-4 h-4 rounded-full bg-emerald-500 animate-ping" style={{ animationDelay: '0.5s' }} />
-                <div className="absolute bottom-1/3 left-1/4 w-4 h-4 rounded-full bg-primary animate-ping" style={{ animationDelay: '1s' }} />
-              </div>
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <MapPin size={16} />
+              {locationsEyebrow}
             </div>
+            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-6">
+              {locationsTitle}
+            </h2>
+            <p className="text-lg text-muted leading-relaxed mb-8">
+              {locationsSubtitle}
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              {locations.map((area) => (
+                <Link
+                  key={area}
+                  to="/locations/"
+                  className="flex items-center justify-center gap-2 p-3 rounded-lg bg-white border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all text-sm text-text"
+                >
+                  <CheckCircle2 size={16} className="text-emerald-500" />
+                  {area}
+                </Link>
+              ))}
+            </div>
+
+            <Button to="/locations/" variant="primary">
+              View All Locations
+              <ArrowRight size={18} className="ml-2" />
+            </Button>
           </div>
         </section>
       )}

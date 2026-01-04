@@ -289,4 +289,280 @@
 
 ---
 
+### Architecture V2 Compliance Audit (2026-01-03)
+
+**Audit Request:** Verify implementation against City Subdomain Architecture V2 spec
+
+**Result: ✅ PASSED — All 5 phases fully implemented**
+
+| Phase | Component | Status | Location |
+|-------|-----------|--------|----------|
+| 1 | FranchiseData type | ✅ | `data/franchises.ts` |
+| 1 | HQ + 13 cities | ✅ | All franchises configured |
+| 1 | SAB compliance | ✅ | No street addresses exposed |
+| 2 | useFranchise hook | ✅ | `hooks/useFranchise.ts` |
+| 2 | Dev mode ?city= | ✅ | Working |
+| 2 | Reserved subdomains | ✅ | mail, ftp, api, admin, staging, dev, test |
+| 3 | ServiceRequestForm | ✅ | `components/forms/ServiceRequestForm.tsx` |
+| 3 | Environment variables | ✅ | VITE_API_URL configured |
+| 4 | Sitemap generator | ✅ | `scripts/generate-sitemaps.ts` |
+| 4 | HQ sitemap | ✅ | sitemap-main.xml |
+| 4 | City sitemaps | ✅ | 13 files generated |
+| 5 | DNS/Cloudflare | ✅ | Wildcard + 13 A records |
+| 5 | Apache .htaccess | ✅ | SPA routing configured |
+
+**Enhancements Beyond V2 Spec:**
+- `coordinates` field added for LocalBusiness schema
+- `isHQ` flag for HQ detection
+- `window.__FLOOD_DOCTOR_CITY__` build-time injection
+- `FranchiseContext` provider pattern
+
+**Placeholder Data (needs real values):**
+- Phone numbers: `703-656-0XXX` pattern
+- Google Maps embed URLs
+- Google Place IDs
+- Manager/team images
+- Partner contact info
+
+---
+
+---
+
+### 2026-01-03: SEO Audit & Partner Data Update
+
+**What:** Comprehensive SEO audit + real partner data for all 13 cities
+
+**SEO Fixes Applied:**
+1. `LocalBusinessSchema.tsx` - Changed `@type: 'LocalBusiness'` to `@type: ['HomeAndConstructionBusiness', 'EmergencyService']` with `additionalType: 'https://schema.org/LocalBusiness'`
+2. All 13 city `water-damage.ts` files - Added "24/7 Emergency" to meta titles for urgency signals
+3. `pages/Home.tsx` - Added localHooks section that displays city-specific content on subdomains (architectureNotes, commonIssues, neighborhoods, landmarks)
+
+**Partner Data Update (data/franchises.ts):**
+Replaced placeholder partner data with REAL verified local businesses. Each company was verified via Perplexity to NOT offer competing services (water damage restoration, flood cleanup, mold remediation, fire damage).
+
+**Partner Categories Added (8 per city):**
+| Category | Companies Added |
+|----------|-----------------|
+| Plumbers | CroppMetcalfe (703-420-5030), Freedom Plumbers (703-895-4109), Benjamin Franklin Plumbing (571-488-6097) |
+| Roofers | Impact Roofing (703-329-2959), MidAtlantic Contracting (703-492-4663), A&M Roofing |
+| Waterproofing | JES Foundation Repair (703-379-8888), Lux Foundation Solutions, NV Waterproofing (855-649-7594) |
+| Property Managers | Peabody Residential, WJD Management, Richey Property Management (703-721-4453), PMI of Fairfax, RentSimple, Chambers Theory |
+| Insurance Agents | Frank D. Spicer Insurance, Preferred Insurance, Bridge First Insurance, Integrated Insurance Solutions, Advantage II Insurance |
+| Kitchen & Bath Remodeling | Galaxy Construction (703-858-9599) - galaxy.construction - User's preferred contractor |
+| Carpet Cleaning | Ayoub Carpet Service, Absolute Carpet Care |
+| Flooring Installers | Flooring America Fairfax (703-934-8447), Prospect Hardwood Flooring |
+
+**Verification Process:**
+- Each company searched via Perplexity with explicit query: "do they offer water damage restoration flood cleanup mold remediation?"
+- User explicitly warned about companies like "Michael & Son" that appear to be plumbers but also offer competing services
+- Galaxy Construction verified as kitchen/bath remodeling ONLY - user's preferred contractor
+
+**Files Changed:**
+- `components/seo/LocalBusinessSchema.tsx` - Schema type fix
+- `pages/Home.tsx` - LocalHooks section added
+- `src/content/cities/*/services/water-damage.ts` (13 files) - Meta title updates
+- `data/franchises.ts` - All partner arrays updated (13 cities × 8 partners = 104 partner entries)
+
+**Build Status:** PASSING (264 URLs across 15 sitemaps)
+
+**Status:** Complete
+
+---
+
+### 2026-01-03: City Page Hyper-Differentiation Architecture (Phase 1)
+
+**What:** Implemented archetype-based city page differentiation system
+
+**Problem Solved:**
+- 29 location pages were 85-95% templated
+- Rich localHooks data in franchises.ts was NOT being used
+- Unique content files in src/content/cities/ were NOT being rendered
+- Pages were at risk of Google spam flags due to copy-paste patterns
+
+**Solution: 4-Archetype System**
+
+| Archetype | Cities | Unique Features |
+|-----------|--------|-----------------|
+| Estate/Luxury | McLean, Great Falls | Wine cellar protection, high-value assets, discrete service, equestrian facilities |
+| Historic/Urban | Alexandria, Falls Church, Vienna | BAR compliance, original materials, preservation |
+| High-Rise/Urban | Arlington, Tysons, Reston | HOA coordination, multi-unit, commercial |
+| Suburban/Family | Fairfax, Springfield, Herndon, Ashburn, Lorton | Split-levels, sump pumps, military families |
+
+**Files Created:**
+- `config/archetypeMapping.ts` - City-to-archetype mapping + configs
+- `hooks/useArchetypeContent.ts` - Merged franchise + archetype data hook
+- `components/archetypes/estate/CityPageEstate.tsx` - Estate archetype template
+- `components/archetypes/estate/WineCellarProtection.tsx` - Estate-specific component
+- `components/archetypes/estate/HighValueAssetCallout.tsx` - Estate-specific component
+- `components/archetypes/estate/DiscreteServiceBadge.tsx` - Estate-specific component
+- `components/archetypes/estate/index.ts` - Exports
+
+**Files Refactored:**
+- `pages/locations/McLeanWaterDamage.tsx` - Now 16 lines using Estate template (was 333 lines hardcoded)
+
+**Key Changes in McLean Page:**
+- Uses `useArchetypeContent('mclean')` hook
+- Renders `CityPageEstate` template with franchise data
+- Dynamically displays neighborhoods, landmarks, commonIssues from franchises.ts
+- Shows estate-specific sections: wine cellar, high-value assets, discrete service badge
+- Equestrian facilities section for Great Falls
+
+**Build Status:** PASSING (264 URLs across 15 sitemaps)
+
+**Next Steps:**
+- Create Historic, Urban, Suburban archetype templates
+- Refactor remaining 28 location pages
+- Source city-specific images with proper ALT tags
+- Run competitor analysis and content audit
+
+---
+
+### 2026-01-03: Competitive SEO Audit Complete
+
+**What:** Comprehensive competitor analysis and SEO gap identification
+
+**Competitors Researched:**
+- PuroClean McLean (city pages, blog, IICRC)
+- Voda Cleaning & Restoration (8,000+ reviews, regional)
+- ServiceMaster NCR (mentions neighborhoods, templates)
+- FloodTech USA (regional VA/MD/DC)
+- Tri State Restorations (lists neighborhoods, no dedicated pages)
+- Total Home Rescue (Fairfax/McLean/Tysons)
+- Anthony Restoration (Tysons Corner)
+- Flood Metrix (zip code pages)
+
+**Critical Finding:**
+NO COMPETITOR HAS NEIGHBORHOOD-LEVEL LANDING PAGES.
+We have 80+ neighborhood content files ready to render.
+
+**Our Content Inventory:**
+- 294 total content files in src/content/cities/
+- 80+ neighborhood pages (Rosslyn, Crystal City, Old Town, Lake Barcroft, etc.)
+- 55+ city-specific blog articles
+- 13 city subdomain structures
+
+**Keyword Gaps Identified:**
+- Tier 1: Neighborhood keywords (0 competition, content ready)
+- Tier 2: Service-specific ("burst pipe repair [city]", "frozen pipes [city]")
+- Tier 3: Problem-specific ("water damage insurance claim Virginia")
+
+**Action Plan Created:**
+1. Phase 1: Render 80+ neighborhood pages (IMMEDIATE - 3-5 days)
+2. Phase 2: Complete archetype refactoring (5-7 days)
+3. Phase 3: Service-specific landing pages (7-10 days)
+4. Phase 4: Seasonal content campaign (before winter)
+5. Phase 5: Review & authority building (ongoing)
+
+**Files Created:**
+- `.claude/competitive-seo-audit.md` - Full audit document with competitor matrix, keyword gaps, action plan
+
+**Status:** Audit complete. Ready to execute Phase 1 (neighborhood pages).
+
+---
+
 *Last updated: 2026-01-03*
+
+---
+
+### 2026-01-03: Visual Components Library
+
+**Task:** Create high-end SVG animations, graphics, and premium visual components to make city pages less text-heavy.
+
+**Completed:**
+
+1. **Premium Visual Components** (`components/graphics/`):
+   - `WaterDropletIcon.tsx` - Animated water droplet with SVG gradients and SMIL animations
+   - `EmergencyBadge.tsx` - Pulsing 24/7 emergency badge with Tailwind animations
+   - `TrustBadges.tsx` - 6 certification badges (IICRC, Licensed, Insured, 24/7, Local, Guarantee)
+   - `ProcessTimeline.tsx` - 4-step restoration process infographic (Assessment → Extraction → Drying → Restoration)
+   - `ComparisonTable.tsx` - Flood Doctor vs competitors comparison table
+   - `AnimatedStats.tsx` - Counter animation with Intersection Observer (60min response, 25+ years, etc.)
+   - `BeforeAfterSlider.tsx` - Interactive before/after image comparison slider
+   - `AnimatedHeroBackground.tsx` - 5 variants (estate, historic, urban, suburban, water)
+   - `ServiceIconGrid.tsx` - 6 service icons with custom SVG gradients
+   - `ProcessGallery.tsx` - Interactive gallery using 30+ process tile images
+
+2. **Unsplash Image Configuration** (`config/unsplashImages.ts`):
+   - Estate: luxury homes, wine cellars, grand interiors
+   - Historic: brick buildings, colonial homes, Old Town style
+   - Urban: high-rises, condos, city skylines
+   - Suburban: single-family homes, basements
+
+3. **Process Tile Images**:
+   - Extracted 50+ user-provided process tiles to `/public/images/process-tiles/`
+   - Categories: assessment, extraction, drying, remediation, restoration, documentation
+
+4. **Enhanced Archetype Templates** (`components/archetypes/`):
+   - `CityPageEstate.tsx` - McLean, Great Falls
+     - Wine cellar protection, high-value assets, discrete service badge
+     - AnimatedHeroBackground, AnimatedStats, TrustBadges, ProcessTimeline, ComparisonTable, ServiceIconGrid, ProcessGallery, EmergencyBadge
+   - `CityPageHistoric.tsx` - Alexandria, Falls Church, Vienna
+     - BAR compliance section, original materials expertise, preservation badge
+     - Historic-specific styling with amber accent colors
+   - `CityPageUrban.tsx` - Arlington, Tysons, Reston
+     - Multi-unit coordination, HOA partnerships, building systems expertise
+     - Commercial/residential toggle, parking garage section
+   - `CityPageSuburban.tsx` - Fairfax, Springfield, Herndon, Ashburn, Lorton
+     - Basement flooding specialists, split-level expertise, sump pump section
+     - Optional military family badge for Springfield
+
+5. **Demo Route**:
+   - Added `/dev/visual-components/` route to App.tsx
+   - `pages/VisualComponentsDemo.tsx` showcases all components
+
+6. **Fixed Graphics Exports**:
+   - Updated `components/graphics/index.ts` with all animation exports
+   - Added LocationsHeroAnimation, TechnologyHeroAnimation, etc.
+
+**Build Status:** ✅ Passing (264 URLs in sitemaps)
+
+**Files Created/Modified:**
+- 10 new graphics components
+- 4 new archetype templates (historic, urban, suburban) + enhanced estate
+- 1 config file for Unsplash images
+- 1 demo page
+- Updated App.tsx with demo route
+- Updated graphics/index.ts with all exports
+
+---
+
+### 2026-01-04: Neighborhood Pages Visual Component Integration
+
+**Task:** Render 80+ neighborhood pages using the new visual components library.
+
+**Completed:**
+
+1. **Enhanced NeighborhoodPageRenderer** (`components/city/NeighborhoodPageRenderer.tsx`):
+   - Integrated all premium visual components
+   - Added archetype detection via `getArchetype(citySlug)`
+   - Dynamic hero backgrounds matching city archetype (estate/historic/urban/suburban)
+
+2. **Visual Components Added to Neighborhood Pages:**
+   - `AnimatedHeroBackground` - Archetype-specific animated SVG backgrounds
+   - `TrustBadges` - Horizontal layout with response time, IICRC, ratings
+   - `EmergencyBadge` - In hero CTA section + final CTA section
+   - `AnimatedStats` - Counter cards below hero section
+   - `ProcessTimeline` - Horizontal 4-step restoration process
+   - `ServiceIconGrid` - Large 3-column service icons
+
+3. **Enhanced UI Elements:**
+   - Hero section: Added relative z-index layering with animated background
+   - Stats section: New section with AnimatedStats cards variant
+   - Services section: Combined ServiceIconGrid with detailed service cards
+   - Final CTA: Added wave SVG pattern + EmergencyBadge
+
+4. **Coverage:**
+   - 81 neighborhood content files across 13 cities
+   - All neighborhood pages now use consistent visual language
+   - Archetype-specific styling automatically applied
+
+**Build Status:** ✅ Passing (264 URLs in sitemaps)
+
+**Files Modified:**
+- `components/city/NeighborhoodPageRenderer.tsx` - Full visual component integration
+
+**Impact:**
+- All 81 neighborhood pages now have premium visual elements
+- Consistent with city archetype templates (Estate/Historic/Urban/Suburban)
+- Better visual differentiation from competitors
+- Reduced "text-heavy" appearance

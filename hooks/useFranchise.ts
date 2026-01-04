@@ -1,11 +1,26 @@
 import { useMemo } from 'react';
 import { franchises, FranchiseData } from '@/data/franchises';
 
+// Declare global window property for TypeScript
+declare global {
+  interface Window {
+    __FLOOD_DOCTOR_CITY__?: string;
+  }
+}
+
 export function useFranchise(): FranchiseData {
   return useMemo(() => {
-    const hostname = window.location.hostname;
+    // V3 UPGRADE: Priority 1 - Build-time city selection
+    // This is set in the index.html during static site generation
+    // Each city subdomain gets its own build with this pre-set
+    const buildTimeCity = typeof window !== 'undefined' ? window.__FLOOD_DOCTOR_CITY__ : undefined;
+    if (buildTimeCity && franchises[buildTimeCity]) {
+      return franchises[buildTimeCity];
+    }
 
-    // Development mode: localhost with ?city= query param
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+
+    // Priority 2: Development mode with ?city= query param
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
       const params = new URLSearchParams(window.location.search);
       const cityParam = params.get('city');
@@ -17,11 +32,11 @@ export function useFranchise(): FranchiseData {
       return franchises['hq'];
     }
 
-    // Production: extract subdomain
+    // Priority 3: Production subdomain detection (fallback)
     const parts = hostname.split('.');
     const subdomain = parts[0];
 
-    // V3 UPGRADE: Handle Main Site / HQ explicitly
+    // Handle Main Site / HQ explicitly
     if (subdomain === 'www' || subdomain === 'flood' || parts.length < 3) {
       return franchises['hq'];
     }
