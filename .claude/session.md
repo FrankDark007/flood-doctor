@@ -20,24 +20,18 @@
 2. ✅ **Routing setup** - Dynamic routes in App.tsx for city services/neighborhoods
 3. ✅ **Content index files** - Auto-generated with scripts/generate-content-indexes.ts (39 index files)
 4. ✅ **Schema verification** - FAQSchema, LocalBusinessSchema, PageMeta all integrated
-5. ✅ **Vercel config** - Updated vercel.json with subdomain redirects, sitemap routing
+5. ✅ **Removed Vercel** - All Vercel references removed, deploying via Cloudflare + GoDaddy
 
 ### Content Statistics
 - **Total Files:** 281 TypeScript content files
 - **Cities:** 13 city subdomains
-- **Build Status:** ✅ Passing (2.91s)
-- **Sitemaps:** 15 files generated
+- **Build Status:** ✅ Passing (3.07s)
+- **Sitemaps:** 15 files generated (264 URLs)
 
 ### Per-City Content
-| City | Homepage | Services | Neighborhoods | Index Files |
-|------|----------|----------|---------------|-------------|
-| All 13 cities | ✅ | 8 each | 5 each | 3 each |
-
-### Content Types Per City
-- **Homepage** - City-specific water damage restoration overview
-- **Services (8):** water-damage, basement-flooding, burst-pipe, flood-cleanup, mold-remediation, sewage-cleanup, storm-damage, fire-damage
-- **Neighborhoods (5):** City-specific neighborhood landing pages
-- **Index Files (3):** city/index.ts, services/index.ts, neighborhoods/index.ts
+| City | Homepage | Services | Neighborhoods | Blog |
+|------|----------|----------|---------------|------|
+| All 13 cities | ✅ | 8 each | 5 each | 3-5 each |
 
 ---
 
@@ -50,12 +44,7 @@
 - ✅ SEO Components: PageMeta, LocalBusinessSchema, FAQSchema
 - ✅ ServiceRequestForm with city tagging
 - ✅ Sitemap generator (15 sitemaps)
-- ✅ `components/city/ServicePageRenderer.tsx` - City service page rendering
-- ✅ `components/city/NeighborhoodPageRenderer.tsx` - Neighborhood page rendering
-- ✅ `pages/city/DynamicServicePage.tsx` - Dynamic route handler
-- ✅ `pages/city/DynamicNeighborhoodPage.tsx` - Dynamic route handler
-- ✅ `utils/contentLoader.ts` - City info and content loading utilities
-- ✅ `scripts/generate-content-indexes.ts` - Index file generator
+- ✅ Dynamic page components for services, neighborhoods, blog
 
 ### SAB Compliance
 - ✅ No street addresses in LocalBusiness schema
@@ -64,27 +53,32 @@
 
 ---
 
-## 🚀 READY FOR DEPLOYMENT
+## 🚀 DEPLOYMENT - Cloudflare + GoDaddy
 
-### Pre-Deployment Checklist
-- [x] Build passes
-- [x] 15 sitemaps generated
-- [x] Schema markup verified
-- [x] Vercel config updated
-- [x] Deployment guide created
+### Build Output
+```bash
+npm run build
+# Output: dist/ folder
+```
 
-### Deployment Steps (see .claude/V3-DEPLOYMENT.md)
-1. `vercel link`
-2. Add environment variables
-3. Configure domains: `flood.doctor` + `*.flood.doctor`
-4. `vercel --prod`
+### Deployment Steps
+1. Build the project: `npm run build`
+2. Upload `dist/` contents to GoDaddy hosting
+3. Configure Cloudflare DNS for subdomains
+4. Set up Cloudflare Page Rules for routing
 
-### Post-Deployment
-1. Verify all 13 subdomains resolve
-2. Test SSL on each subdomain
-3. Submit sitemaps to Google Search Console
-4. Test phone number tracking per city
-5. Verify schema markup with Google Rich Results Test
+### DNS Configuration (Cloudflare)
+```
+flood.doctor        A     [GoDaddy IP]
+*.flood.doctor      A     [GoDaddy IP]
+```
+
+### Post-Deployment Checklist
+- [ ] Verify all 13 subdomains resolve
+- [ ] Test SSL on each subdomain
+- [ ] Submit sitemaps to Google Search Console
+- [ ] Test phone number tracking per city
+- [ ] Verify schema markup with Google Rich Results Test
 
 ---
 

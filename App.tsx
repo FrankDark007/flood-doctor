@@ -310,7 +310,7 @@ const App: React.FC = () => {
               {/* Near Me Landing */}
               <Route path="/nearme/water-damage-restoration/" element={<NearMeLanding />} />
 
-              {/* City Subdomain Pages - accessed via Vercel rewrites from *.flood.doctor */}
+              {/* City Subdomain Pages - accessed via *.flood.doctor subdomains */}
               <Route path="/city/mclean" element={<CityMcLean />} />
               <Route path="/city/vienna" element={<CityVienna />} />
               <Route path="/city/arlington" element={<CityArlington />} />

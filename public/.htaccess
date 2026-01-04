@@ -1,0 +1,48 @@
+# Flood Doctor - Apache Configuration for SPA with Subdomains
+# GoDaddy Shared Hosting
+
+# Enable rewrite engine
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (Cloudflare handles SSL, but enforce anyway)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Cache static assets (1 year)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# Serve sitemaps with correct content type
+<IfModule mod_mime.c>
+    AddType application/xml .xml
+</IfModule>
+
+# Handle sitemap.xml -> sitemaps/sitemap-index.xml
+RewriteRule ^sitemap\.xml$ /sitemaps/sitemap-index.xml [L]
+
+# Serve static files directly if they exist
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback - route all other requests to index.html
+RewriteRule ^ /index.html [L]
