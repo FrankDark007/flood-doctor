@@ -513,7 +513,7 @@ export const viennaWaterDamage: ServicePageContent = {
         telephone: '(703) 656-0105',
         contactType: 'Emergency Services',
         availableLanguage: 'English',
-        areaServed': 'Vienna, VA'
+        'areaServed': 'Vienna, VA'
       }
     },
     description: 'Professional water damage restoration in Vienna, VA. 24/7 emergency response for historic colonials and luxury new construction. Expert water extraction, structural drying, and complete restoration.',

@@ -19,11 +19,11 @@ export const northPointNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`North Point offers some of Reston's most desirable family living—established colonials with generous lots, quality schools, and proximity to Lake Newport. The neighborhood's rolling topography created hundreds of homes with walkout basements facing preserved natural areas. When water threatens these properties, you need restoration experts who understand walkout-specific vulnerabilities and lake-area groundwater challenges.
+    paragraph: `North Point offers some of Reston's most desirable family living—established colonials with generous lots, quality schools, and proximity to Lake Newport. The neighborhood's rolling topography created hundreds of homes with walkout basements facing preserved natural areas. When water threatens these properties, you need restoration experts who understand walkout-specific vulnerabilities and lake-area groundwater challenges.
 
 Flood Doctor has served North Point families for nearly two decades. We've extracted water from walkout basements along North Shore Drive, dried colonials near North Point Village Center, and restored properties backing to Reston's pathway system. Our crews understand the 1980s-90s construction common here, the walkout basement vulnerabilities, and the elevated water tables near Lake Newport.
 
-North Point's housing stock—primarily 3,000-5,000 square foot colonials with finished lower levels—represents significant family investment. We treat each North Point property with the urgency and thoroughness these homes deserve, whether you're on a quiet cul-de-sac or fronting Lake Newport.\`,
+North Point's housing stock—primarily 3,000-5,000 square foot colonials with finished lower levels—represents significant family investment. We treat each North Point property with the urgency and thoroughness these homes deserve, whether you're on a quiet cul-de-sac or fronting Lake Newport.`,
 
     housingTypes: [
       "Colonial single-family homes (3,000-5,000+ sq ft)",
@@ -75,7 +75,7 @@ North Point's housing stock—primarily 3,000-5,000 square foot colonials with f
 
   walkoutBasementSection: {
     headline: "Walkout Basement Restoration in North Point",
-    content: \`North Point's rolling topography created ideal conditions for walkout basements—lower levels with exterior access, often featuring sliding doors to patios and views of natural areas. These desirable spaces face unique flooding vulnerabilities that below-grade basements don't experience.
+    content: `North Point's rolling topography created ideal conditions for walkout basements—lower levels with exterior access, often featuring sliding doors to patios and views of natural areas. These desirable spaces face unique flooding vulnerabilities that below-grade basements don't experience.
 
 **At-Grade Entry Points:** Walkout doors, sliding glass doors, and ground-level windows create flood entry points during heavy rain. Water flows downhill toward these openings.
 
@@ -85,7 +85,7 @@ North Point's housing stock—primarily 3,000-5,000 square foot colonials with f
 
 **Dual Vulnerability:** Walkouts face both below-grade groundwater intrusion AND at-grade storm water entry—double the exposure of typical basements.
 
-We've restored hundreds of flooded walkout basements throughout North Point. Understanding both the underground and above-ground vulnerabilities is essential for complete protection.\`,
+We've restored hundreds of flooded walkout basements throughout North Point. Understanding both the underground and above-ground vulnerabilities is essential for complete protection.`,
     keywords: ["walkout basement North Point", "North Point flooding", "Lake Newport water damage"]
   },
 

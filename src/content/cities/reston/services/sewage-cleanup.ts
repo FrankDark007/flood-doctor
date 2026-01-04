@@ -14,13 +14,13 @@ export const restonSewageCleanupContent = {
   introSection: {
     headline: "Professional Sewage Cleanup for Reston Properties",
     paragraphs: [
-      \`Few emergencies create more urgent health hazards than sewage backup. When raw sewage floods into your Reston basement through floor drains—backing up from overtaxed sewer lines or during severe storms—every minute of exposure increases contamination spread. Your finished basement, the family room where your children play, the walkout space facing Reston's natural areas—now contaminated with Category 3 biohazardous waste.
+      `Few emergencies create more urgent health hazards than sewage backup. When raw sewage floods into your Reston basement through floor drains—backing up from overtaxed sewer lines or during severe storms—every minute of exposure increases contamination spread. Your finished basement, the family room where your children play, the walkout space facing Reston's natural areas—now contaminated with Category 3 biohazardous waste.
 
-Flood Doctor maintains biohazard certification specifically for these emergencies. We've cleaned up sewage backups throughout Reston: storm-overwhelmed sewer lines in Hunters Woods, drain backups in South Lakes colonials, and system failures in Lake Anne Village's older infrastructure. When sewage invades your planned community home, we arrive with the PPE, antimicrobial treatments, and disposal protocols the situation demands.\`,
+Flood Doctor maintains biohazard certification specifically for these emergencies. We've cleaned up sewage backups throughout Reston: storm-overwhelmed sewer lines in Hunters Woods, drain backups in South Lakes colonials, and system failures in Lake Anne Village's older infrastructure. When sewage invades your planned community home, we arrive with the PPE, antimicrobial treatments, and disposal protocols the situation demands.`,
 
-      \`Reston faces sewage risks during severe storms. The community's stormwater management directs significant runoff through the system, and extreme rainfall can overwhelm capacity. Older neighborhoods like Lake Anne Village and Hickory Cluster have aging sewer infrastructure approaching 60 years. Townhomes with lower-level bathrooms face backup risk when main lines are stressed.
+      `Reston faces sewage risks during severe storms. The community's stormwater management directs significant runoff through the system, and extreme rainfall can overwhelm capacity. Older neighborhoods like Lake Anne Village and Hickory Cluster have aging sewer infrastructure approaching 60 years. Townhomes with lower-level bathrooms face backup risk when main lines are stressed.
 
-Our crews don't approach sewage like regular water damage. This is biohazard work requiring specialized training, protective equipment, and disposal procedures that ensure your family's safety—and in Reston's cluster housing, potentially your neighbors' safety too.\`
+Our crews don't approach sewage like regular water damage. This is biohazard work requiring specialized training, protective equipment, and disposal procedures that ensure your family's safety—and in Reston's cluster housing, potentially your neighbors' safety too.`
     ],
     localContext: "Reston's sewer infrastructure varies by age and location. Original 1960s clusters have older systems more vulnerable to failure, while newer developments connect to more modern infrastructure. Both face backup risk during extreme storms."
   },

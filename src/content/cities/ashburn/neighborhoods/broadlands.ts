@@ -19,11 +19,11 @@ export const broadlandsNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Broadlands represents Ashburn's master-planned vision at its finest—tree-lined streets, meticulously maintained common areas, and a tight-knit community centered around the Nature Center and Village amenities. But this planned perfection creates unique water damage challenges that generic restoration companies don't understand.
+    paragraph: `Broadlands represents Ashburn's master-planned vision at its finest—tree-lined streets, meticulously maintained common areas, and a tight-knit community centered around the Nature Center and Village amenities. But this planned perfection creates unique water damage challenges that generic restoration companies don't understand.
 
 Flood Doctor has served Broadlands since the first homes were occupied in the early 2000s. We've addressed HOA retention pond overflow affecting multiple townhomes during summer storms, basement flooding from inadequate grading in single-family sections, builder defects in homes still under warranty, and the systematic drainage problems that appeared as development density exceeded original planning. Our response vehicles are positioned minutes from Broadlands—when you call about water damage near the Nature Center or Village Center, we're already nearby.
 
-This master-planned community—with its mix of townhomes, single-family homes, and condos across multiple neighborhoods—requires water damage expertise beyond typical residential work. HOA architectural review boards control restoration decisions. Retention ponds and common drainage infrastructure create liability questions when they fail. New construction defects appear in the newer sections. We understand all of it—because we've worked in every Broadlands neighborhood for nearly two decades.\`,
+This master-planned community—with its mix of townhomes, single-family homes, and condos across multiple neighborhoods—requires water damage expertise beyond typical residential work. HOA architectural review boards control restoration decisions. Retention ponds and common drainage infrastructure create liability questions when they fail. New construction defects appear in the newer sections. We understand all of it—because we've worked in every Broadlands neighborhood for nearly two decades.`,
 
     housingTypes: [
       "Single-family homes (2,500-4,500 sq ft)",

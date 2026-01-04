@@ -42,11 +42,11 @@ export const restonHomepageContent: HomepageContent = {
   heroSubheadline: "30-minute emergency response to Reston Town Center, South Lakes, Lake Anne & all Reston neighborhoods. Serving America's first planned community since 2005.",
 
   // Intro paragraph - 150-200 words, mentions 3+ neighborhoods and 2+ landmarks
-  introParagraph: \`When water threatens your Reston home, every minute counts. Whether you're in a Lake Anne townhome with views of Washington Plaza, a South Lakes colonial backing to one of Reston's 50+ miles of pathways, or a contemporary condo near Reston Town Center, Flood Doctor responds within 30 minutes—day or night.
+  introParagraph: `When water threatens your Reston home, every minute counts. Whether you're in a Lake Anne townhome with views of Washington Plaza, a South Lakes colonial backing to one of Reston's 50+ miles of pathways, or a contemporary condo near Reston Town Center, Flood Doctor responds within 30 minutes—day or night.
 
 Reston's planned community design creates unique water damage challenges. The integration of homes with lakes, streams, and natural areas means higher groundwater tables and flood exposure. Your HOA-maintained exterior doesn't mean you handle interior water damage alone. From cluster housing in Hunters Woods to single-family homes in North Point, we understand Reston's diverse housing stock.
 
-Our IICRC-certified crews know the Reston Association's covenants, the pathways that shortcut response times, and the tight timelines Reston homeowners expect. We've dried basements throughout Lake Anne Village, protected condos in Reston Town Center, and restored flooded lower levels across every Reston cluster. When your neighbor needs a recommendation, they call us—because we've already served your community.\`,
+Our IICRC-certified crews know the Reston Association's covenants, the pathways that shortcut response times, and the tight timelines Reston homeowners expect. We've dried basements throughout Lake Anne Village, protected condos in Reston Town Center, and restored flooded lower levels across every Reston cluster. When your neighbor needs a recommendation, they call us—because we've already served your community.`,
 
   // Why Choose Us - Each point includes local reference
   whyChooseUs: {
@@ -83,13 +83,13 @@ Our IICRC-certified crews know the Reston Association's covenants, the pathways 
   // Local Expertise Section - Heavy local references
   localExpertise: {
     headline: "Your Reston Water Damage Experts",
-    paragraph: \`Our Reston team lives and works in the community Robert E. Simon envisioned. We know that Reston Parkway traffic during rush hour can add 15 minutes to response times—which is why our crews are stationed throughout the Reston corridor, not just at a central warehouse.
+    paragraph: `Our Reston team lives and works in the community Robert E. Simon envisioned. We know that Reston Parkway traffic during rush hour can add 15 minutes to response times—which is why our crews are stationed throughout the Reston corridor, not just at a central warehouse.
 
 When a Hunters Woods homeowner calls at 2 AM about a burst pipe, we don't dispatch from Manassas or Fredericksburg. Our trucks are already positioned to reach Sunrise Valley Drive, South Lakes Drive, and North Shore Drive within our 30-minute guarantee.
 
 We've learned the unique challenges of Reston homes: the higher water tables near the four lakes, the cluster housing designs that require careful coordination with neighbors, the townhome associations with specific exterior requirements, and the aging infrastructure in original Lake Anne Village properties that can fail without warning.
 
-This isn't just about drying water—it's about understanding the planned community where neighbors share walls, pathways, and cluster maintenance, and restoring properties with full respect for that interconnected design.\`,
+This isn't just about drying water—it's about understanding the planned community where neighbors share walls, pathways, and cluster maintenance, and restoring properties with full respect for that interconnected design.`,
 
     architectureNote: "Diverse housing stock: townhomes, cluster housing, single-family colonials, contemporary condos, and high-rise residences near Reston Town Center. Many properties feature walkout basements facing natural areas or lake views.",
 
@@ -103,9 +103,9 @@ This isn't just about drying water—it's about understanding the planned commun
   },
 
   // Service Area Description
-  serviceAreaDescription: \`Flood Doctor of Reston provides 24/7 water damage restoration throughout Reston and surrounding areas. Our primary service area includes all Reston clusters, Reston Town Center, and the Lake Anne to North Point corridor—all within our 30-minute rapid response zone. Secondary coverage extends to Herndon, Sterling, and Great Falls within 60 minutes.
+  serviceAreaDescription: `Flood Doctor of Reston provides 24/7 water damage restoration throughout Reston and surrounding areas. Our primary service area includes all Reston clusters, Reston Town Center, and the Lake Anne to North Point corridor—all within our 30-minute rapid response zone. Secondary coverage extends to Herndon, Sterling, and Great Falls within 60 minutes.
 
-From the high-rises near Wiehle-Reston East Metro to the original townhomes surrounding Lake Anne, we serve every corner of Reston's 20190, 20191, and 20194 ZIP codes.\`,
+From the high-rises near Wiehle-Reston East Metro to the original townhomes surrounding Lake Anne, we serve every corner of Reston's 20190, 20191, and 20194 ZIP codes.`,
 
   // Emergency CTA
   emergencyCTA: {

@@ -14,13 +14,13 @@ export const restonFireDamageContent = {
   introSection: {
     headline: "Professional Fire & Smoke Damage Restoration for Reston Homes",
     paragraphs: [
-      \`After firefighters leave your Reston property, the real restoration challenge begins. The fire may be out, but smoke has penetrated every room, soot coats surfaces far from the flames, and water from suppression efforts saturates floors and walls. Your South Lakes colonial or Lake Anne townhome—with its finished spaces and carefully maintained interiors—now requires specialized restoration that most companies aren't equipped to provide.
+      `After firefighters leave your Reston property, the real restoration challenge begins. The fire may be out, but smoke has penetrated every room, soot coats surfaces far from the flames, and water from suppression efforts saturates floors and walls. Your South Lakes colonial or Lake Anne townhome—with its finished spaces and carefully maintained interiors—now requires specialized restoration that most companies aren't equipped to provide.
 
-Flood Doctor has restored fire-damaged properties throughout Reston for nearly two decades. We've removed soot from Hunters Woods kitchens, eliminated smoke odor from North Point colonials, and dried fire suppression water from walkout basements facing Reston's natural areas. Fire damage restoration combines smoke and soot cleaning, odor elimination, water damage restoration, and content cleaning—we handle all of it.\`,
+Flood Doctor has restored fire-damaged properties throughout Reston for nearly two decades. We've removed soot from Hunters Woods kitchens, eliminated smoke odor from North Point colonials, and dried fire suppression water from walkout basements facing Reston's natural areas. Fire damage restoration combines smoke and soot cleaning, odor elimination, water damage restoration, and content cleaning—we handle all of it.`,
 
-      \`Reston's diverse housing presents unique fire restoration challenges. Townhomes with party walls mean smoke and odor can migrate to neighbors' units. Cluster housing shares HVAC systems that spread contamination. Condos in Reston Town Center require coordination with building management and adjacent units. The planned community's interconnected design adds complexity that standalone homes don't face.
+      `Reston's diverse housing presents unique fire restoration challenges. Townhomes with party walls mean smoke and odor can migrate to neighbors' units. Cluster housing shares HVAC systems that spread contamination. Condos in Reston Town Center require coordination with building management and adjacent units. The planned community's interconnected design adds complexity that standalone homes don't face.
 
-We respond within hours of fire department clearance, beginning the restoration process while damage is still fresh. Early intervention saves more of your property—soot continues etching surfaces and smoke odor sets deeper every day.\`
+We respond within hours of fire department clearance, beginning the restoration process while damage is still fresh. Early intervention saves more of your property—soot continues etching surfaces and smoke odor sets deeper every day.`
     ],
     localContext: "Reston's townhomes, cluster housing, and condos create fire restoration challenges beyond typical residential work. Party wall concerns, shared HVAC, and neighbor coordination require expertise in the planned community's unique structure."
   },
@@ -75,7 +75,7 @@ We respond within hours of fire department clearance, beginning the restoration 
 
   townhomeFireConcerns: {
     headline: "Fire Damage in Reston Townhomes & Cluster Housing",
-    content: \`Fire in attached housing creates concerns beyond the affected unit. Reston's townhomes and cluster housing share walls, attic spaces, and sometimes HVAC systems—all pathways for smoke, soot, and odor to migrate.
+    content: `Fire in attached housing creates concerns beyond the affected unit. Reston's townhomes and cluster housing share walls, attic spaces, and sometimes HVAC systems—all pathways for smoke, soot, and odor to migrate.
 
 **Smoke Migration:** Even contained fires produce smoke that travels through party walls, shared attics, and connected ductwork. Neighbors may experience smoke odor and soot deposits without visible fire damage.
 
@@ -85,7 +85,7 @@ We respond within hours of fire department clearance, beginning the restoration 
 
 **HOA Coordination:** Fire damage affecting shared structures, roofing, or common areas requires HOA involvement. We understand Reston's governance and coordinate approvals while restoration proceeds.
 
-We approach townhome fires with full awareness of neighbor impact—assessing party walls, checking adjacent units, and coordinating with affected homeowners for complete restoration.\`,
+We approach townhome fires with full awareness of neighbor impact—assessing party walls, checking adjacent units, and coordinating with affected homeowners for complete restoration.`,
     keywords: ["townhome fire damage", "attached home fire", "party wall smoke damage", "cluster housing fire"]
   },
 

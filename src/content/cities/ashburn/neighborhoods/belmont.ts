@@ -19,11 +19,11 @@ export const belmontNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Belmont Country Club represents Ashburn's premier golf course community—luxury homes overlooking championship fairways, established neighborhoods, and a lifestyle centered around the club amenities. This upscale environment creates water damage challenges that require specialized restoration expertise.
+    paragraph: `Belmont Country Club represents Ashburn's premier golf course community—luxury homes overlooking championship fairways, established neighborhoods, and a lifestyle centered around the club amenities. This upscale environment creates water damage challenges that require specialized restoration expertise.
 
 Flood Doctor has served Belmont families since the community's development in the 2000s. We've addressed water damage in luxury single-family homes where finished basements include custom features worth tens of thousands, irrigation system failures from the golf course affecting adjacent properties, basement flooding in townhomes from inadequate grading during the construction boom, and HOA drainage disputes when common area infrastructure serves the club and residential properties simultaneously. Our crews understand that Belmont restoration requires discretion, premium service, and attention to high-value finishes.
 
-This golf course community—with luxury single-family estates, upscale townhomes, and condos overlooking the course—requires restoration expertise beyond typical suburban work. Many homes feature custom millwork, premium flooring, finished basements with home theaters and wine storage, and irrigation systems serving both golf course and residential landscaping. HOA architectural review standards control all exterior work. We've navigated these requirements across every Belmont neighborhood section.\`,
+This golf course community—with luxury single-family estates, upscale townhomes, and condos overlooking the course—requires restoration expertise beyond typical suburban work. Many homes feature custom millwork, premium flooring, finished basements with home theaters and wine storage, and irrigation systems serving both golf course and residential landscaping. HOA architectural review standards control all exterior work. We've navigated these requirements across every Belmont neighborhood section.`,
 
     housingTypes: [
       "Luxury single-family homes (3,500-6,000+ sq ft)",

@@ -19,11 +19,11 @@ export const lakeAnneNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Lake Anne Village is where Reston began—the original village center designed by architect James Rossant in the 1960s, built around Washington Plaza and the shores of Lake Anne. These historic townhomes and cluster homes represent the founding vision of America's first planned community. When water threatens these irreplaceable properties, you need restoration experts who understand original construction and the unique challenges of lakeside living.
+    paragraph: `Lake Anne Village is where Reston began—the original village center designed by architect James Rossant in the 1960s, built around Washington Plaza and the shores of Lake Anne. These historic townhomes and cluster homes represent the founding vision of America's first planned community. When water threatens these irreplaceable properties, you need restoration experts who understand original construction and the unique challenges of lakeside living.
 
 Flood Doctor has served Lake Anne Village for nearly two decades. We've extracted water from the iconic townhomes surrounding Washington Plaza, dried basement levels in Hickory Cluster, and restored homes throughout the original Lake Anne development. Our crews understand 1960s construction techniques, aging infrastructure approaching 60 years, and the higher water tables that come with lakefront property.
 
-Lake Anne's original construction—different from modern building standards—requires specialized restoration knowledge. Party walls, shared roofing, original plumbing, and vintage waterproofing systems all affect how we approach water damage. We treat each Lake Anne property with respect for its historic character while applying modern restoration science.\`,
+Lake Anne's original construction—different from modern building standards—requires specialized restoration knowledge. Party walls, shared roofing, original plumbing, and vintage waterproofing systems all affect how we approach water damage. We treat each Lake Anne property with respect for its historic character while applying modern restoration science.`,
 
     housingTypes: [
       "Original 1960s townhomes (Washington Plaza area)",
@@ -76,7 +76,7 @@ Lake Anne's original construction—different from modern building standards—r
 
   historicConstructionSection: {
     headline: "Restoring Original Lake Anne Construction",
-    content: \`Lake Anne Village's 1960s construction presents unique restoration challenges. These homes were built with techniques and materials different from modern standards—understanding these differences is essential for proper water damage restoration.
+    content: `Lake Anne Village's 1960s construction presents unique restoration challenges. These homes were built with techniques and materials different from modern standards—understanding these differences is essential for proper water damage restoration.
 
 **Original Plumbing:** Lake Anne's copper and galvanized plumbing is approaching 60 years old. Internal corrosion creates pinhole leaks and sudden failures. We understand these systems and can coordinate with plumbers experienced in original Reston construction.
 
@@ -84,7 +84,7 @@ Lake Anne's original construction—different from modern building standards—r
 
 **Party Wall Construction:** The townhomes around Washington Plaza and throughout Lake Anne Village share walls constructed with 1960s techniques. Moisture travels through these party walls differently than modern construction—we trace and address accordingly.
 
-**Historic Preservation Considerations:** Lake Anne Village's historic significance means restoration should respect original character when possible. We preserve original materials where feasible while ensuring complete water damage mitigation.\`,
+**Historic Preservation Considerations:** Lake Anne Village's historic significance means restoration should respect original character when possible. We preserve original materials where feasible while ensuring complete water damage mitigation.`,
     keywords: ["Lake Anne Village restoration", "historic Reston homes", "1960s construction water damage", "original Reston townhomes"]
   },
 

@@ -19,11 +19,11 @@ export const delRayNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Del Ray's charm comes from its human scale: tree-lined streets, front porches where neighbors chat, local businesses within walking distance, and the tight community bonds that make this one of Northern Virginia's most desirable neighborhoods. The housing stock—primarily 1920s-1940s bungalows and Cape Cods—represents an era when craftsmanship mattered but plumbing technology hadn't yet evolved to modern standards.
+    paragraph: `Del Ray's charm comes from its human scale: tree-lined streets, front porches where neighbors chat, local businesses within walking distance, and the tight community bonds that make this one of Northern Virginia's most desirable neighborhoods. The housing stock—primarily 1920s-1940s bungalows and Cape Cods—represents an era when craftsmanship mattered but plumbing technology hadn't yet evolved to modern standards.
 
 Flood Doctor has protected Del Ray homes for nearly two decades. We've extracted floodwater from crawl spaces after summer storms, dried out finished basements following sewer backups, and restored water-damaged hardwood floors in these charming homes. We understand Del Ray's community values—quick response, careful work, and respect for the neighborhood character that makes this area special.
 
-Del Ray's construction presents unique water damage challenges. Crawl space foundations vulnerable to groundwater infiltration. Original cast iron drain lines reaching end-of-service life. Galvanized supply pipes that corrode from the inside. Small lot sizes that complicate drainage. We've developed restoration approaches specific to Del Ray's building types, protecting these homes while maintaining the architectural character families love.\`,
+Del Ray's construction presents unique water damage challenges. Crawl space foundations vulnerable to groundwater infiltration. Original cast iron drain lines reaching end-of-service life. Galvanized supply pipes that corrode from the inside. Small lot sizes that complicate drainage. We've developed restoration approaches specific to Del Ray's building types, protecting these homes while maintaining the architectural character families love.`,
 
     housingTypes: [
       "1920s-1940s bungalows",

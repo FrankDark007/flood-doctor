@@ -19,11 +19,11 @@ export const oneLoudounNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`One Loudoun represents Ashburn's most ambitious vision—a walkable urban center combining luxury residences, retail, dining, and entertainment in Northern Virginia's Data Center Alley. This mixed-use development creates water damage challenges fundamentally different from traditional residential neighborhoods.
+    paragraph: `One Loudoun represents Ashburn's most ambitious vision—a walkable urban center combining luxury residences, retail, dining, and entertainment in Northern Virginia's Data Center Alley. This mixed-use development creates water damage challenges fundamentally different from traditional residential neighborhoods.
 
 Flood Doctor has served One Loudoun since the first residents moved into the luxury condominiums above the retail plaza. We've addressed water damage in high-rise units where supply line failures affected multiple floors, sprinkler system activations in commercial-residential buildings requiring specialized protocols, shared wall water intrusion between adjacent condos, and the unique challenges of restoration work in occupied mixed-use buildings. Our crews understand that One Loudoun water emergencies often require coordination with building management, condo associations, and commercial tenants.
 
-This urban environment—with luxury condos, apartments, and retail-residential units—requires restoration expertise beyond typical suburban work. Building systems serve multiple units simultaneously. Parking garage flooding affects resident storage areas. Elevator shafts can distribute water across multiple floors. HOA and condo association approvals control restoration decisions. We've navigated all of these complexities across One Loudoun's diverse properties.\`,
+This urban environment—with luxury condos, apartments, and retail-residential units—requires restoration expertise beyond typical suburban work. Building systems serve multiple units simultaneously. Parking garage flooding affects resident storage areas. Elevator shafts can distribute water across multiple floors. HOA and condo association approvals control restoration decisions. We've navigated all of these complexities across One Loudoun's diverse properties.`,
 
     housingTypes: [
       "Luxury condominiums (1,000-2,500 sq ft)",

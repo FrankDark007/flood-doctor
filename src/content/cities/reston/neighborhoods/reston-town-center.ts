@@ -19,11 +19,11 @@ export const restonTownCenterNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Reston Town Center represents the urban heart of Robert E. Simon's planned community—high-rise condos, mixed-use buildings, and a walkable downtown environment unlike anywhere else in Reston. When water threatens these properties, you need restoration experts who understand multi-family construction, building management coordination, and the unique challenges of high-rise living.
+    paragraph: `Reston Town Center represents the urban heart of Robert E. Simon's planned community—high-rise condos, mixed-use buildings, and a walkable downtown environment unlike anywhere else in Reston. When water threatens these properties, you need restoration experts who understand multi-family construction, building management coordination, and the unique challenges of high-rise living.
 
 Flood Doctor has served Reston Town Center since the first residential towers opened. We've extracted water from luxury condos in the Midtown buildings, dried units in the Avant and Parc Reston, and restored spaces in mixed-use properties throughout the Town Center district. Our crews understand elevator access, riser systems, building management protocols, and the multi-unit implications that come with connected living.
 
-The condos here—from studio units to multi-bedroom penthouses—require restoration expertise beyond typical residential work. Water damage in one unit can affect neighbors below through floor assemblies. Building-wide plumbing creates risks that standalone homes don't face. We approach each restoration with full awareness of Reston Town Center's integrated construction.\`,
+The condos here—from studio units to multi-bedroom penthouses—require restoration expertise beyond typical residential work. Water damage in one unit can affect neighbors below through floor assemblies. Building-wide plumbing creates risks that standalone homes don't face. We approach each restoration with full awareness of Reston Town Center's integrated construction.`,
 
     housingTypes: [
       "High-rise condos (10+ floors)",
@@ -69,7 +69,7 @@ The condos here—from studio units to multi-bedroom penthouses—require restor
 
   highRiseSpecifics: {
     headline: "Water Damage in High-Rise Condos",
-    content: \`Reston Town Center's high-rise condos present unique water damage challenges that single-family homes don't face. A burst pipe on the 12th floor can affect units on the 11th, 10th, and beyond as water travels through the building. Understanding these multi-unit implications is essential for proper restoration.
+    content: `Reston Town Center's high-rise condos present unique water damage challenges that single-family homes don't face. A burst pipe on the 12th floor can affect units on the 11th, 10th, and beyond as water travels through the building. Understanding these multi-unit implications is essential for proper restoration.
 
 **Building Coordination:** We work with property management, building engineers, and concierge staff to ensure proper access, elevator usage, and communication. Reston Town Center buildings have specific vendor protocols—we know them.
 
@@ -77,7 +77,7 @@ The condos here—from studio units to multi-bedroom penthouses—require restor
 
 **Below-Unit Impact:** Your water damage often affects the unit below you—and their damage may stem from the unit above you. We trace water migration paths through floor assemblies and coordinate with all affected owners.
 
-**HOA & Association Requirements:** Town Center condos have specific documentation requirements, approved contractor lists, and repair protocols. We provide the records associations require.\`,
+**HOA & Association Requirements:** Town Center condos have specific documentation requirements, approved contractor lists, and repair protocols. We provide the records associations require.`,
     keywords: ["high-rise water damage", "condo water damage", "Reston Town Center condo", "multi-unit water damage"]
   },
 

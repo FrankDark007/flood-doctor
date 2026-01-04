@@ -19,11 +19,11 @@ export const belleHavenNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Belle Haven's proximity to the Potomac River creates the scenic beauty that makes this one of Alexandria's most prestigious addresses—and the water table challenges that demand specialized restoration expertise. The neighborhood's established homes—primarily mid-century estates and updated properties on generous lots—represent significant investments requiring protection from water damage scenarios unique to waterfront locations.
+    paragraph: `Belle Haven's proximity to the Potomac River creates the scenic beauty that makes this one of Alexandria's most prestigious addresses—and the water table challenges that demand specialized restoration expertise. The neighborhood's established homes—primarily mid-century estates and updated properties on generous lots—represent significant investments requiring protection from water damage scenarios unique to waterfront locations.
 
 Flood Doctor has served Belle Haven property owners for nearly two decades. We've extracted basement flooding after spring high-water events, dried out finished lower levels following groundwater seepage, and restored homes after Potomac River flooding during major storm events. We understand the specific challenges Belle Haven faces: elevated water tables, tidal influence on groundwater levels, and seasonal flooding patterns that generic restoration companies don't encounter in inland locations.
 
-Belle Haven's waterfront location creates predictable water damage risks. Seasonal groundwater fluctuations that bring water tables within feet of basement floors. Tidal influence on subsurface conditions. Aging infrastructure in homes built 1940s-1970s. We've developed comprehensive approaches addressing both emergency water damage and the permanent solutions necessary to protect Belle Haven properties from recurring moisture issues.\`,
+Belle Haven's waterfront location creates predictable water damage risks. Seasonal groundwater fluctuations that bring water tables within feet of basement floors. Tidal influence on subsurface conditions. Aging infrastructure in homes built 1940s-1970s. We've developed comprehensive approaches addressing both emergency water damage and the permanent solutions necessary to protect Belle Haven properties from recurring moisture issues.`,
 
     housingTypes: [
       "Mid-century estates (1940s-1970s)",

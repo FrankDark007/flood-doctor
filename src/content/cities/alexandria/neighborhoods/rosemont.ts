@@ -19,11 +19,11 @@ export const rosemontNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Rosemont's tree-canopied streets and well-maintained homes represent Alexandria's established neighborhood character at its finest. The community's mix of 1930s-1950s colonials, Cape Cods, and ramblers attracts families who value walkability, strong schools, and the stability of a neighborhood that's weathered decades while maintaining its appeal. These homes embody quality construction from an era when craftsmanship mattered—but also aging infrastructure that eventually demands attention.
+    paragraph: `Rosemont's tree-canopied streets and well-maintained homes represent Alexandria's established neighborhood character at its finest. The community's mix of 1930s-1950s colonials, Cape Cods, and ramblers attracts families who value walkability, strong schools, and the stability of a neighborhood that's weathered decades while maintaining its appeal. These homes embody quality construction from an era when craftsmanship mattered—but also aging infrastructure that eventually demands attention.
 
 Flood Doctor has served Rosemont homeowners for nearly two decades. We've extracted basement flooding after summer storms, dried out finished lower levels following water heater failures, and restored homes after cast iron sewer line failures released sewage into living spaces. We understand the pride Rosemont residents take in their homes and the importance of restoration that respects these properties' character.
 
-Rosemont's mature landscape creates unique water damage risks. Tree roots infiltrate clay sewer pipes installed 70-90 years ago. Expansive clay soils shift with seasonal moisture changes, stressing foundations and plumbing connections. Original galvanized supply lines corrode from decades of use. We've developed expertise in the specific challenges Rosemont's housing stock presents, providing both emergency response and permanent solutions.\`,
+Rosemont's mature landscape creates unique water damage risks. Tree roots infiltrate clay sewer pipes installed 70-90 years ago. Expansive clay soils shift with seasonal moisture changes, stressing foundations and plumbing connections. Original galvanized supply lines corrode from decades of use. We've developed expertise in the specific challenges Rosemont's housing stock presents, providing both emergency response and permanent solutions.`,
 
     housingTypes: [
       "1930s-1950s colonials",

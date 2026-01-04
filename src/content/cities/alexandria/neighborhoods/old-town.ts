@@ -19,11 +19,11 @@ export const oldTownNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Old Town Alexandria represents Northern Virginia's richest architectural heritage: 18th and 19th-century townhouses with original plaster walls, hand-laid brick foundations, and irreplaceable historic details. Water damage in these properties demands specialized expertise that balances emergency response with preservation requirements. Generic restoration companies demolish first and ask questions later—destroying historic fabric that can never be replaced.
+    paragraph: `Old Town Alexandria represents Northern Virginia's richest architectural heritage: 18th and 19th-century townhouses with original plaster walls, hand-laid brick foundations, and irreplaceable historic details. Water damage in these properties demands specialized expertise that balances emergency response with preservation requirements. Generic restoration companies demolish first and ask questions later—destroying historic fabric that can never be replaced.
 
 Flood Doctor has restored water-damaged properties throughout the Old & Historic District for nearly two decades. We've dried original horsehair plaster walls without causing shrinkage cracks, extracted floodwater from basement apartments below the Potomac's water table, and navigated Board of Architectural Review requirements for dozens of exterior restoration projects. When Old Town property owners face water emergencies, they call restoration specialists who understand the difference between preservation and replacement.
 
-The neighborhood's unique challenges require uncommon expertise. Combined sewer systems that back up during heavy rainfall. Original brick foundations without modern waterproofing. Cast iron plumbing installed in the 1920s finally reaching failure point. Proximity to the Potomac creating elevated groundwater conditions. We've encountered every water damage scenario Old Town buildings present—and developed restoration approaches that protect both structure and historical integrity.\`,
+The neighborhood's unique challenges require uncommon expertise. Combined sewer systems that back up during heavy rainfall. Original brick foundations without modern waterproofing. Cast iron plumbing installed in the 1920s finally reaching failure point. Proximity to the Potomac creating elevated groundwater conditions. We've encountered every water damage scenario Old Town buildings present—and developed restoration approaches that protect both structure and historical integrity.`,
 
     housingTypes: [
       "18th-century brick townhouses",

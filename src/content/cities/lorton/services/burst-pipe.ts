@@ -16,13 +16,13 @@ export const lortonBurstPipeContent: ServicePageContent = {
   introSection: {
     headline: "Emergency Burst Pipe Response Throughout Lorton",
     paragraphs: [
-      \`A burst pipe in your Lorton home doesn't announce itself politely. Water erupts from walls, ceilings, or basements—gallons per minute flooding your Laurel Hill townhome, your Mason Neck waterfront property, or your established Gunston residence. Whether it's a frozen supply line that ruptures on a January night or a corroded pipe that fails beneath your South County kitchen, burst pipes create immediate emergencies.
+      `A burst pipe in your Lorton home doesn't announce itself politely. Water erupts from walls, ceilings, or basements—gallons per minute flooding your Laurel Hill townhome, your Mason Neck waterfront property, or your established Gunston residence. Whether it's a frozen supply line that ruptures on a January night or a corroded pipe that fails beneath your South County kitchen, burst pipes create immediate emergencies.
 
-Flood Doctor responds to burst pipe emergencies throughout Lorton within 30 minutes. We've shut off water and extracted flooding from Laurel Hill's newest construction, dried water-damaged walls in Occoquan's historic properties, and saved hardwood floors throughout South County after catastrophic pipe failures. When your neighbor's pipe bursts, they call us—because minutes matter.\`,
+Flood Doctor responds to burst pipe emergencies throughout Lorton within 30 minutes. We've shut off water and extracted flooding from Laurel Hill's newest construction, dried water-damaged walls in Occoquan's historic properties, and saved hardwood floors throughout South County after catastrophic pipe failures. When your neighbor's pipe bursts, they call us—because minutes matter.`,
 
-      \`Lorton's burst pipe risks reflect our housing diversity. New Laurel Hill construction features PEX and modern materials that can fail at connection points. Older Gunston and Occoquan properties often have galvanized steel or copper pipes vulnerable to corrosion and freeze damage. Mason Neck homes on wooded lots may have exposed plumbing in crawlspaces where freezing creates winter burst risks.
+      `Lorton's burst pipe risks reflect our housing diversity. New Laurel Hill construction features PEX and modern materials that can fail at connection points. Older Gunston and Occoquan properties often have galvanized steel or copper pipes vulnerable to corrosion and freeze damage. Mason Neck homes on wooded lots may have exposed plumbing in crawlspaces where freezing creates winter burst risks.
 
-Our IICRC-certified crews don't just extract water—we coordinate with licensed plumbers to stop the source, then restore the damage. Your Lorton home needs both emergency plumbing response and professional water damage restoration, and we handle the entire process.\`
+Our IICRC-certified crews don't just extract water—we coordinate with licensed plumbers to stop the source, then restore the damage. Your Lorton home needs both emergency plumbing response and professional water damage restoration, and we handle the entire process.`
     ],
     localContext: "Lorton's burst pipe emergencies range from frozen pipes in Occoquan's historic homes to connection failures in Laurel Hill's new construction to corrosion issues in South County's established neighborhoods. We've handled every scenario since 2005."
   },

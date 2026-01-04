@@ -19,11 +19,11 @@ export const ashburnFarmNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Ashburn Farm represents one of Ashburn's original master-planned communities—established neighborhoods, mature landscaping, and a community that's weathered two decades of Northern Virginia growth. This maturity creates water damage patterns different from newer developments.
+    paragraph: `Ashburn Farm represents one of Ashburn's original master-planned communities—established neighborhoods, mature landscaping, and a community that's weathered two decades of Northern Virginia growth. This maturity creates water damage patterns different from newer developments.
 
 Flood Doctor has served Ashburn Farm families since the early 2000s. We've addressed aging infrastructure water damage in homes from the 1990s development phases, tree root intrusion into sewer lines from the mature landscaping that defines the community, basement flooding from the clay soil common throughout the area, and HOA drainage system maintenance failures affecting multiple homes. Our crews know Ashburn Farm's streets, understand the community's infrastructure, and respond within 20 minutes—because we've been serving this neighborhood since many of today's homes were new construction.
 
-This established community—with its mix of townhomes, single-family homes, and condos across multiple interconnected neighborhoods—requires restoration expertise that accounts for aging infrastructure alongside newer construction. Some homes are approaching 30 years old with original plumbing and HVAC systems. Others are recent builds on infill lots. HOA common area drainage serves thousands of homes. We've worked in every Ashburn Farm section and understand the full range of water damage challenges.\`,
+This established community—with its mix of townhomes, single-family homes, and condos across multiple interconnected neighborhoods—requires restoration expertise that accounts for aging infrastructure alongside newer construction. Some homes are approaching 30 years old with original plumbing and HVAC systems. Others are recent builds on infill lots. HOA common area drainage serves thousands of homes. We've worked in every Ashburn Farm section and understand the full range of water damage challenges.`,
 
     housingTypes: [
       "Single-family homes (2,000-4,000 sq ft)",

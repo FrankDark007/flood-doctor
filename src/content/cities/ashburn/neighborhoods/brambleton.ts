@@ -19,11 +19,11 @@ export const brambletonNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Brambleton represents Ashburn's newest evolution—a walkable town center, diverse housing options, and a community designed for modern living. But this recent development creates specific water damage challenges that older restoration companies don't understand.
+    paragraph: `Brambleton represents Ashburn's newest evolution—a walkable town center, diverse housing options, and a community designed for modern living. But this recent development creates specific water damage challenges that older restoration companies don't understand.
 
 Flood Doctor has specialized in Brambleton water damage restoration since the first residents moved into the Town Center area. We've addressed construction defects in brand-new townhomes where builders rushed completion, basement flooding from grading problems that appeared during the first major storm, HOA stormwater infrastructure overwhelmed by development density, and the systematic issues that emerge when farmland transforms into high-density residential within a decade. Our crews respond within 15 minutes—because we understand that Brambleton families chose this community for quality of life that water damage threatens.
 
-This master-planned community—with its mix of single-family homes, townhomes, condos, and apartments across dozens of neighborhoods—requires specialized restoration expertise. Many homes are under builder warranty and defects must be documented properly. HOA architectural review boards control exterior restoration decisions. Common area drainage creates liability questions. New construction materials require different drying protocols than older homes. We've navigated all of it across every Brambleton neighborhood.\`,
+This master-planned community—with its mix of single-family homes, townhomes, condos, and apartments across dozens of neighborhoods—requires specialized restoration expertise. Many homes are under builder warranty and defects must be documented properly. HOA architectural review boards control exterior restoration decisions. Common area drainage creates liability questions. New construction materials require different drying protocols than older homes. We've navigated all of it across every Brambleton neighborhood.`,
 
     housingTypes: [
       "Single-family homes (2,200-5,000 sq ft)",

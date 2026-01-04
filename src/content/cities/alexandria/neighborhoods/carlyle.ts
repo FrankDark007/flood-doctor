@@ -19,11 +19,11 @@ export const carlyleNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Carlyle represents Alexandria's modern urban evolution: high-rise condominiums, mixed-use development, and transit-oriented living that attracts young professionals and empty-nesters seeking maintenance-free lifestyles. The neighborhood's construction—primarily 2000s-2020s concrete mid-rise and high-rise buildings—presents water damage scenarios entirely different from Alexandria's historic properties. Multi-unit coordination, HOA requirements, and complex building systems demand restoration expertise specific to modern condominium construction.
+    paragraph: `Carlyle represents Alexandria's modern urban evolution: high-rise condominiums, mixed-use development, and transit-oriented living that attracts young professionals and empty-nesters seeking maintenance-free lifestyles. The neighborhood's construction—primarily 2000s-2020s concrete mid-rise and high-rise buildings—presents water damage scenarios entirely different from Alexandria's historic properties. Multi-unit coordination, HOA requirements, and complex building systems demand restoration expertise specific to modern condominium construction.
 
 Flood Doctor has served Carlyle residents and property managers for nearly two decades. We've extracted water from condominiums affected by upstairs unit leaks, dried out units following HVAC failures, and coordinated multi-unit restoration after building envelope failures. We understand the unique challenges of condominium water damage—shared responsibility, insurance complexity, and the urgency of preventing damage spread to neighboring units.
 
-Carlyle's construction creates specific water damage patterns. HVAC condensate drainage failures affecting units below. Supply line leaks within common walls impacting multiple owners. Building envelope failures during heavy rainfall. Underground parking garage flooding from storm events. We've developed protocols addressing these scenarios while navigating HOA requirements, coordinating with property management, and minimizing disruption to building occupants.\`,
+Carlyle's construction creates specific water damage patterns. HVAC condensate drainage failures affecting units below. Supply line leaks within common walls impacting multiple owners. Building envelope failures during heavy rainfall. Underground parking garage flooding from storm events. We've developed protocols addressing these scenarios while navigating HOA requirements, coordinating with property management, and minimizing disruption to building occupants.`,
 
     housingTypes: [
       "High-rise condominiums (10-20 stories)",

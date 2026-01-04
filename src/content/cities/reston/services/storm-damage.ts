@@ -14,13 +14,13 @@ export const restonStormDamageContent = {
   introSection: {
     headline: "Comprehensive Storm Damage Restoration for Reston's Planned Community",
     paragraphs: [
-      \`When severe weather crosses Fairfax County, Reston's integration with natural areas creates compound damage scenarios. The mature trees along the 55+ miles of pathways can drop limbs onto roofs, crash through fences, or topple onto the power lines that serve cluster housing. Add wind-driven rain, hail damage, and overwhelmed stormwater systems, and a single storm can create multiple damage types across Reston's diverse housing stock.
+      `When severe weather crosses Fairfax County, Reston's integration with natural areas creates compound damage scenarios. The mature trees along the 55+ miles of pathways can drop limbs onto roofs, crash through fences, or topple onto the power lines that serve cluster housing. Add wind-driven rain, hail damage, and overwhelmed stormwater systems, and a single storm can create multiple damage types across Reston's diverse housing stock.
 
-Flood Doctor responds to storm damage throughout Reston within 30 minutes of safe travel conditions. We've tarped roofs in Hunters Woods during active weather, extracted storm water from South Lakes basements, and coordinated tree removal with restoration at North Point properties. Storm damage requires rapid response to prevent secondary water damage—every hour a compromised roof leaks, restoration costs climb.\`,
+Flood Doctor responds to storm damage throughout Reston within 30 minutes of safe travel conditions. We've tarped roofs in Hunters Woods during active weather, extracted storm water from South Lakes basements, and coordinated tree removal with restoration at North Point properties. Storm damage requires rapid response to prevent secondary water damage—every hour a compromised roof leaks, restoration costs climb.`,
 
-      \`Reston's storm damage differs from typical suburban properties. Townhomes with shared roofs mean one unit's damage can affect neighbors. The pathway system's mature trees create debris impact risk throughout the community. Walkout basements facing natural areas receive concentrated runoff during heavy storms.
+      `Reston's storm damage differs from typical suburban properties. Townhomes with shared roofs mean one unit's damage can affect neighbors. The pathway system's mature trees create debris impact risk throughout the community. Walkout basements facing natural areas receive concentrated runoff during heavy storms.
 
-We coordinate all aspects of storm restoration: emergency tarping, water extraction, structural drying, debris removal coordination, and insurance documentation. One call handles everything—from the moment the storm passes until your planned community home is restored.\`
+We coordinate all aspects of storm restoration: emergency tarping, water extraction, structural drying, debris removal coordination, and insurance documentation. One call handles everything—from the moment the storm passes until your planned community home is restored.`
     ],
     localContext: "Reston's integration with natural areas and mature tree canopy creates storm vulnerabilities unique to the planned community. Townhome construction adds neighbor coordination requirements that standalone homes don't face."
   },
@@ -100,7 +100,7 @@ We coordinate all aspects of storm restoration: emergency tarping, water extract
 
   townhomeConsiderations: {
     headline: "Storm Damage in Reston Townhomes & Cluster Housing",
-    content: \`Reston's cluster housing adds complexity to storm damage restoration. When storms damage shared roofing, party walls, or common areas, the situation involves multiple homeowners, HOAs, and sometimes the Reston Association.
+    content: `Reston's cluster housing adds complexity to storm damage restoration. When storms damage shared roofing, party walls, or common areas, the situation involves multiple homeowners, HOAs, and sometimes the Reston Association.
 
 **Shared Roof Damage:** Many Reston townhomes share roofing assemblies. When a tree limb penetrates the roof above one unit, water can travel to affect neighbors. We assess all connected units and coordinate with all affected homeowners.
 
@@ -108,7 +108,7 @@ We coordinate all aspects of storm restoration: emergency tarping, water extract
 
 **Common Area Damage:** Storm damage to cluster common areas—pathways, landscaping, shared structures—may require Reston Association involvement. We coordinate with property managers when restoration affects common elements.
 
-Our goal is complete restoration with proper coordination—protecting your unit while respecting the planned community structure that makes Reston unique.\`,
+Our goal is complete restoration with proper coordination—protecting your unit while respecting the planned community structure that makes Reston unique.`,
     keywords: ["townhome storm damage", "cluster housing storm", "shared roof damage", "HOA storm coordination"]
   },
 

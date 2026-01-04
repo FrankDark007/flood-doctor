@@ -19,11 +19,11 @@ export const huntersWoodsNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`Hunters Woods stands as one of Reston's original village centers—a mix of cluster townhomes, single-family colonials, and the active senior community around Fellowship House. The neighborhood's mature trees, established landscaping, and convenient access to Hunters Woods Village Center make it a desirable Reston address. When water damage strikes, you need restoration experts who understand the diverse housing stock and tight-knit community character.
+    paragraph: `Hunters Woods stands as one of Reston's original village centers—a mix of cluster townhomes, single-family colonials, and the active senior community around Fellowship House. The neighborhood's mature trees, established landscaping, and convenient access to Hunters Woods Village Center make it a desirable Reston address. When water damage strikes, you need restoration experts who understand the diverse housing stock and tight-knit community character.
 
 Flood Doctor has served Hunters Woods families for nearly two decades. We've extracted water from cluster townhomes throughout the neighborhood, dried colonials along Colts Neck Road, and restored properties near Fellowship House. Our crews understand the range of 1970s-80s construction here, the mature tree root systems that can infiltrate sewer lines, and the cluster housing coordination that makes Hunters Woods restoration unique.
 
-The housing diversity—from compact townhomes to spacious colonials—requires adaptable restoration approaches. We scale our equipment and approach to each property type while maintaining the same urgency and thoroughness regardless of home size.\`,
+The housing diversity—from compact townhomes to spacious colonials—requires adaptable restoration approaches. We scale our equipment and approach to each property type while maintaining the same urgency and thoroughness regardless of home size.`,
 
     housingTypes: [
       "Cluster townhomes (1,200-2,000 sq ft)",
@@ -75,7 +75,7 @@ The housing diversity—from compact townhomes to spacious colonials—requires 
 
   clusterHousingSection: {
     headline: "Water Damage in Hunters Woods Cluster Housing",
-    content: \`Hunters Woods features extensive cluster housing—townhomes and attached homes sharing walls, common areas, and sometimes utility connections. This interconnected design adds considerations that standalone homes don't face.
+    content: `Hunters Woods features extensive cluster housing—townhomes and attached homes sharing walls, common areas, and sometimes utility connections. This interconnected design adds considerations that standalone homes don't face.
 
 **Party Wall Concerns:** Water damage in your townhome can travel through shared walls to affect neighbors. We assess all party walls using thermal imaging and coordinate with adjacent homeowners when moisture has migrated.
 
@@ -85,7 +85,7 @@ The housing diversity—from compact townhomes to spacious colonials—requires 
 
 **Neighbor Communication:** In tight-knit clusters, your water emergency affects more than just your property. We communicate professionally with neighboring homeowners, keeping everyone informed and addressing community concerns.
 
-Our experience with Hunters Woods clusters means we understand the coordination required—protecting your home while respecting the community structure.\`,
+Our experience with Hunters Woods clusters means we understand the coordination required—protecting your home while respecting the community structure.`,
     keywords: ["Hunters Woods townhome", "cluster housing water damage", "Reston townhome flooding"]
   },
 

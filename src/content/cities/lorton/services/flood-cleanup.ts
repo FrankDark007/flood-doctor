@@ -16,13 +16,13 @@ export const lortonFloodCleanupContent: ServicePageContent = {
   introSection: {
     headline: "Expert Flood Response for Lorton's Waterfront Community",
     paragraphs: [
-      \`Flooding in Lorton strikes from multiple sources—the Occoquan River overflowing its banks during tropical storms, Pohick Creek surging after spring downpours, storm drainage overwhelmed throughout South County, or tidal backflow affecting Mason Neck's waterfront properties. When floodwater enters your home, you need restoration experts who understand Lorton's unique flooding risks.
+      `Flooding in Lorton strikes from multiple sources—the Occoquan River overflowing its banks during tropical storms, Pohick Creek surging after spring downpours, storm drainage overwhelmed throughout South County, or tidal backflow affecting Mason Neck's waterfront properties. When floodwater enters your home, you need restoration experts who understand Lorton's unique flooding risks.
 
-Flood Doctor has responded to every major flood event in Lorton for nearly two decades. We've cleaned up after tropical storm remnants flooded Occoquan River properties, extracted floodwater from Laurel Hill basements when storm drains backed up, and restored Mason Neck homes after tidal surge events. When Lorton floods, we're already positioned to respond.\`,
+Flood Doctor has responded to every major flood event in Lorton for nearly two decades. We've cleaned up after tropical storm remnants flooded Occoquan River properties, extracted floodwater from Laurel Hill basements when storm drains backed up, and restored Mason Neck homes after tidal surge events. When Lorton floods, we're already positioned to respond.`,
 
-      \`Lorton's location within the Occoquan River watershed creates flood vulnerability that extends miles from actual waterfront. Heavy rainfall in upstream areas creates downstream flooding in our community hours later. Mason Neck's proximity to the Potomac means tidal influences during storm surge. South County's rapid development sometimes strains storm drainage beyond design capacity.
+      `Lorton's location within the Occoquan River watershed creates flood vulnerability that extends miles from actual waterfront. Heavy rainfall in upstream areas creates downstream flooding in our community hours later. Mason Neck's proximity to the Potomac means tidal influences during storm surge. South County's rapid development sometimes strains storm drainage beyond design capacity.
 
-Our IICRC-certified flood restoration crews understand that floodwater isn't clean water—it's contaminated Category 2 or 3 water requiring specialized cleanup protocols to protect your family's health.\`
+Our IICRC-certified flood restoration crews understand that floodwater isn't clean water—it's contaminated Category 2 or 3 water requiring specialized cleanup protocols to protect your family's health.`
     ],
     localContext: "Lorton's flood risks range from Occoquan River overflow to tidal surge on Mason Neck to storm drainage backup throughout South County and Laurel Hill. We've restored flood-damaged homes throughout our watershed community since 2005."
   },

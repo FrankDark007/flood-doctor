@@ -19,11 +19,11 @@ export const southLakesNeighborhoodContent = {
   },
 
   neighborhoodIntro: {
-    paragraph: \`South Lakes represents Reston's family-friendly core—tree-lined streets, quality schools, and housing diversity from starter townhomes to established colonials. The neighborhood's proximity to Lake Thoreau and Lake Audubon creates the natural beauty Reston is known for—and the groundwater challenges that lake-adjacent properties face.
+    paragraph: `South Lakes represents Reston's family-friendly core—tree-lined streets, quality schools, and housing diversity from starter townhomes to established colonials. The neighborhood's proximity to Lake Thoreau and Lake Audubon creates the natural beauty Reston is known for—and the groundwater challenges that lake-adjacent properties face.
 
 Flood Doctor has served South Lakes families for nearly two decades. We've extracted flood water from basements along South Lakes Drive, dried walkout lower levels backing to nature areas, and restored townhomes in clusters throughout the neighborhood. Our crews know the shortcuts through Reston's pathway system, the water table challenges near the lakes, and the tight timelines South Lakes families expect.
 
-The housing here—ranging from 1,500-square-foot townhomes to 4,000-square-foot colonials—requires restoration approaches that adapt to each property type. We treat each South Lakes home with the same urgency, whether you're near South Lakes High School or tucked into a quiet cluster off Glade Drive.\`,
+The housing here—ranging from 1,500-square-foot townhomes to 4,000-square-foot colonials—requires restoration approaches that adapt to each property type. We treat each South Lakes home with the same urgency, whether you're near South Lakes High School or tucked into a quiet cluster off Glade Drive.`,
 
     housingTypes: [
       "Colonial single-family homes (2,500-4,000+ sq ft)",
@@ -100,11 +100,11 @@ The housing here—ranging from 1,500-square-foot townhomes to 4,000-square-foot
 
   walkoutBasementFocus: {
     headline: "Walkout Basement Flooding in South Lakes",
-    content: \`South Lakes' topography created hundreds of homes with walkout basements—lower levels with exterior access facing backyards, nature areas, or lake views. These desirable spaces face unique flooding challenges.
+    content: `South Lakes' topography created hundreds of homes with walkout basements—lower levels with exterior access facing backyards, nature areas, or lake views. These desirable spaces face unique flooding challenges.
 
 Walkout basements sit partially below grade with exterior doors at ground level. During heavy rain, water flows downhill toward these openings. Properties backing to preserved natural areas receive runoff from woodlands. Lake-adjacent homes face higher water tables that rise during wet periods.
 
-We've restored flooded walkout basements throughout South Lakes: the family rooms off Soapstone Drive, the home offices near Twin Branches, and the recreation spaces backing to Lake Thoreau. Understanding walkout-specific vulnerabilities—both below-grade and at-grade—is essential for proper restoration.\`,
+We've restored flooded walkout basements throughout South Lakes: the family rooms off Soapstone Drive, the home offices near Twin Branches, and the recreation spaces backing to Lake Thoreau. Understanding walkout-specific vulnerabilities—both below-grade and at-grade—is essential for proper restoration.`,
     keywords: ["walkout basement South Lakes", "basement flooding Reston", "lake area water damage"]
   },
 
