@@ -20,7 +20,8 @@
 | Service Areas | 7 | Ready |
 | Blog Cards | 9 | Ready |
 | Contact Forms | 8 | Ready |
-| **Total Components** | **65+** | |
+| Service Forms | 5 | Ready |
+| **Total Components** | **70+** | |
 
 ---
 
@@ -39,6 +40,7 @@
 | Service Areas | https://github.com/FrankDark007/NoVA-Service-Areas |
 | Blog Cards | https://github.com/FrankDark007/Blog-Card-Variants |
 | Contact Forms | https://github.com/FrankDark007/Contact-form-Variants |
+| Service Forms | https://github.com/FrankDark007/Request-service-form-variants |
 
 ---
 
@@ -190,7 +192,22 @@
 
 ---
 
-## 10. Process Components (`/process/`)
+## 10. Service Request Forms (`/service-forms/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `ServiceFormMinimal.tsx` | Clean single-column, floating labels | Simple requests |
+| `ServiceFormSplit.tsx` | Two-column with trust badges | Main service page |
+| `ServiceFormStepper.tsx` | Multi-step wizard (3 steps) | Complex requests |
+| `ServiceFormCard.tsx` | Card sections, collapsible | Organized input |
+| `ServiceFormEmergency.tsx` | Urgent red styling, simplified | Emergency services |
+
+**Dependencies:** `lucide-react`, `types.ts`
+**Features:** Validation states, loading spinners, mobile-responsive
+
+---
+
+## 11. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -204,7 +221,7 @@
 
 ---
 
-## 11. Longpage Layout (`/longpage/`)
+## 12. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
