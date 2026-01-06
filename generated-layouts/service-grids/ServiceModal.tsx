@@ -61,14 +61,14 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
             </div>
           </div>
 
-          <div className="prose prose-slate max-w-none mb-8">
+          <div className="prose prose-slate max-w-none mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Service Overview</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
               {service.details}
             </p>
           </div>
 
-          <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 mb-8">
+          <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
             <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                What to expect
             </h4>
