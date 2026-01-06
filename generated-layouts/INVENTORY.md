@@ -21,7 +21,8 @@
 | Blog Cards | 9 | Ready |
 | Contact Forms | 8 | Ready |
 | Service Forms | 5 | Ready |
-| **Total Components** | **70+** | |
+| City Landing | 8 | Ready |
+| **Total Components** | **78+** | |
 
 ---
 
@@ -41,6 +42,7 @@
 | Blog Cards | https://github.com/FrankDark007/Blog-Card-Variants |
 | Contact Forms | https://github.com/FrankDark007/Contact-form-Variants |
 | Service Forms | https://github.com/FrankDark007/Request-service-form-variants |
+| City Landing | https://github.com/FrankDark007/Local-City-Landing-Page |
 
 ---
 
@@ -207,7 +209,26 @@
 
 ---
 
-## 11. Process Components (`/process/`)
+## 11. City Landing Page (`/city-landing/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `CityHero.tsx` | Localized hero with city name | Above-fold impact |
+| `CityProximity.tsx` | Distance/response time display | Local trust |
+| `CityTestimonials.tsx` | City-filtered reviews | Social proof |
+| `CityServices.tsx` | Available services grid | Service overview |
+| `CityEmergencyBanner.tsx` | Urgent local CTA | Emergency conversion |
+| `CityMap.tsx` | Service area visualization | Coverage display |
+| `CityFAQ.tsx` | Location-specific questions | SEO + answers |
+| `CityPageLayout.tsx` | Main layout composition | Full page template |
+
+**Dependencies:** `lucide-react`, `types.ts`, `constants.ts`
+**Data:** Falls Church, VA sample data included
+**SEO:** Schema-ready, city name in H1/title
+
+---
+
+## 12. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -221,7 +242,7 @@
 
 ---
 
-## 12. Longpage Layout (`/longpage/`)
+## 13. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
@@ -354,5 +375,5 @@ import ProcessBento from './generated-layouts/process/ProcessBento';
 
 - [x] ~~Add more section types (CTA, Trust, FAQ standalone)~~ ✅ Complete
 - [x] ~~Create blog post layouts~~ ✅ Complete (9 variants)
-- [ ] Generate city-specific landing page variants
+- [x] ~~Generate city-specific landing page variants~~ ✅ Complete (8 components)
 - [ ] Build component preview routes at `/dev/`
