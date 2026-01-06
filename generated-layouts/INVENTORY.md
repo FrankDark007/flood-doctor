@@ -18,7 +18,8 @@
 | Trust Suite | 6 | Ready |
 | Longpage Layout | 1 (10 sections) | Ready |
 | Service Areas | 7 | Ready |
-| **Total Components** | **48+** | |
+| Blog Cards | 9 | Ready |
+| **Total Components** | **57+** | |
 
 ---
 
@@ -35,6 +36,7 @@
 | Testimonials | https://github.com/FrankDark007/Testimonials-Variants |
 | Trust Suite | https://github.com/FrankDark007/Trust-Suite-Variants |
 | Service Areas | https://github.com/FrankDark007/NoVA-Service-Areas |
+| Blog Cards | https://github.com/FrankDark007/Blog-Card-Variants |
 
 ---
 
@@ -150,7 +152,25 @@
 
 ---
 
-## 8. Process Components (`/process/`)
+## 8. Blog Cards (`/blog-cards/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `BlogCardStandard.tsx` | Classic card with image | Blog listing pages |
+| `BlogCardHorizontal.tsx` | Side-by-side layout | Featured posts |
+| `BlogCardOverlay.tsx` | Text over image | Visual impact |
+| `BlogCardMinimal.tsx` | Clean, text-focused | Simple listings |
+| `BlogCardCompact.tsx` | Small footprint | Sidebar widgets |
+| `BlogCardFloat.tsx` | Floating/elevated style | Premium feel |
+| `BlogCardBrutalist.tsx` | Bold, raw aesthetic | Edgy design |
+| `BlogCardTypographic.tsx` | Typography-focused | Editorial style |
+| `ResourceCard.tsx` | Downloadable resources | Guides, PDFs |
+
+**Dependencies:** `lucide-react`, `types.ts`
+
+---
+
+## 9. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -164,7 +184,7 @@
 
 ---
 
-## 9. Longpage Layout (`/longpage/`)
+## 10. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
@@ -296,6 +316,6 @@ import ProcessBento from './generated-layouts/process/ProcessBento';
 ## Next Steps
 
 - [x] ~~Add more section types (CTA, Trust, FAQ standalone)~~ ✅ Complete
-- [ ] Create blog post layouts
+- [x] ~~Create blog post layouts~~ ✅ Complete (9 variants)
 - [ ] Generate city-specific landing page variants
 - [ ] Build component preview routes at `/dev/`
