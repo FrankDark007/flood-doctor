@@ -10,12 +10,258 @@
 **Status:** ✅ DEPLOYED TO PRODUCTION
 **Live URL:** https://flood.doctor
 **Created:** 2026-01-02
-**Updated:** 2026-01-04
+**Updated:** 2026-01-06 (Mobile white screen fix)
 
 ---
 
-## 🔧 LATEST FIX (2026-01-04)
+## 🔧 LATEST FIX (2026-01-06)
 
+### ✅ Mobile White Screen Issue Fixed
+
+**Symptoms:** Mobile users saw header flash briefly, then white page
+
+**Root Cause:** CSS file (`index-BIXi-BcU.css`) was missing from GoDaddy server. When Apache couldn't find the file, the `.htaccess` SPA fallback served `index.html` instead. This meant:
+- Server returned HTML with `content-type: text/html` when CSS was requested
+- Browser couldn't parse HTML as CSS → no styles loaded
+- Page rendered without any styling → appeared as white screen after brief header flash
+
+**Fix Applied:**
+1. Uploaded CSS file via FTP: `curl -T dist/assets/index-BIXi-BcU.css ftp://132.148.253.156/assets/`
+2. Purged Cloudflare cache
+
+**Verification:**
+- CSS now returns `content-type: text/css` ✅
+- JS bundles loading correctly ✅
+- Mobile response includes CSS reference ✅
+
+**Prevention:** When deploying, always verify critical assets are uploaded:
+```bash
+curl -sI "https://flood.doctor/assets/index-*.css" | grep content-type
+# Should return: content-type: text/css
+```
+
+---
+
+## 🔧 LATEST WORK (2026-01-05)
+
+### ✅ ALL 6 PHASES OF VISUAL ENHANCEMENT COMPLETE
+
+**Purpose:** Transform website from plain layouts to Google-style animated experiences with scroll animations, micro-interactions, and differentiated page styles.
+
+**6-Phase Visual Enhancement Plan — ALL COMPLETE:**
+| Phase | Status | Files Modified |
+|-------|--------|----------------|
+| 1. Animation Foundation | ✅ Complete | Framer Motion installed |
+| 2. Homepage Transformation | ✅ Complete | `/pages/Home.tsx` |
+| 3. Blog Articles Redesign | ✅ Complete | `/components/blog/AnimatedBlogComponents.tsx`, sample articles |
+| 4. Service Pages Differentiation | ✅ Complete | `/pages/templates/ServiceDetail.tsx`, `/pages/ServicesHub.tsx` |
+| 5. City Pages Polish | ✅ Complete | `/pages/city/CityLanding.tsx` |
+| 6. Micro-interactions | ✅ Complete | Shared components already have good CSS transitions |
+
+---
+
+### Phase 4 & 5 Details (2026-01-05 Session)
+
+**ServiceDetail.tsx Animations Added:**
+- Google-style easing curve `[0.22, 1, 0.36, 1]`
+- Hero with staggered content reveal and floating background elements
+- Sticky navigation with `layoutId` animated indicator
+- Process steps with alternating layouts and scroll-triggered animations
+- FAQ accordion with `AnimatePresence` for smooth expand/collapse
+- CTA sections with infinite floating background animations
+
+**ServicesHub.tsx Animations Added:**
+- Animated hero section with parallax elements
+- Service card grids with staggered entrance animations
+- Testimonial section with star rating animation
+- Cross-sell section with image parallax
+- Trust badges with hover micro-interactions
+- Bottom CTA with floating background blobs
+
+**CityLanding.tsx Animations Added:**
+- Hero with floating background elements and staggered badge reveal
+- Stats bar with spring-animated number reveals
+- Feature cards with hover lift effects
+- Neighborhood table with row-by-row entrance animation
+- Local challenges section with slide-in animations
+- Service items with icon hover effects
+- Testimonials with star cascade animation
+- CTA with floating orb background
+- FAQ with scroll-triggered reveal
+
+**Animation Pattern Library Established:**
+```tsx
+// Google-style easing
+const googleEase = [0.22, 1, 0.36, 1];
+
+// Scroll trigger pattern
+const ref = useRef(null);
+const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+// Floating background pattern
+animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+```
+
+**Build Status:** ✅ Passing (264 URLs)
+
+---
+
+### Phase 3: Blog Article Visual Redesign Complete
+
+---
+
+### City-Specific HowTo Guides Deployed
+**Purpose:** SEO for city-specific searches — each guide adapts content based on useFranchise() hook
+
+**Files Created:**
+- `/pages/guides/city/CityEmergencyGuide.tsx` — 6-step emergency response (city response times, neighborhoods)
+- `/pages/guides/city/CityPreventionGuide.tsx` — 8-step prevention (archetype housing types, seasonal risks)
+- `/pages/guides/city/CityInsuranceGuide.tsx` — 7-step insurance claims (city-specific claim ranges, carrier links)
+- `/pages/guides/city/CityGuidesHub.tsx` — Hub showing 9 guides (3 city-specific + 6 generic)
+
+**Routes Added to App.tsx:**
+- `/guides/emergency-response/` → CityEmergencyGuide
+- `/guides/prevention/` → CityPreventionGuide
+- `/guides/insurance-claims/` → CityInsuranceGuide
+- `/guides/city/` → CityGuidesHub
+
+**Schema Markup Per Guide:**
+- HowTo schema with city-specific steps
+- FAQPage schema with city-specific FAQs
+- BreadcrumbList schema
+- LocalBusiness reference
+
+**How City Adaptation Works:**
+- Templates use `useFranchise()` hook to get city data
+- Main site shows "Northern Virginia" content
+- City subdomains (e.g., mclean.flood.doctor) show city-specific content
+- guideData in franchises.ts provides response times, neighborhoods, claim ranges
+
+**Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
+
+**Deployment Status:** ✅ DEPLOYED (2026-01-05)
+
+**Verified Live:**
+- https://flood.doctor/guides/emergency-response/ — ✅ Emergency guide with 6 steps
+- https://flood.doctor/guides/prevention/ — ✅ Prevention guide with 8 steps
+- https://flood.doctor/guides/insurance-claims/ — ✅ Insurance guide with 7 steps
+- https://flood.doctor/guides/city/ — ✅ Hub with 9 guide cards
+
+---
+
+## 🔧 PREVIOUS WORK (2026-01-04)
+
+### Insurance Company-Specific Claim Guides Created
+**Purpose:** SEO for company-specific insurance claim searches (e.g., "USAA water damage claim")
+
+**Files Created:**
+- `/pages/guides/insurance/InsuranceGuidesHub.tsx` — Hub page with 5 carrier cards + general guide
+- `/pages/guides/insurance/USAAWaterDamageClaimGuide.tsx` — Military-focused, PCS/deployment scenarios
+- `/pages/guides/insurance/StateFarmWaterDamageClaimGuide.tsx` — Agent-first approach
+- `/pages/guides/insurance/AllstateWaterDamageClaimGuide.tsx` — QuickFoto Claim, Good Hands Network
+- `/pages/guides/insurance/NationwideWaterDamageClaimGuide.tsx` — On Your Side, Blue Ribbon Network
+- `/pages/guides/insurance/GEICOWaterDamageClaimGuide.tsx` — Underwriter navigation (Homesite, Stillwater)
+
+**Routes Added to App.tsx:**
+- `/guides/insurance/` — Hub page
+- `/guides/insurance/usaa-water-damage-claim/`
+- `/guides/insurance/state-farm-water-damage-claim/`
+- `/guides/insurance/allstate-water-damage-claim/`
+- `/guides/insurance/nationwide-water-damage-claim/`
+- `/guides/insurance/geico-water-damage-claim/`
+
+**Schema Markup Per Guide:**
+- HowTo schema with 9 steps, tools, time estimates
+- FAQPage schema with 6 FAQs each
+- BreadcrumbList schema
+
+**Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
+
+**Deployment Status:** ✅ DEPLOYED (2026-01-05)
+
+**Verified Live:**
+- https://flood.doctor/guides/insurance/ — ✅ Hub with 5 carrier cards
+- https://flood.doctor/guides/insurance/usaa-water-damage-claim/ — ✅ Military-focused guide
+- https://flood.doctor/guides/insurance/state-farm-water-damage-claim/ — ✅ Agent-first guide
+- https://flood.doctor/guides/insurance/allstate-water-damage-claim/ — ✅ QuickFoto guide
+- https://flood.doctor/guides/insurance/nationwide-water-damage-claim/ — ✅ On Your Side guide
+- https://flood.doctor/guides/insurance/geico-water-damage-claim/ — ✅ Underwriter guide
+
+---
+
+### HowTo Guides Section Created
+**Purpose:** Rich results for Google SERPs via HowTo schema markup
+
+**Files Created:**
+- `/pages/guides/GuidesHub.tsx` — Hub page with 6 guide cards
+- `/pages/guides/WaterDamageCleanupGuide.tsx` — 8-step water damage cleanup
+- `/pages/guides/MoldRemediationGuide.tsx` — 7-step mold remediation
+- `/pages/guides/InsuranceClaimGuide.tsx` — 10-step insurance claim guide
+- `/pages/guides/BasementWaterproofingGuide.tsx` — 9-step waterproofing
+- `/pages/guides/BurstPipeGuide.tsx` — 6-step emergency response
+- `/pages/guides/FloodPreparationGuide.tsx` — 8-step flood prep
+
+**Schema Markup Per Guide:**
+- HowTo schema with steps, supplies, tools, estimatedCost, totalTime
+- FAQPage schema for FAQ sections (5-6 questions each)
+- BreadcrumbList schema
+
+**Routes Added to App.tsx:**
+- `/guides/` — Hub page
+- `/guides/water-damage-cleanup/`
+- `/guides/mold-remediation/`
+- `/guides/water-damage-insurance-claim/`
+- `/guides/basement-waterproofing/`
+- `/guides/burst-pipe-emergency/`
+- `/guides/flood-preparation/`
+
+**Navigation Updated:**
+- Added "Guides" link to main nav in `data/nav.ts`
+
+**Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
+
+**Deployment Status:** ✅ DEPLOYED (2026-01-04 ~7:00 PM)
+
+**Verified Live:**
+- https://flood.doctor — ✅ Main site loads
+- https://flood.doctor/guides/ — ✅ Guides hub with 6 cards
+- https://flood.doctor/guides/water-damage-cleanup/ — ✅ Full guide with schema
+
+---
+
+## 🔧 PREVIOUS FIX (2026-01-04)
+
+### AI Search Visibility Fixes Applied
+**Problem:** Flood Doctor appeared in 0/13 city AI searches (Perplexity, ChatGPT, Claude, Gemini)
+**Root Cause:** Missing AI ranking signals that competitors (FloodTech USA 100%, Anthony Restoration 92%) had
+
+**Fixes Applied to Home.tsx:**
+1. **Title tag keyword-first** — "Water Damage Restoration Northern Virginia | 60-Min Response | 24/7"
+2. **Hero AI visibility badges** — IICRC Certified, 20+ Years Experience badges
+3. **Crawlable phone in text** — "(877) 497-0007" in visible paragraph (not just buttons)
+4. **License in crawlable text** — "Virginia Licensed #2705155505"
+5. **Why Choose Us section** — 400+ words of E-E-A-T content with credentials
+6. **Visible FAQ accordion** — 7 questions with full answers for main site
+7. **Enhanced FAQ schema** — Conversational queries like "Who is the best water damage restoration company in Northern Virginia?"
+
+**Fixes Applied to schema.ts:**
+- Added `foundingDate: '2005'`
+- Added `knowsAbout` array with 6 expertise areas
+- Added `slogan` to Organization schema
+
+**Fixes Applied to constants.ts:**
+- Added `foundingDate: '2005'`
+- Added `yearsExperience: '20+'`
+- Added `slogan: "Northern Virginia's 24/7 Water Damage Experts"`
+
+### Previous SEO Fixes
+1. **Hash routing fixed** — App.tsx now uses BrowserRouter for all subdomains
+2. **H1/H2 city keywords** — ServiceDetail.tsx updated
+3. **ProcessTimeline enhanced** — 400+ words detailed content
+4. **SEO Audit Script created** — `scripts/seo-audit.ts`
+
+### Previous Fix
 **Issue:** `ERR_TOO_MANY_REDIRECTS` on live site
 **Cause:** Apache `.htaccess` was forcing HTTPS redirect, but Cloudflare Flexible SSL connects to origin via HTTP → infinite redirect loop
 **Fix:** Removed HTTPS redirect from `.htaccess` (Cloudflare handles SSL at edge)
@@ -155,6 +401,41 @@ All 13 city site files uploaded via FTP (2026-01-03):
 
 ---
 
+## ✅ SEO CONTENT INTEGRATION COMPLETE (2026-01-04)
+
+### All 13 Cities Now Have Full SEO Content
+
+Each city franchise now includes:
+- **SEO metadata**: metaTitle, metaDescription, h1, heroText
+- **Neighborhood response times**: 6-8 neighborhoods with 45-80 min response ranges
+- **Challenges**: 4 city-specific water damage challenges with Lucide icons
+- **Testimonials**: 2 location-specific testimonials with Review schema
+- **FAQs**: 5 city-specific FAQs with FAQPage schema markup
+
+### New SEO Components Created
+| Component | Purpose |
+|-----------|---------|
+| `NeighborhoodResponseGrid.tsx` | Color-coded neighborhood response times |
+| `LocalExpertiseCards.tsx` | City-specific challenges with icons |
+| `TestimonialSection.tsx` | Testimonials with Review schema |
+| `CityFAQSection.tsx` | FAQ accordion with FAQPage schema |
+| `TrustBadgeBar.tsx` | Compact IICRC/Licensed/60-min/24-7 badges |
+
+### Response Time Ranges by City
+| Category | Cities | Response Time |
+|----------|--------|---------------|
+| Closest | Falls Church, Tysons | 40-60 min |
+| Near | McLean, Arlington, Vienna, Fairfax, Springfield | 45-70 min |
+| Mid-range | Alexandria, Reston, Herndon | 50-75 min |
+| Farthest | Ashburn, Great Falls, Lorton | 55-80 min |
+
+### Build Status
+- ✅ Build passing (264 URLs across 15 sitemaps)
+- ✅ All city sites now render with new SEO sections
+- ⏳ Pending: Run SEO audit on generated pages
+
+---
+
 ## Next Steps
 
 ### ✅ FTP DEPLOYMENT COMPLETE (2026-01-03)
@@ -230,5 +511,97 @@ These are technical debt items, not blockers for the live main site.
 
 ---
 
-*Updated: 2026-01-04*
+## 🤖 AUTONOMOUS SEO ENGINE (2026-01-04)
+
+**Active Protocol:** `.claude/AUTONOMOUS-SEO-ENGINE.md`
+
+### Agent Swarm
+| Agent | Role |
+|-------|------|
+| Alpha | Competitive Research |
+| Beta | SEO Auditor (Checklist Engine) |
+| Gamma | Strategy (7/30/90-day plans) |
+| Delta | Builder (deployment-ready content) |
+
+### Supporting Files
+- `.claude/seo-change-ledger.md` — Track all SEO changes for rollback safety
+- `.claude/backlink-tracker.md` — Link opportunities vs acquired
+
+### Integration Points
+- Mission Control MCP (port 3001) for GSC, Ahrefs, SERP data
+- `data/franchises.ts` for city-specific localHooks
+- `components/graphics/` for visual component enhancement
+
+### Activation Phrase
+> Mission Control Active. Agents Alpha, Beta, Gamma, and Delta are online. Awaiting target designation.
+
+---
+
+## 🎨 LITHO REACT TEMPLATES (2026-01-06)
+
+### 3 Litho Dev Pages Created
+Cloned Litho React template layouts and populated with real 2000+ word SEO content:
+
+| Template | Route | Layout Source | SEO Content |
+|----------|-------|---------------|-------------|
+| LithoDev1 | `/dev/litho-1/` | Litho "Our Story" | Water Damage Restoration |
+| LithoDev2 | `/dev/litho-2/` | Litho "Our Services" | Mold Remediation |
+| LithoDev3 | `/dev/litho-3/` | Litho "What We Offer" | Flood Cleanup |
+
+**Content Sources:** `/Users/ghost/flood-doctor/seo-project/content-output/`
+- `water-damage-restoration.md` (~2,400 words)
+- `mold-remediation.md` (~2,500 words)
+- `flood-cleanup.md` (~2,800 words)
+
+**Purpose:** Preview how existing SEO content looks with Litho template design patterns before selecting final service page layouts.
+
+**Build Status:** ✅ Passing
+
+---
+
+## 🎨 SERVICE DETAIL DEV TEMPLATES (2026-01-06)
+
+### 10 Service Detail Layouts Created
+Created 10 different service detail page layouts for testing/evaluation:
+
+| Template | Layout Style | Description |
+|----------|--------------|-------------|
+| ServiceDetailDev1 | Standard Card | Clean card-based sections |
+| ServiceDetailDev2 | Hero Split | Large hero with split content |
+| ServiceDetailDev3 | Vertical Timeline | Process as vertical timeline ✅ |
+| ServiceDetailDev4 | Split Screen | Sidebar navigation ✅ |
+| ServiceDetailDev5 | Minimalist | Apple-style typography ✅ |
+| ServiceDetailDev6 | Magazine | Editorial/publication style |
+| ServiceDetailDev7 | Feature Blocks | Large feature sections |
+| ServiceDetailDev8 | Dashboard | Metrics/KPI style |
+| ServiceDetailDev9 | Documentation | Docs-style sidebar nav ✅ |
+| ServiceDetailDev10 | Interactive Tabs | Tab-based content switch ✅ |
+
+### ✅ 2000+ Word Content Added to Top 5 Layouts
+
+**Purpose:** Templates had thin placeholder content. User requested substantial content to evaluate layouts with real content volume.
+
+**Content Pattern Applied to Each:**
+- Extended `demoService` with 6 detailed process steps (vs 4)
+- 8 comprehensive FAQs (vs 3-4)
+- `introContent` / `serviceIntro` — 2-3 paragraphs introduction
+- `damageTypes` — 4 common causes with descriptions
+- `whyChooseUs` — 4 trust/value propositions
+- `testimonials` — 3 customer testimonials
+- `trustStats` — 4 key metrics
+
+**Layouts Updated:**
+1. ✅ **ServiceDetailDev3** (Timeline) — Timeline colors extended to 6, rich intro/causes/testimonials sections
+2. ✅ **ServiceDetailDev4** (Split Screen) — 5-section nav, extended overview, causes section, testimonials
+3. ✅ **ServiceDetailDev5** (Minimalist) — Typography-forward intro, damage categories, clean testimonials
+4. ✅ **ServiceDetailDev9** (Sidebar Nav) — 6-section nav, extended overview, causes, rich why-choose-us
+5. ✅ **ServiceDetailDev10** (Tabs) — 6 tabs with icons, intro section with stats grid, causes cards, expanded trust section
+
+**Build Status:** ✅ Passing (264 URLs)
+
+**Routes:** `/dev/service-detail-1/` through `/dev/service-detail-10/`
+
+---
+
+*Updated: 2026-01-06*
 *Project: fd-google-redesign (main website)*

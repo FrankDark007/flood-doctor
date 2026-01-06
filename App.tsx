@@ -31,6 +31,36 @@ const ResidentialVariantA = lazy(() => import('./pages/templates/ResidentialVari
 const ServiceDetailDevA = lazy(() => import('./pages/templates/ServiceDetailDevA'));
 const ServiceDetailDevB = lazy(() => import('./pages/templates/ServiceDetailDevB'));
 const ServiceDetailDevC = lazy(() => import('./pages/templates/ServiceDetailDevC'));
+
+// Service Dev Layouts (10 variants for SEO content)
+const ServiceDev1 = lazy(() => import('./pages/templates/dev/Service-Dev-1'));
+const ServiceDev2 = lazy(() => import('./pages/templates/dev/Service-Dev-2'));
+const ServiceDev3 = lazy(() => import('./pages/templates/dev/Service-Dev-3'));
+const ServiceDev4 = lazy(() => import('./pages/templates/dev/Service-Dev-4'));
+const ServiceDev5 = lazy(() => import('./pages/templates/dev/Service-Dev-5'));
+const ServiceDev6 = lazy(() => import('./pages/templates/dev/Service-Dev-6'));
+const ServiceDev7 = lazy(() => import('./pages/templates/dev/Service-Dev-7'));
+const ServiceDev8 = lazy(() => import('./pages/templates/dev/Service-Dev-8'));
+const ServiceDev9 = lazy(() => import('./pages/templates/dev/Service-Dev-9'));
+const ServiceDev10 = lazy(() => import('./pages/templates/dev/Service-Dev-10'));
+
+// ServiceDetail Dev Layouts (10 variants for service pages)
+const ServiceDetailDev1 = lazy(() => import('./pages/templates/dev/ServiceDetailDev1'));
+const ServiceDetailDev2 = lazy(() => import('./pages/templates/dev/ServiceDetailDev2'));
+const ServiceDetailDev3 = lazy(() => import('./pages/templates/dev/ServiceDetailDev3'));
+const ServiceDetailDev4 = lazy(() => import('./pages/templates/dev/ServiceDetailDev4'));
+const ServiceDetailDev5 = lazy(() => import('./pages/templates/dev/ServiceDetailDev5'));
+const ServiceDetailDev6 = lazy(() => import('./pages/templates/dev/ServiceDetailDev6'));
+const ServiceDetailDev7 = lazy(() => import('./pages/templates/dev/ServiceDetailDev7'));
+const ServiceDetailDev8 = lazy(() => import('./pages/templates/dev/ServiceDetailDev8'));
+const ServiceDetailDev9 = lazy(() => import('./pages/templates/dev/ServiceDetailDev9'));
+const ServiceDetailDev10 = lazy(() => import('./pages/templates/dev/ServiceDetailDev10'));
+
+// Litho-style Dev Layouts
+const LithoDev1 = lazy(() => import('./pages/templates/dev/LithoDev1'));
+const LithoDev2 = lazy(() => import('./pages/templates/dev/LithoDev2'));
+const LithoDev3 = lazy(() => import('./pages/templates/dev/LithoDev3'));
+
 const AboutDevA = lazy(() => import('./pages/AboutDevA'));
 const AboutDevB = lazy(() => import('./pages/AboutDevB'));
 const AboutDevC = lazy(() => import('./pages/AboutDevC'));
@@ -126,6 +156,29 @@ const WhatDoesBlackMoldLookLike = lazy(() => import('./pages/blog/what-does-blac
 const MildewVsMoldDifference = lazy(() => import('./pages/blog/mildew-vs-mold-difference'));
 const DoesVinegarKillMold = lazy(() => import('./pages/blog/does-vinegar-kill-mold'));
 const SignsOfWaterDamageBehindWalls = lazy(() => import('./pages/blog/signs-of-water-damage-behind-walls'));
+
+// HowTo Guides
+const GuidesHub = lazy(() => import('./pages/guides/GuidesHub'));
+const WaterDamageCleanupGuide = lazy(() => import('./pages/guides/WaterDamageCleanupGuide'));
+const MoldRemediationGuide = lazy(() => import('./pages/guides/MoldRemediationGuide'));
+const InsuranceClaimGuide = lazy(() => import('./pages/guides/InsuranceClaimGuide'));
+const BasementWaterproofingGuide = lazy(() => import('./pages/guides/BasementWaterproofingGuide'));
+const BurstPipeGuide = lazy(() => import('./pages/guides/BurstPipeGuide'));
+const FloodPreparationGuide = lazy(() => import('./pages/guides/FloodPreparationGuide'));
+
+// Insurance Company-Specific Guides
+const InsuranceGuidesHub = lazy(() => import('./pages/guides/insurance/InsuranceGuidesHub'));
+const USAAWaterDamageClaimGuide = lazy(() => import('./pages/guides/insurance/USAAWaterDamageClaimGuide'));
+const StateFarmWaterDamageClaimGuide = lazy(() => import('./pages/guides/insurance/StateFarmWaterDamageClaimGuide'));
+const AllstateWaterDamageClaimGuide = lazy(() => import('./pages/guides/insurance/AllstateWaterDamageClaimGuide'));
+const NationwideWaterDamageClaimGuide = lazy(() => import('./pages/guides/insurance/NationwideWaterDamageClaimGuide'));
+const GEICOWaterDamageClaimGuide = lazy(() => import('./pages/guides/insurance/GEICOWaterDamageClaimGuide'));
+
+// City-Specific Guides (use useFranchise() for dynamic city data)
+const CityEmergencyGuide = lazy(() => import('./pages/guides/city/CityEmergencyGuide'));
+const CityPreventionGuide = lazy(() => import('./pages/guides/city/CityPreventionGuide'));
+const CityInsuranceGuide = lazy(() => import('./pages/guides/city/CityInsuranceGuide'));
+const CityGuidesHub = lazy(() => import('./pages/guides/city/CityGuidesHub'));
 
 // Additional Resource Guides
 const WaterDamageClassesGuide = lazy(() => import('./pages/resources/WaterDamageClassesGuide'));
@@ -230,9 +283,14 @@ import { SERVICES } from './data/services';
 
 const host = typeof window !== "undefined" ? window.location.hostname : "";
 
+// Use BrowserRouter (clean URLs without #) for:
+// - Production domain flood.doctor and www.flood.doctor
+// - All city subdomains (mclean.flood.doctor, arlington.flood.doctor, etc.)
+// - Local development
 const useBrowserRouter =
   host === "flood.doctor" ||
   host === "www.flood.doctor" ||
+  host.endsWith(".flood.doctor") ||  // All subdomains (critical for SEO)
   host === "localhost" ||
   host === "127.0.0.1";
 
@@ -454,6 +512,30 @@ const App: React.FC = () => {
               <Route path="/resources/winter-pipe-protection/" element={<WinterPipeProtection />} />
               <Route path="/resources/basement-flooding-prevention/" element={<BasementFloodingPrevention />} />
               <Route path="/resources/types-of-mold/" element={<TypesOfMold />} />
+
+              {/* HowTo Guides */}
+              <Route path="/guides/" element={<GuidesHub />} />
+              <Route path="/guides/water-damage-cleanup/" element={<WaterDamageCleanupGuide />} />
+              <Route path="/guides/mold-remediation/" element={<MoldRemediationGuide />} />
+              <Route path="/guides/water-damage-insurance-claim/" element={<InsuranceClaimGuide />} />
+              <Route path="/guides/basement-waterproofing/" element={<BasementWaterproofingGuide />} />
+              <Route path="/guides/burst-pipe-emergency/" element={<BurstPipeGuide />} />
+              <Route path="/guides/flood-preparation/" element={<FloodPreparationGuide />} />
+
+              {/* Insurance Company-Specific Guides */}
+              <Route path="/guides/insurance/" element={<InsuranceGuidesHub />} />
+              <Route path="/guides/insurance/usaa-water-damage-claim/" element={<USAAWaterDamageClaimGuide />} />
+              <Route path="/guides/insurance/state-farm-water-damage-claim/" element={<StateFarmWaterDamageClaimGuide />} />
+              <Route path="/guides/insurance/allstate-water-damage-claim/" element={<AllstateWaterDamageClaimGuide />} />
+              <Route path="/guides/insurance/nationwide-water-damage-claim/" element={<NationwideWaterDamageClaimGuide />} />
+              <Route path="/guides/insurance/geico-water-damage-claim/" element={<GEICOWaterDamageClaimGuide />} />
+
+              {/* City-Specific Guides (work on main site + all city subdomains) */}
+              <Route path="/guides/emergency-response/" element={<CityEmergencyGuide />} />
+              <Route path="/guides/prevention/" element={<CityPreventionGuide />} />
+              <Route path="/guides/insurance-claims/" element={<CityInsuranceGuide />} />
+              <Route path="/guides/city/" element={<CityGuidesHub />} />
+
               <Route path="/blog/" element={<BlogIndex />} />
 
               {/* Blog Articles */}
@@ -528,6 +610,35 @@ const App: React.FC = () => {
               <Route path="/dev/services-a/" element={<ServicesDevA />} />
               <Route path="/dev/services-b/" element={<ServicesDevB />} />
               <Route path="/dev/services-c/" element={<ServicesDevC />} />
+
+              {/* Service Dev Layouts (10 SEO variants) */}
+              <Route path="/dev/service-1/" element={<ServiceDev1 />} />
+              <Route path="/dev/service-2/" element={<ServiceDev2 />} />
+              <Route path="/dev/service-3/" element={<ServiceDev3 />} />
+              <Route path="/dev/service-4/" element={<ServiceDev4 />} />
+              <Route path="/dev/service-5/" element={<ServiceDev5 />} />
+              <Route path="/dev/service-6/" element={<ServiceDev6 />} />
+              <Route path="/dev/service-7/" element={<ServiceDev7 />} />
+              <Route path="/dev/service-8/" element={<ServiceDev8 />} />
+              <Route path="/dev/service-9/" element={<ServiceDev9 />} />
+              <Route path="/dev/service-10/" element={<ServiceDev10 />} />
+
+              {/* Litho-style Dev Layouts */}
+              <Route path="/dev/litho-1/" element={<LithoDev1 />} />
+              <Route path="/dev/litho-2/" element={<LithoDev2 />} />
+              <Route path="/dev/litho-3/" element={<LithoDev3 />} />
+
+              {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
+              <Route path="/dev/service-detail-1/" element={<ServiceDetailDev1 />} />
+              <Route path="/dev/service-detail-2/" element={<ServiceDetailDev2 />} />
+              <Route path="/dev/service-detail-3/" element={<ServiceDetailDev3 />} />
+              <Route path="/dev/service-detail-4/" element={<ServiceDetailDev4 />} />
+              <Route path="/dev/service-detail-5/" element={<ServiceDetailDev5 />} />
+              <Route path="/dev/service-detail-6/" element={<ServiceDetailDev6 />} />
+              <Route path="/dev/service-detail-7/" element={<ServiceDetailDev7 />} />
+              <Route path="/dev/service-detail-8/" element={<ServiceDetailDev8 />} />
+              <Route path="/dev/service-detail-9/" element={<ServiceDetailDev9 />} />
+              <Route path="/dev/service-detail-10/" element={<ServiceDetailDev10 />} />
 
               {/* Legal & Company */}
               <Route path="/careers/" element={<Careers />} />

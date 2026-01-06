@@ -29,6 +29,21 @@ import {
   DollarSign
 } from 'lucide-react';
 
+// Animation Components
+import { motion } from 'framer-motion';
+import {
+  AnimatedHeroContent,
+  AnimatedSection,
+  AnimatedSectionHeader,
+  AnimatedCard,
+  AnimatedList,
+  AnimatedStep,
+  AnimatedTimeline,
+  AnimatedInfoBox,
+  AnimatedStatGrid,
+  AnimatedCheckList
+} from '../../components/blog';
+
 const FrozenBurstPipesGuide: React.FC = () => {
   const faqs = [
     {
@@ -463,8 +478,13 @@ const FrozenBurstPipesGuide: React.FC = () => {
         schema={[faqSchema, articleSchema, localBusinessSchema]}
       />
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-50 border-b border-border pt-12 pb-20">
+      {/* Hero Section - Animated */}
+      <motion.div
+        className="bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-50 border-b border-border pt-12 pb-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="max-w-[1440px] mx-auto px-6">
           <Breadcrumbs items={[
             { label: 'Blog', path: '/blog/' },
@@ -472,10 +492,13 @@ const FrozenBurstPipesGuide: React.FC = () => {
           ]} />
         <ArticleAuthor datePublished="2025-01-02" readTime="10 min read" />
 
-          <div className="max-w-3xl mt-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+          <AnimatedHeroContent className="max-w-3xl mt-8">
+            <motion.div
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6"
+              whileHover={{ scale: 1.05 }}
+            >
               <Snowflake size={14} /> Winter Emergency Guide
-            </div>
+            </motion.div>
             <h1 className="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-tight">
               Frozen Pipes & Burst Pipe Emergency Guide for Northern Virginia Homeowners
             </h1>
@@ -483,17 +506,21 @@ const FrozenBurstPipesGuide: React.FC = () => {
               Northern Virginia's freeze-thaw cycles create perfect conditions for frozen and burst pipes. This comprehensive guide covers prevention strategies before winter, warning signs to watch for, emergency response steps when pipes burst, and the professional restoration process to minimize damage.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                24/7 Emergency: (877) 497-0007
-              </Button>
-              <Button to="/request/" variant="secondary" size="lg">
-                Request Service
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Button href="tel:8774970007" variant="primary" size="lg">
+                  <Phone size={18} className="mr-2" />
+                  24/7 Emergency: (877) 497-0007
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Button to="/request/" variant="secondary" size="lg">
+                  Request Service
+                </Button>
+              </motion.div>
             </div>
-          </div>
+          </AnimatedHeroContent>
         </div>
-      </div>
+      </motion.div>
 
       <div className="max-w-[1440px] mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -501,149 +528,176 @@ const FrozenBurstPipesGuide: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-8">
 
-            {/* Winter Emergency Alert */}
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 mb-12">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-xl shrink-0">
-                  <ThermometerSnowflake className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-blue-900 mb-2">Arctic Blast Forecast? Protect Your Pipes Now</h3>
-                  <p className="text-blue-800 text-sm mb-4 leading-relaxed">
-                    When temperatures forecast below 25°F in Northern Virginia, frozen pipe risk increases dramatically. Pipes in crawlspaces, exterior walls, and unheated basements are most vulnerable. Take preventive action before the cold arrives—frozen pipes can burst within hours, releasing 50+ gallons per minute.
-                  </p>
-                  <Button href="tel:8774970007" variant="primary" size="sm" className="bg-blue-600 hover:bg-blue-700">
-                    <Phone size={16} className="mr-2" />
-                    Call for Emergency Protection
-                  </Button>
-                </div>
-              </div>
-            </div>
+            {/* Winter Emergency Alert - Animated */}
+            <AnimatedInfoBox
+              icon={ThermometerSnowflake}
+              title="Arctic Blast Forecast? Protect Your Pipes Now"
+              variant="info"
+              className="mb-12"
+            >
+              <p className="mb-4 leading-relaxed">
+                When temperatures forecast below 25°F in Northern Virginia, frozen pipe risk increases dramatically. Pipes in crawlspaces, exterior walls, and unheated basements are most vulnerable. Take preventive action before the cold arrives—frozen pipes can burst within hours, releasing 50+ gallons per minute.
+              </p>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+                <Button href="tel:8774970007" variant="primary" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  <Phone size={16} className="mr-2" />
+                  Call for Emergency Protection
+                </Button>
+              </motion.div>
+            </AnimatedInfoBox>
 
-            {/* Why NoVA Homes Are Vulnerable */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
+            {/* Why NoVA Homes Are Vulnerable - Animated */}
+            <AnimatedSection className="mb-24">
+              <motion.h2
+                className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 Why Northern Virginia Homes Are Particularly Vulnerable
-              </h2>
+              </motion.h2>
               <p className="text-muted text-lg mb-12 max-w-2xl">
                 Northern Virginia's unique climate, older housing stock, and soil conditions create specific frozen pipe risks that homeowners must understand and address proactively.
               </p>
 
-              <div className="space-y-6">
+              <AnimatedList className="space-y-6">
                 {vulnerabilityReasons.map((item, i) => (
-                  <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                  <AnimatedCard key={i} delay={i * 0.1} className="p-6">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                      <motion.div
+                        className="w-12 h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
                         <item.icon size={24} />
-                      </div>
+                      </motion.div>
                       <div className="flex-1">
                         <h3 className="font-medium text-text text-lg mb-2">{item.title}</h3>
                         <p className="text-sm text-muted mb-4 leading-relaxed">{item.description}</p>
-                        <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                        <motion.div
+                          className="bg-red-50 rounded-lg p-3 border border-red-100"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + i * 0.1 }}
+                        >
                           <div className="flex items-start gap-2">
                             <AlertTriangle size={14} className="text-red-600 mt-0.5 shrink-0" />
                             <span className="text-xs text-red-900 font-medium">{item.impact}</span>
                           </div>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
-                  </div>
+                  </AnimatedCard>
                 ))}
-              </div>
-            </section>
+              </AnimatedList>
+            </AnimatedSection>
 
-            {/* Prevention Before Winter */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
+            {/* Prevention Before Winter - Animated */}
+            <AnimatedSection className="mb-24">
+              <motion.h2
+                className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 6 Essential Prevention Steps Before Winter
-              </h2>
+              </motion.h2>
               <p className="text-muted text-lg mb-12 max-w-2xl">
                 Preventing frozen pipes costs $100-$500 in proactive measures. Repairing burst pipe damage costs $5,000-$20,000+. These prevention strategies protect your Northern Virginia home throughout winter.
               </p>
 
               <div className="space-y-8">
                 {preventionSteps.map((step, index) => (
-                  <div
+                  <AnimatedStep
                     key={index}
-                    className="relative bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-all duration-300"
+                    number={step.number}
+                    title={step.title}
+                    icon={step.icon}
+                    delay={index * 0.1}
                   >
-                    <div className="flex items-start gap-6">
-                      <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white items-center justify-center shrink-0 shadow-lg">
-                        <span className="text-xl font-bold">{step.number}</span>
-                      </div>
-
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <step.icon size={20} className="text-primary sm:hidden" />
-                          <h3 className="font-display text-xl font-medium text-text">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <div className="flex items-center gap-2 mb-4">
-                          <Clock size={14} className="text-muted" />
-                          <span className="text-sm text-muted">{step.season}</span>
-                        </div>
-                        <p className="text-muted leading-relaxed mb-4">
-                          {step.content}
-                        </p>
-
-                        <div className="bg-blue-50 rounded-xl p-4 mb-4 border border-blue-100">
-                          <h4 className="text-sm font-bold text-blue-900 mb-2">Action Items:</h4>
-                          <ul className="space-y-2">
-                            {step.actionItems.map((item, i) => (
-                              <li key={i} className="flex items-start gap-2 text-xs text-blue-800">
-                                <CheckCircle2 size={12} className="text-blue-600 mt-0.5 shrink-0" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="bg-green-50 rounded-lg p-3 border border-green-100">
-                            <div className="text-xs text-green-600 mb-1">Cost</div>
-                            <div className="text-sm font-medium text-green-900">{step.cost}</div>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                            <div className="text-xs text-purple-600 mb-1">Effectiveness</div>
-                            <div className="text-sm font-medium text-purple-900">{step.effectiveness}</div>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <Clock size={14} className="text-muted" />
+                      <span className="text-sm text-muted">{step.season}</span>
                     </div>
-                  </div>
+                    <p className="text-muted leading-relaxed mb-4">
+                      {step.content}
+                    </p>
+
+                    <motion.div
+                      className="bg-blue-50 rounded-xl p-4 mb-4 border border-blue-100"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                    >
+                      <h4 className="text-sm font-bold text-blue-900 mb-2">Action Items:</h4>
+                      <AnimatedCheckList items={step.actionItems} />
+                    </motion.div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <motion.div
+                        className="bg-green-50 rounded-lg p-3 border border-green-100"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <div className="text-xs text-green-600 mb-1">Cost</div>
+                        <div className="text-sm font-medium text-green-900">{step.cost}</div>
+                      </motion.div>
+                      <motion.div
+                        className="bg-purple-50 rounded-lg p-3 border border-purple-100"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <div className="text-xs text-purple-600 mb-1">Effectiveness</div>
+                        <div className="text-sm font-medium text-purple-900">{step.effectiveness}</div>
+                      </motion.div>
+                    </div>
+                  </AnimatedStep>
                 ))}
               </div>
-            </section>
+            </AnimatedSection>
 
           <MidArticleCTA variant="emergency" />
 
-            {/* Warning Signs of Frozen Pipes */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Critical Warning Signs Your Pipes Are Frozen
-              </h2>
-              <p className="text-muted text-lg mb-12 max-w-2xl">
-                Early detection prevents bursts. Monitor your plumbing for these signs during cold weather, especially after temperatures drop below 25°F overnight.
-              </p>
+            {/* Warning Signs of Frozen Pipes - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Critical Warning Signs Your Pipes Are Frozen"
+                subtitle="Early detection prevents bursts. Monitor your plumbing for these signs during cold weather, especially after temperatures drop below 25°F overnight."
+              />
 
-              <div className="space-y-4">
+              <AnimatedList className="space-y-4">
                 {frozenPipeSigns.map((item, i) => (
-                  <div key={i} className={`border-l-4 rounded-xl p-5 ${
-                    item.severity === 'Critical' ? 'border-red-500 bg-red-50' :
-                    item.severity === 'Critical - Pre-Burst' ? 'border-red-600 bg-red-100' :
-                    item.severity === 'High' ? 'border-orange-500 bg-orange-50' :
-                    'border-yellow-500 bg-yellow-50'
-                  }`}>
+                  <motion.div
+                    key={i}
+                    className={`border-l-4 rounded-xl p-5 ${
+                      item.severity === 'Critical' ? 'border-red-500 bg-red-50' :
+                      item.severity === 'Critical - Pre-Burst' ? 'border-red-600 bg-red-100' :
+                      item.severity === 'High' ? 'border-orange-500 bg-orange-50' :
+                      'border-yellow-500 bg-yellow-50'
+                    }`}
+                    initial={{ opacity: 0, x: -30, scale: 0.98 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ x: 4, boxShadow: '0 10px 30px -10px rgba(0,0,0,0.1)' }}
+                  >
                     <div className="flex items-start gap-4">
-                      <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase shrink-0 ${
-                        item.severity === 'Critical' ? 'bg-red-100 text-red-700' :
-                        item.severity === 'Critical - Pre-Burst' ? 'bg-red-200 text-red-800' :
-                        item.severity === 'High' ? 'bg-orange-100 text-orange-700' :
-                        'bg-yellow-100 text-yellow-700'
-                      }`}>
+                      <motion.div
+                        className={`px-3 py-1 rounded-full text-xs font-bold uppercase shrink-0 ${
+                          item.severity === 'Critical' ? 'bg-red-100 text-red-700' :
+                          item.severity === 'Critical - Pre-Burst' ? 'bg-red-200 text-red-800' :
+                          item.severity === 'High' ? 'bg-orange-100 text-orange-700' :
+                          'bg-yellow-100 text-yellow-700'
+                        }`}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + i * 0.1 }}
+                      >
                         {item.severity}
-                      </div>
+                      </motion.div>
                       <div className="flex-1">
                         <h3 className={`font-medium mb-2 ${
                           item.severity === 'Critical' || item.severity === 'Critical - Pre-Burst' ? 'text-red-900' :
@@ -653,10 +707,16 @@ const FrozenBurstPipesGuide: React.FC = () => {
                           item.severity === 'Critical' || item.severity === 'Critical - Pre-Burst' ? 'text-red-800' :
                           item.severity === 'High' ? 'text-orange-800' : 'text-yellow-800'
                         }`}>{item.description}</p>
-                        <div className={`rounded-lg p-3 border ${
-                          item.severity === 'Critical' || item.severity === 'Critical - Pre-Burst' ? 'bg-red-100 border-red-200' :
-                          item.severity === 'High' ? 'bg-orange-100 border-orange-200' : 'bg-yellow-100 border-yellow-200'
-                        }`}>
+                        <motion.div
+                          className={`rounded-lg p-3 border ${
+                            item.severity === 'Critical' || item.severity === 'Critical - Pre-Burst' ? 'bg-red-100 border-red-200' :
+                            item.severity === 'High' ? 'bg-orange-100 border-orange-200' : 'bg-yellow-100 border-yellow-200'
+                          }`}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + i * 0.1 }}
+                        >
                           <div className="flex items-start gap-2">
                             <ArrowRight size={14} className={`mt-0.5 shrink-0 ${
                               item.severity === 'Critical' || item.severity === 'Critical - Pre-Burst' ? 'text-red-600' :
@@ -667,30 +727,43 @@ const FrozenBurstPipesGuide: React.FC = () => {
                               item.severity === 'High' ? 'text-orange-900' : 'text-yellow-900'
                             }`}>{item.action}</span>
                           </div>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </section>
+              </AnimatedList>
+            </AnimatedSection>
 
-            {/* Emergency Response When Pipes Burst */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Emergency Response: What to Do When a Pipe Bursts
-              </h2>
-              <p className="text-muted text-lg mb-12 max-w-2xl">
-                A burst pipe releases 50+ gallons per minute. Follow these critical steps immediately to minimize damage and protect your home. Every minute counts.
-              </p>
+            {/* Emergency Response When Pipes Burst - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Emergency Response: What to Do When a Pipe Bursts"
+                subtitle="A burst pipe releases 50+ gallons per minute. Follow these critical steps immediately to minimize damage and protect your home. Every minute counts."
+              />
 
               <div className="space-y-8">
                 {burstPipeEmergencySteps.map((step, index) => (
-                  <div
+                  <motion.div
                     key={index}
-                    className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-all duration-300"
+                    className="relative bg-white border-2 border-gray-200 rounded-3xl p-8"
+                    initial={{ opacity: 0, y: 40, scale: 0.98 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{
+                      boxShadow: '0 25px 50px -15px rgba(0,0,0,0.15)',
+                      y: -4,
+                      borderColor: step.urgency === 'CRITICAL' ? '#ef4444' : '#dadce0'
+                    }}
                   >
-                    <div className="absolute top-6 right-6">
+                    <motion.div
+                      className="absolute top-6 right-6"
+                      initial={{ scale: 0, rotate: -20 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.3 + index * 0.1 }}
+                    >
                       <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${
                         step.urgency === 'CRITICAL' ? 'bg-red-100 text-red-700' :
                         step.urgency === 'IMMEDIATE' ? 'bg-orange-100 text-orange-700' :
@@ -699,12 +772,19 @@ const FrozenBurstPipesGuide: React.FC = () => {
                       }`}>
                         {step.urgency}
                       </span>
-                    </div>
+                    </motion.div>
 
                     <div className="flex items-start gap-6">
-                      <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white items-center justify-center shrink-0 shadow-lg">
+                      <motion.div
+                        className="hidden sm:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white items-center justify-center shrink-0 shadow-lg"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 + index * 0.1 }}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      >
                         <span className="text-xl font-bold">{step.number}</span>
-                      </div>
+                      </motion.div>
 
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -721,53 +801,122 @@ const FrozenBurstPipesGuide: React.FC = () => {
                           {step.content}
                         </p>
 
-                        <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 inline-flex items-start gap-3 max-w-2xl">
-                          <AlertTriangle size={18} className="text-amber-600 mt-0.5 shrink-0" />
+                        <motion.div
+                          className="bg-amber-50 rounded-xl p-4 border border-amber-200 inline-flex items-start gap-3 max-w-2xl"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.4 + index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                        >
+                          <motion.div
+                            animate={{ rotate: [0, -10, 10, -10, 0] }}
+                            transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
+                          >
+                            <AlertTriangle size={18} className="text-amber-600 mt-0.5 shrink-0" />
+                          </motion.div>
                           <span className="text-sm font-medium text-amber-900">{step.warning}</span>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </section>
+            </AnimatedSection>
 
-            {/* Water Damage Timeline */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Water Damage Timeline: Why Speed Matters
-              </h2>
-              <p className="text-muted text-lg mb-12 max-w-2xl">
-                Water damage from burst pipes escalates rapidly. Understanding this timeline shows why immediate professional response is critical—not optional.
-              </p>
+            {/* Water Damage Timeline - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Water Damage Timeline: Why Speed Matters"
+                subtitle="Water damage from burst pipes escalates rapidly. Understanding this timeline shows why immediate professional response is critical—not optional."
+              />
 
-              <div className="space-y-6">
+              <div className="space-y-6 relative">
+                {/* Animated progress bar connecting timeline items */}
+                <motion.div
+                  className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500 via-orange-500 via-amber-500 to-yellow-500 rounded-full hidden md:block"
+                  initial={{ scaleY: 0, originY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                />
+
                 {waterDamageTimeline.map((phase, i) => (
-                  <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden">
-                    <div className={`bg-gradient-to-r ${phase.color} px-6 py-4 text-white`}>
+                  <motion.div
+                    key={i}
+                    className="border border-gray-200 rounded-2xl overflow-hidden md:ml-8"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.6, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ scale: 1.02, boxShadow: '0 20px 40px -15px rgba(0,0,0,0.15)' }}
+                  >
+                    <motion.div
+                      className={`bg-gradient-to-r ${phase.color} px-6 py-4 text-white`}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + i * 0.2 }}
+                    >
                       <div className="flex items-center gap-3">
-                        <Clock size={20} />
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                        >
+                          <Clock size={20} />
+                        </motion.div>
                         <span className="font-bold text-lg">{phase.time}</span>
-                        <span className="ml-auto text-sm opacity-90">{phase.severity} Damage</span>
+                        <motion.span
+                          className="ml-auto text-sm opacity-90 px-3 py-1 bg-white/20 rounded-full"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ type: 'spring', delay: 0.4 + i * 0.2 }}
+                        >
+                          {phase.severity} Damage
+                        </motion.span>
                       </div>
-                    </div>
+                    </motion.div>
                     <div className="p-6 bg-white">
                       <ul className="space-y-3">
                         {phase.events.map((event, j) => (
-                          <li key={j} className="flex items-start gap-3 text-sm text-muted">
-                            <ArrowRight size={16} className="text-orange-500 mt-0.5 shrink-0" />
+                          <motion.li
+                            key={j}
+                            className="flex items-start gap-3 text-sm text-muted"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 + i * 0.2 + j * 0.05 }}
+                          >
+                            <motion.div whileHover={{ x: 4 }}>
+                              <ArrowRight size={16} className="text-orange-500 mt-0.5 shrink-0" />
+                            </motion.div>
                             {event}
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              <div className="mt-8 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <motion.div
+                className="mt-8 bg-blue-50 rounded-2xl p-6 border border-blue-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ boxShadow: '0 15px 40px -10px rgba(26,115,232,0.2)' }}
+              >
                 <div className="flex items-start gap-4">
-                  <Info className="text-primary shrink-0" size={24} />
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 200, delay: 1 }}
+                  >
+                    <Info className="text-primary shrink-0" size={24} />
+                  </motion.div>
                   <div>
                     <h4 className="font-medium text-text mb-2">Professional Response Prevents Escalation</h4>
                     <p className="text-sm text-muted leading-relaxed">
@@ -775,198 +924,286 @@ const FrozenBurstPipesGuide: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </section>
+              </motion.div>
+            </AnimatedSection>
 
-            {/* Professional Restoration Process */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Professional Burst Pipe Restoration Process
-              </h2>
-              <p className="text-muted text-lg mb-8 max-w-2xl">
-                Understanding what happens when you call Flood Doctor helps you know what to expect and why professional restoration is essential for complete recovery.
-              </p>
+            {/* Professional Restoration Process - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Professional Burst Pipe Restoration Process"
+                subtitle="Understanding what happens when you call Flood Doctor helps you know what to expect and why professional restoration is essential for complete recovery."
+              />
 
-              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-                <div className="space-y-6">
+              <motion.div
+                className="bg-gray-50 rounded-3xl p-8 border border-gray-100"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="space-y-6 relative">
+                  {/* Connecting line */}
+                  <motion.div
+                    className="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-500 to-blue-200 hidden md:block"
+                    initial={{ scaleY: 0, originY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  />
+
                   {professionalRestoration.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="bg-blue-100 text-primary p-3 rounded-xl shrink-0">
-                        <item.icon size={20} />
-                      </div>
-                      <div>
+                    <motion.div
+                      key={i}
+                      className="flex items-start gap-4 relative z-10"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: '-30px' }}
+                      transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <motion.div
+                        className="bg-blue-100 text-primary p-3 rounded-xl shrink-0"
+                        whileHover={{ scale: 1.15, rotate: 5, backgroundColor: '#1a73e8' }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <motion.div
+                          whileHover={{ color: '#ffffff' }}
+                        >
+                          <item.icon size={20} />
+                        </motion.div>
+                      </motion.div>
+                      <div className="flex-1">
                         <h4 className="font-medium text-text mb-2">{item.phase}</h4>
                         <p className="text-sm text-muted mb-3 leading-relaxed">{item.description}</p>
-                        <div className="bg-white rounded-lg p-3 border border-gray-200">
+                        <motion.div
+                          className="bg-white rounded-lg p-3 border border-gray-200"
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.2 + i * 0.12 }}
+                          whileHover={{ boxShadow: '0 8px 25px -8px rgba(0,0,0,0.1)' }}
+                        >
                           <div className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-2">Equipment & Services:</div>
                           <ul className="space-y-1">
                             {item.equipment.map((eq, j) => (
-                              <li key={j} className="flex items-start gap-2 text-xs text-gray-700">
-                                <CheckCircle2 size={12} className="text-primary mt-0.5 shrink-0" />
+                              <motion.li
+                                key={j}
+                                className="flex items-start gap-2 text-xs text-gray-700"
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3 + i * 0.1 + j * 0.05 }}
+                              >
+                                <motion.div whileHover={{ scale: 1.2 }}>
+                                  <CheckCircle2 size={12} className="text-primary mt-0.5 shrink-0" />
+                                </motion.div>
                                 {eq}
-                              </li>
+                              </motion.li>
                             ))}
                           </ul>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
-            </section>
+              </motion.div>
+            </AnimatedSection>
 
-            {/* Insurance Coverage */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Insurance Coverage for Burst Pipes
-              </h2>
-              <p className="text-muted text-lg mb-8 max-w-2xl">
-                Most homeowners insurance covers sudden burst pipe damage, but coverage has critical conditions and exclusions you must understand.
-              </p>
+            {/* Insurance Coverage - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Insurance Coverage for Burst Pipes"
+                subtitle="Most homeowners insurance covers sudden burst pipe damage, but coverage has critical conditions and exclusions you must understand."
+              />
 
               <div className="grid md:grid-cols-2 gap-6">
                 {insuranceCoverage.map((section, i) => (
-                  <div key={i} className={`rounded-2xl p-6 border-2 ${
-                    section.covered ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
-                  }`}>
+                  <motion.div
+                    key={i}
+                    className={`rounded-2xl p-6 border-2 ${
+                      section.covered ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                    }`}
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{
+                      scale: 1.02,
+                      boxShadow: section.covered
+                        ? '0 20px 40px -15px rgba(34,197,94,0.25)'
+                        : '0 20px 40px -15px rgba(239,68,68,0.25)'
+                    }}
+                  >
                     <div className="flex items-center gap-3 mb-4">
-                      {section.covered ? (
-                        <CheckCircle2 className="text-green-600" size={24} />
-                      ) : (
-                        <AlertTriangle className="text-red-600" size={24} />
-                      )}
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ type: 'spring', stiffness: 200, delay: 0.3 + i * 0.1 }}
+                      >
+                        {section.covered ? (
+                          <CheckCircle2 className="text-green-600" size={24} />
+                        ) : (
+                          <AlertTriangle className="text-red-600" size={24} />
+                        )}
+                      </motion.div>
                       <h3 className={`font-medium text-lg ${
                         section.covered ? 'text-green-900' : 'text-red-900'
                       }`}>{section.title}</h3>
                     </div>
                     <ul className="space-y-2">
                       {section.items.map((item, j) => (
-                        <li key={j} className={`flex items-start gap-2 text-sm ${
-                          section.covered ? 'text-green-800' : 'text-red-800'
-                        }`}>
-                          <ArrowRight size={14} className={`mt-0.5 shrink-0 ${
-                            section.covered ? 'text-green-600' : 'text-red-600'
-                          }`} />
+                        <motion.li
+                          key={j}
+                          className={`flex items-start gap-2 text-sm ${
+                            section.covered ? 'text-green-800' : 'text-red-800'
+                          }`}
+                          initial={{ opacity: 0, x: -15 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + i * 0.1 + j * 0.04 }}
+                        >
+                          <motion.div whileHover={{ x: 3 }}>
+                            <ArrowRight size={14} className={`mt-0.5 shrink-0 ${
+                              section.covered ? 'text-green-600' : 'text-red-600'
+                            }`} />
+                          </motion.div>
                           {item}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              <div className="mt-6 bg-amber-50 rounded-2xl p-6 border border-amber-200">
+              <motion.div
+                className="mt-6 bg-amber-50 rounded-2xl p-6 border border-amber-200"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ boxShadow: '0 15px 40px -10px rgba(245,158,11,0.2)' }}
+              >
                 <div className="flex items-start gap-4">
-                  <DollarSign className="text-amber-600 shrink-0" size={24} />
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 300, delay: 0.5 }}
+                    whileHover={{ rotate: [0, -10, 10, 0] }}
+                  >
+                    <DollarSign className="text-amber-600 shrink-0" size={24} />
+                  </motion.div>
                   <div>
                     <h4 className="font-medium text-amber-900 mb-2">Critical Insurance Requirements</h4>
                     <ul className="space-y-2 text-sm text-amber-800">
-                      <li className="flex items-start gap-2">
-                        <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                        Maintain heat above 55°F always (document thermostat settings)
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                        Report damage within 24-48 hours of discovery
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                        Take immediate action to prevent further damage (required by policy)
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                        Document everything with photos before and during cleanup
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                        Save all receipts and professional service invoices
-                      </li>
+                      {[
+                        "Maintain heat above 55°F always (document thermostat settings)",
+                        "Report damage within 24-48 hours of discovery",
+                        "Take immediate action to prevent further damage (required by policy)",
+                        "Document everything with photos before and during cleanup",
+                        "Save all receipts and professional service invoices"
+                      ].map((item, j) => (
+                        <motion.li
+                          key={j}
+                          className="flex items-start gap-2"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.6 + j * 0.08 }}
+                        >
+                          <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
+                          {item}
+                        </motion.li>
+                      ))}
                     </ul>
                   </div>
                 </div>
-              </div>
-            </section>
+              </motion.div>
+            </AnimatedSection>
 
-            {/* External Resources */}
-            <section className="mb-24">
-              <h2 className="font-display text-3xl font-medium text-text mb-4 pb-3 border-b-4 border-[#1a73e8]">
-                Additional Resources
-              </h2>
+            {/* External Resources - Animated */}
+            <AnimatedSection className="mb-24">
+              <AnimatedSectionHeader
+                title="Additional Resources"
+              />
               <div className="grid md:grid-cols-2 gap-4">
-                <a
-                  href="https://www.iicrc.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow"
-                >
-                  <ArrowRight className="text-primary" size={20} />
-                  <div>
-                    <div className="font-medium text-text text-sm">IICRC Water Damage Standards</div>
-                    <div className="text-xs text-muted">Professional restoration guidelines</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow"
-                >
-                  <ArrowRight className="text-primary" size={20} />
-                  <div>
-                    <div className="font-medium text-text text-sm">Red Cross Winter Storm Prep</div>
-                    <div className="text-xs text-muted">Winter emergency preparedness</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.epa.gov/mold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow"
-                >
-                  <ArrowRight className="text-primary" size={20} />
-                  <div>
-                    <div className="font-medium text-text text-sm">EPA Mold Prevention</div>
-                    <div className="text-xs text-muted">Federal mold & moisture resources</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.ready.gov/winter-weather"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow"
-                >
-                  <ArrowRight className="text-primary" size={20} />
-                  <div>
-                    <div className="font-medium text-text text-sm">Ready.gov Winter Weather</div>
-                    <div className="text-xs text-muted">Federal emergency preparedness</div>
-                  </div>
-                </a>
+                {[
+                  { href: "https://www.iicrc.org/", title: "IICRC Water Damage Standards", desc: "Professional restoration guidelines" },
+                  { href: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm.html", title: "Red Cross Winter Storm Prep", desc: "Winter emergency preparedness" },
+                  { href: "https://www.epa.gov/mold", title: "EPA Mold Prevention", desc: "Federal mold & moisture resources" },
+                  { href: "https://www.ready.gov/winter-weather", title: "Ready.gov Winter Weather", desc: "Federal emergency preparedness" }
+                ].map((resource, i) => (
+                  <motion.a
+                    key={i}
+                    href={resource.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ scale: 1.02, boxShadow: '0 10px 30px -10px rgba(0,0,0,0.1)', x: 4 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <motion.div
+                      whileHover={{ x: 4, scale: 1.1 }}
+                      transition={{ type: 'spring', stiffness: 400 }}
+                    >
+                      <ArrowRight className="text-primary" size={20} />
+                    </motion.div>
+                    <div>
+                      <div className="font-medium text-text text-sm">{resource.title}</div>
+                      <div className="text-xs text-muted">{resource.desc}</div>
+                    </div>
+                  </motion.a>
+                ))}
               </div>
-            </section>
+            </AnimatedSection>
 
-            {/* FAQ Section */}
-            <section className="mb-16">
+            {/* FAQ Section - Animated */}
+            <motion.section
+              className="mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               <RelatedArticles categories={['water-damage', 'insurance']} currentSlug="/blog/frozen-burst-pipes-guide/" />
 
-        <GoogleStyleFAQ
+              <GoogleStyleFAQ
                 data={faqs}
                 title="Frequently Asked Questions"
                 className="border-none p-0"
               />
-            </section>
+            </motion.section>
 
           </div>
 
-          {/* Sidebar */}
+          {/* Sidebar - Animated */}
           <div className="lg:col-span-4">
-            <div className="sticky top-32 space-y-6">
+            <motion.div
+              className="sticky top-32 space-y-6"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
 
-              {/* Primary CTA Card */}
-              <div className="bg-[#1a73e8] rounded-[32px] p-8 text-white shadow-google overflow-hidden relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              {/* Primary CTA Card - Animated */}
+              <motion.div
+                className="bg-[#1a73e8] rounded-[32px] p-8 text-white shadow-google overflow-hidden relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.02, boxShadow: '0 30px 60px -15px rgba(26,115,232,0.5)' }}
+              >
+                <motion.div
+                  className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                />
 
                 <h3 className="font-display text-xl font-medium mb-4 relative z-10">
                   24/7 Burst Pipe Emergency Response
@@ -975,147 +1212,219 @@ const FrozenBurstPipesGuide: React.FC = () => {
                   Frozen or burst pipes don't wait for business hours. Our IICRC-certified team responds across Northern Virginia within 60-90 minutes, 24/7/365.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                    <Phone size={18} className="mr-2" />
+                    (877) 497-0007
+                  </Button>
+                </motion.div>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <Clock size={16} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-white font-medium">Average Response</div>
-                      <div className="text-xs text-blue-200">60-90 minutes</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <Shield size={16} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-white font-medium">IICRC Certified</div>
-                      <div className="text-xs text-blue-200">Licensed & insured</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <FileText size={16} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-white font-medium">Insurance Billing</div>
-                      <div className="text-xs text-blue-200">Direct billing available</div>
-                    </div>
-                  </div>
+                  {[
+                    { icon: Clock, title: "Average Response", desc: "60-90 minutes" },
+                    { icon: Shield, title: "IICRC Certified", desc: "Licensed & insured" },
+                    { icon: FileText, title: "Insurance Billing", desc: "Direct billing available" }
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      className="flex items-center gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                      whileHover={{ x: 4 }}
+                    >
+                      <motion.div
+                        className="bg-white/20 p-2 rounded-lg"
+                        whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.3)' }}
+                      >
+                        <item.icon size={16} />
+                      </motion.div>
+                      <div>
+                        <div className="text-xs text-white font-medium">{item.title}</div>
+                        <div className="text-xs text-blue-200">{item.desc}</div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Winter Prep Checklist */}
-              <div className="bg-blue-50 rounded-[24px] p-6 border border-blue-200">
+              {/* Winter Prep Checklist - Animated */}
+              <motion.div
+                className="bg-blue-50 rounded-[24px] p-6 border border-blue-200"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileHover={{ scale: 1.02, boxShadow: '0 15px 40px -10px rgba(26,115,232,0.2)' }}
+              >
                 <h4 className="font-medium text-blue-900 mb-4">Winter Prep Checklist</h4>
                 <ul className="space-y-2 text-sm text-blue-900">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Maintain heat above 55°F always
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Insulate pipes in crawlspaces/basements
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Disconnect outdoor hoses by November
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Let faucets drip when below 25°F
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Seal crawlspace air leaks
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
-                    Know location of main water shut-off
-                  </li>
+                  {[
+                    "Maintain heat above 55°F always",
+                    "Insulate pipes in crawlspaces/basements",
+                    "Disconnect outdoor hoses by November",
+                    "Let faucets drip when below 25°F",
+                    "Seal crawlspace air leaks",
+                    "Know location of main water shut-off"
+                  ].map((item, i) => (
+                    <motion.li
+                      key={i}
+                      className="flex items-start gap-2"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + i * 0.05 }}
+                      whileHover={{ x: 4 }}
+                    >
+                      <motion.div whileHover={{ scale: 1.2 }}>
+                        <CheckCircle2 size={14} className="text-blue-600 mt-0.5 shrink-0" />
+                      </motion.div>
+                      {item}
+                    </motion.li>
+                  ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              {/* Service Areas */}
-              <div className="bg-gray-50 rounded-[24px] p-6 border border-gray-100">
+              {/* Service Areas - Animated */}
+              <motion.div
+                className="bg-gray-50 rounded-[24px] p-6 border border-gray-100"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ scale: 1.02, boxShadow: '0 15px 40px -10px rgba(0,0,0,0.1)' }}
+              >
                 <h4 className="font-medium text-text mb-4">Northern Virginia Service Areas</h4>
                 <div className="space-y-2 text-sm text-muted">
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} className="text-primary shrink-0" />
-                    Fairfax County
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} className="text-primary shrink-0" />
-                    Arlington County
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} className="text-primary shrink-0" />
-                    Alexandria City
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} className="text-primary shrink-0" />
-                    Loudoun County
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={14} className="text-primary shrink-0" />
-                    Prince William County
-                  </div>
-                  <a href="/locations/" className="text-primary text-sm font-medium hover:underline mt-3 inline-block">
-                    View All Service Areas →
-                  </a>
+                  {["Fairfax County", "Arlington County", "Alexandria City", "Loudoun County", "Prince William County"].map((area, i) => (
+                    <motion.div
+                      key={i}
+                      className="flex items-center gap-2"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 + i * 0.05 }}
+                      whileHover={{ x: 4, color: '#1a73e8' }}
+                    >
+                      <motion.div whileHover={{ scale: 1.2, rotate: 15 }}>
+                        <MapPin size={14} className="text-primary shrink-0" />
+                      </motion.div>
+                      {area}
+                    </motion.div>
+                  ))}
+                  <motion.a
+                    href="/locations/"
+                    className="text-primary text-sm font-medium hover:underline mt-3 inline-flex items-center gap-1"
+                    whileHover={{ x: 4 }}
+                  >
+                    View All Service Areas
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Related Resources */}
-              <div className="bg-white border border-gray-100 rounded-[24px] p-6">
+              {/* Related Resources - Animated */}
+              <motion.div
+                className="bg-white border border-gray-100 rounded-[24px] p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileHover={{ scale: 1.02, boxShadow: '0 15px 40px -10px rgba(0,0,0,0.1)' }}
+              >
                 <h4 className="font-medium text-text mb-4">Related Resources</h4>
                 <div className="space-y-3">
-                  <a href="/blog/burst-pipe-emergency-response/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
-                    <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
-                    Burst Pipe Emergency Steps
-                  </a>
-                  <a href="/resources/emergency-checklists/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
-                    <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
-                    Emergency Checklists
-                  </a>
-                  <a href="/resources/insurance-claims-guide/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
-                    <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
-                    Insurance Claims Guide
-                  </a>
-                  <a href="/resources/water-damage-cost-guide/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
-                    <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
-                    Water Damage Cost Guide
-                  </a>
+                  {[
+                    { href: "/blog/burst-pipe-emergency-response/", label: "Burst Pipe Emergency Steps" },
+                    { href: "/resources/emergency-checklists/", label: "Emergency Checklists" },
+                    { href: "/resources/insurance-claims-guide/", label: "Insurance Claims Guide" },
+                    { href: "/resources/water-damage-cost-guide/", label: "Water Damage Cost Guide" }
+                  ].map((link, i) => (
+                    <motion.a
+                      key={i}
+                      href={link.href}
+                      className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.7 + i * 0.05 }}
+                      whileHover={{ x: 4 }}
+                    >
+                      <motion.div whileHover={{ x: 4, scale: 1.1 }}>
+                        <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
+                      </motion.div>
+                      {link.label}
+                    </motion.a>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           </div>
 
         </div>
       </div>
 
-      {/* Bottom CTA Banner */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
-        <div className="max-w-[1440px] mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">
+      {/* Bottom CTA Banner - Animated */}
+      <motion.div
+        className="bg-gradient-to-r from-blue-600 to-blue-700 py-16 relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"
+          animate={{ x: [-50, 50, -50], y: [-30, 30, -30] }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+          animate={{ x: [50, -50, 50], y: [30, -30, 30] }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        />
+
+        <div className="max-w-[1440px] mx-auto px-6 text-center relative z-10">
+          <motion.h2
+            className="font-display text-3xl md:text-4xl font-medium text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             Protect Your Northern Virginia Home This Winter
-          </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             Don't wait for the next Arctic blast. Our team provides 24/7 emergency response for frozen and burst pipes across Northern Virginia—typically arriving within 60-90 minutes.
-          </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
-          </Button>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3, type: 'spring', stiffness: 200 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+              <Phone size={20} className="mr-2" />
+              Call 24/7: (877) 497-0007
+            </Button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };

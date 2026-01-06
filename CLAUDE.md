@@ -24,6 +24,16 @@ Engineering contract:
 - Config: /config (site.ts, constants.ts)
 - QA log: /qa/issues.md (append-only, newest at top)
 
+Deployment:
+- ALWAYS use: `./scripts/deploy.sh <ftp_password>`
+- NEVER do partial FTP uploads (causes hash mismatch)
+- After deploy: `./scripts/verify-deployment.sh` (checks content-types)
+- FTP: Deploy@flood.doctor @ 132.148.253.156
+- Cloudflare Zone: 7b3b2f087429c5c3e9688253d8df11eb
+
+⚠️ CRITICAL: SPA fallback masks missing assets (returns 200 for everything).
+   Always verify content-types, not just HTTP status codes.
+
 Version: V14 (restored from backup + SEO infrastructure from design-build branch)
 
 Blog Article Gold Standard (see /pages/blog/ for examples):

@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useInView } from 'framer-motion';
 import {
   Phone,
   ArrowRight,
@@ -24,10 +25,459 @@ import {
   GraduationCap,
   Factory,
   Stethoscope,
-  Activity
+  Activity,
+  LucideIcon
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import { generateBreadcrumbSchema, combineSchemas, generateLocalBusinessSchema } from '../utils/schema';
+
+// Google-style easing curve
+const googleEase = [0.22, 1, 0.36, 1];
+
+// === Animated Helper Components ===
+
+interface AnimatedSectionProps {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+}
+
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className = '', id }) => {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.section
+      ref={ref}
+      id={id}
+      className={className}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      {children}
+    </motion.section>
+  );
+};
+
+interface AnimatedSectionHeaderProps {
+  title: string;
+  subtitle: string;
+}
+
+const AnimatedSectionHeader: React.FC<AnimatedSectionHeaderProps> = ({ title, subtitle }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="text-center mb-12"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: googleEase }}
+    >
+      <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+        {title}
+      </h2>
+      <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
+        {subtitle}
+      </p>
+    </motion.div>
+  );
+};
+
+interface ServiceCardData {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  icon: LucideIcon;
+  link: string;
+  image?: string;
+  featured?: boolean;
+}
+
+interface AnimatedServiceCardGridProps {
+  services: ServiceCardData[];
+  variant?: 'image' | 'icon';
+  iconBgColor?: string;
+  iconColor?: string;
+  columns?: 2 | 3 | 4;
+}
+
+const AnimatedServiceCardGrid: React.FC<AnimatedServiceCardGridProps> = ({
+  services,
+  variant = 'image',
+  iconBgColor = 'bg-[#e8f0fe]',
+  iconColor = 'text-[#1a73e8]',
+  columns = 3
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  const gridCols = columns === 2 ? 'md:grid-cols-2' :
+                   columns === 4 ? 'md:grid-cols-2 lg:grid-cols-4' :
+                   'md:grid-cols-2 lg:grid-cols-3';
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`grid ${gridCols} gap-6`}
+    >
+      {services.map((service, idx) => {
+        const ServiceIcon = service.icon;
+        return (
+          <motion.div
+            key={service.id}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: idx * 0.1, ease: googleEase }}
+            whileHover={{
+              y: -8,
+              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)',
+              transition: { duration: 0.3 }
+            }}
+          >
+            <Link
+              to={service.link}
+              className={`group bg-white rounded-2xl overflow-hidden block h-full ${variant === 'icon' ? 'p-6 lg:p-8 border border-[#dadce0] hover:border-[#1a73e8]' : ''}`}
+            >
+              {/* Image for image variant */}
+              {variant === 'image' && service.image && (
+                <div className="aspect-[16/10] overflow-hidden">
+                  <motion.img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </div>
+              )}
+              {/* Content */}
+              <div className={variant === 'image' ? 'p-6' : ''}>
+                <div className="flex items-center gap-3 mb-3">
+                  <motion.div
+                    className={`w-10 h-10 rounded-lg ${iconBgColor} flex items-center justify-center ${variant === 'icon' ? 'w-12 h-12 rounded-xl mb-5' : ''}`}
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <ServiceIcon className={iconColor} size={variant === 'icon' ? 24 : 20} />
+                  </motion.div>
+                  {variant === 'image' && service.subtitle && (
+                    <span className="text-[12px] text-[#5f6368] uppercase tracking-wide">{service.subtitle}</span>
+                  )}
+                </div>
+                <h3 className={`font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors ${variant === 'icon' ? 'text-[18px]' : 'text-[20px]'}`}>
+                  {service.title}
+                </h3>
+                <p className="text-[14px] text-[#5f6368] mb-4 line-clamp-2">
+                  {service.description}
+                </p>
+                <motion.span
+                  className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium"
+                  whileHover={{ x: 4 }}
+                >
+                  Learn more
+                  <ArrowRight size={16} className="ml-1" />
+                </motion.span>
+              </div>
+            </Link>
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  );
+};
+
+// Animated Testimonial Section
+interface TestimonialData {
+  quote: string;
+  author: string;
+  role: string;
+  location: string;
+}
+
+interface AnimatedTestimonialSectionProps {
+  testimonial: TestimonialData;
+}
+
+const AnimatedTestimonialSection: React.FC<AnimatedTestimonialSectionProps> = ({ testimonial }) => {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.section
+      ref={ref}
+      className="py-16 lg:py-20 bg-white"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
+        <div className="text-center">
+          <motion.div
+            className="flex justify-center gap-1 mb-6"
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : {}}
+            transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
+          >
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                transition={{ delay: 0.3 + i * 0.08, type: 'spring' }}
+              >
+                <Star className="text-[#fbbc04] fill-[#fbbc04]" size={20} />
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.blockquote
+            className="text-[24px] lg:text-[28px] font-normal text-[#202124] leading-[1.4] mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.4, duration: 0.6, ease: googleEase }}
+          >
+            "{testimonial.quote}"
+          </motion.blockquote>
+          <motion.div
+            className="text-[16px] text-[#5f6368]"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+          >
+            <span className="font-medium text-[#202124]">{testimonial.author}</span>
+            <span className="mx-2">·</span>
+            <span>{testimonial.role}</span>
+            <span className="mx-2">·</span>
+            <span>{testimonial.location}</span>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+// Animated Trust Section
+const AnimatedTrustSection: React.FC = () => {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const badges = [
+    { icon: Clock, title: '60-minute response', description: 'Guaranteed' },
+    { icon: Shield, title: 'IICRC certified', description: 'Industry standard' },
+    { icon: Star, title: '4.9/5 rating', description: '500+ reviews' },
+    { icon: CheckCircle2, title: 'Licensed & insured', description: 'Full protection' }
+  ];
+
+  return (
+    <motion.section
+      ref={ref}
+      className="py-12 bg-[#f8f9fa] border-y border-[#dadce0]"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {badges.map((badge, idx) => (
+            <motion.div
+              key={idx}
+              className="flex items-start gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: googleEase }}
+              whileHover={{ y: -4 }}
+            >
+              <motion.div
+                className="w-10 h-10 rounded-lg bg-white border border-[#dadce0] flex items-center justify-center flex-shrink-0"
+                whileHover={{ scale: 1.1, borderColor: '#1a73e8' }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <badge.icon className="text-[#1a73e8]" size={20} />
+              </motion.div>
+              <div>
+                <div className="text-[14px] font-medium text-[#202124]">{badge.title}</div>
+                <div className="text-[12px] text-[#5f6368]">{badge.description}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+// Animated Bottom CTA Section
+const AnimatedBottomCTA: React.FC = () => {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.section
+      ref={ref}
+      className="py-20 lg:py-28 bg-[#1a73e8] relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Animated background elements */}
+      <motion.div
+        className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"
+        animate={{ x: [-50, 50, -50], y: [-30, 30, -30] }}
+        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+        animate={{ x: [50, -50, 50], y: [30, -30, 30] }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center relative z-10">
+        <motion.h2
+          className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1, ease: googleEase }}
+        >
+          Ready to get started?
+        </motion.h2>
+        <motion.p
+          className="text-[18px] text-white/80 mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease: googleEase }}
+        >
+          Free assessments. 60-minute response. Direct insurance billing.
+        </motion.p>
+        {/* CTA Buttons */}
+        <motion.div
+          className="hidden lg:flex flex-row justify-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <motion.a
+            href="tel:8774970007"
+            className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Phone size={18} className="mr-2" />
+            (877) 497-0007
+          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              to="/request/"
+              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
+            >
+              Request estimate
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    </motion.section>
+  );
+};
+
+// Animated Cross-sell Section
+interface AnimatedCrossSellSectionProps {
+  isCommercial: boolean;
+  serviceImages: Record<string, string>;
+}
+
+const AnimatedCrossSellSection: React.FC<AnimatedCrossSellSectionProps> = ({ isCommercial, serviceImages }) => {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.section
+      ref={ref}
+      className="py-20 lg:py-28 bg-white"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Image */}
+          <motion.div
+            className="order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, ease: googleEase }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.div
+              className="aspect-[4/3] rounded-2xl overflow-hidden"
+              whileHover={{ boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)' }}
+            >
+              <img
+                src={isCommercial ? serviceImages.residential : serviceImages.commercial}
+                alt={isCommercial ? 'Residential services' : 'Commercial services'}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            className="order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.15, ease: googleEase }}
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f8f9fa] text-[#5f6368] text-sm mb-6"
+              whileHover={{ scale: 1.05 }}
+            >
+              {isCommercial ? <Home size={14} /> : <Briefcase size={14} />}
+              {isCommercial ? 'For Homeowners' : 'For Business'}
+            </motion.div>
+
+            <motion.h2
+              className="text-[32px] lg:text-[40px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2 }}
+            >
+              {isCommercial ? 'Residential restoration' : 'Commercial restoration'}
+            </motion.h2>
+
+            <motion.p
+              className="text-[18px] text-[#5f6368] leading-[1.6] mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.3 }}
+            >
+              {isCommercial
+                ? 'Expert home restoration with the same quality and care. 24/7 emergency response for homeowners throughout Northern Virginia.'
+                : 'Enterprise-grade restoration with minimal business disruption. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
+              }
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4 }}
+              whileHover={{ x: 8 }}
+            >
+              <Link
+                to={isCommercial ? '/services/residential/' : '/services/commercial/'}
+                className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
+              >
+                {isCommercial ? 'View residential services' : 'View commercial services'}
+                <ArrowRight size={18} className="ml-2" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
 
 /**
  * ServicesHub - Google Business/Workspace Style Redesign
@@ -186,74 +636,126 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
         )}
       />
 
-      {/* Hero Section - Google Style (Light Background) */}
-      <section className="pt-12 pb-20 lg:pt-16 lg:pb-28 bg-white">
+      {/* Hero Section - Animated Google Style (Light Background) */}
+      <motion.section
+        className="pt-12 pb-20 lg:pt-16 lg:pb-28 bg-white overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: googleEase }}
+            >
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm text-[#5f6368] mb-8">
+              <motion.nav
+                className="flex items-center gap-2 text-sm text-[#5f6368] mb-8"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 <Link to="/" className="hover:text-[#1a73e8]">Home</Link>
                 <span>/</span>
                 <Link to="/services/" className="hover:text-[#1a73e8]">Services</Link>
                 <span>/</span>
                 <span className="text-[#202124]">{isCommercial ? 'Commercial' : 'Residential'}</span>
-              </nav>
+              </motion.nav>
 
               {/* Audience Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                whileHover={{ scale: 1.05 }}
+              >
                 {isCommercial ? <Briefcase size={16} /> : <Home size={16} />}
                 {isCommercial ? 'Commercial Services' : 'Residential Services'}
-              </div>
+              </motion.div>
 
-              <h1 className="text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6">
+              <motion.h1
+                className="text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: googleEase }}
+              >
                 {isCommercial
                   ? 'Enterprise restoration for your business'
                   : 'Professional restoration for your home'
                 }
-              </h1>
+              </motion.h1>
 
-              <p className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-10 max-w-xl">
+              <motion.p
+                className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-10 max-w-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3, ease: googleEase }}
+              >
                 {isCommercial
                   ? 'Minimize downtime with rapid commercial restoration. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
                   : 'Water, fire, mold, or storm—our certified technicians are ready 24/7 to restore your property and your peace of mind.'
                 }
-              </p>
+              </motion.p>
 
               {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
-              <div className="hidden lg:flex flex-row gap-4">
-                <a
+              <motion.div
+                className="hidden lg:flex flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: googleEase }}
+              >
+                <motion.a
                   href="tel:8774970007"
                   className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <Phone size={18} className="mr-2" />
                   (877) 497-0007
-                </a>
-                <Link
-                  to="/request/"
-                  className="inline-flex items-center justify-center border border-[#dadce0] hover:bg-[#f8f9fa] text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
-                >
-                  Get free estimate
-                  <ArrowRight size={18} className="ml-2" />
-                </Link>
-              </div>
-            </div>
+                </motion.a>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                  <Link
+                    to="/request/"
+                    className="inline-flex items-center justify-center border border-[#dadce0] hover:bg-[#f8f9fa] text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+                  >
+                    Get free estimate
+                    <ArrowRight size={18} className="ml-2" />
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* Hero Image */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-[#e8f0fe] p-6 lg:p-8">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: googleEase }}
+            >
+              <motion.div
+                className="aspect-[4/3] rounded-3xl overflow-hidden bg-[#e8f0fe] p-6 lg:p-8"
+                whileHover={{ boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)' }}
+              >
                 <img
                   src={isCommercial ? serviceImages.commercial : serviceImages.residential}
                   alt={isCommercial ? 'Commercial restoration services' : 'Residential restoration services'}
                   className="w-full h-full object-cover rounded-2xl shadow-lg"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
-          {/* Stats Row */}
-          <div className="mt-16 pt-8 border-t border-[#dadce0]">
+          {/* Stats Row - Animated */}
+          <motion.div
+            className="mt-16 pt-8 border-t border-[#dadce0]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { value: '60 min', label: 'Response time' },
@@ -261,309 +763,114 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
                 { value: '4.9/5', label: 'Customer rating' },
                 { value: '15+', label: 'Years experience' }
               ].map((stat, idx) => (
-                <div key={idx}>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + idx * 0.1, ease: googleEase }}
+                  whileHover={{ scale: 1.05 }}
+                >
                   <div className="text-[32px] font-normal text-[#202124] mb-1">{stat.value}</div>
                   <div className="text-[14px] text-[#5f6368]">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Section 1: Restoration Services - Image Cards */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      {/* Section 1: Restoration Services - Animated Image Cards */}
+      <AnimatedSection className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="text-center mb-12">
-            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
-              {isCommercial ? 'Emergency restoration services' : 'Restoration services'}
-            </h2>
-            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
-              {isCommercial
-                ? 'Rapid response to minimize business interruption'
-                : 'Emergency response when every minute matters'
-              }
-            </p>
-          </div>
+          <AnimatedSectionHeader
+            title={isCommercial ? 'Emergency restoration services' : 'Restoration services'}
+            subtitle={isCommercial
+              ? 'Rapid response to minimize business interruption'
+              : 'Emergency response when every minute matters'
+            }
+          />
 
-          {/* Cards Grid with Real Images */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {restorationServices.map((service) => {
-              const ServiceIcon = service.icon;
-              return (
-                <Link
-                  key={service.id}
-                  to={service.link}
-                  className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  {/* Image */}
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  {/* Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-[#e8f0fe] flex items-center justify-center">
-                        <ServiceIcon className="text-[#1a73e8]" size={20} />
-                      </div>
-                      <span className="text-[12px] text-[#5f6368] uppercase tracking-wide">{service.subtitle}</span>
-                    </div>
-                    <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-[14px] text-[#5f6368] mb-4 line-clamp-2">
-                      {service.description}
-                    </p>
-                    <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
-                      Learn more
-                      <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          {/* Animated Cards Grid with Real Images */}
+          <AnimatedServiceCardGrid
+            services={restorationServices}
+            variant="image"
+            iconBgColor="bg-[#e8f0fe]"
+            iconColor="text-[#1a73e8]"
+          />
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Testimonial Section - Clean Style */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
-          <div className="text-center">
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="text-[#fbbc04] fill-[#fbbc04]" size={20} />
-              ))}
-            </div>
-            <blockquote className="text-[24px] lg:text-[28px] font-normal text-[#202124] leading-[1.4] mb-8">
-              "{testimonial.quote}"
-            </blockquote>
-            <div className="text-[16px] text-[#5f6368]">
-              <span className="font-medium text-[#202124]">{testimonial.author}</span>
-              <span className="mx-2">·</span>
-              <span>{testimonial.role}</span>
-              <span className="mx-2">·</span>
-              <span>{testimonial.location}</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Testimonial Section - Animated Clean Style */}
+      <AnimatedTestimonialSection testimonial={testimonial} />
 
-      {/* Section 2: Cleanup Services - Icon Cards */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* Section 2: Cleanup Services - Animated Icon Cards */}
+      <AnimatedSection className="py-20 lg:py-28 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="text-center mb-12">
-            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
-              {isCommercial ? 'Cleanup services' : 'Remediation services'}
-            </h2>
-            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
-              Specialized treatment following IICRC protocols for safe, thorough remediation.
-            </p>
-          </div>
+          <AnimatedSectionHeader
+            title={isCommercial ? 'Cleanup services' : 'Remediation services'}
+            subtitle="Specialized treatment following IICRC protocols for safe, thorough remediation."
+          />
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {cleanupServices.map((service, idx) => (
-              <Link
-                key={idx}
-                to={service.link}
-                className="group p-6 lg:p-8 rounded-2xl border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all bg-white"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#e6f4ea] flex items-center justify-center mb-5">
-                  <service.icon className="text-[#137333]" size={24} />
-                </div>
-                <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-[14px] text-[#5f6368] mb-4">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
-                  Learn more
-                  <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <AnimatedServiceCardGrid
+            services={cleanupServices}
+            variant="icon"
+            iconBgColor="bg-[#e6f4ea]"
+            iconColor="text-[#137333]"
+          />
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Section 3: Specialty Services */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      {/* Section 3: Specialty Services - Animated */}
+      <AnimatedSection className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="text-center mb-12">
-            <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
-              {isCommercial ? 'Industry specialists' : 'Specialty services'}
-            </h2>
-            <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
-              {isCommercial
-                ? 'Vertical expertise for healthcare, hospitality, education, and industrial facilities.'
-                : 'Focused solutions for unique restoration challenges.'
-              }
-            </p>
-          </div>
+          <AnimatedSectionHeader
+            title={isCommercial ? 'Industry specialists' : 'Specialty services'}
+            subtitle={isCommercial
+              ? 'Vertical expertise for healthcare, hospitality, education, and industrial facilities.'
+              : 'Focused solutions for unique restoration challenges.'
+            }
+          />
 
-          <div className={`grid gap-6 ${isCommercial ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
-            {specialtyServices.map((service, idx) => (
-              <Link
-                key={idx}
-                to={service.link}
-                className="group p-6 rounded-2xl bg-white border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#fce8e6] flex items-center justify-center mb-5">
-                  <service.icon className="text-[#c5221f]" size={24} />
-                </div>
-                <h3 className="text-[18px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-[14px] text-[#5f6368]">
-                  {service.description}
-                </p>
-              </Link>
-            ))}
-          </div>
+          <AnimatedServiceCardGrid
+            services={specialtyServices}
+            variant="icon"
+            iconBgColor="bg-[#fce8e6]"
+            iconColor="text-[#c5221f]"
+            columns={isCommercial ? 4 : 3}
+          />
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Section 4: Technical Services (Commercial Only) */}
+      {/* Section 4: Technical Services (Commercial Only) - Animated */}
       {isCommercial && (
-        <section className="py-20 lg:py-28 bg-white">
+        <AnimatedSection className="py-20 lg:py-28 bg-white">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-            <div className="text-center mb-12">
-              <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
-                Technical services
-              </h2>
-              <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
-                Advanced diagnostics, consulting, and environmental testing for complex commercial projects.
-              </p>
-            </div>
+            <AnimatedSectionHeader
+              title="Technical services"
+              subtitle="Advanced diagnostics, consulting, and environmental testing for complex commercial projects."
+            />
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {commercialTechnical.map((service, idx) => (
-                <Link
-                  key={idx}
-                  to={service.link}
-                  className="group p-6 lg:p-8 rounded-2xl border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all bg-white"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#fef7e0] flex items-center justify-center mb-5">
-                    <service.icon className="text-[#b06000]" size={24} />
-                  </div>
-                  <h3 className="text-[20px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-[14px] text-[#5f6368] mb-4">
-                    {service.description}
-                  </p>
-                  <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
-                    Learn more
-                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <AnimatedServiceCardGrid
+              services={commercialTechnical}
+              variant="icon"
+              iconBgColor="bg-[#fef7e0]"
+              iconColor="text-[#b06000]"
+            />
           </div>
-        </section>
+        </AnimatedSection>
       )}
 
-      {/* Cross-sell Section */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image */}
-            <div className="order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img
-                  src={isCommercial ? serviceImages.residential : serviceImages.commercial}
-                  alt={isCommercial ? 'Residential services' : 'Commercial services'}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+      {/* Cross-sell Section - Animated */}
+      <AnimatedCrossSellSection
+        isCommercial={isCommercial}
+        serviceImages={serviceImages}
+      />
 
-            {/* Content */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f8f9fa] text-[#5f6368] text-sm mb-6">
-                {isCommercial ? <Home size={14} /> : <Briefcase size={14} />}
-                {isCommercial ? 'For Homeowners' : 'For Business'}
-              </div>
+      {/* Trust Section - Animated */}
+      <AnimatedTrustSection />
 
-              <h2 className="text-[32px] lg:text-[40px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
-                {isCommercial ? 'Residential restoration' : 'Commercial restoration'}
-              </h2>
-
-              <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
-                {isCommercial
-                  ? 'Expert home restoration with the same quality and care. 24/7 emergency response for homeowners throughout Northern Virginia.'
-                  : 'Enterprise-grade restoration with minimal business disruption. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
-                }
-              </p>
-
-              <Link
-                to={isCommercial ? '/services/residential/' : '/services/commercial/'}
-                className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
-              >
-                {isCommercial ? 'View residential services' : 'View commercial services'}
-                <ArrowRight size={18} className="ml-2" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Section */}
-      <section className="py-12 bg-[#f8f9fa] border-y border-[#dadce0]">
-        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: Clock, title: '60-minute response', description: 'Guaranteed' },
-              { icon: Shield, title: 'IICRC certified', description: 'Industry standard' },
-              { icon: Star, title: '4.9/5 rating', description: '500+ reviews' },
-              { icon: CheckCircle2, title: 'Licensed & insured', description: 'Full protection' }
-            ].map((badge, idx) => (
-              <div key={idx} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-white border border-[#dadce0] flex items-center justify-center flex-shrink-0">
-                  <badge.icon className="text-[#1a73e8]" size={20} />
-                </div>
-                <div>
-                  <div className="text-[14px] font-medium text-[#202124]">{badge.title}</div>
-                  <div className="text-[12px] text-[#5f6368]">{badge.description}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA - Google Blue */}
-      <section className="py-20 lg:py-28 bg-[#1a73e8]">
-        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
-          <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
-            Ready to get started?
-          </h2>
-          <p className="text-[18px] text-white/80 mb-10">
-            Free assessments. 60-minute response. Direct insurance billing.
-          </p>
-          {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
-          <div className="hidden lg:flex flex-row justify-center gap-4">
-            <a
-              href="tel:8774970007"
-              className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
-            >
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
-            </a>
-            <Link
-              to="/request/"
-              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
-            >
-              Request estimate
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Bottom CTA - Animated Google Blue */}
+      <AnimatedBottomCTA />
     </main>
   );
 };

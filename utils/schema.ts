@@ -103,7 +103,16 @@ export function generateOrganizationSchema() {
       postalCode: COMPANY_ADDRESS.postalCode,
       addressCountry: COMPANY_ADDRESS.country,
     },
-    foundingDate: '2000',
+    foundingDate: SITE_INFO.foundingDate || '2005',
+    slogan: SITE_INFO.slogan || "Northern Virginia's 24/7 Water Damage Experts",
+    knowsAbout: [
+      'Water damage restoration',
+      'Flood cleanup',
+      'Mold remediation',
+      'Emergency water extraction',
+      'Structural drying',
+      'Insurance claims assistance'
+    ],
     areaServed: SERVICE_AREA.regions.map(region => ({
       '@type': 'State',
       name: region,

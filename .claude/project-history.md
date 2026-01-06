@@ -566,3 +566,122 @@ We have 80+ neighborhood content files ready to render.
 - Consistent with city archetype templates (Estate/Historic/Urban/Suburban)
 - Better visual differentiation from competitors
 - Reduced "text-heavy" appearance
+
+---
+
+### 2026-01-04: AI Search Visibility Optimization
+
+**Task:** Fix zero AI visibility issue (Flood Doctor appears in 0/13 city AI searches)
+
+**Problem Identified:**
+- Perplexity, ChatGPT, Claude, Gemini show ZERO results for Flood Doctor
+- Competitors dominating: FloodTech USA (100%), Anthony Restoration (92%)
+- Missing AI ranking signals: geographic targeting, structured contact info, certifications, years of experience
+
+**Audit Document:** `.claude/ai-search-visibility-audit.md`
+
+**Fixes Applied:**
+
+1. **Home.tsx - Title Tag Keyword-First:**
+   - Before: "Emergency Water Damage Restoration & Flood Cleanup | Northern Virginia"
+   - After: "Water Damage Restoration Northern Virginia | 60-Min Response | 24/7"
+
+2. **Home.tsx - Hero AI Visibility Badges:**
+   - Added "IICRC Certified" badge with Shield icon
+   - Added "20+ Years Experience" badge with Award icon
+   - Green availability badge maintained
+
+3. **Home.tsx - Crawlable Contact Info:**
+   - Phone number "(877) 497-0007" in visible paragraph text
+   - License "Virginia Licensed #2705155505" in crawlable text
+   - Not just in buttons/images that AI can't parse
+
+4. **Home.tsx - "Why Choose Us" Section (400+ words):**
+   - E-E-A-T content with expertise signals
+   - Credential grid with all license numbers (VA, DC, MD)
+   - IICRC certification details
+   - Professional copy differentiating from competitors
+
+5. **Home.tsx - Visible FAQ Section:**
+   - 7 FAQ questions with full answers for main site visitors
+   - Details/summary accordion pattern
+   - Questions include conversational AI queries
+
+6. **Home.tsx - Enhanced FAQ Schema:**
+   - Added conversational queries like "Who is the best water damage restoration company in Northern Virginia?"
+   - City-specific questions for subdomains
+   - Full detailed answers with stats
+
+7. **schema.ts - Organization Schema:**
+   - Added `foundingDate: '2005'`
+   - Added `knowsAbout` array with 6 expertise areas
+   - Added `slogan` property
+
+8. **constants.ts - Site Info:**
+   - Added `foundingDate: '2005'`
+   - Added `yearsExperience: '20+'`
+   - Added `slogan: "Northern Virginia's 24/7 Water Damage Experts"`
+
+**Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
+
+**Files Modified:**
+- `pages/Home.tsx` - Major SEO enhancements
+- `utils/schema.ts` - Organization schema updates
+- `config/constants.ts` - Site info additions
+
+**Next Steps (from audit Phase 1):**
+- [ ] Verify AI crawlability with Google's Mobile-Friendly Test
+- [ ] Submit sitemap to Google Search Console
+- [ ] Apply to IICRC directory listing
+- [ ] Claim/verify all Google Business Profiles
+- [ ] Submit to top 10 directories (Yelp, BBB, Angi, etc.)
+
+---
+
+### 2026-01-04: HowTo Guides Section for Rich Results
+
+**What:** Created complete HowTo guides section for Google rich results
+
+**Purpose:**
+- Google loves showing HowTo rich results in SERPs
+- Comprehensive guides establish E-E-A-T authority
+- Each guide has HowTo schema + FAQPage schema for maximum rich result eligibility
+
+**Files Created:**
+
+| File | Steps | Read Time | Content |
+|------|-------|-----------|---------|
+| `pages/guides/GuidesHub.tsx` | — | — | Hub page with 6 guide cards, ItemList schema |
+| `pages/guides/WaterDamageCleanupGuide.tsx` | 8 | 10 min | Emergency water damage response |
+| `pages/guides/MoldRemediationGuide.tsx` | 7 | 12 min | DIY vs professional mold remediation |
+| `pages/guides/InsuranceClaimGuide.tsx` | 10 | 15 min | Maximize insurance claim settlements |
+| `pages/guides/BasementWaterproofingGuide.tsx` | 9 | 14 min | Interior & exterior waterproofing |
+| `pages/guides/BurstPipeGuide.tsx` | 6 | 8 min | Emergency burst pipe response |
+| `pages/guides/FloodPreparationGuide.tsx` | 8 | 11 min | Pre-storm flood preparation |
+
+**Schema Markup Per Guide:**
+- `@type: HowTo` with full step array, supplies, tools, estimatedCost, totalTime
+- `@type: FAQPage` with 5-6 questions per guide
+- `@type: BreadcrumbList` for navigation
+
+**Routes Added:**
+- `/guides/` — Hub page
+- `/guides/water-damage-cleanup/`
+- `/guides/mold-remediation/`
+- `/guides/water-damage-insurance-claim/`
+- `/guides/basement-waterproofing/`
+- `/guides/burst-pipe-emergency/`
+- `/guides/flood-preparation/`
+
+**Navigation Updated:**
+- Added "Guides" link to main nav in `data/nav.ts`
+
+**Files Modified:**
+- `App.tsx` - Added lazy imports and routes for all 7 guide pages
+- `data/nav.ts` - Added Guides to MAIN_NAV_ITEMS
+
+**Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
+
+**Deployment Status:** ⏳ PENDING — FTP password needed for Deploy@flood.doctor
+
+---

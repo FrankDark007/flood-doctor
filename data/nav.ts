@@ -31,6 +31,7 @@ export const COMMERCIAL_NAV: NavSection = {
 export const MAIN_NAV_ITEMS = [
   { label: 'Services', type: 'dropdown', dropdownId: 'services' },
   { label: 'Locations', type: 'dropdown', dropdownId: 'locations' },
+  { label: 'Guides', path: '/guides/', type: 'link' },
   { label: 'About', path: '/about/', type: 'link' },
   { label: 'Blog', path: '/blog/', type: 'link' },
   { label: 'Contact', path: '/contact/', type: 'link' },

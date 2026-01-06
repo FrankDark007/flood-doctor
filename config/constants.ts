@@ -18,6 +18,9 @@ export const SITE_INFO = {
   tagline: 'Water Damage Restoration',
   url: 'https://flood.doctor',
   mainSite: 'https://www.flooddoctorva.com',
+  foundingDate: '2005',
+  yearsExperience: '20+',
+  slogan: 'Northern Virginia\'s 24/7 Water Damage Experts',
 } as const;
 
 export const CREDENTIALS = {

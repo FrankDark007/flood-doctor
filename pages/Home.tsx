@@ -29,6 +29,29 @@ import {
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 
+// Animation Components
+import {
+  FadeIn,
+  SlideUp,
+  ScaleIn,
+  StaggerContainer,
+  StaggerItem,
+  CountUp,
+  HoverCard,
+  AnimatedCheckmark,
+  motion,
+  AnimatePresence
+} from '../components/motion';
+
+// SEO-optimized city components
+import {
+  NeighborhoodResponseGrid,
+  LocalExpertiseCards,
+  TestimonialSection,
+  CityFAQSection,
+  TrustBadgeBar
+} from '../components/city';
+
 /**
  * Home - Google Workspace Style Redesign
  *
@@ -117,77 +140,141 @@ const Home: React.FC = () => {
     { value: '4.9/5', label: 'Rating', icon: Star }
   ], []);
 
+  // Enhanced FAQ schema with conversational queries for AI visibility
   const homepageSchema = useMemo(() => generateHomepageSchema([
-    { question: 'How quickly can you respond to water damage emergencies?', answer: `We guarantee 60-minute response time 24/7 throughout ${locationText} and surrounding areas.` },
-    { question: 'Do you work with insurance companies?', answer: 'Yes, we handle direct insurance billing and documentation for all major carriers.' },
-    { question: 'What areas do you serve?', answer: isSubdomain ? `We serve ${cityName} and surrounding communities in Northern Virginia.` : 'We serve Northern Virginia including Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties, plus Washington DC.' },
+    { question: 'How quickly can you respond to water damage emergencies?', answer: `Flood Doctor guarantees 60-minute response time 24/7 throughout ${locationText} and surrounding areas. Our IICRC-certified technicians are available around the clock, 365 days a year.` },
+    { question: `Who is the best water damage restoration company in ${locationText}?`, answer: `Flood Doctor has served ${locationText} for over 20 years with IICRC-certified technicians, 60-minute response times, and a 4.9-star rating. We hold Virginia License #2705155505 and provide 24/7 emergency service.` },
+    { question: 'Do you work with insurance companies?', answer: 'Yes, Flood Doctor handles direct insurance billing and documentation for all major carriers. We have processed over 8,000 insurance claims with a 98% approval rate.' },
+    { question: `What areas do you serve in ${locationText}?`, answer: isSubdomain ? `Flood Doctor serves ${cityName} and surrounding communities including all neighborhoods in the area. We have crews positioned throughout Northern Virginia for rapid response.` : 'Flood Doctor serves all of Northern Virginia including Fairfax County, Arlington County, Alexandria, Loudoun County, Prince William County, McLean, Vienna, Tysons, Reston, Herndon, Ashburn, Springfield, Falls Church, Great Falls, and Washington DC.' },
+    { question: 'Are you licensed and certified for water damage restoration?', answer: 'Yes, Flood Doctor is fully licensed in Virginia (DPOR #2705155505), Washington DC (#420222000069), and Maryland (MHIC #139079). All technicians are IICRC-certified in Water Damage Restoration (WRT), Applied Structural Drying (ASD), and Mold Remediation.' },
+    { question: `How much does water damage restoration cost in ${locationText}?`, answer: `Water damage restoration costs in ${locationText} typically range from $1,500-$10,000 depending on the extent of damage, water category, and affected square footage. Flood Doctor provides free estimates and works directly with your insurance company.` },
+    { question: 'How long does water damage restoration take?', answer: 'Most water damage restoration projects take 3-5 days for the drying process, followed by any necessary repairs. Flood Doctor uses real-time moisture monitoring technology to track drying progress and ensure thorough restoration.' },
   ]), [locationText, cityName, isSubdomain]);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={isSubdomain ? `Water Damage Restoration ${cityName} VA | 24/7 Emergency` : "Emergency Water Damage Restoration & Flood Cleanup"}
+        title={isSubdomain
+          ? `Water Damage Restoration ${cityName} VA | 60-Min Response | 24/7`
+          : "Water Damage Restoration Northern Virginia | 60-Min Response | 24/7"
+        }
         description={isSubdomain
-          ? `24/7 emergency water damage restoration in ${cityName}, VA. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007.`
-          : "24/7 emergency water damage restoration in Northern Virginia. IICRC-certified crews arrive in 60 minutes. Direct insurance billing, real-time drying monitoring. Call (877) 497-0007."
+          ? `${cityName} water damage restoration with 60-minute response, 24/7. IICRC-certified technicians, direct insurance billing, real-time drying monitoring. Virginia License #2705155505. Call (877) 497-0007.`
+          : "Northern Virginia water damage restoration with 60-minute response, 24/7. IICRC-certified technicians serving Fairfax, Arlington, Alexandria, McLean. Direct insurance billing. Virginia License #2705155505. Call (877) 497-0007."
         }
         schema={homepageSchema}
       />
 
-      {/* Hero Section - Google Style */}
-      <section className="pt-12 pb-20 lg:pt-16 lg:pb-28 bg-white">
+      {/* Hero Section - Google Style with Animations */}
+      <section className="pt-12 pb-20 lg:pt-16 lg:pb-28 bg-white overflow-hidden">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e6f4ea] text-[#137333] text-sm font-medium mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#137333] animate-pulse" />
-                {isSubdomain ? `Crews available in ${cityName}` : 'Crews available now'}
-              </div>
+              <StaggerContainer staggerDelay={0.1} className="flex flex-wrap items-center gap-3 mb-6">
+                <StaggerItem>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fef7e0] text-[#b06000] text-sm font-medium">
+                    <Clock size={14} />
+                    20-30 Min Response
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium">
+                    <Shield size={14} />
+                    IICRC Certified
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fff8e1] text-[#f59e0b] text-sm font-medium">
+                    <Star size={14} className="fill-[#f59e0b]" />
+                    4.9★ Rating
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e6f4ea] text-[#137333] text-sm font-medium">
+                    <span className="w-2 h-2 rounded-full bg-[#137333] animate-pulse" />
+                    24/7 Available
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
 
-              <h1 className="text-[32px] sm:text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6">
-                {isSubdomain ? `Water damage restoration in ${cityName}` : 'Water damage restoration, simplified'}
-              </h1>
+              <FadeIn delay={0.2}>
+                <h1 className="text-[32px] sm:text-[40px] lg:text-[56px] font-normal text-[#202124] leading-[1.1] tracking-[-0.5px] mb-6">
+                  {isSubdomain ? `Water Damage Restoration in ${cityName}, VA` : 'Water Damage Restoration in Northern Virginia'}
+                </h1>
+              </FadeIn>
 
-              <p className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-10 max-w-xl">
-                Track your restoration in real-time. From emergency dispatch to final walkthrough—complete visibility at every step.
-              </p>
+              <FadeIn delay={0.3}>
+                <p className="text-[18px] lg:text-[20px] text-[#5f6368] leading-[1.6] mb-6 max-w-xl">
+                  {isSubdomain
+                    ? `Flood Doctor provides 24/7 emergency water damage restoration in ${cityName} with 60-minute response. Track your restoration in real-time through our client portal.`
+                    : 'Flood Doctor provides 24/7 emergency water damage restoration throughout Northern Virginia. Track your restoration in real-time—from emergency dispatch to final walkthrough.'
+                  }
+                </p>
+              </FadeIn>
+
+              {/* Crawlable phone number for AI visibility */}
+              <FadeIn delay={0.4}>
+                <p className="text-[16px] text-[#3c4043] mb-8">
+                  <strong>Call 24/7:</strong>{' '}
+                  <a href="tel:8774970007" className="text-[#1a73e8] hover:underline font-medium">
+                    (877) 497-0007
+                  </a>
+                  {' '}— Virginia Licensed #2705155505 — IICRC Certified Firm
+                </p>
+              </FadeIn>
 
               {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
-              <div className="hidden lg:flex flex-row gap-4 mb-10">
-                <a
-                  href="tel:8774970007"
-                  className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
-                >
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </a>
-                <Link
-                  to="/request/"
-                  className="inline-flex items-center justify-center border border-[#dadce0] hover:bg-[#f8f9fa] text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
-                >
-                  Get free estimate
-                  <ArrowRight size={18} className="ml-2" />
-                </Link>
-              </div>
+              <FadeIn delay={0.5}>
+                <div className="hidden lg:flex flex-row gap-4 mb-10">
+                  <motion.a
+                    href="tel:8774970007"
+                    className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Phone size={18} className="mr-2" />
+                    (877) 497-0007
+                  </motion.a>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                    <Link
+                      to="/request/"
+                      className="inline-flex items-center justify-center border border-[#dadce0] hover:bg-[#f8f9fa] text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+                    >
+                      Get free estimate
+                      <ArrowRight size={18} className="ml-2" />
+                    </Link>
+                  </motion.div>
+                </div>
+              </FadeIn>
 
-              {/* Stats Row */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Stats Row - Animated */}
+              <StaggerContainer staggerDelay={0.1} delayChildren={0.5} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {stats.map((stat, idx) => (
-                  <div key={idx} className="bg-[#f8f9fa] rounded-xl p-4">
-                    <div className="flex items-center gap-2 mb-1">
-                      <stat.icon size={14} className="text-[#1a73e8]" />
-                      <span className="text-[12px] text-[#5f6368]">{stat.label}</span>
-                    </div>
-                    <div className="text-[20px] font-medium text-[#202124]">{stat.value}</div>
-                  </div>
+                  <StaggerItem key={idx}>
+                    <HoverCard className="bg-[#f8f9fa] rounded-xl p-4" hoverScale={1.03} hoverY={-2}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <stat.icon size={14} className="text-[#1a73e8]" />
+                        <span className="text-[12px] text-[#5f6368]">{stat.label}</span>
+                      </div>
+                      <div className="text-[20px] font-medium text-[#202124]">
+                        {stat.value.includes('+') ? (
+                          <><CountUp end={parseInt(stat.value.replace(/[^0-9]/g, ''))} duration={2} delay={0.6 + idx * 0.1} />{stat.value.includes('+') ? '+' : ''}</>
+                        ) : stat.value}
+                      </div>
+                    </HoverCard>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
 
-            {/* Dashboard Mockup */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl border border-[#dadce0] overflow-hidden">
+            {/* Dashboard Mockup - Animated */}
+            <ScaleIn delay={0.3} duration={0.8} className="relative">
+              <motion.div
+                className="bg-white rounded-2xl shadow-xl border border-[#dadce0] overflow-hidden"
+                whileHover={{ y: -8, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
                 {/* Dashboard Header */}
                 <div className="bg-[#202124] px-6 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -265,10 +352,16 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Floating Notification */}
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-[#dadce0]">
+              {/* Floating Notification - Animated */}
+              <motion.div
+                className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-[#dadce0]"
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 1, duration: 0.5, type: 'spring' }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#e8f0fe] flex items-center justify-center">
                     <MessageSquare className="text-[#1a73e8]" size={20} />
@@ -278,14 +371,35 @@ const Home: React.FC = () => {
                     <div className="text-[12px] text-[#5f6368]">Project Manager: Mike</div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </ScaleIn>
           </div>
         </div>
       </section>
 
-      {/* Local Context Section - Only shown on city subdomains */}
-      {isSubdomain && franchise.localHooks && (
+      {/* Trust Badge Bar - Compact for city subdomains */}
+      {isSubdomain && (
+        <TrustBadgeBar compact />
+      )}
+
+      {/* Neighborhood Response Grid - City subdomains only */}
+      {isSubdomain && franchise.neighborhoodResponseTimes && franchise.neighborhoodResponseTimes.length > 0 && (
+        <NeighborhoodResponseGrid
+          neighborhoods={franchise.neighborhoodResponseTimes}
+          cityName={cityName}
+        />
+      )}
+
+      {/* Local Expertise Cards - City subdomains only */}
+      {isSubdomain && franchise.challenges && franchise.challenges.length > 0 && (
+        <LocalExpertiseCards
+          challenges={franchise.challenges}
+          cityName={cityName}
+        />
+      )}
+
+      {/* Legacy Local Context Section - Fallback when SEO data not populated */}
+      {isSubdomain && franchise.localHooks && !franchise.challenges && (
         <section className="py-16 lg:py-20 bg-white border-b border-[#dadce0]">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -349,31 +463,46 @@ const Home: React.FC = () => {
       {/* Process Timeline - Light Background (Google Style) */}
       <section className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="text-center mb-12">
+          <FadeIn className="text-center mb-12">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
               From call to restoration
             </h2>
             <p className="text-[18px] text-[#5f6368]">Our streamlined response process</p>
-          </div>
+          </FadeIn>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute top-10 left-0 right-0 h-[2px] bg-[#dadce0] hidden lg:block" />
+            <motion.div
+              className="absolute top-10 left-0 right-0 h-[2px] bg-[#dadce0] hidden lg:block origin-left"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            />
 
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
+            <StaggerContainer staggerDelay={0.15} className="grid grid-cols-2 lg:grid-cols-5 gap-6">
               {processSteps.map((step, idx) => (
-                <div key={idx} className="relative text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-[#1a73e8] text-[#1a73e8] font-medium text-[24px] mb-4 relative z-10 shadow-sm">
-                    {step.step}
-                  </div>
-                  <h3 className="font-medium text-[#202124] mb-1">{step.title}</h3>
-                  <p className="text-[14px] text-[#5f6368] mb-2">{step.description}</p>
-                  <div className="inline-block px-3 py-1 rounded-full bg-[#e8f0fe] text-[12px] text-[#1a73e8] font-medium">
-                    {step.time}
-                  </div>
-                </div>
+                <StaggerItem key={idx}>
+                  <motion.div
+                    className="relative text-center"
+                    whileHover={{ y: -4 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  >
+                    <motion.div
+                      className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-[#1a73e8] text-[#1a73e8] font-medium text-[24px] mb-4 relative z-10 shadow-sm"
+                      whileHover={{ scale: 1.1, borderColor: '#137333' }}
+                    >
+                      {step.step}
+                    </motion.div>
+                    <h3 className="font-medium text-[#202124] mb-1">{step.title}</h3>
+                    <p className="text-[14px] text-[#5f6368] mb-2">{step.description}</p>
+                    <div className="inline-block px-3 py-1 rounded-full bg-[#e8f0fe] text-[12px] text-[#1a73e8] font-medium">
+                      {step.time}
+                    </div>
+                  </motion.div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>
@@ -382,19 +511,19 @@ const Home: React.FC = () => {
       <section id="services" className="py-24 lg:py-36 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
-            <div>
+            <FadeIn direction="left">
               <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
                 Restoration services
               </h2>
               <p className="text-[18px] text-[#5f6368]">
                 Complete solutions for homes and businesses.
               </p>
-            </div>
+            </FadeIn>
 
             {/* Tabs */}
-            <div className="flex gap-2 mt-6 lg:mt-0 bg-[#f8f9fa] p-1 rounded-full">
+            <FadeIn delay={0.2} direction="right" className="flex gap-2 mt-6 lg:mt-0 bg-[#f8f9fa] p-1 rounded-full">
               {serviceTabs.map((tab) => (
-                <button
+                <motion.button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium transition-all ${
@@ -402,41 +531,66 @@ const Home: React.FC = () => {
                       ? 'bg-white text-[#202124] shadow-sm'
                       : 'text-[#5f6368] hover:text-[#202124]'
                   }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <tab.icon size={18} />
                   {tab.label}
-                </button>
+                </motion.button>
               ))}
-            </div>
+            </FadeIn>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
-              <Link
-                key={idx}
-                to={service.link}
-                className="group p-6 rounded-2xl border border-[#dadce0] hover:border-[#1a73e8] hover:shadow-md transition-all bg-white"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#e8f0fe] flex items-center justify-center mb-5 group-hover:bg-[#1a73e8] transition-colors">
-                  <service.icon className="text-[#1a73e8] group-hover:text-white transition-colors" size={24} />
-                </div>
-                <h3 className="text-[18px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-[14px] text-[#5f6368]">{service.description}</p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              to="/services/"
-              className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              View all services
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </div>
+              {services.map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <HoverCard
+                    className="h-full p-6 rounded-2xl border border-[#dadce0] bg-white"
+                    hoverScale={1.02}
+                    borderOnHover
+                  >
+                    <Link to={service.link} className="group block h-full">
+                      <motion.div
+                        className="w-12 h-12 rounded-xl bg-[#e8f0fe] flex items-center justify-center mb-5 group-hover:bg-[#1a73e8] transition-colors"
+                        whileHover={{ rotate: 5 }}
+                      >
+                        <service.icon className="text-[#1a73e8] group-hover:text-white transition-colors" size={24} />
+                      </motion.div>
+                      <h3 className="text-[18px] font-medium text-[#202124] mb-2 group-hover:text-[#1a73e8] transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-[14px] text-[#5f6368]">{service.description}</p>
+                    </Link>
+                  </HoverCard>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          <FadeIn delay={0.4} className="text-center mt-10">
+            <motion.div whileHover={{ x: 4 }} className="inline-block">
+              <Link
+                to="/services/"
+                className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
+              >
+                View all services
+                <ArrowRight size={18} className="ml-2" />
+              </Link>
+            </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -446,67 +600,99 @@ const Home: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Feature List */}
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
-                <Activity size={16} />
-                Technology
-              </div>
-              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-8">
-                Stay informed at every step
-              </h2>
-              <p className="text-[18px] text-[#5f6368] mb-12">
-                Our client portal gives you complete visibility into your restoration project.
-              </p>
+              <FadeIn>
+                <motion.div
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Activity size={16} />
+                  Technology
+                </motion.div>
+              </FadeIn>
+              <FadeIn delay={0.1}>
+                <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-8">
+                  Stay informed at every step
+                </h2>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <p className="text-[18px] text-[#5f6368] mb-12">
+                  Our client portal gives you complete visibility into your restoration project.
+                </p>
+              </FadeIn>
 
-              <div className="space-y-4">
+              <StaggerContainer staggerDelay={0.1} delayChildren={0.3} className="space-y-4">
                 {features.map((feature, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedFeature(idx)}
-                    className={`w-full text-left p-5 rounded-xl transition-all ${
-                      selectedFeature === idx
-                        ? 'bg-white shadow-md border-l-4 border-[#1a73e8]'
-                        : 'hover:bg-white/50'
-                    }`}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        selectedFeature === idx ? 'bg-[#1a73e8] text-white' : 'bg-[#e8f0fe] text-[#1a73e8]'
-                      }`}>
-                        <feature.icon size={20} />
+                  <StaggerItem key={idx}>
+                    <motion.button
+                      onClick={() => setSelectedFeature(idx)}
+                      className={`w-full text-left p-5 rounded-xl transition-all ${
+                        selectedFeature === idx
+                          ? 'bg-white shadow-md border-l-4 border-[#1a73e8]'
+                          : 'hover:bg-white/50'
+                      }`}
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.99 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                            selectedFeature === idx ? 'bg-[#1a73e8] text-white' : 'bg-[#e8f0fe] text-[#1a73e8]'
+                          }`}
+                          animate={selectedFeature === idx ? { rotate: [0, 5, 0] } : {}}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <feature.icon size={20} />
+                        </motion.div>
+                        <div>
+                          <h3 className={`font-medium mb-1 ${selectedFeature === idx ? 'text-[#202124]' : 'text-[#5f6368]'}`}>
+                            {feature.title}
+                          </h3>
+                          <p className="text-[14px] text-[#5f6368]">{feature.description}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className={`font-medium mb-1 ${selectedFeature === idx ? 'text-[#202124]' : 'text-[#5f6368]'}`}>
-                          {feature.title}
-                        </h3>
-                        <p className="text-[14px] text-[#5f6368]">{feature.description}</p>
-                      </div>
-                    </div>
-                  </button>
+                    </motion.button>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
 
             {/* Feature Detail Card */}
-            <div className="lg:sticky lg:top-24 h-fit">
-              <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-10 border border-[#dadce0]">
-                <div className="w-16 h-16 rounded-2xl bg-[#e8f0fe] flex items-center justify-center mb-6">
-                  {React.createElement(features[selectedFeature].icon, { className: 'text-[#1a73e8]', size: 32 })}
-                </div>
-                <h3 className="text-[24px] font-normal text-[#202124] mb-4">
-                  {features[selectedFeature].title}
-                </h3>
-                <p className="text-[16px] text-[#5f6368] leading-relaxed mb-6">
-                  {features[selectedFeature].detail}
-                </p>
-                <Link
-                  to="/resources/technology/"
-                  className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
+            <FadeIn direction="right" delay={0.3} className="lg:sticky lg:top-24 h-fit">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedFeature}
+                  className="bg-white rounded-2xl shadow-lg p-8 lg:p-10 border border-[#dadce0]"
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                  transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 25 }}
                 >
-                  Learn more
-                  <ArrowRight size={18} className="ml-2" />
-                </Link>
-              </div>
-            </div>
+                  <motion.div
+                    className="w-16 h-16 rounded-2xl bg-[#e8f0fe] flex items-center justify-center mb-6"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.1, type: 'spring', stiffness: 400, damping: 15 }}
+                  >
+                    {React.createElement(features[selectedFeature].icon, { className: 'text-[#1a73e8]', size: 32 })}
+                  </motion.div>
+                  <h3 className="text-[24px] font-normal text-[#202124] mb-4">
+                    {features[selectedFeature].title}
+                  </h3>
+                  <p className="text-[16px] text-[#5f6368] leading-relaxed mb-6">
+                    {features[selectedFeature].detail}
+                  </p>
+                  <motion.div whileHover={{ x: 4 }} className="inline-block">
+                    <Link
+                      to="/resources/technology/"
+                      className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
+                    >
+                      Learn more
+                      <ArrowRight size={18} className="ml-2" />
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -514,23 +700,155 @@ const Home: React.FC = () => {
       {/* Trust Indicators */}
       <section className="py-12 bg-white border-y border-[#dadce0]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
-          <div className="grid md:grid-cols-4 gap-8">
+          <StaggerContainer staggerDelay={0.1} className="grid md:grid-cols-4 gap-8">
             {[
               { icon: Shield, title: 'IICRC Certified', desc: 'Industry standard' },
               { icon: Award, title: 'BBB A+ Rated', desc: '15+ years' },
               { icon: Star, title: '4.9/5 Rating', desc: '500+ reviews', iconColor: 'text-[#fbbc04]' },
               { icon: Clock, title: '60 Min Response', desc: 'Guaranteed' }
             ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-[#f8f9fa] flex items-center justify-center">
-                  <item.icon className={item.iconColor || 'text-[#1a73e8]'} size={24} />
-                </div>
-                <div>
-                  <div className="text-[14px] font-medium text-[#202124]">{item.title}</div>
-                  <div className="text-[12px] text-[#5f6368]">{item.desc}</div>
-                </div>
-              </div>
+              <StaggerItem key={idx}>
+                <motion.div
+                  className="flex items-center gap-4"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <motion.div
+                    className="w-12 h-12 rounded-lg bg-[#f8f9fa] flex items-center justify-center"
+                    whileHover={{ scale: 1.1, backgroundColor: '#e8f0fe' }}
+                  >
+                    <item.icon className={item.iconColor || 'text-[#1a73e8]'} size={24} />
+                  </motion.div>
+                  <div>
+                    <div className="text-[14px] font-medium text-[#202124]">{item.title}</div>
+                    <div className="text-[12px] text-[#5f6368]">{item.desc}</div>
+                  </div>
+                </motion.div>
+              </StaggerItem>
             ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Why Choose Us - SEO Content Section */}
+      <section className="py-20 lg:py-28 bg-white border-b border-[#dadce0]">
+        <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Left Column - Main Content */}
+            <div>
+              <FadeIn>
+                <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
+                  {isSubdomain
+                    ? `Why ${cityName} Homeowners Trust Flood Doctor`
+                    : 'Why Northern Virginia Trusts Flood Doctor'
+                  }
+                </h2>
+              </FadeIn>
+              <div className="prose prose-lg text-[#5f6368] space-y-4">
+                <FadeIn delay={0.1}>
+                  <p className="text-[17px] leading-[1.7]">
+                    When water damage strikes your {isSubdomain ? cityName : 'Northern Virginia'} home, every minute counts. Standing water can compromise structural integrity within hours, and mold growth begins in as little as 24-48 hours. That's why Flood Doctor maintains a fleet of fully-equipped response vehicles strategically positioned throughout {isSubdomain ? `${cityName} and surrounding areas` : 'Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties'}.
+                  </p>
+                </FadeIn>
+                <FadeIn delay={0.2}>
+                  <p className="text-[17px] leading-[1.7]">
+                    Our IICRC-certified technicians follow the S500 Standard for Professional Water Damage Restoration—the industry's definitive guide developed by the Institute of Inspection, Cleaning and Restoration Certification. This ensures every project meets or exceeds national standards for water extraction, structural drying, and microbial remediation.
+                  </p>
+                </FadeIn>
+                <FadeIn delay={0.3}>
+                  <p className="text-[17px] leading-[1.7]">
+                    Unlike national franchises that send subcontractors, Flood Doctor deploys our own W-2 employees—trained professionals who represent our company values and quality standards. Each technician carries current certifications in water damage restoration (WRT), applied structural drying (ASD), and mold remediation.
+                  </p>
+                </FadeIn>
+              </div>
+            </div>
+
+            {/* Right Column - Credentials */}
+            <FadeIn direction="right" delay={0.2} className="space-y-6">
+              <HoverCard className="bg-[#f8f9fa] rounded-2xl p-6" hoverScale={1.01} hoverY={-2}>
+                <h3 className="text-[18px] font-medium text-[#202124] mb-4 flex items-center gap-2">
+                  <Shield size={20} className="text-[#1a73e8]" />
+                  Licensed & Certified
+                </h3>
+                <div className="space-y-3">
+                  <motion.div
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <AnimatedCheckmark delay={0.4} />
+                    <div>
+                      <div className="font-medium text-[#202124]">Virginia DPOR License #2705155505</div>
+                      <div className="text-[14px] text-[#5f6368]">Class A Contractor - Home Improvement</div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <AnimatedCheckmark delay={0.5} />
+                    <div>
+                      <div className="font-medium text-[#202124]">DC License #420222000069</div>
+                      <div className="text-[14px] text-[#5f6368]">General Contractor - Washington DC</div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <AnimatedCheckmark delay={0.6} />
+                    <div>
+                      <div className="font-medium text-[#202124]">Maryland MHIC #139079</div>
+                      <div className="text-[14px] text-[#5f6368]">Home Improvement Commission</div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                  >
+                    <AnimatedCheckmark delay={0.7} />
+                    <div>
+                      <div className="font-medium text-[#202124]">IICRC Certified Firm</div>
+                      <div className="text-[14px] text-[#5f6368]">Water Restoration, Mold Remediation, Fire & Smoke</div>
+                    </div>
+                  </motion.div>
+                </div>
+              </HoverCard>
+
+              <HoverCard className="bg-[#e8f0fe] rounded-2xl p-6" hoverScale={1.01} hoverY={-2}>
+                <h3 className="text-[18px] font-medium text-[#202124] mb-4">Our Service Guarantee</h3>
+                <StaggerContainer staggerDelay={0.1} delayChildren={0.4} as="ul" className="space-y-2">
+                  {[
+                    '60-minute response or your first hour is free',
+                    'Direct insurance billing—we handle the paperwork',
+                    'Real-time moisture monitoring via client portal',
+                    '5-year warranty on all structural repairs'
+                  ].map((item, idx) => (
+                    <StaggerItem key={idx} as="li" className="flex items-center gap-2 text-[15px] text-[#3c4043]">
+                      <motion.div
+                        className="w-2 h-2 rounded-full bg-[#1a73e8]"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 + idx * 0.1, type: 'spring', stiffness: 400 }}
+                      />
+                      {item}
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </HoverCard>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -539,69 +857,247 @@ const Home: React.FC = () => {
       <section id="locations" className="py-20 lg:py-28 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6">
-              <MapPin size={16} />
-              Coverage area
-            </div>
-            <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
-              {isSubdomain ? `${cityName} & Surrounding Areas` : 'Northern Virginia & DC Metro'}
-            </h2>
-            <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
-              {isSubdomain
-                ? `We provide 24/7 emergency water damage restoration throughout ${cityName} and nearby communities. 60-minute response guaranteed.`
-                : 'Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night.'
-              }
-            </p>
+            <FadeIn>
+              <motion.div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-sm font-medium mb-6"
+                whileHover={{ scale: 1.05 }}
+              >
+                <MapPin size={16} />
+                Coverage area
+              </motion.div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
+                {isSubdomain ? `${cityName} & Surrounding Areas` : 'Northern Virginia & DC Metro'}
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
+                {isSubdomain
+                  ? `We provide 24/7 emergency water damage restoration throughout ${cityName} and nearby communities. Our technicians know the local architecture, from historic homes to modern developments, and understand the unique water damage challenges each property type presents.`
+                  : 'Strategic fleet positioning ensures we reach any location in our service area within 60 minutes—day or night. Our crews are familiar with the unique challenges of each community, from Georgetown row houses to McLean estates to Arlington condos.'
+                }
+              </p>
+            </FadeIn>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+            <StaggerContainer staggerDelay={0.08} delayChildren={0.3} className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {['Fairfax County', 'Arlington', 'Alexandria', 'Loudoun County', 'Prince William', 'Washington DC'].map((area) => (
-                <Link
-                  key={area}
-                  to="/locations/"
-                  className="flex items-center gap-2 p-3 rounded-lg bg-[#f8f9fa] hover:bg-[#e8f0fe] transition-colors text-[14px] text-[#202124]"
-                >
-                  <CheckCircle2 size={16} className="text-[#137333]" />
-                  {area}
-                </Link>
+                <StaggerItem key={area}>
+                  <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }}>
+                    <Link
+                      to="/locations/"
+                      className="flex items-center gap-2 p-3 rounded-lg bg-[#f8f9fa] hover:bg-[#e8f0fe] transition-colors text-[14px] text-[#202124]"
+                    >
+                      <CheckCircle2 size={16} className="text-[#137333]" />
+                      {area}
+                    </Link>
+                  </motion.div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
 
-            <Link
-              to="/locations/"
-              className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
-            >
-              View all locations
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
+            <FadeIn delay={0.5}>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
+              >
+                <Link
+                  to="/locations/"
+                  className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
+                >
+                  View all locations
+                  <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
+      {/* Testimonials - City subdomains only */}
+      {isSubdomain && franchise.testimonials && franchise.testimonials.length > 0 && (
+        <TestimonialSection
+          testimonials={franchise.testimonials}
+          cityName={cityName}
+        />
+      )}
+
+      {/* FAQ Section - City subdomains only */}
+      {isSubdomain && franchise.faqs && franchise.faqs.length > 0 && (
+        <CityFAQSection
+          faqs={franchise.faqs}
+          cityName={cityName}
+        />
+      )}
+
+      {/* FAQ Section - Main site (for AI visibility) */}
+      {!isSubdomain && (
+        <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+          <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[900px]">
+            <FadeIn className="text-center">
+              <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
+                Water Damage Restoration FAQ
+              </h2>
+              <p className="text-[18px] text-[#5f6368] mb-12">
+                Common questions about our 24/7 emergency water damage restoration services in Northern Virginia
+              </p>
+            </FadeIn>
+
+            <StaggerContainer staggerDelay={0.08} className="space-y-4">
+              {/* FAQ Items - Crawlable for AI */}
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    How quickly can you respond to water damage emergencies in Northern Virginia?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Flood Doctor guarantees a 60-minute response time throughout Northern Virginia, 24 hours a day, 7 days a week, 365 days a year. Our IICRC-certified technicians are strategically positioned across Fairfax, Arlington, Alexandria, Loudoun, and Prince William counties to ensure rapid emergency response.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    Who is the best water damage restoration company in Northern Virginia?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Flood Doctor has served Northern Virginia for over 20 years with IICRC-certified technicians, 60-minute response times, and a 4.9-star rating. We hold Virginia License #2705155505, DC License #420222000069, and Maryland MHIC #139079. We provide 24/7 emergency service, direct insurance billing, and real-time project monitoring through our client portal.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    Do you work directly with insurance companies?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Yes, Flood Doctor handles direct insurance billing and documentation for all major insurance carriers. We have processed over 8,000 insurance claims with a 98% approval rate. Our team documents everything with photos, moisture readings, and detailed reports to ensure smooth claim processing.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    What areas do you serve in Northern Virginia?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Flood Doctor serves all of Northern Virginia including Fairfax County, Arlington County, Alexandria, Loudoun County, Prince William County, McLean, Vienna, Tysons, Reston, Herndon, Ashburn, Springfield, Falls Church, Great Falls, Lorton, and Washington DC. We have crews positioned throughout the region for rapid 60-minute response.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    Are you licensed and certified for water damage restoration?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Yes, Flood Doctor is fully licensed in Virginia (DPOR #2705155505), Washington DC (#420222000069), and Maryland (MHIC #139079). We are an IICRC Certified Firm, and all technicians hold current certifications in Water Damage Restoration (WRT), Applied Structural Drying (ASD), Fire and Smoke Restoration (FSRT), and Mold Remediation (AMRT).
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    How much does water damage restoration cost in Northern Virginia?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Water damage restoration costs in Northern Virginia typically range from $1,500 to $10,000 depending on the extent of damage, water category (clean, gray, or black water), and affected square footage. Flood Doctor provides free on-site estimates and works directly with your insurance company to minimize out-of-pocket costs.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+
+              <StaggerItem>
+                <motion.details
+                  className="bg-white rounded-xl p-6 border border-[#dadce0] group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <summary className="font-medium text-[#202124] cursor-pointer flex justify-between items-center">
+                    How long does water damage restoration take?
+                    <ArrowRight size={18} className="text-[#5f6368] group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <p className="mt-4 text-[#5f6368] leading-relaxed">
+                    Most water damage restoration projects take 3-5 days for the drying process, followed by any necessary repairs. Flood Doctor uses industrial-grade equipment and real-time moisture monitoring technology to track drying progress, ensuring thorough and efficient restoration. Emergency water extraction typically begins within 60 minutes of your call.
+                  </p>
+                </motion.details>
+              </StaggerItem>
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
+
       {/* Bottom CTA - Google Blue */}
-      <section className="py-20 lg:py-28 bg-[#1a73e8]">
+      <section className="py-20 lg:py-28 bg-[#1a73e8] overflow-hidden">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
-          <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
-            Get started in minutes
-          </h2>
-          <p className="text-[18px] text-white/80 mb-10">
-            Call now for immediate dispatch or schedule a free estimate online.
-          </p>
+          <FadeIn>
+            <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
+              Get started in minutes
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-[18px] text-white/80 mb-10">
+              Call now for immediate dispatch or schedule a free estimate online.
+            </p>
+          </FadeIn>
           {/* CTA Buttons - Hidden on mobile, sticky footer handles mobile CTA */}
-          <div className="hidden lg:flex flex-row justify-center gap-4">
-            <a
+          <FadeIn delay={0.2} className="hidden lg:flex flex-row justify-center gap-4">
+            <motion.a
               href="tel:8774970007"
               className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
+              whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}
+              whileTap={{ scale: 0.98 }}
             >
               <Phone size={18} className="mr-2" />
               (877) 497-0007
-            </a>
-            <Link
-              to="/request/"
-              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
+            </motion.a>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Schedule estimate
-            </Link>
-          </div>
+              <Link
+                to="/request/"
+                className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
+              >
+                Schedule estimate
+              </Link>
+            </motion.div>
+          </FadeIn>
         </div>
       </section>
     </main>
