@@ -1,1 +1,0 @@
-import{j as o}from"./pages-blog-Cs17jX8E.js";import{C as r}from"./CityLanding-D4hg1CHP.js";import{g as i}from"./cities-C3-1d4EO.js";import"./vendor-react-BVUPkXQ1.js";import"./vendor-icons-CcWuf-xq.js";const e=()=>{const t=i("potomac");return t?o.jsx(r,{city:t}):null};export{e as default};

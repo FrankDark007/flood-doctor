@@ -1,1 +1,0 @@
-import{j as r}from"./pages-blog-Cs17jX8E.js";import{C as o}from"./CityLanding-D4hg1CHP.js";import{g as a}from"./cities-C3-1d4EO.js";import"./vendor-react-BVUPkXQ1.js";import"./vendor-icons-CcWuf-xq.js";const n=()=>{const t=a("great-falls");return t?r.jsx(o,{city:t}):null};export{n as default};

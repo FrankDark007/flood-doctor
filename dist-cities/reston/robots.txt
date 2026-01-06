@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://reston.flood.doctor/sitemap.xml

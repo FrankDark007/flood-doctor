@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ashburn.flood.doctor/sitemap.xml
