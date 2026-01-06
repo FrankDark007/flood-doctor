@@ -329,7 +329,7 @@ export const RestorationServices: React.FC = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Residential Card - Large */}
           <Card className="lg:col-span-2 bg-gradient-to-br from-blue-50/50 to-white border-blue-100 hover:shadow-blue-200/50" title="Residential Restoration" subtitle="Home Services">
-            <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+            <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <h4 className="font-bold text-slate-900 flex items-center mb-4 text-lg">
                   <Home className="w-5 h-5 mr-2 text-primary"/> Living Areas
@@ -423,19 +423,21 @@ export const WhyChooseUs: React.FC = () => {
           <p className="text-slate-400 text-xl font-light">We combine speed, expertise, and insurance advocacy to make a stressful situation manageable.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {[
             { icon: ShieldCheck, title: "IICRC Certified", text: "Our technicians hold WRT, ASD, & Mold Remediation certifications, ensuring industry-standard care." },
             { icon: FileCheck, title: "Direct Billing", text: "We speak the insurance language. We handle the paperwork, photos, and billing directly with your carrier." },
             { icon: ScanEye, title: "Free Assessment", text: "Not sure? We provide expert evaluation of damage extent and category at no cost to you." },
             { icon: Clock, title: "60-Min Response", text: "Time is the enemy. Our average arrival time in Northern VA is 1 hour or less." },
           ].map((item, i) => (
-            <div key={i} className="group bg-slate-800/40 p-8 rounded-[32px] border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-14 h-14 bg-slate-700 rounded-2xl flex items-center justify-center text-primary-light mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                 <item.icon className="w-7 h-7" />
+            <div key={i} className="group bg-slate-800/40 p-8 rounded-[32px] border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-2 flex flex-col sm:flex-row items-start gap-6">
+              <div className="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center text-primary-light shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                 <item.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{item.text}</p>
+              <div>
+                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.text}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -539,19 +541,21 @@ export const CommonCauses: React.FC = () => {
     <section id="causes" className="py-20 px-4 lg:px-12 bg-blue-50/50">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Common Causes of Damage</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {[
               { icon: AlertTriangle, title: "Burst Pipes", sub: "Frozen pipes & corrosion" },
               { icon: CloudRain, title: "Storm Damage", sub: "Roof leaks & ice dams" },
               { icon: Zap, title: "Appliance Failures", sub: "Washing machines & heaters" },
               { icon: Warehouse, title: "Sewer Backup", sub: "Tree roots & clogs" }
           ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center p-8 bg-white rounded-[32px] shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 group cursor-default">
-                  <div className="w-16 h-16 bg-slate-50 rounded-full mb-6 flex items-center justify-center text-slate-600 group-hover:bg-red-50 group-hover:text-red-500 transition-colors">
+              <div key={i} className="flex items-center text-left p-6 bg-white rounded-[32px] shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-600 group-hover:bg-red-50 group-hover:text-red-500 transition-colors shrink-0 mr-6">
                       <item.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
-                  <p className="text-sm text-slate-500 font-medium">{item.sub}</p>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-500 font-medium">{item.sub}</p>
+                  </div>
               </div>
           ))}
         </div>
