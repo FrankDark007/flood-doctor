@@ -13,8 +13,9 @@
 | Service Grids | 6 | Ready |
 | Process Sections | 4 | Ready |
 | CTA Variants | 10 | Ready |
+| FAQ Variants | 4 | Ready |
 | Longpage Layout | 1 (10 sections) | Ready |
-| **Total Components** | **26+** | |
+| **Total Components** | **30+** | |
 
 ---
 
@@ -27,6 +28,7 @@
 | Process Components | https://github.com/FrankDark007/-Restoration-Process-Components |
 | Longpage Design | https://github.com/FrankDark007/Longpage-Design-for-Services |
 | CTA Variants | https://github.com/FrankDark007/CTA-Variants |
+| FAQ Variants | https://github.com/FrankDark007/FAQ-Variants |
 
 ---
 
@@ -83,7 +85,20 @@
 
 ---
 
-## 5. Process Components (`/process/`)
+## 4. FAQ Variants (`/faqs/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `FAQAccordion.tsx` | Classic expandable | Standard FAQ sections |
+| `FAQCards.tsx` | Card grid layout | Visual FAQ display |
+| `FAQSearchable.tsx` | With search input | Large FAQ sets |
+| `FAQTwoColumn.tsx` | Split layout | Categories + questions |
+
+**Dependencies:** `lucide-react`, `data.ts`, `types.ts`
+
+---
+
+## 6. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -97,7 +112,7 @@
 
 ---
 
-## 6. Longpage Layout (`/longpage/`)
+## 7. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
