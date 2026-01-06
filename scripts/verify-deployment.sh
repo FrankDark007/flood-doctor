@@ -67,6 +67,30 @@ for VENDOR in "vendor-react" "vendor-icons"; do
     fi
 done
 
+# Check code-split chunks (sample critical routes)
+echo ""
+echo "🧩 Checking code-split chunks..."
+CHUNKS_TO_CHECK=("GuidesHub" "About" "BlogIndex" "ServicesHub")
+
+for CHUNK in "${CHUNKS_TO_CHECK[@]}"; do
+    # Find the chunk file in local dist to get exact filename
+    LOCAL_CHUNK=$(ls dist/assets/${CHUNK}-*.js 2>/dev/null | head -1)
+    if [ -n "$LOCAL_CHUNK" ]; then
+        CHUNK_NAME=$(basename "$LOCAL_CHUNK")
+        CHUNK_CT=$(curl -sI "$SITE_URL/assets/$CHUNK_NAME" | grep -i "content-type:" | tr -d '\r')
+        if echo "$CHUNK_CT" | grep -qi "javascript"; then
+            echo "   ✅ $CHUNK chunk serving correctly"
+        else
+            echo "   ❌ ERROR: $CHUNK chunk wrong content-type: $CHUNK_CT"
+            echo "      File: /assets/$CHUNK_NAME"
+            echo "      Expected: application/javascript, Got: $CHUNK_CT"
+            ERRORS=$((ERRORS+1))
+        fi
+    else
+        echo "   ⚠️ WARNING: $CHUNK chunk not found locally"
+    fi
+done
+
 # Mobile rendering check
 echo ""
 echo "📱 Checking mobile response..."

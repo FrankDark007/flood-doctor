@@ -603,5 +603,52 @@ Created 10 different service detail page layouts for testing/evaluation:
 
 ---
 
+---
+
+## 🔄 REDESIGN IN PROGRESS (2026-01-06)
+
+### Status: Paused — User Using Gemini for Redesign
+
+User hit Claude Code token limits. Switching to Gemini for full website redesign.
+
+### Why Redesign?
+- 577 Framer Motion animation instances causing performance issues
+- 70+ lazy-loaded components creating load waterfalls
+- 1,035-line ServiceDetail.tsx monolith
+- 100+ routes causing complexity
+
+### Redesign Goals
+- Stability-first architecture (CSS-only animations, no Framer Motion)
+- Google Material Design aesthetic
+- Simplified routing (15 core pages vs 100+)
+- Self-contained page components
+
+### First Gemini Template
+**File:** `/pages/templates/dev/GeminiWaterDamage.tsx`
+**Route:** `/dev/gemini-water-damage/`
+**Preview:** http://localhost:3004/dev/gemini-water-damage/
+
+Features:
+- Sticky left-rail navigation with scroll-spy
+- Bento-grid process visualization (4 steps)
+- Google Material Design styling (24px radius tokens)
+- ~3000 words SEO content
+- Mobile-responsive single column
+
+### Session Cleanup Done
+- Committed 3-day rollup (102 files, +35,095 lines)
+- Deleted unused GitHub Pages workflow
+- Removed dist-cities from git tracking
+- Deleted old prototype folders (freed ~140MB)
+- Cleaned Mission-Control-APP (removed 4.9GB lobe-chat)
+
+### Next Steps (When User Returns)
+1. Review Gemini-coded pages
+2. Integrate new templates into routing
+3. Migrate SEO content to new layouts
+4. Test and deploy
+
+---
+
 *Updated: 2026-01-06*
 *Project: fd-google-redesign (main website)*

@@ -61,6 +61,10 @@ const LithoDev1 = lazy(() => import('./pages/templates/dev/LithoDev1'));
 const LithoDev2 = lazy(() => import('./pages/templates/dev/LithoDev2'));
 const LithoDev3 = lazy(() => import('./pages/templates/dev/LithoDev3'));
 
+// Gemini-coded templates
+const GeminiWaterDamage = lazy(() => import('./pages/templates/dev/GeminiWaterDamage'));
+const GeminiWaterDamageV2 = lazy(() => import('./pages/templates/dev/GeminiWaterDamageV2'));
+
 const AboutDevA = lazy(() => import('./pages/AboutDevA'));
 const AboutDevB = lazy(() => import('./pages/AboutDevB'));
 const AboutDevC = lazy(() => import('./pages/AboutDevC'));
@@ -627,6 +631,8 @@ const App: React.FC = () => {
               <Route path="/dev/litho-1/" element={<LithoDev1 />} />
               <Route path="/dev/litho-2/" element={<LithoDev2 />} />
               <Route path="/dev/litho-3/" element={<LithoDev3 />} />
+              <Route path="/dev/gemini-water-damage/" element={<GeminiWaterDamage />} />
+              <Route path="/dev/gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
 
               {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
               <Route path="/dev/service-detail-1/" element={<ServiceDetailDev1 />} />
