@@ -9,11 +9,12 @@
 
 | Category | Count | Status |
 |----------|-------|--------|
-| Hero Variants | 5 | Ready |
+| Hero Variants | 5 | ⭐ Approved |
 | Service Grids | 6 | Ready |
 | Process Sections | 4 | Ready |
+| CTA Variants | 10 | Ready |
 | Longpage Layout | 1 (10 sections) | Ready |
-| **Total Components** | **16+** | |
+| **Total Components** | **26+** | |
 
 ---
 
@@ -25,6 +26,7 @@
 | Service Grid Layouts | https://github.com/FrankDark007/Service-Grid-Layouts |
 | Process Components | https://github.com/FrankDark007/-Restoration-Process-Components |
 | Longpage Design | https://github.com/FrankDark007/Longpage-Design-for-Services |
+| CTA Variants | https://github.com/FrankDark007/CTA-Variants |
 
 ---
 
@@ -62,7 +64,26 @@
 
 ---
 
-## 3. Process Components (`/process/`)
+## 3. CTA Variants (`/ctas/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `CTAGradient.tsx` | Blue gradient background | Primary page CTA |
+| `CTASplit.tsx` | Two-column layout | Info + form side-by-side |
+| `CTAFloating.tsx` | Sticky/floating bar | Persistent conversion |
+| `CTAEmergency.tsx` | Red urgent styling | Emergency services |
+| `CTAMinimal.tsx` | Clean, simple | Subtle conversion |
+| `CTADarkImmersive.tsx` | Dark background, immersive | Premium feel |
+| `CTALeadForm.tsx` | Form-focused | Lead capture |
+| `CTASocialProof.tsx` | Reviews/testimonials | Trust building |
+| `CTAServiceSelect.tsx` | Service picker | Multi-service sites |
+| `CTATrustBar.tsx` | Credentials bar | Authority signals |
+
+**Dependencies:** `lucide-react`, `constants.ts`
+
+---
+
+## 5. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -76,7 +97,7 @@
 
 ---
 
-## 4. Longpage Layout (`/longpage/`)
+## 6. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
