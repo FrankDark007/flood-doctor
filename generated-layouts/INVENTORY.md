@@ -19,7 +19,8 @@
 | Longpage Layout | 1 (10 sections) | Ready |
 | Service Areas | 7 | Ready |
 | Blog Cards | 9 | Ready |
-| **Total Components** | **57+** | |
+| Contact Forms | 8 | Ready |
+| **Total Components** | **65+** | |
 
 ---
 
@@ -37,6 +38,7 @@
 | Trust Suite | https://github.com/FrankDark007/Trust-Suite-Variants |
 | Service Areas | https://github.com/FrankDark007/NoVA-Service-Areas |
 | Blog Cards | https://github.com/FrankDark007/Blog-Card-Variants |
+| Contact Forms | https://github.com/FrankDark007/Contact-form-Variants |
 
 ---
 
@@ -170,7 +172,25 @@
 
 ---
 
-## 9. Process Components (`/process/`)
+## 9. Contact Forms (`/contact-forms/`)
+
+| Component | Style | Best For |
+|-----------|-------|----------|
+| `ContactSplit.tsx` | Two-column (info + form) | Main contact page |
+| `ContactWizard.tsx` | Multi-step form wizard | Complex service requests |
+| `ContactModal.tsx` | Popup modal form | Quick contact overlay |
+| `ContactHero.tsx` | Hero section with form | Landing pages |
+| `ContactGrid.tsx` | Grid layout options | Multiple contact methods |
+| `ContactTrust.tsx` | Form with trust badges | Conversion-focused |
+| `ContactChat.tsx` | Chat-style interface | Modern, conversational |
+| `InlineEmergencyForm.tsx` | Urgent inline form | Emergency CTAs |
+
+**Dependencies:** `lucide-react`, `constants.ts`, `ui/Button.tsx`, `ui/Input.tsx`
+**Includes:** Reusable UI components (Button, Input)
+
+---
+
+## 10. Process Components (`/process/`)
 
 | Component | Style | Best For |
 |-----------|-------|----------|
@@ -184,7 +204,7 @@
 
 ---
 
-## 10. Longpage Layout (`/longpage/`)
+## 11. Longpage Layout (`/longpage/`)
 
 Complete service detail page with 10 sections:
 
