@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arlington.flood.doctor/sitemap.xml

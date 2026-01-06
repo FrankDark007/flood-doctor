@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://herndon.flood.doctor/sitemap.xml

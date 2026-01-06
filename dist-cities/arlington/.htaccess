@@ -1,0 +1,25 @@
+# Flood Doctor of Arlington - Apache Configuration
+# GoDaddy Shared Hosting
+
+# MIME Types
+AddType application/javascript .js
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType application/xml .xml
+
+RewriteEngine On
+RewriteBase /
+
+# Bypass for static assets
+RewriteRule ^assets/ - [L]
+RewriteRule ^sitemaps/ - [L]
+RewriteRule ^robots\.txt$ - [L]
+RewriteRule ^sitemap\.xml$ - [L]
+
+# Serve existing files
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback (relative path - serves this folder's index.html)
+RewriteRule ^ index.html [L]

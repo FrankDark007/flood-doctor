@@ -1,0 +1,1 @@
+import{j as r}from"./pages-blog-Cs17jX8E.js";import{C as i}from"./CityLanding-D4hg1CHP.js";import{g as a}from"./cities-C3-1d4EO.js";import"./vendor-react-BVUPkXQ1.js";import"./vendor-icons-CcWuf-xq.js";const p=()=>{const t=a("alexandria");return t?r.jsx(i,{city:t}):null};export{p as default};

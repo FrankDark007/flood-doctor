@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fallschurch.flood.doctor/sitemap.xml
