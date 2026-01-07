@@ -7,7 +7,7 @@ import {
   ChevronDown, ChevronUp
 } from 'lucide-react';
 import { Card, Button, Badge, Accordion, StarRating, Tooltip, Modal } from './UI';
-import { ProcessStep, ServiceItem } from '../types';
+import { ProcessStep, ServiceItem } from './types';
 
 // --- HERO SECTION ---
 export const Hero: React.FC = () => {

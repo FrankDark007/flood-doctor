@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, MessageSquareWarning, Phone, Upload, CheckCircle, Loader2 } from 'lucide-react';
-import { SERVICES, CONTACT_INFO } from '../constants';
+import { SERVICES, CONTACT_INFO } from './constants';
 import Input from './ui/Input';
 import Button from './ui/Button';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus, ChevronRight } from 'lucide-react';
-import { FAQItem } from '../types';
+import { FAQItem } from './types';
 
 interface ServiceFAQCompactProps {
   faqs: FAQItem[];

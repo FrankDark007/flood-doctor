@@ -2,7 +2,7 @@ import React from 'react';
 import { Star, ShieldCheck, Clock, Award } from 'lucide-react';
 import Input from './ui/Input';
 import Button from './ui/Button';
-import { SERVICES } from '../constants';
+import { SERVICES } from './constants';
 
 const ContactTrust: React.FC = () => {
   return (

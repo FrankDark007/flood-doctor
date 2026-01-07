@@ -1,6 +1,6 @@
 import React from 'react';
 import { Droplets, Wind, Zap, Home, ShieldAlert, Waves, CheckCircle2 } from 'lucide-react';
-import { CityData, Service } from '../types';
+import { CityData, Service } from './types';
 
 interface CityServicesProps {
   city: CityData;

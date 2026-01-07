@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Quote, Zap, Shield, Heart } from 'lucide-react';
-import { BlogCardProps, Category } from '../types';
+import { BlogCardProps, Category } from './types';
 
 const getTheme = (category: Category) => {
   switch (category) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { serviceLocations } from '../constants';
-import { Region } from '../types';
+import { serviceLocations } from './constants';
+import { Region } from './types';
 import { ChevronDown, MapPin, Star } from 'lucide-react';
 
 export const ServiceAreaAccordion: React.FC = () => {

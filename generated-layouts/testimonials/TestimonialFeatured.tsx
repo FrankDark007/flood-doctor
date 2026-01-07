@@ -1,6 +1,6 @@
 import React from 'react';
 import { Quote, CheckCircle2 } from 'lucide-react';
-import { ReviewProps } from '../types';
+import { ReviewProps } from './types';
 import StarRating from './StarRating';
 
 const TestimonialFeatured: React.FC<ReviewProps> = ({ reviews, className = "" }) => {

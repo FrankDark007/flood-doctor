@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { ServiceGridProps } from '../types';
+import { ServiceGridProps } from './types';
 
 const ServiceGridBento: React.FC<ServiceGridProps> = ({ services, onServiceClick }) => {
   return (

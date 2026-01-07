@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogCardProps } from '../types';
+import { BlogCardProps } from './types';
 
 const BlogCardBrutalist: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   return (

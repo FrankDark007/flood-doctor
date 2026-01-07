@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, Check, ShieldCheck, Clock, Star, Phone } from 'lucide-react';
-import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from '../types';
+import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from './types';
 
 const ServiceFormSplit: React.FC = () => {
   const [formData, setFormData] = useState<ServiceFormData>({

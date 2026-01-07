@@ -1,6 +1,6 @@
 import React from 'react';
 import { Timer, MapPin, ThumbsUp, CalendarClock } from 'lucide-react';
-import { QuickFact } from '../types';
+import { QuickFact } from './types';
 
 interface ServiceQuickFactsProps {
   facts: QuickFact[];

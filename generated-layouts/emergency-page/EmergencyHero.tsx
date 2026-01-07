@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, AlertTriangle, MapPin } from 'lucide-react';
-import { EMERGENCY_DATA } from '../constants';
+import { EMERGENCY_DATA } from './constants';
 
 const EmergencyHero: React.FC = () => {
   return (

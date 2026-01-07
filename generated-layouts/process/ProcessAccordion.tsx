@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { PROCESS_STEPS } from '../constants';
+import { PROCESS_STEPS } from './constants';
 import { ChevronDown } from 'lucide-react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const ProcessAccordion: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number | null>(1);

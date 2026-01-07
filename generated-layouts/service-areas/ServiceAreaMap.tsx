@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { serviceLocations, getPinColor } from '../constants';
+import { serviceLocations, getPinColor } from './constants';
 import { MapPin, Navigation, Clock, ChevronRight } from 'lucide-react';
-import { ServiceLocation } from '../types';
+import { ServiceLocation } from './types';
 
 export const ServiceAreaMap: React.FC = () => {
   const [activeCity, setActiveCity] = useState<ServiceLocation | null>(null);

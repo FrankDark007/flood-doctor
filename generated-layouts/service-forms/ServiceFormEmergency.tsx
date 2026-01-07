@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, Phone, AlertTriangle, Zap } from 'lucide-react';
-import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from '../types';
+import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from './types';
 
 const ServiceFormEmergency: React.FC = () => {
   const [formData, setFormData] = useState<ServiceFormData>({

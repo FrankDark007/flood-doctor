@@ -1,5 +1,5 @@
 import React from 'react';
-import { serviceLocations, getProximityColor } from '../constants';
+import { serviceLocations, getProximityColor } from './constants';
 import { Clock, MapPin, ArrowRight } from 'lucide-react';
 
 export const ServiceAreaGrid: React.FC = () => {

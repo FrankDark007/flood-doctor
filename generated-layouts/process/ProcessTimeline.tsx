@@ -1,6 +1,6 @@
 import React from 'react';
-import { PROCESS_STEPS } from '../constants';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { PROCESS_STEPS } from './constants';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const ProcessTimeline: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();

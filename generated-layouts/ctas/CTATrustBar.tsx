@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Shield, Clock, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK } from '../constants';
+import { PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTATrustBar: React.FC = () => {
   return (

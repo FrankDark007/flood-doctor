@@ -1,6 +1,6 @@
 import React from 'react';
 import { PhoneCall, AlertTriangle, Clock } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK } from '../constants';
+import { PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTAEmergency: React.FC = () => {
   return (

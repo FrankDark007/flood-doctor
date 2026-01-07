@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Cpu, FileText, Users, Shield, CheckCircle2 } from 'lucide-react';
-import { TabItem } from '../types';
+import { TabItem } from './types';
 
 interface ServiceTabsProps {
   tabs: TabItem[];

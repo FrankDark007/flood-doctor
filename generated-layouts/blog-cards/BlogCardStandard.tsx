@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, Calendar } from 'lucide-react';
-import { BlogCardProps } from '../types';
+import { BlogCardProps } from './types';
 
 const BlogCardStandard: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   return (

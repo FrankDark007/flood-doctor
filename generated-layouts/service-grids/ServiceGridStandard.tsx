@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { ServiceGridProps } from '../types';
+import { ServiceGridProps } from './types';
 
 const ServiceGridStandard: React.FC<ServiceGridProps> = ({ services, onServiceClick }) => {
   return (

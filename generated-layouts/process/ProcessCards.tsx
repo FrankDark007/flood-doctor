@@ -1,7 +1,7 @@
 import React from 'react';
-import { PROCESS_STEPS } from '../constants';
+import { PROCESS_STEPS } from './constants';
 import { Clock } from 'lucide-react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const ProcessCards: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();

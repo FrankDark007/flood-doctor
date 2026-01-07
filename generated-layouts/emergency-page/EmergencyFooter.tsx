@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone } from 'lucide-react';
-import { EMERGENCY_DATA } from '../constants';
+import { EMERGENCY_DATA } from './constants';
 
 const EmergencyFooter: React.FC = () => {
   return (

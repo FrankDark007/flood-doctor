@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { TRUST_DATA, PRIMARY_COLOR } from '../constants';
+import { TRUST_DATA, PRIMARY_COLOR } from './constants';
 import { LucideIcon } from 'lucide-react';
 
 // Helper for number animation

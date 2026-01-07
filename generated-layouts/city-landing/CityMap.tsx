@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Building2, ArrowRight } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityMapProps {
   city: CityData;

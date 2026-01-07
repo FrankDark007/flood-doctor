@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentSection } from '../types';
+import { ContentSection } from './types';
 import { BookOpen, ChevronDown, Check, Circle } from 'lucide-react';
 
 interface ServiceDetailedContentProps {

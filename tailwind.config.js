@@ -8,6 +8,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./data/**/*.{js,ts,jsx,tsx}",
+    "./generated-layouts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -19,8 +20,10 @@ export default {
       colors: {
         // The specific "Google Blue" used in their consumer products
         primary: {
-          DEFAULT: '#1a73e8', 
+          DEFAULT: '#1a73e8',
           hover: '#1557b0',
+          dark: '#1557b0',
+          light: '#e8f0fe',
         },
         // High-contrast dark text (not pure black)
         text: '#202124',
@@ -28,8 +31,15 @@ export default {
         muted: '#5f6368',
         // The "Google Gray" background
         subtle: '#f8f9fa',
+        // Surface background (light gray)
+        surface: '#f8f9fa',
         // Border colors
         border: '#dadce0',
+        // Accent color (emergency red)
+        accent: {
+          DEFAULT: '#ea4335',
+          hover: '#d33426',
+        },
       },
       boxShadow: {
         // Soft, diffused shadows used on Google Store cards

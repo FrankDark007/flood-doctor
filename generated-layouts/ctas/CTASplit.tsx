@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Calendar, CheckCircle } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from '../constants';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTASplit: React.FC = () => {
   return (

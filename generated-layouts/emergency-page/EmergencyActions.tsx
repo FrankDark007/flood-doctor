@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MessageSquare, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
-import { EMERGENCY_DATA } from '../constants';
+import { EMERGENCY_DATA } from './constants';
 
 const EmergencyActions: React.FC = () => {
   const [phoneInput, setPhoneInput] = useState('');

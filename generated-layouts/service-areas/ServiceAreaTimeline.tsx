@@ -1,7 +1,7 @@
 import React from 'react';
-import { serviceLocations, getProximityColor } from '../constants';
+import { serviceLocations, getProximityColor } from './constants';
 import { Timer, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Proximity } from '../types';
+import { Proximity } from './types';
 
 export const ServiceAreaTimeline: React.FC = () => {
   const timeGroups: { label: string; proximity: Proximity; time: string }[] = [

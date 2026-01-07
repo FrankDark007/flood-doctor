@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, ChevronRight, ChevronLeft, Check, ClipboardList, User, Calendar } from 'lucide-react';
-import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from '../types';
+import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from './types';
 
 const steps = [
   { id: 1, title: 'Contact', icon: User },

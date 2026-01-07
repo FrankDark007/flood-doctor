@@ -16,7 +16,32 @@
 
 ## 🔧 LATEST FIX (2026-01-06)
 
-### ✅ Mobile White Screen Issue Fixed
+### ✅ Missing JS Chunks Deployment Fix (Blank /guides/ Page)
+
+**Symptoms:** `/guides/` page showed blank white page (header/footer rendered, no content)
+
+**Root Cause:**
+- `deploy.sh` only uploaded ~5 files (main CSS, main JS, vendor chunks)
+- Vite code-splitting creates 301+ JS chunks
+- SPA fallback in `.htaccess` returned `index.html` (200 OK with HTML) for missing JS files
+- Browser rejected HTML as "Expected JavaScript module" → page failed to render
+
+**Fix Applied:**
+1. Modified `scripts/deploy.sh` to upload ALL assets with parallel connections (8 concurrent)
+2. Modified `scripts/verify-deployment.sh` to check code-split chunks (GuidesHub, About, etc.)
+3. Deployed all 303 asset files via FTP
+4. Purged Cloudflare cache
+
+**Verification:**
+- GuidesHub chunk returns `content-type: text/javascript` ✅
+- `/guides/` page renders all 6 guide cards ✅
+- Homepage renders correctly ✅
+
+**Prevention:** Future deploys use updated `./scripts/deploy.sh <ftp_password>` which uploads all assets.
+
+---
+
+### Previous Fix: Mobile White Screen Issue Fixed
 
 **Symptoms:** Mobile users saw header flash briefly, then white page
 
@@ -650,5 +675,136 @@ Features:
 
 ---
 
-*Updated: 2026-01-06*
+## GENERATED COMPONENTS INTEGRATION COMPLETE (2026-01-06 → 2026-01-07)
+
+### Phase 1 Complete: Homepage Redesign
+
+**What Was Done:**
+1. Created `/utils/adapters.ts` - Data adapters for mapping services, FAQs, and testimonials to generated component props
+2. Backed up original `pages/Home.tsx` to `pages/Home.backup.tsx`
+3. Rewrote `pages/Home.tsx` using 7 generated components:
+   - HeroInteractive (zip code checker)
+   - TrustBadgeBar
+   - ServiceGridBento
+   - ProcessTimeline
+   - TestimonialCarousel
+   - FAQAccordion
+   - CTAGradient
+4. Added CSS utilities to `index.css` for generated layouts
+5. Build passes successfully
+
+---
+
+### Phase 2 Complete: Service Pages Redesign (2026-01-07)
+
+**What Was Done:**
+1. Extended `/utils/adapters.ts` with `adaptServiceToPageData()` function
+2. Created `/pages/templates/ServiceDetailNew.tsx` using 10 generated components:
+   - ServiceHeroCompact
+   - ServiceQuickFacts
+   - ServiceProblemSolution
+   - ServiceTabs (Technology, Insurance, Team, Guarantee)
+   - ServiceProcessMini
+   - ServiceDetailedContent
+   - ServiceTestimonials
+   - ServicePricing
+   - ServiceFAQCompact
+   - ServiceCTASticky
+3. Updated `/tailwind.config.js` - Added missing color utilities (primary.dark, primary.light, surface, accent)
+4. Updated `/App.tsx` to import ServiceDetailNew
+5. Build passes (264 URLs)
+6. Verified pages render correctly
+
+**Files Modified:**
+- `/utils/adapters.ts` - Extended with service page adapters
+- `/pages/templates/ServiceDetailNew.tsx` - New file (167 lines vs 1035 original)
+- `/tailwind.config.js` - Extended colors
+- `/App.tsx` - Updated import
+
+---
+
+### Phase 3 Complete: City Landing Pages Redesign (2026-01-07)
+
+**What Was Done:**
+1. Extended `/utils/adapters.ts` with `adaptCityConfigToCityData()` function
+2. Created `/pages/city/CityLandingNew.tsx` using 6 generated components:
+   - CityHero
+   - CityEmergencyBanner
+   - CityProximity
+   - CityServices
+   - CityTestimonials
+   - CityFAQ
+3. Backed up `/pages/city/CityLanding.tsx` to `CityLanding.backup.tsx`
+4. Updated `/pages/city/CityLanding.tsx` to re-export CityLandingNew
+5. Build passes (264 URLs)
+6. Verified McLean city page renders correctly
+
+**Files Modified:**
+- `/utils/adapters.ts` - Extended with city page adapters
+- `/pages/city/CityLandingNew.tsx` - New file
+- `/pages/city/CityLanding.tsx` - Now re-exports CityLandingNew
+- `/pages/city/CityLanding.backup.tsx` - Backup of original
+
+**Preserved Features:**
+- PageMeta for SEO (LocalBusiness + FAQ schemas)
+- All 17 city configurations work automatically
+- City-specific testimonials and FAQs
+
+---
+
+**Generated Component Library:**
+- 96+ components across 15 categories from Google AI Studio (Gemini)
+- INVENTORY.md documents all components
+- Components use CSS-only animations (no Framer Motion)
+- Google Material Design aesthetic
+
+---
+
+### Phase 4 Complete: Emergency PWA Page (2026-01-07)
+
+**What Was Done:**
+1. Updated `/generated-layouts/emergency-page/constants.ts` with real phone number (877) 497-0007
+2. Created `/pages/Emergency.tsx` wrapper with EmergencyService schema markup
+3. Added lazy import `EmergencyPWA` to `/App.tsx`
+4. Added route `/emergency/` to App.tsx
+5. Build passes (264 URLs)
+
+**Files Modified:**
+- `/generated-layouts/emergency-page/constants.ts` - Real phone number
+- `/pages/Emergency.tsx` - New file with SEO schema
+- `/App.tsx` - Added EmergencyPWA import and /emergency/ route
+
+**Generated Components Used:**
+- EmergencyPageLayout (self-contained mobile-first PWA)
+  - EmergencyHeader
+  - EmergencyHero
+  - EmergencyActions (call/text buttons)
+  - EmergencyChecklist
+  - EmergencyTrust
+  - EmergencyFooter
+
+**Features:**
+- Mobile-first design (max-width 480px)
+- Large tap targets for call/text
+- Emergency checklist for immediate steps
+- Trust signals
+- EmergencyService schema for rich results
+
+---
+
+**All 4 Phases Complete:**
+| Phase | Component Type | Status |
+|-------|---------------|--------|
+| 1 | Homepage | ✅ Complete |
+| 2 | Service Pages | ✅ Complete |
+| 3 | City Landing Pages | ✅ Complete |
+| 4 | Emergency PWA | ✅ Complete |
+
+**Next Steps:**
+- Deploy to production when ready
+- Test emergency page on mobile devices
+
+---
+
+*Updated: 2026-01-07*
 *Project: fd-google-redesign (main website)*

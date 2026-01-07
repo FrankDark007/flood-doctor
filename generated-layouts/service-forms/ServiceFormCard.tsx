@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, ChevronDown, ChevronUp, User, Wrench, FileText, Send } from 'lucide-react';
-import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from '../types';
+import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from './types';
 
 interface SectionProps {
   title: string;

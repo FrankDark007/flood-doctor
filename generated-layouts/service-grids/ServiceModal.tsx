@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle, Phone } from 'lucide-react';
-import { ServiceData } from '../types';
+import { ServiceData } from './types';
 
 interface ServiceModalProps {
   service: ServiceData | null;

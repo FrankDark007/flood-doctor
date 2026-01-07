@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Clock, FileCheck } from 'lucide-react';
-import { TRUST_SIGNALS } from '../constants';
+import { TRUST_SIGNALS } from './constants';
 
 const EmergencyTrust: React.FC = () => {
   // Map string icon names to Lucide components for static usage

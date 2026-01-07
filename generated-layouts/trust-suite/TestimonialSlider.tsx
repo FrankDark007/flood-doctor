@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { PRIMARY_COLOR } from '../constants';
+import { PRIMARY_COLOR } from './constants';
 
 const REVIEWS = [
   {

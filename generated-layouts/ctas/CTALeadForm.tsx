@@ -1,6 +1,6 @@
 import React from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
-import { COMPANY_NAME } from '../constants';
+import { COMPANY_NAME } from './constants';
 
 const CTALeadForm: React.FC = () => {
   return (

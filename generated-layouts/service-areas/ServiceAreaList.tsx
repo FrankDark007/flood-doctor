@@ -1,7 +1,7 @@
 import React from 'react';
-import { serviceLocations } from '../constants';
+import { serviceLocations } from './constants';
 import { MapPin, ExternalLink, ShieldCheck } from 'lucide-react';
-import { Region } from '../types';
+import { Region } from './types';
 
 export const ServiceAreaList: React.FC = () => {
   const regions: Region[] = ['Northern VA', 'Washington DC', 'Maryland'];

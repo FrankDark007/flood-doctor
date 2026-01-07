@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import { ServiceGridProps } from '../types';
+import { ServiceGridProps } from './types';
 
 const ServiceIconRail: React.FC<ServiceGridProps> = ({ services, onServiceClick }) => {
   return (

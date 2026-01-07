@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { BlogCardProps } from '../types';
+import { BlogCardProps } from './types';
 
 const BlogCardMinimal: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   return (

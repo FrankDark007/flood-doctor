@@ -1,6 +1,6 @@
 import React from 'react';
 import { Droplets, CalendarCheck, ArrowRight } from 'lucide-react';
-import { PHONE_LINK } from '../constants';
+import { PHONE_LINK } from './constants';
 
 const CTAServiceSelect: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, CheckCircle2, AlertCircle, ChevronDown, Check } from 'lucide-react';
-import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from '../types';
+import { ServiceFormData, ServiceType, UrgencyLevel, ContactMethod, FormErrors } from './types';
 
 const ServiceFormMinimal: React.FC = () => {
   const [formData, setFormData] = useState<ServiceFormData>({

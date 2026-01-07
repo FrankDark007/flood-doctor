@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import { BlogCardProps } from '../types';
+import { BlogCardProps } from './types';
 
 const BlogCardCompact: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   return (

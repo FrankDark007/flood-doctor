@@ -1,7 +1,7 @@
 import React from 'react';
-import { PROCESS_STEPS } from '../constants';
+import { PROCESS_STEPS } from './constants';
 import { ArrowRight } from 'lucide-react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const ProcessBento: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();

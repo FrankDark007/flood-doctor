@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, ArrowRight } from 'lucide-react';
-import { BlogCardProps } from '../types';
+import { BlogCardProps } from './types';
 
 const BlogCardOverlay: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   return (

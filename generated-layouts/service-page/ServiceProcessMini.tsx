@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, Droplets, Wind, Home, ArrowRight } from 'lucide-react';
-import { ProcessStep } from '../types';
+import { ProcessStep } from './types';
 
 interface ServiceProcessMiniProps {
   steps: ProcessStep[];

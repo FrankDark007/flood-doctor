@@ -1,7 +1,7 @@
 import React from 'react';
-import { serviceLocations, getProximityColor } from '../constants';
+import { serviceLocations, getProximityColor } from './constants';
 import { Navigation, MapPin } from 'lucide-react';
-import { Proximity } from '../types';
+import { Proximity } from './types';
 
 export const ServiceAreaRadial: React.FC = () => {
   // Group cities by proximity to place them on rings

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK, COMPANY_NAME } from '../constants';
+import { PHONE_NUMBER, PHONE_LINK, COMPANY_NAME } from './constants';
 
 const CTADarkImmersive: React.FC = () => {
   return (

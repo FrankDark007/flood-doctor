@@ -1,5 +1,5 @@
 import React from 'react';
-import { TRUST_DATA, PRIMARY_COLOR } from '../constants';
+import { TRUST_DATA, PRIMARY_COLOR } from './constants';
 
 const TrustBadgeBar: React.FC = () => {
   return (

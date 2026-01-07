@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertOctagon } from 'lucide-react';
-import { CHECKLIST_ITEMS } from '../constants';
+import { CHECKLIST_ITEMS } from './constants';
 
 const EmergencyChecklist: React.FC = () => {
   return (

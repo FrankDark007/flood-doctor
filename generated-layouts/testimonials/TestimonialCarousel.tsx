@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ReviewProps } from '../types';
+import { ReviewProps } from './types';
 import StarRating from './StarRating';
 
 const TestimonialCarousel: React.FC<ReviewProps> = ({ reviews, className = "" }) => {

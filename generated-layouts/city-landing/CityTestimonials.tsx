@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityTestimonialsProps {
   city: CityData;

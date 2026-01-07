@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, Camera, MapPin } from 'lucide-react';
-import { SERVICES } from '../constants';
+import { SERVICES } from './constants';
 import Input from './ui/Input';
 import Button from './ui/Button';
 

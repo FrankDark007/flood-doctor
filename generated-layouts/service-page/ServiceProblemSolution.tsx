@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { ProblemSolution } from '../types';
+import { ProblemSolution } from './types';
 
 interface ServiceProblemSolutionProps {
   data: ProblemSolution;

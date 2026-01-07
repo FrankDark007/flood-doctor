@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, Quote, Phone } from 'lucide-react';
-import { PHONE_LINK, COMPANY_NAME } from '../constants';
+import { PHONE_LINK, COMPANY_NAME } from './constants';
 
 const CTASocialProof: React.FC = () => {
   return (

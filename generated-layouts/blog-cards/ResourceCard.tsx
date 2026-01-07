@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, BookOpen, Shield, AlertTriangle, LifeBuoy, LucideIcon } from 'lucide-react';
-import { ResourceCardProps, Category } from '../types';
+import { ResourceCardProps, Category } from './types';
 
 // Helper to map categories to icons
 const getCategoryIcon = (category: Category): LucideIcon => {

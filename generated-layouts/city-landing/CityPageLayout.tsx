@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, Phone, Menu } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 import CityHero from './CityHero';
 import CityEmergencyBanner from './CityEmergencyBanner';

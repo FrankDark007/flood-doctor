@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
-import { EMERGENCY_DATA } from '../constants';
+import { EMERGENCY_DATA } from './constants';
 
 const EmergencyHeader: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ServicePageData } from '../types';
+import { ServicePageData } from './types';
 import ServiceHeroCompact from './ServiceHeroCompact';
 import ServiceQuickFacts from './ServiceQuickFacts';
 import ServiceProblemSolution from './ServiceProblemSolution';

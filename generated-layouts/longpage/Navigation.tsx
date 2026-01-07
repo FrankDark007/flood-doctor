@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavItem } from '../types';
+import { NavItem } from './types';
 import { Phone, Menu, X, ChevronRight } from 'lucide-react';
 
 interface SidebarProps {

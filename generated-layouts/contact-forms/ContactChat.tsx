@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, User, Bot, Sparkles } from 'lucide-react';
-import { SERVICES } from '../constants';
+import { SERVICES } from './constants';
 
 interface Message {
   id: number;

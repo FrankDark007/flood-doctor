@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Zap } from 'lucide-react';
-import { SERVICES } from '../constants';
+import { SERVICES } from './constants';
 import Button from './ui/Button';
 
 const InlineEmergencyForm: React.FC = () => {

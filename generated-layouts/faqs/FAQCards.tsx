@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { waterDamageFAQs } from '../data';
+import { waterDamageFAQs } from './data';
 
 /* 
   FAQ SCHEMA JSON-LD goes here (see FAQAccordion.tsx for format)

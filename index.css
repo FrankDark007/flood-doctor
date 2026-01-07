@@ -102,4 +102,52 @@
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-gray-300 rounded-full hover:bg-gray-400;
   }
+
+  /* ============================================================================
+     GENERATED LAYOUTS - Intersection Observer Animations
+     Used by ProcessTimeline and other components
+     ============================================================================ */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================================================
+     GENERATED LAYOUTS - Brand Color Utilities
+     Used by testimonials and trust components
+     ============================================================================ */
+  .text-brand-50 { color: #e8f0fe; }
+  .text-brand-100 { color: #d2e3fc; }
+  .text-brand-300 { color: #8ab4f8; }
+  .text-brand-600 { color: #1a73e8; }
+  .text-brand-700 { color: #1557b0; }
+  .text-brand-800 { color: #174ea6; }
+  .bg-brand-50 { background-color: #e8f0fe; }
+  .bg-brand-100 { background-color: #d2e3fc; }
+  .bg-brand-600 { background-color: #1a73e8; }
+  .border-brand-100 { border-color: #d2e3fc; }
+  .border-brand-200 { border-color: #aecbfa; }
+
+  /* ============================================================================
+     GENERATED LAYOUTS - Mask Gradient (for scrollable trust bar)
+     ============================================================================ */
+  .mask-gradient {
+    mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+  }
+
+  /* ============================================================================
+     GENERATED LAYOUTS - Primary color utilities for service grid
+     ============================================================================ */
+  .bg-primary { background-color: #1a73e8; }
+  .bg-primary-light { background-color: #e8f0fe; }
+  .bg-primary-dark { background-color: #1557b0; }
+  .text-primary { color: #1a73e8; }
+  .border-primary { border-color: #1a73e8; }
+  .ring-primary { --tw-ring-color: #1a73e8; }
 }

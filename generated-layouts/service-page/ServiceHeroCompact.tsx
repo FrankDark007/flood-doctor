@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Clock, ShieldCheck, Award } from 'lucide-react';
-import { Badge } from '../types';
+import { Badge } from './types';
 
 interface ServiceHeroCompactProps {
   title: string;

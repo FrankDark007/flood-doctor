@@ -1,6 +1,6 @@
 import React from 'react';
 import { Check, Info } from 'lucide-react';
-import { PricingItem } from '../types';
+import { PricingItem } from './types';
 
 interface ServicePricingProps {
   pricing: PricingItem;

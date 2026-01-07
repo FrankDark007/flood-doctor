@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from '../constants';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTAGradient: React.FC = () => {
   return (

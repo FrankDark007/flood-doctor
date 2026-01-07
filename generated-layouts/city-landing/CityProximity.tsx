@@ -1,6 +1,6 @@
 import React from 'react';
 import { Map, Navigation, Landmark } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityProximityProps {
   city: CityData;

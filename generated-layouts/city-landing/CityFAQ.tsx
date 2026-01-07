@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityFAQProps {
   city: CityData;

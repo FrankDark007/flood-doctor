@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, Quote, Phone, CheckCircle, ArrowRight } from 'lucide-react';
-import { PRIMARY_COLOR } from '../constants';
+import { PRIMARY_COLOR } from './constants';
 
 const SplitProofSection: React.FC = () => {
   return (

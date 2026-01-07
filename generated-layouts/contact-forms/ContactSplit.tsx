@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Upload, Send, CheckCircle, FileImage } from 'lucide-react';
-import { CONTACT_INFO, SERVICES } from '../constants';
+import { CONTACT_INFO, SERVICES } from './constants';
 import Input from './ui/Input';
 import Button from './ui/Button';
 

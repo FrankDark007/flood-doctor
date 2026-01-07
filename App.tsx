@@ -19,7 +19,8 @@ const PageLoader = () => (
 // Critical pages - load immediately
 import Home from './pages/Home';
 import ServicesHub from './pages/ServicesHub';
-import ServiceDetail from './pages/templates/ServiceDetail';
+// ServiceDetail now uses generated components (was: './pages/templates/ServiceDetail')
+import ServiceDetail from './pages/templates/ServiceDetailNew';
 
 // Lazy load all other pages for route-based code splitting
 const LocationsHub = lazy(() => import('./pages/LocationsHub'));
@@ -87,6 +88,7 @@ const FAQ = lazy(() => import('./pages/resources/FAQ'));
 const InsuranceGuide = lazy(() => import('./pages/resources/InsuranceGuide'));
 const HomeownerGuides = lazy(() => import('./pages/resources/HomeownerGuides'));
 const EmergencyChecklists = lazy(() => import('./pages/resources/EmergencyChecklists'));
+const EmergencyPWA = lazy(() => import('./pages/Emergency')); // Mobile-first emergency page
 const Technology = lazy(() => import('./pages/resources/Technology'));
 const Communication = lazy(() => import('./pages/resources/Communication'));
 const InsuranceClaimsGuide = lazy(() => import('./pages/resources/InsuranceClaimsGuide'));
@@ -483,6 +485,7 @@ const App: React.FC = () => {
               <Route path="/water-restoration/" element={<WaterRestorationPage />} />
               <Route path="/flood-damage-cleanup/" element={<FloodDamageCleanup />} />
               <Route path="/emergency-water-damage-restoration/" element={<EmergencyWaterDamageRestorationPage />} />
+              <Route path="/emergency/" element={<EmergencyPWA />} />
               <Route path="/water-damage-restoration-company/" element={<WaterDamageRestorationCompany />} />
               <Route path="/water-mitigation/" element={<WaterMitigation />} />
               <Route path="/basement-flood-restoration/" element={<BasementFloodRestoration />} />

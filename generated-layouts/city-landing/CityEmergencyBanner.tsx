@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Siren } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityEmergencyBannerProps {
   city: CityData;

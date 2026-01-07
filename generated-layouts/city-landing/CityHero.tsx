@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Clock, Phone, ShieldCheck } from 'lucide-react';
-import { CityData } from '../types';
+import { CityData } from './types';
 
 interface CityHeroProps {
   city: CityData;

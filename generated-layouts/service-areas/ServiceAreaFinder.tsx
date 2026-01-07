@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { serviceLocations, getProximityColor } from '../constants';
+import { serviceLocations, getProximityColor } from './constants';
 import { Search, MapPin, Navigation, ArrowRight, X } from 'lucide-react';
 
 export const ServiceAreaFinder: React.FC = () => {

@@ -2,11 +2,11 @@ import { ChecklistItem, EmergencyPageData, TrustSignal } from './types';
 
 export const EMERGENCY_DATA: EmergencyPageData = {
   companyName: "Flood Doctor",
-  phoneNumber: "(703) 555-0123",
-  phoneHref: "tel:+17035550123",
-  smsHref: "sms:+17035550123?body=I have a water emergency, please help.",
-  responseTime: "45 min or less",
-  serviceArea: "Northern Virginia, DC, and Maryland"
+  phoneNumber: "(877) 497-0007",
+  phoneHref: "tel:+18774970007",
+  smsHref: "sms:+18774970007?body=I have a water emergency, please help.",
+  responseTime: "60 min or less",
+  serviceArea: "Northern Virginia, DC & Maryland"
 };
 
 export const CHECKLIST_ITEMS: ChecklistItem[] = [
