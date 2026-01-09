@@ -98,7 +98,7 @@ const RequestService: React.FC = () => {
     <main className="flex-grow bg-slate-50">
       <PageMeta
         title="Request Service | Flood Doctor Water Damage Restoration"
-        description="Request water damage restoration service from Flood Doctor. Free estimates, 24/7 emergency response in Northern Virginia."
+        description="Request water damage restoration service from Flood Doctor. 24/7 emergency response in Northern Virginia."
       />
 
       {/* Header */}
@@ -109,7 +109,7 @@ const RequestService: React.FC = () => {
               <h1 className="font-display text-2xl font-semibold text-text">
                 Request Service
               </h1>
-              <p className="text-sm text-muted">Free estimate • No obligation</p>
+              <p className="text-sm text-muted">24/7 Emergency • Direct Insurance Billing</p>
             </div>
             <a
               href="tel:8774970007"

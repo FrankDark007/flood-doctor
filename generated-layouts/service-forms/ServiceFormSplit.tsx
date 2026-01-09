@@ -102,7 +102,7 @@ const ServiceFormSplit: React.FC = () => {
 
       {/* Right Column: Form */}
       <div className="p-8 lg:p-12 lg:w-3/5 bg-slate-50">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6">Get a Free Estimate</h3>
+        <h3 className="text-2xl font-bold text-slate-800 mb-6">Request Service</h3>
         
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -32,7 +32,7 @@ const CTAGradient: React.FC = () => {
               <span>{PHONE_NUMBER}</span>
             </a>
             <button className="group inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300">
-              <span>Request Free Estimate</span>
+              <span>Request Service</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

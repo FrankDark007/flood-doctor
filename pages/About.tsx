@@ -603,7 +603,7 @@ const About: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100">
-              Get Free Estimate
+              Request Service
             </Button>
             <Button href="tel:8774970007" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
               <Phone size={18} className="mr-2" />

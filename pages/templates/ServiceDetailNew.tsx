@@ -12,12 +12,19 @@ import ServiceHeroCompact from '../../generated-layouts/service-page/ServiceHero
 import ServiceQuickFacts from '../../generated-layouts/service-page/ServiceQuickFacts';
 import ServiceProblemSolution from '../../generated-layouts/service-page/ServiceProblemSolution';
 import ServiceTabs from '../../generated-layouts/service-page/ServiceTabs';
-import ServiceProcessMini from '../../generated-layouts/service-page/ServiceProcessMini';
 import ServiceDetailedContent from '../../generated-layouts/service-page/ServiceDetailedContent';
 import ServiceTestimonials from '../../generated-layouts/service-page/ServiceTestimonials';
 import ServicePricing from '../../generated-layouts/service-page/ServicePricing';
-import ServiceFAQCompact from '../../generated-layouts/service-page/ServiceFAQCompact';
 import ServiceCTASticky from '../../generated-layouts/service-page/ServiceCTASticky';
+
+// V14 Components
+import ProcessFlow from '../../components/sections/ProcessFlow';
+import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import EmergencyServiceCard from '../../components/ui/EmergencyServiceCard';
+import ServiceDetailHeroAnimation from '../../components/graphics/ServiceDetailHeroAnimation';
+
+// Hero Tile Mapping (for services with custom isometric tiles)
+import { getHeroTileBySlug } from '../../data/serviceHeroTiles';
 
 /**
  * ServiceDetailNew - Redesigned with Generated Components
@@ -99,6 +106,24 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
     navigate('/request/');
   }, [navigate]);
 
+  // Extract service slug (last segment of URL path, without trailing slash)
+  const serviceSlug = service.slug?.split('/').filter(Boolean).pop() || '';
+
+  // Check if this service has a custom hero tile (isometric PNG instead of SVG)
+  const heroTile = getHeroTileBySlug(serviceSlug);
+
+  // Render hero visual: custom isometric tile or default SVG animation
+  const heroVisual = heroTile ? (
+    <img
+      src={heroTile.image}
+      alt={heroTile.alt}
+      className="w-full max-w-lg"
+      loading="eager"
+    />
+  ) : (
+    <ServiceDetailHeroAnimation visualKey={service.heroVisualKey} className="w-full max-w-md" />
+  );
+
   return (
     <main className="flex-grow bg-white pb-20 md:pb-0">
       <PageMeta
@@ -107,7 +132,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
         schema={faqSchema}
       />
 
-      {/* Hero Section */}
+      {/* Hero Section with V14 Visual */}
       <div ref={heroRef}>
         <ServiceHeroCompact
           title={isLocalPage ? `${serviceName} in ${cityName}` : pageData.title}
@@ -115,6 +140,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
           badges={pageData.badges}
           emergencyPhone={emergencyPhone}
           onCtaClick={handleCtaClick}
+          visual={heroVisual}
         />
       </div>
 
@@ -127,22 +153,70 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
       {/* Tabbed Content (Technology, Insurance, Team, Guarantee) */}
       <ServiceTabs tabs={pageData.tabs} />
 
-      {/* Process Steps */}
-      <ServiceProcessMini steps={pageData.process} />
+      {/* V14 Process Section with Service-Specific Isometric Graphics */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+            {/* ProcessFlow now handles its own header with service-specific title */}
+            <ProcessFlow serviceSlug={service.slug} />
+          </div>
+        </div>
+      </section>
 
-      {/* Detailed Content Sections (if available) */}
-      {pageData.detailedContent.length > 0 && (
-        <ServiceDetailedContent sections={pageData.detailedContent} />
-      )}
+      {/* Two-Column Layout: Content + Emergency Sidebar */}
+      <section className="py-12 md:py-16 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
 
-      {/* Testimonials */}
-      <ServiceTestimonials testimonials={pageData.testimonials} />
+            {/* Main Content Column */}
+            <div className="lg:col-span-8 space-y-12">
+              {/* Detailed Content Sections (if available) */}
+              {pageData.detailedContent.length > 0 && (
+                <ServiceDetailedContent sections={pageData.detailedContent} />
+              )}
 
-      {/* Pricing / Free Inspection CTA */}
-      <ServicePricing pricing={pageData.pricing} onCtaClick={handleCtaClick} />
+              {/* Testimonials */}
+              <ServiceTestimonials testimonials={pageData.testimonials} />
 
-      {/* FAQ Section */}
-      <ServiceFAQCompact faqs={pageData.faqs} />
+              {/* Pricing / Free Inspection CTA */}
+              <ServicePricing pricing={pageData.pricing} onCtaClick={handleCtaClick} />
+
+              {/* V14 FAQ Section with Expand All */}
+              <GoogleStyleFAQ
+                data={pageData.faqs}
+                title="Frequently asked questions"
+                className="py-8 bg-white rounded-2xl border border-gray-100"
+              />
+            </div>
+
+            {/* Sticky Sidebar with EmergencyServiceCard */}
+            <aside className="hidden lg:block lg:col-span-4">
+              <div className="sticky top-32 space-y-6">
+                <EmergencyServiceCard variant="expanded" />
+
+                {/* Quick CTA */}
+                <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                  <h3 className="font-semibold text-gray-900 mb-3">Need immediate help?</h3>
+                  <p className="text-sm text-gray-500 mb-4">Our technicians are standing by 24/7 for emergency service.</p>
+                  <a
+                    href={`tel:${emergencyPhone.replace(/\D/g,'')}`}
+                    className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primaryHover text-white py-3 px-4 rounded-full font-semibold transition-colors"
+                  >
+                    Call {emergencyPhone}
+                  </a>
+                  <button
+                    onClick={handleCtaClick}
+                    className="w-full mt-3 text-primary hover:text-primaryHover text-sm font-medium"
+                  >
+                    Or request online →
+                  </button>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
 
       {/* Related Services */}
       <RelatedServices

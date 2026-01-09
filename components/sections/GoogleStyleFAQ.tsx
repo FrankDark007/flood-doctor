@@ -64,20 +64,15 @@ interface FAQItem {
 
 interface GoogleStyleFAQProps {
   data?: FAQItem[];
-  faqs?: FAQItem[]; // Alias for data
   title?: string;
-  subtitle?: string;
   className?: string;
 }
 
-const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
-  data,
-  faqs,
+const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({ 
+  data = DEFAULT_FAQ_DATA, 
   title = "Your questions, answered",
-  subtitle,
   className = "py-12 md:py-16 bg-white border-t border-gray-100"
 }) => {
-  const finalData = data || faqs || DEFAULT_FAQ_DATA;
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   const toggleItem = (index: number) => {
@@ -88,13 +83,13 @@ const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
     );
   };
 
-  const allOpen = openIndices.length === finalData.length;
+  const allOpen = openIndices.length === data.length;
 
   const toggleAll = () => {
     if (allOpen) {
       setOpenIndices([]);
     } else {
-      setOpenIndices(finalData.map((_, i) => i));
+      setOpenIndices(data.map((_, i) => i));
     }
   };
 
@@ -103,17 +98,12 @@ const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Area */}
-        {(title || subtitle) && (
-          <div className="text-center mb-10">
-            {title && (
-              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight">
+        {title && (
+            <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight">
                 {title}
-              </h2>
-            )}
-            {subtitle && (
-              <p className="mt-3 text-lg text-gray-600">{subtitle}</p>
-            )}
-          </div>
+            </h2>
+            </div>
         )}
 
         <div className="max-w-3xl mx-auto">
@@ -135,7 +125,7 @@ const GoogleStyleFAQ: React.FC<GoogleStyleFAQProps> = ({
 
           {/* List */}
           <div className="border-t border-gray-200">
-            {finalData.map((item, index) => {
+            {data.map((item, index) => {
               const isOpen = openIndices.includes(index);
               return (
                 <div key={index} className="border-b border-gray-200">

@@ -16,8 +16,8 @@ const CTALeadForm: React.FC = () => {
             
             <div className="relative z-10 space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                Get a Free Estimate <br/>
-                <span className="text-blue-400">Within 30 Minutes</span>
+                Request Service <br/>
+                <span className="text-blue-400">Response Within 60 Minutes</span>
               </h2>
               <p className="text-slate-300 text-lg">
                 Fill out the form to speak directly with a {COMPANY_NAME} specialist. We prioritize emergency requests.

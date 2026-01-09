@@ -25,11 +25,16 @@ Engineering contract:
 - QA log: /qa/issues.md (append-only, newest at top)
 
 Deployment:
-- ALWAYS use: `./scripts/deploy.sh <ftp_password>`
-- NEVER do partial FTP uploads (causes hash mismatch)
+- ALWAYS use: `./scripts/deploy.sh <ssh_password>`
+- Method: SSH/rsync (faster than FTP, ~10 seconds)
+- SSH Host: 132.148.253.156:22
+- SSH User: hubbds2w11bg
+- Remote Path: ~/public_html/flood.doctor/ (ADDON DOMAIN)
 - After deploy: `./scripts/verify-deployment.sh` (checks content-types)
-- FTP: Deploy@flood.doctor @ 132.148.253.156
 - Cloudflare Zone: 7b3b2f087429c5c3e9688253d8df11eb
+
+⚠️ IMPORTANT: flood.doctor is an ADDON DOMAIN → ~/public_html/flood.doctor/
+   Primary domain is flooddoctor.us → ~/public_html/
 
 ⚠️ CRITICAL: SPA fallback masks missing assets (returns 200 for everything).
    Always verify content-types, not just HTTP status codes.

@@ -302,23 +302,23 @@ transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
 - **CDN:** Cloudflare (Flexible SSL)
 - **Last Deploy:** 2026-01-04
 
-### Subdomains: ✅ FILES DEPLOYED → ⏳ CPANEL CONFIG NEEDED
-All 13 city site files uploaded via FTP (2026-01-03):
-- ✅ mclean.flood.doctor → /mclean/
-- ✅ arlington.flood.doctor → /arlington/
-- ✅ alexandria.flood.doctor → /alexandria/
-- ✅ fairfax.flood.doctor → /fairfax/
-- ✅ vienna.flood.doctor → /vienna/
-- ✅ tysons.flood.doctor → /tysons/
-- ✅ reston.flood.doctor → /reston/
-- ✅ herndon.flood.doctor → /herndon/
-- ✅ ashburn.flood.doctor → /ashburn/
-- ✅ springfield.flood.doctor → /springfield/
-- ✅ fallschurch.flood.doctor → /fallschurch/
-- ✅ greatfalls.flood.doctor → /greatfalls/
-- ✅ lorton.flood.doctor → /lorton/
+### Subdomains: ✅ ALL 13 LIVE (2026-01-08)
+All 13 city subdomains deployed and verified:
+- ✅ https://mclean.flood.doctor — HTTP 200
+- ✅ https://arlington.flood.doctor — HTTP 200
+- ✅ https://alexandria.flood.doctor — HTTP 200
+- ✅ https://fairfax.flood.doctor — HTTP 200
+- ✅ https://vienna.flood.doctor — HTTP 200
+- ✅ https://tysons.flood.doctor — HTTP 200
+- ✅ https://reston.flood.doctor — HTTP 200
+- ✅ https://herndon.flood.doctor — HTTP 200
+- ✅ https://ashburn.flood.doctor — HTTP 200
+- ✅ https://springfield.flood.doctor — HTTP 200
+- ✅ https://fallschurch.flood.doctor — HTTP 200
+- ✅ https://greatfalls.flood.doctor — HTTP 200
+- ✅ https://lorton.flood.doctor — HTTP 200
 
-**Next:** Configure GoDaddy cPanel to route subdomains to their folders
+**Resolution:** City folders were missing from server. Uploaded via rsync, .htaccess rewrites handled routing.
 
 ---
 
@@ -470,18 +470,13 @@ All 13 city subdomain sites uploaded to GoDaddy FTP:
 - tysons, reston, herndon, ashburn, springfield
 - fallschurch, greatfalls, lorton
 
-### ⏳ PENDING: Configure GoDaddy cPanel Subdomains
+### ✅ COMPLETE: City Subdomains Configured (2026-01-08)
 
-Files are on server but subdomains need cPanel configuration:
-
-1. **Log into GoDaddy cPanel** → https://myh.godaddy.com
-2. **Navigate to Subdomains** section
-3. **Create wildcard subdomain** OR add each city individually:
-   - Document root: `/home/[user]/mclean` → mclean.flood.doctor
-   - Document root: `/home/[user]/arlington` → arlington.flood.doctor
-   - (repeat for all 13 cities)
-
-**Alternative:** Configure `.htaccess` with RewriteRules for subdomain routing
+**How it works:**
+1. .htaccess in `~/public_html/flood.doctor/` has RewriteRules for each subdomain
+2. City folders are at `~/public_html/flood.doctor/{city}/`
+3. DNS is on Cloudflare (wildcard + individual A records)
+4. No cPanel subdomain configuration needed — .htaccess handles routing
 
 ### 🚨 BLOCKERS BEFORE LAUNCH:
 
@@ -525,7 +520,7 @@ Files are on server but subdomains need cPanel configuration:
 | https://flood.doctor/services/ | ✅ 200 OK |
 | https://flood.doctor/contact/ | ✅ 200 OK |
 | https://flood.doctor/about/ | ✅ 200 OK |
-| City subdomains | ❌ 403 (cPanel config needed) |
+| City subdomains (all 13) | ✅ 200 OK (2026-01-08) |
 
 ### Code Quality Audits (Non-blocking)
 - **Import audit:** 40 broken relative imports in city content files
@@ -806,5 +801,145 @@ Features:
 
 ---
 
-*Updated: 2026-01-07*
+---
+
+## 🚀 LATEST DEPLOYMENT (2026-01-07 19:30 UTC)
+
+### Homepage Reverted to Original
+
+**User Feedback:** "revert the home page back to what we had before. this home page and hero row are not better than what we had."
+
+**What Was Done:**
+1. Restored `pages/Home.tsx` from `pages/Home.backup.tsx`
+2. Rebuilt project (new JS bundle: `index-mmLPJ-og.js`)
+3. Uploaded all critical assets via FTP:
+   - `index-mmLPJ-og.js`
+   - `vendor-icons-oSz49iMu.js`
+   - `pages-blog-Dh9ZTXvP.js`
+   - `pages-locations-XHpTW1Kl.js`
+4. Uploaded index.html
+
+**Verified:**
+- ✅ https://flood.doctor returns 200 OK
+- ✅ JS bundle (`index-mmLPJ-og.js`) returns `content-type: text/javascript`
+- ✅ CSS bundle (`index-BwrXPr6b.css`) returns `content-type: text/css`
+- ✅ Vendor bundles loading correctly
+- ✅ Original homepage layout restored
+
+**Note:** Premium redesign with HeroDashboard rejected by user. Original homepage preserved in `Home.backup.tsx`.
+
+### ✅ City Subdomains Now Live (2026-01-08)
+
+All 13 city subdomains now working:
+- arlington.flood.doctor ✅
+- mclean.flood.doctor ✅
+- (and 11 others)
+
+**Fix:** Uploaded missing city folders via rsync. .htaccess was already configured for subdomain routing.
+
+---
+
+## 🎨 V14 DESIGN MIGRATION (2026-01-08)
+
+### ✅ Homepage Redesigned with V14 Components
+
+**What Was Done:**
+1. Copied V14 components from prototype to codebase:
+   - `HeroV14.tsx` - Hero with custom visual slot
+   - `TrustBarV14.tsx` - Trust badges row
+   - `ProcessSectionV14.tsx` - Animated 3-step SVG timeline
+   - `GoogleStyleFAQ.tsx` - FAQ accordion with schema
+   - `HeroOrbitPhone.tsx` - Animated Google Business Profile mockup
+   - `EmergencyServiceCard.tsx` - Live status card with crews/response time
+   - `GoogleGuaranteedBadge.tsx` - Expandable trust badge
+   - `EmergencyServiceBadge.tsx` - 24/7 badge
+   - `EmergencyContext.tsx` - Context for emergency data
+
+2. Updated `pages/Home.tsx` to use V14 components:
+   - Hero with animated HeroOrbitPhone visual
+   - TrustBar with 4 credential badges
+   - ProcessSection with animated SVG timeline
+   - Live Dispatch section with EmergencyServiceCard
+   - GoogleStyleFAQ with schema markup
+   - Blue CTA section
+   - Service Areas grid
+
+3. Build passes (264 URLs)
+
+**New Homepage Sections:**
+1. V14 Hero (animated Google Business Profile phone)
+2. TrustBar (24/7, IICRC, Licensed, Insurance)
+3. City-specific sections (if subdomain)
+4. ProcessSection (animated 3-step timeline)
+5. Live Dispatch (EmergencyServiceCard)
+6. FAQ Accordion (Google-style)
+7. Blue CTA section
+8. Service Areas grid
+
+**Build Output:**
+- Main JS: `index-DxzTNOOD.js`
+- Main CSS: `index-DhJoO5Z6.css`
+
+**Status:** ✅ DEPLOYED (2026-01-08)
+
+**Live at:** https://flood.doctor/
+
+**Verified:**
+- Homepage returns 200
+- New CSS bundle (index-DhJoO5Z6.css) deployed
+- New JS bundle (index-DxzTNOOD.js) deployed
+- All city subdomains working
+
+---
+
+## 🎨 V14 SERVICE PAGE MIGRATION (2026-01-08)
+
+### ✅ Service Detail Pages Upgraded with V14 Components
+
+**What Was Done:**
+1. Updated `ServiceHeroCompact.tsx` - Added optional `visual` prop for custom hero visuals
+2. Updated `ServiceDetailNew.tsx` with V14 components:
+   - ProcessFlow (isometric graphics: IsoInspection, IsoExtraction, IsoDrying, IsoVerification)
+   - GoogleStyleFAQ (expand/collapse all toggle)
+   - EmergencyServiceCard (sticky sidebar)
+   - ServiceDetailHeroAnimation (service-specific visuals)
+
+3. Added two-column layout with sticky sidebar:
+   - Main content column (8/12)
+   - Emergency sidebar column (4/12) with:
+     - EmergencyServiceCard (expanded variant)
+     - Quick CTA card with call button
+
+4. Removed all "Free Estimate" CTAs per user request:
+   - ServiceHeroCompact.tsx → "Request Service"
+   - CTAGradient.tsx → "Request Service"
+   - CTAMinimal.tsx → "Request Service"
+   - CTALeadForm.tsx → "Request Service"
+   - ContactTrust.tsx → "Request Emergency Service"
+   - ServiceFormSplit.tsx → "Request Service"
+   - About.tsx → "Request Service"
+   - ServicesHub.tsx → "Request Service"
+   - RequestService.tsx → Updated meta description and subtext
+   - FAQs data.ts → Changed "free estimates" question to "How do I request service?"
+
+**New Service Page Sections:**
+1. Hero with animated service-specific visual
+2. Quick Facts bar
+3. Problem vs Solution
+4. Tabbed content (Tech, Insurance, Team, Guarantee)
+5. V14 Process Flow with isometric 3D graphics (4 phases)
+6. Two-column layout:
+   - Left: Detailed content, Testimonials, Pricing, FAQ (GoogleStyleFAQ)
+   - Right: Sticky EmergencyServiceCard + Quick CTA
+7. Related Services
+8. Service Area Links
+9. Sticky Bottom CTA
+
+**Build Status:** ✅ Passing (264 URLs)
+
+**Status:** ✅ DEPLOYED (2026-01-08)
+
+---
+
+*Updated: 2026-01-08*
 *Project: fd-google-redesign (main website)*

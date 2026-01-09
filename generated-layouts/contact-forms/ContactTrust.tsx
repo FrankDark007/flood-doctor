@@ -69,7 +69,7 @@ const ContactTrust: React.FC = () => {
       {/* Right: Contact Form */}
       <div className="lg:col-span-7 p-8 lg:p-12 bg-white">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Get a Free Estimate</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Request Emergency Service</h2>
           <p className="text-gray-500">Fill out the form below for immediate assistance.</p>
         </div>
 

@@ -47,10 +47,13 @@ const SplitProofSection: React.FC = () => {
                             ))}
                         </ul>
 
-                        <button className="inline-flex items-center px-6 py-3 bg-white text-blue-700 rounded-lg font-bold hover:bg-blue-50 transition-colors w-fit group">
-                            Call Now (555) 123-4567
+                        <a
+                            href="tel:8774970007"
+                            className="inline-flex items-center px-6 py-3 bg-white text-blue-700 rounded-lg font-bold hover:bg-blue-50 transition-colors w-fit group"
+                        >
+                            Call Now (877) 497-0007
                             <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </a>
                     </div>
                 </div>
 

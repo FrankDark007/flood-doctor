@@ -33,8 +33,8 @@ export const waterDamageFAQs: FAQItem[] = [
   },
   {
     id: '6',
-    question: "Do you offer free estimates?",
-    answer: "Yes, we provide free on-site assessments and estimates for property owners. Our certified technicians will inspect the damage, explain the necessary steps, and provide a detailed cost breakdown before beginning any work.",
+    question: "How do I request service?",
+    answer: "Call our 24/7 emergency line at (877) 497-0007 or fill out our online service request form. Our certified technicians will assess the damage on-site, explain the necessary steps, and coordinate directly with your insurance company for billing.",
     category: "Emergency"
   }
 ];

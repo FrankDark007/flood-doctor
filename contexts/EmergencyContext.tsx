@@ -64,8 +64,7 @@ export const EmergencyProvider: React.FC<{ children: ReactNode }> = ({ children 
     };
     
     updateStatus();
-    // Update every 60 seconds instead of every second to reduce re-renders by 98%
-    const interval = setInterval(updateStatus, 60000);
+    const interval = setInterval(updateStatus, 1000); 
     return () => clearInterval(interval);
   }, []);
 
