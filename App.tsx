@@ -8,6 +8,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import { EmergencyProvider } from './contexts/EmergencyContext';
 import { FranchiseProvider } from './contexts/FranchiseContext';
 import CommandPalette from './components/ui/CommandPalette';
+import DevNoIndex from './components/seo/DevNoIndex';
 
 // Loading fallback component
 const PageLoader = () => (
@@ -600,56 +601,55 @@ const App: React.FC = () => {
               {/* Tools & Demos */}
               <Route path="/tools/video-generator/" element={<VideoGenerator />} />
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
-              <Route path="/dev/visual-components/" element={<VisualComponentsDemo />} />
-              <Route path="/dev/generated-layouts/" element={<GeneratedLayoutsLab />} />
-
-              {/* Dev Layout Previews */}
-              <Route path="/dev/service-a/" element={<ServiceDetailDevA />} />
-              <Route path="/dev/service-b/" element={<ServiceDetailDevB />} />
-              <Route path="/dev/service-c/" element={<ServiceDetailDevC />} />
-              <Route path="/dev/about-a/" element={<AboutDevA />} />
-              <Route path="/dev/about-b/" element={<AboutDevB />} />
-              <Route path="/dev/about-c/" element={<AboutDevC />} />
-              <Route path="/dev/contact-a/" element={<ContactDevA />} />
-              <Route path="/dev/contact-b/" element={<ContactDevB />} />
-              <Route path="/dev/contact-c/" element={<ContactDevC />} />
-              <Route path="/dev/home-a/" element={<HomeDevA />} />
-              <Route path="/dev/home-b/" element={<HomeDevB />} />
-              <Route path="/dev/home-c/" element={<HomeDevC />} />
-              <Route path="/dev/services-a/" element={<ServicesDevA />} />
-              <Route path="/dev/services-b/" element={<ServicesDevB />} />
-              <Route path="/dev/services-c/" element={<ServicesDevC />} />
-
-              {/* Service Dev Layouts (10 SEO variants) */}
-              <Route path="/dev/service-1/" element={<ServiceDev1 />} />
-              <Route path="/dev/service-2/" element={<ServiceDev2 />} />
-              <Route path="/dev/service-3/" element={<ServiceDev3 />} />
-              <Route path="/dev/service-4/" element={<ServiceDev4 />} />
-              <Route path="/dev/service-5/" element={<ServiceDev5 />} />
-              <Route path="/dev/service-6/" element={<ServiceDev6 />} />
-              <Route path="/dev/service-7/" element={<ServiceDev7 />} />
-              <Route path="/dev/service-8/" element={<ServiceDev8 />} />
-              <Route path="/dev/service-9/" element={<ServiceDev9 />} />
-              <Route path="/dev/service-10/" element={<ServiceDev10 />} />
-
-              {/* Litho-style Dev Layouts */}
-              <Route path="/dev/litho-1/" element={<LithoDev1 />} />
-              <Route path="/dev/litho-2/" element={<LithoDev2 />} />
-              <Route path="/dev/litho-3/" element={<LithoDev3 />} />
-              <Route path="/dev/gemini-water-damage/" element={<GeminiWaterDamage />} />
-              <Route path="/dev/gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
-
-              {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
-              <Route path="/dev/service-detail-1/" element={<ServiceDetailDev1 />} />
-              <Route path="/dev/service-detail-2/" element={<ServiceDetailDev2 />} />
-              <Route path="/dev/service-detail-3/" element={<ServiceDetailDev3 />} />
-              <Route path="/dev/service-detail-4/" element={<ServiceDetailDev4 />} />
-              <Route path="/dev/service-detail-5/" element={<ServiceDetailDev5 />} />
-              <Route path="/dev/service-detail-6/" element={<ServiceDetailDev6 />} />
-              <Route path="/dev/service-detail-7/" element={<ServiceDetailDev7 />} />
-              <Route path="/dev/service-detail-8/" element={<ServiceDetailDev8 />} />
-              <Route path="/dev/service-detail-9/" element={<ServiceDetailDev9 />} />
-              <Route path="/dev/service-detail-10/" element={<ServiceDetailDev10 />} />
+              {/* Dev Routes - All noindexed via DevNoIndex wrapper */}
+              <Route path="/dev" element={<DevNoIndex />}>
+                <Route path="visual-components/" element={<VisualComponentsDemo />} />
+                <Route path="generated-layouts/" element={<GeneratedLayoutsLab />} />
+                {/* Dev Layout Previews */}
+                <Route path="service-a/" element={<ServiceDetailDevA />} />
+                <Route path="service-b/" element={<ServiceDetailDevB />} />
+                <Route path="service-c/" element={<ServiceDetailDevC />} />
+                <Route path="about-a/" element={<AboutDevA />} />
+                <Route path="about-b/" element={<AboutDevB />} />
+                <Route path="about-c/" element={<AboutDevC />} />
+                <Route path="contact-a/" element={<ContactDevA />} />
+                <Route path="contact-b/" element={<ContactDevB />} />
+                <Route path="contact-c/" element={<ContactDevC />} />
+                <Route path="home-a/" element={<HomeDevA />} />
+                <Route path="home-b/" element={<HomeDevB />} />
+                <Route path="home-c/" element={<HomeDevC />} />
+                <Route path="services-a/" element={<ServicesDevA />} />
+                <Route path="services-b/" element={<ServicesDevB />} />
+                <Route path="services-c/" element={<ServicesDevC />} />
+                {/* Service Dev Layouts (10 SEO variants) */}
+                <Route path="service-1/" element={<ServiceDev1 />} />
+                <Route path="service-2/" element={<ServiceDev2 />} />
+                <Route path="service-3/" element={<ServiceDev3 />} />
+                <Route path="service-4/" element={<ServiceDev4 />} />
+                <Route path="service-5/" element={<ServiceDev5 />} />
+                <Route path="service-6/" element={<ServiceDev6 />} />
+                <Route path="service-7/" element={<ServiceDev7 />} />
+                <Route path="service-8/" element={<ServiceDev8 />} />
+                <Route path="service-9/" element={<ServiceDev9 />} />
+                <Route path="service-10/" element={<ServiceDev10 />} />
+                {/* Litho-style Dev Layouts */}
+                <Route path="litho-1/" element={<LithoDev1 />} />
+                <Route path="litho-2/" element={<LithoDev2 />} />
+                <Route path="litho-3/" element={<LithoDev3 />} />
+                <Route path="gemini-water-damage/" element={<GeminiWaterDamage />} />
+                <Route path="gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
+                {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
+                <Route path="service-detail-1/" element={<ServiceDetailDev1 />} />
+                <Route path="service-detail-2/" element={<ServiceDetailDev2 />} />
+                <Route path="service-detail-3/" element={<ServiceDetailDev3 />} />
+                <Route path="service-detail-4/" element={<ServiceDetailDev4 />} />
+                <Route path="service-detail-5/" element={<ServiceDetailDev5 />} />
+                <Route path="service-detail-6/" element={<ServiceDetailDev6 />} />
+                <Route path="service-detail-7/" element={<ServiceDetailDev7 />} />
+                <Route path="service-detail-8/" element={<ServiceDetailDev8 />} />
+                <Route path="service-detail-9/" element={<ServiceDetailDev9 />} />
+                <Route path="service-detail-10/" element={<ServiceDetailDev10 />} />
+              </Route>
 
               {/* Legal & Company */}
               <Route path="/careers/" element={<Careers />} />

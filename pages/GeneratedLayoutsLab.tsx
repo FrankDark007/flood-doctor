@@ -5,7 +5,6 @@
  */
 import React, { useState, Suspense, lazy } from 'react';
 import { ChevronDown, ChevronRight, Eye, EyeOff } from 'lucide-react';
-import PageMeta from '../components/seo/PageMeta';
 
 // Lazy load components to avoid loading everything at once
 const HeroInteractive = lazy(() => import('../generated-layouts/heroes/HeroInteractive'));
@@ -232,11 +231,6 @@ export default function GeneratedLayoutsLab() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <PageMeta
-        title="Generated Layouts Lab"
-        description="Dev-only component gallery"
-        noIndex={true}
-      />
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
