@@ -39,7 +39,9 @@ Deployment:
 ⚠️ CRITICAL: SPA fallback masks missing assets (returns 200 for everything).
    Always verify content-types, not just HTTP status codes.
 
-Version: V14 (restored from backup + SEO infrastructure from design-build branch)
+Version: V15 (Service Page Customization System)
+- V15: Custom hero tiles, service-specific process maps, page-by-page review workflow
+- V14: Restored from backup + SEO infrastructure from design-build branch
 
 Blog Article Gold Standard (see /pages/blog/ for examples):
 - Structure: PageMeta w/ FAQ + LocalBusiness schema → Header (category label, H1, date/read time, CTA banner) → Lead paragraph (text-xl) → Sections (H2 with border-b-4 border-[#1a73e8])
