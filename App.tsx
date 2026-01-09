@@ -103,6 +103,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const VideoGenerator = lazy(() => import('./pages/VideoGenerator'));
 const ClientPortalDemo = lazy(() => import('./pages/ClientPortalDemo'));
 const VisualComponentsDemo = lazy(() => import('./pages/VisualComponentsDemo'));
+const GeneratedLayoutsLab = lazy(() => import('./pages/GeneratedLayoutsLab'));
 
 // Legal & Company
 const Careers = lazy(() => import('./pages/Careers'));
@@ -600,6 +601,7 @@ const App: React.FC = () => {
               <Route path="/tools/video-generator/" element={<VideoGenerator />} />
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
               <Route path="/dev/visual-components/" element={<VisualComponentsDemo />} />
+              <Route path="/dev/generated-layouts/" element={<GeneratedLayoutsLab />} />
 
               {/* Dev Layout Previews */}
               <Route path="/dev/service-a/" element={<ServiceDetailDevA />} />
