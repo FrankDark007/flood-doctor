@@ -25,6 +25,8 @@ export default {
           dark: '#1557b0',
           light: '#e8f0fe',
         },
+        // Legacy flat color for existing `bg-primaryHover` classes
+        primaryHover: '#1557b0',
         // High-contrast dark text (not pure black)
         text: '#202124',
         // Soft gray text for descriptions
