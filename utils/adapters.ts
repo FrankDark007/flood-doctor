@@ -216,6 +216,7 @@ export const HOMEPAGE_REVIEWS: Review[] = [
 // ============================================================================
 
 import type { ServicePageData, Badge, QuickFact, ProcessStep, TabItem, ContentSection, Testimonial as ServiceTestimonial, PricingItem, FAQItem as ServiceFAQItem, ProblemSolution } from '../generated-layouts/service-page/types';
+import { getServicePageOverride } from '../data/servicePageOverrides';
 
 /**
  * Default quick facts for service pages
@@ -440,6 +441,7 @@ function parseFAQs(faqs?: Array<{ question: string; answer: string }>): ServiceF
 
 /**
  * Main adapter: Transform ServiceData to ServicePageData
+ * Merges page-specific overrides from data/servicePageOverrides.ts
  */
 export function adaptServiceToPageData(
   service: MainServiceData,
@@ -448,7 +450,8 @@ export function adaptServiceToPageData(
 ): ServicePageData {
   const locationSuffix = cityName ? ` in ${cityName}` : ' in Northern Virginia';
 
-  return {
+  // Build default page data
+  const pageData: ServicePageData = {
     title: service.heroHeading || `24/7 ${service.title}`,
     subtitle: service.heroIntro || service.shortDescription || `Professional ${service.title.toLowerCase()} services${locationSuffix}. We respond within 60 minutes.`,
     emergencyPhone,
@@ -462,6 +465,24 @@ export function adaptServiceToPageData(
     pricing: DEFAULT_PRICING,
     faqs: parseFAQs(service.faqs),
   };
+
+  // Apply page-specific overrides if they exist
+  // Extract last segment from slug (e.g., 'water-damage-restoration' from '/services/.../water-damage-restoration/')
+  const slugSegments = service.slug.split('/').filter(Boolean);
+  const lastSegment = slugSegments[slugSegments.length - 1] || '';
+  const override = getServicePageOverride(lastSegment);
+  if (override) {
+    if (override.title) pageData.title = override.title;
+    if (override.subtitle) pageData.subtitle = override.subtitle;
+    if (override.badges) pageData.badges = override.badges;
+    if (override.quickFacts) pageData.quickFacts = override.quickFacts;
+    if (override.problemSolution) pageData.problemSolution = override.problemSolution;
+    if (override.tabs) pageData.tabs = override.tabs as TabItem[];
+    if (override.testimonials) pageData.testimonials = override.testimonials;
+    if (override.pricing) pageData.pricing = { ...pageData.pricing, ...override.pricing };
+  }
+
+  return pageData;
 }
 
 // ============================================================================
