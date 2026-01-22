@@ -112,14 +112,17 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
   // Check if this service has a custom hero tile (isometric PNG instead of SVG)
   const heroTile = getHeroTileBySlug(serviceSlug);
 
-  // Render hero visual: custom isometric tile or default SVG animation
+  // Render hero visual: custom hero image (with WebP) or default SVG animation
   const heroVisual = heroTile ? (
-    <img
-      src={heroTile.image}
-      alt={heroTile.alt}
-      className="w-full max-w-lg"
-      loading="eager"
-    />
+    <picture>
+      <source srcSet={heroTile.webp} type="image/webp" />
+      <img
+        src={heroTile.image}
+        alt={heroTile.alt}
+        className="w-full max-w-lg rounded-2xl shadow-xl"
+        loading="eager"
+      />
+    </picture>
   ) : (
     <ServiceDetailHeroAnimation visualKey={service.heroVisualKey} className="w-full max-w-md" />
   );
