@@ -1,6 +1,6 @@
 
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import MobileStickyCTA from './components/layout/MobileStickyCTA';
@@ -26,6 +26,7 @@ import ServiceDetail from './pages/templates/ServiceDetailNew';
 // Lazy load all other pages for route-based code splitting
 const LocationsHub = lazy(() => import('./pages/LocationsHub'));
 const RequestService = lazy(() => import('./pages/RequestService'));
+const WorkAuthorization = lazy(() => import('./pages/WorkAuthorization'));
 const CategoryLanding = lazy(() => import('./pages/templates/CategoryLanding'));
 const ResidentialVariantA = lazy(() => import('./pages/templates/ResidentialVariantA'));
 
@@ -67,6 +68,29 @@ const LithoDev3 = lazy(() => import('./pages/templates/dev/LithoDev3'));
 const GeminiWaterDamage = lazy(() => import('./pages/templates/dev/GeminiWaterDamage'));
 const GeminiWaterDamageV2 = lazy(() => import('./pages/templates/dev/GeminiWaterDamageV2'));
 
+// Google Business Profile Clone
+const GoogleHomeCloneDev = lazy(() => import('./pages/GoogleHomeCloneDev'));
+const GbpCloneDevV3 = lazy(() => import('./pages/GbpCloneDevV3'));
+
+// Flood Doctor Home V3 - Parity rebuild (dev-only)
+const FloodDoctorHomeV3 = lazy(() => import('./pages/FloodDoctorHomeV3'));
+const FloodDoctorHomeV3Parity = lazy(() => import('./pages/FloodDoctorHomeV3Parity'));
+
+// Google Business Profile Clone - Standalone
+const GoogleBusinessProfileClone = lazy(() => import('./pages/GoogleBusinessProfileClone'));
+
+// Flood Doctor Home V4 - Google Business Profile inspired design
+const FloodDoctorHomeV4 = lazy(() => import('./pages/fd-home-v4'));
+
+// Keyword Planner Clone - GBP Clone V5
+const KeywordPlannerClone = lazy(() => import('./pages/gbp-clone-v5'));
+
+// Service Detail Template - GBP-style residential service pages
+const ServiceDetailTemplate = lazy(() => import('./pages/gbp-clone-v5/ServiceDetailTemplate'));
+
+// Service Page Template V1 - Google-inspired service detail layout
+const ServiceTemplateV1 = lazy(() => import('./pages/service-template-v1'));
+
 const AboutDevA = lazy(() => import('./pages/AboutDevA'));
 const AboutDevB = lazy(() => import('./pages/AboutDevB'));
 const AboutDevC = lazy(() => import('./pages/AboutDevC'));
@@ -105,6 +129,13 @@ const VideoGenerator = lazy(() => import('./pages/VideoGenerator'));
 const ClientPortalDemo = lazy(() => import('./pages/ClientPortalDemo'));
 const VisualComponentsDemo = lazy(() => import('./pages/VisualComponentsDemo'));
 const GeneratedLayoutsLab = lazy(() => import('./pages/GeneratedLayoutsLab'));
+const VariantIndex = lazy(() => import('./pages/VariantIndex'));
+const ComponentShowcase = lazy(() => import('./pages/ComponentShowcase'));
+
+// Landing Page Templates
+const LandingPageA = lazy(() => import('./pages/templates/LandingPageA'));
+const LandingPageB = lazy(() => import('./pages/templates/LandingPageB'));
+const LandingPageC = lazy(() => import('./pages/templates/LandingPageC'));
 
 // Legal & Company
 const Careers = lazy(() => import('./pages/Careers'));
@@ -304,19 +335,70 @@ const useBrowserRouter =
 
 const Router = useBrowserRouter ? BrowserRouter : HashRouter;
 
-const App: React.FC = () => {
+// Fullscreen routes - rendered without header/footer wrapper
+// NOTE: "/" is fullscreen because FloodDoctorHomeV3 includes its own Header/Footer
+const FULLSCREEN_ROUTES = [
+  '/',
+  '/dev/gbp-clone-v3',
+  '/dev/fd-home-v3',
+  '/dev/fd-home-v3-parity',
+  '/dev/gbp-clone',
+  '/dev/fd-home-v4',
+  '/dev/fd-home-v3-backup',
+  '/dev/keyword-planner',
+  '/dev/service-template-v1',
+  '/dev/residential-service',
+];
+
+// Check if we're in development mode (for dev-only routes)
+const isDev = import.meta.env.DEV;
+
+// Inner component that can use useLocation
+const AppLayout: React.FC = () => {
+  const location = useLocation();
+  // Match "/" exactly, but other fullscreen routes use startsWith
+  const isFullscreen = FULLSCREEN_ROUTES.some(route =>
+    route === '/' ? location.pathname === '/' : location.pathname.startsWith(route)
+  );
+
+  // Fullscreen mode - render only the route content
+  if (isFullscreen) {
+    return (
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Production homepage - FloodDoctorHomeV4 (Google Business Profile inspired) */}
+          <Route path="/" element={<FloodDoctorHomeV4 />} />
+
+          {/* Dev-only routes - only registered in development */}
+          {isDev && (
+            <>
+              <Route path="/dev/gbp-clone-v3/" element={<GbpCloneDevV3 />} />
+              <Route path="/dev/fd-home-v3" element={<FloodDoctorHomeV3 />} />
+              <Route path="/dev/fd-home-v3-parity" element={<FloodDoctorHomeV3Parity />} />
+              <Route path="/dev/gbp-clone" element={<GoogleBusinessProfileClone />} />
+              <Route path="/dev/fd-home-v4" element={<FloodDoctorHomeV4 />} />
+              {/* V3 backup route for rollback */}
+              <Route path="/dev/fd-home-v3-backup" element={<FloodDoctorHomeV3 forcedContent="fd" />} />
+              {/* Keyword Planner Clone */}
+              <Route path="/dev/keyword-planner" element={<KeywordPlannerClone />} />
+              {/* Service Page Template V1 */}
+              <Route path="/dev/service-template-v1" element={<ServiceTemplateV1 />} />
+              {/* GBP-style Service Detail Template - Dynamic slug route */}
+              <Route path="/dev/residential-service/:slug" element={<ServiceDetailTemplate />} />
+            </>
+          )}
+        </Routes>
+      </Suspense>
+    );
+  }
+
+  // Normal mode - render with header/footer (continues below)
   return (
-    <FranchiseProvider>
-      <EmergencyProvider>
-        <Router>
-        <ScrollToTop />
-        <CommandPalette />
-        {/* Main Container with padding for mobile CTA */}
-        <div className="min-h-screen flex flex-col bg-white font-sans pb-24 md:pb-0">
-          <Header />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
+    <div className="min-h-screen flex flex-col bg-white font-sans pb-24 md:pb-0">
+      <Header />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* NOTE: "/" is now handled in fullscreen mode above */}
 
               {/* Service Hubs */}
               <Route path="/services/" element={<ServicesHub title="All Restoration Services" subtitle="Comprehensive water damage, mold, and cleanup solutions." />} />
@@ -370,6 +452,7 @@ const App: React.FC = () => {
               {/* Core Pages */}
               <Route path="/locations/" element={<LocationsHub />} />
               <Route path="/request/" element={<RequestService />} />
+              <Route path="/work-authorization/" element={<WorkAuthorization />} />
               <Route path="/about/" element={<About />} />
               <Route path="/contact/" element={<Contact />} />
               <Route path="/reviews/" element={<Reviews />} />
@@ -603,6 +686,8 @@ const App: React.FC = () => {
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
               {/* Dev Routes - All noindexed via DevNoIndex wrapper */}
               <Route path="/dev" element={<DevNoIndex />}>
+                <Route index element={<VariantIndex />} />
+                <Route path="variants/" element={<VariantIndex />} />
                 <Route path="visual-components/" element={<VisualComponentsDemo />} />
                 <Route path="generated-layouts/" element={<GeneratedLayoutsLab />} />
                 {/* Dev Layout Previews */}
@@ -638,6 +723,9 @@ const App: React.FC = () => {
                 <Route path="litho-3/" element={<LithoDev3 />} />
                 <Route path="gemini-water-damage/" element={<GeminiWaterDamage />} />
                 <Route path="gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
+                {/* Google Business Profile Clone Dev */}
+                <Route path="google-home-clone/" element={<GoogleHomeCloneDev />} />
+                {/* Note: gbp-clone-v3 is handled as fullscreen route in AppLayout */}
                 {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
                 <Route path="service-detail-1/" element={<ServiceDetailDev1 />} />
                 <Route path="service-detail-2/" element={<ServiceDetailDev2 />} />
@@ -649,6 +737,12 @@ const App: React.FC = () => {
                 <Route path="service-detail-8/" element={<ServiceDetailDev8 />} />
                 <Route path="service-detail-9/" element={<ServiceDetailDev9 />} />
                 <Route path="service-detail-10/" element={<ServiceDetailDev10 />} />
+                {/* Component Showcase - CTA and Service Grid variants */}
+                <Route path="components/" element={<ComponentShowcase />} />
+                {/* Landing Page Templates */}
+                <Route path="landing-a/" element={<LandingPageA />} />
+                <Route path="landing-b/" element={<LandingPageB />} />
+                <Route path="landing-c/" element={<LandingPageC />} />
               </Route>
 
               {/* Legal & Company */}
@@ -663,6 +757,17 @@ const App: React.FC = () => {
           <Footer />
           <MobileStickyCTA />
         </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <FranchiseProvider>
+      <EmergencyProvider>
+        <Router>
+          <ScrollToTop />
+          <CommandPalette />
+          <AppLayout />
         </Router>
       </EmergencyProvider>
     </FranchiseProvider>

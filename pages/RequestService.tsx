@@ -85,13 +85,50 @@ const RequestService: React.FC = () => {
     }
   };
 
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setSubmitError(null);
+
+    try {
+      // Use our Cloudflare Worker for reliable form handling
+      const response = await fetch('https://flood-doctor-forms.bluemedia-account.workers.dev', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || '',
+          serviceType: formData.serviceType,
+          propertyType: formData.propertyType,
+          urgency: formData.urgency,
+          address: formData.address || '',
+          city: formData.city || '',
+          zip: formData.zip || '',
+          insurance: formData.hasInsurance === 'yes' ? `Yes - ${formData.carrier || 'Not specified'}` : 'No / Self-Pay',
+          message: formData.message || '',
+          sourceUrl: window.location.href
+        })
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.error || 'Form submission failed. Please call us directly.');
+      }
+
+      setIsSuccess(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -163,6 +200,26 @@ const RequestService: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  {/* Error Banner */}
+                  {submitError && (
+                    <div className="mx-8 mt-8 p-4 bg-rose-50 border border-rose-200 rounded-xl">
+                      <div className="flex items-start gap-3">
+                        <AlertCircle className="text-rose-500 flex-shrink-0 mt-0.5" size={20} />
+                        <div>
+                          <div className="font-medium text-rose-800">Unable to submit online</div>
+                          <p className="text-sm text-rose-700 mt-1">{submitError}</p>
+                          <a
+                            href="tel:8774970007"
+                            className="inline-flex items-center gap-2 mt-3 bg-rose-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-rose-600 transition-colors text-sm"
+                          >
+                            <Phone size={16} />
+                            Call (877) 497-0007 Instead
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Step 1: Service Type */}
                   {step === 1 && (
                     <div className="p-8">

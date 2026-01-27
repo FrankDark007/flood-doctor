@@ -28,6 +28,26 @@
 
 ## Completed Work
 
+### 2026-01-12: Emergency WordPress Restoration
+
+**Context:** React site was accidentally deployed to ALL WordPress domains (flooddoctorva.com + 8 subdomains) when it should only go to flood.doctor. ManageWP automatic restore didn't work (sites disconnected).
+
+**Solution:** Manual restoration via SFTP + SSH:
+1. Downloaded backups from ManageWP for each site
+2. Uploaded via SFTP to ~/wordpress-backups/
+3. Extracted via SSH to ~/public_html/{subdomain}.flooddoctorva.com/
+4. Fixed .htaccess Wordfence WAF errors on lorton/reston/tysons
+
+**Sites Restored:**
+- flooddoctorva.com (main)
+- alexandria, arlington, ashburn, fallschurch, greatfalls, herndon, lorton, reston, tysons subdomains
+
+**Key Fix:** `.htaccess` files on 4 sites (alexandria, lorton, reston, tysons) had `auto_prepend_file` pointing to non-existent `wordfence-waf.php`. Commented out Wordfence WAF blocks with sed.
+
+**Scripts Used:** `/tmp/fix_htaccess.sh`, `/tmp/extract_*.sh`, `/tmp/upload_*.sh`
+
+---
+
 ### Infrastructure & Setup
 - [x] Project scaffolding with Vite + React + TypeScript
 - [x] Tailwind CSS configuration
@@ -683,5 +703,87 @@ We have 80+ neighborhood content files ready to render.
 **Build Status:** ✅ Passing (264 URLs across 15 sitemaps)
 
 **Deployment Status:** ⏳ PENDING — FTP password needed for Deploy@flood.doctor
+
+---
+
+### 2026-01-27: Work Authorization Contract (Accordion-Style)
+
+**Context:** Client's existing WPSignature contract was too long and required excessive scrolling on mobile. Wanted Amazon/Netflix-style accordion format where users acknowledge each section individually.
+
+**Solution:** Built React accordion contract component:
+
+1. **WorkAuthorization.tsx** - Full component with:
+   - 7 collapsible accordion sections
+   - Checkbox acknowledgment per section
+   - Initial field for Price List
+   - Searchable price list (75+ items)
+   - Signature pad (draw or type)
+   - Progress indicator
+   - URL pre-fill support
+
+2. **Contract Sections:**
+   | # | Section |
+   |---|---------|
+   | 1 | Introduction & Definitions |
+   | 2 | Payment & Insurance |
+   | 3 | Water Damage & Mold |
+   | 4 | Safety & Client Responsibilities |
+   | 5 | Legal Terms & Protections |
+   | A | Scope of Work |
+   | B | Price List (requires initial) |
+
+3. **Route:** `/work-authorization/`
+
+**Files Created:**
+- `pages/WorkAuthorization.tsx` - Main component
+
+**Files Modified:**
+- `App.tsx` - Added route
+
+**Source Documents:**
+- `/Users/ghost/Desktop/Flood Doctor Service Contract & Terms of Service - In Progress.docx`
+- `/Users/ghost/Desktop/RD Contract and Price List.docx`
+
+**Next Steps:**
+- Connect to Emergency flow from RequestService
+- Update Cloudflare Worker for signed contract emails
+- Generate PDF on submission
+- Add audit trail for legal compliance
+
+---
+
+### 2026-01-27: Form Submission System (Cloudflare Worker + Resend)
+
+**Context:** Form at flood.doctor/request/ was fake - showed success message but data went nowhere.
+
+**Solution:** Built Cloudflare Worker + Resend email integration:
+
+1. **Cloudflare Worker** (`cloudflare-worker/form-handler.js`):
+   - Receives form POST
+   - Validates required fields
+   - Sends email via Resend API
+   - Returns JSON response
+
+2. **Resend Setup:**
+   - Domain: `mail.flood.doctor`
+   - DNS records: DKIM, SPF, MX
+   - From: `noreply@mail.flood.doctor`
+   - To: `help@flood.doctor`
+
+3. **Updated RequestService.tsx:**
+   - Posts to Cloudflare Worker
+   - Handles errors gracefully
+   - Shows success/error states
+
+**Deployment:**
+- Worker: `flood-doctor-forms.bluemedia-account.workers.dev`
+- Deploy: `cd cloudflare-worker && wrangler deploy`
+
+**Files Created:**
+- `cloudflare-worker/form-handler.js`
+- `cloudflare-worker/wrangler.toml`
+
+**Files Modified:**
+- `pages/RequestService.tsx`
 
 ---
