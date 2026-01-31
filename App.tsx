@@ -452,6 +452,7 @@ const AppLayout: React.FC = () => {
               {/* Core Pages */}
               <Route path="/locations/" element={<LocationsHub />} />
               <Route path="/request/" element={<RequestService />} />
+              <Route path="/sign/" element={<WorkAuthorization />} />
               <Route path="/work-authorization/" element={<WorkAuthorization />} />
               <Route path="/contract/" element={<WorkAuthorization />} />
               <Route path="/about/" element={<About />} />
