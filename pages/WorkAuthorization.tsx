@@ -202,28 +202,58 @@ Accordingly, the Client agrees that the Provider has no duty to provide advance 
 Independent Pricing.
 Labor rates, including overtime or premium rates, are determined by the Provider's established rate schedule and workforce obligations and are not subject to insurance company guidelines, carrier policies, in-network pricing rules, or third-party pricing methodologies.
 
-4.5 - PAYMENT OBLIGATIONS: Upon completion of the water damage restoration services, the Client agrees to promptly pay the Provider the total price for the work performed as determined by the aforementioned factors and the industry-standard price list. Payment shall be made in accordance with the terms and conditions specified in the invoice provided by the Provider.
+4.5 – PAYMENT OBLIGATIONS
 
-4.6 - DISPUTE RESOLUTION: In the event of any dispute regarding the pricing or payment for the services, both parties agree to engage in good faith negotiations to reach a mutually acceptable resolution. If a resolution cannot be achieved through negotiations, the matter shall be subject to the dispute resolution procedures outlined in this Contract.
+The Client agrees to pay the Provider for all Work performed based on services actually rendered, labor expended, equipment utilized, and materials provided, as determined by actual field conditions and billed in accordance with the Provider's established pricing structure following completion of the Work. The Client acknowledges that no fixed price, estimate, or quotation is provided at the time of contract execution due to the emergency and condition-driven nature of the services.
 
-4.7 - INDEPENDENCE FROM INSURANCE PRICING STRUCTURES: The Client is aware that some insurance companies may maintain in-network preferred vendors and associated pricing structures for water damage restoration services. However, the Client acknowledges and understands that the Provider operates independently and is not bound by any pricing structures dictated by insurance companies or their in-network vendor arrangements.
+Payment is due in accordance with the terms stated on the Provider's invoice and is not contingent upon insurance approval, claim determination, coverage decisions, or reimbursement by any third party. Failure to timely remit payment shall constitute a material breach of this Contract.
 
-4.8 - TRANSPARENT AND COMPETITIVE PRICING: The Provider is committed to providing transparent and competitive pricing for its water damage restoration services. While insurance coverage and reimbursement may be applicable in certain cases, the Provider determines its pricing based on its own cost analysis and industry standards, ensuring fairness and impartiality in all financial transactions with its clients.
+4.6 – PRICING AND PAYMENT DISPUTES
 
-4.9 - NO COMPROMISE ON QUALITY: The Provider's pricing independence in no way compromises the quality of the services rendered. The Provider remains dedicated to delivering the highest standard of water damage restoration, utilizing advanced techniques, state-of-the-art equipment, and skilled professionals to achieve optimal results.
+Any dispute regarding pricing or payment under this Contract shall not relieve the Client of the obligation to pay undisputed amounts when due. The parties may engage in good faith discussions regarding disputed items; however, the Provider is under no obligation to revise, reduce, delay, or reissue invoices based on insurer positions, third-party opinions, or non-binding pricing guidelines. All disputes shall be resolved in accordance with the dispute resolution provisions set forth elsewhere in this Contract.
 
-4.10 - COMMUNICATION WITH INSURANCE PROVIDERS: In the event that the Client's insurance provider is involved in the claims process for the water damage restoration services, the Provider is prepared to cooperate with the insurance company as needed. However, it is essential to reiterate that the Provider's pricing shall remain unaffected by any insurance company's preferred vendor arrangements.
+4.7 – INDEPENDENCE FROM INSURANCE PRICING STRUCTURES
 
-4.11 - XACTIMATE PRICING:
-a. Use of Xactimate Pricing: The Client acknowledges that the Provider may use Xactimate pricing as a baseline for estimating and invoicing the Work in accordance with the Xactimate End User Agreement. However, the Provider is not obligated to exclusively use Xactimate to estimate or invoice the Work.
-b. Independent Pricing Authority: The Provider reserves the right to adjust or establish pricing independently of Xactimate in order to reflect the unique circumstances of the project, market conditions, or additional services requested by the Client.
-c. Insurance Company Adjustments: The Client acknowledges that Xactimate pricing is a tool and does not serve as a guarantee of pricing acceptance by the Client's insurance company. The Provider is not responsible for resolving pricing disputes with the Client's insurance provider.
-d. Administrative Fees: The Client agrees to an administrative fee of $198 per hour for revisions or changes to estimates or invoices requested by the insurance company. Such fees will be added to the final invoice. Administrative fees apply only to work necessitated by insurance carrier or third-party requests and would not be incurred absent such external claim handling requirements.
-e. Client's Responsibility: The Client agrees that it is their responsibility to review their insurance policy and understand the coverage provided for the Work. The Provider is not responsible for discrepancies between Xactimate pricing and the Client's insurance policy coverage.
+The Client acknowledges that the Provider is a private, independent contractor and is not affiliated with, bound by, or subject to any insurance company preferred vendor programs, managed repair networks, internal pricing rules, or reimbursement practices. The Provider's pricing is governed solely by this Contract and the Provider's independent business operations, regardless of any insurer's participation in the claims process.
 
-4.12 - CONTRACT PRICE LIST INCORPORATION: The Client acknowledges that the Provider's Partial Price List, attached hereto as Attachment A, represents commonly used labor, equipment, and service charges associated with water damage mitigation. The Client agrees that charges billed may include items listed in Attachment A as well as other services reasonably required to complete the Scope of Work based on actual site conditions.
+4.8 – PRICING DETERMINATION AND REASONABLENESS
 
-4.13 - EQUIPMENT SELECTION AND DRYING DETERMINATION: The type, quantity, placement, and duration of drying equipment are determined in accordance with industry-accepted water damage restoration principles, including but not limited to IICRC S500 methodologies. Equipment counts and drying duration are calculated based on affected materials, class and category of loss, environmental conditions, moisture measurements, and documented drying progress, and not based on predetermined timeframes or insurance carrier guidelines.`
+The Client acknowledges that the Provider determines pricing based on its established rate schedule, operational requirements, prevailing market conditions, and industry-accepted methodologies. Pricing is not dictated by insurance carrier policies, internal guidelines, or third-party estimating preferences.
+
+The Client further acknowledges that, due to the emergency and condition-driven nature of the services, pricing is based on the scope of Work actually required and performed and may not be known at the time of contract execution. The parties agree that pricing established in accordance with these principles reflects a reasonable and customary method of determining compensation for the services provided.
+
+4.9 – QUALITY OF WORK AND PRICING
+
+The Provider's pricing independence does not compromise service quality. The Provider shall perform the Work in accordance with applicable industry standards, utilizing appropriate equipment, techniques, and trained personnel. Pricing disputes shall not be used to challenge the necessity, adequacy, or professional appropriateness of services performed.
+
+4.10 – COMMUNICATION WITH INSURANCE PROVIDERS
+
+At the Client's request, the Provider may furnish documentation of Work performed to the Client or the Client's insurer. Such cooperation is limited to factual documentation of services rendered and does not include negotiation of pricing, scope, or payment terms. The Provider's pricing and payment rights under this Contract shall remain unaffected by any communications with insurance representatives.
+
+4.11 – XACTIMATE PRICING AND ESTIMATING TOOLS
+
+(a) Use of Estimating Software.
+The Client acknowledges that the Provider may utilize Xactimate or other estimating software as a reference, documentation, or reporting tool. The Provider is not required to use Xactimate exclusively, and no estimating software shall control or limit the Provider's pricing authority.
+
+(b) Independent Pricing Authority.
+The Provider reserves the sole right to establish pricing independent of estimating software to reflect actual project conditions, labor burden, market factors, and services required.
+
+(c) Insurance Adjustments.
+The Client acknowledges that estimating software does not guarantee insurance payment or acceptance. The Provider is not responsible for resolving disputes between the Client and the insurer regarding pricing or coverage.
+
+(d) Administrative Services for Insurance Requests.
+The Client agrees to an administrative fee of $198 per hour for estimate revisions, invoice modifications, documentation formatting, or correspondence requested by insurance carriers or third parties. These fees apply only to work necessitated by external claim-handling requirements and would not be incurred absent such requests.
+
+(e) Client Responsibility for Policy Review.
+The Client is solely responsible for reviewing and understanding insurance coverage and policy limitations. The Provider makes no representations regarding coverage applicability.
+
+4.12 – CONTRACT PRICE LIST INCORPORATION
+
+The Client acknowledges that the Provider's Partial Price List, attached as Attachment A, represents commonly used labor, equipment, and service charges associated with water damage mitigation and restoration. Attachment A is non-exhaustive and illustrative only. Charges billed may include items listed in Attachment A as well as other services reasonably required to complete the Work based on actual site conditions, professional judgment, and industry standards.
+
+4.13 – EQUIPMENT SELECTION AND DRYING DETERMINATION
+
+The type, quantity, placement, and duration of drying and remediation equipment are determined by the Provider based on industry-accepted water damage restoration principles, including, but not limited to, IICRC S500 methodologies. Equipment usage and drying duration are based on observed conditions, class and category of loss, environmental readings, moisture measurements, and documented drying progress, and are not governed by predetermined timeframes, insurer guidelines, or third-party opinions.`
   },
   insuranceDisputes: {
     title: 'Section 5: Insurance Disputes & Third-Party Limitations',
@@ -523,7 +553,7 @@ Dry logs and field documentation constitute contemporaneous business records mai
     requiresInitial: false,
     content: `SECTION 12 – MECHANIC'S LIEN RIGHTS AND INSURANCE DELAYS
 
-12.1 - NOTICE TO CLIENT Provider provides emergency services immediately—without requiring any deposit or upfront payment from the Client. To protect its right to be paid for these services, especially in cases where insurance payments are delayed, Provider may file a Mechanic's Lien against the property. This standard legal protection does not reflect negatively on the Client.
+12.1 - NOTICE TO CLIENT: Provider provides emergency services immediately—without requiring any deposit or upfront payment from the Client. To protect its right to be paid for these services, especially in cases where insurance payments are delayed, Provider may file a Mechanic's Lien against the property. This standard legal protection does not reflect negatively on the Client.
 
 12.2 - CONSENT TO LIEN FILING: The Client hereby expressly consents to the filing of a Mechanic's Lien by Provider, its successors, or assigns, against the real property where the services described in this Contract are performed ("the Property"). This consent includes any labor, materials, or services provided pursuant to this Contract in accordance with Virginia Code §43-1 et seq.
 
@@ -923,164 +953,288 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
         <div className="p-4 md:p-6 border-t border-slate-200">
           {/* Disclaimer */}
           <div className="mb-6 space-y-4 text-sm text-slate-700">
-            <h3 className="font-semibold text-slate-900">DISCLAIMER</h3>
-            <p>This price list is presented to you as a component of our service agreement. Portions of this list are costs for controlling and stopping damage affecting your building and contents. This is not a full price list. This list is meant to include a variety of labor, material and rental equipment costs most commonly used.</p>
-            <p>This is intended to give an overall picture of what types of costs and fees are associated with a typical mitigation or restoration project. To ensure our price list is in line with fair market value, we rely on multiple resources from the department of labor statistics, industry averages, and computer software estimating programs in developing prices. This list is not frequently updated. A more recent list can be requested through your project manager or by calling our offices. Prices are subject to change to the prices in effect at the time of service.</p>
-            <p>We reserve the right to make any corrections to prices quoted due to clerical errors or errors of omission. We maintain the right to change this list, and all rates included herein, to reflect market changes without prior notification.</p>
+            <h3 className="font-semibold text-slate-900 text-base">ATTACHMENT A – PARTIAL PRICE LIST (ILLUSTRATIVE ONLY)</h3>
+            <h4 className="font-semibold text-slate-900">DISCLAIMER</h4>
+            <p>This Partial Price List is incorporated into and forms part of the Contract. It is provided for reference purposes only and reflects commonly used labor, material, and equipment charges associated with mitigation and restoration services. This is not a complete or exhaustive price list, and not all services, labor categories, equipment, or materials required to perform the Work may be listed herein.</p>
+            <p>This Partial Price List is intended to provide a general illustration of the types of costs and services that may be incurred during a typical mitigation or restoration project. Pricing is developed using a combination of the Provider's established rate schedules, prevailing market conditions, industry data, and commonly used estimating tools. All pricing is subject to the rates in effect at the time services are rendered, and a current rate schedule may be requested from the Provider at any time.</p>
+            <p>Clerical errors, omissions, or formatting inconsistencies in this Partial Price List do not alter the Provider's right to bill for services actually performed in accordance with the Contract. The Provider reserves the right to update pricing to reflect changes in labor markets, material availability, operating conditions, regulatory requirements, or market disruptions.</p>
 
-            <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
-              <h4 className="font-semibold text-amber-900 mb-2">NOTICE:</h4>
-              <ol className="list-decimal list-inside space-y-2 text-amber-800">
-                <li>Not included in the Price List are overtime rates for employees that exceed a 40-hour work-week or work exceeding an 8-hour workday.</li>
-                <li>We follow state labor laws so when we pay overtime, those costs are passed to our customer.</li>
-                <li>Project managers are required for every project. We bill for their time on an hourly basis.</li>
-                <li>For labor rates involving working conditions that can be hazardous to employee health, such as working in unsafe buildings; cleaning up sewage, removing potentially toxic mold, fire and smoke, or any other contaminated environments; working in confined spaces, working with electrically energized buildings or gas and fuel contaminated structures, a premium rate for completing this type of work will increase hourly rates.</li>
-              </ol>
+            <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <h4 className="font-semibold text-blue-900 mb-2">CLIENT ACKNOWLEDGMENT</h4>
+              <p className="text-blue-800">By signing this Contract, the Client acknowledges receipt of Attachment A (Partial Price List), understands that it is illustrative only and non-exhaustive, and agrees that final charges may vary based on actual services rendered, labor and equipment availability, market conditions, and the Provider's established rates in effect at the time services are performed.</p>
             </div>
 
-            <div className="mt-4">
-              <h4 className="font-semibold text-slate-900 mb-2 text-sm">LABOR RATES:</h4>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li>Our employees are skilled in the work they do.</li>
-                <li>Certified technicians provide quality workmanship in controlling, stopping and eliminating damage and/or contamination affecting your property.</li>
-                <li>Normal daytime, along with night, weekend and holiday labor charges are included.</li>
-                <li>We reserve the right to change employee and supervisory labor rates when hazardous materials or medium or high-risk situations are present; when special requirements are called for, such as entering and working in permit-required confined space, working in toxic and hazardous environments.</li>
-                <li>We may bring on subcontractors and outside experts to assist us for various reasons. We cannot guarantee their labor rates and billing costs.</li>
-                <li>Overtime rates apply to hours exceeding 40 per week or 8 per shift for all employees and subcontractors, in compliance with applicable state labor laws.</li>
-                <li>Rates for work performed on all recognized holidays will be 2 times regular rate.</li>
-                <li>Travel time for personnel will be billed at regular rates.</li>
-                <li>All labor is subject to prevailing wage, unionized labor and local labor market requirements.</li>
-              </ul>
+            <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
+              <h4 className="font-semibold text-amber-900 mb-2">NOTICE REGARDING LABOR, PREMIUM CONDITIONS, AND DISASTER EVENTS</h4>
+              <div className="space-y-3 text-amber-800">
+                <p>This Partial Price List does not include overtime or premium labor rates. Labor rates may increase based on workforce conditions, scheduling requirements, hazardous or high-risk environments, or other operational factors as described in the Contract.</p>
+                <p>Project management and supervisory services are required for every project and are billed on an hourly basis in accordance with the Provider's established rate schedule.</p>
+                <p>Premium labor rates may apply for work performed under hazardous, contaminated, or high-risk conditions, including, but not limited to, structurally unsafe environments, sewage contamination, fire or smoke damage, microbial remediation, confined spaces, energized structures, fuel-contaminated properties, and disaster-related or catastrophic events such as hurricanes, floods, severe storms, or other incidents in which a high volume of properties are simultaneously affected.</p>
+                <p>During such disaster or catastrophe events, the Client acknowledges that labor, drying equipment, and specialty equipment may be subject to limited availability, extended deployment durations, and regional or national supply constraints. To meet emergency mitigation needs, the Provider may be required to source labor or equipment from outside the local market, including from other states, at premium rates. Any increased labor or equipment costs resulting from such market conditions, scarcity, or emergency sourcing shall be billed accordingly and constitute reasonable and customary charges under the Contract.</p>
+                <p>The Client acknowledges that pricing during disaster or catastrophe conditions may differ from non-emergency periods due to market forces and availability constraints, and agrees that such pricing does not constitute excessive or unreasonable charges.</p>
+              </div>
+            </div>
 
-              {/* Labor Rates Table */}
-              <div className="mt-4 overflow-x-auto -mx-2">
+            {/* Rate Application Notice */}
+            <div className="mt-6 p-4 bg-slate-100 rounded-lg border border-slate-200">
+              <h4 className="font-semibold text-slate-900 mb-2">RATE APPLICATION & SELECTION NOTICE</h4>
+              <div className="space-y-2 text-sm text-slate-700">
+                <p>The applicable rate is determined by the conditions under which the Work is performed, including but not limited to contamination level, risk exposure, time of performance, emergency conditions, workforce availability, and disaster or catastrophe status.</p>
+                <p>Where multiple labor or service rate categories may apply, the rate corresponding to the highest applicable risk, condition, or operational burden shall govern.</p>
+                <p className="italic">Rates shown are illustrative only and subject to the Provider's established rate schedule in effect at the time services are rendered.</p>
+              </div>
+            </div>
+
+            {/* Labor Rate Categories */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-3">LABOR RATE CATEGORIES</h4>
+              <div className="overflow-x-auto -mx-2">
                 <table className="w-full text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
-                      <th className="text-left p-1.5 border border-slate-300 font-semibold text-xs"></th>
-                      <th className="text-center p-1.5 border border-slate-300 font-semibold text-xs">Business</th>
-                      <th className="text-center p-1.5 border border-slate-300 font-semibold text-xs">After Hrs</th>
-                      <th className="text-center p-1.5 border border-slate-300 font-semibold text-xs">Holiday</th>
-                      <th className="text-center p-1.5 border border-slate-300 font-semibold text-xs">Major Event</th>
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Role</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Business Hours</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">After Hours</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Holiday</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Major Event / Disaster</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="bg-white">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Skilled Tech</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$55.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$89.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$124.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$144.50</td>
+                      <td className="p-2 border border-slate-300 font-medium">Skilled Technician</td>
+                      <td className="p-2 border border-slate-300 text-center">$55.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$89.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$124.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$144.50</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Certified Tech</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$74.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$94.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$154.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$169.50</td>
+                      <td className="p-2 border border-slate-300 font-medium">Certified Technician</td>
+                      <td className="p-2 border border-slate-300 text-center">$74.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$94.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$154.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$169.50</td>
                     </tr>
                     <tr className="bg-white">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Contents Supv</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$89.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$195.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$210.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$245.00</td>
+                      <td className="p-2 border border-slate-300 font-medium">Contents Supervisor</td>
+                      <td className="p-2 border border-slate-300 text-center">$89.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$195.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$210.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$245.00</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Managing Supv</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$85.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$104.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$175.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$189.50</td>
+                      <td className="p-2 border border-slate-300 font-medium">Managing Supervisor</td>
+                      <td className="p-2 border border-slate-300 text-center">$85.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$104.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$175.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$189.50</td>
                     </tr>
                     <tr className="bg-white">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Project Mgr</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$125.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$144.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$184.50</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$194.50</td>
+                      <td className="p-2 border border-slate-300 font-medium">Project Manager (Oversight / Coordination)</td>
+                      <td className="p-2 border border-slate-300 text-center">$125.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$144.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$184.50</td>
+                      <td className="p-2 border border-slate-300 text-center">$194.50</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Hazmat Supv</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$180.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$111.40</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$185.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$210.00</td>
+                      <td className="p-2 border border-slate-300 font-medium">Senior Project Manager</td>
+                      <td className="p-2 border border-slate-300 text-center">$145.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$165.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$225.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$245.00</td>
                     </tr>
                     <tr className="bg-white">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Sr Project Mgr</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$145.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$165.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$225.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$245.00</td>
+                      <td className="p-2 border border-slate-300 font-medium">Restoration Supervisor</td>
+                      <td className="p-2 border border-slate-300 text-center">$105.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$135.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$225.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$235.00</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <td className="p-1.5 border border-slate-300 font-semibold text-xs">Restoration Supv</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$105.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$135.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$225.00</td>
-                      <td className="p-1.5 border border-slate-300 text-center">$235.00</td>
+                      <td className="p-2 border border-slate-300 font-medium">Hazmat Supervisor</td>
+                      <td className="p-2 border border-slate-300 text-center">$180.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$210.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$235.00</td>
+                      <td className="p-2 border border-slate-300 text-center">$260.00</td>
                     </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-xs text-slate-600 italic">Major Event / Disaster rates apply during hurricanes, floods, severe storms, or other events causing widespread damage, labor shortages, or equipment scarcity.</p>
+            </div>
+
+            {/* Labor & Supervision (Condition-Based) */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-3">LABOR & SUPERVISION (CONDITION-BASED)</h4>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Water Mitigation Technician – Category 1</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$75.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Water Mitigation Technician – Category 2</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$95.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Water Mitigation Technician – Category 3</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$128.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Certified WRT – Category 1</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$85.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Certified WRT – Category 2</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$105.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Certified WRT – Category 3</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$138.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Supervisor / Lead – Category 1</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$95.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Supervisor / Lead – Category 2</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$115.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Supervisor / Lead – Category 3</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$145.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">On-Site Project Management (Field Presence) – Business</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$125.00–$145.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">On-Site Project Management – After Hours</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$145.00–$165.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Content Manipulation – Business</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$88.00–$110.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Content Manipulation – After Hours</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$128.00–$145.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Emergency Service Call / Mobilization</td><td className="p-2 border border-slate-300 text-center">Per Occurrence</td><td className="p-2 border border-slate-300 text-center">$350.00–$2,500.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-xs text-slate-600 italic">Emergency service charges vary based on response time, crew size, scope, travel distance, and disaster conditions.</p>
+            </div>
+
+            {/* Equipment Rental */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-2">EQUIPMENT RENTAL (24-HOUR PERIOD)</h4>
+              <div className="mb-3 p-3 bg-slate-100 rounded text-xs text-slate-700">
+                <p>A "Day" is defined as a 24-hour period beginning at 12:00 a.m. and ending at 11:59 p.m.</p>
+                <p>This definition applies to equipment rental only and does not apply to hourly labor.</p>
+                <p className="font-medium">Any portion of a day is billed as a full day.</p>
+              </div>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Equipment</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Axial Air Mover</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$44.00–$58.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">LGR Dehumidifier</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$204.00–$240.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Negative Air Fan / Air Scrubber</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$170.00–$220.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">HEPA Air Scrubber</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$180.00–$240.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Heat Drying / Thermal Air Mover</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$180.00–$220.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Wall Cavity Drying Equipment</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$165.00–$210.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Hydroxyl Generator</td><td className="p-2 border border-slate-300 text-center">Per Day</td><td className="p-2 border border-slate-300 text-center">$160.00–$220.00</td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-            <div className="mt-4 p-4 bg-slate-100 rounded-lg">
-              <p className="text-sm text-slate-600">
-                <strong>Note:</strong> A "Day" is defined as 24 hours starting at 12:00 am and ending at 11:59 pm. Any portion of a day is billed as a full day.
-              </p>
+            {/* Equipment Services */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-3">EQUIPMENT SERVICES</h4>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Equipment Setup / Take Down / Monitoring – Business</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$128.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Equipment Setup / Take Down / Monitoring – After Hours</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$165.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Daily Equipment Monitoring – Business</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$145.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Daily Equipment Monitoring – After Hours</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$175.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Equipment Decontamination – Standard</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$65.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Equipment Decontamination – Heavy Contamination</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$125.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Clean & Restock Equipment</td><td className="p-2 border border-slate-300 text-center">Per Piece</td><td className="p-2 border border-slate-300 text-center">$60.00–$95.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Filters & Consumables */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-3">FILTERS & CONSUMABLES</h4>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Item</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">HEPA Filter – Negative Air</td><td className="p-2 border border-slate-300 text-center">Per Filter</td><td className="p-2 border border-slate-300 text-center">$195.00–$240.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">HEPA Filter – Canister / Backpack Vac</td><td className="p-2 border border-slate-300 text-center">Per Filter</td><td className="p-2 border border-slate-300 text-center">$85.00–$110.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Carbon Vapor Filter</td><td className="p-2 border border-slate-300 text-center">Per Filter</td><td className="p-2 border border-slate-300 text-center">$250.00–$325.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">HEPA Air Scrubber Filter</td><td className="p-2 border border-slate-300 text-center">Per Filter</td><td className="p-2 border border-slate-300 text-center">$200.00–$250.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Water Extraction */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-2">WATER EXTRACTION</h4>
+              <p className="mb-3 text-xs text-slate-600 italic">(Category selection is determined by on-site conditions and IICRC S500)</p>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Carpet Extraction – Cat 1</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$0.25–$0.75</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Carpet Extraction – Cat 2</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$1.25–$2.75</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Carpet Extraction – Cat 3</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$1.75–$3.75</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Hard Surface – Cat 1</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$0.25–$0.50</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Hard Surface – Cat 2</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$1.25–$2.50</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Hard Surface – Cat 3</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$1.75–$3.25</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Lift Carpet for Drying</td><td className="p-2 border border-slate-300 text-center">Per SF</td><td className="p-2 border border-slate-300 text-center">$0.75–$1.25</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Drill Holes for Wall Drying</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$3.50–$6.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Submersible Pump</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$85.00–$110.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Specialty Pumping / Truck Mount</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$175.00–$250.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Documentation & Testing */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-slate-900 mb-3">DOCUMENTATION & TESTING</h4>
+              <div className="overflow-x-auto -mx-2">
+                <table className="w-full text-xs border border-slate-300">
+                  <thead>
+                    <tr className="bg-slate-200">
+                      <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Thermal Imaging – Infrared Moisture Mapping</td><td className="p-2 border border-slate-300 text-center">Per Visit</td><td className="p-2 border border-slate-300 text-center">$650.00–$2,500.00</td></tr>
+                    <tr className="bg-slate-50"><td className="p-2 border border-slate-300">3D Matterport Scan</td><td className="p-2 border border-slate-300 text-center">Per Scan</td><td className="p-2 border border-slate-300 text-center">$1,500.00–$2,500.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Third-Party Digitally Derived Sketch</td><td className="p-2 border border-slate-300 text-center">Per Sketch</td><td className="p-2 border border-slate-300 text-center">$480.00–$1,900.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Demolition, PPE, etc. */}
+            <div className="mt-6 p-4 bg-slate-100 rounded-lg">
+              <h4 className="font-semibold text-slate-900 mb-2">DEMOLITION, PPE, CLEANING, CONTENTS & DEBRIS REMOVAL</h4>
+              <p className="text-xs text-slate-700">(Rates retained as submitted, properly categorized and governed by the Rate Application Notice above.)</p>
+              <p className="mt-2 text-xs text-slate-700">Subcontracted services, specialty consultants, third-party testing, dumpster services, and hauling are billed at the rates charged to the Provider plus applicable overhead and profit, in accordance with the Contract.</p>
+            </div>
+
+            {/* Final Rate Authority Notice */}
+            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <h4 className="font-semibold text-blue-900 mb-2">FINAL RATE AUTHORITY NOTICE</h4>
+              <p className="text-sm text-blue-800">All rates, categories, and pricing determinations are governed by the Contract. This Partial Price List is illustrative only and does not limit the Provider's right to bill for all services reasonably required to perform the Work based on actual conditions, professional judgment, and industry standards.</p>
             </div>
           </div>
-
-          {/* Search */}
-          <div className="relative mb-4">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Search services..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:border-[#1a73e8] focus:ring-2 focus:ring-[#1a73e8]/20 outline-none"
-            />
-          </div>
-
-          {/* Price table */}
-          <div className="overflow-x-auto -mx-4 md:mx-0">
-            <table className="w-full min-w-[600px] text-sm">
-              <thead>
-                <tr className="bg-slate-100">
-                  <th className="text-left p-3 font-semibold text-slate-700">Service</th>
-                  <th className="text-left p-3 font-semibold text-slate-700">Code</th>
-                  <th className="text-left p-3 font-semibold text-slate-700">Unit</th>
-                  <th className="text-right p-3 font-semibold text-slate-700">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(groupedPrices).map(([category, items]) => (
-                  <React.Fragment key={category}>
-                    <tr className="bg-[#1a73e8]/10">
-                      <td colSpan={4} className="p-3 font-semibold text-[#1a73e8] text-sm uppercase tracking-wide">
-                        {category}
-                      </td>
-                    </tr>
-                    {items.map((item, i) => (
-                      <tr key={`${category}-${i}`} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="p-3 text-slate-700 pl-6">{item.service}</td>
-                        <td className="p-3 text-slate-500 font-mono text-xs">{item.code}</td>
-                        <td className="p-3 text-slate-600">{item.unit}</td>
-                        <td className="p-3 text-right font-semibold text-slate-900">{item.price}</td>
-                      </tr>
-                    ))}
-                  </React.Fragment>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {filteredPrices.length === 0 && (
-            <p className="text-center text-slate-500 py-8">No services found matching "{searchTerm}"</p>
-          )}
 
         </div>
       )}
