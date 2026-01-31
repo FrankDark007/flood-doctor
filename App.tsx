@@ -453,6 +453,7 @@ const AppLayout: React.FC = () => {
               <Route path="/locations/" element={<LocationsHub />} />
               <Route path="/request/" element={<RequestService />} />
               <Route path="/work-authorization/" element={<WorkAuthorization />} />
+              <Route path="/contract/" element={<WorkAuthorization />} />
               <Route path="/about/" element={<About />} />
               <Route path="/contact/" element={<Contact />} />
               <Route path="/reviews/" element={<Reviews />} />
