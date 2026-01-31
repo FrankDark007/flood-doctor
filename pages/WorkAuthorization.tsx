@@ -782,6 +782,27 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({
   initialValue,
   onInitialChange
 }) => {
+  // Helper to render text with 【filled values】 highlighted
+  const renderWithHighlights = (text: string) => {
+    const parts = text.split(/【([^】]+)】/);
+    if (parts.length === 1) return text;
+
+    return parts.map((part, index) => {
+      // Odd indices are the captured groups (the filled values)
+      if (index % 2 === 1) {
+        return (
+          <span
+            key={index}
+            className="bg-yellow-100 text-slate-900 px-1 py-0.5 rounded font-medium border-b-2 border-yellow-400"
+          >
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <div className="border border-slate-200 rounded-xl overflow-hidden mb-3 bg-white shadow-sm">
       {/* Header */}
@@ -860,7 +881,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({
               }
               // WHEREAS clauses
               if (line.startsWith('WHEREAS')) {
-                return <p key={i} className="text-slate-700 my-3 italic">{line}</p>;
+                return <p key={i} className="text-slate-700 my-3 italic">{renderWithHighlights(line)}</p>;
               }
               // THEREFORE clause
               if (line.startsWith('THEREFORE')) {
@@ -889,7 +910,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({
               // Regular paragraphs
               return (
                 <p key={i} className="text-slate-700 my-2 leading-relaxed">
-                  {line}
+                  {renderWithHighlights(line)}
                 </p>
               );
             })}
@@ -1440,13 +1461,22 @@ const WorkAuthorization: React.FC = () => {
   // Get URL params for pre-filling
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setFormData(prev => ({
-      ...prev,
-      name: params.get('name') || '',
-      phone: params.get('phone') || '',
-      email: params.get('email') || '',
-      propertyAddress: params.get('address') || ''
-    }));
+    const nameParam = params.get('name');
+    const phoneParam = params.get('phone');
+    const emailParam = params.get('email');
+    const addressParam = params.get('address');
+
+    console.log('URL Params Debug:', { nameParam, phoneParam, emailParam, addressParam });
+
+    if (nameParam || phoneParam || emailParam || addressParam) {
+      setFormData(prev => ({
+        ...prev,
+        name: nameParam || prev.name,
+        phone: phoneParam || prev.phone,
+        email: emailParam || prev.email,
+        propertyAddress: addressParam || prev.propertyAddress
+      }));
+    }
   }, []);
 
   const toggleSection = (id: string) => {
@@ -1478,6 +1508,45 @@ const WorkAuthorization: React.FC = () => {
       ...prev,
       [sectionId]: value
     }));
+  };
+
+  // Format today's date for contract
+  const formatContractDate = () => {
+    const today = new Date();
+    return today.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  // Process section content - replace placeholders with form data
+  const getProcessedContent = (sectionKey: string, content: string): string => {
+    if (sectionKey !== 'partiesPurpose') return content;
+
+    // Replace date placeholder
+    const dateValue = formatContractDate();
+    let processed = content.replace(
+      'this ________ by and between',
+      `this 【${dateValue}】 by and between`
+    );
+
+    // Replace client name placeholder
+    const nameValue = formData.name || '________________';
+    const nameDisplay = formData.name ? `【${formData.name}】` : '________________';
+    processed = processed.replace(
+      'and ________________ ("Client")',
+      `and ${nameDisplay} ("Client")`
+    );
+
+    // Replace property address placeholder
+    const addressDisplay = formData.propertyAddress ? `【${formData.propertyAddress}】` : '________________';
+    processed = processed.replace(
+      'located at: ________________ ("Property")',
+      `located at: ${addressDisplay} ("Property")`
+    );
+
+    return processed;
   };
 
   // Validation
@@ -1611,7 +1680,7 @@ const WorkAuthorization: React.FC = () => {
                   key={key}
                   id={key}
                   title={section.title}
-                  content={section.content}
+                  content={getProcessedContent(key, section.content)}
                   isOpen={openSections.has(key)}
                   isChecked={checkedSections.has(key)}
                   onToggle={() => toggleSection(key)}

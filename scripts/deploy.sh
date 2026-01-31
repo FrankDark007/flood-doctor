@@ -76,12 +76,12 @@ echo ""
 echo "🔐 Step 3: Setting permissions..."
 expect << EXPECT_SCRIPT
 set timeout 30
-spawn ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "chmod -R 755 $REMOTE_PATH"
+spawn ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "chmod -R 755 $REMOTE_PATH && chmod 644 ${REMOTE_PATH}.htaccess"
 expect "password:"
 send "$SSH_PASS\r"
 expect eof
 EXPECT_SCRIPT
-echo "   ✅ Permissions set"
+echo "   ✅ Permissions set (755 for all, 644 for .htaccess)"
 
 # Step 4: Purge Cloudflare cache
 echo ""
