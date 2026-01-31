@@ -182,7 +182,25 @@ The Provider utilizes an industry-standard price list for mitigation services, a
 
 4.3 - AUTONOMOUS PRICING: The Client further acknowledges that the Provider's pricing structure is established through an independent cost analysis and is not subject to any third-party pricing structures. The Provider reserves the right to adjust its prices as necessitated by prevailing market conditions and in compliance with applicable labor laws in the jurisdictions where its services are provided.
 
-4.4 - LABOR LAW COMPLIANCE: The Provider is committed to adhering to all local and federal labor laws applicable in the jurisdictions in which it operates. As part of this commitment, the Provider ensures that its employees receive fair compensation and treatment in accordance with the relevant labor regulations. Employees of the Provider are entitled to overtime pay for all hours worked beyond eight hours in a single shift and all hours worked exceeding forty hours in a single week, as mandated by applicable labor laws.
+4.4 – LABOR RATES, WORKFORCE, CUMULATIVE HOURS, AND DISPATCH LOGISTICS
+
+The Provider relies on a qualified workforce that may include employees, subcontractors, or third-party vendors to ensure rapid response and continuity of service. The Client acknowledges that the Provider's labor rates are derived from a fully burdened cost model and reflected through an established rate schedule in effect at the time services are rendered. Accordingly, labor costs billed under this Contract may reflect regular, overtime, or premium rates based on workforce conditions at the time the Work is performed, including, but not limited to:
+
+(a) Work performed beyond eight (8) hours in a single shift or forty (40) hours in a workweek; and
+(b) Work performed by technicians who have accumulated compensable work hours at prior project locations before arriving at the Property.
+
+Schedule Accommodation and Emergency Reallocation.
+The Client acknowledges that emergency mitigation and restoration services often require the Provider to reassign or relocate crews from other active projects in order to meet the immediate needs of the Client's Property. Consistent with federal labor standards regarding compensable travel time and cumulative work hours, technicians arriving from other sites may already be in an overtime or premium pay status upon arrival based on hours previously worked. In such circumstances, the Provider shall bill labor at the applicable overtime or premium rate to reflect the labor burden incurred in accommodating the Client's emergency scheduling needs.
+
+Operational Dispatch and Notice.
+The Client further acknowledges that emergency services are performed using a dynamic, first-available workforce model, in which crews are dispatched based on availability, proximity, safety considerations, operational capacity, and project demands at the time service is required. The Provider does not pre-assign specific crews to specific projects at the time of client authorization, and the overtime or premium pay status of any individual crew cannot be reliably determined in advance.
+
+The Client acknowledges that crew fatigue, job complexity, labor intensity, environmental conditions, and cumulative work hours vary significantly by project and may change in real time. As a result, the Provider cannot predict or guarantee whether services will be performed by personnel in regular, overtime, or premium pay status at the time work commences or during the course of the Work.
+
+Accordingly, the Client agrees that the Provider has no duty to provide advance notice of the specific pay status of any crew assigned to the Property. Labor is billed at the applicable rate in effect at the time services are rendered, consistent with the Provider's established rate schedule and the operational requirements of emergency response and rapid loss mitigation.
+
+Independent Pricing.
+Labor rates, including overtime or premium rates, are determined by the Provider's established rate schedule and workforce obligations and are not subject to insurance company guidelines, carrier policies, in-network pricing rules, or third-party pricing methodologies.
 
 4.5 - PAYMENT OBLIGATIONS: Upon completion of the water damage restoration services, the Client agrees to promptly pay the Provider the total price for the work performed as determined by the aforementioned factors and the industry-standard price list. Payment shall be made in accordance with the terms and conditions specified in the invoice provided by the Provider.
 
