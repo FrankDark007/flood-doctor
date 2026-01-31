@@ -176,15 +176,11 @@ The Client understands that the Provider:
 
 4.1 - PRICING AND PAYMENT: The Client understands that water damage is a progressive condition and that drying time varies depending on the types of materials, the quantity of water, the degree of saturation, airflow volume and velocity, temperature, and indoor & outdoor humidity. Therefore, the Client understands it is impracticable to give an accurate quote for services before completion. The Client agrees to pay the total price for the work the Provider performs.
 
-The Provider utilizes an industry-standard price list for mitigation services, available upon request. A partial list of commonly used line items can be found here: Partial Price List.
-
 4.2 - PRICING DETERMINATION: The Client acknowledges that water damage restoration is a complex and dynamic process, and the total cost of services rendered by the Provider and its subcontractors depends on various factors, including but not limited to the types of materials affected, the quantity of water present, the degree of saturation, airflow volume and velocity, temperature, indoor and outdoor humidity, and duration of time that materials are subjected to water and high moisture levels before mitigation efforts are started. Given these variables, providing an exact quote before the completion of the restoration process is impractical. Therefore, the Client understands and accepts that the final price for the water damage services shall be determined based on the Provider's industry-standard price list for mitigation services, which is available upon request.
 
 4.3 - AUTONOMOUS PRICING: The Client further acknowledges that the Provider's pricing structure is established through an independent cost analysis and is not subject to any third-party pricing structures. The Provider reserves the right to adjust its prices as necessitated by prevailing market conditions and in compliance with applicable labor laws in the jurisdictions where its services are provided.
 
-4.4 – LABOR RATES, WORKFORCE, CUMULATIVE HOURS, AND DISPATCH LOGISTICS
-
-The Provider relies on a qualified workforce that may include employees, subcontractors, or third-party vendors to ensure rapid response and continuity of service. The Client acknowledges that the Provider's labor rates are derived from a fully burdened cost model and reflected through an established rate schedule in effect at the time services are rendered. Accordingly, labor costs billed under this Contract may reflect regular, overtime, or premium rates based on workforce conditions at the time the Work is performed, including, but not limited to:
+4.4 – LABOR RATES, WORKFORCE, CUMULATIVE HOURS, AND DISPATCH LOGISTICS: The Provider relies on a qualified workforce that may include employees, subcontractors, or third-party vendors to ensure rapid response and continuity of service. The Client acknowledges that the Provider's labor rates are derived from a fully burdened cost model and reflected through an established rate schedule in effect at the time services are rendered. Accordingly, labor costs billed under this Contract may reflect regular, overtime, or premium rates based on workforce conditions at the time the Work is performed, including, but not limited to:
 
 (a) Work performed beyond eight (8) hours in a single shift or forty (40) hours in a workweek; and
 (b) Work performed by technicians who have accumulated compensable work hours at prior project locations before arriving at the Property.
@@ -202,35 +198,23 @@ Accordingly, the Client agrees that the Provider has no duty to provide advance 
 Independent Pricing.
 Labor rates, including overtime or premium rates, are determined by the Provider's established rate schedule and workforce obligations and are not subject to insurance company guidelines, carrier policies, in-network pricing rules, or third-party pricing methodologies.
 
-4.5 – PAYMENT OBLIGATIONS
-
-The Client agrees to pay the Provider for all Work performed based on services actually rendered, labor expended, equipment utilized, and materials provided, as determined by actual field conditions and billed in accordance with the Provider's established pricing structure following completion of the Work. The Client acknowledges that no fixed price, estimate, or quotation is provided at the time of contract execution due to the emergency and condition-driven nature of the services.
+4.5 – PAYMENT OBLIGATIONS: The Client agrees to pay the Provider for all Work performed based on services actually rendered, labor expended, equipment utilized, and materials provided, as determined by actual field conditions and billed in accordance with the Provider's established pricing structure following completion of the Work. The Client acknowledges that no fixed price, estimate, or quotation is provided at the time of contract execution due to the emergency and condition-driven nature of the services.
 
 Payment is due in accordance with the terms stated on the Provider's invoice and is not contingent upon insurance approval, claim determination, coverage decisions, or reimbursement by any third party. Failure to timely remit payment shall constitute a material breach of this Contract.
 
-4.6 – PRICING AND PAYMENT DISPUTES
+4.6 – PRICING AND PAYMENT DISPUTES: Any dispute regarding pricing or payment under this Contract shall not relieve the Client of the obligation to pay undisputed amounts when due. The parties may engage in good faith discussions regarding disputed items; however, the Provider is under no obligation to revise, reduce, delay, or reissue invoices based on insurer positions, third-party opinions, or non-binding pricing guidelines. All disputes shall be resolved in accordance with the dispute resolution provisions set forth elsewhere in this Contract.
 
-Any dispute regarding pricing or payment under this Contract shall not relieve the Client of the obligation to pay undisputed amounts when due. The parties may engage in good faith discussions regarding disputed items; however, the Provider is under no obligation to revise, reduce, delay, or reissue invoices based on insurer positions, third-party opinions, or non-binding pricing guidelines. All disputes shall be resolved in accordance with the dispute resolution provisions set forth elsewhere in this Contract.
+4.7 – INDEPENDENCE FROM INSURANCE PRICING STRUCTURES: The Client acknowledges that the Provider is a private, independent contractor and is not affiliated with, bound by, or subject to any insurance company preferred vendor programs, managed repair networks, internal pricing rules, or reimbursement practices. The Provider's pricing is governed solely by this Contract and the Provider's independent business operations, regardless of any insurer's participation in the claims process.
 
-4.7 – INDEPENDENCE FROM INSURANCE PRICING STRUCTURES
-
-The Client acknowledges that the Provider is a private, independent contractor and is not affiliated with, bound by, or subject to any insurance company preferred vendor programs, managed repair networks, internal pricing rules, or reimbursement practices. The Provider's pricing is governed solely by this Contract and the Provider's independent business operations, regardless of any insurer's participation in the claims process.
-
-4.8 – PRICING DETERMINATION AND REASONABLENESS
-
-The Client acknowledges that the Provider determines pricing based on its established rate schedule, operational requirements, prevailing market conditions, and industry-accepted methodologies. Pricing is not dictated by insurance carrier policies, internal guidelines, or third-party estimating preferences.
+4.8 – PRICING DETERMINATION AND REASONABLENESS: The Client acknowledges that the Provider determines pricing based on its established rate schedule, operational requirements, prevailing market conditions, and industry-accepted methodologies. Pricing is not dictated by insurance carrier policies, internal guidelines, or third-party estimating preferences.
 
 The Client further acknowledges that, due to the emergency and condition-driven nature of the services, pricing is based on the scope of Work actually required and performed and may not be known at the time of contract execution. The parties agree that pricing established in accordance with these principles reflects a reasonable and customary method of determining compensation for the services provided.
 
-4.9 – QUALITY OF WORK AND PRICING
+4.9 – QUALITY OF WORK AND PRICING: The Provider's pricing independence does not compromise service quality. The Provider shall perform the Work in accordance with applicable industry standards, utilizing appropriate equipment, techniques, and trained personnel. Pricing disputes shall not be used to challenge the necessity, adequacy, or professional appropriateness of services performed.
 
-The Provider's pricing independence does not compromise service quality. The Provider shall perform the Work in accordance with applicable industry standards, utilizing appropriate equipment, techniques, and trained personnel. Pricing disputes shall not be used to challenge the necessity, adequacy, or professional appropriateness of services performed.
+4.10 – COMMUNICATION WITH INSURANCE PROVIDERS: At the Client's request, the Provider may furnish documentation of Work performed to the Client or the Client's insurer. Such cooperation is limited to factual documentation of services rendered and does not include negotiation of pricing, scope, or payment terms. The Provider's pricing and payment rights under this Contract shall remain unaffected by any communications with insurance representatives.
 
-4.10 – COMMUNICATION WITH INSURANCE PROVIDERS
-
-At the Client's request, the Provider may furnish documentation of Work performed to the Client or the Client's insurer. Such cooperation is limited to factual documentation of services rendered and does not include negotiation of pricing, scope, or payment terms. The Provider's pricing and payment rights under this Contract shall remain unaffected by any communications with insurance representatives.
-
-4.11 – XACTIMATE PRICING AND ESTIMATING TOOLS
+4.11 – XACTIMATE PRICING AND ESTIMATING TOOLS:
 
 (a) Use of Estimating Software.
 The Client acknowledges that the Provider may utilize Xactimate or other estimating software as a reference, documentation, or reporting tool. The Provider is not required to use Xactimate exclusively, and no estimating software shall control or limit the Provider's pricing authority.
@@ -247,13 +231,9 @@ The Client agrees to an administrative fee of $198 per hour for estimate revisio
 (e) Client Responsibility for Policy Review.
 The Client is solely responsible for reviewing and understanding insurance coverage and policy limitations. The Provider makes no representations regarding coverage applicability.
 
-4.12 – CONTRACT PRICE LIST INCORPORATION
+4.12 – CONTRACT PRICE LIST INCORPORATION: The Client acknowledges that the Provider's Partial Price List, attached as Attachment A, represents commonly used labor, equipment, and service charges associated with water damage mitigation and restoration. Attachment A is non-exhaustive and illustrative only. Charges billed may include items listed in Attachment A as well as other services reasonably required to complete the Work based on actual site conditions, professional judgment, and industry standards.
 
-The Client acknowledges that the Provider's Partial Price List, attached as Attachment A, represents commonly used labor, equipment, and service charges associated with water damage mitigation and restoration. Attachment A is non-exhaustive and illustrative only. Charges billed may include items listed in Attachment A as well as other services reasonably required to complete the Work based on actual site conditions, professional judgment, and industry standards.
-
-4.13 – EQUIPMENT SELECTION AND DRYING DETERMINATION
-
-The type, quantity, placement, and duration of drying and remediation equipment are determined by the Provider based on industry-accepted water damage restoration principles, including, but not limited to, IICRC S500 methodologies. Equipment usage and drying duration are based on observed conditions, class and category of loss, environmental readings, moisture measurements, and documented drying progress, and are not governed by predetermined timeframes, insurer guidelines, or third-party opinions.`
+4.13 – EQUIPMENT SELECTION AND DRYING DETERMINATION: The type, quantity, placement, and duration of drying and remediation equipment are determined by the Provider based on industry-accepted water damage restoration principles, including, but not limited to, IICRC S500 methodologies. Equipment usage and drying duration are based on observed conditions, class and category of loss, environmental readings, moisture measurements, and documented drying progress, and are not governed by predetermined timeframes, insurer guidelines, or third-party opinions.`
   },
   insuranceDisputes: {
     title: 'Section 5: Insurance Disputes & Third-Party Limitations',
