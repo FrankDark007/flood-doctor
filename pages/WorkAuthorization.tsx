@@ -988,15 +988,15 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             {/* Labor Rate Categories */}
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-3">LABOR RATE CATEGORIES</h4>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[540px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
-                      <th className="text-left p-2 border border-slate-300 font-semibold">Role</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Business Hours</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">After Hours</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Holiday</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Major Event / Disaster</th>
+                      <th className="text-left p-2 border border-slate-300 font-semibold whitespace-nowrap">Role</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Business</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">After Hrs</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Holiday</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Disaster</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1065,8 +1065,8 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             {/* Labor & Supervision (Condition-Based) */}
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-3">LABOR & SUPERVISION (CONDITION-BASED)</h4>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[420px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
@@ -1103,13 +1103,13 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
                 <p>This definition applies to equipment rental only and does not apply to hourly labor.</p>
                 <p className="font-medium">Any portion of a day is billed as a full day.</p>
               </div>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[380px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Equipment</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Rate</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1128,8 +1128,8 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             {/* Equipment Services */}
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-3">EQUIPMENT SERVICES</h4>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[420px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
@@ -1144,7 +1144,7 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
                     <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Daily Equipment Monitoring – After Hours</td><td className="p-2 border border-slate-300 text-center">Per Hour</td><td className="p-2 border border-slate-300 text-center">$175.00</td></tr>
                     <tr className="bg-white"><td className="p-2 border border-slate-300">Equipment Decontamination – Standard</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$65.00</td></tr>
                     <tr className="bg-slate-50"><td className="p-2 border border-slate-300">Equipment Decontamination – Heavy Contamination</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$125.00</td></tr>
-                    <tr className="bg-white"><td className="p-2 border border-slate-300">Clean & Restock Equipment</td><td className="p-2 border border-slate-300 text-center">Per Piece</td><td className="p-2 border border-slate-300 text-center">$60.00–$95.00</td></tr>
+                    <tr className="bg-white"><td className="p-2 border border-slate-300">Clean & Restock Equipment</td><td className="p-2 border border-slate-300 text-center">Per Unit</td><td className="p-2 border border-slate-300 text-center">$60.00–$95.00</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1153,8 +1153,8 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             {/* Filters & Consumables */}
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-3">FILTERS & CONSUMABLES</h4>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[380px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Item</th>
@@ -1176,13 +1176,13 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-2">WATER EXTRACTION</h4>
               <p className="mb-3 text-xs text-slate-600 italic">(Category selection is determined by on-site conditions and IICRC S500)</p>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[380px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Unit</th>
-                      <th className="text-center p-2 border border-slate-300 font-semibold">Rate</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Unit</th>
+                      <th className="text-center p-2 border border-slate-300 font-semibold whitespace-nowrap">Rate</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1204,8 +1204,8 @@ const PriceListSection: React.FC<PriceListSectionProps> = ({
             {/* Documentation & Testing */}
             <div className="mt-6">
               <h4 className="font-semibold text-slate-900 mb-3">DOCUMENTATION & TESTING</h4>
-              <div className="overflow-x-auto -mx-2">
-                <table className="w-full text-xs border border-slate-300">
+              <div className="overflow-x-auto -mx-2 pb-2">
+                <table className="w-full min-w-[380px] text-xs border border-slate-300">
                   <thead>
                     <tr className="bg-slate-200">
                       <th className="text-left p-2 border border-slate-300 font-semibold">Service</th>
