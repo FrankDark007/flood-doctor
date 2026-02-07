@@ -234,31 +234,9 @@ const WinterPipeProtection = lazy(() => import('./pages/resources/WinterPipeProt
 const BasementFloodingPrevention = lazy(() => import('./pages/resources/BasementFloodingPrevention'));
 const TypesOfMold = lazy(() => import('./pages/resources/TypesOfMold'));
 
-// City Subdomain Pages (mclean.flood.doctor, vienna.flood.doctor, etc.)
-const CityMcLean = lazy(() => import('./pages/city/McLean'));
-const CityVienna = lazy(() => import('./pages/city/Vienna'));
-const CityArlington = lazy(() => import('./pages/city/Arlington'));
-const CityFairfax = lazy(() => import('./pages/city/Fairfax'));
-const CityTysons = lazy(() => import('./pages/city/Tysons'));
-const CityAlexandria = lazy(() => import('./pages/city/Alexandria'));
-const CityAshburn = lazy(() => import('./pages/city/Ashburn'));
-const CityWashingtonDC = lazy(() => import('./pages/city/WashingtonDC'));
-const CityHerndon = lazy(() => import('./pages/city/Herndon'));
-const CityReston = lazy(() => import('./pages/city/Reston'));
-const CitySpringfield = lazy(() => import('./pages/city/Springfield'));
-const CityFallsChurch = lazy(() => import('./pages/city/FallsChurch'));
-const CityGreatFalls = lazy(() => import('./pages/city/GreatFalls'));
-const CityBethesda = lazy(() => import('./pages/city/Bethesda'));
-const CityPotomac = lazy(() => import('./pages/city/Potomac'));
-const CityRockville = lazy(() => import('./pages/city/Rockville'));
-const CitySilverSpring = lazy(() => import('./pages/city/SilverSpring'));
-const CityServices = lazy(() => import('./pages/city/CityServices'));
-
-// V3 Dynamic City Content Pages - renders rich TypeScript content
-const DynamicServicePage = lazy(() => import('./pages/city/DynamicServicePage'));
-const DynamicNeighborhoodPage = lazy(() => import('./pages/city/DynamicNeighborhoodPage'));
-const DynamicBlogIndex = lazy(() => import('./pages/city/DynamicBlogIndex'));
-const DynamicBlogArticle = lazy(() => import('./pages/city/DynamicBlogArticle'));
+// City Subdomain Pages are now built as independent apps
+// See: npm run build:cities, /CityApp.tsx, /pages/city-app/
+// The city pages below are DEPRECATED and remain only for legacy route compatibility
 
 // Location Landing Pages
 const AlexandriaWaterDamage = lazy(() => import('./pages/locations/AlexandriaWaterDamage'));
@@ -462,46 +440,9 @@ const AppLayout: React.FC = () => {
               {/* Near Me Landing */}
               <Route path="/nearme/water-damage-restoration/" element={<NearMeLanding />} />
 
-              {/* City Subdomain Pages - accessed via *.flood.doctor subdomains */}
-              <Route path="/city/mclean" element={<CityMcLean />} />
-              <Route path="/city/vienna" element={<CityVienna />} />
-              <Route path="/city/arlington" element={<CityArlington />} />
-              <Route path="/city/fairfax" element={<CityFairfax />} />
-              <Route path="/city/tysons" element={<CityTysons />} />
-              <Route path="/city/alexandria" element={<CityAlexandria />} />
-              <Route path="/city/ashburn" element={<CityAshburn />} />
-              <Route path="/city/washington-dc" element={<CityWashingtonDC />} />
-              <Route path="/city/herndon" element={<CityHerndon />} />
-              <Route path="/city/reston" element={<CityReston />} />
-              <Route path="/city/springfield" element={<CitySpringfield />} />
-              <Route path="/city/falls-church" element={<CityFallsChurch />} />
-              <Route path="/city/great-falls" element={<CityGreatFalls />} />
-              <Route path="/city/bethesda" element={<CityBethesda />} />
-              <Route path="/city/potomac" element={<CityPotomac />} />
-              <Route path="/city/rockville" element={<CityRockville />} />
-              <Route path="/city/silver-spring" element={<CitySilverSpring />} />
-
-              {/* City Services Pages - mclean.flood.doctor/services/ */}
-              <Route path="/city/:citySlug/services" element={<CityServices />} />
-              <Route path="/city/:citySlug/services/:serviceSlug" element={<CityServices />} />
-
-              {/* V3 Dynamic City Content Pages - uses rich TypeScript content */}
-              {/* Service Pages: /city/mclean/water-damage, /city/arlington/basement-flooding, etc. */}
-              <Route path="/city/:city/water-damage" element={<DynamicServicePage />} />
-              <Route path="/city/:city/basement-flooding" element={<DynamicServicePage />} />
-              <Route path="/city/:city/burst-pipe" element={<DynamicServicePage />} />
-              <Route path="/city/:city/flood-cleanup" element={<DynamicServicePage />} />
-              <Route path="/city/:city/mold-remediation" element={<DynamicServicePage />} />
-              <Route path="/city/:city/sewage-cleanup" element={<DynamicServicePage />} />
-              <Route path="/city/:city/storm-damage" element={<DynamicServicePage />} />
-              <Route path="/city/:city/fire-damage" element={<DynamicServicePage />} />
-
-              {/* Neighborhood Pages: /city/mclean/neighborhoods/langley, etc. */}
-              <Route path="/city/:city/neighborhoods/:neighborhood" element={<DynamicNeighborhoodPage />} />
-
-              {/* V3 Dynamic City Blog Pages */}
-              <Route path="/city/:city/blog" element={<DynamicBlogIndex />} />
-              <Route path="/city/:city/blog/:slug" element={<DynamicBlogArticle />} />
+              {/* City Subdomain Pages are now independent apps */}
+              {/* See: npm run build:cities, /CityApp.tsx */}
+              {/* City routes removed - each city is deployed as its own subdomain site */}
 
               {/* Location Landing Pages - Alexandria */}
               <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />

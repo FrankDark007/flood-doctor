@@ -14,7 +14,6 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 // ES Module compatibility for __dirname
@@ -560,28 +559,31 @@ async function buildAllCities(): Promise<void> {
   }
   fs.mkdirSync(DIST_CITIES_DIR, { recursive: true });
 
-  // First, build the main app once
-  console.log('\\n📦 Building main app bundle...');
-  try {
-    execSync('npm run build', {
-      cwd: PROJECT_ROOT,
-      stdio: 'inherit',
-      env: { ...process.env, VITE_BUILD_MODE: 'city' }
-    });
-  } catch (error) {
-    console.error('❌ Build failed');
+  // The city bundle should already be built by npm run build:cities
+  // which runs: npm run build:city && npx tsx scripts/build-cities.ts
+  // So we read from dist-city/ (the output of build:city)
+  const cityDistDir = path.join(PROJECT_ROOT, 'dist-city');
+
+  // Verify city build exists
+  if (!fs.existsSync(cityDistDir)) {
+    console.error('❌ City build not found at dist-city/');
+    console.error('   Run "npm run build:city" first, or use "npm run build:cities"');
     process.exit(1);
   }
 
-  const mainDistDir = path.join(PROJECT_ROOT, 'dist');
+  // Read the built assets from the city dist
+  // Vite outputs city.html (matching the input name from vite.config.ts)
+  const cityHtmlPath = path.join(cityDistDir, 'city.html');
+  if (!fs.existsSync(cityHtmlPath)) {
+    console.error('❌ city.html not found in dist-city/');
+    process.exit(1);
+  }
+  const builtCityHtml = fs.readFileSync(cityHtmlPath, 'utf-8');
 
-  // Read the built assets from the main dist
-  const indexHtml = fs.readFileSync(path.join(mainDistDir, 'index.html'), 'utf-8');
-
-  // Extract the asset links from the built index.html
-  const scriptMatch = indexHtml.match(/<script type="module" crossorigin src="([^"]+)">/);
-  const stylesheetMatch = indexHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+)">/);
-  const modulePreloads = indexHtml.match(/<link rel="modulepreload" crossorigin href="([^"]+)">/g) || [];
+  // Extract the asset links from the built city.html
+  const scriptMatch = builtCityHtml.match(/<script type="module" crossorigin src="([^"]+)">/);
+  const stylesheetMatch = builtCityHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+)">/);
+  const modulePreloads = builtCityHtml.match(/<link rel="modulepreload" crossorigin href="([^"]+)">/g) || [];
 
   const mainScript = scriptMatch ? scriptMatch[1] : '';
   const mainStylesheet = stylesheetMatch ? stylesheetMatch[1] : '';
@@ -604,13 +606,13 @@ async function buildAllCities(): Promise<void> {
     fs.mkdirSync(cityAssetsDir, { recursive: true });
     fs.mkdirSync(citySitemapsDir, { recursive: true });
 
-    // Copy assets from main dist
-    const mainAssetsDir = path.join(mainDistDir, 'assets');
-    if (fs.existsSync(mainAssetsDir)) {
-      const assets = fs.readdirSync(mainAssetsDir);
+    // Copy assets from city dist
+    const cityBuildAssetsDir = path.join(cityDistDir, 'assets');
+    if (fs.existsSync(cityBuildAssetsDir)) {
+      const assets = fs.readdirSync(cityBuildAssetsDir);
       for (const asset of assets) {
         fs.copyFileSync(
-          path.join(mainAssetsDir, asset),
+          path.join(cityBuildAssetsDir, asset),
           path.join(cityAssetsDir, asset)
         );
       }
