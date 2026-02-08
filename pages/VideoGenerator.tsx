@@ -10,6 +10,7 @@ const VideoGenerator: React.FC = () => {
       <PageMeta 
         title="AI Video Generator" 
         description="Generate custom marketing videos for Flood Doctor using Google Veo." 
+        noIndex={true}
       />
       
       <div className="bg-subtle border-b border-gray-100 pt-12 pb-20">

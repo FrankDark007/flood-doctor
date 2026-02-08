@@ -28,6 +28,49 @@
 
 ## Completed Work
 
+### 2026-02-08: Service Detail Longform Redesign
+
+**Scope:** Make 2500+ word service pages feel lighter and easier to scan.
+
+**Key Changes:**
+- `ServiceDetailedContent` redesigned into a magazine-style layout with highlight cards, summary previews, and read-more toggles.
+- Added sticky in-page navigation for service detail pages with anchor targets.
+
+### 2026-02-08: Indexing Hygiene
+
+**Scope:** Prevent internal/demo pages from being indexed.
+
+**Key Changes:**
+- Added `noIndex` meta on `/pages/VideoGenerator.tsx`, `/pages/ClientPortalDemo.tsx`, `/pages/WorkAuthorization.tsx`.
+
+### 2026-02-08: Conversion + SEO Polish Pass
+
+**Scope:** Conversion-focused UI polish and additional SEO structure on hub pages.
+
+**Key Changes:**
+- Added top trust bar to header with response time + license + phone CTA.
+- Hero trust chips and mobile CTA visibility improved.
+- Trust bar updated with 4.9★ rating.
+- Request Service header clarity improved; added autofill hints for key fields.
+- Resources Hub and Blog Index now include schema + lazy-loaded images.
+- robots.txt now disallows dev/tools/demo routes from indexing.
+
+### 2026-02-08: SEO + Performance + Security Baseline
+
+**Scope:** Tightened CSP, fixed fonts, improved SEO schema coverage, removed hard-coded secrets.
+
+**Key Changes:**
+- Removed importmap and tightened CSP in `/index.html` and `/city.html`.
+- Standardized fonts (Plus Jakarta Sans + Inter), removed duplicate font import.
+- `PageMeta` now avoids double-brand titles, sets robots meta, and cleans JSON-LD on route change.
+- Added schema to service detail pages, reviews page, locations hub, and request service.
+- Set `DEBUG=false` in `/config/site.ts`.
+- Removed hard-coded Resend API key from `/cloudflare-worker/form-handler.js`; now uses env secret.
+- Added secret setup note to `/cloudflare-worker/wrangler.toml`.
+
+**Follow-up Required:**
+- Run `wrangler secret put RESEND_API_KEY` before deploying the Cloudflare Worker.
+
 ### 2026-01-12: Emergency WordPress Restoration
 
 **Context:** React site was accidentally deployed to ALL WordPress domains (flooddoctorva.com + 8 subdomains) when it should only go to flood.doctor. ManageWP automatic restore didn't work (sites disconnected).

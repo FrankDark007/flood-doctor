@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ContentSection } from './types';
-import { BookOpen, ChevronDown, Check, Circle } from 'lucide-react';
+import { BookOpen, Check, Circle, ArrowRight } from 'lucide-react';
 
 interface ServiceDetailedContentProps {
   sections: ContentSection[];
 }
 
+const PREVIEW_PARAGRAPHS = 2;
+
+const trimWords = (text: string, wordLimit: number) => {
+  const words = text.split(' ');
+  if (words.length <= wordLimit) return text;
+  return `${words.slice(0, wordLimit).join(' ')}…`;
+};
+
 const ServiceDetailedContent: React.FC<ServiceDetailedContentProps> = ({ sections }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set([0]));
   const [viewedIndices, setViewedIndices] = useState<Set<number>>(new Set([0]));
 
+  const highlightCards = useMemo(() => (
+    sections.slice(0, 3).map((section, index) => ({
+      heading: section.heading,
+      summary: trimWords(section.content[0] || 'Expert restoration guidance tailored to your property.', 24),
+      index
+    }))
+  ), [sections]);
+
   const handleToggle = (index: number) => {
-    const isOpen = openIndex === index;
-    const newIndex = isOpen ? null : index;
-    setOpenIndex(newIndex);
-    
-    if (newIndex !== null) {
-      const newViewed = new Set(viewedIndices);
-      newViewed.add(newIndex);
-      setViewedIndices(newViewed);
-    }
+    setExpandedSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+
+    const newViewed = new Set(viewedIndices);
+    newViewed.add(index);
+    setViewedIndices(newViewed);
   };
 
-  const handleSidebarClick = (e: React.MouseEvent, index: number) => {
-    e.preventDefault();
-    setOpenIndex(index);
-    
+  const scrollToSection = (index: number) => {
+    setExpandedSections((prev) => new Set(prev).add(index));
+
     const newViewed = new Set(viewedIndices);
     newViewed.add(index);
     setViewedIndices(newViewed);
@@ -46,11 +65,16 @@ const ServiceDetailedContent: React.FC<ServiceDetailedContentProps> = ({ section
     }, 10);
   };
 
+  const handleSidebarClick = (e: React.MouseEvent, index: number) => {
+    e.preventDefault();
+    scrollToSection(index);
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Sidebar / TOC Area */}
           <div className="lg:w-1/4">
              <div className="sticky top-24 bg-surface p-6 rounded-2xl border border-slate-100 shadow-sm">
@@ -73,14 +97,14 @@ const ServiceDetailedContent: React.FC<ServiceDetailedContentProps> = ({ section
                  </div>
                </div>
 
-               <h3 className="font-bold text-slate-900 mb-4">Restoration Knowledge</h3>
+               <h3 className="font-bold text-slate-900 mb-4">Jump to section</h3>
                <nav className="space-y-1">
                  {sections.map((section, idx) => {
-                   const isActive = openIndex === idx;
+                   const isActive = expandedSections.has(idx);
                    const isViewed = viewedIndices.has(idx);
                    
                    return (
-                     <a 
+                     <a
                        key={idx} 
                        href={`#section-${idx}`}
                        onClick={(e) => handleSidebarClick(e, idx)}
@@ -115,59 +139,82 @@ const ServiceDetailedContent: React.FC<ServiceDetailedContentProps> = ({ section
 
           {/* Main Content Area - Accordion Style */}
           <div className="lg:w-3/4">
-             <div className="space-y-4">
-               {sections.map((section, idx) => (
-                 <div 
-                    key={idx} 
-                    id={`section-${idx}`} 
-                    className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                      openIndex === idx 
-                        ? 'bg-white border-primary/20 shadow-lg shadow-blue-900/5' 
-                        : 'bg-white border-slate-100 shadow-sm hover:border-slate-200'
-                    }`}
-                 >
-                   <button 
-                      onClick={() => handleToggle(idx)}
-                      className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
-                   >
-                     <div className="flex items-center gap-4">
-                       <span className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold shrink-0 transition-all duration-300 ${
-                         viewedIndices.has(idx) 
-                           ? 'bg-green-100 text-green-600' 
-                           : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'
-                       }`}>
+            <div className="mb-10">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-3">
+                Deep‑dive restoration guidance
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                We’ve broken down the full process into focused sections so you can scan fast, then expand what you need.
+              </p>
+            </div>
+
+            {highlightCards.length > 0 && (
+              <div className="grid gap-4 md:grid-cols-3 mb-10">
+                {highlightCards.map((card) => (
+                  <div key={card.heading} className="rounded-2xl border border-slate-100 bg-slate-50 p-5 shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Key takeaway</p>
+                    <h3 className="text-base font-semibold text-slate-900 mb-2">{card.heading}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{card.summary}</p>
+                    <button
+                      onClick={() => scrollToSection(card.index)}
+                      className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:text-primaryHover"
+                    >
+                      Jump to section <ArrowRight size={14} className="ml-1" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="space-y-6">
+              {sections.map((section, idx) => {
+                const isExpanded = expandedSections.has(idx);
+                const paragraphs = isExpanded ? section.content : section.content.slice(0, PREVIEW_PARAGRAPHS);
+
+                return (
+                  <section
+                    key={idx}
+                    id={`section-${idx}`}
+                    className="rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden"
+                  >
+                    <div className="px-6 md:px-8 py-6 border-b border-slate-100 bg-slate-50/60">
+                      <div className="flex items-center gap-3">
+                        <span className={`flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold ${
+                          viewedIndices.has(idx) ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500'
+                        }`}>
                           {viewedIndices.has(idx) ? <Check size={16} /> : idx + 1}
-                       </span>
-                       <h2 className={`text-xl md:text-2xl font-bold transition-colors ${
-                         openIndex === idx ? 'text-slate-900' : 'text-slate-700'
-                       }`}>
-                         {section.heading}
-                       </h2>
-                     </div>
-                     <div className={`p-2 rounded-full transition-all duration-300 ${
-                       openIndex === idx ? 'bg-primary/10 text-primary rotate-180' : 'text-slate-400 bg-slate-50'
-                     }`}>
-                        <ChevronDown size={20} />
-                     </div>
-                   </button>
-                   
-                   <div 
-                      className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                        openIndex === idx ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}
-                   >
-                      <div className="p-6 md:p-8 pt-0 prose prose-slate max-w-none prose-lg text-slate-600 leading-relaxed border-t border-dashed border-slate-100 mt-2">
-                         {section.content.map((paragraph, pIdx) => (
-                           <p key={pIdx} className="mb-4 last:mb-0">{paragraph}</p>
-                         ))}
+                        </span>
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-semibold text-slate-900">{section.heading}</h3>
+                          <p className="text-sm text-slate-500">Practical guidance from our restoration team.</p>
+                        </div>
                       </div>
-                   </div>
-                 </div>
-               ))}
-             </div>
+                    </div>
+
+                    <div className="px-6 md:px-8 py-6 prose prose-slate max-w-none prose-lg text-slate-600 leading-relaxed">
+                      {paragraphs.map((paragraph, pIdx) => (
+                        <p key={pIdx} className="mb-4 last:mb-0">{paragraph}</p>
+                      ))}
+                    </div>
+
+                    {section.content.length > PREVIEW_PARAGRAPHS && (
+                      <div className="px-6 md:px-8 pb-6">
+                        <button
+                          onClick={() => handleToggle(idx)}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primaryHover"
+                        >
+                          {isExpanded ? 'Show less' : 'Read full section'}
+                          <ArrowRight size={14} />
+                        </button>
+                      </div>
+                    )}
+                  </section>
+                );
+              })}
+            </div>
           </div>
         </div>
-
+        </div>
       </div>
     </section>
   );

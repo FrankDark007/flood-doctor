@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import Button from '../components/ui/Button';
+import { generateContactPageSchema } from '../utils/schema';
+import { RESPONSE_TIME } from '../config/constants';
 
 /**
  * RequestService - Multi-Step Form (contact-c layout)
@@ -136,6 +138,7 @@ const RequestService: React.FC = () => {
       <PageMeta
         title="Request Service | Flood Doctor Water Damage Restoration"
         description="Request water damage restoration service from Flood Doctor. 24/7 emergency response in Northern Virginia."
+        schema={generateContactPageSchema()}
       />
 
       {/* Header */}
@@ -146,7 +149,7 @@ const RequestService: React.FC = () => {
               <h1 className="font-display text-2xl font-semibold text-text">
                 Request Service
               </h1>
-              <p className="text-sm text-muted">24/7 Emergency • Direct Insurance Billing</p>
+              <p className="text-sm text-muted">24/7 Emergency • {RESPONSE_TIME.display} • Direct Insurance Billing</p>
             </div>
             <a
               href="tel:8774970007"
@@ -366,6 +369,7 @@ const RequestService: React.FC = () => {
                             </label>
                             <input
                               type="text"
+                              autoComplete="name"
                               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                               placeholder="John Smith"
                               value={formData.name}
@@ -378,6 +382,8 @@ const RequestService: React.FC = () => {
                             </label>
                             <input
                               type="tel"
+                              autoComplete="tel"
+                              inputMode="tel"
                               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                               placeholder="(555) 123-4567"
                               value={formData.phone}
@@ -392,6 +398,7 @@ const RequestService: React.FC = () => {
                           </label>
                           <input
                             type="email"
+                            autoComplete="email"
                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                             placeholder="john@example.com"
                             value={formData.email}
@@ -405,6 +412,7 @@ const RequestService: React.FC = () => {
                           </label>
                           <input
                             type="text"
+                            autoComplete="street-address"
                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                             placeholder="123 Main St"
                             value={formData.address}
@@ -419,6 +427,7 @@ const RequestService: React.FC = () => {
                             </label>
                             <input
                               type="text"
+                              autoComplete="address-level2"
                               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                               placeholder="Fairfax"
                               value={formData.city}
@@ -431,6 +440,8 @@ const RequestService: React.FC = () => {
                             </label>
                             <input
                               type="text"
+                              autoComplete="postal-code"
+                              inputMode="numeric"
                               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                               placeholder="22030"
                               value={formData.zip}

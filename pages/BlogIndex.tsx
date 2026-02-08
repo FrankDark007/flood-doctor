@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
+import { combineSchemas, generateBreadcrumbSchema, generateOrganizationSchema } from '../utils/schema';
 import { Clock, ArrowRight, Phone } from 'lucide-react';
 import { BLOG_ARTICLES, getCategories } from '../data/blog-articles';
 
@@ -46,6 +47,10 @@ const BlogIndex: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration Blog | Expert Guides & Prevention Tips"
         description="Expert guides on water damage restoration, mold prevention, insurance claims, and home protection. Written by IICRC-certified professionals serving Northern Virginia since 2009."
+        schema={combineSchemas(
+          generateBreadcrumbSchema([{ label: 'Blog', path: '/blog/' }]),
+          generateOrganizationSchema()
+        )}
       />
 
       {/* Hero Section - Google Style */}
@@ -110,6 +115,8 @@ const BlogIndex: React.FC = () => {
                     src={getImageForCategory(article.category)}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute bottom-4 left-4">
                     <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-[12px] font-medium text-[#202124]">

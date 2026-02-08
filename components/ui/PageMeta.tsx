@@ -12,6 +12,7 @@ interface PageMetaProps {
   type?: 'website' | 'article';
   schema?: Record<string, any>; // Support for JSON-LD
   structuredData?: Record<string, any>; // Alias for schema
+  noIndex?: boolean;
 }
 
 const PageMeta: React.FC<PageMetaProps> = ({
@@ -20,10 +21,14 @@ const PageMeta: React.FC<PageMetaProps> = ({
   image = `${siteConfig.SITE_URL}/og-image-default.jpg`,
   type = 'website',
   schema,
-  structuredData
+  structuredData,
+  noIndex = false
 }) => {
   const finalSchema = structuredData || schema;
   const location = useLocation();
+  const normalizedTitle = title.trim();
+  const hasBrand = normalizedTitle.toLowerCase().includes('flood doctor');
+  const fullTitle = hasBrand ? normalizedTitle : `${normalizedTitle} | Flood Doctor`;
 
   // Use current origin for subdomains (e.g., https://mclean.flood.doctor)
   const baseUrl = getCanonicalBase();
@@ -46,7 +51,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
 
   useEffect(() => {
     // 1. Update Document Title
-    document.title = `${title} | Flood Doctor`;
+    document.title = fullTitle;
 
     // 2. Helper to set meta tags
     const setMetaTag = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
@@ -61,6 +66,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
 
     // 3. Standard SEO
     setMetaTag('description', description);
+    setMetaTag('robots', noIndex ? 'noindex, nofollow' : 'index, follow');
 
     // 4. Canonical Link
     let link = document.querySelector('link[rel="canonical"]');
@@ -72,7 +78,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
     link.setAttribute('href', canonicalUrl);
 
     // 5. Open Graph (Facebook/LinkedIn)
-    setMetaTag('og:title', title, 'property');
+    setMetaTag('og:title', fullTitle, 'property');
     setMetaTag('og:description', description, 'property');
     setMetaTag('og:url', canonicalUrl, 'property');
     setMetaTag('og:type', type, 'property');
@@ -81,13 +87,14 @@ const PageMeta: React.FC<PageMetaProps> = ({
 
     // 6. Twitter Card
     setMetaTag('twitter:card', 'summary_large_image');
-    setMetaTag('twitter:title', title);
+    setMetaTag('twitter:title', fullTitle);
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', image);
 
     // 7. JSON-LD Schema
+    const existingSchema = document.getElementById('json-ld-schema');
     if (finalSchema) {
-      let script = document.getElementById('json-ld-schema');
+      let script = existingSchema;
       if (!script) {
         script = document.createElement('script');
         script.id = 'json-ld-schema';
@@ -95,19 +102,11 @@ const PageMeta: React.FC<PageMetaProps> = ({
         document.head.appendChild(script);
       }
       script.textContent = JSON.stringify(finalSchema);
+    } else if (existingSchema) {
+      existingSchema.remove();
     }
 
-    // Cleanup schema on unmount if it exists, to avoid pollution on other pages
-    return () => {
-      if (finalSchema) {
-        const script = document.getElementById('json-ld-schema');
-        if (script) {
-          script.textContent = ''; // Clear or remove
-        }
-      }
-    };
-
-  }, [title, description, canonicalUrl, image, type, finalSchema]);
+  }, [fullTitle, description, canonicalUrl, image, type, finalSchema, noIndex]);
 
   return null;
 };

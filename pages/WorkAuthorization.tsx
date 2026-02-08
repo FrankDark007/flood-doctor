@@ -1581,6 +1581,7 @@ const WorkAuthorization: React.FC = () => {
         <PageMeta
           title="Contract Signed | Flood Doctor"
           description="Thank you for signing the Work Authorization contract."
+          noIndex={true}
         />
         <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
           <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
@@ -1611,6 +1612,7 @@ const WorkAuthorization: React.FC = () => {
       <PageMeta
         title="Work Authorization Contract | Flood Doctor"
         description="Review and sign the Flood Doctor service contract and work authorization."
+        noIndex={true}
       />
 
       <div className="min-h-screen bg-slate-100">
