@@ -641,8 +641,8 @@ const AppLayout: React.FC = () => {
                 <Route path="litho-3/" element={<LithoDev3 />} />
                 <Route path="gemini-water-damage/" element={<GeminiWaterDamage />} />
                 <Route path="gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
-                {/* Google Business Profile Clone Dev */}
-                <Route path="google-home-clone/" element={<GoogleHomeCloneDev />} />
+                {/* Google Business Profile Clone Dev - disabled (file removed) */}
+                {/* <Route path="google-home-clone/" element={<GoogleHomeCloneDev />} /> */}
                 {/* Note: gbp-clone-v3 is handled as fullscreen route in AppLayout */}
                 {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
                 <Route path="service-detail-1/" element={<ServiceDetailDev1 />} />

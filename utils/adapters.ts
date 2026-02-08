@@ -222,10 +222,9 @@ import { getServicePageOverride } from '../data/servicePageOverrides';
  * Default quick facts for service pages
  */
 const DEFAULT_QUICK_FACTS: QuickFact[] = [
-  { label: 'Response Time', value: '< 60 Mins', icon: 'Timer' },
-  { label: 'Service Area', value: 'NoVA & DC', icon: 'MapPin' },
-  { label: 'Guarantee', value: '100% Satisfied', icon: 'ThumbsUp' },
-  { label: 'Availability', value: '24/7/365', icon: 'CalendarClock' },
+  { label: 'Our crews arrive fast when water damage strikes, day or night.', value: '60-Minute Response', icon: 'Clock' },
+  { label: 'Full repair services from a bonded, insured Virginia Class A contractor.', value: 'Licensed Contractor', icon: 'Shield' },
+  { label: 'We handle the claims process and bill your carrier directly.', value: 'Direct Insurance Billing', icon: 'FileCheck' },
 ];
 
 /**
@@ -452,8 +451,8 @@ export function adaptServiceToPageData(
 
   // Build default page data
   const pageData: ServicePageData = {
-    title: service.heroHeading || `24/7 ${service.title}`,
-    subtitle: service.heroIntro || service.shortDescription || `Professional ${service.title.toLowerCase()} services${locationSuffix}. We respond within 60 minutes.`,
+    title: service.heroHeading || service.title,
+    subtitle: service.heroIntro || service.shortDescription || `IICRC-certified technicians onsite in 60 minutes, 24/7. Direct insurance billing.`,
     emergencyPhone,
     badges: DEFAULT_BADGES,
     quickFacts: DEFAULT_QUICK_FACTS,

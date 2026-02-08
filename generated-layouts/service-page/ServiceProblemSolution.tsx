@@ -30,8 +30,6 @@ const ServiceProblemSolution: React.FC<ServiceProblemSolutionProps> = ({ data })
               ))}
             </ul>
 
-            {/* Visual styling element */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -mr-4 -mt-4 opacity-50 z-0 pointer-events-none"></div>
           </div>
 
           {/* Solution Column */}
@@ -56,8 +54,6 @@ const ServiceProblemSolution: React.FC<ServiceProblemSolutionProps> = ({ data })
               ))}
             </ul>
 
-            {/* Visual styling element */}
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-100 rounded-tl-full opacity-50 -mr-4 -mb-4 z-0 pointer-events-none"></div>
           </div>
         </div>
       </div>

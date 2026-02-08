@@ -40,8 +40,8 @@ export interface ServicePageOverride {
 const waterDamageOverride: ServicePageOverride = {
   slug: 'water-damage-restoration',
 
-  title: 'Water Damage Restoration in Fairfax & Northern Virginia',
-  subtitle: "Water damage doesn't wait for convenient times. Whether from a burst pipe, appliance failure, sewage backup, or storm flooding, water intrusion causes progressive damage within hours. Flood Doctor provides comprehensive water damage restoration throughout Fairfax County, Northern Virginia, Washington DC, and Maryland. Our IICRC-certified technicians respond 24/7, arriving within 60 minutes with professional equipment. Free damage assessment. Direct insurance billing.",
+  title: 'Water Damage Restoration',
+  subtitle: '24/7 emergency water extraction, structural drying, and water damage repair. IICRC-certified water mitigation specialists with 60-minute response and direct insurance billing.',
 
   badges: [
     { text: '60-Min Onsite', icon: 'Clock' },
@@ -50,10 +50,9 @@ const waterDamageOverride: ServicePageOverride = {
   ],
 
   quickFacts: [
-    { label: 'Response Time', value: '< 60 Mins', icon: 'Timer' },
-    { label: 'Service Area', value: 'NoVA & DC', icon: 'MapPin' },
-    { label: 'Guarantee', value: '100% Satisfied', icon: 'ThumbsUp' },
-    { label: 'Availability', value: '24/7/365', icon: 'CalendarClock' },
+    { label: 'Our crews arrive fast when water damage strikes, day or night.', value: '60-Minute Response', icon: 'Clock' },
+    { label: 'Full repair services from a bonded, insured Virginia Class A contractor.', value: 'Licensed Contractor', icon: 'Shield' },
+    { label: 'We handle the claims process and bill your carrier directly.', value: 'Direct Insurance Billing', icon: 'FileCheck' },
   ],
 
   problemSolution: {

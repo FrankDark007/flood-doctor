@@ -124,7 +124,7 @@ const RestonWaterDamage: React.FC = () => {
                   Call Now: (877) 497-0007
                 </a>
                 <a href="#contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1a73e8] transition">
-                  Get Free Quote
+                  Request Service
                 </a>
               </div>
               <p className="mt-6 text-blue-100">
