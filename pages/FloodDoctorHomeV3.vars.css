@@ -1,0 +1,145 @@
+/**
+ * FloodDoctorHomeV3 Design Tokens
+ * Based on Google Business Profile / Material Design 3 patterns
+ * All selectors scoped under .fd-home-v3
+ */
+
+/* ========================================
+   FONT FACE DECLARATIONS
+   ======================================== */
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Variable-Italic.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (TOKENS)
+   ======================================== */
+
+.fd-home-v3 {
+  /* Colors - Primary */
+  --fd-color-primary: #1a73e8;
+  --fd-color-primary-hover: #1557b0;
+  --fd-color-primary-active: #174ea6;
+  --fd-color-on-primary: #ffffff;
+
+  /* Colors - Surface */
+  --fd-color-surface: #ffffff;
+  --fd-color-surface-variant: #f8f9fa;
+  --fd-color-on-surface: #202124;
+  --fd-color-on-surface-variant: #5f6368;
+
+  /* Colors - Semantic */
+  --fd-color-error: #d93025;
+  --fd-color-success: #1e8e3e;
+  --fd-color-warning: #f9ab00;
+
+  /* Colors - Border */
+  --fd-color-outline: #dadce0;
+  --fd-color-outline-variant: #e8eaed;
+
+  /* Typography - Font Family */
+  --fd-font-display: 'Plus Jakarta Sans', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fd-font-body: 'Plus Jakarta Sans', 'Google Sans Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography - Font Sizes */
+  --fd-text-xs: 0.75rem;    /* 12px */
+  --fd-text-sm: 0.875rem;   /* 14px */
+  --fd-text-base: 1rem;     /* 16px */
+  --fd-text-lg: 1.125rem;   /* 18px */
+  --fd-text-xl: 1.25rem;    /* 20px */
+  --fd-text-2xl: 1.5rem;    /* 24px */
+  --fd-text-3xl: 1.875rem;  /* 30px */
+  --fd-text-4xl: 2.25rem;   /* 36px */
+  --fd-text-5xl: 3rem;      /* 48px */
+
+  /* Typography - Line Heights */
+  --fd-leading-tight: 1.25;
+  --fd-leading-snug: 1.375;
+  --fd-leading-normal: 1.5;
+  --fd-leading-relaxed: 1.625;
+
+  /* Typography - Font Weights */
+  --fd-font-normal: 400;
+  --fd-font-medium: 500;
+  --fd-font-semibold: 600;
+  --fd-font-bold: 700;
+
+  /* Spacing */
+  --fd-space-0: 0;
+  --fd-space-1: 0.25rem;    /* 4px */
+  --fd-space-2: 0.5rem;     /* 8px */
+  --fd-space-3: 0.75rem;    /* 12px */
+  --fd-space-4: 1rem;       /* 16px */
+  --fd-space-5: 1.25rem;    /* 20px */
+  --fd-space-6: 1.5rem;     /* 24px */
+  --fd-space-8: 2rem;       /* 32px */
+  --fd-space-10: 2.5rem;    /* 40px */
+  --fd-space-12: 3rem;      /* 48px */
+  --fd-space-16: 4rem;      /* 64px */
+  --fd-space-20: 5rem;      /* 80px */
+  --fd-space-24: 6rem;      /* 96px */
+
+  /* Border Radius */
+  --fd-radius-sm: 0.25rem;  /* 4px */
+  --fd-radius-md: 0.5rem;   /* 8px */
+  --fd-radius-lg: 1rem;     /* 16px */
+  --fd-radius-xl: 1.5rem;   /* 24px */
+  --fd-radius-full: 9999px;
+
+  /* Shadows */
+  --fd-shadow-sm: 0 1px 2px 0 rgb(60 64 67 / 0.3), 0 1px 3px 1px rgb(60 64 67 / 0.15);
+  --fd-shadow-md: 0 1px 3px 0 rgb(60 64 67 / 0.3), 0 4px 8px 3px rgb(60 64 67 / 0.15);
+  --fd-shadow-lg: 0 4px 8px 3px rgb(60 64 67 / 0.15), 0 1px 3px rgb(60 64 67 / 0.3);
+
+  /* Transitions */
+  --fd-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fd-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fd-transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout - Max Widths */
+  --fd-max-width-sm: 640px;
+  --fd-max-width-md: 768px;
+  --fd-max-width-lg: 1024px;
+  --fd-max-width-xl: 1280px;
+  --fd-max-width-2xl: 1440px;
+
+  /* Layout - Container Padding */
+  --fd-container-padding-mobile: var(--fd-space-4);
+  --fd-container-padding-tablet: var(--fd-space-6);
+  --fd-container-padding-desktop: var(--fd-space-8);
+
+  /* Header Specific */
+  --fd-header-height: 64px;
+  --fd-header-height-mobile: 56px;
+  --fd-header-bg: var(--fd-color-surface);
+  --fd-header-border: var(--fd-color-outline);
+
+  /* Z-Index Scale */
+  --fd-z-dropdown: 100;
+  --fd-z-sticky: 200;
+  --fd-z-drawer: 300;
+  --fd-z-modal: 400;
+  --fd-z-toast: 500;
+}
+
+/* ========================================
+   BREAKPOINT REFERENCE (for JS/comments)
+   Mobile: < 768px
+   Tablet: 768px - 1023px
+   Desktop: >= 1024px
+   Large: >= 1280px
+   XLarge: >= 1440px
+   ======================================== */

@@ -1,0 +1,24 @@
+/*
+ * See: https://fonts.google.com/license/googlerestricted
+ */
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts.gstatic.com/s/googlesymbols/v392/HhyqU5Ak9u-oMExPeInvcuEmPosC9zS3FYkFU68cPrjdKM1pSPywlmmzc_ohWvF1R4oJxQmdBnv3Ceyl9mm4Tw.woff2) format('woff2');
+}
+
+.google-symbols {
+  font-family: 'Google Symbols';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}

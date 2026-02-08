@@ -1,0 +1,94 @@
+/*
+ * See: https://fonts.google.com/license/googlerestricted
+ */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesans/v67/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvbQoi-E.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesans/v67/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvbQoi-E.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesans/v67/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvbQoi-E.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesansdisplay/v22/ea8FacM9Wef3EJPWRrHjgE4B6CnlZxHVDv79oT3ZQZQ.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesansdisplay/v22/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBg3etBD7TL5-PQE.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesansdisplay/v22/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBkXYtBD7TL5-PQE.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUo9-KzpRiLCAt4Unrc-xIKmCU5qE9GiU9GmRGyBQ.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUr9-KzpRiLCAt4Unrc-xIKmCU5qE9OemxTtDO_L571QA.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUr9-KzpRiLCAt4Unrc-xIKmCU5qE9OMmpTtDO_L571QA.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUu9-KzpRiLCAt4Unrc-xIKmCU5qEp2i0VBuxM.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUp9-KzpRiLCAt4Unrc-xIKmCU5oLlVnmhjtjm4DZw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/googlesanstext/v24/5aUp9-KzpRiLCAt4Unrc-xIKmCU5oPFTnmhjtjm4DZw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/productsans/v20/pxiDypQkot1TnFhsFMOfGShVF9eOYktMqg.woff2) format('woff2');
+}

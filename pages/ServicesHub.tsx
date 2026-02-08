@@ -1,6 +1,6 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Phone,
   ArrowRight,
@@ -43,20 +43,10 @@ interface AnimatedSectionProps {
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className = '', id }) => {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <motion.section
-      ref={ref}
-      id={id}
-      className={className}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.6 }}
-    >
+    <section id={id} className={className}>
       {children}
-    </motion.section>
+    </section>
   );
 };
 
@@ -66,24 +56,15 @@ interface AnimatedSectionHeaderProps {
 }
 
 const AnimatedSectionHeader: React.FC<AnimatedSectionHeaderProps> = ({ title, subtitle }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <motion.div
-      ref={ref}
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: googleEase }}
-    >
+    <div className="text-center mb-12">
       <h2 className="text-[36px] lg:text-[44px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-4">
         {title}
       </h2>
       <p className="text-[18px] text-[#5f6368] max-w-2xl mx-auto">
         {subtitle}
       </p>
-    </motion.div>
+    </div>
   );
 };
 
@@ -113,58 +94,41 @@ const AnimatedServiceCardGrid: React.FC<AnimatedServiceCardGridProps> = ({
   iconColor = 'text-[#1a73e8]',
   columns = 3
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-
   const gridCols = columns === 2 ? 'md:grid-cols-2' :
                    columns === 4 ? 'md:grid-cols-2 lg:grid-cols-4' :
                    'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <motion.div
-      ref={ref}
-      className={`grid ${gridCols} gap-6`}
-    >
-      {services.map((service, idx) => {
+    <div className={`grid ${gridCols} gap-6`}>
+      {services.map((service) => {
         const ServiceIcon = service.icon;
         return (
-          <motion.div
+          <div
             key={service.id}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: idx * 0.1, ease: googleEase }}
-            whileHover={{
-              y: -8,
-              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)',
-              transition: { duration: 0.3 }
-            }}
+            className="transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
             <Link
               to={service.link}
-              className={`group bg-white rounded-2xl overflow-hidden block h-full ${variant === 'icon' ? 'p-6 lg:p-8 border border-[#dadce0] hover:border-[#1a73e8]' : ''}`}
+              className={`group bg-white rounded-2xl overflow-hidden block h-full ${variant === 'icon' ? 'p-6 lg:p-8 border border-[#dadce0] hover:border-[#1a73e8]' : 'shadow-md'}`}
             >
               {/* Image for image variant */}
               {variant === 'image' && service.image && (
                 <div className="aspect-[16/10] overflow-hidden">
-                  <motion.img
+                  <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.4 }}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               )}
               {/* Content */}
               <div className={variant === 'image' ? 'p-6' : ''}>
                 <div className="flex items-center gap-3 mb-3">
-                  <motion.div
+                  <div
                     className={`w-10 h-10 rounded-lg ${iconBgColor} flex items-center justify-center ${variant === 'icon' ? 'w-12 h-12 rounded-xl mb-5' : ''}`}
-                    whileHover={{ scale: 1.15, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
                   >
                     <ServiceIcon className={iconColor} size={variant === 'icon' ? 24 : 20} />
-                  </motion.div>
+                  </div>
                   {variant === 'image' && service.subtitle && (
                     <span className="text-[12px] text-[#5f6368] uppercase tracking-wide">{service.subtitle}</span>
                   )}
@@ -175,19 +139,16 @@ const AnimatedServiceCardGrid: React.FC<AnimatedServiceCardGridProps> = ({
                 <p className="text-[14px] text-[#5f6368] mb-4 line-clamp-2">
                   {service.description}
                 </p>
-                <motion.span
-                  className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium"
-                  whileHover={{ x: 4 }}
-                >
+                <span className="inline-flex items-center text-[#1a73e8] text-[14px] font-medium">
                   Learn more
                   <ArrowRight size={16} className="ml-1" />
-                </motion.span>
+                </span>
               </div>
             </Link>
-          </motion.div>
+          </div>
         );
       })}
-    </motion.div>
+    </div>
   );
 };
 
@@ -204,67 +165,33 @@ interface AnimatedTestimonialSectionProps {
 }
 
 const AnimatedTestimonialSection: React.FC<AnimatedTestimonialSectionProps> = ({ testimonial }) => {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <motion.section
-      ref={ref}
-      className="py-16 lg:py-20 bg-white"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.6 }}
-    >
+    <section className="py-16 lg:py-20 bg-white">
       <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
         <div className="text-center">
-          <motion.div
-            className="flex justify-center gap-1 mb-6"
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : {}}
-            transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
-          >
+          <div className="flex justify-center gap-1 mb-6">
             {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                transition={{ delay: 0.3 + i * 0.08, type: 'spring' }}
-              >
-                <Star className="text-[#fbbc04] fill-[#fbbc04]" size={20} />
-              </motion.div>
+              <Star key={i} className="text-[#fbbc04] fill-[#fbbc04]" size={20} />
             ))}
-          </motion.div>
-          <motion.blockquote
-            className="text-[24px] lg:text-[28px] font-normal text-[#202124] leading-[1.4] mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.6, ease: googleEase }}
-          >
+          </div>
+          <blockquote className="text-[24px] lg:text-[28px] font-normal text-[#202124] leading-[1.4] mb-8">
             "{testimonial.quote}"
-          </motion.blockquote>
-          <motion.div
-            className="text-[16px] text-[#5f6368]"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5 }}
-          >
+          </blockquote>
+          <div className="text-[16px] text-[#5f6368]">
             <span className="font-medium text-[#202124]">{testimonial.author}</span>
             <span className="mx-2">·</span>
             <span>{testimonial.role}</span>
             <span className="mx-2">·</span>
             <span>{testimonial.location}</span>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-// Animated Trust Section
+// Trust Section
 const AnimatedTrustSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   const badges = [
     { icon: Clock, title: '60-minute response', description: 'Guaranteed' },
     { icon: Shield, title: 'IICRC certified', description: 'Industry standard' },
@@ -273,209 +200,109 @@ const AnimatedTrustSection: React.FC = () => {
   ];
 
   return (
-    <motion.section
-      ref={ref}
-      className="py-12 bg-[#f8f9fa] border-y border-[#dadce0]"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.6 }}
-    >
+    <section className="py-12 bg-[#f8f9fa] border-y border-[#dadce0]">
       <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {badges.map((badge, idx) => (
-            <motion.div
-              key={idx}
-              className="flex items-start gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: googleEase }}
-              whileHover={{ y: -4 }}
-            >
-              <motion.div
-                className="w-10 h-10 rounded-lg bg-white border border-[#dadce0] flex items-center justify-center flex-shrink-0"
-                whileHover={{ scale: 1.1, borderColor: '#1a73e8' }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
+            <div key={idx} className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-white border border-[#dadce0] flex items-center justify-center flex-shrink-0">
                 <badge.icon className="text-[#1a73e8]" size={20} />
-              </motion.div>
+              </div>
               <div>
                 <div className="text-[14px] font-medium text-[#202124]">{badge.title}</div>
                 <div className="text-[12px] text-[#5f6368]">{badge.description}</div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-// Animated Bottom CTA Section
+// Bottom CTA Section
 const AnimatedBottomCTA: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <motion.section
-      ref={ref}
-      className="py-20 lg:py-28 bg-[#1a73e8] relative overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"
-        animate={{ x: [-50, 50, -50], y: [-30, 30, -30] }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-        animate={{ x: [50, -50, 50], y: [30, -30, 30] }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-      />
-
+    <section className="py-20 lg:py-28 bg-[#1a73e8] relative overflow-hidden">
       <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center relative z-10">
-        <motion.h2
-          className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease: googleEase }}
-        >
+        <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
           Ready to get started?
-        </motion.h2>
-        <motion.p
-          className="text-[18px] text-white/80 mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2, ease: googleEase }}
-        >
+        </h2>
+        <p className="text-[18px] text-white/80 mb-10">
           Free assessments. 60-minute response. Direct insurance billing.
-        </motion.p>
+        </p>
         {/* CTA Buttons */}
-        <motion.div
-          className="hidden lg:flex flex-row justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <motion.a
+        <div className="hidden lg:flex flex-row justify-center gap-4">
+          <a
             href="tel:8774970007"
             className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
           >
             <Phone size={18} className="mr-2" />
             (877) 497-0007
-          </motion.a>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              to="/request/"
-              className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
-            >
-              Request estimate
-            </Link>
-          </motion.div>
-        </motion.div>
+          </a>
+          <Link
+            to="/request/"
+            className="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white font-medium px-8 h-12 rounded-full transition-colors"
+          >
+            Request estimate
+          </Link>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-// Animated Cross-sell Section
+// Cross-sell Section
 interface AnimatedCrossSellSectionProps {
   isCommercial: boolean;
   serviceImages: Record<string, string>;
 }
 
 const AnimatedCrossSellSection: React.FC<AnimatedCrossSellSectionProps> = ({ isCommercial, serviceImages }) => {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <motion.section
-      ref={ref}
-      className="py-20 lg:py-28 bg-white"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.6 }}
-    >
+    <section className="py-20 lg:py-28 bg-white">
       <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <motion.div
-            className="order-2 lg:order-1"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: googleEase }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <motion.div
-              className="aspect-[4/3] rounded-2xl overflow-hidden"
-              whileHover={{ boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)' }}
-            >
+          <div className="order-2 lg:order-1">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={isCommercial ? serviceImages.residential : serviceImages.commercial}
                 alt={isCommercial ? 'Residential services' : 'Commercial services'}
                 className="w-full h-full object-cover"
               />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            className="order-1 lg:order-2"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.15, ease: googleEase }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f8f9fa] text-[#5f6368] text-sm mb-6"
-              whileHover={{ scale: 1.05 }}
-            >
+          <div className="order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f8f9fa] text-[#5f6368] text-sm mb-6">
               {isCommercial ? <Home size={14} /> : <Briefcase size={14} />}
               {isCommercial ? 'For Homeowners' : 'For Business'}
-            </motion.div>
+            </div>
 
-            <motion.h2
-              className="text-[32px] lg:text-[40px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
-            >
+            <h2 className="text-[32px] lg:text-[40px] font-normal text-[#202124] leading-[1.2] tracking-[-0.25px] mb-6">
               {isCommercial ? 'Residential restoration' : 'Commercial restoration'}
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              className="text-[18px] text-[#5f6368] leading-[1.6] mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 }}
-            >
+            <p className="text-[18px] text-[#5f6368] leading-[1.6] mb-8">
               {isCommercial
                 ? 'Expert home restoration with the same quality and care. 24/7 emergency response for homeowners throughout Northern Virginia.'
                 : 'Enterprise-grade restoration with minimal business disruption. HIPAA-compliant, OSHA-certified, and equipped for facilities of any size.'
               }
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.4 }}
-              whileHover={{ x: 8 }}
+            <Link
+              to={isCommercial ? '/services/residential/' : '/services/commercial/'}
+              className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
             >
-              <Link
-                to={isCommercial ? '/services/residential/' : '/services/commercial/'}
-                className="inline-flex items-center text-[#1a73e8] font-medium hover:underline"
-              >
-                {isCommercial ? 'View residential services' : 'View commercial services'}
-                <ArrowRight size={18} className="ml-2" />
-              </Link>
-            </motion.div>
-          </motion.div>
+              {isCommercial ? 'View residential services' : 'View commercial services'}
+              <ArrowRight size={18} className="ml-2" />
+            </Link>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

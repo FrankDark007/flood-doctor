@@ -4,7 +4,7 @@
  * Route: /dev/generated-layouts/
  */
 import React, { useState, Suspense, lazy } from 'react';
-import { ChevronDown, ChevronRight, Eye, EyeOff } from 'lucide-react';
+import { ChevronDown, ChevronRight, Eye, EyeOff, Droplets, Wind, Bug, Flame, Home, Building2 } from 'lucide-react';
 
 // Lazy load components to avoid loading everything at once
 const HeroInteractive = lazy(() => import('../generated-layouts/heroes/HeroInteractive'));
@@ -15,14 +15,36 @@ const CTAEmergency = lazy(() => import('../generated-layouts/ctas/CTAEmergency')
 const CTAGradient = lazy(() => import('../generated-layouts/ctas/CTAGradient'));
 const CTASplit = lazy(() => import('../generated-layouts/ctas/CTASplit'));
 
-const FAQAccordion = lazy(() => import('../generated-layouts/faqs/FAQAccordion').then(m => ({ default: m.FAQAccordion })));
-const FAQCards = lazy(() => import('../generated-layouts/faqs/FAQCards').then(m => ({ default: m.FAQCards })));
+const FAQAccordion = lazy(() => import('../generated-layouts/faqs/FAQAccordion'));
+const FAQCards = lazy(() => import('../generated-layouts/faqs/FAQCards'));
 
-const ServiceGridBento = lazy(() => import('../generated-layouts/service-grids/ServiceGridBento'));
-const ServiceGridStandard = lazy(() => import('../generated-layouts/service-grids/ServiceGridStandard'));
+const ServiceGridBentoBase = lazy(() => import('../generated-layouts/service-grids/ServiceGridBento'));
+const ServiceGridStandardBase = lazy(() => import('../generated-layouts/service-grids/ServiceGridStandard'));
 
-const TrustBadgeBar = lazy(() => import('../generated-layouts/trust-suite/TrustBadgeBar').then(m => ({ default: m.TrustBadgeBar })));
-const StatsGrid = lazy(() => import('../generated-layouts/trust-suite/StatsGrid').then(m => ({ default: m.StatsGrid })));
+// Sample services data for service grid components
+const sampleServices = [
+  { id: '1', title: 'Water Damage Restoration', description: 'Fast emergency response for flooding and water damage', details: 'Full details...', icon: Droplets, slug: 'water-damage' },
+  { id: '2', title: 'Mold Remediation', description: 'Professional mold removal and prevention services', details: 'Full details...', icon: Bug, slug: 'mold-remediation' },
+  { id: '3', title: 'Fire Damage Restoration', description: 'Complete fire and smoke damage restoration', details: 'Full details...', icon: Flame, slug: 'fire-damage' },
+  { id: '4', title: 'Storm Damage Repair', description: 'Emergency storm and wind damage services', details: 'Full details...', icon: Wind, slug: 'storm-damage' },
+  { id: '5', title: 'Residential Services', description: 'Home restoration and repair services', details: 'Full details...', icon: Home, slug: 'residential' },
+  { id: '6', title: 'Commercial Services', description: 'Business and commercial property restoration', details: 'Full details...', icon: Building2, slug: 'commercial' },
+];
+
+// Wrapper components that provide sample data
+const ServiceGridBento: React.FC = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <ServiceGridBentoBase services={sampleServices} onServiceClick={() => {}} />
+  </Suspense>
+);
+const ServiceGridStandard: React.FC = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <ServiceGridStandardBase services={sampleServices} onServiceClick={() => {}} />
+  </Suspense>
+);
+
+const TrustBadgeBar = lazy(() => import('../generated-layouts/trust-suite/TrustBadgeBar'));
+const StatsGrid = lazy(() => import('../generated-layouts/trust-suite/StatsGrid'));
 
 const ProcessTimeline = lazy(() => import('../generated-layouts/process/ProcessTimeline'));
 
@@ -98,7 +120,7 @@ function ComponentPreview({
   description
 }: {
   name: string;
-  Component: React.LazyExoticComponent<React.ComponentType<any>>;
+  Component: React.ComponentType<any> | React.LazyExoticComponent<React.ComponentType<any>>;
   description: string;
 }) {
   const [expanded, setExpanded] = useState(false);

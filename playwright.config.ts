@@ -12,6 +12,18 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
 
+  // Visual comparison settings
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixels: 100, // Allow small differences
+      threshold: 0.2, // 20% threshold for pixel comparison
+    },
+  },
+
+  // Snapshot output directory
+  snapshotDir: './e2e/snapshots',
+  snapshotPathTemplate: '{snapshotDir}/{testFileDir}/{testFileName}-{arg}{ext}',
+
   use: {
     baseURL: 'http://localhost:5173',
     trace: 'on-first-retry',
@@ -41,10 +53,10 @@ export default defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npm run dev',
+  webServer: process.env.SKIP_WEB_SERVER ? undefined : {
+    command: 'npm run dev -- --port 5173',
     url: 'http://localhost:5173',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     timeout: 120000,
   },
 });

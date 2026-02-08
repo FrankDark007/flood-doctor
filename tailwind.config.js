@@ -14,10 +14,30 @@ export default {
     extend: {
       fontFamily: {
         // 'Plus Jakarta Sans' is the closest free alternative to Google's "Product Sans"
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Roboto', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Product Sans', 'Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        product: ['Product Sans', 'Plus Jakarta Sans', 'Roboto', 'sans-serif'],
       },
       colors: {
+        // Google color palette
+        google: {
+          blue: '#1a73e8',
+          'blue-dark': '#1765cc',
+          'blue-light': '#d2e3fc',
+          'blue-pale': '#e8f0fe',
+          red: '#ea4335',
+          yellow: '#fbbc04',
+          'yellow-pale': '#fef7e0',
+          green: '#188038',
+          'green-light': '#e6f4ea',
+          gray: {
+            900: '#202124',
+            800: '#3c4043',
+            700: '#5f6368',
+            100: '#f8f9fa',
+            50: '#f1f3f4',
+          }
+        },
         // The specific "Google Blue" used in their consumer products
         primary: {
           DEFAULT: '#1a73e8',

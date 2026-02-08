@@ -1,0 +1,1 @@
+import{u as t,j as r}from"./city-BUeWJw5g.js";import e from"./RequestService-BuWgNQQX.js";import"./vendor-react-CXDalXnn.js";import"./vendor-icons-C8acxoOx.js";import"./PageMeta-xB164Ad9.js";const u=()=>(t(),r.jsx(e,{}));export{u as default};
