@@ -64,7 +64,7 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ serviceSlug, sectionTitle, it
           <div key={i} className="group relative flex flex-col">
 
             {/* Visual Card */}
-            <div className="bg-transparent rounded-[32px] overflow-hidden mb-6 aspect-square relative hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-transparent rounded-[32px] overflow-hidden mb-6 aspect-square relative">
                {/* Step Number Badge */}
                <div className="absolute top-4 left-4 z-20">
                   <span className={`flex items-center justify-center w-10 h-10 rounded-full text-lg font-bold shadow-sm ${phase.color}`}>
@@ -76,7 +76,7 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ serviceSlug, sectionTitle, it
                <img
                   src={phase.image}
                   alt={phase.title}
-                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                />
             </div>

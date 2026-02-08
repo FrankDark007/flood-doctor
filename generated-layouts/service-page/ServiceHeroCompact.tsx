@@ -41,6 +41,15 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
 
           {/* Left: Content */}
           <div>
+            {/* Availability indicator */}
+            <div className="flex items-center gap-2 text-sm text-[#5f6368] mb-6">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              </span>
+              <span>Technicians available now</span>
+            </div>
+
             {/* Headline — Google style: blue accent + dark */}
             <h1 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight leading-[1.15] mb-6">
               <span className="text-[#1a73e8]">{blueWords}</span>
@@ -52,7 +61,7 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
             </h2>
 
             {/* CTA — desktop only, mobile uses floating sticky */}
-            <div className="hidden md:block mb-8">
+            <div className="hidden md:block">
               <button
                 onClick={onCtaClick}
                 className="inline-flex items-center justify-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white h-14 px-10 rounded-full font-semibold text-lg transition-all"
@@ -60,15 +69,6 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
                 Request Service
                 <ChevronRight className="w-5 h-5" />
               </button>
-            </div>
-
-            {/* Availability indicator */}
-            <div className="flex items-center gap-2 text-sm text-[#5f6368]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-              </span>
-              <span>Technicians available now</span>
             </div>
           </div>
 
