@@ -68,7 +68,20 @@ const LithoDev3 = lazy(() => import('./pages/templates/dev/LithoDev3'));
 const GeminiWaterDamage = lazy(() => import('./pages/templates/dev/GeminiWaterDamage'));
 const GeminiWaterDamageV2 = lazy(() => import('./pages/templates/dev/GeminiWaterDamageV2'));
 
-// Dev prototypes removed - files no longer exist
+// Google Business Profile Clone (files removed — dev-only)
+// const GoogleHomeCloneDev = lazy(() => import('./pages/GoogleHomeCloneDev'));
+// const GbpCloneDevV3 = lazy(() => import('./pages/GbpCloneDevV3'));
+// const FloodDoctorHomeV3 = lazy(() => import('./pages/FloodDoctorHomeV3'));
+// const FloodDoctorHomeV3Parity = lazy(() => import('./pages/FloodDoctorHomeV3Parity'));
+// const GoogleBusinessProfileClone = lazy(() => import('./pages/GoogleBusinessProfileClone'));
+
+// Flood Doctor Home V4 - Google Business Profile inspired design
+const FloodDoctorHomeV4 = lazy(() => import('./pages/fd-home-v4'));
+
+// Keyword Planner Clone - GBP Clone V5 (files removed — dev-only)
+// const KeywordPlannerClone = lazy(() => import('./pages/gbp-clone-v5'));
+// const ServiceDetailTemplate = lazy(() => import('./pages/gbp-clone-v5/ServiceDetailTemplate'));
+// const ServiceTemplateV1 = lazy(() => import('./pages/service-template-v1'));
 
 const AboutDevA = lazy(() => import('./pages/AboutDevA'));
 const AboutDevB = lazy(() => import('./pages/AboutDevB'));
@@ -108,7 +121,8 @@ const VideoGenerator = lazy(() => import('./pages/VideoGenerator'));
 const ClientPortalDemo = lazy(() => import('./pages/ClientPortalDemo'));
 const VisualComponentsDemo = lazy(() => import('./pages/VisualComponentsDemo'));
 const GeneratedLayoutsLab = lazy(() => import('./pages/GeneratedLayoutsLab'));
-// VariantIndex and ComponentShowcase removed - files don't exist
+// const VariantIndex = lazy(() => import('./pages/VariantIndex')); // File removed
+// const ComponentShowcase = lazy(() => import('./pages/ComponentShowcase')); // File removed
 
 // Landing Page Templates
 const LandingPageA = lazy(() => import('./pages/templates/LandingPageA'));
@@ -322,15 +336,10 @@ const AppLayout: React.FC = () => {
     return (
       <Suspense fallback={<PageLoader />}>
         <Routes>
-          {/* Production homepage */}
-          <Route path="/" element={<Home />} />
+          {/* Production homepage - FloodDoctorHomeV4 (Google Business Profile inspired) */}
+          <Route path="/" element={<FloodDoctorHomeV4 />} />
 
-          {/* Dev-only routes - only registered in development */}
-          {isDev && (
-            <>
-              {/* Most dev prototypes removed - files no longer exist */}
-            </>
-          )}
+          {/* Dev-only routes - disabled (files removed from this copy) */}
         </Routes>
       </Suspense>
     );
@@ -595,7 +604,8 @@ const AppLayout: React.FC = () => {
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
               {/* Dev Routes - All noindexed via DevNoIndex wrapper */}
               <Route path="/dev" element={<DevNoIndex />}>
-                {/* VariantIndex removed - file doesn't exist */}
+                {/* <Route index element={<VariantIndex />} /> */}
+                {/* <Route path="variants/" element={<VariantIndex />} /> */}
                 <Route path="visual-components/" element={<VisualComponentsDemo />} />
                 <Route path="generated-layouts/" element={<GeneratedLayoutsLab />} />
                 {/* Dev Layout Previews */}
@@ -631,7 +641,9 @@ const AppLayout: React.FC = () => {
                 <Route path="litho-3/" element={<LithoDev3 />} />
                 <Route path="gemini-water-damage/" element={<GeminiWaterDamage />} />
                 <Route path="gemini-water-damage-v2/" element={<GeminiWaterDamageV2 />} />
-                {/* GoogleHomeCloneDev removed - file doesn't exist */}
+                {/* Google Business Profile Clone Dev */}
+                <Route path="google-home-clone/" element={<GoogleHomeCloneDev />} />
+                {/* Note: gbp-clone-v3 is handled as fullscreen route in AppLayout */}
                 {/* ServiceDetail Dev Layouts (10 variants for service pages) */}
                 <Route path="service-detail-1/" element={<ServiceDetailDev1 />} />
                 <Route path="service-detail-2/" element={<ServiceDetailDev2 />} />
@@ -643,7 +655,8 @@ const AppLayout: React.FC = () => {
                 <Route path="service-detail-8/" element={<ServiceDetailDev8 />} />
                 <Route path="service-detail-9/" element={<ServiceDetailDev9 />} />
                 <Route path="service-detail-10/" element={<ServiceDetailDev10 />} />
-                {/* ComponentShowcase removed - file doesn't exist */}
+                {/* Component Showcase - CTA and Service Grid variants */}
+                {/* <Route path="components/" element={<ComponentShowcase />} /> */}
                 {/* Landing Page Templates */}
                 <Route path="landing-a/" element={<LandingPageA />} />
                 <Route path="landing-b/" element={<LandingPageB />} />

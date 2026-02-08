@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Hero from '../components/sections/Hero';
 import PageMeta from '../components/ui/PageMeta';
-import { combineSchemas, generateBreadcrumbSchema, generateOrganizationSchema } from '../utils/schema';
 import { LOCATIONS, NEARBY_AREAS } from '../data/locations';
 import { LocationsHeroAnimation } from '../components/graphics';
 import { Search, MapPin, Phone, Globe, ArrowRight, Navigation } from 'lucide-react';
@@ -54,10 +53,6 @@ const LocationsHub: React.FC = () => {
       <PageMeta 
         title="Service Areas & Locations" 
         description="Serving Northern Virginia, DC, and Maryland. Rapid response teams stationed in Arlington, Fairfax, Ashburn, and surrounding areas." 
-        schema={combineSchemas(
-          generateBreadcrumbSchema([{ label: 'Locations', path: '/locations/' }]),
-          generateOrganizationSchema()
-        )}
       />
 
       {/* 1. Hero: Split Layout */}

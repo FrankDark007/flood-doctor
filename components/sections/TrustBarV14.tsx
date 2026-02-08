@@ -1,13 +1,12 @@
 import React from 'react';
-import { Clock, Award, ShieldCheck, FileCheck, Star } from 'lucide-react';
+import { Clock, Award, ShieldCheck, FileCheck } from 'lucide-react';
 
 const TrustBar: React.FC = () => {
   const trusts = [
     { label: "24/7 Rapid Response", icon: Clock },
     { label: "IICRC Certified", icon: Award },
     { label: "Licensed & Insured", icon: ShieldCheck },
-    { label: "Direct Insurance Billing", icon: FileCheck },
-    { label: "4.9★ Customer Rating", icon: Star }
+    { label: "Direct Insurance Billing", icon: FileCheck }
   ];
 
   return (

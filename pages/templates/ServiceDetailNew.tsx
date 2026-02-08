@@ -6,7 +6,6 @@ import ServiceAreaLinks from '../../components/sections/ServiceAreaLinks';
 import RelatedServices from '../../components/sections/RelatedServices';
 import { useFranchise } from '@/hooks/useFranchise';
 import { adaptServiceToPageData } from '../../utils/adapters';
-import { generateServicePageSchema } from '../../utils/schema';
 
 // Generated Layout Components
 import ServiceHeroCompact from '../../generated-layouts/service-page/ServiceHeroCompact';
@@ -39,21 +38,6 @@ interface ServiceDetailNewProps {
   service: ServiceData;
 }
 
-const CATEGORY_LABELS: Record<string, string> = {
-  services: 'Services',
-  residential: 'Residential Services',
-  commercial: 'Commercial Services',
-  'restoration-services': 'Restoration Services',
-  'cleanup-services': 'Cleanup Services',
-  'specialty-services': 'Specialty Services',
-  'technical-services': 'Technical Services',
-};
-
-const toTitleCase = (value: string) =>
-  value
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-
 const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
   const navigate = useNavigate();
   const [showStickyCTA, setShowStickyCTA] = useState(false);
@@ -80,38 +64,19 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
     ? `Professional ${serviceName.toLowerCase()} in ${cityName}, ${stateAbbr}. ${franchise.responseTime || '60-minute response'}. IICRC certified. Call ${emergencyPhone} for 24/7 emergency service.`
     : (service?.metaDescription || pageData.subtitle);
 
-  const slugParts = service.slug?.split('/').filter(Boolean) || [];
-  const breadcrumbs = [
-    { label: 'Home', path: '/' },
-  ];
-  let pathCursor = '';
-  slugParts.forEach((part, index) => {
-    pathCursor += `/${part}`;
-    const isLast = index === slugParts.length - 1;
-    if (isLast) {
-      return;
-    }
-    breadcrumbs.push({
-      label: CATEGORY_LABELS[part] || toTitleCase(part),
-      path: `${pathCursor}/`,
-    });
-  });
-  breadcrumbs.push({
-    label: serviceName,
-    path: service.slug || '',
-  });
-
-  const serviceSchema = generateServicePageSchema(
-    {
-      name: serviceName,
-      description: metaDescription,
-      slug: service.slug || '',
-      serviceType: service.primaryKeyword || service.category || serviceName,
-      areaServed: isLocalPage ? [cityName] : undefined,
-    },
-    breadcrumbs,
-    pageData.faqs
-  );
+  // FAQ Schema for SEO
+  const faqSchema = pageData.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": pageData.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : undefined;
 
   // Track when hero scrolls out of view to show sticky CTA
   useEffect(() => {
@@ -167,7 +132,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
       <PageMeta
         title={metaTitle}
         description={metaDescription}
-        schema={serviceSchema}
+        schema={faqSchema}
       />
 
       {/* Hero Section with V14 Visual */}
@@ -182,45 +147,17 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
         />
       </div>
 
-      {/* Section Navigation */}
-      <div className="sticky top-20 md:top-28 z-30 bg-white/95 backdrop-blur border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 py-3 overflow-x-auto no-scrollbar text-sm font-medium">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'process', label: 'Process' },
-              { id: 'guide', label: 'Full Guide' },
-              { id: 'faq', label: 'FAQs' },
-            ].map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="px-4 py-2 rounded-full border border-gray-200 text-gray-600 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-colors whitespace-nowrap"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Quick Facts Bar */}
-      <section id="overview" className="scroll-mt-32 md:scroll-mt-40">
-        <ServiceQuickFacts facts={pageData.quickFacts} />
-      </section>
+      <ServiceQuickFacts facts={pageData.quickFacts} />
 
       {/* Problem vs Solution Section */}
-      <section className="scroll-mt-32 md:scroll-mt-40">
-        <ServiceProblemSolution data={pageData.problemSolution} />
-      </section>
+      <ServiceProblemSolution data={pageData.problemSolution} />
 
       {/* Tabbed Content (Technology, Insurance, Team, Guarantee) */}
-      <section className="scroll-mt-32 md:scroll-mt-40">
-        <ServiceTabs tabs={pageData.tabs} />
-      </section>
+      <ServiceTabs tabs={pageData.tabs} />
 
       {/* V14 Process Section with Service-Specific Isometric Graphics */}
-      <section id="process" className="py-16 md:py-24 bg-white scroll-mt-32 md:scroll-mt-40">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* ProcessFlow now handles its own header with service-specific title */}
@@ -238,9 +175,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
             <div className="lg:col-span-8 space-y-12">
               {/* Detailed Content Sections (if available) */}
               {pageData.detailedContent.length > 0 && (
-                <section id="guide" className="scroll-mt-32 md:scroll-mt-40">
-                  <ServiceDetailedContent sections={pageData.detailedContent} />
-                </section>
+                <ServiceDetailedContent sections={pageData.detailedContent} />
               )}
 
               {/* Testimonials */}
@@ -250,13 +185,11 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
               <ServicePricing pricing={pageData.pricing} onCtaClick={handleCtaClick} />
 
               {/* V14 FAQ Section with Expand All */}
-              <section id="faq" className="scroll-mt-32 md:scroll-mt-40">
-                <GoogleStyleFAQ
-                  data={pageData.faqs}
-                  title="Frequently asked questions"
-                  className="py-8 bg-white rounded-2xl border border-gray-100"
-                />
-              </section>
+              <GoogleStyleFAQ
+                data={pageData.faqs}
+                title="Frequently asked questions"
+                className="py-8 bg-white rounded-2xl border border-gray-100"
+              />
             </div>
 
             {/* Sticky Sidebar with EmergencyServiceCard */}

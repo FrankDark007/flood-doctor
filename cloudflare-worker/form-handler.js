@@ -6,10 +6,10 @@
  * Deploy: wrangler deploy
  */
 
+const RESEND_API_KEY = 're_eVGHfA1T_Pu94b7EQyAzPDiDDpeoxnxYc';
+
 export default {
   async fetch(request, env) {
-    const RESEND_API_KEY = env?.RESEND_API_KEY;
-
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, {
@@ -24,19 +24,6 @@ export default {
     if (request.method !== 'POST') {
       return new Response(JSON.stringify({ error: 'Method not allowed' }), {
         status: 405,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      });
-    }
-
-    if (!RESEND_API_KEY) {
-      return new Response(JSON.stringify({
-        success: false,
-        error: 'Email service is not configured'
-      }), {
-        status: 500,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',

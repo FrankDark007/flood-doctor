@@ -24,10 +24,10 @@ if [ -z "$SSH_PASS" ]; then
     exit 1
 fi
 
-# Check for sshpass (required for password automation)
-if ! command -v sshpass &> /dev/null; then
-    echo "❌ 'sshpass' is required but not installed."
-    echo "   Install with: brew install sshpass"
+# Check for expect (required for password automation)
+if ! command -v expect &> /dev/null; then
+    echo "❌ 'expect' is required but not installed."
+    echo "   Install with: brew install expect"
     exit 1
 fi
 
@@ -52,7 +52,18 @@ echo "📤 Step 2: Deploying via rsync..."
 ASSET_COUNT=$(ls dist/assets/* 2>/dev/null | wc -l | tr -d ' ')
 echo "   Found $ASSET_COUNT files in dist/assets/"
 
-sshpass -p "$SSH_PASS" rsync -avz --progress -e "ssh -o StrictHostKeyChecking=no" dist/ "$SSH_USER@$SSH_HOST:$REMOTE_PATH"
+expect << EXPECT_SCRIPT
+set timeout 600
+spawn rsync -avz --progress -e "ssh -o StrictHostKeyChecking=no" dist/ $SSH_USER@$SSH_HOST:$REMOTE_PATH
+expect "password:"
+send "$SSH_PASS\r"
+expect {
+    "total size" { exit 0 }
+    "Permission denied" { exit 1 }
+    timeout { exit 1 }
+    eof
+}
+EXPECT_SCRIPT
 
 if [ $? -ne 0 ]; then
     echo "❌ rsync failed!"
@@ -63,7 +74,13 @@ echo "✅ All files uploaded via rsync"
 # Step 3: Fix permissions
 echo ""
 echo "🔐 Step 3: Setting permissions..."
-sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" "chmod -R 755 $REMOTE_PATH && chmod 644 ${REMOTE_PATH}.htaccess 2>/dev/null || true"
+expect << EXPECT_SCRIPT
+set timeout 30
+spawn ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "chmod -R 755 $REMOTE_PATH && chmod 644 ${REMOTE_PATH}.htaccess"
+expect "password:"
+send "$SSH_PASS\r"
+expect eof
+EXPECT_SCRIPT
 echo "   ✅ Permissions set (755 for all, 644 for .htaccess)"
 
 # Step 4: Purge Cloudflare cache

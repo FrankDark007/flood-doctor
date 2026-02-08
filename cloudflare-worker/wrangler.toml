@@ -2,8 +2,6 @@ name = "flood-doctor-forms"
 main = "form-handler.js"
 compatibility_date = "2024-01-01"
 
-# Set secrets with: wrangler secret put RESEND_API_KEY
-
 # Custom domain (optional - can use workers.dev subdomain)
 # routes = [
 #   { pattern = "api.flood.doctor/forms/*", zone_name = "flood.doctor" }

@@ -22,7 +22,7 @@ const ClientPortalDemo: React.FC = () => {
   if (!isLoggedIn) {
     return (
       <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-        <PageMeta title="Client Portal Demo" description="Experience our transparent restoration dashboard." noIndex={true} />
+        <PageMeta title="Client Portal Demo" description="Experience our transparent restoration dashboard." />
         
         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 max-w-md w-full overflow-hidden">
            <div className="bg-primary p-8 text-center text-white">

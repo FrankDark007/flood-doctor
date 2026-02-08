@@ -9,7 +9,6 @@ import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
 import { ServiceData, ServiceCategory } from '../../types';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
-import { SITE_PHONE, RESPONSE_TIME, CREDENTIALS } from '../../config/constants';
 
 // Helper to Group Services by Category within an Audience - O(1) lookup
 const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
@@ -133,19 +132,6 @@ const Header: React.FC = () => {
 
       {/* Header: Consistent 80px height to prevent CLS */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-        <div className="hidden md:block bg-gray-50 border-b border-gray-100 text-[12px]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-3 text-gray-600">
-              <span className="font-semibold text-primary">24/7 Emergency</span>
-              <span className="hidden lg:inline">• {RESPONSE_TIME.display}</span>
-              <span className="hidden xl:inline">• {CREDENTIALS.dpor.display}</span>
-              <span className="hidden xl:inline">• {CREDENTIALS.iicrc.display}</span>
-            </div>
-            <a href={SITE_PHONE.tel} className="text-primary font-semibold hover:text-primaryHover">
-              Call {SITE_PHONE.display}
-            </a>
-          </div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             

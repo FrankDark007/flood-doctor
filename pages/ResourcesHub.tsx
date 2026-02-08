@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
-import { combineSchemas, generateBreadcrumbSchema, generateOrganizationSchema } from '../utils/schema';
 import {
   FileText,
   HelpCircle,
@@ -123,10 +122,6 @@ const ResourcesHub: React.FC = () => {
       <PageMeta
         title="Water Damage Resources & Guides | Insurance Claims Help"
         description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners."
-        schema={combineSchemas(
-          generateBreadcrumbSchema([{ label: 'Resources', path: '/resources/' }]),
-          generateOrganizationSchema()
-        )}
       />
 
       {/* Search Hero - Google Style */}
@@ -174,8 +169,6 @@ const ResourcesHub: React.FC = () => {
                       src={res.image}
                       alt={res.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Button from '../ui/Button';
-import { ArrowRight, Star, ShieldCheck, Clock, FileCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import GoogleGuaranteedBadge from '../ui/GoogleGuaranteedBadge';
 import EmergencyServiceBadge from '../ui/EmergencyServiceBadge';
 
@@ -35,29 +35,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, visual }) => {
               <p className="font-sans text-xl text-muted mb-10 leading-relaxed max-w-md">
                 {subtitle}
               </p>
-
-              {/* Trust Signals */}
-              <div className="flex flex-wrap gap-3 mb-10 text-sm text-gray-600">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50">
-                  <Clock size={14} className="text-primary" />
-                  60‑Minute Response
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50">
-                  <ShieldCheck size={14} className="text-primary" />
-                  Licensed & Insured
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50">
-                  <FileCheck size={14} className="text-primary" />
-                  Direct Insurance Billing
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50">
-                  <Star size={14} className="text-yellow-500" />
-                  4.9 ★ Average Rating
-                </span>
-              </div>
               
               {/* Actions - HIDDEN ON MOBILE (md:flex) to prevent clutter. */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="hidden md:flex flex-col sm:flex-row gap-4">
                 <Button to="/request/" variant="primary" className="text-lg">
                   Request Service
                 </Button>
