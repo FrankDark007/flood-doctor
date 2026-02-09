@@ -23,9 +23,6 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({ tabs }) => {
   const rafRef = useRef<number>(0);
   const elapsedOnPause = useRef(0);
 
-  const activeContent = tabs[activeIdx] || tabs[0];
-  const ActiveIcon = iconMap[activeContent.icon] || Shield;
-
   const advance = useCallback(() => {
     setActiveIdx(prev => (prev + 1) % tabs.length);
     setProgress(0);
@@ -88,47 +85,47 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({ tabs }) => {
                 <button
                   key={tab.id}
                   onClick={() => selectTab(idx)}
-                  className={`relative flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 min-w-[240px] lg:min-w-0 ${
+                  className={`relative flex items-center gap-4 p-4 rounded-xl text-left min-w-[240px] lg:min-w-0 transition-[background-color,box-shadow] duration-300 ${
                     isActive
                       ? 'bg-white shadow-lg shadow-blue-900/5'
-                      : 'border border-transparent hover:bg-white/50 text-slate-500 hover:text-slate-700'
+                      : 'hover:bg-white/50 text-slate-500 hover:text-slate-700'
                   }`}
                 >
-                  {/* SVG border progress — traces full perimeter */}
-                  {isActive && (
-                    <svg
-                      className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        x="1" y="1"
-                        width="calc(100% - 2px)" height="calc(100% - 2px)"
-                        rx="12" ry="12"
-                        fill="none"
-                        stroke="#e2e8f0"
-                        strokeWidth="2"
-                        pathLength="1"
-                      />
-                      <rect
-                        x="1" y="1"
-                        width="calc(100% - 2px)" height="calc(100% - 2px)"
-                        rx="12" ry="12"
-                        fill="none"
-                        stroke="#1a73e8"
-                        strokeWidth="2.5"
-                        pathLength="1"
-                        strokeDasharray="1"
-                        strokeDashoffset={1 - progress}
-                        strokeLinecap="round"
-                        style={{ transition: 'none' }}
-                      />
-                    </svg>
-                  )}
-                  <div className={`relative z-10 p-2.5 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'bg-slate-200 text-slate-500'}`}>
+                  {/* SVG border — always rendered to avoid mount/unmount flicker */}
+                  <svg
+                    className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="1" y="1"
+                      width="calc(100% - 2px)" height="calc(100% - 2px)"
+                      rx="12" ry="12"
+                      fill="none"
+                      stroke={isActive ? '#e2e8f0' : 'transparent'}
+                      strokeWidth="2"
+                      pathLength="1"
+                      style={{ transition: 'stroke 0.3s' }}
+                    />
+                    <rect
+                      x="1" y="1"
+                      width="calc(100% - 2px)" height="calc(100% - 2px)"
+                      rx="12" ry="12"
+                      fill="none"
+                      stroke="#1a73e8"
+                      strokeWidth="2.5"
+                      pathLength="1"
+                      strokeDasharray="1"
+                      strokeDashoffset={isActive ? 1 - progress : 1}
+                      strokeLinecap="round"
+                      opacity={isActive ? 1 : 0}
+                      style={{ transition: 'opacity 0.3s' }}
+                    />
+                  </svg>
+                  <div className={`relative z-10 p-2.5 rounded-lg transition-colors duration-300 ${isActive ? 'bg-primary text-white' : 'bg-slate-200 text-slate-500'}`}>
                     <Icon size={20} />
                   </div>
                   <div className="relative z-10">
-                    <div className={`font-bold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>
+                    <div className={`font-bold transition-colors duration-300 ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>
                       {tab.label}
                     </div>
                   </div>
@@ -137,32 +134,46 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({ tabs }) => {
             })}
           </div>
 
-          {/* Tab Content Panel */}
-          <div className="lg:w-2/3 bg-white rounded-3xl p-8 md:p-10 border border-slate-100 shadow-xl shadow-slate-200/50">
-            <div key={activeContent.id} className="animate-fade-in">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{activeContent.title}</h3>
-                  <div className="h-1 w-20 bg-primary rounded-full"></div>
-                </div>
-                <div className="hidden md:block text-slate-100">
-                  <ActiveIcon size={80} strokeWidth={1} />
-                </div>
-              </div>
-
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                {activeContent.description}
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                {activeContent.listItems.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                    <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
-                    <span className="text-sm font-medium text-slate-700">{item}</span>
+          {/* Tab Content — all panels layered, crossfade via opacity (no remount) */}
+          <div className="lg:w-2/3 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative">
+            {tabs.map((tab, idx) => {
+              const TabIcon = iconMap[tab.icon] || Shield;
+              const isVisible = activeIdx === idx;
+              return (
+                <div
+                  key={tab.id}
+                  className={`p-8 md:p-10 transition-opacity duration-500 ease-in-out ${
+                    isVisible
+                      ? 'opacity-100 relative'
+                      : 'opacity-0 absolute inset-0 pointer-events-none'
+                  }`}
+                  aria-hidden={!isVisible}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">{tab.title}</h3>
+                      <div className="h-1 w-20 bg-primary rounded-full"></div>
+                    </div>
+                    <div className="hidden md:block text-slate-100">
+                      <TabIcon size={80} strokeWidth={1} />
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+
+                  <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                    {tab.description}
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {tab.listItems.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
+                        <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
+                        <span className="text-sm font-medium text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>
