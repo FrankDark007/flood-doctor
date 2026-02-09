@@ -222,10 +222,9 @@ import { getServicePageOverride } from '../data/servicePageOverrides';
  * Default quick facts for service pages
  */
 const DEFAULT_QUICK_FACTS: QuickFact[] = [
-  { label: 'Response Time', value: '< 60 Mins', icon: 'Timer' },
-  { label: 'Service Area', value: 'NoVA & DC', icon: 'MapPin' },
-  { label: 'Guarantee', value: '100% Satisfied', icon: 'ThumbsUp' },
-  { label: 'Availability', value: '24/7/365', icon: 'CalendarClock' },
+  { label: 'Our crews arrive fast when water damage strikes, day or night.', value: '60-Minute Response', icon: 'Clock' },
+  { label: 'Full repair services from a bonded, insured Virginia Class A contractor.', value: 'Licensed Contractor', icon: 'Shield' },
+  { label: 'We handle the claims process and bill your carrier directly.', value: 'Direct Insurance Billing', icon: 'FileCheck' },
 ];
 
 /**
@@ -292,6 +291,58 @@ const DEFAULT_TABS: TabItem[] = [
       '24/7 post-service support line',
     ],
     icon: 'Shield',
+  },
+  {
+    id: 'response',
+    label: '24/7 Response',
+    title: '60-Minute Emergency Dispatch',
+    description: 'Damage gets worse every minute. Our crews are stationed across Northern Virginia with fully loaded trucks, ready to roll 24 hours a day, 365 days a year.',
+    listItems: [
+      'Crews dispatched within 15 minutes of your call',
+      'Average onsite arrival time under 60 minutes',
+      'Nights, weekends, and holidays — no upcharge',
+      'Dedicated emergency hotline answered by staff, not a call center',
+    ],
+    icon: 'Clock',
+  },
+  {
+    id: 'local',
+    label: 'Local Experts',
+    title: 'Northern Virginia Specialists Since 2008',
+    description: 'We know the homes, the building codes, and the insurance adjusters in this region. That local knowledge means faster restorations and fewer surprises.',
+    listItems: [
+      'Serving Fairfax, Arlington, Alexandria, and all of NoVA',
+      'Familiar with local building codes and HOA requirements',
+      'Established relationships with regional insurance adjusters',
+      'Virginia Class A contractor license (#2705170693)',
+    ],
+    icon: 'MapPin',
+  },
+  {
+    id: 'safety',
+    label: 'Safety Protocols',
+    title: 'OSHA-Compliant Health & Safety Standards',
+    description: 'Damage situations create hidden health hazards. Our crews follow strict containment, PPE, and air quality protocols to protect your family throughout the restoration process.',
+    listItems: [
+      'Full PPE including respirators for contaminated environments',
+      'Negative air containment to prevent cross-contamination',
+      'EPA-registered antimicrobial treatments for sanitization',
+      'Air quality testing before and after restoration',
+    ],
+    icon: 'HeartPulse',
+  },
+  {
+    id: 'results',
+    label: 'Proven Results',
+    title: 'Documented Restoration Outcomes',
+    description: 'We don\'t just tell you the job is done — we prove it. Every project includes before-and-after documentation, verification testing, and a certificate of completion.',
+    listItems: [
+      'Before-and-after photo documentation on every project',
+      'Final readings verified below industry thresholds',
+      'Certificate of Completion for your records and insurance',
+      '98.7% customer satisfaction rate across 3,000+ projects',
+    ],
+    icon: 'BarChart3',
   },
 ];
 
@@ -452,8 +503,8 @@ export function adaptServiceToPageData(
 
   // Build default page data
   const pageData: ServicePageData = {
-    title: service.heroHeading || `24/7 ${service.title}`,
-    subtitle: service.heroIntro || service.shortDescription || `Professional ${service.title.toLowerCase()} services${locationSuffix}. We respond within 60 minutes.`,
+    title: service.heroHeading || service.title,
+    subtitle: service.heroIntro || service.shortDescription || `IICRC-certified technicians onsite in 60 minutes, 24/7. Direct insurance billing.`,
     emergencyPhone,
     badges: DEFAULT_BADGES,
     quickFacts: DEFAULT_QUICK_FACTS,

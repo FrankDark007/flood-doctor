@@ -9,6 +9,31 @@
 
 ---
 
+## ⛔ HARD RULES — NEVER BREAK THESE
+
+### 1. ALWAYS COMMIT TO `main`
+- Before EVERY commit, run `git branch --show-current` and confirm it says `main`
+- After EVERY commit, run `git log --oneline -1` to confirm it landed on `main`
+- NEVER create or switch to side branches (no `claude/*`, no feature branches) unless the user explicitly asks
+- If you find yourself on a different branch, STOP and tell the user immediately
+
+### 2. COMMIT AFTER EVERY CHANGE
+- After each meaningful change, commit immediately — do NOT batch changes
+- Every commit = one logical change, committed right away
+- Never leave work uncommitted in the working tree
+
+### 3. NEVER MAKE UNSOLICITED CHANGES
+- Only modify files the user explicitly asks you to modify
+- If the user asks a question, ANSWER IT — do not start editing files
+- If you think something else should change, ASK FIRST — do not touch it
+- "While I'm at it" changes are FORBIDDEN
+
+### 4. NEVER MODIFY THE HOMEPAGE WITHOUT EXPLICIT PERMISSION
+- `pages/fd-home-v4/*` files are protected — do not touch without direct instruction
+- This includes index.tsx, Hero.tsx, ValueProps.tsx, FeatureSection.tsx, and all other homepage components
+
+---
+
 Flood Doctor — Water Damage Restoration (Northern VA + Washington, DC)
 
 Design system:

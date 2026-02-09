@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Cpu, FileText, Users, Shield, CheckCircle2 } from 'lucide-react';
+import { Cpu, FileText, Users, Shield, CheckCircle2, Clock, MapPin, HeartPulse, BarChart3 } from 'lucide-react';
 import { TabItem } from './types';
 
 interface ServiceTabsProps {
   tabs: TabItem[];
-  /** Duration for each tab in milliseconds (default: 5000) */
   autoPlayInterval?: number;
-  /** Enable/disable auto-play (default: true) */
   autoPlay?: boolean;
 }
 
@@ -14,7 +12,72 @@ const iconMap: Record<string, React.FC<any>> = {
   Cpu,
   FileText,
   Users,
-  Shield
+  Shield,
+  Clock,
+  MapPin,
+  HeartPulse,
+  BarChart3
+};
+
+/** SVG border that traces the full perimeter of a pill button */
+const PillProgress: React.FC<{ progress: number }> = ({ progress }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [dims, setDims] = useState({ w: 280, h: 48 });
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const el = ref.current;
+    const update = () => {
+      const { width, height } = el.getBoundingClientRect();
+      if (width > 0 && height > 0) setDims({ w: width, h: height });
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const sw = 3; // stroke width
+  const inset = sw / 2;
+  const innerW = dims.w - sw;
+  const innerH = dims.h - sw;
+  const rx = innerH / 2;
+  // Pill perimeter: 2 straight sides + 2 semicircle caps
+  const perimeter = 2 * (innerW - innerH) + Math.PI * innerH;
+  const offset = perimeter * (1 - progress / 100);
+
+  return (
+    <div ref={ref} className="absolute inset-0 pointer-events-none">
+      <svg
+        width={dims.w}
+        height={dims.h}
+        className="absolute inset-0"
+        style={{ overflow: 'visible' }}
+      >
+        {/* Light track (full border) */}
+        <rect
+          x={inset} y={inset}
+          width={innerW} height={innerH}
+          rx={rx} ry={rx}
+          fill="none"
+          stroke="#e2e8f0"
+          strokeWidth={sw}
+        />
+        {/* Animated progress stroke */}
+        <rect
+          x={inset} y={inset}
+          width={innerW} height={innerH}
+          rx={rx} ry={rx}
+          fill="none"
+          stroke="#94a3b8"
+          strokeWidth={sw}
+          strokeLinecap="round"
+          strokeDasharray={perimeter}
+          strokeDashoffset={offset}
+        />
+      </svg>
+    </div>
+  );
 };
 
 const ServiceTabs: React.FC<ServiceTabsProps> = ({
@@ -25,27 +88,29 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const progressInterval = useRef<NodeJS.Timeout | null>(null);
+  const progressInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const activeContent = tabs[activeTabIndex] || tabs[0];
   const ActiveIcon = iconMap[activeContent.icon] || Shield;
 
-  // Progress bar update interval (60fps for smooth animation)
   const PROGRESS_UPDATE_INTERVAL = 16;
   const progressIncrement = (PROGRESS_UPDATE_INTERVAL / autoPlayInterval) * 100;
-
-  const advanceTab = useCallback(() => {
-    setActiveTabIndex((prev) => (prev + 1) % tabs.length);
-    setProgress(0);
-  }, [tabs.length]);
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
     setProgress(0);
   };
 
-  // Auto-play logic with progress tracking
+  // Advance tab when progress reaches 100
+  useEffect(() => {
+    if (progress >= 100) {
+      setActiveTabIndex((prev) => (prev + 1) % tabs.length);
+      setProgress(0);
+    }
+  }, [progress, tabs.length]);
+
+  // Progress timer
   useEffect(() => {
     if (!autoPlay || isPaused) {
       if (progressInterval.current) {
@@ -56,14 +121,7 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
     }
 
     progressInterval.current = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + progressIncrement;
-        if (next >= 100) {
-          advanceTab();
-          return 0;
-        }
-        return next;
-      });
+      setProgress((prev) => prev + progressIncrement);
     }, PROGRESS_UPDATE_INTERVAL);
 
     return () => {
@@ -71,106 +129,82 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
         clearInterval(progressInterval.current);
       }
     };
-  }, [autoPlay, isPaused, progressIncrement, advanceTab]);
+  }, [autoPlay, isPaused, progressIncrement]);
+
+  const nextTabIndex = (activeTabIndex + 1) % tabs.length;
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900">Why Choose Flood Doctor?</h2>
-          <p className="text-slate-500 mt-3 max-w-2xl mx-auto">We combine advanced technology with certified expertise to restore your home faster.</p>
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Why Choose Us</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+            Flood Doctor gives you complete peace of mind
+          </h2>
         </div>
 
         <div
           ref={containerRef}
-          className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          className="flex flex-col lg:flex-row gap-10 lg:gap-16 max-w-6xl mx-auto items-start"
+          onClick={(e) => {
+            // Only toggle pause if clicking the container background, not a tab button
+            if ((e.target as HTMLElement).closest('button')) return;
+            setIsPaused((prev) => !prev);
+          }}
         >
 
-          {/* Tabs Navigation */}
-          <div className="lg:w-1/3 flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
+          {/* Pill Navigation — vertical stack */}
+          <div className="lg:w-[280px] flex flex-col gap-2.5 shrink-0">
             {tabs.map((tab, index) => {
               const Icon = iconMap[tab.icon] || Shield;
               const isActive = activeTabIndex === index;
+              const isNext = nextTabIndex === index;
 
               return (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(index)}
-                  className={`group relative flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 min-w-[240px] lg:min-w-0 ${
-                    isActive
-                      ? 'bg-white shadow-lg shadow-blue-900/10'
-                      : 'bg-transparent hover:bg-white/50 text-slate-500 hover:text-slate-700 border-2 border-transparent'
-                  }`}
+                  className={`
+                    relative flex items-center gap-3.5 w-full px-5 py-3.5 rounded-full
+                    text-left transition-all duration-300
+                    ${isActive
+                      ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                      : 'bg-white text-slate-600 hover:bg-slate-50'
+                    }
+                  `}
+                  style={!isActive && !isNext ? { border: '2px solid #e2e8f0' } : !isActive ? { border: '2px solid transparent' } : undefined}
                 >
-                  {/* Progress border container for active tab */}
-                  {isActive && (
-                    <>
-                      {/* Background border (gray track) */}
-                      <div className="absolute inset-0 rounded-xl border-2 border-slate-200 pointer-events-none" />
+                  {/* Full-perimeter progress border on the NEXT tab */}
+                  {isNext && autoPlay && <PillProgress progress={progress} />}
 
-                      {/* Animated progress border */}
-                      <div
-                        className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden"
-                        style={{
-                          background: `conic-gradient(from 0deg, #1a73e8 ${progress}%, transparent ${progress}%)`,
-                          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                          WebkitMaskComposite: 'xor',
-                          maskComposite: 'exclude',
-                          padding: '2px',
-                        }}
-                      />
+                  {/* Static border for non-active, non-next tabs is handled by the style prop above */}
 
-                      {/* Top progress bar (simpler, more visible) */}
-                      <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl overflow-hidden pointer-events-none">
-                        <div
-                          className="h-full bg-primary transition-none"
-                          style={{ width: `${progress}%` }}
-                        />
-                      </div>
-                    </>
-                  )}
-
-                  <div className={`relative z-10 p-2.5 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'bg-slate-200 text-slate-500 group-hover:bg-slate-300'}`}>
-                    <Icon size={20} />
+                  <div className={`
+                    relative z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 transition-colors
+                    ${isActive ? 'bg-white/20' : 'bg-slate-100'}
+                  `}>
+                    <Icon size={16} className={isActive ? 'text-white' : 'text-slate-500'} />
                   </div>
-                  <div className="relative z-10 flex-1">
-                    <div className={`font-bold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>
-                      {tab.label}
-                    </div>
-                    {/* Progress indicator text on mobile */}
-                    {isActive && autoPlay && (
-                      <div className="text-xs text-slate-400 mt-0.5 lg:hidden">
-                        {Math.round(progress)}%
-                      </div>
-                    )}
-                  </div>
+                  <span className={`relative z-10 font-semibold text-[15px] ${isActive ? 'text-white' : 'text-slate-700'}`}>
+                    {tab.label}
+                  </span>
                 </button>
               );
             })}
-
-            {/* Auto-play indicator */}
-            {autoPlay && (
-              <div className="hidden lg:flex items-center gap-2 px-4 py-2 text-xs text-slate-400">
-                <div className={`w-2 h-2 rounded-full ${isPaused ? 'bg-amber-400' : 'bg-green-400 animate-pulse'}`} />
-                {isPaused ? 'Paused' : 'Auto-playing'}
-              </div>
-            )}
           </div>
 
           {/* Tab Content Panel */}
           <div
             key={activeTabIndex}
-            className="lg:w-2/3 bg-white rounded-3xl p-8 md:p-10 border border-slate-100 shadow-xl shadow-slate-200/50 animate-fade-in"
+            className="flex-1 bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100 animate-fade-in"
           >
             <div className="flex items-start justify-between mb-6">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">{activeContent.title}</h3>
-                <div className="h-1 w-20 bg-primary rounded-full"></div>
+                <div className="h-1 w-16 bg-primary rounded-full"></div>
               </div>
-              <div className="hidden md:block text-slate-100">
-                <ActiveIcon size={80} strokeWidth={1} />
+              <div className="hidden md:block text-slate-200">
+                <ActiveIcon size={64} strokeWidth={1} />
               </div>
             </div>
 
@@ -178,9 +212,9 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
               {activeContent.description}
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3">
               {activeContent.listItems.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
+                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl">
                   <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
                   <span className="text-sm font-medium text-slate-700">{item}</span>
                 </div>

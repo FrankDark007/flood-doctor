@@ -1,5 +1,5 @@
 import React from 'react';
-import { Timer, MapPin, ThumbsUp, CalendarClock } from 'lucide-react';
+import { Timer, MapPin, ThumbsUp, CalendarClock, Clock, Shield, FileCheck } from 'lucide-react';
 import { QuickFact } from './types';
 
 interface ServiceQuickFactsProps {
@@ -10,30 +10,34 @@ const iconMap: Record<string, React.FC<any>> = {
   Timer,
   MapPin,
   ThumbsUp,
-  CalendarClock
+  CalendarClock,
+  Clock,
+  Shield,
+  FileCheck
 };
 
+/**
+ * ServiceQuickFacts — styled to match homepage ValueProps
+ * Large circle icons, centered text, clean white background
+ */
 const ServiceQuickFacts: React.FC<ServiceQuickFactsProps> = ({ facts }) => {
   return (
-    <section className="border-b border-slate-200 bg-surface">
-      <div className="container mx-auto px-4 md:px-0">
-        <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory md:grid md:grid-cols-4 divide-x divide-slate-200 py-6 md:py-8">
+    <section className="py-20 bg-white">
+      <div className="max-w-[1296px] mx-auto px-6">
+        <div className={`grid grid-cols-1 gap-8 text-center ${facts.length <= 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
           {facts.map((fact, index) => {
             const Icon = iconMap[fact.icon] || ThumbsUp;
             return (
-              <div 
-                key={index} 
-                className="snap-center shrink-0 w-64 md:w-auto flex flex-col items-center justify-center text-center px-6 first:pl-4 last:pr-4"
-              >
-                <div className="mb-2 p-2 bg-primary-light rounded-full text-primary">
-                  <Icon size={24} strokeWidth={2} />
+              <div key={index} className="flex flex-col items-center">
+                <div className="w-[84px] h-[84px] bg-[#e8f0fe] rounded-2xl flex items-center justify-center text-[#1a73e8] mb-5">
+                  <Icon size={36} strokeWidth={1.5} />
                 </div>
-                <div className="text-2xl font-bold text-slate-900 leading-none mb-1">
+                <h3 className="text-xl font-normal text-[#202124] mb-3">
                   {fact.value}
-                </div>
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                </h3>
+                <p className="text-sm text-[#5f6368] leading-relaxed max-w-xs">
                   {fact.label}
-                </div>
+                </p>
               </div>
             );
           })}

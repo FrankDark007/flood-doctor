@@ -14,7 +14,7 @@ const ServiceFAQCompact: React.FC<ServiceFAQCompactProps> = ({ faqs }) => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-surface" id="faq">
+    <section className="py-20 bg-surface" id="faq">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>

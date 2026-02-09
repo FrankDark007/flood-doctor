@@ -15,7 +15,7 @@ const iconMap: Record<string, React.FC<any>> = {
 
 const ServiceProcessMini: React.FC<ServiceProcessMiniProps> = ({ steps }) => {
   return (
-    <section className="py-16 bg-surface">
+    <section className="py-20 bg-surface">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">How It Works</h2>

@@ -87,6 +87,58 @@ export const SERVICE_DATA: ServicePageData = {
         "24/7 post-service support line"
       ],
       icon: "Shield"
+    },
+    {
+      id: "response",
+      label: "24/7 Response",
+      title: "60-Minute Emergency Dispatch",
+      description: "Water damage gets worse every minute. Our crews are stationed across Northern Virginia with fully loaded trucks, ready to roll 24 hours a day, 365 days a year.",
+      listItems: [
+        "Crews dispatched within 15 minutes of your call",
+        "Average onsite arrival time under 60 minutes",
+        "Nights, weekends, and holidays — no upcharge",
+        "Dedicated emergency hotline answered by staff, not a call center"
+      ],
+      icon: "Clock"
+    },
+    {
+      id: "local",
+      label: "Local Experts",
+      title: "Northern Virginia Specialists Since 2008",
+      description: "We know the homes, the building codes, and the insurance adjusters in this region. That local knowledge means faster restorations and fewer surprises.",
+      listItems: [
+        "Serving Fairfax, Arlington, Alexandria, and all of NoVA",
+        "Familiar with local building codes and HOA requirements",
+        "Established relationships with regional insurance adjusters",
+        "Virginia Class A contractor license (#2705170693)"
+      ],
+      icon: "MapPin"
+    },
+    {
+      id: "safety",
+      label: "Safety Protocols",
+      title: "OSHA-Compliant Health & Safety Standards",
+      description: "Water damage creates hidden health hazards. Our crews follow strict containment, PPE, and air quality protocols to protect your family throughout the restoration process.",
+      listItems: [
+        "Full PPE including respirators for contaminated water",
+        "Negative air containment to prevent cross-contamination",
+        "EPA-registered antimicrobial treatments for sanitization",
+        "Air quality testing before and after restoration"
+      ],
+      icon: "HeartPulse"
+    },
+    {
+      id: "results",
+      label: "Proven Results",
+      title: "Documented Restoration Outcomes",
+      description: "We don't just tell you the job is done — we prove it. Every project includes before-and-after documentation, moisture verification, and a certificate of completion.",
+      listItems: [
+        "Before-and-after photo documentation on every project",
+        "Final moisture readings verified below industry thresholds",
+        "Certificate of Completion for your records and insurance",
+        "98.7% customer satisfaction rate across 3,000+ projects"
+      ],
+      icon: "BarChart3"
     }
   ],
   process: [
