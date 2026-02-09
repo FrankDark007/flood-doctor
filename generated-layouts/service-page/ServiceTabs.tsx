@@ -39,7 +39,6 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({ tabs }) => {
     elapsedOnPause.current = 0;
   }, []);
 
-  // RAF-driven progress bar + auto-advance
   useEffect(() => {
     if (paused) {
       elapsedOnPause.current = Date.now() - startRef.current;
@@ -89,22 +88,46 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({ tabs }) => {
                 <button
                   key={tab.id}
                   onClick={() => selectTab(idx)}
-                  className={`relative flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 min-w-[240px] lg:min-w-0 border overflow-hidden ${
+                  className={`relative flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 min-w-[240px] lg:min-w-0 ${
                     isActive
-                      ? 'bg-white border-primary shadow-lg shadow-blue-900/5'
-                      : 'bg-transparent border-transparent hover:bg-white/50 text-slate-500 hover:text-slate-700'
+                      ? 'bg-white shadow-lg shadow-blue-900/5'
+                      : 'border border-transparent hover:bg-white/50 text-slate-500 hover:text-slate-700'
                   }`}
                 >
+                  {/* SVG border progress — traces full perimeter */}
                   {isActive && (
-                    <div
-                      className="absolute bottom-0 left-0 h-[3px] bg-[#1a73e8]"
-                      style={{ width: `${progress * 100}%`, transition: 'none' }}
-                    />
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="1" y="1"
+                        width="calc(100% - 2px)" height="calc(100% - 2px)"
+                        rx="12" ry="12"
+                        fill="none"
+                        stroke="#e2e8f0"
+                        strokeWidth="2"
+                        pathLength="1"
+                      />
+                      <rect
+                        x="1" y="1"
+                        width="calc(100% - 2px)" height="calc(100% - 2px)"
+                        rx="12" ry="12"
+                        fill="none"
+                        stroke="#1a73e8"
+                        strokeWidth="2.5"
+                        pathLength="1"
+                        strokeDasharray="1"
+                        strokeDashoffset={1 - progress}
+                        strokeLinecap="round"
+                        style={{ transition: 'none' }}
+                      />
+                    </svg>
                   )}
-                  <div className={`p-2.5 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'bg-slate-200 text-slate-500'}`}>
+                  <div className={`relative z-10 p-2.5 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'bg-slate-200 text-slate-500'}`}>
                     <Icon size={20} />
                   </div>
-                  <div>
+                  <div className="relative z-10">
                     <div className={`font-bold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>
                       {tab.label}
                     </div>
