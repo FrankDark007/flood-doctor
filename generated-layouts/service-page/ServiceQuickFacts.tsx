@@ -29,8 +29,8 @@ const ServiceQuickFacts: React.FC<ServiceQuickFactsProps> = ({ facts }) => {
             const Icon = iconMap[fact.icon] || ThumbsUp;
             return (
               <div key={index} className="flex flex-col items-center">
-                <div className="w-20 h-20 bg-[#e8f0fe] rounded-full flex items-center justify-center text-[#1a73e8] mb-6">
-                  <Icon size={32} strokeWidth={1.5} />
+                <div className="w-[84px] h-[84px] bg-[#e8f0fe] rounded-2xl flex items-center justify-center text-[#1a73e8] mb-5">
+                  <Icon size={36} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-normal text-[#202124] mb-3">
                   {fact.value}
