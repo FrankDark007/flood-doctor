@@ -42,9 +42,9 @@ const ServicePricing: React.FC<ServicePricingProps> = ({ pricing, onCtaClick }) 
               {pricing.disclaimer}
             </div>
             
-            <button 
+            <button
               onClick={onCtaClick}
-              className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-blue-500/20"
+              className="hidden md:block w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-blue-500/20"
             >
               {pricing.ctaText}
             </button>

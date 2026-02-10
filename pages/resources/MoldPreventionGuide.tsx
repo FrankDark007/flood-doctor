@@ -196,7 +196,7 @@ const MoldPreventionGuide: React.FC = () => {
                 <Phone size={18} className="mr-2" />
                 Emergency: (877) 497-0007
               </Button>
-              <Button to="/request/" variant="secondary" size="lg">
+              <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
               </Button>
             </div>

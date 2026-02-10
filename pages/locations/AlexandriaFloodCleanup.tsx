@@ -268,7 +268,7 @@ const AlexandriaFloodCleanup: React.FC = () => {
                 <Phone size={20} className="mr-2" />
                 Emergency: (703) 665-0505
               </Button>
-              <Button to="/request/" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <Button to="/request/" variant="outline" size="lg" className="hidden md:inline-flex border-white/30 text-white hover:bg-white/10">
                 Request Service
               </Button>
             </div>

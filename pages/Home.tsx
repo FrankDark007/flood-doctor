@@ -105,7 +105,7 @@ const Home: React.FC = () => {
                 Turn a water emergency into a quick recovery with Flood Doctor's 60-minute response guarantee. We serve Northern Virginia, DC, and Maryland 24/7 with professional water extraction, structural drying, and complete restoration.
               </p>
               <div>
-                <Link to="/request/" className="inline-flex items-center justify-center h-12 px-8 rounded-md bg-[#1a73e8] text-white font-medium hover:bg-[#1557b0] transition-colors shadow-sm">
+                <Link to="/request/" className="hidden md:inline-flex items-center justify-center h-12 px-8 rounded-md bg-[#1a73e8] text-white font-medium hover:bg-[#1557b0] transition-colors shadow-sm">
                   Request Services
                 </Link>
               </div>
@@ -296,7 +296,7 @@ const Home: React.FC = () => {
                 </a>
                 <Link
                   to="/request/"
-                  className="inline-flex items-center justify-center border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium px-6 py-3 rounded-lg transition-colors"
+                  className="hidden md:inline-flex items-center justify-center border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium px-6 py-3 rounded-lg transition-colors"
                 >
                   Request Service Online
                 </Link>
@@ -351,7 +351,7 @@ const Home: React.FC = () => {
             </a>
             <Link
               to="/request/"
-              className="inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white/10 font-medium px-8 py-4 rounded-lg transition-colors text-lg"
+              className="hidden md:inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white/10 font-medium px-8 py-4 rounded-lg transition-colors text-lg"
             >
               Request Service
               <ArrowRight size={20} className="ml-2" />

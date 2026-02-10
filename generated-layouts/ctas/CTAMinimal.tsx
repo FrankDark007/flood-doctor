@@ -16,7 +16,7 @@ const CTAMinimal: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center gap-6">
-          <button className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:ring-4 hover:ring-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
+          <button className="hidden md:inline-flex group relative items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:ring-4 hover:ring-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
             <span className="mr-2">Request Service</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>

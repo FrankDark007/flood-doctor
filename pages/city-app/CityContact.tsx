@@ -73,7 +73,7 @@ const CityContact: React.FC = () => {
               </p>
               <Link
                 to="/request/"
-                className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
+                className="hidden md:flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
               >
                 Request Service Online
               </Link>

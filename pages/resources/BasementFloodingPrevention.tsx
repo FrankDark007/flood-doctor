@@ -534,7 +534,7 @@ const BasementFloodingPrevention: React.FC = () => {
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors"
+              className="hidden md:inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors"
             >
               Request Service
               <ArrowRight className="w-5 h-5" />

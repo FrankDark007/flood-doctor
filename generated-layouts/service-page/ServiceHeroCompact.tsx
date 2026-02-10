@@ -68,10 +68,10 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
             </div>
 
             {/* CTA */}
-            <div>
+            <div className="hidden md:block">
               <button
                 onClick={onCtaClick}
-                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primaryHover text-white h-11 px-6 rounded-md font-medium text-sm transition-colors"
+                className="inline-flex items-center justify-center font-display font-medium text-[15px] bg-primary hover:bg-primaryHover text-white h-12 px-8 rounded-full shadow-none hover:shadow-google-hover transition-all duration-200"
               >
                 Request Service
               </button>

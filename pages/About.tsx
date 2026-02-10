@@ -155,9 +155,11 @@ const About: React.FC = () => {
                 Northern Virginia's most trusted water damage restoration company. Restoring properties and peace of mind since 2008.
               </p>
 
-              <Button to="/request/" variant="primary" size="lg">
-                Request Service
-              </Button>
+              <div className="hidden md:block">
+                <Button to="/request/" variant="primary" size="lg">
+                  Request Service
+                </Button>
+              </div>
             </div>
 
             {/* Hero image */}
@@ -601,7 +603,7 @@ const About: React.FC = () => {
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
             Join thousands of Northern Virginia homeowners who trust Flood Doctor.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="hidden md:flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100">
               Request Service
             </Button>

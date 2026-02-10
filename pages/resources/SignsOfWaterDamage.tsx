@@ -241,7 +241,7 @@ const SignsOfWaterDamage: React.FC = () => {
                 <Phone size={18} className="mr-2" />
                 Free Inspection
               </Button>
-              <Button to="/request/" variant="secondary" size="lg">
+              <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
               </Button>
             </div>

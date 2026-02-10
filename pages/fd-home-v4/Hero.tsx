@@ -30,8 +30,8 @@ export const Hero: React.FC = () => {
             <p className="text-lg lg:text-[18px] leading-[28px] text-[#3c4043] mb-8">
               Turn a water emergency into a quick recovery with Flood Doctor's 60-minute response guarantee. We serve Northern Virginia, DC, and Maryland 24/7 with professional water extraction, structural drying, and complete restoration.
             </p>
-            <div>
-              <Link to="/request/" className="inline-flex items-center justify-center h-12 px-8 rounded-md bg-[#1a73e8] text-white font-medium hover:bg-[#1557b0] transition-colors shadow-sm">
+            <div className="hidden md:block">
+              <Link to="/request/" className="inline-flex items-center justify-center font-display font-medium text-[15px] h-12 px-8 rounded-full bg-primary text-white hover:bg-primaryHover shadow-none hover:shadow-google-hover transition-all duration-200">
                 Request Services
               </Link>
             </div>

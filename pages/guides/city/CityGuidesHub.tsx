@@ -331,7 +331,7 @@ const CityGuidesHub: React.FC = () => {
               <Phone size={20} className="mr-2" />
               Call Now: {phone}
             </Button>
-            <Button to="/request/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
+            <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
               Request Service Online
             </Button>
           </div>

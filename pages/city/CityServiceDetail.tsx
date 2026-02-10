@@ -289,7 +289,7 @@ const CityServiceDetail: React.FC<CityServiceDetailProps> = ({ city, serviceSlug
               </a>
               <Link
                 to="/contact/"
-                className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full font-semibold text-lg transition-all border border-white/20"
+                className="hidden md:inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full font-semibold text-lg transition-all border border-white/20"
               >
                 Request Service
                 <ArrowRight className="w-5 h-5" />

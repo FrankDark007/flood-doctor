@@ -512,7 +512,7 @@ const FrozenBurstPipesGuide: React.FC = () => {
                   24/7 Emergency: (877) 497-0007
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="hidden md:block">
                 <Button to="/request/" variant="secondary" size="lg">
                   Request Service
                 </Button>

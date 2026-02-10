@@ -171,7 +171,7 @@ const CityAbout: React.FC = () => {
             </a>
             <Link
               to="/request/"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors border-2 border-white/20"
+              className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors border-2 border-white/20"
             >
               Request Service Online
             </Link>

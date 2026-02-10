@@ -411,7 +411,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
                 <Phone size={18} className="mr-2" />
                 24/7 Response
               </Button>
-              <Button to="/request/" variant="secondary" size="lg">
+              <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
               </Button>
             </div>

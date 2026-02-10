@@ -214,7 +214,7 @@ const ArlingtonWaterDamage: React.FC = () => {
                 <Phone size={20} className="mr-2" />
                 (877) 497-0007
               </Button>
-              <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
+              <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Request Service Online
               </Button>
             </div>

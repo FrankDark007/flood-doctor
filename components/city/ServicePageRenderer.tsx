@@ -139,7 +139,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 h-12 px-8 rounded-full font-semibold transition-all border border-white/20"
+                className="hidden md:inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 h-12 px-8 rounded-full font-semibold transition-all border border-white/20"
               >
                 Request Service
                 <ArrowRight className="w-5 h-5" />
