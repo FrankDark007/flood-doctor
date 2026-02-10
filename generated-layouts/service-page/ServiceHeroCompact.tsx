@@ -35,7 +35,6 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary transform translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-primary transform -translate-x-1/3 translate-y-1/3" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-16 lg:py-24">
@@ -68,22 +67,13 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={`tel:${emergencyPhone.replace(/\D/g,'')}`}
-                className="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primaryHover text-white h-14 px-8 rounded-full font-semibold text-lg transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
-              >
-                <Phone className="w-5 h-5" />
-                {emergencyPhone}
-              </a>
-
+            {/* CTA */}
+            <div>
               <button
                 onClick={onCtaClick}
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 h-14 px-8 rounded-full font-semibold border border-slate-200 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primaryHover text-white h-11 px-6 rounded-md font-medium text-sm transition-colors"
               >
                 Request Service
-                <ChevronRight className="w-5 h-5" />
               </button>
             </div>
 
