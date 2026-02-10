@@ -151,8 +151,8 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
           }}
         >
 
-          {/* Pill Navigation — vertical stack */}
-          <div className="lg:w-[280px] flex flex-col gap-2.5 shrink-0">
+          {/* Pill Navigation — horizontal scroll on mobile, vertical stack on desktop */}
+          <div className="lg:w-[280px] flex lg:flex-col gap-2.5 shrink-0 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide">
             {tabs.map((tab, index) => {
               const Icon = iconMap[tab.icon] || Shield;
               const isActive = activeTabIndex === index;
@@ -163,8 +163,8 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
                   key={tab.id}
                   onClick={() => handleTabClick(index)}
                   className={`
-                    relative flex items-center gap-3.5 w-full px-5 py-3.5 rounded-full
-                    text-left transition-all duration-300
+                    relative flex items-center gap-2.5 lg:gap-3.5 whitespace-nowrap lg:whitespace-normal w-auto lg:w-full px-4 lg:px-5 py-2.5 lg:py-3.5 rounded-full
+                    text-left transition-all duration-300 shrink-0
                     ${isActive
                       ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : 'bg-white text-slate-600 hover:bg-slate-50'
@@ -175,15 +175,14 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
                   {/* Full-perimeter progress border on the NEXT tab */}
                   {isNext && autoPlay && <PillProgress progress={progress} />}
 
-                  {/* Static border for non-active, non-next tabs is handled by the style prop above */}
-
                   <div className={`
-                    relative z-10 flex items-center justify-center w-8 h-8 rounded-full shrink-0 transition-colors
+                    relative z-10 flex items-center justify-center w-7 h-7 lg:w-8 lg:h-8 rounded-full shrink-0 transition-colors
                     ${isActive ? 'bg-white/20' : 'bg-slate-100'}
                   `}>
-                    <Icon size={16} className={isActive ? 'text-white' : 'text-slate-500'} />
+                    <Icon size={14} className={`lg:hidden ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                    <Icon size={16} className={`hidden lg:block ${isActive ? 'text-white' : 'text-slate-500'}`} />
                   </div>
-                  <span className={`relative z-10 font-semibold text-[15px] ${isActive ? 'text-white' : 'text-slate-700'}`}>
+                  <span className={`relative z-10 font-semibold text-[13px] lg:text-[15px] ${isActive ? 'text-white' : 'text-slate-700'}`}>
                     {tab.label}
                   </span>
                 </button>

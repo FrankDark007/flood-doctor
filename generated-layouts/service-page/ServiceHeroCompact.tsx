@@ -60,7 +60,7 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
           {/* Left: Content */}
           <div className="space-y-8">
             {/* Breadcrumb-style badges */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
               {badges.slice(0, 3).map((badge, index) => (
                 <span
                   key={index}
