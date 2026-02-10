@@ -113,32 +113,6 @@ export const SERVICE_DATA: ServicePageData = {
         "Virginia Class A contractor license (#2705170693)"
       ],
       icon: "MapPin"
-    },
-    {
-      id: "safety",
-      label: "Safety Protocols",
-      title: "OSHA-Compliant Health & Safety Standards",
-      description: "Water damage creates hidden health hazards. Our crews follow strict containment, PPE, and air quality protocols to protect your family throughout the restoration process.",
-      listItems: [
-        "Full PPE including respirators for contaminated water",
-        "Negative air containment to prevent cross-contamination",
-        "EPA-registered antimicrobial treatments for sanitization",
-        "Air quality testing before and after restoration"
-      ],
-      icon: "HeartPulse"
-    },
-    {
-      id: "results",
-      label: "Proven Results",
-      title: "Documented Restoration Outcomes",
-      description: "We don't just tell you the job is done — we prove it. Every project includes before-and-after documentation, moisture verification, and a certificate of completion.",
-      listItems: [
-        "Before-and-after photo documentation on every project",
-        "Final moisture readings verified below industry thresholds",
-        "Certificate of Completion for your records and insurance",
-        "98.7% customer satisfaction rate across 3,000+ projects"
-      ],
-      icon: "BarChart3"
     }
   ],
   process: [

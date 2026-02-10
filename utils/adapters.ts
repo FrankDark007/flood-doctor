@@ -318,32 +318,6 @@ const DEFAULT_TABS: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'OSHA-Compliant Health & Safety Standards',
-    description: 'Damage situations create hidden health hazards. Our crews follow strict containment, PPE, and air quality protocols to protect your family throughout the restoration process.',
-    listItems: [
-      'Full PPE including respirators for contaminated environments',
-      'Negative air containment to prevent cross-contamination',
-      'EPA-registered antimicrobial treatments for sanitization',
-      'Air quality testing before and after restoration',
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Documented Restoration Outcomes',
-    description: 'We don\'t just tell you the job is done — we prove it. Every project includes before-and-after documentation, verification testing, and a certificate of completion.',
-    listItems: [
-      'Before-and-after photo documentation on every project',
-      'Final readings verified below industry thresholds',
-      'Certificate of Completion for your records and insurance',
-      '98.7% customer satisfaction rate across 3,000+ projects',
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 /**

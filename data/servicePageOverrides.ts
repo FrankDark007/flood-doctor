@@ -120,32 +120,6 @@ const waterDamageRestorationTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Category Water Assessment & Contamination Control',
-    description: 'We classify water as Category 1 (clean), 2 (gray), or 3 (black) before starting extraction to determine proper safety protocols. Contaminated water requires PPE, antimicrobial treatments, and specialized disposal methods. Our team follows OSHA and EPA guidelines to protect your family from waterborne pathogens and chemical exposure.',
-    listItems: [
-      'Immediate assessment of water category and contamination risk before work begins',
-      'Full PPE for Category 2 and 3 water including respirators and protective suits',
-      'EPA-registered antimicrobial application on all Category 2 and 3 affected surfaces',
-      'Power shutoff protocols and electrical safety verification before water extraction'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Thousands of Successful Water Restorations',
-    description: 'We have restored over 3,000 Northern Virginia properties from water damage in the past five years. Our average drying time is 3-5 days compared to the industry average of 7-10 days. Customer satisfaction scores consistently exceed 4.8/5.0, with 94% of clients reporting complete satisfaction with results.',
-    listItems: [
-      '3,000+ successful water damage restorations across Northern Virginia since 2019',
-      'Average structural drying completion in 3-5 days using advanced equipment',
-      '94% customer satisfaction rate verified through independent post-job surveys',
-      'Zero insurance claim denials due to improper documentation or procedural errors'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Fire & Smoke Cleanup ---
@@ -227,32 +201,6 @@ const fireSmokeCleanupTabs: TabItem[] = [
       'Partnerships with local contractors specializing in fire reconstruction permits'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Hazardous Materials & Structural Safety',
-    description: 'Fire-damaged structures may contain asbestos, lead paint, and carcinogenic soot requiring specialized handling. We conduct air quality testing before work begins and use full respiratory protection in contaminated areas. Structural engineers assess compromised load-bearing elements before our teams enter damaged areas, prioritizing worker and occupant safety.',
-    listItems: [
-      'Pre-restoration air quality testing for asbestos, lead, and combustion byproducts',
-      'Full respiratory protection and Tyvek suits in all fire-damaged environments',
-      'Structural engineering assessments before entering compromised buildings',
-      'Hazardous waste disposal following EPA and Virginia DEQ regulations'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Successful Fire Damage Restorations',
-    description: 'We have restored over 500 fire-damaged properties in Northern Virginia, from small kitchen fires to total losses requiring full reconstruction. Our contents restoration success rate exceeds 85%—most items insurance companies label "total loss" can be saved. Average customer satisfaction on fire jobs is 4.9/5.0, reflecting our compassionate approach during difficult times.',
-    listItems: [
-      '500+ fire damage restorations completed across Northern Virginia',
-      '85% contents salvage rate on items initially deemed non-restorable',
-      '4.9/5.0 customer satisfaction score on fire restoration projects',
-      '100% structural safety record with zero collapse or injury incidents'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -336,32 +284,6 @@ const moldRemediationTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Health-First Mold Remediation Protocols',
-    description: 'Mold exposure can trigger allergic reactions, asthma attacks, and respiratory infections—occupant safety is our priority. Full containment with sealed polyethylene barriers and negative air pressure prevents spore spread to occupied areas. Our technicians wear full PPE including respirators, and we coordinate with physicians when occupants have mold sensitivities.',
-    listItems: [
-      'Complete containment with 6-mil polyethylene barriers and HEPA-filtered negative air',
-      'Full respiratory protection with P100 filters or supplied air for all technicians',
-      'Medical-grade HEPA vacuuming preventing spore release during material removal',
-      'Occupant evacuation recommendations for immunocompromised or sensitive individuals'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Verified Mold Remediation Success',
-    description: 'Over 1,200 successful mold remediation projects completed in Northern Virginia with 100% clearance testing pass rate. Our moisture control recommendations result in less than 2% mold recurrence, compared to industry average of 15%. Customer satisfaction scores of 4.8/5.0 reflect our transparent communication and thorough documentation throughout the process.',
-    listItems: [
-      '1,200+ mold remediation projects with 100% post-remediation clearance rate',
-      'Less than 2% mold recurrence when moisture control recommendations are followed',
-      '4.8/5.0 customer satisfaction score on mold remediation services',
-      'Average project completion in 3-7 days from containment to clearance testing'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Sewage Cleanup ---
@@ -443,32 +365,6 @@ const sewageCleanupTabs: TabItem[] = [
       'Understanding of municipal liability when sewer backups originate from city mains'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Biohazard Safety & Occupant Protection',
-    description: 'Sewage contains over 100 pathogens including hepatitis, giardia, and antibiotic-resistant bacteria requiring maximum safety precautions. Our technicians wear full Tyvek suits, nitrile gloves, and respirators with P100 filters during all sewage work. We establish contamination control zones with boot washes and hand sanitization stations to prevent tracking pathogens to clean areas.',
-    listItems: [
-      'Full PPE including Tyvek suits, nitrile gloves, and P100 respirators on all sewage jobs',
-      'Contamination control zones with boot wash stations and hand sanitization protocols',
-      'Occupant evacuation recommended until primary extraction and disinfection complete',
-      'Proper medical waste disposal following Virginia DEQ and EPA biohazard regulations'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Safe Sewage Cleanup Track Record',
-    description: 'Over 600 sewage backup cleanups completed in Northern Virginia with zero disease transmission incidents. Our comprehensive disinfection protocols result in 100% ATP test pass rate on first attempt. Customer satisfaction scores of 4.7/5.0 despite the challenging nature of sewage losses, reflecting our professionalism and thorough communication.',
-    listItems: [
-      '600+ sewage cleanup projects with zero occupant illness or disease transmission',
-      '100% ATP testing pass rate confirming hospital-grade surface disinfection',
-      '4.7/5.0 customer satisfaction score on sewage and biohazard cleanup services',
-      'Average sewage extraction and disinfection completion within 8 hours of arrival'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -552,32 +448,6 @@ const floodCleanupTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Contaminated Flood Water Safety Measures',
-    description: 'Flood water is Category 3 black water containing sewage, chemicals, pesticides, and hazardous materials requiring full biohazard protocols. We treat all flood water as contaminated regardless of source, using full PPE and proper disinfection. Electrical hazards are assessed before entering flooded areas, and structural stability is verified before equipment loading.',
-    listItems: [
-      'Full biohazard PPE for all flood water exposure including waders and respirators',
-      'Electrical safety verification and power shutoff before entering flooded areas',
-      'Structural engineering assessment for flood-weakened foundations and supports',
-      'EPA-registered antimicrobial disinfection on all flood-contacted surfaces'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Successful Flood Restoration Projects',
-    description: 'Over 800 successful flood cleanup and restoration projects completed in Northern Virginia. Our rapid response and industrial-grade extraction equipment result in 70% lower total loss rates compared to delayed mitigation. Customer satisfaction scores of 4.6/5.0 on flood projects reflect our ability to handle the stress and complexity of major flood events.',
-    listItems: [
-      '800+ flood cleanup projects from basement flooding to multi-story commercial losses',
-      '70% reduction in total loss determinations through rapid response and aggressive drying',
-      '4.6/5.0 customer satisfaction score on flood restoration services',
-      'Average flood water extraction completion within 24 hours of initial response'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Storm Damage Restoration ---
@@ -659,32 +529,6 @@ const stormDamageRestorationTabs: TabItem[] = [
       'Relationships with local building officials expediting emergency repair permits'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Storm Site Safety & Hazard Assessment',
-    description: 'Storm-damaged properties present numerous hazards including downed power lines, structural instability, and falling debris. Our crews conduct comprehensive safety assessments before entering damaged structures, identifying electrical, structural, and environmental hazards. We coordinate with utility companies for safe power restoration and with structural engineers when building integrity is compromised.',
-    listItems: [
-      'Comprehensive site safety assessment before entering storm-damaged structures',
-      'Coordination with power companies ensuring downed lines are de-energized',
-      'Structural stability verification before equipment loading or personnel entry',
-      'Fall protection and ladder safety protocols for roof and upper-level storm damage'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Storm Damage Restoration Success Rate',
-    description: 'Over 1,000 storm damage restoration projects completed across Northern Virginia. Our rapid emergency response reduces secondary water damage by 65% compared to delayed stabilization. Customer satisfaction scores of 4.7/5.0 on storm damage projects reflect our ability to coordinate complex multi-trade repairs and communicate throughout the insurance process.',
-    listItems: [
-      '1,000+ storm damage restorations from minor leaks to catastrophic wind losses',
-      '65% reduction in secondary water damage through rapid emergency protection',
-      '4.7/5.0 customer satisfaction score on storm damage restoration services',
-      'Average emergency tarping deployment within 3 hours during major weather events'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -768,32 +612,6 @@ const burstPipeCleanupTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Electrical Safety & Water Damage Protocols',
-    description: 'Burst pipe water often saturates electrical systems creating electrocution hazards requiring immediate power shutoff. Our technicians verify electrical safety before entering pipe burst areas and coordinate with electricians when panels or outlets are submerged. We assess ceiling and floor structural stability when pipe bursts occur on upper levels, preventing collapse hazards.',
-    listItems: [
-      'Immediate electrical safety assessment and power shutoff at pipe burst scenes',
-      'Coordination with licensed electricians when electrical systems are water-damaged',
-      'Structural stability evaluation when upper-level pipe bursts saturate floors',
-      'Proper PPE and safety protocols for all pipe burst water extraction operations'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Burst Pipe Response Track Record',
-    description: 'Over 900 burst pipe emergency responses completed in Northern Virginia with an average 58-minute arrival time. Our rapid extraction reduces total repair costs by an average of 45% compared to delayed response. Customer satisfaction scores of 4.8/5.0 on burst pipe emergencies reflect our speed, professionalism, and clear communication during stressful situations.',
-    listItems: [
-      '900+ burst pipe emergency responses across Northern Virginia',
-      '58-minute average arrival time from initial emergency call to on-site',
-      '45% average reduction in total damage costs through rapid water extraction',
-      '4.8/5.0 customer satisfaction score on burst pipe emergency services'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Odor Removal ---
@@ -875,32 +693,6 @@ const odorRemovalTabs: TabItem[] = [
       'Familiarity with HOA requirements in Reston, Ashburn, and Arlington communities'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Safe Deodorization Protocols',
-    description: 'All chemical deodorizers are EPA-registered and approved for residential use with full SDS documentation provided to homeowners. We use hydroxyl generators instead of ozone whenever spaces are occupied, and clearly post ozone treatment areas with bilingual warning signage. Our technicians wear respiratory protection during thermal fogging and ensure proper ventilation before re-entry.',
-    listItems: [
-      'EPA-registered deodorizers with complete safety data sheets provided',
-      'Hydroxyl-first approach for occupied spaces - no ozone risk to people or pets',
-      'Clear posting and lockout procedures during ozone shock treatments',
-      'Post-treatment ventilation and air clearance before home re-occupancy'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Documented Odor Elimination Results',
-    description: 'Our odor removal success rate exceeds 98% on first treatment with third-party verification available for real estate and litigation cases. We maintain before/after air quality data showing particulate and VOC reductions averaging 94% post-treatment. Client satisfaction surveys show 97% report complete odor elimination within 72 hours of treatment completion.',
-    listItems: [
-      '98% first-time odor elimination success rate across all odor types',
-      'Average 94% reduction in VOCs measured by independent air quality testing',
-      'Over 500 successful fire and smoke deodorization projects in Northern Virginia',
-      '97% of clients report complete odor removal within 3 days of final treatment'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -984,32 +776,6 @@ const contentsCleaningPackoutTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Safe Contents Handling Protocols',
-    description: 'All contents are handled with gloves and protective wrapping to prevent cross-contamination between clean and damaged items. We use color-coded packing materials to identify contamination levels - green for clean, yellow for smoke-affected, red for biohazard. Our warehouse maintains separate cleaning zones for fire, water, and sewage-contaminated items preventing cross-contamination during restoration.',
-    listItems: [
-      'Gloved handling and protective wrapping preventing fingerprints and additional soiling',
-      'Color-coded packing system identifying contamination levels for proper cleaning',
-      'Separate restoration zones for fire, water, and biohazard contents',
-      'HEPA filtration in cleaning areas preventing airborne contamination during processing'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Contents Restoration Success Rates',
-    description: 'Our ultrasonic cleaning and specialized restoration processes save an average of 76% of contents that adjusters initially classify as total losses. We maintain a 99.7% inventory accuracy rate with fewer than 3 items lost per 1,000 packed out. Client surveys show 94% satisfaction with the condition of returned contents and 98% report items cleaner than pre-loss condition.',
-    listItems: [
-      '76% of items initially deemed total loss successfully restored to pre-loss condition',
-      '99.7% inventory accuracy rate - virtually zero lost items during pack-out and storage',
-      'Average contents claim savings of $18,000 through successful restoration vs. replacement',
-      '94% client satisfaction with restored item condition exceeding expectations'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Basement Flooding ---
@@ -1091,32 +857,6 @@ const basementFloodingTabs: TabItem[] = [
       'Understanding of seasonal basement flooding patterns during spring storms'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Basement Flood Safety Protocols',
-    description: 'We never enter flooded basements until electrical power is confirmed off at the breaker panel to prevent electrocution hazards. Our technicians wear rubber boots, gloves, and respirators when extracting category 3 water from sewage backups or prolonged standing water. We test for structural instability, gas leaks, and carbon monoxide before beginning extraction in finished basements.',
-    listItems: [
-      'Mandatory electrical shutoff verification before entering flooded basements',
-      'Full PPE including respirators for sewage backups and black water contamination',
-      'Structural safety assessment before placing heavy extraction equipment',
-      'Gas leak and carbon monoxide testing in basements with utility equipment'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Basement Drying Success Rates',
-    description: 'Our rapid response and industrial dehumidification achieve complete basement drying in an average of 4.2 days compared to 7-10 days with standard equipment. We maintain a 96% success rate preventing mold growth after basement floods through aggressive drying and antimicrobial application. Over 1,200 Northern Virginia basement floods restored with an average insurance claim savings of $12,000 through water damage mitigation.',
-    listItems: [
-      'Average 4.2-day basement drying time using trailer-mounted desiccant dehumidifiers',
-      '96% mold prevention success rate through rapid response and aggressive drying',
-      'Over 1,200 basement floods restored across Fairfax, Arlington, and Loudoun counties',
-      'Average $12,000 insurance savings through fast mitigation reducing structural damage'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -1200,32 +940,6 @@ const crawlSpaceDryingTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Crawl Space Safety Protocols',
-    description: 'We test crawl space air quality for oxygen levels, carbon monoxide, and methane before entry, with continuous monitoring during work. Technicians wear respirators with P100 filters when mold, fiberglass insulation, or rodent contamination is present. We establish ventilation and maintain two-way communication with safety monitors during all confined space entries.',
-    listItems: [
-      'Pre-entry air quality testing for oxygen, CO, and explosive gases',
-      'Full respiratory protection with P100 filters for mold and insulation exposure',
-      'Continuous ventilation and air monitoring during crawl space work',
-      'Two-person teams with constant communication and emergency extraction plans'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Crawl Space Restoration Results',
-    description: 'Our targeted crawl space drying achieves structural moisture standards in an average of 5.3 days with 94% of projects avoiding floor joist replacement through rapid intervention. We maintain a 91% success rate preventing mold recurrence when clients implement our vapor barrier recommendations. Over 800 Northern Virginia crawl spaces dried with average moisture reduction from 87% humidity to 52% post-treatment.',
-    listItems: [
-      'Average 5.3-day crawl space drying time preventing structural wood damage',
-      '94% of flooded crawl spaces avoid joist replacement through fast drying',
-      '91% mold prevention success when vapor barrier recommendations are followed',
-      'Over 800 crawl spaces restored with average humidity reduction from 87% to 52%'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Hardwood Floor Drying ---
@@ -1307,32 +1021,6 @@ const hardwoodFloorDryingTabs: TabItem[] = [
       'Understanding of engineered wood products common in newer Loudoun and Fairfax homes'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Safe Hardwood Drying Protocols',
-    description: 'We never exceed 2% moisture content reduction per day preventing stress cracks and finish damage during aggressive drying. Floor mat systems operate at safe vacuum levels preventing plank lifting or adhesive failure in glued installations. We monitor ambient conditions continuously, adjusting dehumidification to maintain stable relative humidity preventing rapid moisture loss.',
-    listItems: [
-      'Controlled drying rates under 2% MC change daily preventing wood stress damage',
-      'Safe vacuum pressures in mat systems protecting glued and nailed installations',
-      'Continuous humidity monitoring preventing rapid moisture swings',
-      'Protective padding preventing equipment marks on finished surfaces'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Hardwood Restoration Success Rates',
-    description: 'Our mat drying systems save 78% of hardwood floors from replacement when deployed within 48 hours of water damage. We achieve target moisture content in an average of 6.8 days compared to 10-14 days with conventional drying methods. Client surveys show 89% satisfaction with floor appearance post-drying and an average insurance claim savings of $14,500 through successful restoration.',
-    listItems: [
-      '78% hardwood floor save rate when mat systems deployed within 48 hours',
-      'Average 6.8-day drying time to target MC using Injectidry technology',
-      'Over 600 hardwood floor restorations across Northern Virginia',
-      'Average $14,500 claim savings through successful restoration vs. replacement'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -1416,32 +1104,6 @@ const roofLeakWaterDamageTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Roof Leak Safety Protocols',
-    description: 'We never enter attics during active lightning storms or when roof structural integrity is compromised by water damage. Technicians wear fall protection when accessing steep attic spaces and heat stress monitoring when working in summer conditions. We test ceiling stability before placing equipment and coordinate electrical shutoff when water threatens light fixtures and wiring.',
-    listItems: [
-      'Lightning safety protocols delaying attic entry during active electrical storms',
-      'Fall protection and stable footing requirements in steep attic spaces',
-      'Heat stress monitoring and mandatory breaks during summer attic work',
-      'Electrical hazard assessment before ceiling water extraction near fixtures'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Roof Leak Restoration Results',
-    description: 'Our rapid interior response achieves complete ceiling and attic drying in an average of 5.1 days preventing costly mold remediation and ceiling replacement. We maintain a 92% success rate salvaging water-stained ceilings through proper drying and paint restoration versus full replacement. Over 950 Northern Virginia roof leak restorations with 96% of clients avoiding mold growth through aggressive attic dehumidification.',
-    listItems: [
-      'Average 5.1-day ceiling and attic drying time preventing mold and structural damage',
-      '92% ceiling save rate through proper drying avoiding unnecessary replacement',
-      'Over 950 roof leak restorations across Fairfax, Arlington, and Loudoun counties',
-      '96% mold prevention success rate through rapid attic dehumidification'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Structural Drying ---
@@ -1523,32 +1185,6 @@ const structuralDryingTabs: TabItem[] = [
       'Understanding of historic building materials in Alexandria and Arlington requiring specialized drying'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Structural Drying Safety Standards',
-    description: 'We maintain safe indoor air quality during aggressive dehumidification by monitoring CO2 levels and ensuring adequate fresh air exchange. Equipment electrical loads are calculated to prevent circuit overloads, with dedicated circuits used for high-amperage desiccant units. We post equipment safety notices and maintain clear pathways preventing trip hazards in occupied homes.',
-    listItems: [
-      'Indoor air quality monitoring preventing CO2 buildup during sealed drying chambers',
-      'Electrical load calculations and dedicated circuits for industrial equipment',
-      'Equipment placement ensuring safe egress and preventing trip hazards',
-      'Noise level monitoring with sound dampening when operating in occupied spaces'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Structural Drying Performance Data',
-    description: 'Our psychrometric approach achieves IICRC drying standards in an average of 3.8 days compared to 5-7 days with conventional equipment placement. We maintain a 98% success rate meeting drying goals without material removal through scientific equipment selection and placement. Over 2,400 structural drying projects completed with average insurance savings of $16,000 through rapid drying preventing demolition.',
-    listItems: [
-      'Average 3.8-day drying time to IICRC standards using psychrometric protocols',
-      '98% success rate achieving drying goals without removing building materials',
-      'Over 2,400 structural drying projects across Northern Virginia',
-      'Average $16,000 insurance savings through scientific drying preventing demolition'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -1636,32 +1272,6 @@ const commercialWaterDamageTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Workplace Safety & Compliance',
-    description: 'We maintain OSHA compliance, conduct daily safety briefings, and establish contamination barriers to protect building occupants. Our crews follow lockout/tagout procedures and coordinate with facility managers on access and safety protocols.',
-    listItems: [
-      'OSHA compliance with daily safety documentation',
-      'Containment barriers to isolate work zones',
-      'Electrical lockout/tagout procedures followed',
-      'Air quality monitoring in occupied spaces'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Restoration Track Record',
-    description: 'We have successfully restored over 400 commercial properties in Northern Virginia including Class A office buildings, retail centers, and industrial facilities. Our average project completion time is 30% faster than industry standards.',
-    listItems: [
-      '400+ commercial properties restored since 2015',
-      'Average 5-7 day drying time for standard losses',
-      '98% client satisfaction rating from property managers',
-      '$50M+ in commercial claims successfully processed'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Commercial Flood Cleanup ---
@@ -1743,32 +1353,6 @@ const commercialFloodCleanupTabs: TabItem[] = [
       'Coordination with local building inspectors post-flood'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Contaminated Water Safety Measures',
-    description: 'Our crews wear appropriate PPE including waterproof suits, respirators, and eye protection when handling Category 3 floodwater. We establish decontamination zones, dispose of hazardous materials properly, and follow CDC guidelines for sewage-contaminated environments.',
-    listItems: [
-      'Full PPE for Category 3 water exposure (suits, respirators)',
-      'Decontamination stations at work zone boundaries',
-      'Biohazard waste disposal per EPA regulations',
-      'CDC and OSHA guidelines followed for contaminated water'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Large-Scale Flood Restoration Success',
-    description: 'We have extracted over 2 million gallons of floodwater from Northern Virginia commercial properties including complete basement floods, multi-story office building floods, and retail center inundations. Our largest single project involved a 45,000 sq ft warehouse flood.',
-    listItems: [
-      '2M+ gallons of floodwater extracted from commercial sites',
-      'Successfully restored 45,000 sq ft warehouse flood (2023)',
-      'Average 10-14 day timeline for complete flood restoration',
-      'Zero failed post-remediation contamination tests'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -1852,32 +1436,6 @@ const largeLossRestorationTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Job Site Safety Program',
-    description: 'We implement formal site-specific safety plans (SSSP) with daily toolbox talks, hazard analysis, and OSHA compliance documentation. Our safety program includes fall protection, confined space protocols, and emergency action plans for complex large-loss environments.',
-    listItems: [
-      'Site-Specific Safety Plans (SSSP) for each project',
-      'Daily toolbox talks with hazard analysis documentation',
-      'Fall protection and confined space entry protocols',
-      'Emergency action plans and evacuation procedures'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Catastrophic Loss Track Record',
-    description: 'We have successfully managed large-loss projects exceeding $5 million in total damages including multi-story office building floods, manufacturing facility fires, and campus-wide storm damage events. Our largest single project was a $12M mixed-use development restoration.',
-    listItems: [
-      '$12M largest single project (mixed-use development, 2022)',
-      'Average large-loss project completion: 90-120 days',
-      '25+ projects exceeding $1M in restoration costs',
-      '100% client retention rate on large-loss accounts'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Commercial Sewage Cleanup ---
@@ -1959,32 +1517,6 @@ const commercialSewageCleanupTabs: TabItem[] = [
       'Familiarity with health department notification requirements'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Biohazard Safety & Compliance',
-    description: 'Our crews follow OSHA Bloodborne Pathogens Standard with full PPE including Tyvek suits, nitrile gloves, face shields, and respirators. We establish decontamination zones, use hospital-grade disinfectants, and properly dispose of biohazard waste per Virginia DEQ regulations.',
-    listItems: [
-      'OSHA Bloodborne Pathogens Standard compliance (29 CFR 1910.1030)',
-      'Full biohazard PPE (Tyvek, N95/P100, face shields, gloves)',
-      'Decontamination zones and waste staging areas',
-      'Virginia DEQ biohazard waste disposal compliance'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Sewage Remediation Success',
-    description: 'We have successfully decontaminated over 200 commercial sewage backups including restaurants, office buildings, retail spaces, and medical facilities. Our post-remediation testing shows 100% pass rate for ATP surface cleanliness verification.',
-    listItems: [
-      '200+ commercial sewage backup remediations completed',
-      '100% pass rate on post-remediation ATP testing',
-      'Zero health department violations or failed inspections',
-      'Average 3-5 day timeline from backup to reopening'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -2068,32 +1600,6 @@ const commercialMoldRemediationTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Containment & Worker Protection',
-    description: 'We establish negative pressure containment with HEPA-filtered air scrubbers, install polyethylene barriers, and create decontamination chambers for worker egress. All technicians wear respirators (N95 minimum, P100 for heavy growth) and disposable suits to prevent cross-contamination.',
-    listItems: [
-      'Negative pressure containment with HEPA air scrubbers',
-      'Polyethylene barrier systems (6-mil minimum)',
-      'Decontamination chambers for personnel and equipment',
-      'Respiratory protection (N95/P100 per exposure level)'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Mold Remediation Success Rate',
-    description: 'We have successfully remediated over 300 commercial mold projects with a 99% first-time clearance rate. Our largest project involved a 30,000 sq ft office building with HVAC system contamination requiring full ductwork cleaning and replacement.',
-    listItems: [
-      '300+ commercial mold remediation projects completed',
-      '99% first-time clearance testing pass rate',
-      'Largest project: 30,000 sq ft office with HVAC contamination',
-      'Zero tenant health complaints post-remediation'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Commercial Fire & Smoke Cleanup ---
@@ -2175,32 +1681,6 @@ const commercialFireSmokeCleanupTabs: TabItem[] = [
       'Established relationships with commercial fire adjusters'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Post-Fire Safety Measures',
-    description: 'Our crews conduct structural stability assessments before entry, test for asbestos in damaged materials, and monitor air quality for carbon monoxide and other combustion byproducts. We follow OSHA guidelines for fire-damaged structures and wear appropriate respiratory protection.',
-    listItems: [
-      'Structural engineer consultation before entry (if needed)',
-      'Asbestos testing in fire-damaged materials (pre-1980 buildings)',
-      'Air quality monitoring (CO, VOCs, combustion byproducts)',
-      'Respiratory protection (P100 filters minimum for soot)'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Fire Restoration Success',
-    description: 'We have successfully restored over 150 commercial fire losses ranging from small kitchen fires to complete building fires with structural damage. Our average timeline from fire loss to business reopening is 45-60 days for moderate damage events.',
-    listItems: [
-      '150+ commercial fire and smoke damage restorations',
-      'Average 45-60 day timeline for moderate fire damage',
-      '95% contents salvage rate on restorable items',
-      'Successfully restored and reopened 12 restaurants post-fire'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -2284,32 +1764,6 @@ const commercialStormDamageTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Storm Damage Site Safety',
-    description: 'We assess structural integrity before entry, identify electrical hazards from water intrusion, and establish fall protection for roof work. Our crews follow OSHA guidelines for debris removal, temporary roof access, and working in unstable post-storm conditions.',
-    listItems: [
-      'Structural stability assessment before building entry',
-      'Electrical hazard identification and power isolation',
-      'Fall protection systems for roof and elevated work',
-      'Debris removal with hazard monitoring (nails, glass, etc.)'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Storm Restoration Track Record',
-    description: 'We have restored over 250 commercial properties after storm events including complete roof replacements, multi-building wind damage, and severe hail damage to retail centers. Our largest storm event response involved 15 simultaneous commercial properties during a 2019 derecho.',
-    listItems: [
-      '250+ commercial storm damage restoration projects',
-      'Largest CAT response: 15 simultaneous properties (derecho 2019)',
-      'Average 30-90 day timeline depending on damage severity',
-      '98% customer satisfaction on emergency storm response'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Commercial Roof Leak ---
@@ -2391,32 +1845,6 @@ const commercialRoofLeakTabs: TabItem[] = [
       'Building code compliance for roof penetrations and drains'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Roof Work Safety Standards',
-    description: 'All roof access work follows OSHA fall protection requirements including guardrails, safety harnesses, and warning line systems. We coordinate with building management on roof access procedures, equipment rigging, and tenant notification for overhead work.',
-    listItems: [
-      'OSHA fall protection compliance for roof access',
-      'Safety harness and anchor point systems',
-      'Building management coordination for roof access',
-      'Tenant notification for overhead drying equipment'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Commercial Roof Leak Restoration Success',
-    description: 'We have successfully dried and restored over 300 commercial roof leaks including large warehouse roofs, multi-story office buildings, and retail centers. Our average roof cavity drying timeline is 7-14 days depending on insulation saturation levels.',
-    listItems: [
-      '300+ commercial roof leak water damage restorations',
-      'Average 7-14 day drying timeline for roof cavities',
-      'Successfully dried roof systems up to 50,000 sq ft',
-      '95% success rate drying wet insulation in place (no removal)'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -2504,32 +1932,6 @@ const healthcareFacilitiesTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Infection Prevention & Control Measures',
-    description: 'Our Infection Control Risk Assessment (ICRA) protocols include Type IV barriers, anteroom construction, and continuous air pressure monitoring. We follow CDC and FGI Guidelines for Design and Construction of Healthcare Facilities.',
-    listItems: [
-      'ICRA Class III and IV barrier construction for high-risk areas',
-      'Continuous negative air pressure monitoring with alarms',
-      'Dedicated PPE protocols including respirators and sterile gloves',
-      'Waste segregation following biohazardous material protocols'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Healthcare Facility Success Metrics',
-    description: 'We have restored over 150 healthcare facilities in Northern Virginia without a single failed health inspection. Our average restoration time is 40% faster than industry standard while maintaining sterile protocols.',
-    listItems: [
-      '150+ healthcare facilities restored with zero failed inspections',
-      '100% Joint Commission compliance rate on restored areas',
-      'Average 3.2 days faster completion than industry benchmarks',
-      '99.8% patient area uptime during restoration projects'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Hospitality & Multifamily ---
@@ -2611,32 +2013,6 @@ const hospitalityMultifamilyTabs: TabItem[] = [
       'Established relationships with local HOA management companies'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Occupied Space Safety Standards',
-    description: 'We maintain strict protocols for working in occupied residential and hospitality spaces, including hallway protection, elevator padding, common area barriers, and after-hours quiet zones. All equipment is secured and locked daily.',
-    listItems: [
-      'Common area protection including hallways, elevators, and lobbies',
-      'Quiet hours compliance for occupied residential buildings',
-      'Equipment security protocols with daily lock-up procedures',
-      'Slip-resistant matting and warning signage in all work zones'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Multi-Unit Restoration Success',
-    description: 'We have restored over 2,000 individual units across 200+ apartment and condo properties in Northern Virginia. Our average tenant satisfaction rating is 4.8/5.0 and 95% of property managers rehire us for future incidents.',
-    listItems: [
-      '2,000+ individual units restored across NoVA properties',
-      '4.8/5.0 average tenant satisfaction rating on occupied restorations',
-      '95% property manager retention rate for repeat business',
-      'Average 5.2 days per unit restoration with minimal tenant disruption'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -2720,32 +2096,6 @@ const municipalEducationTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Child-Safe Public Facility Protocols',
-    description: 'We use only non-toxic, child-safe cleaning products and maintain strict containment barriers to prevent student access to work areas. All equipment is secured and electrical cords are protected to meet playground and school safety standards.',
-    listItems: [
-      'Child-safe, non-toxic cleaning and antimicrobial products only',
-      'Strict containment barriers preventing student access to work zones',
-      'Electrical safety protocols including GFCI protection and cord covers',
-      'Daily equipment security sweeps in educational environments'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Public Facility Restoration Success',
-    description: 'We have restored over 80 schools and municipal buildings in Northern Virginia with zero lost instructional days due to restoration delays. Our average project completion is 35% faster than budgeted timelines.',
-    listItems: [
-      '80+ schools and municipal buildings restored in NoVA',
-      'Zero instructional days lost due to restoration project delays',
-      '35% faster average completion than school board budgeted timelines',
-      '100% compliance rate on state education facility inspections'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Industrial Facilities ---
@@ -2827,32 +2177,6 @@ const industrialFacilitiesTabs: TabItem[] = [
       'Local industrial hygiene laboratory partnerships for testing'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Industrial Hazard Safety Protocols',
-    description: 'We conduct pre-job hazard assessments including LOTO (Lockout/Tagout) coordination, confined space permits, and hot work permits. Our teams use facility-specific PPE including respirators, chemical suits, and fall protection as required.',
-    listItems: [
-      'Lockout/Tagout (LOTO) coordination with facility safety personnel',
-      'Confined space entry permits and continuous atmospheric monitoring',
-      'Hot work permits and fire watch procedures for welding/cutting',
-      'Facility-specific PPE including Level A/B chemical protection suits'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Industrial Facility Success Metrics',
-    description: 'We have restored over 100 industrial facilities in Northern Virginia with an average production uptime of 94% during restoration. Our incident-free safety record spans 500,000+ man-hours in hazardous industrial environments.',
-    listItems: [
-      '100+ industrial facilities restored with minimal production impact',
-      '94% average production uptime maintained during restoration',
-      '500,000+ man-hours with zero OSHA recordable incidents',
-      'Average 8.5 days faster completion than industrial insurance estimates'
-    ],
-    icon: 'BarChart3',
   },
 ];
 
@@ -2940,32 +2264,6 @@ const moistureMappingConsultingTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Non-Invasive Assessment Protocols',
-    description: 'Our moisture surveys prioritize non-destructive testing methods to minimize property impact. When invasive testing is required, we use surgical precision with small-diameter bore holes and professional patching to restore surfaces.',
-    listItems: [
-      'Non-invasive thermal and electromagnetic moisture detection first',
-      'Minimal-impact invasive testing with 1/4" diameter probe holes',
-      'Professional surface restoration and patching after invasive tests',
-      'Photo documentation of all testing locations and methodologies'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Consulting Success Metrics',
-    description: 'We have conducted over 800 professional moisture surveys in Northern Virginia with a 100% report defensibility record in litigation and insurance proceedings. Our findings have supported over $12M in successful insurance claims.',
-    listItems: [
-      '800+ professional moisture surveys conducted in NoVA',
-      '100% report defensibility record in court and insurance proceedings',
-      '$12M+ in insurance claims supported by our moisture documentation',
-      'Average 3.2 business days turnaround for detailed written reports'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Indoor Air Quality ---
@@ -3048,32 +2346,6 @@ const indoorAirQualityTabs: TabItem[] = [
     ],
     icon: 'MapPin',
   },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Aseptic Sampling Protocols',
-    description: 'We follow strict aseptic techniques during air sample collection to prevent cross-contamination. All sampling equipment is sterilized, and technicians wear protective equipment to ensure sample integrity and laboratory accuracy.',
-    listItems: [
-      'Sterile sampling cassettes and aseptic collection techniques',
-      'Pre-sampling outdoor control samples for accurate comparison',
-      'Calibrated air pump flow rates verified before each sampling event',
-      'Chain-of-custody documentation from collection through analysis'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Air Quality Testing Success Metrics',
-    description: 'We have conducted over 1,200 indoor air quality assessments in Northern Virginia with findings supporting successful remediation in 98% of cases. Our post-remediation clearance testing has a 99.2% first-time pass rate.',
-    listItems: [
-      '1,200+ indoor air quality assessments completed in NoVA',
-      '98% of remediation projects verified successful by our testing',
-      '99.2% first-time clearance pass rate on post-remediation testing',
-      'Average 4.5 business days from sampling to final written report'
-    ],
-    icon: 'BarChart3',
-  },
 ];
 
 // --- Environmental Testing ---
@@ -3155,32 +2427,6 @@ const environmentalTestingTabs: TabItem[] = [
       'Established relationships with licensed asbestos and lead abatement contractors'
     ],
     icon: 'MapPin',
-  },
-  {
-    id: 'safety',
-    label: 'Safety Protocols',
-    title: 'Hazardous Material Sampling Safety',
-    description: 'We follow OSHA hazardous material sampling protocols including respirator use, protective clothing, and containment barriers during suspected asbestos or lead sampling. All personnel are trained in hazard recognition and exposure prevention.',
-    listItems: [
-      'OSHA respiratory protection program with fit-tested respirators',
-      'Protective clothing and glove protocols for hazardous material sampling',
-      'Containment and decontamination procedures during asbestos sampling',
-      'Hazard communication training for all environmental sampling personnel'
-    ],
-    icon: 'HeartPulse',
-  },
-  {
-    id: 'results',
-    label: 'Proven Results',
-    title: 'Environmental Testing Success Metrics',
-    description: 'We have completed over 900 environmental assessments in Northern Virginia with 100% regulatory acceptance of our sampling methods and documentation. Our testing has supported safe abatement of over 500,000 square feet of hazardous materials.',
-    listItems: [
-      '900+ environmental assessments completed in NoVA',
-      '100% regulatory acceptance rate on sampling methods and reports',
-      '500,000+ sq ft of hazardous materials safely assessed and abated',
-      'Average 5-7 business days from sampling to final certified report'
-    ],
-    icon: 'BarChart3',
   },
 ];
 

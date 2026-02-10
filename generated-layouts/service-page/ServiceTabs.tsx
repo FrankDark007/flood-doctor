@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Cpu, FileText, Users, Shield, CheckCircle2, Clock, MapPin, HeartPulse, BarChart3 } from 'lucide-react';
+import { Cpu, FileText, Users, Shield, CheckCircle2, Clock, MapPin } from 'lucide-react';
 import { TabItem } from './types';
 
 interface ServiceTabsProps {
@@ -15,8 +15,6 @@ const iconMap: Record<string, React.FC<any>> = {
   Shield,
   Clock,
   MapPin,
-  HeartPulse,
-  BarChart3
 };
 
 /** SVG border that traces the full perimeter of a pill button */
