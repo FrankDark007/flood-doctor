@@ -15,6 +15,8 @@ export interface ServicePageOverride {
 
   // Hero overrides
   title?: string;
+  /** Words in the title to highlight bold + blue (Google style) */
+  titleHighlight?: string;
   subtitle?: string;
   badges?: Badge[];
 
@@ -2437,6 +2439,7 @@ const waterDamageOverride: ServicePageOverride = {
   slug: 'water-damage-restoration',
 
   title: 'Water Damage Restoration Services',
+  titleHighlight: 'Water Damage',
   subtitle: '24/7 emergency water extraction, structural drying, and water damage repair. IICRC-certified water mitigation specialists with 60-minute response and direct insurance billing.',
 
   badges: [

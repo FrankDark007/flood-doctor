@@ -65,6 +65,7 @@ export interface Testimonial {
 
 export interface ServicePageData {
   title: string;
+  titleHighlight?: string;
   subtitle: string;
   badges: Badge[];
   quickFacts: QuickFact[];

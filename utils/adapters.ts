@@ -478,6 +478,7 @@ export function adaptServiceToPageData(
   // Build default page data
   const pageData: ServicePageData = {
     title: service.heroHeading || service.title,
+    titleHighlight: service.title, // Default: highlight the service name in bold blue
     subtitle: service.heroIntro || service.shortDescription || `IICRC-certified technicians onsite in 60 minutes, 24/7. Direct insurance billing.`,
     emergencyPhone,
     badges: DEFAULT_BADGES,
@@ -498,6 +499,7 @@ export function adaptServiceToPageData(
   const override = getServicePageOverride(lastSegment);
   if (override) {
     if (override.title) pageData.title = override.title;
+    if (override.titleHighlight) pageData.titleHighlight = override.titleHighlight;
     if (override.subtitle) pageData.subtitle = override.subtitle;
     if (override.badges) pageData.badges = override.badges;
     if (override.quickFacts) pageData.quickFacts = override.quickFacts;

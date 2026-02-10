@@ -139,6 +139,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
       <div ref={heroRef}>
         <ServiceHeroCompact
           title={isLocalPage ? `${serviceName} in ${cityName}` : pageData.title}
+          titleHighlight={pageData.titleHighlight}
           subtitle={pageData.subtitle}
           badges={pageData.badges}
           emergencyPhone={emergencyPhone}

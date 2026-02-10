@@ -4,6 +4,8 @@ import { Badge } from './types';
 
 interface ServiceHeroCompactProps {
   title: string;
+  /** Words in the title to render bold + blue (Google-style keyword highlight) */
+  titleHighlight?: string;
   subtitle: string;
   badges: Badge[];
   emergencyPhone: string;
@@ -24,12 +26,27 @@ interface ServiceHeroCompactProps {
  */
 const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
   title,
+  titleHighlight,
   subtitle,
   badges,
   emergencyPhone,
   onCtaClick,
   visual
 }) => {
+  // Render title with optional blue bold highlight on matching words
+  const renderTitle = () => {
+    if (!titleHighlight) return title;
+    const idx = title.toLowerCase().indexOf(titleHighlight.toLowerCase());
+    if (idx === -1) return title;
+    const before = title.slice(0, idx);
+    const match = title.slice(idx, idx + titleHighlight.length);
+    const after = title.slice(idx + titleHighlight.length);
+    return (
+      <>
+        {before}<span className="font-bold text-[#1a73e8]">{match}</span>{after}
+      </>
+    );
+  };
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Subtle background pattern */}
@@ -60,7 +77,7 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
             {/* Headline */}
             <div>
               <h1 className="text-[40px] lg:text-[60px] leading-[1.1] font-normal mb-6 tracking-tight text-[#202124]">
-                {title}
+                {renderTitle()}
               </h1>
               <p className="text-lg lg:text-[18px] leading-[28px] text-[#3c4043] mb-8 max-w-xl">
                 {subtitle}
