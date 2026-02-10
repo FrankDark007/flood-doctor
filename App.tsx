@@ -69,7 +69,7 @@ const GeminiWaterDamage = lazy(() => import('./pages/templates/dev/GeminiWaterDa
 const GeminiWaterDamageV2 = lazy(() => import('./pages/templates/dev/GeminiWaterDamageV2'));
 
 // Google Business Profile Clone (files removed — dev-only)
-// const GoogleHomeCloneDev = lazy(() => import('./pages/GoogleHomeCloneDev'));
+const GoogleHomeCloneDev = lazy(() => import('./pages/GoogleHomeCloneDev'));
 // const GbpCloneDevV3 = lazy(() => import('./pages/GbpCloneDevV3'));
 // const FloodDoctorHomeV3 = lazy(() => import('./pages/FloodDoctorHomeV3'));
 // const FloodDoctorHomeV3Parity = lazy(() => import('./pages/FloodDoctorHomeV3Parity'));
