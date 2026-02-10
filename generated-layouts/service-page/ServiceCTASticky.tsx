@@ -33,7 +33,7 @@ const ServiceCTASticky: React.FC<ServiceCTAStickyProps> = ({ isVisible, emergenc
               onClick={onCtaClick}
               className="flex-1 md:flex-none bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-bold shadow-lg shadow-blue-500/30 transition-colors whitespace-nowrap"
             >
-              Get Free Quote
+              Request Services
             </button>
           </div>
 
