@@ -1,47 +1,47 @@
 import React, { useState, useCallback } from 'react';
-import { Star, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Our basement flooded at 2 AM during a storm. Flood Doctor arrived within an hour, worked through the night, and saved our finished basement.",
+    headline: "Flood Doctor saved our finished basement with a 1-hour emergency response",
     author: "Michael & Sarah R.",
     location: "McLean, Virginia",
-    rating: 5,
-    image: "/images/testimonials/customer-1.jpg",
+    image: "/images/testimonials/water-damage-1.jpg",
     stat: "1 hr",
-    statLabel: "Response time",
+    statLabel: "Response",
   },
   {
-    text: "Incredible service from start to finish. They handled the insurance claim entirely. The reconstruction team made it look like nothing ever happened.",
+    headline: "Full insurance claim handled — zero out-of-pocket cost for complete restoration",
     author: "David K.",
     location: "Arlington, Virginia",
-    rating: 5,
-    image: "/images/testimonials/customer-2.jpg",
+    image: "/images/testimonials/water-damage-2.jpg",
     stat: "$0",
     statLabel: "Out of pocket",
   },
   {
-    text: "Very respectful of my home — wore shoe covers every time, kept me informed throughout the entire process. The drying equipment was set up within hours.",
+    headline: "Home fully restored in 3 days with professional drying and reconstruction",
     author: "Jennifer L.",
     location: "Alexandria, Virginia",
-    rating: 5,
-    image: "/images/testimonials/customer-3.jpg",
+    image: "/images/testimonials/water-damage-3.jpg",
     stat: "3 days",
     statLabel: "Fully restored",
   },
   {
-    text: "A pipe burst in our ceiling on a Sunday night. They were at our door in 45 minutes and immediately got to work. Saved our hardwood floors.",
+    headline: "Sunday night pipe burst — 45-minute response saved our hardwood floors",
     author: "Robert & Linda T.",
     location: "Fairfax, Virginia",
-    rating: 5,
-    image: "/images/testimonials/customer-4.jpg",
+    image: "/images/testimonials/water-damage-4.jpg",
     stat: "45 min",
-    statLabel: "Sunday response",
+    statLabel: "Response",
   },
 ];
 
 export const SuccessStory: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goPrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, []);
 
   const goNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -55,21 +55,21 @@ export const SuccessStory: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-[32px] lg:text-[40px] font-bold text-[#202124] tracking-tight mb-6">
-            What our customers say
+            What success looks like
           </h2>
           <a
             href="/reviews/"
             className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full border border-[#747775] bg-white text-[15px] font-medium text-[#1a73e8] hover:bg-[#f6fafe] transition-colors"
           >
-            View all reviews
+            View all success stories
           </a>
         </div>
 
-        {/* Testimonial Card — Google style with photo left, quote right */}
+        {/* Testimonial Card — Google style: photo left, headline + CTA right */}
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-[28px] overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-2 min-h-[460px]">
-              {/* Left: Customer Photo */}
+              {/* Left: Photo with stat badge */}
               <div className="relative bg-[#f8f9fa] overflow-hidden">
                 <img
                   src={current.image}
@@ -77,35 +77,37 @@ export const SuccessStory: React.FC = () => {
                   className="w-full h-full object-cover min-h-[300px] md:min-h-full"
                   loading="lazy"
                 />
-                {/* Stat badge overlay — bottom-left like Google's "23x ROI" */}
+                {/* Stat badge — bottom-left like Google's ROAS badge */}
                 <div className="absolute bottom-6 left-6 bg-white rounded-2xl px-5 py-4 shadow-lg">
-                  <div className="text-[28px] font-bold text-[#1a73e8] leading-none">{current.stat}</div>
-                  <div className="text-[12px] text-[#5f6368] mt-1 font-medium">{current.statLabel}</div>
+                  <div className="text-[32px] font-bold text-[#1a73e8] leading-none">{current.stat}</div>
+                  <div className="text-[12px] text-[#5f6368] mt-1 font-medium uppercase tracking-wide">{current.statLabel}</div>
                 </div>
               </div>
 
-              {/* Right: Testimonial Content */}
+              {/* Right: Label + Headline + CTA */}
               <div className="p-10 lg:p-14 flex flex-col items-center justify-center text-center">
-                {/* Rating */}
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-[#fbbc04] text-[#fbbc04]" />
-                    ))}
-                  </div>
-                  <span className="text-[13px] text-[#5f6368]">5.0</span>
-                </div>
-
-                {/* Quote */}
-                <p className="text-[22px] lg:text-[26px] leading-[1.35] font-normal text-[#202124] mb-8">
-                  &ldquo;{current.text}&rdquo;
-                </p>
-
-                {/* Author */}
-                <div className="text-[15px] font-medium text-[#202124]">
+                {/* Author label — like Google's green brand name */}
+                <div className="text-[15px] font-semibold text-[#1a73e8] mb-5">
                   {current.author}
                 </div>
-                <div className="text-[14px] text-[#5f6368] mt-1">
+
+                {/* Headline */}
+                <h3 className="text-[22px] lg:text-[26px] leading-[1.35] font-normal text-[#202124] mb-8 max-w-md">
+                  {current.headline}
+                </h3>
+
+                {/* CTA — blue circle arrow + link text */}
+                <a href="/reviews/" className="group flex flex-col items-center gap-3">
+                  <span className="w-12 h-12 rounded-full bg-[#1a73e8] flex items-center justify-center group-hover:bg-[#1557b0] transition-colors">
+                    <ArrowRight size={20} className="text-white" />
+                  </span>
+                  <span className="text-[14px] font-medium text-[#1a73e8] group-hover:underline">
+                    Read their story
+                  </span>
+                </a>
+
+                {/* Location */}
+                <div className="text-[13px] text-[#5f6368] mt-6">
                   {current.location}
                 </div>
               </div>
@@ -113,8 +115,15 @@ export const SuccessStory: React.FC = () => {
           </div>
         </div>
 
-        {/* Pagination — Google style: pill counter + single chevron */}
+        {/* Pagination — Google style: left chevron + pill counter */}
         <div className="flex items-center justify-center gap-3 mt-10">
+          <button
+            onClick={goPrev}
+            className="text-[#5f6368] hover:text-[#202124] transition-colors p-1"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft size={24} />
+          </button>
           <span className="inline-flex items-center px-4 py-2 rounded-full border border-[#dadce0] bg-white text-[14px] text-[#3c4043] tabular-nums">
             {currentIndex + 1} / {testimonials.length}
           </span>
