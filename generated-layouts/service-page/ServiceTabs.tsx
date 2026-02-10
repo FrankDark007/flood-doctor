@@ -194,7 +194,7 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
           {/* Tab Content Panel */}
           <div
             key={activeTabIndex}
-            className="flex-1 bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100 animate-fade-in"
+            className="flex-1 bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100 animate-fade-in lg:min-h-[480px]"
           >
             <div className="flex items-start justify-between mb-6">
               <div>
@@ -210,9 +210,9 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
               {activeContent.description}
             </p>
 
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="grid md:grid-cols-2 gap-3 auto-rows-fr">
               {activeContent.listItems.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl">
+                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl min-h-[72px]">
                   <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
                   <span className="text-sm font-medium text-slate-700">{item}</span>
                 </div>
