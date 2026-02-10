@@ -196,14 +196,14 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* Animated Stats Section */}
-      <section className="py-12 bg-white border-b border-[#dadce0]">
+      <section className="py-20 lg:py-24 bg-white border-b border-[#dadce0]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <AnimatedStats variant="cards" />
         </div>
       </section>
 
       {/* Neighborhood Intro */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
@@ -248,7 +248,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* Hyper-Local Content */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             Serving Every Corner of {content.breadcrumbs[content.breadcrumbs.length - 1].label}
@@ -299,7 +299,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* Our Process Timeline */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
             Our Restoration Process
@@ -309,7 +309,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* Services Grid with Visual Icons */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             Our Services in {content.breadcrumbs[content.breadcrumbs.length - 1].label}
@@ -332,7 +332,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
 
       {/* Testimonials */}
       {content.testimonialSection.testimonials.length > 0 && (
-        <section className="py-20 lg:py-28 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
               {content.testimonialSection.headline}
@@ -361,7 +361,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       )}
 
       {/* Emergency Contacts */}
-      <section className="py-16 bg-red-50 border-y border-red-200">
+      <section className="py-20 lg:py-24 bg-red-50 border-y border-red-200">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[24px] font-semibold text-[#202124] mb-6">
             {content.emergencySection.headline}
@@ -388,7 +388,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
             Frequently Asked Questions
@@ -406,7 +406,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       </section>
 
       {/* Final CTA with Emergency Badge */}
-      <section className="py-20 lg:py-28 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 lg:py-24 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white relative overflow-hidden">
         {/* Animated wave pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 120" fill="none">

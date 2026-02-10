@@ -107,7 +107,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
       />
 
       {/* Hero Section - Google Style */}
-      <section className="pt-12 pb-16 lg:pt-16 lg:pb-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <nav className="flex items-center gap-2 text-sm text-[#5f6368] mb-8">
             <Link to="/" className="hover:text-[#1a73e8]">Home</Link>
@@ -148,7 +148,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
       </div>
 
       {/* Articles Grid */}
-      <section className="py-12 lg:py-16 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
           <div className="mb-8">
             <p className="text-[14px] text-[#5f6368]">
@@ -218,7 +218,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
       </section>
 
       {/* CTA Section - Google Blue */}
-      <section className="py-20 lg:py-28 bg-[#1a73e8]">
+      <section className="py-20 lg:py-24 bg-[#1a73e8]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
           <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
             Water emergency in {cityName}?

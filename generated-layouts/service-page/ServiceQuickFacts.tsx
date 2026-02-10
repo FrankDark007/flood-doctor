@@ -22,7 +22,7 @@ const iconMap: Record<string, React.FC<any>> = {
  */
 const ServiceQuickFacts: React.FC<ServiceQuickFactsProps> = ({ facts }) => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 lg:py-24 bg-white">
       <div className="max-w-[1296px] mx-auto px-6">
         <div className={`grid grid-cols-1 gap-8 text-center ${facts.length <= 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
           {facts.map((fact, index) => {

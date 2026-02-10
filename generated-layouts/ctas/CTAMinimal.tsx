@@ -4,7 +4,7 @@ import { PHONE_NUMBER, PHONE_LINK, COMPANY_NAME } from './constants';
 
 const CTAMinimal: React.FC = () => {
   return (
-    <section className="w-full py-20 px-4 md:px-6 border-t border-slate-100 bg-white">
+    <section className="w-full py-20 lg:py-24 px-4 md:px-6 border-t border-slate-100 bg-white">
       <div className="max-w-3xl mx-auto text-center space-y-8">
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">

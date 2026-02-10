@@ -103,7 +103,7 @@ export const ProductOfferings: React.FC = () => {
   };
 
   return (
-    <section ref={containerRef} className="bg-white py-[48px] lg:py-[60px]">
+    <section ref={containerRef} className="bg-white py-20 lg:py-24">
       <div className="mx-[28px] md:mx-[40px] lg:mx-[72px] xl:mx-auto max-w-[1456px]">
         <div className="grid grid-cols-4 md:grid-cols-12 gap-x-[28px] md:gap-x-[40px] lg:gap-x-[48px] xl:gap-x-[64px]">
           

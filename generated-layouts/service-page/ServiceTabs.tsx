@@ -132,7 +132,7 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
   const nextTabIndex = (activeTabIndex + 1) % tabs.length;
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Why Choose Us</p>

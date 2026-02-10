@@ -112,7 +112,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 text-blue-400 mb-4">
@@ -166,7 +166,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <div className="max-w-4xl">
             {content.introSection.paragraphs.map((paragraph, idx) => (
@@ -182,7 +182,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Process Section */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             {content.processSection.headline}
@@ -204,7 +204,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Local Challenges Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             {content.localChallenges.headline}
@@ -231,7 +231,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Equipment Section */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
             {content.equipmentSection.headline}
@@ -261,7 +261,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Service Area Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-8">
             {content.serviceAreaSection.headline}
@@ -284,7 +284,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <div className="max-w-3xl">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-6">
@@ -308,7 +308,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
             Frequently Asked Questions
@@ -326,7 +326,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white">
+      <section className="py-20 lg:py-24 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] mb-6">
             {content.finalCTA.headline}
@@ -346,7 +346,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
 
       {/* Related Services */}
       {content.relatedServices.length > 0 && (
-        <section className="py-16 bg-[#f8f9fa] border-t border-[#dadce0]">
+        <section className="py-20 lg:py-24 bg-[#f8f9fa] border-t border-[#dadce0]">
           <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
             <h3 className="text-[20px] font-semibold text-[#202124] mb-6">Related Services in {cityName}</h3>
             <div className="flex flex-wrap gap-3">

@@ -7,7 +7,7 @@ export const ServiceAreaList: React.FC = () => {
   const regions: Region[] = ['Northern VA', 'Washington DC', 'Maryland'];
 
   return (
-    <section className="py-16 bg-white border-t border-slate-100">
+    <section className="py-20 lg:py-24 bg-white border-t border-slate-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>

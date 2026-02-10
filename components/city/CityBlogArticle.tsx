@@ -161,7 +161,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
       />
 
       {/* Hero Section */}
-      <section className="pt-12 pb-8 lg:pt-16 lg:pb-12 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[900px]">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-sm text-[#5f6368] mb-8 flex-wrap">
@@ -265,7 +265,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
       </article>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20 bg-[#1a73e8]">
+      <section className="py-20 lg:py-24 bg-[#1a73e8]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
           <h2 className="text-[32px] lg:text-[40px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
             {article.callToAction.headline}
@@ -293,7 +293,7 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
 
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
-        <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+        <section className="py-20 lg:py-24 bg-[#f8f9fa]">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
             <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8">
               More from {cityName}

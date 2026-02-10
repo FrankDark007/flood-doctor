@@ -73,7 +73,7 @@ export default function HerndonBasementFlooding() {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Basement Flooding Repair in Herndon, VA
@@ -151,7 +151,7 @@ export default function HerndonBasementFlooding() {
         </section>
 
         {/* Main Content */}
-        <section className="max-w-6xl mx-auto px-4 py-12">
+        <section className="max-w-6xl mx-auto px-4 py-20 lg:py-24">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
@@ -646,7 +646,7 @@ export default function HerndonBasementFlooding() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               Stop Basement Flooding for Good

@@ -21,7 +21,7 @@ export const ServiceAreaRadial: React.FC = () => {
   };
 
   return (
-    <section className="py-12 bg-slate-900 overflow-hidden min-h-[900px] flex flex-col items-center justify-center relative">
+    <section className="py-20 lg:py-24 bg-slate-900 overflow-hidden min-h-[900px] flex flex-col items-center justify-center relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-800 to-slate-900 z-0"></div>
       
       <div className="text-center z-10 mb-8 relative">

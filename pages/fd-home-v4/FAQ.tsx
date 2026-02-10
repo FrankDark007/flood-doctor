@@ -28,7 +28,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-24 max-w-7xl mx-auto px-6 border-t border-gray-100">
+    <section className="py-20 lg:py-24 max-w-7xl mx-auto px-6 border-t border-gray-100">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-[#202124] mb-12">Frequently Asked Questions About Water Damage Restoration</h2>
         <div className="flex justify-end mb-4">

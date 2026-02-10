@@ -33,7 +33,7 @@ const props = [
 
 export const ValueProps: React.FC = () => {
   return (
-    <section className="py-24 mb-12">
+    <section className="py-20 lg:py-24 mb-12">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
         {props.map((p) => (
           <div key={p.title} className="flex flex-col items-center text-center group">

@@ -8,7 +8,7 @@ interface CityProximityProps {
 
 const CityProximity: React.FC<CityProximityProps> = ({ city }) => {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-20 lg:py-24 px-4 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         
         <div className="space-y-6">

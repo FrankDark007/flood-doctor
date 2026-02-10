@@ -4,7 +4,7 @@ import { PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTAEmergency: React.FC = () => {
   return (
-    <section className="w-full py-12 px-4 md:px-6">
+    <section className="w-full py-20 lg:py-24 px-4 md:px-6">
       <div className="max-w-7xl mx-auto bg-gradient-to-r from-red-600 to-orange-600 rounded-3xl shadow-xl overflow-hidden relative">
         
         {/* Animated pulse background effect */}

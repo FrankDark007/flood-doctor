@@ -95,7 +95,7 @@ export default function AshburnMoldRemoval() {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-16 px-4">
+        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Ashburn Mold Removal & Remediation
@@ -130,7 +130,7 @@ export default function AshburnMoldRemoval() {
         </section>
 
         {/* Areas Served */}
-        <section className="py-12 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Serving All Ashburn Communities
@@ -146,7 +146,7 @@ export default function AshburnMoldRemoval() {
         </section>
 
         {/* Main Content */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto">
             <article className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -328,7 +328,7 @@ export default function AshburnMoldRemoval() {
         </section>
 
         {/* Related Services */}
-        <section className="py-12 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Related Services
@@ -351,7 +351,7 @@ export default function AshburnMoldRemoval() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Frequently Asked Questions
@@ -402,7 +402,7 @@ export default function AshburnMoldRemoval() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[#1a73e8] text-white py-16 px-4">
+        <section className="bg-[#1a73e8] text-white py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ashburn's Certified Mold Remediation Experts

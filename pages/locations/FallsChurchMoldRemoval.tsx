@@ -101,7 +101,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-16">
+        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -122,7 +122,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-12 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8">Protecting Falls Church Communities from Mold</h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
@@ -136,7 +136,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Why Falls Church Homes Are Vulnerable */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold mb-8">Why Falls Church Properties Face Mold Challenges</h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -169,7 +169,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Health Risks */}
-        <section className="py-16 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8">Health Risks of Mold Exposure</h2>
             <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
@@ -210,7 +210,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Comprehensive Mold Remediation Services</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -276,7 +276,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Our Mold Remediation Process</h2>
             <div className="grid md:grid-cols-5 gap-6">
@@ -310,7 +310,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Why Falls Church Residents Choose Flood Doctor</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -339,7 +339,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-6">
@@ -378,7 +378,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-[#1a73e8] text-white">
+        <section className="py-20 lg:py-24 bg-[#1a73e8] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Protect Your Falls Church Home from Mold Today</h2>
             <p className="text-xl mb-8">

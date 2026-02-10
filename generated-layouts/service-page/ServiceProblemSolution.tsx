@@ -8,7 +8,7 @@ interface ServiceProblemSolutionProps {
 
 const ServiceProblemSolution: React.FC<ServiceProblemSolutionProps> = ({ data }) => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 lg:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           

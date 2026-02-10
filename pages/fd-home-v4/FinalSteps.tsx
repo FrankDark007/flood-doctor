@@ -9,7 +9,7 @@ const steps = [
 
 export const FinalSteps: React.FC = () => {
   return (
-    <section className="py-24 max-w-7xl mx-auto px-6 text-center">
+    <section className="py-20 lg:py-24 max-w-7xl mx-auto px-6 text-center">
       <h2 className="text-4xl font-bold text-[#202124] mb-6">How Our Water Damage Restoration Works</h2>
       <p className="text-[#5f6368] mb-10">From emergency call to complete restoration—here's what to expect when you choose Flood Doctor.</p>
       <a href="/request/" className="hidden md:inline-block btn-blue px-10 py-3 rounded-md text-base font-medium mb-24">

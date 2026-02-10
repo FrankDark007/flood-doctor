@@ -110,7 +110,7 @@ const RestonMoldRemoval: React.FC = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-20">
+        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -135,7 +135,7 @@ const RestonMoldRemoval: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
@@ -155,7 +155,7 @@ const RestonMoldRemoval: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-16">
+        <section className="py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
@@ -375,7 +375,7 @@ const RestonMoldRemoval: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Frequently Asked Questions About Mold in Reston
@@ -426,7 +426,7 @@ const RestonMoldRemoval: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-[#1a73e8] text-white">
+        <section className="py-20 lg:py-24 bg-[#1a73e8] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Don't Let Mold Compromise Your Health or Property

@@ -8,7 +8,7 @@ interface CityMapProps {
 
 const CityMap: React.FC<CityMapProps> = ({ city }) => {
   return (
-    <section className="py-16 bg-white max-w-7xl mx-auto px-4">
+    <section className="py-20 lg:py-24 bg-white max-w-7xl mx-auto px-4">
       <div className="grid lg:grid-cols-3 gap-0 rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
         
         {/* Map Column - Lightweight Placeholder */}

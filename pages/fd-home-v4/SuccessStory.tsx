@@ -3,7 +3,7 @@ import React from 'react';
 
 export const SuccessStory: React.FC = () => {
   return (
-    <section className="py-24 max-w-7xl mx-auto px-6">
+    <section className="py-20 lg:py-24 max-w-7xl mx-auto px-6">
       <h2 className="text-4xl font-bold text-[#202124] text-center mb-16">What Our Customers Say</h2>
       <div className="bg-[#f8f9fa] rounded-[3rem] overflow-hidden flex flex-col md:flex-row">
         <div className="flex-1 p-16 flex flex-col justify-center items-center text-center">

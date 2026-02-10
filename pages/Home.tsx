@@ -92,7 +92,7 @@ const Home: React.FC = () => {
           SECTION 1: HERO (ResidentialVariantA Style)
           Phone mockup with GBP profile, orbiting dots
           ======================================== */}
-      <section className="relative py-16 lg:py-20 overflow-hidden bg-white">
+      <section className="relative py-20 lg:py-24 overflow-hidden bg-white">
         <div className="max-w-[1296px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -223,7 +223,7 @@ const Home: React.FC = () => {
           SECTION 2: FEATURES ROW
           60-Min Response, Licensed, Insurance
           ======================================== */}
-      <section className="py-16 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1296px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
@@ -247,7 +247,7 @@ const Home: React.FC = () => {
           SECTION 3: CENTERED VALUE PROP
           Fast Response Prevents Lasting Damage
           ======================================== */}
-      <section className="py-20 text-center bg-white">
+      <section className="py-20 lg:py-24 text-center bg-white">
         <div className="max-w-[900px] mx-auto px-6">
           <h2 className="text-[32px] md:text-[44px] font-normal leading-tight text-[#202124] mb-6">
             Fast Response Prevents Lasting Damage
@@ -271,7 +271,7 @@ const Home: React.FC = () => {
           SECTION 4: LIVE STATUS CARD
           Shows active crews and response time
           ======================================== */}
-      <section className="py-16 lg:py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-20 lg:py-24 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Content */}
@@ -332,7 +332,7 @@ const Home: React.FC = () => {
           SECTION 6: FOOTER CTA
           Final call to action
           ======================================== */}
-      <section className="py-16 lg:py-24 bg-primary text-white">
+      <section className="py-20 lg:py-24 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight">
             Water emergency?
@@ -363,7 +363,7 @@ const Home: React.FC = () => {
       {/* ========================================
           SECTION 7: SERVICE AREAS
           ======================================== */}
-      <section className="bg-white py-16 lg:py-24 border-t border-gray-100">
+      <section className="bg-white py-20 lg:py-24 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 mb-4">
             <MapPin size={18} className="text-primary" />

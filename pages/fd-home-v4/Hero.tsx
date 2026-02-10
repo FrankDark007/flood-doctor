@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   }, [heroPaused]);
 
   return (
-    <section className="relative py-16 lg:py-20 overflow-hidden bg-white">
+    <section className="relative py-20 lg:py-24 overflow-hidden bg-white">
       <div className="max-w-[1296px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 

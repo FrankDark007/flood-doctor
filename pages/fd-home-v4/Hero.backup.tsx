@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 lg:py-28 flex flex-col md:flex-row items-center gap-16 relative overflow-visible">
+    <section className="max-w-7xl mx-auto px-6 py-20 lg:py-24 flex flex-col md:flex-row items-center gap-16 relative overflow-visible">
       
       <div className="flex-1 text-center md:text-left z-10">
         <h1 className="text-[48px] md:text-[56px] lg:text-[72px] font-bold text-[#202124] mb-8 leading-[1.1] tracking-tight">

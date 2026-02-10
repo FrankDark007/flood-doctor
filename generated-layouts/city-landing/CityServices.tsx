@@ -17,7 +17,7 @@ const iconMap = {
 
 const CityServices: React.FC<CityServicesProps> = ({ city }) => {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-20 lg:py-24 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-slate-900 mb-4">Services Available in {city.name}</h2>
         <p className="text-slate-600 max-w-2xl mx-auto">

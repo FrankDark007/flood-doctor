@@ -106,7 +106,7 @@ export default function HerndonWaterDamage() {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Water Damage Restoration Herndon VA
@@ -141,7 +141,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Introduction */}
-        <section className="py-12 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Trusted Water Damage Restoration Experts in Herndon, Virginia
@@ -156,7 +156,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Services Section */}
-        <section className="bg-gray-50 py-12 px-4">
+        <section className="bg-gray-50 py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Comprehensive Water Damage Services in Herndon
@@ -198,7 +198,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Areas Served */}
-        <section className="py-12 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Herndon Neighborhoods We Serve
@@ -251,7 +251,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="bg-[#1a73e8] text-white py-12 px-4">
+        <section className="bg-[#1a73e8] text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Why Herndon Residents Trust Flood Doctor
@@ -285,7 +285,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Process */}
-        <section className="py-12 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Our Water Damage Restoration Process
@@ -310,7 +310,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-gray-50 py-12 px-4">
+        <section className="bg-gray-50 py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Frequently Asked Questions - Herndon Water Damage
@@ -327,7 +327,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* Related Services */}
-        <section className="py-12 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Related Services in Herndon
@@ -350,7 +350,7 @@ export default function HerndonWaterDamage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               Don't Wait - Water Damage Worsens Every Hour

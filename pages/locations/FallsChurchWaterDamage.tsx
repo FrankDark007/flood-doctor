@@ -101,7 +101,7 @@ const FallsChurchWaterDamage: React.FC = () => {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-16">
+        <section className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -122,7 +122,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-12 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8">Serving All of Falls Church & Nearby Communities</h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
@@ -136,7 +136,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* Why Falls Church Needs Expert Water Damage Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold mb-8">Why Falls Church Properties Need Professional Water Damage Restoration</h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -169,7 +169,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* Services */}
-        <section className="py-16 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Complete Water Damage Restoration Services</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -220,7 +220,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 lg:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Our Water Damage Restoration Process</h2>
             <div className="grid md:grid-cols-4 gap-6">
@@ -249,7 +249,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-6">
@@ -288,7 +288,7 @@ const FallsChurchWaterDamage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-[#1a73e8] text-white">
+        <section className="py-20 lg:py-24 bg-[#1a73e8] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Need Emergency Water Damage Restoration in Falls Church?</h2>
             <p className="text-xl mb-8">

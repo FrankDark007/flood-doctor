@@ -17,7 +17,7 @@ export const ServiceAreaFinder: React.FC = () => {
   const popularCities = serviceLocations.filter(c => c.proximity === 'Closest' || c.proximity === 'Near').slice(0, 6);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-[600px] flex flex-col items-center">
+    <section className="py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-[600px] flex flex-col items-center">
       <div className="w-full max-w-4xl px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Do we cover your area?</h2>
         <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">

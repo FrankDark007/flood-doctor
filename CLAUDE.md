@@ -40,6 +40,7 @@ Design system:
 - Google Aesthetic (clean, tech-forward), Material Design 3
 - Primary color: #1a73e8
 - Fonts: Plus Jakarta Sans (preferred), Inter (fallback)
+- Section padding: `py-20` (80px top/bottom) — uniform across all rows
 - Premium tone, direct, no fluff
 
 Engineering contract:

@@ -4,7 +4,7 @@ import { PHONE_LINK, COMPANY_NAME } from './constants';
 
 const CTASocialProof: React.FC = () => {
   return (
-    <section className="w-full py-20 px-4 md:px-6 bg-white">
+    <section className="w-full py-20 lg:py-24 px-4 md:px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col items-center text-center space-y-10">
           

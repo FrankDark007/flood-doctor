@@ -4,7 +4,7 @@ import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from './constants';
 
 const CTAGradient: React.FC = () => {
   return (
-    <section className="w-full py-12 px-4 md:px-6 lg:px-8">
+    <section className="w-full py-20 lg:py-24 px-4 md:px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl overflow-hidden shadow-xl relative">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">

@@ -10,7 +10,7 @@ const CityFAQ: React.FC<CityFAQProps> = ({ city }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 px-4 bg-slate-50">
+    <section className="py-20 lg:py-24 px-4 bg-slate-50">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-center gap-2 mb-8">
           <HelpCircle className="w-6 h-6 text-[#1a73e8]" />

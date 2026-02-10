@@ -339,7 +339,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({ layout, title, s
   );
 
   return (
-    <section className="bg-white py-[48px] lg:py-[60px]">
+    <section className="bg-white py-20 lg:py-24">
       <div className="mx-[28px] md:mx-[40px] lg:mx-[72px] xl:mx-auto max-w-[1456px]">
         {/* Row 1: Centered Headers */}
         <div className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">

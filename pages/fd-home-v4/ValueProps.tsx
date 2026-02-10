@@ -22,7 +22,7 @@ const features = [
 
 export const ValueProps: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 lg:py-24 bg-white">
       <div className="max-w-[1296px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {features.map((feature, i) => (

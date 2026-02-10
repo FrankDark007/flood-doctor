@@ -4,7 +4,7 @@ import { COMPANY_NAME } from './constants';
 
 const CTALeadForm: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-6 bg-blue-50/50">
+    <section className="w-full py-20 lg:py-24 px-4 md:px-6 bg-blue-50/50">
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           

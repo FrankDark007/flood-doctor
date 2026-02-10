@@ -148,7 +148,7 @@ const ResourcesHub: React.FC = () => {
 
       {/* Featured Guides - Image Cards */}
       {filteredPrimary.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
             <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8">
               Essential guides
@@ -203,7 +203,7 @@ const ResourcesHub: React.FC = () => {
 
       {/* More Resources Grid */}
       {filteredResources.length > 0 && (
-        <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+        <section className="py-20 lg:py-24 bg-[#f8f9fa]">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[1296px]">
             <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8">
               More resources
@@ -234,7 +234,7 @@ const ResourcesHub: React.FC = () => {
 
       {/* No Results */}
       {!hasResults && (
-        <section className="py-20 bg-white">
+        <section className="py-20 lg:py-24 bg-white">
           <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
             <div className="text-center py-16 bg-[#f8f9fa] rounded-2xl">
               <p className="text-[#5f6368] mb-4">No topics found matching "{searchQuery}"</p>
@@ -250,7 +250,7 @@ const ResourcesHub: React.FC = () => {
       )}
 
       {/* Popular Articles */}
-      <section className="py-16 lg:py-20 bg-white border-t border-[#dadce0]">
+      <section className="py-20 lg:py-24 bg-white border-t border-[#dadce0]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px]">
           <h2 className="text-[28px] lg:text-[32px] font-normal text-[#202124] mb-8 text-center">
             Popular questions
@@ -278,7 +278,7 @@ const ResourcesHub: React.FC = () => {
       </section>
 
       {/* Need Help CTA - Google Blue */}
-      <section className="py-20 lg:py-28 bg-[#1a73e8]">
+      <section className="py-20 lg:py-24 bg-[#1a73e8]">
         <div className="mx-7 sm:mx-10 lg:mx-[72px] xl:mx-auto xl:max-w-[800px] text-center">
           <h2 className="text-[36px] lg:text-[44px] font-normal text-white leading-[1.2] tracking-[-0.25px] mb-6">
             Still need help?

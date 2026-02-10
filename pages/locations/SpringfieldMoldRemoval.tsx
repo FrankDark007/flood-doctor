@@ -116,7 +116,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Professional Mold Removal in Springfield, VA
@@ -151,7 +151,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-12 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Mold Remediation Across Springfield & Fairfax County
@@ -175,7 +175,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Services */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
               Comprehensive Mold Removal Services
@@ -246,7 +246,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Health Risks */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Why Immediate Mold Removal is Critical
@@ -323,7 +323,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Why Springfield Chooses Flood Doctor for Mold Removal
@@ -418,7 +418,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
               Our Mold Remediation Process
@@ -482,7 +482,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Signs of Mold */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Signs You Need Mold Removal in Springfield
@@ -538,7 +538,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Frequently Asked Questions
@@ -603,7 +603,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white">
+        <section className="py-20 lg:py-24 px-4 bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Protect Your Springfield Home from Mold
@@ -624,7 +624,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         </section>
 
         {/* Related Services */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-20 lg:py-24 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Related Services in Springfield

@@ -8,7 +8,7 @@ interface ServiceTestimonialsProps {
 
 const ServiceTestimonials: React.FC<ServiceTestimonialsProps> = ({ testimonials }) => {
   return (
-    <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-20 lg:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[128px] translate-x-1/2 -translate-y-1/2"></div>

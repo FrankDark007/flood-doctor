@@ -190,7 +190,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -213,7 +213,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission Statement - Bold Typography */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-20 lg:py-24 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-medium text-text leading-relaxed">
             We exist to help homeowners and businesses recover from water damage quickly and completely—with expert care, transparent pricing, and the support you need to navigate insurance.
@@ -222,7 +222,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Testimonial Quote Block - Workspace Style */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 lg:p-16">
             <div className="grid lg:grid-cols-3 gap-10">
@@ -264,7 +264,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Success Stories Tabs - Workspace Style */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      <section className="py-20 lg:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4 text-center">
             Stories from our customers
@@ -331,7 +331,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Our Story Timeline */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4 text-center">
             Our Story
@@ -358,7 +358,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Values Accordion - Workspace Benefits Style */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      <section className="py-20 lg:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
             <div className="w-1.5 h-10 bg-primary rounded-full" />
@@ -415,7 +415,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Why Choose Flood Doctor - Comparison Grid (AboutDevC style) */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4">
@@ -496,7 +496,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Leadership */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      <section className="py-20 lg:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4">
@@ -525,7 +525,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Fleet / Response Stats */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -561,7 +561,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Service Area */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      <section className="py-20 lg:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-display text-3xl lg:text-4xl font-semibold text-text mb-4 text-center">
             60-minute response throughout Northern Virginia
@@ -586,7 +586,7 @@ const About: React.FC = () => {
       </section>
 
       {/* CTA - Workspace Style */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary to-blue-700">
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-primary to-blue-700">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-8">
             {[Shield, Award, Zap, Heart].map((Icon, idx) => (

@@ -108,7 +108,7 @@ const SpringfieldWaterDamage: React.FC = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Water Damage Restoration in Springfield, VA
@@ -143,7 +143,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-12 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Serving Springfield & Surrounding Areas
@@ -167,7 +167,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* Services */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
               Complete Water Damage Restoration Services
@@ -238,7 +238,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Why Springfield Residents Trust Flood Doctor
@@ -333,7 +333,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 px-4">
+        <section className="py-20 lg:py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
               Our Water Damage Restoration Process
@@ -387,7 +387,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-20 lg:py-24 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               Frequently Asked Questions
@@ -443,7 +443,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white">
+        <section className="py-20 lg:py-24 px-4 bg-gradient-to-br from-[#1a73e8] to-[#1557b0] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Need Water Damage Restoration in Springfield?
@@ -464,7 +464,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         </section>
 
         {/* Related Services */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-20 lg:py-24 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Related Services in Springfield

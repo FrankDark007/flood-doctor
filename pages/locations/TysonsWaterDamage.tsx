@@ -92,7 +92,7 @@ const TysonsWaterDamage: React.FC = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-20 lg:py-24 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -116,7 +116,7 @@ const TysonsWaterDamage: React.FC = () => {
       </section>
 
       {/* Commercial Focus */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -175,7 +175,7 @@ const TysonsWaterDamage: React.FC = () => {
       </section>
 
       {/* Residential Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -217,7 +217,7 @@ const TysonsWaterDamage: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section className="py-20 lg:py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Tysons Water Damage? We're Ready 24/7.

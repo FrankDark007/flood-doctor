@@ -4,7 +4,7 @@ import { Clock, MapPin, ArrowRight } from 'lucide-react';
 
 export const ServiceAreaGrid: React.FC = () => {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Service Coverage</h2>

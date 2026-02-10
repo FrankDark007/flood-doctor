@@ -9,7 +9,7 @@ interface ServicePricingProps {
 
 const ServicePricing: React.FC<ServicePricingProps> = ({ pricing, onCtaClick }) => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary-dark to-primary rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
           
