@@ -58,11 +58,11 @@ const ServiceHeroCompact: React.FC<ServiceHeroCompactProps> = ({
             </div>
 
             {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-slate-900 tracking-tight leading-[1.1]">
+            <div>
+              <h1 className="text-[40px] lg:text-[60px] leading-[1.1] font-normal mb-6 tracking-tight text-[#202124]">
                 {title}
               </h1>
-              <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl">
+              <p className="text-lg lg:text-[18px] leading-[28px] text-[#3c4043] mb-8 max-w-xl">
                 {subtitle}
               </p>
             </div>

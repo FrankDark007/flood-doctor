@@ -2436,7 +2436,7 @@ const environmentalTestingTabs: TabItem[] = [
 const waterDamageOverride: ServicePageOverride = {
   slug: 'water-damage-restoration',
 
-  title: 'Water Damage Restoration',
+  title: 'Water Damage Restoration Services',
   subtitle: '24/7 emergency water extraction, structural drying, and water damage repair. IICRC-certified water mitigation specialists with 60-minute response and direct insurance billing.',
 
   badges: [
