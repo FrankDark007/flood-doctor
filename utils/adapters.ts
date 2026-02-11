@@ -477,9 +477,9 @@ export function adaptServiceToPageData(
 
   // Build default page data
   const pageData: ServicePageData = {
-    title: service.heroHeading || service.title,
+    title: service.title, // H1 = clean primary keyword only, no location
     titleHighlight: service.title, // Default: highlight the service name in bold blue
-    subtitle: service.heroIntro || service.shortDescription || `IICRC-certified technicians onsite in 60 minutes, 24/7. Direct insurance billing.`,
+    subtitle: service.shortDescription || `IICRC-certified technicians onsite in 60 minutes, 24/7. Direct insurance billing.`,
     emergencyPhone,
     badges: DEFAULT_BADGES,
     quickFacts: DEFAULT_QUICK_FACTS,
