@@ -42,7 +42,7 @@ const ServiceTestimonials: React.FC<ServiceTestimonialsProps> = ({ testimonials 
 
         {/* Testimonial Card — quote left, image right */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-[28px] overflow-hidden shadow-sm min-h-[420px]">
+          <div className="bg-white rounded-[28px] overflow-hidden shadow-sm md:h-[600px]">
             <div className="grid md:grid-cols-2 h-full">
               {/* Left: Quote */}
               <div className="p-10 lg:p-14 flex flex-col items-center justify-center text-center order-2 md:order-1">
