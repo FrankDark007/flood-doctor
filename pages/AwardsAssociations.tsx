@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Shield, Star, BadgeCheck, Building2, Leaf, Trophy, Heart, Landmark } from 'lucide-react';
+import { Award, Shield, Star, BadgeCheck, Building2, Leaf, Trophy, Heart, Landmark, FileCheck, HardHat, Droplets, Flame, Wind, FlaskConical, Bug, Hammer, ClipboardCheck, Scale } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import Button from '../components/ui/Button';
 
@@ -155,8 +155,154 @@ const AwardsAssociations: React.FC = () => {
           </div>
         </section>
 
+        {/* Licenses & Certifications — two-column layout */}
+        <section className="py-20 lg:py-24 bg-[#f8f9fa]">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-[28px] lg:text-[36px] font-bold text-[#202124] tracking-tight">
+                Licenses & Certifications
+              </h2>
+              <p className="text-[16px] text-[#5f6368] mt-3 max-w-2xl mx-auto">
+                Fully licensed across Virginia, Maryland, and Washington D.C. with industry-leading professional certifications.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Licenses Column */}
+              <div className="bg-white rounded-[24px] p-8 lg:p-10" style={{ boxShadow: '0 0 0 1px #dadce0' }}>
+                <h3 className="text-[11px] font-medium uppercase tracking-[0.08em] text-[#1a73e8] leading-[16px] mb-8">
+                  Licenses
+                </h3>
+
+                {/* License Items */}
+                <div className="space-y-8">
+                  {/* VA Class-A */}
+                  <div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <FileCheck size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                      </div>
+                      <div>
+                        <h4 className="text-[16px] font-medium text-[#202124]">Class-A Contractor | DPOR</h4>
+                        <p className="text-[14px] text-[#5f6368] mt-1">Virginia Department of Professional and Occupational Regulation</p>
+                        <div className="mt-2 space-y-0.5">
+                          <p className="text-[14px] text-[#3c4043]">Commercial Building (CBC)</p>
+                          <p className="text-[14px] text-[#3c4043]">Residential Building (RBC)</p>
+                        </div>
+                        <p className="text-[13px] text-[#5f6368] mt-2">License No. <span className="text-[#1a73e8] font-medium">27-05155505</span></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* VA DEQ */}
+                  <div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Leaf size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                      </div>
+                      <div>
+                        <h4 className="text-[16px] font-medium text-[#202124]">Virginia Responsible Land Disturber</h4>
+                        <p className="text-[14px] text-[#5f6368] mt-1">Virginia Department of Environmental Quality</p>
+                        <p className="text-[13px] text-[#5f6368] mt-2">License No. <span className="text-[#1a73e8] font-medium">RLD05374</span></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* DC DLCP */}
+                  <div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Landmark size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                      </div>
+                      <div>
+                        <h4 className="text-[16px] font-medium text-[#202124]">Washington, D.C. | DLCP</h4>
+                        <p className="text-[14px] text-[#5f6368] mt-1">DC Department of Licensing and Consumer Protection</p>
+                        <p className="text-[14px] text-[#3c4043] mt-2">Class-A General Contractor</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Maryland MHIC */}
+                  <div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Scale size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                      </div>
+                      <div>
+                        <h4 className="text-[16px] font-medium text-[#202124]">Maryland Home Improvement License</h4>
+                        <p className="text-[14px] text-[#5f6368] mt-1">Maryland <span className="text-[#1a73e8] font-medium">MHIC</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Certifications Column */}
+              <div className="bg-white rounded-[24px] p-8 lg:p-10" style={{ boxShadow: '0 0 0 1px #dadce0' }}>
+                <h3 className="text-[11px] font-medium uppercase tracking-[0.08em] text-[#1a73e8] leading-[16px] mb-8">
+                  Certifications
+                </h3>
+
+                {/* IICRC */}
+                <div className="mb-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <BadgeCheck size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[16px] font-medium text-[#202124]">IICRC Certified Firm</h4>
+                      <p className="text-[14px] text-[#5f6368] mt-1">Institute of Inspection, Cleaning and Restoration Certification</p>
+                    </div>
+                  </div>
+                  <div className="ml-14 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                    {[
+                      { name: 'Water Damage Restoration', code: 'WRT' },
+                      { name: 'Fire and Smoke Restoration', code: 'FSRT' },
+                      { name: 'Commercial Drying Specialist', code: 'CDS' },
+                      { name: 'Applied Structural Drying', code: 'ASD' },
+                      { name: 'Odor Control Technician', code: 'OCT' },
+                      { name: 'Health and Safety Technician', code: 'HST' },
+                      { name: 'Applied Microbial Remediation', code: 'AMRT' },
+                    ].map((cert) => (
+                      <div key={cert.code} className="flex items-center justify-between py-1.5 border-b border-[#f1f3f4]">
+                        <span className="text-[14px] text-[#3c4043]">{cert.name}</span>
+                        <span className="text-[13px] font-semibold text-[#202124] ml-2">{cert.code}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* RIA */}
+                <div>
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#f1f3f4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <ClipboardCheck size={20} strokeWidth={1.4} className="text-[#3c4043]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[16px] font-medium text-[#202124]">Restoration Industry Association</h4>
+                    </div>
+                  </div>
+                  <div className="ml-14 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                    {[
+                      { name: 'Certified Restorer\u00AE', code: 'CR' },
+                      { name: 'Water Loss Specialist', code: 'WLS' },
+                      { name: 'Contents Loss Specialist', code: 'CLS' },
+                      { name: 'Certified Mold Professional', code: 'CMP' },
+                    ].map((cert) => (
+                      <div key={cert.code} className="flex items-center justify-between py-1.5 border-b border-[#f1f3f4]">
+                        <span className="text-[14px] text-[#3c4043]">{cert.name}</span>
+                        <span className="text-[13px] font-semibold text-[#202124] ml-2">{cert.code}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats Bar */}
-        <section className="py-16 bg-[#f8f9fa] border-t border-[#dadce0]">
+        <section className="py-16 bg-white border-t border-[#dadce0]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
