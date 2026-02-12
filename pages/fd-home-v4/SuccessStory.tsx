@@ -6,7 +6,7 @@ const testimonials = [
     headline: "Flood Doctor saved our finished basement with a 1-hour emergency response",
     author: "Michael & Sarah R.",
     location: "McLean, Virginia",
-    image: "/images/testimonials/water-damage-1.jpg",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
     stat: "1 hr",
     statLabel: "Response",
   },
@@ -14,7 +14,7 @@ const testimonials = [
     headline: "Full insurance claim handled — zero out-of-pocket cost for complete restoration",
     author: "David K.",
     location: "Arlington, Virginia",
-    image: "/images/testimonials/water-damage-2.jpg",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
     stat: "$0",
     statLabel: "Out of pocket",
   },
@@ -22,7 +22,7 @@ const testimonials = [
     headline: "Home fully restored in 3 days with professional drying and reconstruction",
     author: "Jennifer L.",
     location: "Alexandria, Virginia",
-    image: "/images/testimonials/water-damage-3.jpg",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
     stat: "3 days",
     statLabel: "Fully restored",
   },
@@ -30,7 +30,7 @@ const testimonials = [
     headline: "Sunday night pipe burst — 45-minute response saved our hardwood floors",
     author: "Robert & Linda T.",
     location: "Fairfax, Virginia",
-    image: "/images/testimonials/water-damage-4.jpg",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
     stat: "45 min",
     statLabel: "Response",
   },
@@ -67,10 +67,10 @@ export const SuccessStory: React.FC = () => {
 
         {/* Testimonial Card — Google style: photo left, headline + CTA right */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-[28px] overflow-hidden shadow-sm">
+          <div className="bg-white rounded-[28px] shadow-sm">
             <div className="grid md:grid-cols-2 min-h-[460px]">
-              {/* Left: Photo with stat badge */}
-              <div className="relative bg-[#f8f9fa] overflow-hidden">
+              {/* Left: Photo with stat badge — left corners rounded to match card */}
+              <div className="relative bg-[#f8f9fa] overflow-hidden rounded-t-[28px] md:rounded-t-none md:rounded-l-[28px]">
                 <img
                   src={current.image}
                   alt={current.author}
