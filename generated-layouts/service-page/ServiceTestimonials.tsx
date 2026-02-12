@@ -2,12 +2,12 @@ import React, { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Testimonial } from './types';
 
-// Service-specific images for testimonial cards
+// Unsplash images — beautiful homes relevant to water damage restoration
 const TESTIMONIAL_IMAGES = [
-  '/images/testimonials/water-damage-1.jpg',
-  '/images/testimonials/water-damage-2.jpg',
-  '/images/testimonials/water-damage-3.jpg',
-  '/images/testimonials/water-damage-4.jpg',
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', // modern home exterior
+  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', // luxury house front
+  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop', // elegant home interior
+  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop', // beautiful residential home
 ];
 
 interface ServiceTestimonialsProps {
@@ -42,7 +42,7 @@ const ServiceTestimonials: React.FC<ServiceTestimonialsProps> = ({ testimonials 
 
         {/* Testimonial Card — quote left, image right */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-[28px] overflow-hidden shadow-sm md:h-[600px]">
+          <div className="bg-white rounded-[28px] shadow-sm md:h-[450px]">
             <div className="grid md:grid-cols-2 h-full">
               {/* Left: Quote */}
               <div className="p-10 lg:p-14 flex flex-col items-center justify-center text-center order-2 md:order-1">
@@ -59,8 +59,8 @@ const ServiceTestimonials: React.FC<ServiceTestimonialsProps> = ({ testimonials 
                 </div>
               </div>
 
-              {/* Right: Image — rounded on outer card edges only */}
-              <div className="relative min-h-[280px] md:min-h-full order-1 md:order-2">
+              {/* Right: Image — rounded on right-side corners only to match card */}
+              <div className="relative min-h-[280px] md:min-h-full order-1 md:order-2 overflow-hidden rounded-t-[28px] md:rounded-t-none md:rounded-r-[28px]">
                 <img
                   src={currentImage}
                   alt={current.author}
