@@ -67,10 +67,10 @@ export const SuccessStory: React.FC = () => {
 
         {/* Testimonial Card — Google style: photo left, headline + CTA right */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-[28px] shadow-sm">
+          <div className="bg-white rounded-[28px] overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-2 min-h-[460px]">
-              {/* Left: Photo with stat badge — left corners rounded to match card */}
-              <div className="relative bg-[#f8f9fa] overflow-hidden rounded-t-[28px] md:rounded-t-none md:rounded-l-[28px]">
+              {/* Left: Photo with stat badge — right corners of image rounded (inner edge) */}
+              <div className="relative bg-[#f8f9fa] overflow-hidden md:rounded-r-[28px]">
                 <img
                   src={current.image}
                   alt={current.author}
