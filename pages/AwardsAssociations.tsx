@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Shield, Star, BadgeCheck, Building2, Leaf, Trophy, Heart } from 'lucide-react';
+import { Award, Shield, Star, BadgeCheck, Building2, Leaf, Trophy, Heart, Landmark } from 'lucide-react';
 import PageMeta from '../components/ui/PageMeta';
 import Button from '../components/ui/Button';
 
@@ -26,64 +26,68 @@ interface CardItem {
 }
 
 const ALL_CARDS: CardItem[] = [
-  // Awards
   {
-    icon: <Trophy size={32} strokeWidth={1.2} />,
+    icon: <Star size={32} strokeWidth={1.2} />,
     category: 'Award',
-    subcategory: 'Service Excellence',
-    title: 'Best of HomeAdvisor',
-    description: 'Named a recipient of the Best of HomeAdvisor Award for fourteen consecutive years, honoring top-notch professionals who provide extraordinary quality, service, and value in home improvement.',
+    subcategory: '2010 – 2024',
+    title: "Angi's Super Service Provider",
+    description: "Flood Doctor has been awarded the Angi's Super Service Provider award every single year since joining the Angi's List family of quality service providers.",
   },
   {
     icon: <Award size={32} strokeWidth={1.2} />,
     category: 'Award',
-    subcategory: 'National Recognition',
+    subcategory: '2011 & 2015',
     title: 'Crawford Connection Golden Hammer',
-    description: 'Received the distinguished Excellence in Achievement Award for ranking in the top 200 of more than 4,000 contractors across the United States and Canada.',
-  },
-  {
-    icon: <Star size={32} strokeWidth={1.2} />,
-    category: 'Award',
-    subcategory: 'Customer Satisfaction',
-    title: 'Angi Super Service Provider',
-    description: 'Awarded the Angi Super Service Provider distinction every single year since joining, recognizing consistent excellence in customer satisfaction and service delivery.',
+    description: 'Received the distinguished Excellence in Achievement Award for ranking in the top 200 of more than 4,000 contractors in the U.S. and Canada. Awarded based on performance criteria and overall quality of service.',
   },
   {
     icon: <Heart size={32} strokeWidth={1.2} />,
     category: 'Award',
-    subcategory: 'Customer Service',
-    title: 'Houzz Customer Service Award',
-    description: 'Recognized with the Houzz Customer Service Award for ten consecutive years, reflecting an unwavering commitment to client communication and project satisfaction.',
-  },
-  // Certifications
-  {
-    icon: <BadgeCheck size={32} strokeWidth={1.2} />,
-    category: 'Certification',
-    subcategory: 'Industry Standard',
-    title: 'IICRC Certified Firm',
-    description: 'Certified by the Institute of Inspection, Cleaning and Restoration Certification. Our Rapid Response Teams specialize in water damage restoration, structural drying, and environmental remediation.',
+    subcategory: '2010 – 2024',
+    title: 'Best of Houzz – Service',
+    description: 'Best of Houzz is the people\'s choice award. Flood Doctor has been submitted and awarded the Houzz Customer Service Award for fourteen years in a row.',
   },
   {
     icon: <Shield size={32} strokeWidth={1.2} />,
-    category: 'Accreditation',
-    subcategory: 'Business Ethics',
-    title: 'BBB A+ Rated',
-    description: 'Accredited by the Better Business Bureau with an A+ rating, reflecting our commitment to ethical business practices, transparency, and customer trust.',
+    category: 'Award',
+    subcategory: '2010 – 2025',
+    title: 'DKI Diamond Claims Award',
+    description: 'The DKI DIAMOND Claims Award is presented to DKI Restoration Contractors who excel in providing a high level of service, reporting, and assistance relative to property loss claims.',
   },
-  // Certifications & Associations
   {
-    icon: <Leaf size={32} strokeWidth={1.2} />,
-    category: 'Certification',
-    subcategory: 'Environmental Safety',
-    title: 'EPA Lead-Safe Certified',
-    description: 'Certified by the U.S. Environmental Protection Agency as a Lead-Safe firm, ensuring safe practices in properties that may contain lead-based materials.',
+    icon: <Trophy size={32} strokeWidth={1.2} />,
+    category: 'Award',
+    subcategory: '2010 – 2024',
+    title: 'Best of HomeAdvisor',
+    description: 'Named a recipient of the Best of HomeAdvisor Award for fourteen years in a row, honoring top-notch professionals providing extraordinary quality, service, and value in home improvement.',
   },
   {
     icon: <Building2 size={32} strokeWidth={1.2} />,
     category: 'Association',
-    subcategory: 'Community Leadership',
+    subcategory: '2000 – 2025',
     title: 'Northern Virginia Chamber of Commerce',
-    description: 'Proud member of the NOVA Chamber. Recognized through the Outstanding Corporate Citizenship Awards, honoring businesses that serve as champions for good in the greater Washington area.',
+    description: 'The Outstanding Corporate Citizenship Awards honors and celebrates the leadership of individuals, businesses, and nonprofits that serve as powerful champions for good in the greater Washington area.',
+  },
+  {
+    icon: <BadgeCheck size={32} strokeWidth={1.2} />,
+    category: 'Association',
+    subcategory: '2000 – 2025',
+    title: 'Restoration Industry Association',
+    description: 'Innovation in Restoration award recipient for residential and commercial restoration projects, including restoration and remediation of structures and their contents.',
+  },
+  {
+    icon: <Landmark size={32} strokeWidth={1.2} />,
+    category: 'Association',
+    subcategory: '2004 – 2025',
+    title: 'Fairfax County Chamber of Commerce',
+    description: 'The Outstanding Corporate Citizenship Awards honors and celebrates the leadership of individuals, businesses, and nonprofits that serve as powerful champions for good in the greater Washington area.',
+  },
+  {
+    icon: <Leaf size={32} strokeWidth={1.2} />,
+    category: 'Certification',
+    subcategory: 'Active',
+    title: 'EPA Lead-Safe Certified',
+    description: 'Certified by the U.S. Environmental Protection Agency as a Lead-Safe firm, ensuring safe practices in properties that may contain lead-based materials.',
   },
 ];
 
