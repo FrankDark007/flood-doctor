@@ -88,28 +88,33 @@ const ALL_CARDS: CardItem[] = [
 ];
 
 const Card: React.FC<{ item: CardItem }> = ({ item }) => (
-  <div className="bg-white rounded-2xl border border-[#dadce0] p-10 flex flex-col h-full">
-    {/* Icon — top-left, 80px gray circle with thin line-art icon */}
-    <div className="w-[80px] h-[80px] rounded-full bg-[#f1f3f4] flex items-center justify-center mb-8">
-      <div className="text-[#3c4043]">
-        {item.icon}
+  <div className="bg-white rounded-[24px] flex flex-col min-h-[348px]" style={{ boxShadow: '0 0 0 1px #dadce0' }}>
+    {/* Icon area — 24px padding top/sides, 16px bottom */}
+    <div className="pt-6 px-6 pb-4">
+      <div className="w-[80px] h-[80px] rounded-full bg-[#f1f3f4] flex items-center justify-center">
+        <div className="text-[#3c4043]">
+          {item.icon}
+        </div>
       </div>
     </div>
 
-    {/* Category — small uppercase, dark gray, with – separator */}
-    <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-[#5f6368] mb-3 block">
-      {item.category} – {item.subcategory}
-    </span>
+    {/* Content area — 24px padding all sides */}
+    <div className="px-6 pb-6 flex flex-col flex-1">
+      {/* Category — 11px, weight 500, #5f6368 */}
+      <span className="text-[11px] font-medium uppercase tracking-[0.04em] text-[#5f6368] leading-[16px] block">
+        {item.category} - {item.subcategory}
+      </span>
 
-    {/* Title */}
-    <h3 className="text-[18px] font-semibold text-[#202124] leading-snug mb-3">
-      {item.title}
-    </h3>
+      {/* Title — 20px/28px, mt-2 (8px) */}
+      <h3 className="text-[20px] text-[#202124] leading-[28px] mt-2">
+        {item.title}
+      </h3>
 
-    {/* Description */}
-    <p className="text-[14px] text-[#5f6368] leading-[1.7] flex-1">
-      {item.description}
-    </p>
+      {/* Description — 16px/24px, mt-2 (8px), #3c4043 */}
+      <p className="text-[16px] text-[#3c4043] leading-[24px] mt-2 flex-1">
+        {item.description}
+      </p>
+    </div>
   </div>
 );
 
@@ -137,7 +142,7 @@ const AwardsAssociations: React.FC = () => {
 
         {/* Cards Grid — 3 columns, Google Impact Awards layout */}
         <section className="pb-20 lg:pb-28 bg-white">
-          <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ALL_CARDS.map((card) => (
                 <Card key={card.title} item={card} />
