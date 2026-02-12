@@ -14,12 +14,15 @@ interface CardItem {
   accentColor: string;
 }
 
+/* ─── Dynamic year — auto-updates every January 1st ─── */
+const CURRENT_YEAR = new Date().getFullYear();
+
 /* ─── Data ─── */
 const ALL_CARDS: CardItem[] = [
   {
     icon: <Star size={28} strokeWidth={1.5} />,
     category: 'Award',
-    subcategory: '2010 – 2024',
+    subcategory: `2010 – ${CURRENT_YEAR}`,
     title: "Angi's Super Service Provider",
     description: "Awarded the Angi's Super Service Provider award every single year since joining the Angi's List family of quality service providers.",
     accentColor: '#fbbc04',
@@ -35,7 +38,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <Heart size={28} strokeWidth={1.5} />,
     category: 'Award',
-    subcategory: '2010 – 2024',
+    subcategory: `2010 – ${CURRENT_YEAR}`,
     title: 'Best of Houzz – Service',
     description: "Best of Houzz is the people's choice award. Submitted and awarded the Houzz Customer Service Award for fourteen years in a row.",
     accentColor: '#34a853',
@@ -43,7 +46,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <Shield size={28} strokeWidth={1.5} />,
     category: 'Award',
-    subcategory: '2010 – 2025',
+    subcategory: `2010 – ${CURRENT_YEAR}`,
     title: 'DKI Diamond Claims Award',
     description: 'Presented to DKI Restoration Contractors who excel in providing a high level of service, reporting, and assistance relative to property loss claims.',
     accentColor: '#1a73e8',
@@ -51,7 +54,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <Trophy size={28} strokeWidth={1.5} />,
     category: 'Award',
-    subcategory: '2010 – 2024',
+    subcategory: `2010 – ${CURRENT_YEAR}`,
     title: 'Best of HomeAdvisor',
     description: 'Named a recipient for fourteen years in a row, honoring top-notch professionals providing extraordinary quality, service, and value.',
     accentColor: '#fbbc04',
@@ -59,7 +62,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <Building2 size={28} strokeWidth={1.5} />,
     category: 'Association',
-    subcategory: '2000 – 2025',
+    subcategory: `2000 – ${CURRENT_YEAR}`,
     title: 'Northern Virginia Chamber of Commerce',
     description: 'Outstanding Corporate Citizenship Awards honoree — celebrating businesses that champion community good in the greater Washington area.',
     accentColor: '#34a853',
@@ -67,7 +70,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <BadgeCheck size={28} strokeWidth={1.5} />,
     category: 'Association',
-    subcategory: '2000 – 2025',
+    subcategory: `2000 – ${CURRENT_YEAR}`,
     title: 'Restoration Industry Association',
     description: 'Innovation in Restoration award recipient for residential and commercial restoration projects, including remediation of structures and contents.',
     accentColor: '#1a73e8',
@@ -75,7 +78,7 @@ const ALL_CARDS: CardItem[] = [
   {
     icon: <Landmark size={28} strokeWidth={1.5} />,
     category: 'Association',
-    subcategory: '2004 – 2025',
+    subcategory: `2004 – ${CURRENT_YEAR}`,
     title: 'Fairfax County Chamber of Commerce',
     description: 'Outstanding Corporate Citizenship Awards honoree — celebrating individuals and businesses serving as champions for good.',
     accentColor: '#ea4335',
@@ -222,7 +225,7 @@ const AwardsAssociations: React.FC = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#dadce0] rounded-full px-4 py-2 mb-8 shadow-sm">
               <Trophy size={16} className="text-[#fbbc04]" />
-              <span className="text-[13px] font-semibold text-[#3c4043]">25+ Years of Industry Recognition</span>
+              <span className="text-[13px] font-semibold text-[#3c4043]">{CURRENT_YEAR - 2000}+ Years of Industry Recognition</span>
             </div>
 
             <h1 className="text-[40px] lg:text-[56px] font-bold text-[#202124] tracking-tight leading-[1.1] mb-6">
@@ -261,7 +264,7 @@ const AwardsAssociations: React.FC = () => {
         <section className="py-16 bg-[#f8f9fa]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <StatCard value="14+" label="Years of Awards" icon={<Trophy size={20} strokeWidth={1.8} />} />
+              <StatCard value={`${CURRENT_YEAR - 2010}+`} label="Years of Awards" icon={<Trophy size={20} strokeWidth={1.8} />} />
               <StatCard value="4.9" label="Average Rating" icon={<Star size={20} strokeWidth={1.8} />} />
               <StatCard value="500+" label="Verified Reviews" icon={<Heart size={20} strokeWidth={1.8} />} />
               <StatCard value="24/7" label="Emergency Response" icon={<Phone size={20} strokeWidth={1.8} />} />
