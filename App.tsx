@@ -98,6 +98,7 @@ const ServicesDevC = lazy(() => import('./pages/ServicesDevC'));
 
 // Core Pages
 const About = lazy(() => import('./pages/About'));
+const AwardsAssociations = lazy(() => import('./pages/AwardsAssociations'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const ResourcesHub = lazy(() => import('./pages/ResourcesHub'));
@@ -409,6 +410,7 @@ const AppLayout: React.FC = () => {
               <Route path="/work-authorization/" element={<WorkAuthorization />} />
               <Route path="/contract/" element={<WorkAuthorization />} />
               <Route path="/about/" element={<About />} />
+              <Route path="/awards/" element={<AwardsAssociations />} />
               <Route path="/contact/" element={<Contact />} />
               <Route path="/reviews/" element={<Reviews />} />
 

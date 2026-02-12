@@ -67,11 +67,15 @@ const MENU_STRUCTURE = [
     icon: Star, 
     type: 'link' 
   },
-  { 
-    label: 'About Us', 
-    path: '/about/', 
-    icon: Info, 
-    type: 'link' 
+  {
+    label: 'About',
+    icon: Info,
+    type: 'accordion',
+    children: [
+      { label: 'About Us', path: '/about/' },
+      { label: 'Awards & Associations', path: '/awards/' },
+      { label: 'Careers', path: '/careers/' },
+    ]
   },
   { 
     label: 'Contact', 

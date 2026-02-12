@@ -220,6 +220,21 @@ const Header: React.FC = () => {
                         </div>
                       )}
 
+                      {/* Dropdown: About */}
+                      {isOpen && item.dropdownId === 'about' && (
+                        <div className="absolute right-0 mt-2 w-[220px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
+                          <Link to="/about/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                            About Us
+                          </Link>
+                          <Link to="/awards/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                            Awards & Associations
+                          </Link>
+                          <Link to="/careers/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                            Careers
+                          </Link>
+                        </div>
+                      )}
+
                       {/* Mega Menu Logic: Locations */}
                       {isOpen && item.dropdownId === 'locations' && (
                         <div className="absolute left-[-200px] mt-2 w-[800px] max-w-[95vw] bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-8 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden border border-gray-100">
