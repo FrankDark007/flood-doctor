@@ -2,7 +2,7 @@ import React from 'react';
 import { Award, Shield, Star, BadgeCheck, Building2, Leaf, Trophy, Heart, Landmark, FileCheck, ClipboardCheck, Scale, ChevronRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
-import Button from '../components/ui/Button';
+
 
 /* ─── Types ─── */
 interface CardItem {
@@ -398,32 +398,59 @@ const AwardsAssociations: React.FC = () => {
         </section>
 
         {/* ─── CTA Section ─── */}
-        <section className="relative py-20 lg:py-24 bg-[#1a73e8] overflow-hidden">
-          {/* Decorative shapes */}
+        <section className="relative py-24 lg:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1557b0 0%, #1a73e8 40%, #4285f4 100%)' }}>
+          {/* Layered decorative elements */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/[0.05] rounded-full" />
-            <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-white/[0.05] rounded-full" />
+            <div className="absolute top-0 left-0 w-full h-full" style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%)' }} />
+            <div className="absolute top-0 right-0 w-full h-full" style={{ background: 'radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%)' }} />
+            <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-white/[0.06]" />
+            <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full border border-white/[0.06]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-white/[0.03]" />
           </div>
 
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 mb-6">
-              <Star size={14} className="text-[#fbbc04]" />
-              <span className="text-[13px] font-semibold text-white/90">Trusted by 500+ homeowners</span>
+            {/* Trust badge */}
+            <div className="inline-flex items-center gap-2 bg-white/[0.12] backdrop-blur-sm rounded-full px-5 py-2 mb-8 ring-1 ring-white/[0.15]">
+              <div className="flex -space-x-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={13} fill="#fbbc04" strokeWidth={0} className="text-[#fbbc04]" />
+                ))}
+              </div>
+              <span className="text-[13px] font-semibold text-white">Trusted by 500+ homeowners</span>
             </div>
-            <h2 className="text-[28px] lg:text-[40px] font-bold text-white tracking-tight mb-4">
-              Experience award-winning service
+
+            <h2 className="text-[32px] lg:text-[48px] font-bold text-white tracking-tight leading-[1.1] mb-5">
+              Experience award-winning{' '}
+              <br className="hidden sm:block" />
+              restoration service
             </h2>
-            <p className="text-[17px] text-white/75 mb-10 max-w-xl mx-auto leading-relaxed">
-              Our IICRC-certified teams are standing by 24/7. Get a response in under 60 minutes.
+            <p className="text-[17px] lg:text-[18px] text-white/70 mb-12 max-w-lg mx-auto leading-relaxed">
+              Our IICRC-certified teams are standing by 24/7.<br className="hidden sm:block" />
+              Get a response in under 60 minutes.
             </p>
+
+            {/* Buttons — using raw elements to avoid Button component style conflicts */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button to="/request/" variant="primary" className="bg-white !text-[#1a73e8] hover:bg-gray-50 font-semibold px-8 py-3.5 text-[16px] shadow-lg shadow-black/10">
+              <Link
+                to="/request/"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#1a73e8] font-semibold text-[16px] px-8 py-4 rounded-full shadow-xl shadow-black/15 hover:bg-[#f8f9fa] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <ChevronRight size={18} className="-ml-1" />
                 Request Service
-              </Button>
-              <Button href="tel:8774970007" variant="outline" className="!border-white/30 !text-white hover:!bg-white/10 font-semibold px-8 py-3.5 text-[16px]">
+              </Link>
+              <a
+                href="tel:8774970007"
+                className="inline-flex items-center justify-center gap-2.5 text-white font-semibold text-[16px] px-8 py-4 rounded-full ring-1 ring-white/25 hover:bg-white/10 hover:ring-white/40 transition-all duration-200"
+              >
+                <Phone size={16} />
                 (877) 497-0007
-              </Button>
+              </a>
             </div>
+
+            {/* Micro-trust line */}
+            <p className="mt-10 text-[13px] text-white/40 font-medium">
+              IICRC Certified &bull; Licensed in VA, DC & MD &bull; Direct Insurance Billing
+            </p>
           </div>
         </section>
       </main>
