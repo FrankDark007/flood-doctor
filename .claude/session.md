@@ -201,18 +201,69 @@ mclean, arlington, alexandria, fairfax, vienna, tysons, reston, herndon, ashburn
 
 ---
 
-## Next Steps (When Resuming)
+## ✅ LATEST: Security Fix + Plugin Optimization (2026-02-13)
 
-1. **Deploy main site:** `./scripts/deploy.sh <password>`
-2. **Deploy city sites:** Update `./scripts/deploy-cities.sh` to use new dist-cities structure
-3. **Configure DNS:** Each subdomain needs A record → 132.148.253.156 (or wildcard `*.flood.doctor`)
-4. **Verify production:** Test each subdomain loads its independent app
+### Status: Complete
+
+### What Was Done
+
+1. **GEMINI_API_KEY removed from frontend build** (commit `6111a02`)
+   - Removed `define` block from vite.config.ts
+   - Deleted VeoGenerator.tsx and VideoGenerator.tsx
+   - Removed @google/genai from package.json, index.html, city.html, build-cities.ts
+   - Cleaned netlify.toml and README.md
+   - Hardened .gitignore with .env patterns
+   - Verified no secrets in dist/
+
+2. **Plugin ecosystem optimized** (commit `f7f2cb1`)
+   - Pruned ~55 low-value plugins
+   - Installed: ralph-loop, playground, claude-md-management, hookify (Anthropic official)
+   - Installed: gemini-tools, headless (paddo-tools marketplace)
+   - Installed MCP servers: Cloudflare, Context7
+   - Enabled Agent Teams (experimental)
+   - Configured ralph-loop as default for design/content work in ~/.claude/CLAUDE.md
+
+3. **Claude Squad installed** — multi-agent terminal manager via tmux
 
 ---
 
-## Previous: Contract Page Deployed to /contract/ (2026-01-31)
+## ✅ LATEST: Static Pre-Rendering Implementation (2026-02-13)
 
-See project-history.md for full details.
+### Status: Complete — 197/197 routes pre-rendered and verified
+
+**Spec:** `docs/PRERENDER_STATIC_IMPLEMENTATION_PLAN.md`
+
+### What Was Done (8 tasks)
+
+| # | Task | Commit |
+|---|------|--------|
+| 1 | `config/routes.ts` — shared route source of truth (197 routes) | `da0e558` |
+| 2 | `PageMeta.tsx` — `__PRERENDER_READY__` flag | `d784916` |
+| 3 | `fd-home-v4/index.tsx` — add PageMeta to homepage | `1a8b592` |
+| 4 | `scripts/prerender.ts` — Playwright-based pre-render engine | `5d0048e` |
+| 5 | `index.tsx` — hydration detection (hydrateRoot vs createRoot) | `665ada7` |
+| 6 | `verify-prerender.ts` + `package.json` build chain | `6cd7e7f` |
+| 7 | `generate-sitemaps.ts` refactored to shared routes | `9ed8331` |
+| 8 | Build, verify — 197/197 pass | `2b4bd53`, `315e43f` |
+
+### Bug Found & Fixed
+
+3 guide routes (`/guides/basement-waterproofing/`, `/guides/burst-pipe-emergency/`, `/guides/flood-preparation/`) passed `faqs={faqs}` to `LazyFAQ` but the component expects `data` prop. Fixed in commit `2b4bd53`.
+
+### Prerender Architecture
+
+- Custom HTTP server serves clean SPA shell as fallback (no sirv dependency)
+- Homepage rendered last so its output overwrites dist/index.html
+- 5 concurrent Playwright tabs, 15s timeout per route
+- Full build: ~13 seconds for 197 routes
+- Verification checks: file exists, >5KB, unique title, canonical, og:title
+
+### Build Chain
+
+```bash
+npm run build     # vite build → generate:sitemaps → prerender
+npm run prerender:verify  # Post-build verification
+```
 
 ---
 
@@ -225,4 +276,4 @@ See project-history.md for full details.
 
 ---
 
-*Updated: 2026-02-07 (Independent City Subdomain Architecture)*
+*Updated: 2026-02-13 (Static Pre-Rendering Complete)*

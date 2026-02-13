@@ -28,6 +28,78 @@
 
 ## Completed Work
 
+### 2026-02-13: Security Fix — GEMINI_API_KEY Removed from Frontend
+
+**What:** Removed exposed API credentials from the client-side JavaScript bundle.
+
+**Root Cause:** `vite.config.ts` had a `define` block that injected `GEMINI_API_KEY` directly into the client bundle via `process.env.API_KEY`. Anyone viewing source could see the key.
+
+**Changes:**
+- Removed `define` block from `vite.config.ts`, added security comment
+- Deleted `components/tools/VeoGenerator.tsx` and `pages/VideoGenerator.tsx`
+- Removed route + lazy import from `App.tsx`
+- Removed `@google/genai` from `package.json`, `index.html`, `city.html`, `scripts/build-cities.ts`
+- Cleaned `netlify.toml` and `README.md`
+- Hardened `.gitignore` with `.env` patterns + security comment
+- Removed `generativelanguage.googleapis.com` from parity scanner safe list
+
+**Commits:** `6111a02`, `f7f2cb1`
+**Status:** Complete — verified no secrets in dist/
+
+---
+
+### 2026-02-13: Plugin Ecosystem Optimization
+
+**What:** Researched, pruned, and installed plugins for better workflow.
+
+**Pruned:** ~55 low-value plugins disabled (social media, enterprise, redundant)
+**Installed:**
+- ralph-loop, playground, claude-md-management, hookify (Anthropic official)
+- gemini-tools, headless (paddo-tools marketplace)
+- Cloudflare MCP server, Context7 MCP server
+- Agent Teams enabled (experimental)
+- Claude Squad installed (`brew install claude-squad`)
+
+**Configuration:**
+- Added "Iterative Quality Standard" to `~/.claude/CLAUDE.md` (ralph-loop default for design/content)
+
+**Still to install after restart:**
+- Firecrawl plugin, Sequential Thinking MCP
+
+---
+
+### 2026-02-13: Static Pre-Rendering Implementation (197/197 routes)
+
+**What:** Implemented full static pre-rendering pipeline so every route serves unique HTML with metadata, schema, and content (not a blank SPA shell).
+
+**Spec:** `docs/PRERENDER_STATIC_IMPLEMENTATION_PLAN.md`
+
+**Files Created:**
+- `config/routes.ts` — Single source of truth for all 197 routes + city data
+- `scripts/prerender.ts` — Playwright-based pre-render engine (custom HTTP server, 5 concurrent tabs, 15s timeout)
+- `scripts/verify-prerender.ts` — Post-build verification (file size, unique title, canonical, og:title)
+
+**Files Modified:**
+- `components/ui/PageMeta.tsx` — Added `__PRERENDER_READY__` flag (false → true after meta applied)
+- `pages/fd-home-v4/index.tsx` — Added PageMeta + schema (was the only route without PageMeta)
+- `index.tsx` — Hydration detection: `hydrateRoot` for pre-rendered, `createRoot` for SPA fallback
+- `scripts/generate-sitemaps.ts` — Refactored to use shared routes from `config/routes.ts`
+- `package.json` — Updated build chain: `vite build → generate:sitemaps → prerender`
+
+**Bug Found & Fixed:**
+- 3 guide pages (`BasementWaterproofingGuide`, `BurstPipeGuide`, `FloodPreparationGuide`) passed `faqs={faqs}` to `LazyFAQ` but component expects `data` prop → runtime crash ("Cannot read properties of undefined (reading 'length')")
+
+**Architecture Decisions:**
+- Custom HTTP server instead of sirv for SPA fallback — always serves clean shell with empty `#root`
+- Homepage rendered last so its output overwrites dist/index.html
+- `__PRERENDER_READY__` flag is deterministic (not timer-based)
+
+**Commits:** `da0e558`, `d784916`, `1a8b592`, `5d0048e`, `665ada7`, `6cd7e7f`, `9ed8331`, `2b4bd53`, `315e43f`
+
+**Build Stats:** 197/197 routes, ~13 seconds, all verified
+
+---
+
 ### 2026-02-08: Service Detail Longform Redesign
 
 **Scope:** Make 2500+ word service pages feel lighter and easier to scan.
