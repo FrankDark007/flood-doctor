@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run generate:sitemaps",
+    "build": "vite build && npm run generate:sitemaps && npm run prerender",
+    "prerender": "npx tsx scripts/prerender.ts",
+    "prerender:verify": "npx tsx scripts/verify-prerender.ts",
     "build:city": "VITE_BUILD_MODE=city vite build --outDir dist-city",
     "build:cities": "npm run build:city && npx tsx scripts/build-cities.ts",
     "generate:sitemaps": "npx tsx scripts/generate-sitemaps.ts",
