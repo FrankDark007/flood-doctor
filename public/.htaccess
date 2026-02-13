@@ -5,6 +5,9 @@
 RewriteEngine On
 RewriteBase /
 
+# Custom 404 page
+ErrorDocument 404 /404.html
+
 # HTTPS handled by Cloudflare at edge (Flexible SSL mode)
 # DO NOT add HTTPS redirect here - causes redirect loop with Flexible SSL
 
@@ -80,6 +83,20 @@ RewriteCond %{REQUEST_URI} !^/lorton/
 RewriteRule ^(.*)$ /lorton/$1 [L]
 
 # ============================================
+# BLOCK CITY PATHS ON MAIN DOMAIN
+# ============================================
+# City content lives on subdomains (e.g. mclean.flood.doctor).
+# Block flood.doctor/{city}/ paths to prevent 403 from directory listing.
+RewriteCond %{HTTP_HOST} ^(www\.)?flood\.doctor$ [NC]
+RewriteRule ^(mclean|arlington|alexandria|fairfax|vienna|tysons|reston|herndon|ashburn|springfield|fallschurch|greatfalls|lorton)(/.*)?$ - [R=404,L]
+
+# ============================================
+# 301 REDIRECTS - Non-canonical URLs
+# ============================================
+# /services/water-damage-restoration/ -> canonical nested route
+RewriteRule ^services/water-damage-restoration/?$ /services/residential/restoration-services/water-damage-restoration/ [R=301,L]
+
+# ============================================
 
 # Security Headers
 <IfModule mod_headers.c>
@@ -116,5 +133,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# SPA fallback - route all other requests to index.html
-RewriteRule ^ /index.html [L]
+# ============================================
+# 404 FOR NON-EXISTENT ROUTES
+# ============================================
+# All valid routes have prerendered static HTML files in dist/.
+# Any request reaching here has no matching file — it's a true 404.
+# Apache serves /404.html via ErrorDocument directive above.
+RewriteRule ^ - [R=404,L]

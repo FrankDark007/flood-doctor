@@ -1,18 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Flood Doctor</title>
-    <script>
-      // Single Page App hack for GitHub Pages
-      // Stores the current path and redirects to index.html
-      // which then restores the path for React Router
-      const path = window.location.pathname + window.location.search + window.location.hash;
-      sessionStorage.setItem('redirect', path);
-      window.location.replace('/flood-doctor/');
-    </script>
-  </head>
-  <body>
-    Redirecting...
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Flood Doctor</title>
+  <meta name="robots" content="noindex">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 520px;
+      text-align: center;
+    }
+    .code {
+      font-size: 6rem;
+      font-weight: 800;
+      color: #1a73e8;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    p {
+      font-size: 1rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: #1a73e8;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #1557b0; }
+    .phone {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .phone:hover { text-decoration: underline; }
+    .brand {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="code">404</div>
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or has been moved. If you need emergency water damage help, we're available 24/7.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to Homepage</a>
+      <a href="tel:+18774970007" class="phone">(877) 497-0007</a>
+    </div>
+    <div class="brand">Flood Doctor &mdash; Water Damage Restoration</div>
+  </div>
+</body>
 </html>
