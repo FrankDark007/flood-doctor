@@ -45,6 +45,9 @@ const PageMeta: React.FC<PageMetaProps> = ({
   const canonicalUrl = `${baseUrl}${cleanPath}`;
 
   useEffect(() => {
+    // Signal prerender engine: metadata not yet applied
+    (window as any).__PRERENDER_READY__ = false;
+
     // 1. Update Document Title
     document.title = `${title} | Flood Doctor`;
 
@@ -96,6 +99,9 @@ const PageMeta: React.FC<PageMetaProps> = ({
       }
       script.textContent = JSON.stringify(finalSchema);
     }
+
+    // Signal prerender engine: all metadata applied
+    (window as any).__PRERENDER_READY__ = true;
 
     // Cleanup schema on unmount if it exists, to avoid pollution on other pages
     return () => {
