@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import MobileStickyCTA from '../../components/layout/MobileStickyCTA';
+import PageMeta from '../../components/ui/PageMeta';
+import { generateHomepageSchema } from '../../utils/schema';
 import { Hero } from './Hero';
 import { ValueProps } from './ValueProps';
 import { FeatureSection } from './FeatureSection';
@@ -13,8 +15,15 @@ import { FinalSteps } from './FinalSteps';
 import { FAQ } from './FAQ';
 
 const FloodDoctorHomeV4: React.FC = () => {
+  const homepageSchema = useMemo(() => generateHomepageSchema(), []);
+
   return (
     <div className="min-h-screen bg-white">
+      <PageMeta
+        title="Emergency Water Damage Restoration"
+        description="24/7 Emergency water damage restoration in Northern Virginia. 60-minute response. IICRC-certified. Call (877) 497-0007."
+        schema={homepageSchema}
+      />
       <Header />
       <main>
         <Hero />
