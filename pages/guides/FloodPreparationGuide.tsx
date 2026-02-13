@@ -408,7 +408,7 @@ const FloodPreparationGuide: React.FC = () => {
               <h2 className="font-display text-3xl font-medium text-[#202124] mb-8 pb-4 border-b-4 border-[#1a73e8]">
                 Flood Preparation FAQs
               </h2>
-              <LazyFAQ faqs={faqs} />
+              <LazyFAQ data={faqs} />
             </div>
           </div>
 
