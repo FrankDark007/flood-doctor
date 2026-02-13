@@ -120,7 +120,7 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Rental Property Water Damage: Tenant and Landlord Responsibilities in Virginia | Flood Doctor"
+        title="Rental Property Water Damage: Tenant and Landlord Responsibilities in Virginia"
         description="Complete guide to rental property water damage responsibilities in Virginia. Understand tenant duties, landlord obligations, Virginia Code requirements, insurance coverage, and dispute resolution."
         structuredData={[faqSchema, localBusinessSchema]}
       />

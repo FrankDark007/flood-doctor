@@ -1579,7 +1579,7 @@ const WorkAuthorization: React.FC = () => {
     return (
       <>
         <PageMeta
-          title="Contract Signed | Flood Doctor"
+          title="Contract Signed"
           description="Thank you for signing the Work Authorization contract."
         />
         <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
@@ -1609,7 +1609,7 @@ const WorkAuthorization: React.FC = () => {
   return (
     <>
       <PageMeta
-        title="Work Authorization Contract | Flood Doctor"
+        title="Work Authorization Contract"
         description="Review and sign the Flood Doctor service contract and work authorization."
       />
 

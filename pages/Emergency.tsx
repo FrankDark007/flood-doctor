@@ -64,7 +64,7 @@ const EmergencyPage: React.FC = () => {
   return (
     <>
       <PageMeta
-        title="Water Emergency? Call Now | 60-Min Response | Flood Doctor"
+        title="Water Emergency? Call Now | 60-Min Response"
         description="24/7 water damage emergency response. 60-minute arrival guaranteed. Call (877) 497-0007 now. Serving Northern Virginia, DC, and Maryland."
         structuredData={structuredData}
       />

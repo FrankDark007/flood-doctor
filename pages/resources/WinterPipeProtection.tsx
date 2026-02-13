@@ -50,7 +50,7 @@ const WinterPipeProtection: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Winter Pipe Protection Guide | Prevent Frozen & Burst Pipes | Flood Doctor"
+        title="Winter Pipe Protection Guide | Prevent Frozen & Burst Pipes"
         description="Protect your pipes from freezing and bursting this winter. Expert tips on insulation, heating, and emergency response for Northern Virginia homeowners."
         structuredData={structuredData}
       />

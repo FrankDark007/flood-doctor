@@ -9,7 +9,7 @@ const CommercialWaterDamageRestorationDC: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Commercial Water Damage Restoration: Minimizing Business Downtime in DC | Flood Doctor"
+        title="Commercial Water Damage Restoration: Minimizing Business Downtime in DC"
         description="Expert guide to commercial water damage restoration in Washington DC. Learn how to minimize downtime, protect revenue, and restore operations quickly."
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">

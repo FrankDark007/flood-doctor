@@ -198,7 +198,7 @@ const AwardsAssociations: React.FC = () => {
   return (
     <>
       <PageMeta
-        title="Awards & Associations | Flood Doctor"
+        title="Awards & Associations"
         description="Flood Doctor's industry awards, certifications, and professional associations. IICRC certified, BBB A+ rated, 14-time HomeAdvisor award winner."
         canonicalPath="/awards/"
       />
