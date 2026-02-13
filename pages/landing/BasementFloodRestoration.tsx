@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Basement Flood Restoration',
-  title: 'Basement Flood Restoration | Specialists | Flood Doctor',
+  title: 'Basement Flood Restoration | Specialists',
   metaDescription: 'Expert basement flood restoration in Northern Virginia. We restore flooded basements fast. 24/7 emergency service. Call (877) 497-0007.',
   h1: 'Expert Basement Flood Restoration',
   heroSubtitle: 'Basement flooding specialists. We extract water, dry structures, restore contents, and help prevent future flooding.',

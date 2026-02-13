@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Vienna VA | Emergency Response | Flood Doctor',
+  title: 'Water Damage Restoration Vienna VA | Emergency Response',
   metaDescription: 'Professional water damage restoration in Vienna VA. 24/7 emergency service, certified technicians, insurance experts. Call (877) 497-0007.',
   h1: 'Water Damage Restoration Vienna Virginia',
   heroSubtitle: 'Expert water damage restoration for Vienna homes. Rapid emergency response, professional service, insurance claim specialists.',

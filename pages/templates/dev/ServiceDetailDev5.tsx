@@ -176,7 +176,7 @@ const ServiceDetailDev5: React.FC<ServiceDetailDev5Props> = ({ service = demoSer
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`${serviceName} | Flood Doctor`}
+        title={`${serviceName}`}
         description={service?.metaDescription || ''}
       />
 

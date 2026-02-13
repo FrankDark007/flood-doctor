@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Ashburn VA | Emergency Response | Flood Doctor',
+  title: 'Water Damage Restoration Ashburn VA | Emergency Response',
   metaDescription: 'Expert water damage restoration in Ashburn VA. 24/7 emergency service, IICRC certified, insurance specialists. Call (877) 497-0007.',
   h1: 'Water Damage Restoration Ashburn Virginia',
   heroSubtitle: 'Trusted water damage restoration for Ashburn homes. Rapid response, professional technicians, seamless insurance process.',

@@ -102,7 +102,7 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Water Damage Blog | ${cityName} Restoration Tips | Flood Doctor`}
+        title={`Water Damage Blog | ${cityName} Restoration Tips`}
         description={`Expert water damage restoration guides for ${cityName} homeowners. Prevention tips, emergency response, mold prevention, and local insights from IICRC-certified professionals.`}
       />
 

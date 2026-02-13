@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Remediation',
-  title: 'Water Remediation Services | Expert Solutions | Flood Doctor',
+  title: 'Water Remediation Services | Expert Solutions',
   metaDescription: 'Professional water remediation services in Northern Virginia. Complete water removal and structural drying. Call (877) 497-0007.',
   h1: 'Professional Water Remediation Services',
   heroSubtitle: 'Complete water remediation solutions. We eliminate water damage and restore your property to safe, dry condition.',

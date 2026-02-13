@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Restoration',
-  title: 'Water Restoration Services | Professional | Flood Doctor',
+  title: 'Water Restoration Services | Professional',
   metaDescription: 'Professional water restoration services in Northern Virginia. IICRC certified technicians, 60-minute response. Call (877) 497-0007 for emergency help.',
   h1: 'Professional Water Restoration Services',
   heroSubtitle: 'Complete water restoration for homes and businesses. Emergency response, expert technicians, and guaranteed results.',

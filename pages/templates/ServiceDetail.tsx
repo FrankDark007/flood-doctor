@@ -785,8 +785,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
 
   // SEO-CRITICAL: Meta title MUST include city name at the BEGINNING for local SEO
   const metaTitle = isLocalPage
-    ? `${serviceName} ${cityName}, ${stateAbbr} | 24/7 Emergency | Flood Doctor`
-    : `${serviceName} | Flood Doctor`;
+    ? `${serviceName} ${cityName}, ${stateAbbr} | 24/7 Emergency`
+    : `${serviceName}`;
 
   const metaDescription = isLocalPage
     ? `Professional ${serviceName.toLowerCase()} in ${cityName}, ${stateAbbr}. ${franchise.responseTime || '60-minute response'}. IICRC certified. Call ${franchise.phone || '(877) 497-0007'} for 24/7 emergency service.`

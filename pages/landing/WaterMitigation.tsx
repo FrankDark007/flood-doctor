@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Mitigation',
-  title: 'Water Mitigation Services | Stop Damage Fast | Flood Doctor',
+  title: 'Water Mitigation Services | Stop Damage Fast',
   metaDescription: 'Professional water mitigation services in Northern Virginia. Stop water damage in its tracks. 60-minute response. Call (877) 497-0007.',
   h1: 'Professional Water Mitigation Services',
   heroSubtitle: 'Water mitigation stops damage from spreading. Our rapid response extracts water and begins drying before damage worsens.',

@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Great Falls VA | Expert Service | Flood Doctor',
+  title: 'Water Damage Restoration Great Falls VA | Expert Service',
   metaDescription: 'Professional water damage restoration in Great Falls VA. Serving luxury estates with 24/7 emergency response. Call (877) 497-0007.',
   h1: 'Water Damage Restoration Great Falls Virginia',
   heroSubtitle: 'Expert water damage restoration for Great Falls estates. Specialized service for unique properties, available 24/7.',

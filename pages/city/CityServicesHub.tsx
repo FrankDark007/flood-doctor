@@ -104,7 +104,7 @@ const CityServicesHub: React.FC<CityServicesHubProps> = ({ city }) => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Restoration Services in ${city.name}, ${city.state} | Flood Doctor`}
+        title={`Restoration Services in ${city.name}, ${city.state}`}
         description={`Professional water damage, mold remediation, and restoration services in ${city.name}, ${city.state}. ${city.responseTime} response. IICRC certified. Call (877) 497-0007.`}
       />
 

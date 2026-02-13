@@ -304,7 +304,7 @@ const CityLanding: React.FC<CityLandingProps> = ({ city }) => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Water Damage Restoration ${city.name} ${city.state} | ${city.responseTime} Response | Flood Doctor`}
+        title={`Water Damage Restoration ${city.name} ${city.state} | ${city.responseTime} Response`}
         description={city.description}
         structuredData={structuredData}
       />

@@ -232,7 +232,7 @@ const CityPreventionGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Protecting Your ${city} Home from Water Damage | Prevention Guide | Flood Doctor`}
+        title={`Protecting Your ${city} Home from Water Damage | Prevention Guide`}
         description={`Complete water damage prevention guide for ${city} homeowners. 8 steps to protect your ${housingTypes[0]?.toLowerCase() || 'home'} from flooding, leaks, and water damage year-round.`}
         schema={pageSchema}
       />

@@ -207,7 +207,7 @@ const ServiceDetailDevA: React.FC<ServiceDetailDevAProps> = ({ service }) => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`${serviceName} | Flood Doctor`}
+        title={`${serviceName}`}
         description={demoService?.metaDescription || serviceTagline}
       />
 

@@ -48,8 +48,11 @@ const PageMeta: React.FC<PageMetaProps> = ({
     // Signal prerender engine: metadata not yet applied
     (window as any).__PRERENDER_READY__ = false;
 
+    // Strip trailing brand to prevent duplication (defensive)
+    const cleanTitle = title.replace(/\s*\|\s*Flood Doctor\s*$/i, '');
+
     // 1. Update Document Title
-    document.title = `${title} | Flood Doctor`;
+    document.title = `${cleanTitle} | Flood Doctor`;
 
     // 2. Helper to set meta tags
     const setMetaTag = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
@@ -75,7 +78,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
     link.setAttribute('href', canonicalUrl);
 
     // 5. Open Graph (Facebook/LinkedIn)
-    setMetaTag('og:title', title, 'property');
+    setMetaTag('og:title', cleanTitle, 'property');
     setMetaTag('og:description', description, 'property');
     setMetaTag('og:url', canonicalUrl, 'property');
     setMetaTag('og:type', type, 'property');
@@ -84,7 +87,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
 
     // 6. Twitter Card
     setMetaTag('twitter:card', 'summary_large_image');
-    setMetaTag('twitter:title', title);
+    setMetaTag('twitter:title', cleanTitle);
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', image);
 

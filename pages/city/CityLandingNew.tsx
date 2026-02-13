@@ -28,7 +28,7 @@ const CityLandingNew: React.FC<CityLandingNewProps> = ({ city }) => {
   const cityData = adaptCityConfigToCityData(city);
 
   // SEO-CRITICAL: Meta title MUST include city name at the BEGINNING for local SEO
-  const metaTitle = `Water Damage Restoration ${city.name}, ${city.state} | ${city.responseTime} Response | Flood Doctor`;
+  const metaTitle = `Water Damage Restoration ${city.name}, ${city.state} | ${city.responseTime} Response`;
   const metaDescription = city.description;
 
   // LocalBusiness Schema for SEO

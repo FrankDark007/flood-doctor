@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Fairfax VA | 24/7 Emergency | Flood Doctor',
+  title: 'Water Damage Restoration Fairfax VA | 24/7 Emergency',
   metaDescription: 'Expert water damage restoration in Fairfax VA. IICRC certified, 60-minute response, direct insurance billing. Call (877) 497-0007 for emergency service.',
   h1: 'Water Damage Restoration Fairfax Virginia',
   heroSubtitle: 'Professional water damage restoration serving Fairfax County. Fast response, certified technicians, and hassle-free insurance claims.',

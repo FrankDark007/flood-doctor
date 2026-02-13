@@ -123,7 +123,7 @@ const Careers: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Restoration Careers in Northern Virginia | Flood Doctor Jobs"
+        title="Restoration Careers in Northern Virginia"
         description="Join Northern Virginia's top-rated restoration company. Competitive pay, full benefits, IICRC certification training. Technicians, project managers, and emergency responders wanted."
       />
 

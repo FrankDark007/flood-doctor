@@ -134,7 +134,7 @@ const RequestService: React.FC = () => {
   return (
     <main className="flex-grow bg-slate-50">
       <PageMeta
-        title="Request Service | Flood Doctor Water Damage Restoration"
+        title="Request Water Damage Restoration Service"
         description="Request water damage restoration service from Flood Doctor. 24/7 emergency response in Northern Virginia."
       />
 

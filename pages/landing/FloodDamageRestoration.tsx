@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Flood Damage Restoration',
-  title: 'Flood Damage Restoration | Emergency Response | Flood Doctor',
+  title: 'Flood Damage Restoration | Emergency Response',
   metaDescription: 'Expert flood damage restoration in Northern Virginia. 24/7 emergency flood cleanup, water extraction, and full restoration. Call (877) 497-0007.',
   h1: 'Emergency Flood Damage Restoration',
   heroSubtitle: 'Complete flood damage restoration services. From emergency water removal to full property reconstruction. We handle it all.',

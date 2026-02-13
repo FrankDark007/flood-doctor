@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Arlington VA | 60-Min Response | Flood Doctor',
+  title: 'Water Damage Restoration Arlington VA | 60-Min Response',
   metaDescription: 'Professional water damage restoration in Arlington VA. 24/7 emergency response, IICRC certified technicians, direct insurance billing. Call (877) 497-0007.',
   h1: 'Water Damage Restoration Arlington Virginia',
   heroSubtitle: '24/7 emergency water damage restoration serving Arlington, VA. 60-minute response, IICRC certified technicians, and direct insurance billing.',

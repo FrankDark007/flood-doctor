@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Repair',
-  title: 'Water Damage Repair Services | Full Restoration | Flood Doctor',
+  title: 'Water Damage Repair Services | Full Restoration',
   metaDescription: 'Complete water damage repair in Northern Virginia. From drywall to flooring, we restore your property. Call (877) 497-0007 for free estimate.',
   h1: 'Complete Water Damage Repair Services',
   heroSubtitle: 'Full water damage repair and reconstruction. We restore drywall, flooring, cabinets, and more to pre-loss condition.',

@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration Company',
-  title: 'Water Damage Restoration Company | Trusted | Flood Doctor',
+  title: 'Water Damage Restoration Company | Trusted',
   metaDescription: 'Trusted water damage restoration company serving Northern Virginia. 15+ years, 10,000+ projects, 500+ 5-star reviews. Call (877) 497-0007.',
   h1: 'Trusted Water Damage Restoration Company',
   heroSubtitle: 'Family-owned water damage restoration company serving Northern Virginia since 2008. IICRC certified with over 10,000 successful restorations.',

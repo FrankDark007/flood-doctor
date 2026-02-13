@@ -261,7 +261,7 @@ const CityServiceDetail: React.FC<CityServiceDetailProps> = ({ city, serviceSlug
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`${service.metaTitle} in ${city.name}, ${city.state} | Flood Doctor`}
+        title={`${service.metaTitle} in ${city.name}, ${city.state}`}
         description={`${service.description} Serving ${city.name}, ${city.state}. ${city.responseTime} response. Call (877) 497-0007.`}
       />
 

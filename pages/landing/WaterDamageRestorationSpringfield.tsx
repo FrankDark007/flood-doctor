@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Springfield VA | Fast Response | Flood Doctor',
+  title: 'Water Damage Restoration Springfield VA | Fast Response',
   metaDescription: 'Professional water damage restoration in Springfield VA. 60-minute response, IICRC certified technicians. Call (877) 497-0007 for 24/7 emergency service.',
   h1: 'Water Damage Restoration Springfield Virginia',
   heroSubtitle: 'Expert water damage restoration for Springfield homes. Rapid response, professional service, direct insurance billing.',
