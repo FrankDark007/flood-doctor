@@ -2,12 +2,12 @@ import React, { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Testimonial } from './types';
 
-// Unsplash images — beautiful homes relevant to water damage restoration
+// Unsplash images — modern home interiors (Northern Virginia style)
 const TESTIMONIAL_IMAGES = [
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', // modern home exterior
-  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', // luxury house front
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop', // elegant home interior
-  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop', // beautiful residential home
+  'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop', // modern apartment living room
+  'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop', // modern white kitchen with island
+  'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop', // contemporary living room
+  'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop', // modern home interior
 ];
 
 interface ServiceTestimonialsProps {
