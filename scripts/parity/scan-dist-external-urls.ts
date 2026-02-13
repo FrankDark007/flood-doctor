@@ -56,7 +56,6 @@ const SAFE_PATTERNS = [
   /(?:https?:)?\/\/images\.unsplash\.com/,
   // CSP policy URLs (declarations, not loaded)
   /(?:https?:)?\/\/esm\.sh/,
-  /(?:https?:)?\/\/generativelanguage\.googleapis\.com/,
   // Government/utility sites (reference links in content)
   /(?:https?:)?\/\/(?:www\.)?(?:fairfaxwater|dominionenergy|fcps|fairfaxcounty)\.(?:org|com|gov)/,
   // IICRC standards (reference links)

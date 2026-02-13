@@ -32,3 +32,4 @@ dist-ssr
 # Build artifacts
 dist-cities/
 flood-doctor-v3.zip
+.next/
