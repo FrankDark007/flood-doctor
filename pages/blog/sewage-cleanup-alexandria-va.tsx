@@ -275,7 +275,7 @@ const SewageCleanupAlexandriaVA: React.FC = () => {
         <h2>Professional Sewage Cleanup Process</h2>
 
         <p>
-          Proper sewage remediation follows strict protocols ensuring complete decontamination and safety. Our comprehensive <a href="/services/sewage-cleanup">sewage cleanup process</a> includes:
+          Proper sewage remediation follows strict protocols ensuring complete decontamination and safety. Our comprehensive <a href="/services/residential/cleanup-services/sewage-cleanup/">sewage cleanup process</a> includes:
         </p>
 
         <h3>Phase 1: Emergency Response and Containment (0-2 Hours)</h3>

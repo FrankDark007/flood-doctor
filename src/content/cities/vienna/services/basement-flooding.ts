@@ -13,7 +13,7 @@ export const viennaBasementFlooding: ServicePageContent = {
     primaryCTALink: 'tel:7036560105',
     secondaryCTA: 'Learn About Solutions',
     secondaryCTALink: '#solutions',
-    backgroundImage: '/images/services/basement-flooding-vienna.jpg',
+    backgroundImage: '/images/services/residential/specialty-services/basement-flooding/-vienna.jpg',
     backgroundAlt: 'Vienna basement flooding restoration'
   },
 
@@ -484,12 +484,12 @@ export const viennaBasementFlooding: ServicePageContent = {
     {
       title: 'Mold Remediation',
       description: 'Professional mold removal after basement flooding',
-      link: '/locations/vienna/services/mold-remediation'
+      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
     },
     {
       title: 'Sewage Cleanup',
       description: 'Emergency sewage backup restoration',
-      link: '/locations/vienna/services/sewage-cleanup'
+      link: '/locations/vienna/services/residential/cleanup-services/sewage-cleanup/'
     }
   ],
 

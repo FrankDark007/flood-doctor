@@ -1,4 +1,4 @@
-// src/content/cities/mclean/services/mold-remediation.ts
+// src/content/cities/mclean/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // McLean Mold Remediation Service Page - 100% Unique
 

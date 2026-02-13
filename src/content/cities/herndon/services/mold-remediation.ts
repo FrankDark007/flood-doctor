@@ -1,4 +1,4 @@
-// src/content/cities/herndon/services/mold-remediation.ts
+// src/content/cities/herndon/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Herndon Mold Remediation Service Page - 100% Unique
 

@@ -1,4 +1,4 @@
-// src/content/cities/reston/services/basement-flooding.ts
+// src/content/cities/reston/services/residential/specialty-services/basement-flooding/.ts
 // Generated: January 3, 2026
 // Reston Basement Flooding - 100% Unique
 
@@ -267,11 +267,11 @@ Our IICRC-certified crews don't just pump water and leave. We identify why your 
   ],
 
   relatedServices: [
-    "/services/water-damage-restoration",
+    "/services/residential/restoration-services/water-damage-restoration/",
     "/services/burst-pipe-repair",
     "/services/flood-cleanup",
-    "/services/mold-remediation",
-    "/services/sewage-cleanup"
+    "/services/residential/cleanup-services/mold-remediation/",
+    "/services/residential/cleanup-services/sewage-cleanup/"
   ],
 
   finalCTA: {

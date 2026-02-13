@@ -47,7 +47,7 @@ const HomeDevC: React.FC = () => {
       icon: Droplets,
       color: 'bg-blue-500',
       gradient: 'from-blue-600 to-cyan-500',
-      link: '/services/residential/water-damage/',
+      link: '/services/residential/restoration-services/water-damage-restoration/',
       featured: true
     },
     {

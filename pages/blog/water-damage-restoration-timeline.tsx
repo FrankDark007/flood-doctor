@@ -435,7 +435,7 @@ const WaterDamageRestorationTimeline: React.FC = () => {
         <p><strong>Total cost:</strong> $25,000-$50,000+</p>
 
         <p>
-          For sewage-related damage, our specialized <a href="/services/sewage-cleanup">sewage cleanup services</a> ensure safe, thorough remediation following all health and safety protocols.
+          For sewage-related damage, our specialized <a href="/services/residential/cleanup-services/sewage-cleanup/">sewage cleanup services</a> ensure safe, thorough remediation following all health and safety protocols.
         </p>
 
         <h3>Scenario 4: Whole-House Flooding from Storm (Severe Category 1-2 Damage)</h3>
@@ -593,7 +593,7 @@ const WaterDamageRestorationTimeline: React.FC = () => {
         </p>
 
         <p>
-          Our <a href="/services/water-damage-restoration">water damage restoration process</a> follows IICRC standards while prioritizing efficiency and communication. From the moment you call our 24/7 emergency line through final restoration completion, we keep you informed with regular updates and realistic timelines.
+          Our <a href="/services/residential/restoration-services/water-damage-restoration/">water damage restoration process</a> follows IICRC standards while prioritizing efficiency and communication. From the moment you call our 24/7 emergency line through final restoration completion, we keep you informed with regular updates and realistic timelines.
         </p>
 
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">

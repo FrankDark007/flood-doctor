@@ -477,7 +477,7 @@ const SpringfieldWaterDamage: React.FC = () => {
                 Mold Removal Springfield
               </a>
               <a
-                href="/services/emergency-water-extraction"
+                href="/services/residential/restoration-services/water-damage-restoration/"
                 className="inline-block bg-gray-100 hover:bg-[#1a73e8] hover:text-white text-gray-800 px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 Emergency Water Extraction
@@ -489,7 +489,7 @@ const SpringfieldWaterDamage: React.FC = () => {
                 Flood Cleanup
               </a>
               <a
-                href="/services/basement-waterproofing"
+                href="/services/residential/specialty-services/basement-flooding/"
                 className="inline-block bg-gray-100 hover:bg-[#1a73e8] hover:text-white text-gray-800 px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 Basement Waterproofing

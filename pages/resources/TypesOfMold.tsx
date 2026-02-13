@@ -512,7 +512,7 @@ const TypesOfMold: React.FC = () => {
               (877) 497-0007
             </a>
             <Link
-              to="/services/mold-remediation"
+              to="/services/residential/cleanup-services/mold-remediation/"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-lg font-semibold hover:bg-emerald-400 transition-colors"
             >
               Mold Remediation Services

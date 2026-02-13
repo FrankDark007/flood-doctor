@@ -449,7 +449,7 @@ export default function HerndonMoldRemoval() {
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-3">Water Damage Restoration</h3>
                 <p className="text-gray-700">Emergency water extraction and structural drying services</p>
               </Link>
-              <Link href="/services/basement-waterproofing" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-2 border-transparent hover:border-[#1a73e8]">
+              <Link href="/services/residential/specialty-services/basement-flooding/" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-2 border-transparent hover:border-[#1a73e8]">
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-3">Basement Waterproofing</h3>
                 <p className="text-gray-700">Prevent moisture and mold with professional waterproofing</p>
               </Link>

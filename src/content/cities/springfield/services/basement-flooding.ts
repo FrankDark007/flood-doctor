@@ -1,4 +1,4 @@
-// src/content/cities/springfield/services/basement-flooding.ts
+// src/content/cities/springfield/services/residential/specialty-services/basement-flooding/.ts
 // Generated: January 3, 2026
 // Springfield Basement Flooding Service Page - 100% Unique
 

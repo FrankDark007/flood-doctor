@@ -46,7 +46,7 @@ export const viennaHomepage: HomePageContent = {
         title: 'Basement Flooding Solutions',
         description: 'Specialized basement restoration for Vienna\'s established neighborhoods. We address foundation seepage in 1950s-70s homes, sump pump failures in Clarks Crossing, and chronic moisture issues throughout Vienna Town.',
         icon: 'basement-flooding',
-        link: '/locations/vienna/services/basement-flooding'
+        link: '/locations/vienna/services/residential/specialty-services/basement-flooding/'
       },
       {
         title: 'Burst Pipe Restoration',
@@ -58,7 +58,7 @@ export const viennaHomepage: HomePageContent = {
         title: 'Mold Remediation',
         description: 'Comprehensive mold solutions for Vienna properties. We address ventilation issues in older homes, humidity problems in finished basements, and hidden mold growth using EPA-approved protocols and advanced containment.',
         icon: 'mold-removal',
-        link: '/locations/vienna/services/mold-remediation'
+        link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
       },
       {
         title: 'Storm & Flood Cleanup',
@@ -70,7 +70,7 @@ export const viennaHomepage: HomePageContent = {
         title: 'Sewage Backup Cleanup',
         description: 'Safe sewage remediation for Vienna\'s aging infrastructure. We handle sewer lateral failures in established neighborhoods, septic issues, and contaminated water cleanup with full decontamination and restoration.',
         icon: 'sewage-cleanup',
-        link: '/locations/vienna/services/sewage-cleanup'
+        link: '/locations/vienna/services/residential/cleanup-services/sewage-cleanup/'
       },
       {
         title: 'Fire & Smoke Restoration',

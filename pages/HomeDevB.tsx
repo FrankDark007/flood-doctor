@@ -49,7 +49,7 @@ const HomeDevB: React.FC = () => {
   ];
 
   const residentialServices = [
-    { title: 'Water Damage', icon: Droplets, description: 'Emergency extraction and structural drying', link: '/services/residential/water-damage/' },
+    { title: 'Water Damage', icon: Droplets, description: 'Emergency extraction and structural drying', link: '/services/residential/restoration-services/water-damage-restoration/' },
     { title: 'Fire & Smoke', icon: Flame, description: 'Soot removal and odor elimination', link: '/services/residential/fire-smoke/' },
     { title: 'Mold Remediation', icon: Bug, description: 'Safe removal and prevention', link: '/services/residential/mold/' },
     { title: 'Storm Damage', icon: Wind, description: 'Emergency response and restoration', link: '/services/residential/storm-damage/' }

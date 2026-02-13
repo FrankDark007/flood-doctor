@@ -75,7 +75,7 @@ const KeywordLandingTemplate: React.FC<{ config: KeywordLandingConfig }> = ({ co
       description: 'From burst pipes to flooding, we extract water and restore your property fast.',
       icon: Droplets,
       gradient: 'from-blue-600 to-cyan-500',
-      link: '/services/residential/water-damage/',
+      link: '/services/residential/restoration-services/water-damage-restoration/',
       featured: config.primaryService === 'water-damage' || config.primaryService === 'flood'
     },
     {

@@ -379,7 +379,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Call Professional Restoration Immediately</h3>
                   <p className="text-gray-700 mb-3">
-                    Contact <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">professional water damage restoration</a> specialists within the first hour. Certified technicians provide critical services that prevent secondary damage.
+                    Contact <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 underline">professional water damage restoration</a> specialists within the first hour. Certified technicians provide critical services that prevent secondary damage.
                   </p>
                   <p className="text-gray-700">
                     Call <a href="tel:8774970007" className="text-blue-600 hover:text-blue-800 underline font-semibold">(877) 497-0007</a> for 24/7 emergency response. Typical arrival time: 60-90 minutes across Northern Virginia.
@@ -863,7 +863,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
           </div>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            Working with experienced <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">water damage restoration professionals</a> who understand insurance processes significantly improves claim outcomes. Many restoration companies work directly with adjusters and help document damage using industry-standard methods that insurers recognize and accept.
+            Working with experienced <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 underline">water damage restoration professionals</a> who understand insurance processes significantly improves claim outcomes. Many restoration companies work directly with adjusters and help document damage using industry-standard methods that insurers recognize and accept.
           </p>
         </section>
 
@@ -984,7 +984,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 font-bold mr-2">•</span>
-                  <span><strong><a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 underline">Mold Remediation</a>:</strong> Complete mold removal if colonies have developed</span>
+                  <span><strong><a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 underline">Mold Remediation</a>:</strong> Complete mold removal if colonies have developed</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 font-bold mr-2">•</span>
@@ -1190,17 +1190,17 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
           <h3 className="text-xl font-bold text-gray-900 mb-4">Related Resources</h3>
           <ul className="space-y-3">
             <li>
-              <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Water Damage Restoration Services
               </a>
             </li>
             <li>
-              <a href="/services/emergency-water-extraction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Emergency Water Extraction
               </a>
             </li>
             <li>
-              <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Mold Remediation and Prevention
               </a>
             </li>

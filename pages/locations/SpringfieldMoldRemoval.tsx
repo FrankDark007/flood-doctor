@@ -236,7 +236,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
 
             <div className="mt-12 text-center">
               <a
-                href="/services/mold-remediation"
+                href="/services/residential/cleanup-services/mold-remediation/"
                 className="inline-block text-[#1a73e8] hover:text-[#1557b0] font-semibold text-lg"
               >
                 Learn More About Our Mold Remediation Process →

@@ -1,4 +1,4 @@
-// src/content/cities/lorton/services/mold-remediation.ts
+// src/content/cities/lorton/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Lorton Mold Remediation Service Page - 100% Unique
 

@@ -850,7 +850,7 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Mold Growth Timeline
                   </a>
-                  <a href="/services/water-damage-restoration" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                  <a href="/services/residential/restoration-services/water-damage-restoration/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Restoration Services
                   </a>

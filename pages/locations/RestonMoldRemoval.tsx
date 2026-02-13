@@ -351,10 +351,10 @@ const RestonMoldRemoval: React.FC = () => {
                   <div className="mt-8 pt-8 border-t border-blue-400">
                     <h4 className="font-bold mb-4">Related Services:</h4>
                     <ul className="space-y-2 text-sm">
-                      <li><a href="/services/mold-remediation" className="hover:underline">• Mold Remediation</a></li>
-                      <li><a href="/services/water-damage-restoration" className="hover:underline">• Water Damage Restoration</a></li>
+                      <li><a href="/services/residential/cleanup-services/mold-remediation/" className="hover:underline">• Mold Remediation</a></li>
+                      <li><a href="/services/residential/restoration-services/water-damage-restoration/" className="hover:underline">• Water Damage Restoration</a></li>
                       <li><a href="/services/air-quality-testing" className="hover:underline">• Air Quality Testing</a></li>
-                      <li><a href="/services/basement-waterproofing" className="hover:underline">• Basement Waterproofing</a></li>
+                      <li><a href="/services/residential/specialty-services/basement-flooding/" className="hover:underline">• Basement Waterproofing</a></li>
                       <li><a href="/services/dehumidification" className="hover:underline">• Dehumidification Services</a></li>
                     </ul>
                   </div>

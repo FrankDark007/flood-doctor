@@ -585,7 +585,7 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-800 leading-relaxed">
-            For comprehensive <a href="/services/crawl-space-drying" className="text-[#1a73e8] hover:underline font-semibold">crawl space drying services</a> throughout Northern Virginia and beyond, partnering with experienced moisture remediation specialists ensures your home receives solutions engineered for Virginia's specific challenges.
+            For comprehensive <a href="/services/residential/specialty-services/crawl-space-drying/" className="text-[#1a73e8] hover:underline font-semibold">crawl space drying services</a> throughout Northern Virginia and beyond, partnering with experienced moisture remediation specialists ensures your home receives solutions engineered for Virginia's specific challenges.
           </p>
         </section>
 
@@ -696,7 +696,7 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
               <p className="text-gray-700 mb-4">
                 Rapid response to flooding and water intrusion with industrial extraction equipment and structural drying systems.
               </p>
-              <a href="/services/crawl-space-drying" className="text-[#1a73e8] font-semibold hover:underline">
+              <a href="/services/residential/specialty-services/crawl-space-drying/" className="text-[#1a73e8] font-semibold hover:underline">
                 Learn More →
               </a>
             </div>
@@ -707,7 +707,7 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
               <p className="text-gray-700 mb-4">
                 Certified mold removal, antimicrobial treatment, and post-remediation verification testing to ensure healthy indoor air.
               </p>
-              <a href="/services/mold-remediation" className="text-[#1a73e8] font-semibold hover:underline">
+              <a href="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] font-semibold hover:underline">
                 Learn More →
               </a>
             </div>

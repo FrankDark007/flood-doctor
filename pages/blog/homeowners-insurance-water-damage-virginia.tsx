@@ -167,7 +167,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         </p>
 
         <p>
-          Important: Flood insurance requires a 30-day waiting period before coverage takes effect, so don't wait until storms are forecasted. If you're unsure about your flood risk, our <a href="/services/flood-damage-restoration">flood damage experts</a> can assess your property and recommend appropriate coverage.
+          Important: Flood insurance requires a 30-day waiting period before coverage takes effect, so don't wait until storms are forecasted. If you're unsure about your flood risk, our <a href="/services/residential/restoration-services/flood-cleanup/">flood damage experts</a> can assess your property and recommend appropriate coverage.
         </p>
 
         <h2 id="water-backup-coverage">Water Backup and Sump Pump Coverage</h2>
@@ -314,7 +314,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         </ul>
 
         <p>
-          Our <a href="/services/water-damage-restoration">water damage restoration services</a> are designed to work seamlessly with insurance claims, reducing your stress during an already difficult time.
+          Our <a href="/services/residential/restoration-services/water-damage-restoration/">water damage restoration services</a> are designed to work seamlessly with insurance claims, reducing your stress during an already difficult time.
         </p>
 
         <h2 id="claim-denials">Common Claim Denial Reasons and How to Avoid Them</h2>
@@ -389,7 +389,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         </p>
 
         <p>
-          The key to maximizing mold coverage is rapid response. Professional <a href="/services/mold-remediation">mold remediation</a> within 24-48 hours of water damage significantly reduces both mold growth and associated costs, keeping claims within policy limits.
+          The key to maximizing mold coverage is rapid response. Professional <a href="/services/residential/cleanup-services/mold-remediation/">mold remediation</a> within 24-48 hours of water damage significantly reduces both mold growth and associated costs, keeping claims within policy limits.
         </p>
 
         <h2 id="virginia-specific">Virginia-Specific Insurance Considerations</h2>
@@ -520,7 +520,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         <h2 id="partner">Partner with Flood Doctor for Insurance-Ready Water Damage Restoration</h2>
 
         <p>
-          Understanding insurance coverage is only half the equation—working with restoration professionals who understand the claims process is equally important. Flood Doctor provides comprehensive <a href="/services/water-damage-restoration">water damage restoration services</a> throughout Northern Virginia, from emergency extraction to complete reconstruction.
+          Understanding insurance coverage is only half the equation—working with restoration professionals who understand the claims process is equally important. Flood Doctor provides comprehensive <a href="/services/residential/restoration-services/water-damage-restoration/">water damage restoration services</a> throughout Northern Virginia, from emergency extraction to complete reconstruction.
         </p>
 
         <p>

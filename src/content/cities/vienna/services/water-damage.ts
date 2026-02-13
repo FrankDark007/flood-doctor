@@ -472,7 +472,7 @@ export const viennaWaterDamage: ServicePageContent = {
     {
       title: 'Basement Flooding Solutions',
       description: 'Complete basement water removal and restoration',
-      link: '/locations/vienna/services/basement-flooding'
+      link: '/locations/vienna/services/residential/specialty-services/basement-flooding/'
     },
     {
       title: 'Burst Pipe Restoration',
@@ -482,7 +482,7 @@ export const viennaWaterDamage: ServicePageContent = {
     {
       title: 'Mold Remediation',
       description: 'Professional mold removal and prevention',
-      link: '/locations/vienna/services/mold-remediation'
+      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
     }
   ],
 

@@ -1194,7 +1194,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
                 Call Now: (877) 497-0007
               </a>
               <a
-                href="/services/residential/water-damage/"
+                href="/services/residential/restoration-services/water-damage-restoration/"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1a73e8] transition-colors"
               >
                 Learn About Our Process
@@ -1213,7 +1213,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             <a
-              href="/services/residential/water-damage/"
+              href="/services/residential/restoration-services/water-damage-restoration/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Water Damage Restoration</h4>
@@ -1222,7 +1222,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
               </p>
             </a>
             <a
-              href="/services/residential/mold-remediation/"
+              href="/services/residential/cleanup-services/mold-remediation/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Mold Remediation</h4>
@@ -1231,7 +1231,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
               </p>
             </a>
             <a
-              href="/services/residential/emergency/"
+              href="/services/residential/restoration-services/water-damage-restoration/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Emergency Services</h4>

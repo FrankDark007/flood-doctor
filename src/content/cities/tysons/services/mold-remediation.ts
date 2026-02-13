@@ -1,4 +1,4 @@
-// src/content/cities/tysons/services/mold-remediation.ts
+// src/content/cities/tysons/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Tysons Mold Remediation Service Page - 100% Unique
 // Focus: HVAC system mold, commercial buildings, high-rise residential

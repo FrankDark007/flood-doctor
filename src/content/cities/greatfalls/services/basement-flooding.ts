@@ -1,4 +1,4 @@
-// src/content/cities/greatfalls/services/basement-flooding.ts
+// src/content/cities/greatfalls/services/residential/specialty-services/basement-flooding/.ts
 // Generated: January 3, 2026
 // Great Falls Basement Flooding Service Page - 100% Unique
 

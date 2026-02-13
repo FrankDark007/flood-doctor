@@ -1,4 +1,4 @@
-// src/content/cities/springfield/services/sewage-cleanup.ts
+// src/content/cities/springfield/services/residential/cleanup-services/sewage-cleanup/.ts
 // Generated: January 3, 2026
 // Springfield Sewage Cleanup Service Page - 100% Unique
 

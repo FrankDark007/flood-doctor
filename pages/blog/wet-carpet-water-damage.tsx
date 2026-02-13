@@ -402,7 +402,7 @@ const WetCarpetWaterDamage: React.FC = () => {
               </p>
 
               <p className="text-gray-700">
-                For sewage-related damage, our specialized <a href="/services/sewage-cleanup" className="text-[#1a73e8] hover:underline font-semibold">sewage cleanup services</a> ensure safe, compliant remediation following all EPA and OSHA protocols.
+                For sewage-related damage, our specialized <a href="/services/residential/cleanup-services/sewage-cleanup/" className="text-[#1a73e8] hover:underline font-semibold">sewage cleanup services</a> ensure safe, compliant remediation following all EPA and OSHA protocols.
               </p>
             </div>
           </div>

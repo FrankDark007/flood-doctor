@@ -278,7 +278,7 @@ const BurstPipeGuide: React.FC = () => {
                 <Phone size={18} className="mr-2" />
                 Call Emergency Line Now
               </Button>
-              <Button to="/services/water-damage-restoration/" variant="outline" size="lg">
+              <Button to="/services/residential/restoration-services/water-damage-restoration/" variant="outline" size="lg">
                 Our Emergency Services
               </Button>
             </div>

@@ -1,4 +1,4 @@
-// src/content/cities/springfield/services/mold-remediation.ts
+// src/content/cities/springfield/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Springfield Mold Remediation Service Page - 100% Unique
 

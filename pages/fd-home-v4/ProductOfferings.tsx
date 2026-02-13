@@ -7,14 +7,14 @@ const cards = [
     desc: "From burst pipes to storm flooding, we extract standing water, dry structural materials, and restore your property to pre-loss condition using industrial-grade equipment.",
     bgColor: "bg-[#e8f0fe]",
     type: 'services',
-    link: "/services/water-damage-restoration"
+    link: "/services/residential/restoration-services/water-damage-restoration/"
   },
   {
     title: "Mold Remediation",
     desc: "Professional mold inspection, containment, and removal following IICRC S520 standards. We identify moisture sources and ensure complete remediation to protect your health.",
     bgColor: "bg-[#e6f4ea]",
     type: 'products',
-    link: "/services/mold-remediation"
+    link: "/services/residential/cleanup-services/mold-remediation/"
   },
   {
     title: "Fire & Smoke Damage",

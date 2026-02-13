@@ -512,7 +512,7 @@ function generateCitySitemap(city: FranchiseData): string {
     { path: '/', priority: '1.0' },
     { path: '/services', priority: '0.9' },
     { path: '/services/water-damage', priority: '0.9' },
-    { path: '/services/mold-remediation', priority: '0.8' },
+    { path: '/services/residential/cleanup-services/mold-remediation/', priority: '0.8' },
     { path: '/services/fire-damage', priority: '0.8' },
     { path: '/services/storm-damage', priority: '0.8' },
     { path: '/about', priority: '0.7' },

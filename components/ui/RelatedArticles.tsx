@@ -22,10 +22,10 @@ export const ARTICLE_LINKS: Record<string, RelatedArticle[]> = {
     { title: 'Water Damaged Drywall: Repair or Replace?', slug: '/blog/drywall-water-damage-guide/', category: 'Structural', readTime: '8 min' },
   ],
   'mold': [
-    { title: 'Understanding Mold After Water Damage', slug: '/blog/mold-after-water-damage-timeline/', category: 'Mold', readTime: '10 min' },
-    { title: 'Bathroom Mold Prevention Guide', slug: '/blog/bathroom-mold-prevention-guide/', category: 'Prevention', readTime: '7 min' },
-    { title: 'Attic Mold: Causes and Prevention', slug: '/blog/attic-mold-causes-prevention/', category: 'Mold', readTime: '9 min' },
-    { title: 'HVAC Mold Contamination Guide', slug: '/blog/hvac-mold-contamination-guide/', category: 'HVAC', readTime: '8 min' },
+    { title: 'Mold Growth After Water Damage: Timeline & Prevention', slug: '/blog/mold-growth-after-water-damage-timeline/', category: 'Mold', readTime: '10 min' },
+    { title: 'Mold After Water Damage in Virginia', slug: '/blog/mold-after-water-damage-virginia/', category: 'Mold', readTime: '9 min' },
+    { title: 'What Does Black Mold Look Like?', slug: '/blog/what-does-black-mold-look-like/', category: 'Mold', readTime: '8 min' },
+    { title: 'Does Vinegar Kill Mold? What Actually Works', slug: '/blog/does-vinegar-kill-mold/', category: 'Mold', readTime: '7 min' },
   ],
   'insurance': [
     { title: 'Water Damage Insurance Claims Guide', slug: '/resources/insurance-claims-guide/', category: 'Insurance', readTime: '15 min' },
@@ -34,7 +34,7 @@ export const ARTICLE_LINKS: Record<string, RelatedArticle[]> = {
   ],
   'prevention': [
     { title: 'Emergency Preparedness for Northern Virginia', slug: '/resources/emergency-preparedness-northern-va/', category: 'Preparedness', readTime: '14 min' },
-    { title: 'Sump Pump Maintenance Guide', slug: '/blog/sump-pump-failure-prevention/', category: 'Prevention', readTime: '10 min' },
+    { title: 'Sump Pump Failure & Basement Flooding', slug: '/blog/sump-pump-failure-basement-flooding-nova/', category: 'Prevention', readTime: '10 min' },
     { title: 'Window & Door Water Intrusion Prevention', slug: '/blog/window-door-water-intrusion/', category: 'Prevention', readTime: '9 min' },
   ],
   'commercial': [

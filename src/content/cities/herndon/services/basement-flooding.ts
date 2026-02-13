@@ -1,4 +1,4 @@
-// src/content/cities/herndon/services/basement-flooding.ts
+// src/content/cities/herndon/services/residential/specialty-services/basement-flooding/.ts
 // Generated: January 3, 2026
 // Herndon Basement Flooding Service Page - 100% Unique
 

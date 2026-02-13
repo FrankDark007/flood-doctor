@@ -105,7 +105,7 @@ const BasementFloodingLoudounCounty: React.FC = () => {
         <h3>Sewer Backups and Sanitary System Overflows</h3>
 
         <p>
-          During extreme rainfall, combined sewer systems in older parts of Leesburg and Purcellville can become overwhelmed, causing sewage to back up into basements. This creates not only water damage but serious health hazards requiring professional <Link to="/services/sewage-cleanup" className="text-[#1a73e8] hover:underline">sewage cleanup services</Link>.
+          During extreme rainfall, combined sewer systems in older parts of Leesburg and Purcellville can become overwhelmed, causing sewage to back up into basements. This creates not only water damage but serious health hazards requiring professional <Link to="/services/residential/cleanup-services/sewage-cleanup/" className="text-[#1a73e8] hover:underline">sewage cleanup services</Link>.
         </p>
 
         <h2>Signs Your Basement Is at Risk for Flooding</h2>
@@ -127,7 +127,7 @@ const BasementFloodingLoudounCounty: React.FC = () => {
         </ul>
 
         <p>
-          If you notice any of these signs, contact our <Link to="/services/water-damage-restoration" className="text-[#1a73e8] hover:underline">water damage restoration team</Link> for a comprehensive assessment before minor issues become major disasters.
+          If you notice any of these signs, contact our <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration team</Link> for a comprehensive assessment before minor issues become major disasters.
         </p>
 
         <h2>Proven Prevention Strategies for Loudoun County Homeowners</h2>
@@ -211,7 +211,7 @@ const BasementFloodingLoudounCounty: React.FC = () => {
         <h2>Professional Basement Flood Restoration Process</h2>
 
         <p>
-          Professional restoration ensures thorough water removal, drying, and sanitization to prevent long-term damage and mold growth. Our <Link to="/services/flood-damage-restoration" className="text-[#1a73e8] hover:underline">flood damage restoration process</Link> includes:
+          Professional restoration ensures thorough water removal, drying, and sanitization to prevent long-term damage and mold growth. Our <Link to="/services/residential/restoration-services/flood-cleanup/" className="text-[#1a73e8] hover:underline">flood damage restoration process</Link> includes:
         </p>
 
         <h3>Phase 1: Emergency Water Extraction (0-24 Hours)</h3>

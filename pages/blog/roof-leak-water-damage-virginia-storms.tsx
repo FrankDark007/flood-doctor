@@ -293,7 +293,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
             <div className="bg-red-50 border-l-4 border-red-500 p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Step 4: Call Professional Emergency Services</h3>
               <p className="text-gray-700 mb-3">
-                Professional <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> specialists provide critical emergency services that prevent secondary damage.
+                Professional <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> specialists provide critical emergency services that prevent secondary damage.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
@@ -416,7 +416,7 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
             <div className="border-l-4 border-blue-600 pl-4">
               <h4 className="font-bold text-gray-900 mb-2">6. Get Multiple Professional Estimates</h4>
               <p className="text-gray-700">
-                Obtain detailed estimates from licensed restoration contractors. Professional estimates should include water extraction, structural drying, <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 underline">mold remediation</a>, repairs, and roof replacement if necessary.
+                Obtain detailed estimates from licensed restoration contractors. Professional estimates should include water extraction, structural drying, <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 underline">mold remediation</a>, repairs, and roof replacement if necessary.
               </p>
             </div>
           </div>
@@ -844,22 +844,22 @@ const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
           <h3 className="text-xl font-bold text-gray-900 mb-4">Related Services</h3>
           <ul className="space-y-3">
             <li>
-              <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Water Damage Restoration Services
               </a>
             </li>
             <li>
-              <a href="/services/emergency-water-extraction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Emergency Water Extraction
               </a>
             </li>
             <li>
-              <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Mold Remediation and Removal
               </a>
             </li>
             <li>
-              <a href="/services/storm-damage-restoration" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/storm-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Storm Damage Restoration
               </a>
             </li>

@@ -277,10 +277,10 @@ const RestonWaterDamage: React.FC = () => {
                   <div className="mt-8 pt-8 border-t border-blue-400">
                     <h4 className="font-bold mb-4">Our Services:</h4>
                     <ul className="space-y-2 text-sm">
-                      <li><a href="/services/water-damage-restoration" className="hover:underline">• Water Damage Restoration</a></li>
+                      <li><a href="/services/residential/restoration-services/water-damage-restoration/" className="hover:underline">• Water Damage Restoration</a></li>
                       <li><a href="/services/flood-cleanup" className="hover:underline">• Flood Cleanup</a></li>
-                      <li><a href="/services/mold-remediation" className="hover:underline">• Mold Remediation</a></li>
-                      <li><a href="/services/sewage-cleanup" className="hover:underline">• Sewage Cleanup</a></li>
+                      <li><a href="/services/residential/cleanup-services/mold-remediation/" className="hover:underline">• Mold Remediation</a></li>
+                      <li><a href="/services/residential/cleanup-services/sewage-cleanup/" className="hover:underline">• Sewage Cleanup</a></li>
                       <li><a href="/services/fire-damage-restoration" className="hover:underline">• Fire Damage Restoration</a></li>
                     </ul>
                   </div>

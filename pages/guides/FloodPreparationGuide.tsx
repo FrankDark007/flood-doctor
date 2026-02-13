@@ -526,7 +526,7 @@ const FloodPreparationGuide: React.FC = () => {
               <Phone size={20} className="mr-2" />
               Emergency: (877) 497-0007
             </Button>
-            <Button to="/services/flood-damage-restoration/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
+            <Button to="/services/residential/restoration-services/flood-cleanup/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
               Flood Restoration Services
             </Button>
           </div>

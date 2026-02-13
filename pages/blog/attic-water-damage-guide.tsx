@@ -926,22 +926,22 @@ const AtticWaterDamageGuide: React.FC = () => {
           <h3 className="text-xl font-bold text-gray-900 mb-4">Related Services</h3>
           <ul className="space-y-3">
             <li>
-              <Link to="/services/water-damage-restoration" className="text-[#1a73e8] hover:underline font-semibold">
+              <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline font-semibold">
                 Water Damage Restoration Services
               </Link>
             </li>
             <li>
-              <Link to="/services/mold-remediation" className="text-[#1a73e8] hover:underline font-semibold">
+              <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline font-semibold">
                 Mold Remediation and Removal
               </Link>
             </li>
             <li>
-              <Link to="/services/emergency-water-extraction" className="text-[#1a73e8] hover:underline font-semibold">
+              <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline font-semibold">
                 Emergency Water Extraction
               </Link>
             </li>
             <li>
-              <Link to="/services/storm-damage-restoration" className="text-[#1a73e8] hover:underline font-semibold">
+              <Link to="/services/residential/restoration-services/storm-damage-restoration/" className="text-[#1a73e8] hover:underline font-semibold">
                 Storm Damage Restoration
               </Link>
             </li>

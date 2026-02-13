@@ -490,7 +490,7 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
           </ul>
 
           <p className="mb-6">
-            Landlords cannot simply patch visible damage while ignoring underlying moisture or mold problems. Professional <a href="/services/water-damage-restoration" className="text-[#1a73e8] hover:underline">water damage restoration</a> ensures complete remediation meeting Virginia's habitability standards.
+            Landlords cannot simply patch visible damage while ignoring underlying moisture or mold problems. Professional <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration</a> ensures complete remediation meeting Virginia's habitability standards.
           </p>
 
           <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -805,7 +805,7 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
           </ul>
 
           <p className="mb-6">
-            Flood Doctor serves both Virginia landlords and tenants with comprehensive <a href="/services/water-damage-restoration" className="text-[#1a73e8] hover:underline">water damage restoration services</a> including emergency response, professional documentation, insurance coordination, and complete restoration returning units to pre-loss condition.
+            Flood Doctor serves both Virginia landlords and tenants with comprehensive <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration services</a> including emergency response, professional documentation, insurance coordination, and complete restoration returning units to pre-loss condition.
           </p>
 
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg my-12">

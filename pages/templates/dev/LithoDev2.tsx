@@ -87,7 +87,7 @@ const NumberedService: React.FC<{
     <h3 className="text-[18px] font-semibold text-[#202124] mb-3 mt-2">{title}</h3>
     <p className="text-[14px] text-[#5f6368] leading-relaxed mb-4">{description}</p>
     <Link
-      to="/services/mold-remediation/"
+      to="/services/residential/cleanup-services/mold-remediation/"
       className="text-[#1a73e8] text-[14px] font-medium flex items-center gap-2 hover:gap-3 transition-all"
     >
       Learn More <ArrowRight className="w-4 h-4" />

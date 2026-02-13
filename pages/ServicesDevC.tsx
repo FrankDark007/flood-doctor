@@ -141,7 +141,7 @@ const ServicesDevC: React.FC = () => {
       description: 'Every minute counts when water invades your home. Our crews arrive within 60 minutes with industrial extractors and drying equipment.',
       icon: Droplets,
       gradient: 'from-blue-600 to-cyan-500',
-      link: '/services/residential/water-damage/',
+      link: '/services/residential/restoration-services/water-damage-restoration/',
       featured: true,
       backgroundImage: null as string | null, // Set to image URL when available
       PatternComponent: WaterPatternSVG

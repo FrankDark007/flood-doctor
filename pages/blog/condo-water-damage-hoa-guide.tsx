@@ -993,7 +993,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-600 font-bold mr-2">•</span>
-                  <span>Authorize professional <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> to prevent further damage</span>
+                  <span>Authorize professional <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> to prevent further damage</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-600 font-bold mr-2">•</span>
@@ -1203,17 +1203,17 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
           <h3 className="text-xl font-bold text-gray-900 mb-4">Related Resources</h3>
           <ul className="space-y-3">
             <li>
-              <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Water Damage Restoration Services
               </a>
             </li>
             <li>
-              <a href="/services/emergency-water-extraction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Emergency Water Extraction
               </a>
             </li>
             <li>
-              <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Mold Remediation and Prevention
               </a>
             </li>

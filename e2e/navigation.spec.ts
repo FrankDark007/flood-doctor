@@ -56,17 +56,17 @@ test.describe('Site Navigation', () => {
 
 test.describe('Service Pages', () => {
   test('water damage page loads correctly', async ({ page }) => {
-    await page.goto('/services/residential/water-damage/');
+    await page.goto('/services/residential/restoration-services/water-damage-restoration/');
     await expect(page.locator('h1')).toContainText(/Water Damage/);
   });
 
   test('service pages have breadcrumbs', async ({ page }) => {
-    await page.goto('/services/residential/water-damage/');
+    await page.goto('/services/residential/restoration-services/water-damage-restoration/');
     await expect(page.locator('nav[aria-label="Breadcrumb"]')).toBeVisible();
   });
 
   test('service pages have CTA buttons', async ({ page }) => {
-    await page.goto('/services/residential/water-damage/');
+    await page.goto('/services/residential/restoration-services/water-damage-restoration/');
     await expect(page.locator('text=Request Service')).toBeVisible();
   });
 });

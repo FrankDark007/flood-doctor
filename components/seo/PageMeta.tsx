@@ -8,7 +8,7 @@
  *   <PageMeta
  *     title="Water Damage Restoration"
  *     description="24/7 water damage restoration in McLean, VA."
- *     path="/services/water-damage-restoration/"
+ *     path="/services/residential/restoration-services/water-damage-restoration/"
  *   />
  */
 

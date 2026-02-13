@@ -559,7 +559,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Comprehensive Remediation Plan</h3>
               <p className="text-gray-700 mb-3">
-                Based on assessment findings, professionals develop detailed scope of work including water extraction, structural drying, <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 underline">mold remediation</a>, repairs, and preventive sealing.
+                Based on assessment findings, professionals develop detailed scope of work including water extraction, structural drying, <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 underline">mold remediation</a>, repairs, and preventive sealing.
               </p>
               <ul className="space-y-2 text-gray-700 text-sm">
                 <li className="flex items-start">
@@ -953,7 +953,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
           </h2>
 
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-            When window and door leaks cause water damage, professional <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> ensures complete remediation and prevents long-term problems like mold growth and structural deterioration.
+            When window and door leaks cause water damage, professional <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 underline">water damage restoration</a> ensures complete remediation and prevents long-term problems like mold growth and structural deterioration.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -1154,22 +1154,22 @@ const WindowDoorWaterIntrusion: React.FC = () => {
           <h3 className="text-xl font-bold text-gray-900 mb-4">Related Services</h3>
           <ul className="space-y-3">
             <li>
-              <a href="/services/water-damage-restoration" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Water Damage Restoration Services
               </a>
             </li>
             <li>
-              <a href="/services/emergency-water-extraction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Emergency Water Extraction
               </a>
             </li>
             <li>
-              <a href="/services/mold-remediation" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/cleanup-services/mold-remediation/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Mold Remediation and Removal
               </a>
             </li>
             <li>
-              <a href="/services/waterproofing" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential/specialty-services/basement-flooding/" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Professional Waterproofing Solutions
               </a>
             </li>

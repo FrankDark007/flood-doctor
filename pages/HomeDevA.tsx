@@ -63,7 +63,7 @@ const HomeDevA: React.FC = () => {
       title: 'Water Damage',
       description: 'Emergency extraction, structural drying, and complete restoration.',
       color: 'from-blue-500 to-cyan-400',
-      link: '/services/residential/water-damage/'
+      link: '/services/residential/restoration-services/water-damage-restoration/'
     },
     {
       icon: Flame,

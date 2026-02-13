@@ -42,7 +42,7 @@ const ServicesDevA: React.FC = () => {
     subtitle: '24/7 Emergency Response',
     description: 'From the moment water invades your property, every second counts. Our certified technicians arrive within 60 minutes with industrial-grade equipment to stop damage in its tracks.',
     gradient: 'from-blue-600 via-cyan-500 to-teal-400',
-    link: '/services/residential/water-damage/',
+    link: '/services/residential/restoration-services/water-damage-restoration/',
     stats: [
       { value: '60', label: 'Minute Response' },
       { value: '10k+', label: 'Properties Saved' },
@@ -56,7 +56,7 @@ const ServicesDevA: React.FC = () => {
       title: 'Restoration',
       description: 'Full property restoration after water, fire, or storm damage',
       services: [
-        { title: 'Water Damage', icon: Droplets, gradient: 'from-blue-500 to-cyan-400', link: '/services/residential/water-damage/' },
+        { title: 'Water Damage', icon: Droplets, gradient: 'from-blue-500 to-cyan-400', link: '/services/residential/restoration-services/water-damage-restoration/' },
         { title: 'Fire & Smoke', icon: Flame, gradient: 'from-orange-500 to-red-400', link: '/services/residential/fire-smoke/' },
         { title: 'Storm Damage', icon: Wind, gradient: 'from-purple-500 to-indigo-400', link: '/services/residential/storm-damage/' },
         { title: 'Flood Cleanup', icon: Waves, gradient: 'from-teal-500 to-emerald-400', link: '/services/residential/flood-cleanup/' }

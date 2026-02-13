@@ -1,4 +1,4 @@
-// src/content/cities/greatfalls/services/mold-remediation.ts
+// src/content/cities/greatfalls/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Great Falls Mold Remediation Service Page - 100% Unique
 

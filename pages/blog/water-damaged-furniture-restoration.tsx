@@ -614,7 +614,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
           </h2>
 
           <p className="text-gray-700 mb-6 leading-relaxed">
-            Professional restoration companies offer comprehensive <a href="/services/contents-restoration" className="text-[#1a73e8] hover:underline font-semibold">contents restoration services</a> that go far beyond basic furniture drying. These specialized services maximize salvage rates and insurance recovery.
+            Professional restoration companies offer comprehensive <a href="/services/residential/cleanup-services/contents-cleaning-packout/" className="text-[#1a73e8] hover:underline font-semibold">contents restoration services</a> that go far beyond basic furniture drying. These specialized services maximize salvage rates and insurance recovery.
           </p>
 
           <div className="space-y-6">
@@ -623,7 +623,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
                 Pack-Out and Storage Services
               </h3>
               <p className="text-gray-700 mb-3">
-                When homes require extensive <a href="/services/water-damage-restoration" className="text-[#1a73e8] hover:underline">water damage restoration</a>, contents must be removed for safety and access. Professional pack-out provides:
+                When homes require extensive <a href="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration</a>, contents must be removed for safety and access. Professional pack-out provides:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
@@ -1051,7 +1051,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
                 Call Now: (877) 497-0007
               </a>
               <a
-                href="/services/contents-restoration"
+                href="/services/residential/cleanup-services/contents-cleaning-packout/"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1a73e8] transition-colors"
               >
                 Contents Restoration Services
@@ -1086,7 +1086,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             <a
-              href="/services/contents-restoration"
+              href="/services/residential/cleanup-services/contents-cleaning-packout/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Contents Restoration</h4>
@@ -1095,7 +1095,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
               </p>
             </a>
             <a
-              href="/services/water-damage-restoration"
+              href="/services/residential/restoration-services/water-damage-restoration/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Water Damage Restoration</h4>
@@ -1104,7 +1104,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
               </p>
             </a>
             <a
-              href="/services/mold-remediation"
+              href="/services/residential/cleanup-services/mold-remediation/"
               className="p-4 border border-gray-200 rounded-lg hover:border-[#1a73e8] hover:shadow-lg transition-all"
             >
               <h4 className="font-bold text-gray-900 mb-2">Mold Remediation</h4>

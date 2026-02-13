@@ -301,12 +301,12 @@ export const viennaBurstPipe: ServicePageContent = {
     {
       title: 'Basement Flooding',
       description: 'Emergency basement water removal',
-      link: '/locations/vienna/services/basement-flooding'
+      link: '/locations/vienna/services/residential/specialty-services/basement-flooding/'
     },
     {
       title: 'Mold Remediation',
       description: 'Professional mold removal',
-      link: '/locations/vienna/services/mold-remediation'
+      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
     }
   ],
 

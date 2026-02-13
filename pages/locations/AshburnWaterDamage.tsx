@@ -286,11 +286,11 @@ export default function AshburnWaterDamage() {
               Related Services
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/services/water-damage-restoration" className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+              <Link href="/services/residential/restoration-services/water-damage-restoration/" className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-2">Water Damage Restoration</h3>
                 <p className="text-gray-700">Comprehensive water damage repair and restoration services</p>
               </Link>
-              <Link href="/services/mold-remediation" className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+              <Link href="/services/residential/cleanup-services/mold-remediation/" className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-2">Mold Remediation</h3>
                 <p className="text-gray-700">Professional mold removal and prevention</p>
               </Link>

@@ -341,7 +341,7 @@ export default function HerndonWaterDamage() {
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-3">Flood Cleanup</h3>
                 <p className="text-gray-700">Complete flood damage restoration and recovery</p>
               </Link>
-              <Link href="/services/emergency-water-extraction" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-2 border-transparent hover:border-[#1a73e8]">
+              <Link href="/services/residential/restoration-services/water-damage-restoration/" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-2 border-transparent hover:border-[#1a73e8]">
                 <h3 className="text-xl font-bold text-[#1a73e8] mb-3">Emergency Water Extraction</h3>
                 <p className="text-gray-700">Rapid water removal and damage mitigation</p>
               </Link>

@@ -456,7 +456,7 @@ const WaterDamageCostGuide: React.FC = () => {
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Emergency Checklists
                   </a>
-                  <a href="/resources/water-damage-timeline/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                  <a href="/resources/restoration-timeline-guide/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Restoration Timeline
                   </a>

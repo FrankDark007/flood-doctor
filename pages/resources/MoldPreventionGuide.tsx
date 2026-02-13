@@ -497,7 +497,7 @@ const MoldPreventionGuide: React.FC = () => {
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Restoration Cost Guide
                   </a>
-                  <a href="/services/residential/restoration-services/mold-remediation/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                  <a href="/services/residential/cleanup-services/mold-remediation/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Mold Remediation Services
                   </a>

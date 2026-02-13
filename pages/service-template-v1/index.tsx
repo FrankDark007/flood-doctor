@@ -82,12 +82,12 @@ const waterDamageContent: ServicePageContent = {
     {
       title: 'Mold Remediation',
       description: 'Professional mold removal and remediation services following water damage to prevent health hazards.',
-      href: '/services/mold-remediation'
+      href: '/services/residential/cleanup-services/mold-remediation/'
     },
     {
       title: 'Basement Flooding',
       description: 'Specialized basement water extraction and drying services for flooded basements and below-grade spaces.',
-      href: '/services/basement-flooding'
+      href: '/services/residential/specialty-services/basement-flooding/'
     },
     {
       title: 'Structural Drying',

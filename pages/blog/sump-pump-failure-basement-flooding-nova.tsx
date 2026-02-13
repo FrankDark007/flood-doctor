@@ -321,7 +321,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
 
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">Long-Term Recovery</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Professional <a href="/services/basement-flooding" className="text-[#1a73e8] hover:underline">basement flooding restoration</a> includes structural drying, antimicrobial treatment, sump pump replacement or repair, and comprehensive system upgrades to prevent future failures.
+            Professional <a href="/services/residential/specialty-services/basement-flooding/" className="text-[#1a73e8] hover:underline">basement flooding restoration</a> includes structural drying, antimicrobial treatment, sump pump replacement or repair, and comprehensive system upgrades to prevent future failures.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             Don't simply replace the failed pump—this is an opportunity to upgrade your entire basement water management system. Consider installing a dual pump configuration, battery backup, improved drainage, and monitoring systems. The investment is modest compared to future flood damage costs.
@@ -500,25 +500,25 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Related Water Damage Services</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <a href="/services/basement-flooding" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
+            <a href="/services/residential/specialty-services/basement-flooding/" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Basement Flooding Restoration</h3>
               <p className="text-gray-700">
                 Complete water extraction, structural drying, and restoration services for flooded basements
               </p>
             </a>
-            <a href="/services/water-damage-restoration" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
+            <a href="/services/residential/restoration-services/water-damage-restoration/" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Emergency Water Removal</h3>
               <p className="text-gray-700">
                 24/7 rapid response water extraction using industrial-grade equipment
               </p>
             </a>
-            <a href="/services/mold-remediation" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
+            <a href="/services/residential/cleanup-services/mold-remediation/" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Mold Prevention & Remediation</h3>
               <p className="text-gray-700">
                 Professional mold inspection and remediation following water damage events
               </p>
             </a>
-            <a href="/services/basement-waterproofing" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
+            <a href="/services/residential/specialty-services/basement-flooding/" className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#1a73e8] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Basement Waterproofing</h3>
               <p className="text-gray-700">
                 Comprehensive waterproofing solutions including drainage systems and sealants

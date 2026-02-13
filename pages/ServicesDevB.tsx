@@ -67,7 +67,7 @@ const ServicesDevB: React.FC = () => {
       category: 'restoration',
       audience: 'residential',
       responseTime: '60 min',
-      link: '/services/residential/water-damage/',
+      link: '/services/residential/restoration-services/water-damage-restoration/',
       gradient: 'from-blue-500 to-cyan-400'
     },
     {

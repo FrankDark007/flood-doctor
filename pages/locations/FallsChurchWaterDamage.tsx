@@ -199,7 +199,7 @@ const FallsChurchWaterDamage: React.FC = () => {
                 <p className="text-gray-700">
                   Safe, thorough cleanup and sanitization of Category 3 water damage including sewage backups common in Merrifield and Seven Corners areas.
                 </p>
-                <a href="/services/sewage-cleanup" className="text-[#1a73e8] hover:underline mt-4 inline-block">Learn more →</a>
+                <a href="/services/residential/cleanup-services/sewage-cleanup/" className="text-[#1a73e8] hover:underline mt-4 inline-block">Learn more →</a>
               </div>
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-bold mb-4 text-[#1a73e8]">Storm & Flood Damage</h3>

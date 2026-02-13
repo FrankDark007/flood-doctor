@@ -9,7 +9,7 @@
  *
  *   const residentialServices = getServicesByAudience('RESIDENTIAL');
  *   const restorationServices = getServicesByCategory('RESIDENTIAL', 'RESTORATION');
- *   const service = getServiceBySlug('/services/residential/water-damage/');
+ *   const service = getServiceBySlug('/services/residential/restoration-services/water-damage-restoration/');
  */
 
 import { SERVICES } from './services';

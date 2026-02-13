@@ -293,7 +293,7 @@ export const viennaFireDamage: ServicePageContent = {
     {
       title: 'Mold Remediation',
       description: 'Professional mold removal',
-      link: '/locations/vienna/services/mold-remediation'
+      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
     },
     {
       title: 'Storm Damage',

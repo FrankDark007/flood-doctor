@@ -1,4 +1,4 @@
-// src/content/cities/arlington/services/mold-remediation.ts
+// src/content/cities/arlington/services/residential/cleanup-services/mold-remediation/.ts
 // Generated: January 3, 2026
 // Arlington Mold Remediation Service Page - 100% Unique
 

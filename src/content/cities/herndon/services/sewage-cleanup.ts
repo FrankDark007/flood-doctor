@@ -1,4 +1,4 @@
-// src/content/cities/herndon/services/sewage-cleanup.ts
+// src/content/cities/herndon/services/residential/cleanup-services/sewage-cleanup/.ts
 // Generated: January 3, 2026
 // Herndon Sewage Cleanup Service Page - 100% Unique
 
