@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# SECURITY: Never commit environment files containing API keys or secrets.
+# All secrets must be managed via Cloudflare Worker env bindings (wrangler secret).
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

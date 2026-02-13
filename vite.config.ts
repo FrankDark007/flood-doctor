@@ -47,10 +47,9 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins,
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
+      // SECURITY: Never expose API keys via `define` — they get inlined into the
+      // client-side JavaScript bundle and are visible to anyone who views source.
+      // All secret-dependent functionality must run server-side (e.g. Cloudflare Workers).
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),

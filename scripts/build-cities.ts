@@ -397,7 +397,7 @@ function generateCityIndexHtml(city: FranchiseData): string {
     <meta name="keywords" content="water damage restoration ${city.city}, flood cleanup ${city.city}, emergency water removal ${city.city} ${city.state}, ${city.localHooks.neighborhoods.slice(0, 3).join(', ')} water damage" />
 
     <!-- Security: Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://esm.sh https://generativelanguage.googleapis.com; frame-ancestors 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://esm.sh; frame-ancestors 'self';">
 
     <!-- Organization Schema -->
     <script type="application/ld+json">
@@ -489,8 +489,7 @@ ${JSON.stringify(schema, null, 2)}
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+    "react-dom": "https://esm.sh/react-dom@^19.2.3"
   }
 }
 </script>

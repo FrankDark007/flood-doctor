@@ -29,7 +29,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
 
 [context.production]
-  environment = { GEMINI_API_KEY = "" }
 
 [context.deploy-preview]
   command = "npm run build"

@@ -118,7 +118,6 @@ const WaterDamageCostCalculator = lazy(() => import('./pages/resources/WaterDama
 const BlogIndex = lazy(() => import('./pages/BlogIndex'));
 const NearMeLanding = lazy(() => import('./pages/NearMeLanding'));
 const NotFound = lazy(() => import('./pages/NotFound'));
-const VideoGenerator = lazy(() => import('./pages/VideoGenerator'));
 const ClientPortalDemo = lazy(() => import('./pages/ClientPortalDemo'));
 const VisualComponentsDemo = lazy(() => import('./pages/VisualComponentsDemo'));
 const GeneratedLayoutsLab = lazy(() => import('./pages/GeneratedLayoutsLab'));
@@ -602,7 +601,6 @@ const AppLayout: React.FC = () => {
               <Route path="/blog/signs-of-water-damage-behind-walls/" element={<SignsOfWaterDamageBehindWalls />} />
 
               {/* Tools & Demos */}
-              <Route path="/tools/video-generator/" element={<VideoGenerator />} />
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
               {/* Dev Routes - All noindexed via DevNoIndex wrapper */}
               <Route path="/dev" element={<DevNoIndex />}>
