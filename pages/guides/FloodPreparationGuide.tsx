@@ -254,7 +254,7 @@ const FloodPreparationGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Prepare Your Home for Flooding | Northern Virginia Guide | Flood Doctor"
+        title="How to Prepare Your Home for Flooding | Northern Virginia Guide"
         description="Complete flood preparation guide for Northern Virginia homeowners. Protect your home before storms with our 8-step preparation checklist, emergency kit guide, and evacuation planning tips."
         schema={pageSchema}
       />

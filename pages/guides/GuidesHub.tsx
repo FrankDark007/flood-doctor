@@ -130,7 +130,7 @@ const GuidesHub: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage & Restoration How-To Guides | Flood Doctor"
+        title="Water Damage & Restoration How-To Guides"
         description="Step-by-step guides for water damage cleanup, mold remediation, insurance claims, basement waterproofing, and emergency response. Expert advice from IICRC-certified professionals."
         schema={pageSchema}
       />

@@ -175,7 +175,7 @@ const NationwideWaterDamageClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Nationwide Water Damage Claim Guide: Step-by-Step Process | Flood Doctor"
+        title="Nationwide Water Damage Claim Guide: Step-by-Step Process"
         description="Complete guide for Nationwide policyholders filing water damage claims. Learn the On Your Side process, Blue Ribbon Network, adjuster tips, and how to maximize your settlement."
         schema={pageSchema}
       />

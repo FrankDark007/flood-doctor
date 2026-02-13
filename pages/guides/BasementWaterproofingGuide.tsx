@@ -271,7 +271,7 @@ const BasementWaterproofingGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Waterproof Your Basement | Complete Guide | Flood Doctor"
+        title="How to Waterproof Your Basement | Complete Guide"
         description="Step-by-step basement waterproofing guide covering interior and exterior solutions, sump pumps, French drains, and humidity control. Prevent basement flooding in Northern Virginia."
         schema={pageSchema}
       />
