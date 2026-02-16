@@ -6,9 +6,11 @@ import { MAIN_NAV_ITEMS } from '../../data/nav';
 import { getServicesByCategory } from '../../data/services-index';
 import { LOCATIONS, NEARBY_AREAS } from '../../data/locations';
 import MobileMenu from './MobileMenu';
+import NavLink from './NavLink';
 import Button from '../ui/Button';
 import { ServiceData, ServiceCategory } from '../../types';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
+import { isCityApp, mainDomainUrl } from '../../hooks/useCityApp';
 
 // Helper to Group Services by Category within an Audience - O(1) lookup
 const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
@@ -103,9 +105,9 @@ const Header: React.FC = () => {
             <ul className="space-y-0.5">
                 {group.items.map(service => (
                     <li key={service.id}>
-                        <Link to={service.slug} className="block text-[13px] text-gray-700 hover:text-primary py-1 px-2 -mx-2 rounded hover:bg-gray-50 transition-colors">
+                        <NavLink to={service.slug} className="block text-[13px] text-gray-700 hover:text-primary py-1 px-2 -mx-2 rounded hover:bg-gray-50 transition-colors">
                             {service.title}
-                        </Link>
+                        </NavLink>
                     </li>
                 ))}
             </ul>
@@ -185,23 +187,23 @@ const Header: React.FC = () => {
                                 
                                 {/* Residential Column */}
                                 <div className="pr-4">
-                                    <Link to="/services/residential/" className="flex items-center gap-3 text-lg font-bold text-gray-900 mb-6 group">
+                                    <NavLink to="/services/residential/" className="flex items-center gap-3 text-lg font-bold text-gray-900 mb-6 group">
                                         <span className="p-2 bg-blue-50 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                                             <Home size={20} />
                                         </span>
                                         Residential Services
-                                    </Link>
+                                    </NavLink>
                                     {renderServiceColumn('RESIDENTIAL', residentialGroups)}
                                 </div>
 
                                 {/* Commercial Column */}
                                 <div className="pl-12">
-                                    <Link to="/services/commercial/" className="flex items-center gap-3 text-lg font-bold text-gray-900 mb-6 group">
+                                    <NavLink to="/services/commercial/" className="flex items-center gap-3 text-lg font-bold text-gray-900 mb-6 group">
                                         <span className="p-2 bg-blue-50 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                                             <Briefcase size={20} />
                                         </span>
                                         Commercial Services
-                                    </Link>
+                                    </NavLink>
                                     {renderServiceColumn('COMMERCIAL', commercialGroups)}
                                 </div>
 
@@ -211,11 +213,11 @@ const Header: React.FC = () => {
                           {/* Mega Menu Footer */}
                           <div className="mt-6 pt-4 border-t border-gray-100 bg-gray-50 -mx-8 -mb-8 px-8 py-4 flex justify-between items-center">
                              <div className="text-sm text-gray-500">
-                                Need help determining what you need? <Link to="/contact/" className="text-primary hover:underline font-medium">Contact Support</Link>
+                                Need help determining what you need? <NavLink to="/contact/" className="text-primary hover:underline font-medium">Contact Support</NavLink>
                              </div>
-                             <Link to="/services/" className="text-sm font-medium text-primary hover:text-primaryHover hover:underline flex items-center">
+                             <NavLink to="/services/" className="text-sm font-medium text-primary hover:text-primaryHover hover:underline flex items-center">
                                 View Full Service Directory &rarr;
-                             </Link>
+                             </NavLink>
                           </div>
                         </div>
                       )}
@@ -223,15 +225,15 @@ const Header: React.FC = () => {
                       {/* Dropdown: About */}
                       {isOpen && item.dropdownId === 'about' && (
                         <div className="absolute right-0 mt-2 w-[220px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
-                          <Link to="/about/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                          <NavLink to="/about/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
                             About Us
-                          </Link>
-                          <Link to="/awards/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                          </NavLink>
+                          <NavLink to="/awards/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
                             Awards & Associations
-                          </Link>
-                          <Link to="/careers/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
+                          </NavLink>
+                          <NavLink to="/careers/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
                             Careers
-                          </Link>
+                          </NavLink>
                         </div>
                       )}
 
@@ -289,8 +291,8 @@ const Header: React.FC = () => {
                                 Serving the entire DMV region.
                              </div>
                              <div className="flex gap-6">
-                                <Link to="/locations/" className="text-[13px] font-medium text-primary hover:underline">View All Locations &rarr;</Link>
-                                <Link to="/nearme/water-damage-restoration/" className="text-[13px] font-medium text-primary hover:underline">Find Crew Near Me &rarr;</Link>
+                                <NavLink to="/locations/" className="text-[13px] font-medium text-primary hover:underline">View All Locations &rarr;</NavLink>
+                                <NavLink to="/nearme/water-damage-restoration/" className="text-[13px] font-medium text-primary hover:underline">Find Crew Near Me &rarr;</NavLink>
                              </div>
                           </div>
                         </div>
@@ -299,13 +301,13 @@ const Header: React.FC = () => {
                   );
                 }
                 return (
-                  <Link 
-                    key={item.label} 
-                    to={item.path!} 
+                  <NavLink
+                    key={item.label}
+                    to={item.path!}
                     className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors"
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 );
               })}
             </nav>

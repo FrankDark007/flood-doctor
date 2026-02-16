@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, ChevronDown, MapPin } from 'lucide-react';
+import NavLink from './NavLink';
 
 interface MobileAccordionItemProps {
   title: string;
@@ -73,14 +74,14 @@ const Footer: React.FC = () => {
                   onToggle={() => toggleSection("Services")}
                 >
                     <ul className="space-y-3">
-                        <li><Link to="/services/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">All Services</Link></li>
-                        <li><Link to="/services/residential/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Residential</Link></li>
-                        <li><Link to="/services/commercial/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Commercial</Link></li>
-                        <li><Link to="/locations/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Locations</Link></li>
+                        <li><NavLink to="/services/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">All Services</NavLink></li>
+                        <li><NavLink to="/services/residential/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Residential</NavLink></li>
+                        <li><NavLink to="/services/commercial/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Commercial</NavLink></li>
+                        <li><NavLink to="/locations/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Locations</NavLink></li>
                         <li>
-                            <Link to="/nearme/water-damage-restoration/" className="flex items-center gap-2 text-sm text-primary font-medium hover:text-primaryHover transition-colors py-2 md:py-0">
+                            <NavLink to="/nearme/water-damage-restoration/" className="flex items-center gap-2 text-sm text-primary font-medium hover:text-primaryHover transition-colors py-2 md:py-0">
                                <MapPin size={14} /> Find Near Me
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </MobileAccordionItem>
@@ -91,10 +92,10 @@ const Footer: React.FC = () => {
                   onToggle={() => toggleSection("Resources")}
                 >
                     <ul className="space-y-3">
-                         <li><Link to="/resources/faq/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">FAQ</Link></li>
-                         <li><Link to="/blog/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Blog</Link></li>
-                         <li><Link to="/resources/technology/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Our Technology</Link></li>
-                         <li><Link to="/resources/insurance-guide/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Insurance Help</Link></li>
+                         <li><NavLink to="/resources/faq/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">FAQ</NavLink></li>
+                         <li><NavLink to="/blog/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Blog</NavLink></li>
+                         <li><NavLink to="/resources/technology/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Our Technology</NavLink></li>
+                         <li><NavLink to="/resources/insurance-guide/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Insurance Help</NavLink></li>
                     </ul>
                 </MobileAccordionItem>
 
@@ -104,11 +105,11 @@ const Footer: React.FC = () => {
                   onToggle={() => toggleSection("Company")}
                 >
                     <ul className="space-y-3">
-                        <li><Link to="/about/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">About Us</Link></li>
-                        <li><Link to="/reviews/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Reviews</Link></li>
-                        <li><Link to="/contact/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Contact</Link></li>
-                        <li><Link to="/resources/communication/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Communication</Link></li>
-                        <li><Link to="/careers/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Careers</Link></li>
+                        <li><NavLink to="/about/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">About Us</NavLink></li>
+                        <li><NavLink to="/reviews/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Reviews</NavLink></li>
+                        <li><NavLink to="/contact/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Contact</NavLink></li>
+                        <li><NavLink to="/resources/communication/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Communication</NavLink></li>
+                        <li><NavLink to="/careers/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Careers</NavLink></li>
                     </ul>
                 </MobileAccordionItem>
 
@@ -118,9 +119,9 @@ const Footer: React.FC = () => {
                   onToggle={() => toggleSection("Help & Legal")}
                 >
                     <ul className="space-y-3">
-                        <li><Link to="/request/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Request Service</Link></li>
-                        <li><Link to="/privacy-policy/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Privacy Policy</Link></li>
-                        <li><Link to="/terms/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Terms of Service</Link></li>
+                        <li><NavLink to="/request/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Request Service</NavLink></li>
+                        <li><NavLink to="/privacy-policy/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Privacy Policy</NavLink></li>
+                        <li><NavLink to="/terms/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Terms of Service</NavLink></li>
                     </ul>
                 </MobileAccordionItem>
 

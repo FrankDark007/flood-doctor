@@ -709,6 +709,7 @@ ${preloadLinks.map(link => `  <link rel="modulepreload" crossorigin href="${link
     fs.writeFileSync(path.join(cityDir, '404.html'), html404);
 
     // Generate .htaccess with real 404 handling (no SPA fallback)
+    // Includes 301 redirects for main-domain-only paths to prevent broken nav links
     const htaccess = `# ${city.name} - Apache Configuration
 # Prerendered static site — NO SPA fallback
 
@@ -734,6 +735,22 @@ RewriteRule ^ - [L]
 # Serve existing directories (with index.html)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
+
+# -----------------------------------------------
+# 301 Redirects: main-domain-only paths
+# Catches old/crawled links that don't exist on city subdomains
+# Single-hop 301 to https://flood.doctor equivalent
+# -----------------------------------------------
+RewriteRule ^services/residential/(.*) https://flood.doctor/services/residential/$1 [R=301,L]
+RewriteRule ^services/commercial/(.*) https://flood.doctor/services/commercial/$1 [R=301,L]
+RewriteRule ^locations/(.*) https://flood.doctor/locations/$1 [R=301,L]
+RewriteRule ^resources/(.*) https://flood.doctor/resources/$1 [R=301,L]
+RewriteRule ^reviews/(.*)$ https://flood.doctor/reviews/$1 [R=301,L]
+RewriteRule ^nearme/(.*) https://flood.doctor/nearme/$1 [R=301,L]
+RewriteRule ^awards/(.*)$ https://flood.doctor/awards/$1 [R=301,L]
+RewriteRule ^careers/(.*)$ https://flood.doctor/careers/$1 [R=301,L]
+RewriteRule ^privacy-policy/(.*)$ https://flood.doctor/privacy-policy/$1 [R=301,L]
+RewriteRule ^terms/(.*)$ https://flood.doctor/terms/$1 [R=301,L]
 
 # Enforce trailing slash for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-f

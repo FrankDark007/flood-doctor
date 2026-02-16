@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  X, 
-  ChevronDown, 
+import {
+  X,
+  ChevronDown,
   ChevronRight,
-  Home, 
-  Briefcase, 
-  MapPin, 
-  BookOpen, 
-  Star, 
-  Info, 
+  Home,
+  Briefcase,
+  MapPin,
+  BookOpen,
+  Star,
+  Info,
   Phone,
   ShieldAlert,
   FileText,
@@ -17,6 +17,7 @@ import {
   Hammer
 } from 'lucide-react';
 import Button from '../ui/Button';
+import NavLink from './NavLink';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -191,13 +192,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                     >
                       <div className="bg-gray-50/50 rounded-b-xl pb-2">
                         {item.children?.map((child) => (
-                          <Link
+                          <NavLink
                             key={child.path}
                             to={child.path}
                             className="flex items-center w-full pl-14 pr-4 py-3 text-[15px] text-gray-600 hover:text-primary transition-colors"
                           >
                             {child.label}
-                          </Link>
+                          </NavLink>
                         ))}
                       </div>
                     </div>
@@ -207,19 +208,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
               // Standard Link
               return (
-                <Link 
+                <NavLink
                   key={item.path}
                   to={item.path!}
                   className={`flex items-center w-full px-4 py-4 text-[17px] font-medium rounded-xl transition-colors ${
-                      isActive 
-                      ? 'bg-blue-50 text-primary' 
+                      isActive
+                      ? 'bg-blue-50 text-primary'
                       : 'text-text hover:bg-gray-50'
                   }`}
                 >
                   <Icon size={20} className={`mr-4 ${isActive ? 'text-primary' : 'text-gray-400'}`} />
                   <span>{item.label}</span>
                   {isActive && <ChevronRight size={18} className="ml-auto text-primary" />}
-                </Link>
+                </NavLink>
               );
             })}
           </nav>
