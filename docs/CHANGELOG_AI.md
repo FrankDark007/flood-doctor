@@ -4,6 +4,43 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-15 — P0 Schema Rollout + Production Deploy
+
+**Commits**: `8a1c104`, `26b21cb`, `d60631a`, `9b58d61`, `7b00553`, `81f7bb4`
+**Scope**: 106 files across all page categories
+
+### What Changed
+- **Phase 1**: Fixed PageMeta.tsx to emit `@graph` wrapper for schema arrays and deduplicate entities
+- **Phase 2**: Replaced inline JSON-LD across 75 files (45 blog, 29 location, 1 landing template)
+  - Blog posts: Article + BreadcrumbList + LocalBusiness + FAQPage via `generateBlogArticleSchema()`
+  - Location pages: BreadcrumbList + LocalBusiness + FAQPage via `generateLocationPageSchema()`
+  - Landing pages: Service + BreadcrumbList + FAQPage via `generateServicePageSchema()` (single template change covers 23 pages)
+- **Phase 3**: Added Service + BreadcrumbList to both service detail templates; BreadcrumbList to LocationsHub, ResourcesHub, BlogIndex
+- **Phase 4**: Added Article + BreadcrumbList to all 25 resource pages; guides already had proper HowTo + BreadcrumbList
+
+### Production Verification (2026-02-15)
+| Check | Result |
+|-------|--------|
+| Valid routes (17 sampled) | All 200 |
+| 301 redirects (5 sampled) | All single-hop 301 |
+| Fake routes (5 sampled) | All real 404 |
+| Cloudflare cache purge | Confirmed |
+| JSON-LD spot-check (5 pages) | All correct: single @graph, proper types, no duplicate LocalBusiness in dynamic schema |
+
+**Known pre-existing**: `index.html` contains a hardcoded site-wide LocalBusiness `<script>` tag (separate from PageMeta). This predates the schema rollout and appears as a second ld+json script on every page. Removal is a separate task.
+
+### Before/After
+| Metric | Before | After |
+|--------|--------|-------|
+| Blog posts with Article schema | 0/45 | 45/45 |
+| Location pages with BreadcrumbList | 0/29 | 29/29 |
+| Landing pages with Service schema | 0/23 | 23/23 |
+| Resource pages with Article schema | 0/25 | 25/25 |
+| Service pages with Service schema | 0 | All |
+| Build | 188/188 | 188/188 |
+
+---
+
 ## 2026-02-15 — Title Tag Shortening (All Pages)
 
 **Commits**: `c4324e9`
