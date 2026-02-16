@@ -70,16 +70,21 @@ const blogRegistry: Record<string, BlogArticle[]> = {
 const DynamicBlogIndex: React.FC = () => {
   const params = useParams<{ city: string }>();
 
-  // Extract city from URL path or subdomain
-  const pathParts = window.location.pathname.split('/');
+  // Extract city from build-time global, subdomain, or URL path
   const hostname = window.location.hostname;
-
-  // Check if we're on a subdomain (e.g., mclean.flood.doctor)
   let city = '';
-  if (hostname.includes('.flood.doctor') && !hostname.startsWith('www')) {
+
+  // 1. Build-time global (set by build-cities.ts, works during prerender)
+  if ((window as any).__FLOOD_DOCTOR_CITY__) {
+    city = (window as any).__FLOOD_DOCTOR_CITY__;
+  }
+  // 2. Subdomain detection (e.g., mclean.flood.doctor)
+  else if (hostname.includes('.flood.doctor') && !hostname.startsWith('www')) {
     city = hostname.split('.')[0];
-  } else {
-    // Fallback to path-based routing for dev mode
+  }
+  // 3. Fallback to path-based routing for dev mode
+  else {
+    const pathParts = window.location.pathname.split('/');
     const cityIndex = pathParts.indexOf('city') + 1;
     city = params.city || pathParts[cityIndex] || '';
   }

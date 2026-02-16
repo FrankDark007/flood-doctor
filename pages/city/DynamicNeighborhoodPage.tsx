@@ -230,7 +230,21 @@ interface RouteParams {
 }
 
 const DynamicNeighborhoodPage: React.FC = () => {
-  const { city, neighborhood } = useParams<RouteParams>();
+  const params = useParams<RouteParams>();
+  const neighborhood = params.neighborhood;
+
+  // Resolve city: useParams (main domain), build-time global (city subdomains), or hostname
+  let city = params.city || '';
+  if (!city && (window as any).__FLOOD_DOCTOR_CITY__) {
+    city = (window as any).__FLOOD_DOCTOR_CITY__;
+  }
+  if (!city) {
+    const hostname = window.location.hostname;
+    if (hostname.includes('.flood.doctor') && !hostname.startsWith('www')) {
+      city = hostname.split('.')[0];
+    }
+  }
+
   const [content, setContent] = useState<NeighborhoodPageContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
