@@ -7,6 +7,13 @@
 **Before any restart:** Update both files with current state.
 **After completing work:** Log it in project-history.md. Never lose progress.
 
+### 5. REGENERATE CHATGPT BOOTSTRAP AFTER EVERY SESSION
+- After completing any work on this repo, regenerate `docs/SESSION_BOOTSTRAP_CHATGPT.md`
+- Pull current values from: `docs/OPEN_PRIORITIES.md`, `docs/PROJECT_STATE.md`, `docs/CHANGELOG_AI.md`
+- Inline everything — ChatGPT has no filesystem access
+- Update the "Last regenerated" date
+- This keeps the ChatGPT handoff prompt always current without manual effort
+
 ---
 
 ## ⛔ HARD RULES — NEVER BREAK THESE
