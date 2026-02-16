@@ -4,125 +4,32 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const RentalPropertyWaterDamageVirginia: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Who is responsible for water damage in a Virginia rental property?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Under Virginia Code § 55.1-1220, landlords are responsible for maintaining habitable premises including plumbing, roofing, and structural elements. Landlords must repair water damage from defective maintenance, worn plumbing, roof leaks, and structural issues. Tenants are responsible for damage resulting from their negligence such as leaving faucets running, failing to report leaks promptly, or improper use of fixtures. The specific cause determines liability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should a tenant do immediately after discovering water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tenants must notify the landlord immediately in writing (email, text, or certified letter) documenting the damage and requesting repairs. Stop water sources if possible by shutting off valves or placing buckets under leaks. Photograph and video document all damage thoroughly. Move personal belongings to dry areas. Take reasonable steps to prevent further damage such as placing towels or tarps. Contact renter's insurance if applicable. Keep all receipts and communications for documentation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does a landlord have to fix water damage in Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Virginia law requires landlords to make repairs within a reasonable time after receiving written notice. For conditions affecting health and safety (such as extensive water damage, sewage backups, or structural issues), repairs should begin within 24-72 hours with completion as soon as reasonably possible. For less urgent repairs, 14-30 days is typically considered reasonable. If the landlord fails to respond, tenants may have legal remedies including repair and deduct, rent escrow, or lease termination."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does renter's insurance cover water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Renter's insurance covers personal belongings damaged by sudden and accidental water intrusion such as burst pipes, appliance malfunctions, roof leaks from storms, and overflow from neighboring units. It typically excludes flood damage, gradual leaks, and damage from tenant negligence. Renter's insurance also provides additional living expenses if the unit becomes uninhabitable. Standard policies range from $5,000 to $30,000 in personal property coverage. Flood insurance requires a separate policy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can a tenant withhold rent due to water damage in Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Virginia law does not allow tenants to simply withhold rent. However, if water damage makes the unit uninhabitable and the landlord fails to repair after proper notice, tenants may pursue rent abatement through court, place rent in escrow pending repairs, exercise the repair and deduct remedy for amounts up to $1,500 or one month's rent (whichever is greater), or terminate the lease under constructive eviction. All remedies require following specific legal procedures and providing proper written notice."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What constitutes uninhabitable conditions from water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Under Virginia's implied warranty of habitability, conditions that may render a unit uninhabitable include extensive mold growth from unrepaired water damage, non-functional plumbing preventing basic sanitation, sewage backups creating health hazards, structural damage compromising safety, no heat or hot water during winter months, and electrical hazards from water intrusion. Whether damage rises to uninhabitability depends on severity, extent, duration of landlord's failure to repair, and impact on health and safety."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "Who is responsible for water damage in a Virginia rental property?", answer: "Under Virginia Code § 55.1-1220, landlords are responsible for maintaining habitable premises including plumbing, roofing, and structural elements. Landlords must repair water damage from defective maintenance, worn plumbing, roof leaks, and structural issues. Tenants are responsible for damage resulting from their negligence such as leaving faucets running, failing to report leaks promptly, or improper use of fixtures. The specific cause determines liability." },
+    { question: "What should a tenant do immediately after discovering water damage?", answer: "Tenants must notify the landlord immediately in writing (email, text, or certified letter) documenting the damage and requesting repairs. Stop water sources if possible by shutting off valves or placing buckets under leaks. Photograph and video document all damage thoroughly. Move personal belongings to dry areas. Take reasonable steps to prevent further damage such as placing towels or tarps. Contact renter's insurance if applicable. Keep all receipts and communications for documentation." },
+    { question: "How long does a landlord have to fix water damage in Virginia?", answer: "Virginia law requires landlords to make repairs within a reasonable time after receiving written notice. For conditions affecting health and safety (such as extensive water damage, sewage backups, or structural issues), repairs should begin within 24-72 hours with completion as soon as reasonably possible. For less urgent repairs, 14-30 days is typically considered reasonable. If the landlord fails to respond, tenants may have legal remedies including repair and deduct, rent escrow, or lease termination." },
+    { question: "Does renter's insurance cover water damage?", answer: "Renter's insurance covers personal belongings damaged by sudden and accidental water intrusion such as burst pipes, appliance malfunctions, roof leaks from storms, and overflow from neighboring units. It typically excludes flood damage, gradual leaks, and damage from tenant negligence. Renter's insurance also provides additional living expenses if the unit becomes uninhabitable. Standard policies range from $5,000 to $30,000 in personal property coverage. Flood insurance requires a separate policy." },
+    { question: "Can a tenant withhold rent due to water damage in Virginia?", answer: "Virginia law does not allow tenants to simply withhold rent. However, if water damage makes the unit uninhabitable and the landlord fails to repair after proper notice, tenants may pursue rent abatement through court, place rent in escrow pending repairs, exercise the repair and deduct remedy for amounts up to $1,500 or one month's rent (whichever is greater), or terminate the lease under constructive eviction. All remedies require following specific legal procedures and providing proper written notice." },
+    { question: "What constitutes uninhabitable conditions from water damage?", answer: "Under Virginia's implied warranty of habitability, conditions that may render a unit uninhabitable include extensive mold growth from unrepaired water damage, non-functional plumbing preventing basic sanitation, sewage backups creating health hazards, structural damage compromising safety, no heat or hot water during winter months, and electrical hazards from water intrusion. Whether damage rises to uninhabitability depends on severity, extent, duration of landlord's failure to repair, and impact on health and safety." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "@id": "https://www.flooddoctorva.com",
-    "image": "https://www.flooddoctorva.com/logo.png",
-    "telephone": "(877) 497-0007",
-    "email": "info@flooddoctorva.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Northern Virginia",
-      "addressLocality": "Fairfax",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "38.8462",
-      "longitude": "-77.3064"
-    },
-    "url": "https://www.flooddoctorva.com",
-    "priceRange": "$$",
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Arlington"
-      },
-      {
-        "@type": "City",
-        "name": "Alexandria"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax"
-      },
-      {
-        "@type": "City",
-        "name": "Loudoun County"
-      }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+  const schema = generateBlogArticleSchema({
+    headline: "Rental Water Damage: Tenant & Landlord Guide",
+    description: "Complete guide to rental property water damage responsibilities in Virginia. Understand tenant duties, landlord obligations, Virginia Code requirements, insurance coverage, and dispute resolution.",
+    slug: "/blog/rental-property-water-damage-virginia",
+    datePublished: "2026-01-01",
+    articleSection: "Water Damage",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Rental Water Damage: Tenant & Landlord Guide"
         description="Complete guide to rental property water damage responsibilities in Virginia. Understand tenant duties, landlord obligations, Virginia Code requirements, insurance coverage, and dispute resolution."
-        structuredData={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

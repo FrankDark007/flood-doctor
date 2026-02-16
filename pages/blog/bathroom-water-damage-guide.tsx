@@ -3,7 +3,8 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import ArticleAuthor from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import {
@@ -60,57 +61,14 @@ const BathroomWaterDamageGuide: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "24/7 bathroom water damage restoration serving Northern Virginia",
-    "telephone": "877-497-0007",
-    "priceRange": "$$",
-    "areaServed": [
-      "Arlington, VA",
-      "Alexandria, VA",
-      "Fairfax, VA",
-      "Loudoun County, VA",
-      "Prince William County, VA",
-      "Washington, DC"
-    ],
-    "availableLanguage": ["English", "Spanish"]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Bathroom Water Damage: Leaks, Overflow & Restoration Guide",
-    "description": "Comprehensive guide to bathroom water damage in Northern Virginia homes. Covers toilet overflows, shower leaks, supply line failures, hidden damage, emergency response, and professional restoration.",
-    "author": {
-      "@type": "Organization",
-      "@name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Bathroom Water Damage: Leaks, Overflow & Restoration Guide',
+    description: 'Comprehensive guide to bathroom water damage in Northern Virginia homes. Covers toilet overflows, shower leaks, supply line failures, hidden damage, emergency response, and professional restoration.',
+    slug: '/blog/bathroom-water-damage-guide/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Water Damage',
+  }, faqs);
 
   const emergencySteps = [
     {
@@ -438,7 +396,7 @@ const BathroomWaterDamageGuide: React.FC = () => {
       <PageMeta
         title="Bathroom Water Damage: Leaks & Restoration"
         description="Expert guide to bathroom water damage in Northern Virginia. Covers toilet overflows, shower leaks, supply line failures, hidden damage behind tiles, emergency response, and professional restoration. Available 24/7: 877-497-0007"
-        schema={[faqSchema, localBusinessSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

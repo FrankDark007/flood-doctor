@@ -4,101 +4,46 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const AtticWaterDamageGuide: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the most common causes of attic water damage in Northern Virginia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The most common causes include roof leaks from missing or damaged shingles, ice dam formation during winter months, poor attic ventilation causing condensation, roof flashing failures around chimneys and vents, clogged gutters causing overflow, and HVAC condensation issues. Northern Virginia's climate creates ideal conditions for ice dams and condensation problems."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do ice dams form and damage attics in Virginia winters?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ice dams form when heat escapes through inadequate attic insulation, warming the roof surface and melting snow. The meltwater runs down to the cold eaves and refreezes, creating a dam. Water backs up under shingles and leaks into the attic. Virginia's freeze-thaw cycles make homes particularly vulnerable to ice dam damage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the signs of hidden attic water damage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Warning signs include water stains on ceiling drywall, musty odors in upper floors, sagging or discolored insulation, dark spots or mold on rafters and decking, increased energy bills, ice buildup on eaves, and peeling paint on exterior soffits. Professional inspection can detect moisture with thermal imaging and meters."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can wet attic insulation be saved or must it be replaced?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Wet fiberglass and cellulose insulation cannot be effectively dried and must be replaced. Saturated insulation loses R-value, harbors mold growth, and adds weight stress to ceiling joists. Professional restoration includes complete removal, structural drying, mold treatment, and installation of new insulation meeting current Virginia building codes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How much does attic water damage restoration cost in Northern Virginia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Costs vary based on damage extent. Minor leak repairs with insulation replacement: $2,000-$5,000. Moderate damage with structural drying and partial roof repair: $5,000-$15,000. Extensive damage requiring roof replacement, mold remediation, and structural repairs: $15,000-$40,000+. Most homeowners insurance policies cover sudden roof leak damage."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://flooddoctor.com/#organization",
-        "name": "Flood Doctor",
-        "description": "Professional water damage restoration and mold remediation serving Northern Virginia and Washington DC",
-        "url": "https://flooddoctor.com",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "VA",
-          "addressLocality": "Northern Virginia"
-        },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Alexandria"
-          },
-          {
-            "@type": "City",
-            "name": "Arlington"
-          },
-          {
-            "@type": "City",
-            "name": "Fairfax"
-          },
-          {
-            "@type": "City",
-            "name": "Loudoun County"
-          },
-          {
-            "@type": "City",
-            "name": "Prince William County"
-          }
-        ]
-      }
-    ]
-  };
+  const faqs = [
+    {
+      question: "What are the most common causes of attic water damage in Northern Virginia?",
+      answer: "The most common causes include roof leaks from missing or damaged shingles, ice dam formation during winter months, poor attic ventilation causing condensation, roof flashing failures around chimneys and vents, clogged gutters causing overflow, and HVAC condensation issues. Northern Virginia's climate creates ideal conditions for ice dams and condensation problems."
+    },
+    {
+      question: "How do ice dams form and damage attics in Virginia winters?",
+      answer: "Ice dams form when heat escapes through inadequate attic insulation, warming the roof surface and melting snow. The meltwater runs down to the cold eaves and refreezes, creating a dam. Water backs up under shingles and leaks into the attic. Virginia's freeze-thaw cycles make homes particularly vulnerable to ice dam damage."
+    },
+    {
+      question: "What are the signs of hidden attic water damage?",
+      answer: "Warning signs include water stains on ceiling drywall, musty odors in upper floors, sagging or discolored insulation, dark spots or mold on rafters and decking, increased energy bills, ice buildup on eaves, and peeling paint on exterior soffits. Professional inspection can detect moisture with thermal imaging and meters."
+    },
+    {
+      question: "Can wet attic insulation be saved or must it be replaced?",
+      answer: "Wet fiberglass and cellulose insulation cannot be effectively dried and must be replaced. Saturated insulation loses R-value, harbors mold growth, and adds weight stress to ceiling joists. Professional restoration includes complete removal, structural drying, mold treatment, and installation of new insulation meeting current Virginia building codes."
+    },
+    {
+      question: "How much does attic water damage restoration cost in Northern Virginia?",
+      answer: "Costs vary based on damage extent. Minor leak repairs with insulation replacement: $2,000-$5,000. Moderate damage with structural drying and partial roof repair: $5,000-$15,000. Extensive damage requiring roof replacement, mold remediation, and structural repairs: $15,000-$40,000+. Most homeowners insurance policies cover sudden roof leak damage."
+    }
+  ];
+
+  const schema = generateBlogArticleSchema({
+    headline: 'Attic Water Damage: Roof Leaks, Ice Dams, and Condensation Problems in Northern Virginia',
+    description: 'Expert guide to attic water damage in Northern Virginia homes. Learn about roof leaks, ice dam prevention, condensation problems, insulation damage, and professional restoration solutions.',
+    slug: '/blog/attic-water-damage-guide/',
+    datePublished: '2024-01-15',
+    articleSection: 'Home Maintenance',
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Attic Water Damage: Leaks & Condensation"
         description="Expert guide to attic water damage in Northern Virginia homes. Learn about roof leaks, ice dam prevention, condensation problems, insulation damage, and professional restoration solutions."
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">

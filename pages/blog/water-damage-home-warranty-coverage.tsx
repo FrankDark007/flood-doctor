@@ -4,111 +4,32 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const WaterDamageHomeWarrantyCoverage: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does a home warranty cover water damage restoration?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Home warranties cover repair or replacement of covered appliances and systems, but they do not cover the resulting water damage to your home's structure, floors, walls, or belongings. For water damage restoration, you need homeowners insurance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between home warranty and homeowners insurance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Home warranties cover repair/replacement of mechanical systems and appliances due to normal wear and tear. Homeowners insurance covers damage to your home and belongings from sudden, accidental events like burst pipes, appliance malfunctions, or storms. They serve different purposes and you need both for complete protection."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my home warranty pay for a burst washing machine hose?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your home warranty may cover replacing the burst hose or repairing the washing machine, but it will not cover water damage to your floors, walls, or basement. You'll need to file a claim with your homeowners insurance for the water damage restoration."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use both home warranty and insurance for the same incident?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. File a home warranty claim for the appliance or system repair/replacement, and file a homeowners insurance claim for the resulting water damage. Each covers different aspects of the same incident, and you can pursue both claims simultaneously."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do first when an appliance causes water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "1) Turn off the water supply and electricity to the area. 2) Call a water damage restoration company immediately to prevent further damage. 3) Document everything with photos/videos. 4) Notify your homeowners insurance within 24-48 hours. 5) Contact your home warranty company for appliance repair/replacement after the water damage is mitigated."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does home warranty cover mold damage from a leaking appliance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Home warranties do not cover mold damage or mold remediation. Your homeowners insurance may provide limited mold coverage if it resulted from a covered water damage event. Most policies cap mold coverage at $5,000-$10,000 unless you purchase additional mold coverage."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "Does a home warranty cover water damage restoration?", answer: "No. Home warranties cover repair or replacement of covered appliances and systems, but they do not cover the resulting water damage to your home's structure, floors, walls, or belongings. For water damage restoration, you need homeowners insurance." },
+    { question: "What's the difference between home warranty and homeowners insurance?", answer: "Home warranties cover repair/replacement of mechanical systems and appliances due to normal wear and tear. Homeowners insurance covers damage to your home and belongings from sudden, accidental events like burst pipes, appliance malfunctions, or storms. They serve different purposes and you need both for complete protection." },
+    { question: "Will my home warranty pay for a burst washing machine hose?", answer: "Your home warranty may cover replacing the burst hose or repairing the washing machine, but it will not cover water damage to your floors, walls, or basement. You'll need to file a claim with your homeowners insurance for the water damage restoration." },
+    { question: "Can I use both home warranty and insurance for the same incident?", answer: "Yes. File a home warranty claim for the appliance or system repair/replacement, and file a homeowners insurance claim for the resulting water damage. Each covers different aspects of the same incident, and you can pursue both claims simultaneously." },
+    { question: "What should I do first when an appliance causes water damage?", answer: "1) Turn off the water supply and electricity to the area. 2) Call a water damage restoration company immediately to prevent further damage. 3) Document everything with photos/videos. 4) Notify your homeowners insurance within 24-48 hours. 5) Contact your home warranty company for appliance repair/replacement after the water damage is mitigated." },
+    { question: "Does home warranty cover mold damage from a leaking appliance?", answer: "No. Home warranties do not cover mold damage or mold remediation. Your homeowners insurance may provide limited mold coverage if it resulted from a covered water damage event. Most policies cap mold coverage at $5,000-$10,000 unless you purchase additional mold coverage." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "Water damage restoration and emergency mitigation services in Northern Virginia and Washington, DC",
-    "@id": "https://flood.doctor",
-    "url": "https://flood.doctor",
-    "telephone": "877-497-0007",
-    "priceRange": "$$",
-    "image": "https://flood.doctor/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Northern Virginia",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1945
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Arlington"
-      },
-      {
-        "@type": "City",
-        "name": "Alexandria"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax"
-      },
-      {
-        "@type": "City",
-        "name": "Washington"
-      }
-    ],
-    "serviceType": "Water Damage Restoration"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: "Water Damage & Home Warranty Coverage",
+    description: "Comprehensive guide explaining the difference between home warranties and homeowners insurance for water damage. Learn what's covered, how to file claims correctly, and maximize your protection in Northern Virginia.",
+    slug: "/blog/water-damage-home-warranty-coverage",
+    datePublished: "2025-01-01",
+    articleSection: "Insurance",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage & Home Warranty Coverage"
         description="Comprehensive guide explaining the difference between home warranties and homeowners insurance for water damage. Learn what's covered, how to file claims correctly, and maximize your protection in Northern Virginia."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Header Section */}

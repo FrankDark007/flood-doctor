@@ -4,69 +4,51 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
+
+const faqs = [
+  {
+    question: "What should I do immediately when I discover a dishwasher or washing machine leak?",
+    answer: "Turn off the water supply immediately, either at the appliance shutoff valve or the main water line. Unplug the appliance, remove standing water with towels or a wet vacuum, and move any nearby items to prevent further damage. Document the damage with photos for insurance purposes."
+  },
+  {
+    question: "What are the most common causes of dishwasher leaks?",
+    answer: "Common dishwasher leak causes include worn door gaskets, damaged door latches, faulty water inlet valves, cracked hoses or connections, clogged drain lines, and improper detergent usage causing excess suds."
+  },
+  {
+    question: "Why do washing machines leak in Northern Virginia homes?",
+    answer: "Washing machines typically leak due to worn fill hoses, damaged door seals (in front-loaders), defective water pumps, loose connections, overloading, or drain pipe issues. The mineral content in Northern Virginia water can accelerate wear on seals and connections."
+  },
+  {
+    question: "When should I call a professional versus attempting a DIY repair?",
+    answer: "Call a professional if water has spread beyond the immediate area, affected walls or floors, shows signs of mold, involves electrical components, requires internal appliance repairs, or if you're uncertain about the leak source. DIY is appropriate for simple hose replacements, tightening connections, or cleaning drain filters."
+  },
+  {
+    question: "Does homeowners insurance cover appliance leak damage?",
+    answer: "Most homeowners insurance policies cover sudden and accidental appliance leaks, including resulting water damage to floors, walls, and belongings. However, damage from gradual leaks due to lack of maintenance is typically not covered. Document everything and contact your insurance provider immediately."
+  },
+  {
+    question: "How can I prevent dishwasher and washing machine leaks?",
+    answer: "Inspect hoses every 6 months for bulging, cracking, or wear. Replace rubber hoses every 3-5 years with braided steel versions. Clean filters and drain lines regularly, avoid overloading machines, use proper detergent amounts, ensure appliances are level, and install water leak detectors near appliances."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Dishwasher and Washing Machine Leaks: Emergency Response Guide for Northern Virginia Homeowners',
+  description: 'Expert guide to handling dishwasher and washing machine leaks in Northern Virginia. Learn emergency response steps, prevention tips, and when to call professionals. Available 24/7: (877) 497-0007',
+  slug: '/blog/appliance-water-damage-dishwasher-washing-machine/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const ApplianceWaterDamageGuide: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What should I do immediately when I discover a dishwasher or washing machine leak?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Turn off the water supply immediately, either at the appliance shutoff valve or the main water line. Unplug the appliance, remove standing water with towels or a wet vacuum, and move any nearby items to prevent further damage. Document the damage with photos for insurance purposes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the most common causes of dishwasher leaks?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Common dishwasher leak causes include worn door gaskets, damaged door latches, faulty water inlet valves, cracked hoses or connections, clogged drain lines, and improper detergent usage causing excess suds."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why do washing machines leak in Northern Virginia homes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Washing machines typically leak due to worn fill hoses, damaged door seals (in front-loaders), defective water pumps, loose connections, overloading, or drain pipe issues. The mineral content in Northern Virginia water can accelerate wear on seals and connections."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should I call a professional versus attempting a DIY repair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Call a professional if water has spread beyond the immediate area, affected walls or floors, shows signs of mold, involves electrical components, requires internal appliance repairs, or if you're uncertain about the leak source. DIY is appropriate for simple hose replacements, tightening connections, or cleaning drain filters."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover appliance leak damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most homeowners insurance policies cover sudden and accidental appliance leaks, including resulting water damage to floors, walls, and belongings. However, damage from gradual leaks due to lack of maintenance is typically not covered. Document everything and contact your insurance provider immediately."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I prevent dishwasher and washing machine leaks?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Inspect hoses every 6 months for bulging, cracking, or wear. Replace rubber hoses every 3-5 years with braided steel versions. Clean filters and drain lines regularly, avoid overloading machines, use proper detergent amounts, ensure appliances are level, and install water leak detectors near appliances."
-        }
-      }
-    ]
-  };
-
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Appliance Leaks: Dishwasher & Washer Guide"
         description="Expert guide to handling dishwasher and washing machine leaks in Northern Virginia. Learn emergency response steps, prevention tips, and when to call professionals. Available 24/7: (877) 497-0007"
-        structuredData={faqSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8">

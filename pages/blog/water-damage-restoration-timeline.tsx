@@ -4,13 +4,23 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const WaterDamageRestorationTimeline: React.FC = () => {
+  const schema = generateBlogArticleSchema({
+    headline: 'Water Damage Restoration Timeline',
+    description: 'Detailed timeline for water damage restoration in Northern Virginia. Learn what to expect during each phase from emergency response through final restoration.',
+    slug: '/blog/water-damage-restoration-timeline/',
+    datePublished: '2025-01-01',
+    articleSection: 'Water Damage',
+  });
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Timeline"
         description="Detailed timeline for water damage restoration in Northern Virginia. Learn what to expect during each phase from emergency response through final restoration."
+        schema={schema}
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
         <h1>How Long Does Water Damage Restoration Take? Complete Timeline for NoVA Homeowners</h1>

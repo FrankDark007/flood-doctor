@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -56,55 +57,14 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Water Damage Disclosure: What Virginia Home Sellers Must Know",
-    "description": "Complete guide to water damage disclosure requirements for Virginia home sellers. Legal obligations, documentation needs, and how to protect yourself when selling.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "Professional water damage restoration and documentation services for Northern Virginia home sellers",
-    "areaServed": [
-      "Fairfax County, VA",
-      "Arlington County, VA",
-      "Loudoun County, VA",
-      "Alexandria, VA",
-      "Prince William County, VA"
-    ],
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Water Damage Disclosure: What Virginia Home Sellers Must Know',
+    description: 'Complete guide to water damage disclosure requirements for Virginia home sellers. Legal obligations, documentation needs, and how to protect yourself when selling.',
+    slug: '/blog/water-damage-home-selling-disclosure/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Legal Guide',
+  }, faqs);
 
   const disclosureRequirements = [
     {
@@ -316,7 +276,7 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
       <PageMeta
         title="Water Damage Disclosure for Home Sellers"
         description="Complete guide to water damage disclosure laws for Virginia home sellers. Learn legal requirements, documentation needs, liability risks, and how proper restoration protects your sale."
-        schema={[faqSchema, articleSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

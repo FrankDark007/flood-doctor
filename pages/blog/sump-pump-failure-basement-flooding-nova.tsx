@@ -1,64 +1,50 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const SumpPumpFailureBasementFloodingNova: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What are the most common signs of sump pump failure?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Common warning signs include strange noises (grinding or rattling), irregular cycling (running constantly or not at all), visible rust or corrosion, excessive vibration, failure to discharge water, and the pump running without removing water from the basin. Age is also a factor—most sump pumps need replacement after 7-10 years of regular use."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is basement flooding most likely to occur in Northern Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Northern Virginia experiences peak basement flooding risk during spring months (March-May) when heavy rainfall combines with snowmelt. Secondary flooding seasons occur during summer thunderstorms (June-August) and tropical weather systems (September-October). Rapid temperature fluctuations in winter can also cause ground saturation and flooding."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do immediately if my sump pump fails during a storm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at (877) 497-0007. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I test my sump pump in Northern Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Test your sump pump every 2-3 months under normal conditions, and before every storm season (especially in February-March before spring rains). Pour 5 gallons of water into the pit to ensure the float switch activates and the pump discharges properly. Check the discharge line for blockages and ensure the backup battery (if equipped) is functional."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover basement flooding from sump pump failure?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard homeowners insurance typically does NOT cover flooding from sump pump failure or groundwater seepage. You need specific sump pump failure endorsement or water backup coverage. Flood insurance through NFIP covers certain flooding scenarios but may have limitations. Review your policy annually and consider adding endorsements—the cost is typically $50-200 per year, far less than flood damage repair costs."
-        }
-      }
-    ]
-  };
+const faqs = [
+  {
+    question: "What are the most common signs of sump pump failure?",
+    answer: "Common warning signs include strange noises (grinding or rattling), irregular cycling (running constantly or not at all), visible rust or corrosion, excessive vibration, failure to discharge water, and the pump running without removing water from the basin. Age is also a factor—most sump pumps need replacement after 7-10 years of regular use."
+  },
+  {
+    question: "When is basement flooding most likely to occur in Northern Virginia?",
+    answer: "Northern Virginia experiences peak basement flooding risk during spring months (March-May) when heavy rainfall combines with snowmelt. Secondary flooding seasons occur during summer thunderstorms (June-August) and tropical weather systems (September-October). Rapid temperature fluctuations in winter can also cause ground saturation and flooding."
+  },
+  {
+    question: "What should I do immediately if my sump pump fails during a storm?",
+    answer: "First, turn off electricity to the basement if water is present. Move valuable items to higher ground. If safe, check if the pump is clogged or the float switch is stuck. Use a wet-dry vacuum or manual water removal if possible. Call emergency flood restoration services at (877) 497-0007. Document damage with photos for insurance. Do not attempt electrical repairs while standing in water."
+  },
+  {
+    question: "How often should I test my sump pump in Northern Virginia?",
+    answer: "Test your sump pump every 2-3 months under normal conditions, and before every storm season (especially in February-March before spring rains). Pour 5 gallons of water into the pit to ensure the float switch activates and the pump discharges properly. Check the discharge line for blockages and ensure the backup battery (if equipped) is functional."
+  },
+  {
+    question: "Does homeowners insurance cover basement flooding from sump pump failure?",
+    answer: "Standard homeowners insurance typically does NOT cover flooding from sump pump failure or groundwater seepage. You need specific sump pump failure endorsement or water backup coverage. Flood insurance through NFIP covers certain flooding scenarios but may have limitations. Review your policy annually and consider adding endorsements—the cost is typically $50-200 per year, far less than flood damage repair costs."
+  },
+];
 
+const schema = generateBlogArticleSchema({
+  headline: 'Sump Pump Failure & Basement Flooding',
+  description: 'Expert guide to preventing sump pump failure and basement flooding in NoVA. Learn warning signs, emergency response steps, and seasonal protection strategies. 24/7 emergency service: (877) 497-0007',
+  slug: '/blog/sump-pump-failure-basement-flooding-nova/',
+  datePublished: '2025-01-01',
+  dateModified: '2025-01-01',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
+
+const SumpPumpFailureBasementFloodingNova: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Sump Pump Failure & Basement Flooding"
         description="Expert guide to preventing sump pump failure and basement flooding in NoVA. Learn warning signs, emergency response steps, and seasonal protection strategies. 24/7 emergency service: (877) 497-0007"
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

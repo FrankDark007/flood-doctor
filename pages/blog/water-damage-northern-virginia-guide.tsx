@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -54,39 +55,14 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "What to Do When You Have Water Damage: A Complete Guide for Northern Virginia Homeowners",
-    "description": "Comprehensive emergency response guide for Northern Virginia homeowners facing water damage. Step-by-step instructions, regional considerations, and expert restoration advice.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'What to Do When You Have Water Damage: A Complete Guide for Northern Virginia Homeowners',
+    description: 'Comprehensive emergency response guide for Northern Virginia homeowners facing water damage. Step-by-step instructions, regional considerations, and expert restoration advice.',
+    slug: '/blog/water-damage-northern-virginia-guide/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Emergency Guide',
+  }, faqs);
 
   const immediateSteps = [
     {
@@ -243,7 +219,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
       <PageMeta
         title="What to Do When You Have Water Damage"
         description="Emergency water damage response guide for Northern Virginia homeowners. Expert steps to take immediately, regional considerations, and how to minimize damage and costs."
-        schema={[faqSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

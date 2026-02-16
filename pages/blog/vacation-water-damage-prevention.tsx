@@ -4,129 +4,32 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const VacationWaterDamagePrevention: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What should I do before leaving for vacation to prevent water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Before leaving on vacation, turn off the main water supply or individual fixture shutoffs, inspect all visible plumbing and appliances for leaks, set your thermostat to at least 55°F, clean gutters and downspouts, test your sump pump, and arrange for someone to check your home every 2-3 days. Install smart leak detectors for real-time alerts while you're away."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do if I discover water damage after returning from vacation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Turn off the main water supply immediately, document all damage with photos and videos, turn off electricity to affected areas, contact your insurance company within 24 hours, call a professional water damage restoration company, and begin emergency water removal. Do not delay—extended water damage is exponentially worse than fresh damage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why is water damage worse when discovered after vacation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Water damage discovered after days or weeks of vacation is significantly worse because mold growth begins within 24-48 hours, structural materials absorb more water over time, category 1 (clean) water becomes contaminated, and moisture spreads to unaffected areas. Extended exposure transforms manageable cleanup into full structural remediation requiring extensive reconstruction."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover water damage if my home was vacant during vacation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most homeowners insurance policies have vacancy clauses that limit or exclude coverage if your home is unoccupied for 30-60+ consecutive days. Short vacations (1-3 weeks) are typically covered for sudden and accidental water damage, but you must comply with policy requirements such as maintaining minimum heat levels, arranging regular inspections, and shutting off water if required. Review your specific policy terms before extended trips."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I turn off my water heater before vacation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For vacations under two weeks, set your water heater to 'vacation mode' or lower the temperature to save energy. For longer trips (2+ weeks), consider turning off gas or electric water heaters after shutting off the water supply. Tank-style water heaters are a common source of catastrophic leaks, and turning them off eliminates this risk during extended absences."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the best smart home devices to prevent vacation water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The most effective devices include smart water leak detectors placed near appliances and plumbing fixtures (Flo by Moen, Phyn Plus), whole-house automatic water shutoff systems that detect unusual flow patterns, Wi-Fi sump pump monitors, smart thermostats to maintain safe temperatures, and security cameras to visually check for problems. These systems send real-time alerts to your phone, allowing immediate response even when traveling."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "What should I do before leaving for vacation to prevent water damage?", answer: "Before leaving on vacation, turn off the main water supply or individual fixture shutoffs, inspect all visible plumbing and appliances for leaks, set your thermostat to at least 55°F, clean gutters and downspouts, test your sump pump, and arrange for someone to check your home every 2-3 days. Install smart leak detectors for real-time alerts while you're away." },
+    { question: "What should I do if I discover water damage after returning from vacation?", answer: "Turn off the main water supply immediately, document all damage with photos and videos, turn off electricity to affected areas, contact your insurance company within 24 hours, call a professional water damage restoration company, and begin emergency water removal. Do not delay—extended water damage is exponentially worse than fresh damage." },
+    { question: "Why is water damage worse when discovered after vacation?", answer: "Water damage discovered after days or weeks of vacation is significantly worse because mold growth begins within 24-48 hours, structural materials absorb more water over time, category 1 (clean) water becomes contaminated, and moisture spreads to unaffected areas. Extended exposure transforms manageable cleanup into full structural remediation requiring extensive reconstruction." },
+    { question: "Does homeowners insurance cover water damage if my home was vacant during vacation?", answer: "Most homeowners insurance policies have vacancy clauses that limit or exclude coverage if your home is unoccupied for 30-60+ consecutive days. Short vacations (1-3 weeks) are typically covered for sudden and accidental water damage, but you must comply with policy requirements such as maintaining minimum heat levels, arranging regular inspections, and shutting off water if required. Review your specific policy terms before extended trips." },
+    { question: "Should I turn off my water heater before vacation?", answer: "For vacations under two weeks, set your water heater to 'vacation mode' or lower the temperature to save energy. For longer trips (2+ weeks), consider turning off gas or electric water heaters after shutting off the water supply. Tank-style water heaters are a common source of catastrophic leaks, and turning them off eliminates this risk during extended absences." },
+    { question: "What are the best smart home devices to prevent vacation water damage?", answer: "The most effective devices include smart water leak detectors placed near appliances and plumbing fixtures (Flo by Moen, Phyn Plus), whole-house automatic water shutoff systems that detect unusual flow patterns, Wi-Fi sump pump monitors, smart thermostats to maintain safe temperatures, and security cameras to visually check for problems. These systems send real-time alerts to your phone, allowing immediate response even when traveling." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://flooddoctor.com/#organization",
-    "name": "Flood Doctor",
-    "description": "24/7 Emergency Water Damage Restoration serving Northern Virginia and Washington DC",
-    "url": "https://flooddoctor.com",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Northern Virginia",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1045
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Arlington"
-      },
-      {
-        "@type": "City",
-        "name": "Alexandria"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax"
-      },
-      {
-        "@type": "City",
-        "name": "Loudoun County"
-      },
-      {
-        "@type": "City",
-        "name": "Prince William County"
-      }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127"
-    }
-  };
-
-  const combinedSchema = {
-    "@context": "https://schema.org",
-    "@graph": [faqSchema, localBusinessSchema]
-  };
+  const schema = generateBlogArticleSchema({
+    headline: "Vacation Water Damage Prevention Guide",
+    description: "Essential guide to preventing water damage during vacations in Northern Virginia. Learn pre-vacation checklists, smart monitoring systems, emergency response, and insurance considerations.",
+    slug: "/blog/vacation-water-damage-prevention",
+    datePublished: "2025-01-01",
+    articleSection: "Prevention",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Vacation Water Damage Prevention Guide"
         description="Essential guide to preventing water damage during vacations in Northern Virginia. Learn pre-vacation checklists, smart monitoring systems, emergency response, and insurance considerations. 24/7 help: (877) 497-0007"
-        structuredData={combinedSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

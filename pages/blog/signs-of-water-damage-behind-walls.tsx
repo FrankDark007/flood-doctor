@@ -3,81 +3,38 @@ import { Phone, AlertTriangle, Eye, Ear, Hand } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the signs of water damage behind walls?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Key signs include: discoloration or staining on walls, peeling/bubbling paint or wallpaper, warped or soft drywall, musty odors, visible mold growth, baseboards pulling away from walls, unexplained increases in water bills, and sounds of running water when no fixtures are in use."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I know if there's water in my walls?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Touch the wall—it should feel dry and firm. Wet drywall feels soft, cool, or damp. Use a moisture meter for accurate readings. Look for discoloration, especially yellowish-brown water stains. Listen for dripping sounds. Check for musty smells that indicate mold growth from hidden moisture."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can water damage behind walls cause mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, absolutely. Mold begins growing within 24-48 hours of water exposure. The dark, enclosed space behind walls creates ideal conditions—moisture, organic material (drywall paper, wood studs), and lack of airflow. Hidden water damage is one of the most common causes of extensive mold contamination."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take for water damage to show through walls?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Visible signs can appear within hours for major leaks, or take weeks to months for slow leaks. Factors include leak severity, wall material, and ventilation. By the time you see water stains on drywall, significant damage has often already occurred behind the surface."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I open my wall to check for water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "If you suspect significant water damage, professional inspection is recommended before opening walls. Professionals use moisture meters, thermal imaging, and borescopes to assess damage non-destructively. Opening walls can spread mold spores if contamination exists. If you must inspect, cut a small hole and look with a flashlight first."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Arlington" },
-        { "@type": "City", "name": "Alexandria" },
-        { "@type": "City", "name": "Fairfax" },
-        { "@type": "City", "name": "McLean" }
-      ],
-      "service": {
-        "@type": "Service",
-        "serviceType": "Water Damage Detection and Restoration",
-        "provider": { "@id": "https://flooddoctor.com/#organization" }
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "What are the signs of water damage behind walls?",
+    answer: "Key signs include: discoloration or staining on walls, peeling/bubbling paint or wallpaper, warped or soft drywall, musty odors, visible mold growth, baseboards pulling away from walls, unexplained increases in water bills, and sounds of running water when no fixtures are in use."
+  },
+  {
+    question: "How do I know if there's water in my walls?",
+    answer: "Touch the wall—it should feel dry and firm. Wet drywall feels soft, cool, or damp. Use a moisture meter for accurate readings. Look for discoloration, especially yellowish-brown water stains. Listen for dripping sounds. Check for musty smells that indicate mold growth from hidden moisture."
+  },
+  {
+    question: "Can water damage behind walls cause mold?",
+    answer: "Yes, absolutely. Mold begins growing within 24-48 hours of water exposure. The dark, enclosed space behind walls creates ideal conditions—moisture, organic material (drywall paper, wood studs), and lack of airflow. Hidden water damage is one of the most common causes of extensive mold contamination."
+  },
+  {
+    question: "How long does it take for water damage to show through walls?",
+    answer: "Visible signs can appear within hours for major leaks, or take weeks to months for slow leaks. Factors include leak severity, wall material, and ventilation. By the time you see water stains on drywall, significant damage has often already occurred behind the surface."
+  },
+  {
+    question: "Should I open my wall to check for water damage?",
+    answer: "If you suspect significant water damage, professional inspection is recommended before opening walls. Professionals use moisture meters, thermal imaging, and borescopes to assess damage non-destructively. Opening walls can spread mold spores if contamination exists. If you must inspect, cut a small hole and look with a flashlight first."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Signs of Hidden Water Damage Behind Walls',
+  description: 'Learn to identify hidden water damage behind walls before it causes mold and structural problems. Expert detection guide covering visual, smell, sound, and touch indicators.',
+  slug: '/blog/signs-of-water-damage-behind-walls/',
+  datePublished: '2026-01-03',
+  articleSection: 'Water Damage Detection',
+}, faqs);
 
 const SignsOfWaterDamageBehindWalls: React.FC = () => {
   return (
@@ -85,7 +42,7 @@ const SignsOfWaterDamageBehindWalls: React.FC = () => {
       <PageMeta
         title="Hidden Water Damage Behind Walls: Signs"
         description="Learn to identify hidden water damage behind walls before it causes mold and structural problems. Expert detection guide covering visual, smell, sound, and touch indicators."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

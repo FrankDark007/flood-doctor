@@ -1,64 +1,50 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How quickly should I call for water damage restoration after a roof leak?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Contact a professional water damage restoration company within 24-48 hours of discovering a roof leak. Mold can begin growing within 24-72 hours in wet conditions, and structural damage worsens with time. Emergency tarping and water extraction should happen immediately to prevent further damage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my homeowners insurance cover roof leak water damage from storms?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most Virginia homeowners insurance policies cover sudden and accidental water damage from storm-related roof leaks, including wind and hail damage. However, coverage may be denied if the damage resulted from lack of maintenance or pre-existing conditions. Document all damage with photos and contact your insurance company immediately after a storm."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the signs of hidden water damage in my attic after a storm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Common signs include water stains on ceiling or rafters, sagging insulation, musty odors, visible mold growth, wet or darkened wood, and increased energy bills. Use a flashlight to inspect during and after rain, looking for active leaks, dampness, or daylight visible through the roof."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does roof leak water damage restoration take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Minor roof leak restoration may take 3-5 days, while extensive damage can require 1-2 weeks or longer. The timeline depends on the extent of water damage, presence of mold, structural repairs needed, and insurance approval process. Emergency tarping and water extraction typically happen within 24 hours of your call."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I temporarily fix a roof leak myself during a storm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "While professional emergency tarping is safest, you can temporarily minimize damage by placing buckets under active leaks, moving furniture and valuables, and using tarps inside the attic. Never attempt to climb on your roof during a storm - wait for conditions to improve and call a professional restoration company for emergency tarping services."
-        }
-      }
-    ]
-  };
+const faqs = [
+  {
+    question: "How quickly should I call for water damage restoration after a roof leak?",
+    answer: "Contact a professional water damage restoration company within 24-48 hours of discovering a roof leak. Mold can begin growing within 24-72 hours in wet conditions, and structural damage worsens with time. Emergency tarping and water extraction should happen immediately to prevent further damage."
+  },
+  {
+    question: "Will my homeowners insurance cover roof leak water damage from storms?",
+    answer: "Most Virginia homeowners insurance policies cover sudden and accidental water damage from storm-related roof leaks, including wind and hail damage. However, coverage may be denied if the damage resulted from lack of maintenance or pre-existing conditions. Document all damage with photos and contact your insurance company immediately after a storm."
+  },
+  {
+    question: "What are the signs of hidden water damage in my attic after a storm?",
+    answer: "Common signs include water stains on ceiling or rafters, sagging insulation, musty odors, visible mold growth, wet or darkened wood, and increased energy bills. Use a flashlight to inspect during and after rain, looking for active leaks, dampness, or daylight visible through the roof."
+  },
+  {
+    question: "How long does roof leak water damage restoration take?",
+    answer: "Minor roof leak restoration may take 3-5 days, while extensive damage can require 1-2 weeks or longer. The timeline depends on the extent of water damage, presence of mold, structural repairs needed, and insurance approval process. Emergency tarping and water extraction typically happen within 24 hours of your call."
+  },
+  {
+    question: "Can I temporarily fix a roof leak myself during a storm?",
+    answer: "While professional emergency tarping is safest, you can temporarily minimize damage by placing buckets under active leaks, moving furniture and valuables, and using tarps inside the attic. Never attempt to climb on your roof during a storm - wait for conditions to improve and call a professional restoration company for emergency tarping services."
+  },
+];
 
+const schema = generateBlogArticleSchema({
+  headline: 'Roof Leak Water Damage: Storm Restoration',
+  description: 'Expert guide to identifying, preventing, and restoring roof leak water damage after Northern Virginia storms. Emergency tarping, insurance claims, and professional restoration services.',
+  slug: '/blog/roof-leak-water-damage-virginia-storms/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
+
+const RoofLeakWaterDamageVirginiaStorms: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Roof Leak Water Damage: Storm Restoration"
         description="Expert guide to identifying, preventing, and restoring roof leak water damage after Northern Virginia storms. Emergency tarping, insurance claims, and professional restoration services."
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">

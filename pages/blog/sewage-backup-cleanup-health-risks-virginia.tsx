@@ -1,72 +1,54 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Category 3 black water and why is it dangerous?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Category 3 black water is grossly contaminated water containing pathogenic, toxigenic, or other harmful agents. This includes sewage backups, toilet overflows with feces, and rising floodwater from rivers or streams. It contains bacteria like E. coli, viruses, parasites, fungi, and toxic chemicals that pose serious health risks including gastrointestinal illness, respiratory infections, skin infections, and in severe cases, life-threatening diseases."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I clean up sewage backup myself?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "DIY sewage cleanup is extremely dangerous and not recommended. Sewage contains disease-causing pathogens that require specialized equipment, protective gear, and IICRC-certified expertise to handle safely. Professional restoration companies have industrial-grade extractors, antimicrobial treatments, air scrubbers, and proper disposal methods. Attempting cleanup yourself risks serious illness, cross-contamination, inadequate disinfection, and insurance claim denial."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover sewage backup damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard homeowners insurance policies typically exclude sewage backup damage. However, you can purchase a sewage backup endorsement or rider for $40-$150 annually that provides coverage ranging from $5,000 to $25,000. This optional coverage protects against backups from sewers, drains, sump pumps, and septic systems. Professional documentation and proper cleanup procedures are essential for successful insurance claims."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does professional sewage cleanup take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Professional sewage cleanup typically takes 3-7 days depending on contamination extent, affected square footage, and structural damage. The process includes emergency containment (immediate), water extraction (4-8 hours), contaminated material removal (1-2 days), antimicrobial treatment and disinfection (ongoing throughout), structural drying (3-5 days), and final air quality testing. Restoration or reconstruction may add additional time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the immediate health risks from sewage exposure?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Immediate health risks from sewage exposure include bacterial infections (E. coli, Salmonella, Shigella), viral infections (Hepatitis A, norovirus, rotavirus), parasitic infections (Giardia, Cryptosporidium), respiratory problems from airborne pathogens and sewer gases, skin infections and chemical burns, gastrointestinal illness with severe symptoms, and tetanus risk from contaminated wounds. Vulnerable populations including children, elderly, pregnant women, and immunocompromised individuals face heightened danger."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What IICRC standards apply to sewage remediation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The IICRC S500 Standard and Reference Guide for Professional Water Damage Restoration provides protocols for Category 3 water damage. Key requirements include immediate containment to prevent cross-contamination, complete removal of porous materials that contacted sewage, application of EPA-registered antimicrobial agents, structural drying to moisture content below 15%, negative air pressure systems with HEPA filtration, proper PPE for all technicians, safe disposal following biohazard protocols, and comprehensive documentation throughout the process."
-        }
-      }
-    ]
-  };
+const faqs = [
+  {
+    question: "What is Category 3 black water and why is it dangerous?",
+    answer: "Category 3 black water is grossly contaminated water containing pathogenic, toxigenic, or other harmful agents. This includes sewage backups, toilet overflows with feces, and rising floodwater from rivers or streams. It contains bacteria like E. coli, viruses, parasites, fungi, and toxic chemicals that pose serious health risks including gastrointestinal illness, respiratory infections, skin infections, and in severe cases, life-threatening diseases."
+  },
+  {
+    question: "Can I clean up sewage backup myself?",
+    answer: "DIY sewage cleanup is extremely dangerous and not recommended. Sewage contains disease-causing pathogens that require specialized equipment, protective gear, and IICRC-certified expertise to handle safely. Professional restoration companies have industrial-grade extractors, antimicrobial treatments, air scrubbers, and proper disposal methods. Attempting cleanup yourself risks serious illness, cross-contamination, inadequate disinfection, and insurance claim denial."
+  },
+  {
+    question: "Does homeowners insurance cover sewage backup damage?",
+    answer: "Standard homeowners insurance policies typically exclude sewage backup damage. However, you can purchase a sewage backup endorsement or rider for $40-$150 annually that provides coverage ranging from $5,000 to $25,000. This optional coverage protects against backups from sewers, drains, sump pumps, and septic systems. Professional documentation and proper cleanup procedures are essential for successful insurance claims."
+  },
+  {
+    question: "How long does professional sewage cleanup take?",
+    answer: "Professional sewage cleanup typically takes 3-7 days depending on contamination extent, affected square footage, and structural damage. The process includes emergency containment (immediate), water extraction (4-8 hours), contaminated material removal (1-2 days), antimicrobial treatment and disinfection (ongoing throughout), structural drying (3-5 days), and final air quality testing. Restoration or reconstruction may add additional time."
+  },
+  {
+    question: "What are the immediate health risks from sewage exposure?",
+    answer: "Immediate health risks from sewage exposure include bacterial infections (E. coli, Salmonella, Shigella), viral infections (Hepatitis A, norovirus, rotavirus), parasitic infections (Giardia, Cryptosporidium), respiratory problems from airborne pathogens and sewer gases, skin infections and chemical burns, gastrointestinal illness with severe symptoms, and tetanus risk from contaminated wounds. Vulnerable populations including children, elderly, pregnant women, and immunocompromised individuals face heightened danger."
+  },
+  {
+    question: "What IICRC standards apply to sewage remediation?",
+    answer: "The IICRC S500 Standard and Reference Guide for Professional Water Damage Restoration provides protocols for Category 3 water damage. Key requirements include immediate containment to prevent cross-contamination, complete removal of porous materials that contacted sewage, application of EPA-registered antimicrobial agents, structural drying to moisture content below 15%, negative air pressure systems with HEPA filtration, proper PPE for all technicians, safe disposal following biohazard protocols, and comprehensive documentation throughout the process."
+  },
+];
 
+const schema = generateBlogArticleSchema({
+  headline: 'Sewage Backup: Health Risks & Cleanup',
+  description: 'Sewage backup poses severe health risks from Category 3 black water. Learn about dangerous pathogens, IICRC cleanup standards, insurance coverage, and why professional restoration is essential.',
+  slug: '/blog/sewage-backup-cleanup-health-risks-virginia/',
+  datePublished: '2026-01-01',
+  dateModified: '2026-01-01',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
+
+const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Sewage Backup: Health Risks & Cleanup"
         description="Sewage backup poses severe health risks from Category 3 black water. Learn about dangerous pathogens, IICRC cleanup standards, insurance coverage, and why professional restoration is essential."
-        structuredData={faqSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

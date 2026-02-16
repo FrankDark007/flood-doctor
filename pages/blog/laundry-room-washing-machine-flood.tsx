@@ -1,97 +1,52 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const LaundryRoomWashingMachineFlood: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why are washing machine supply line failures so catastrophic?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Supply line failures are catastrophic because they release water under full pressure (typically 40-80 PSI) continuously until shut off. A ruptured supply line can discharge 6-12 gallons per minute, meaning over 360 gallons in just one hour. If the failure occurs when you're away or asleep, thousands of gallons can flood your home before discovery."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does water travel between floors after a laundry room flood?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Water travels through floor penetrations for plumbing, electrical conduits, HVAC ducts, and wall cavities. It follows gravity and the path of least resistance, often appearing in rooms below or adjacent to the laundry room hours or even days after the initial flood. Water can saturate insulation, pool on ceilings, and damage framing before becoming visible."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Should I replace rubber washing machine hoses with steel braided hoses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, absolutely. Steel braided hoses are significantly more durable and burst-resistant than standard rubber hoses. They're rated to withstand higher pressures and last longer. This $30-50 upgrade can prevent thousands of dollars in flood damage. Replace all hoses every 3-5 years regardless of type."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is an automatic washing machine shutoff valve and do I need one?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Automatic shutoff valves detect leaks or unusual water flow and immediately stop water supply to your washing machine. These devices provide critical protection, especially for second-floor laundry rooms or when you're away from home. They cost $100-300 and can prevent catastrophic floods that cause tens of thousands in damage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will homeowners insurance cover washing machine flood damage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most Northern Virginia homeowners insurance policies cover sudden and accidental washing machine floods, including water damage to floors, walls, ceilings, and belongings. However, damage from gradual leaks due to poor maintenance is typically excluded. Document everything immediately and contact your insurance provider within 24-48 hours."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does professional restoration take after a major washing machine flood?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Minor floods may require 3-5 days for drying and restoration. Major floods affecting multiple rooms, floors, or structural elements can take 1-3 weeks. The timeline depends on water volume, affected materials, humidity levels, and extent of damage. Emergency water extraction begins within hours, but complete structural drying and repairs take longer."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "Flood Doctor Water Damage Restoration",
-        "description": "24/7 emergency water damage restoration serving Northern Virginia",
-        "telephone": "(877) 497-0007",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "VA",
-          "addressLocality": "Northern Virginia"
-        },
-        "areaServed": [
-          "Arlington, VA",
-          "Alexandria, VA",
-          "Fairfax, VA",
-          "Loudoun County, VA",
-          "Prince William County, VA"
-        ],
-        "availableLanguage": "en",
-        "priceRange": "$$",
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
-      }
-    ]
-  };
+  const faqs = [
+    {
+      question: "Why are washing machine supply line failures so catastrophic?",
+      answer: "Supply line failures are catastrophic because they release water under full pressure (typically 40-80 PSI) continuously until shut off. A ruptured supply line can discharge 6-12 gallons per minute, meaning over 360 gallons in just one hour. If the failure occurs when you're away or asleep, thousands of gallons can flood your home before discovery."
+    },
+    {
+      question: "How does water travel between floors after a laundry room flood?",
+      answer: "Water travels through floor penetrations for plumbing, electrical conduits, HVAC ducts, and wall cavities. It follows gravity and the path of least resistance, often appearing in rooms below or adjacent to the laundry room hours or even days after the initial flood. Water can saturate insulation, pool on ceilings, and damage framing before becoming visible."
+    },
+    {
+      question: "Should I replace rubber washing machine hoses with steel braided hoses?",
+      answer: "Yes, absolutely. Steel braided hoses are significantly more durable and burst-resistant than standard rubber hoses. They're rated to withstand higher pressures and last longer. This $30-50 upgrade can prevent thousands of dollars in flood damage. Replace all hoses every 3-5 years regardless of type."
+    },
+    {
+      question: "What is an automatic washing machine shutoff valve and do I need one?",
+      answer: "Automatic shutoff valves detect leaks or unusual water flow and immediately stop water supply to your washing machine. These devices provide critical protection, especially for second-floor laundry rooms or when you're away from home. They cost $100-300 and can prevent catastrophic floods that cause tens of thousands in damage."
+    },
+    {
+      question: "Will homeowners insurance cover washing machine flood damage?",
+      answer: "Most Northern Virginia homeowners insurance policies cover sudden and accidental washing machine floods, including water damage to floors, walls, ceilings, and belongings. However, damage from gradual leaks due to poor maintenance is typically excluded. Document everything immediately and contact your insurance provider within 24-48 hours."
+    },
+    {
+      question: "How long does professional restoration take after a major washing machine flood?",
+      answer: "Minor floods may require 3-5 days for drying and restoration. Major floods affecting multiple rooms, floors, or structural elements can take 1-3 weeks. The timeline depends on water volume, affected materials, humidity levels, and extent of damage. Emergency water extraction begins within hours, but complete structural drying and repairs take longer."
+    },
+  ];
+
+  const schema = generateBlogArticleSchema({
+    headline: 'Washing Machine Floods: Complete Laundry Room Water Damage Response Guide',
+    description: 'Complete guide to washing machine floods and laundry room water damage in Northern Virginia. Emergency response, prevention with steel braided hoses and auto shutoffs, insurance coverage. 24/7: (877) 497-0007',
+    slug: '/blog/laundry-room-washing-machine-flood/',
+    datePublished: '2024-12-15',
+    articleSection: 'Water Damage Emergency',
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Washing Machine Flood: Laundry Room Guide"
         description="Complete guide to washing machine floods and laundry room water damage in Northern Virginia. Emergency response, prevention with steel braided hoses and auto shutoffs, insurance coverage. 24/7: (877) 497-0007"
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">

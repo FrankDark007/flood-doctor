@@ -4,104 +4,38 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How long does professional structural drying take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Professional structural drying typically takes 3-7 days for standard water damage using commercial dehumidifiers and air movers. Class 4 specialty drying (hardwood, concrete, plaster) can require 7-21 days. Timeline depends on material type, saturation depth, and environmental conditions. IICRC-certified technicians monitor moisture daily to verify materials reach safe levels before restoration begins."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What equipment do professionals use for water damage drying?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Professional restoration companies deploy industrial equipment including LGR (Low Grain Refrigerant) dehumidifiers removing 150-200+ pints daily, high-velocity air movers creating optimal evaporation, axial fans for large-volume air circulation, and injection drying systems forcing warm air into wall cavities. This commercial equipment dries structures 5-10 times faster than consumer units while preventing mold growth."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What moisture levels indicate complete drying?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Per IICRC S500 standards, wood framing and drywall should reach 12-15% moisture content, hardwood flooring within 2% of manufacturer specifications, and concrete appropriate for climate. Professional moisture meters verify readings at multiple points. Materials must return to 'normal' pre-loss moisture levels—never rely on visual inspection alone to determine drying completion."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I dry water damage myself or do I need professionals?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Minor clean water spills on non-porous surfaces may be manageable with consumer equipment. However, professional drying becomes essential for: areas exceeding 10 sq ft, category 2-3 contaminated water, wall cavity moisture, structural material saturation, insurance claims requiring documentation, or mold prevention in Virginia's humid climate. Professional equipment and expertise prevent costly secondary damage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is psychrometry and why does it matter for drying?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Psychrometry is the science of air-moisture relationships. It determines how much moisture air can hold at given temperatures, critical for efficient drying. Professionals use psychrometric principles to calculate optimal temperature, humidity, and airflow conditions. In Northern Virginia's humid climate, understanding specific humidity, relative humidity, and dew point ensures effective dehumidification and prevents condensation during the drying process."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "logo": "https://flooddoctor.com/logo.png",
-      "image": "https://flooddoctor.com/og-image.jpg",
-      "description": "Professional water damage restoration and structural drying services in Northern Virginia and Washington DC. IICRC-certified technicians, 24/7 emergency response, advanced dehumidification equipment.",
-      "priceRange": "$$",
-      "telephone": "+1-(877) 497-0007",
-      "email": "info@flooddoctor.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Northern Virginia",
-        "addressRegion": "VA",
-        "addressCountry": "US"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Arlington"
-        },
-        {
-          "@type": "City",
-          "name": "Alexandria"
-        },
-        {
-          "@type": "City",
-          "name": "Fairfax"
-        },
-        {
-          "@type": "City",
-          "name": "Loudoun County"
-        },
-        {
-          "@type": "City",
-          "name": "Prince William County"
-        }
-      ],
-      "serviceType": [
-        "Water Damage Restoration",
-        "Structural Drying",
-        "Dehumidification Services",
-        "Emergency Water Extraction",
-        "Mold Prevention"
-      ]
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "How long does professional structural drying take?",
+    answer: "Professional structural drying typically takes 3-7 days for standard water damage using commercial dehumidifiers and air movers. Class 4 specialty drying (hardwood, concrete, plaster) can require 7-21 days. Timeline depends on material type, saturation depth, and environmental conditions. IICRC-certified technicians monitor moisture daily to verify materials reach safe levels before restoration begins."
+  },
+  {
+    question: "What equipment do professionals use for water damage drying?",
+    answer: "Professional restoration companies deploy industrial equipment including LGR (Low Grain Refrigerant) dehumidifiers removing 150-200+ pints daily, high-velocity air movers creating optimal evaporation, axial fans for large-volume air circulation, and injection drying systems forcing warm air into wall cavities. This commercial equipment dries structures 5-10 times faster than consumer units while preventing mold growth."
+  },
+  {
+    question: "What moisture levels indicate complete drying?",
+    answer: "Per IICRC S500 standards, wood framing and drywall should reach 12-15% moisture content, hardwood flooring within 2% of manufacturer specifications, and concrete appropriate for climate. Professional moisture meters verify readings at multiple points. Materials must return to 'normal' pre-loss moisture levels—never rely on visual inspection alone to determine drying completion."
+  },
+  {
+    question: "Can I dry water damage myself or do I need professionals?",
+    answer: "Minor clean water spills on non-porous surfaces may be manageable with consumer equipment. However, professional drying becomes essential for: areas exceeding 10 sq ft, category 2-3 contaminated water, wall cavity moisture, structural material saturation, insurance claims requiring documentation, or mold prevention in Virginia's humid climate. Professional equipment and expertise prevent costly secondary damage."
+  },
+  {
+    question: "What is psychrometry and why does it matter for drying?",
+    answer: "Psychrometry is the science of air-moisture relationships. It determines how much moisture air can hold at given temperatures, critical for efficient drying. Professionals use psychrometric principles to calculate optimal temperature, humidity, and airflow conditions. In Northern Virginia's humid climate, understanding specific humidity, relative humidity, and dew point ensures effective dehumidification and prevents condensation during the drying process."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Professional Water Damage Drying: The Science of Structural Dehumidification',
+  description: 'Expert guide to professional structural drying and dehumidification. Learn about LGR dehumidifiers, psychrometry, IICRC standards, moisture monitoring, and why professional equipment prevents mold growth after water damage in Virginia homes.',
+  slug: '/blog/professional-drying-dehumidification/',
+  datePublished: '2024-01-15',
+  articleSection: 'Water Damage Science',
+}, faqs);
 
 const ProfessionalDryingDehumidificationArticle: React.FC = () => {
   return (
@@ -109,7 +43,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
       <PageMeta
         title="Structural Drying & Dehumidification Guide"
         description="Expert guide to professional structural drying and dehumidification. Learn about LGR dehumidifiers, psychrometry, IICRC standards, moisture monitoring, and why professional equipment prevents mold growth after water damage in Virginia homes."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

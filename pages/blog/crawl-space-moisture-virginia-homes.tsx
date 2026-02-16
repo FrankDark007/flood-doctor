@@ -3,53 +3,39 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What causes crawl space moisture in Virginia homes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Virginia crawl spaces experience moisture problems from high humidity (averaging 70-80% in summer), poor ventilation, groundwater seepage through porous soil, plumbing leaks, condensation on cold surfaces, and inadequate drainage systems. The state's clay-heavy soil and seasonal rainfall patterns exacerbate these issues."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I know if my crawl space has a moisture problem?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Warning signs include musty odors throughout the home, visible mold or mildew on floor joists, condensation on pipes and ducts, wood rot or soft flooring, increased pest activity, higher energy bills, and allergy symptoms worsening indoors. Standing water or damp soil are obvious indicators requiring immediate attention."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the health risks of crawl space moisture?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Excessive crawl space moisture promotes mold growth that releases spores into living areas, triggering respiratory issues, allergic reactions, asthma attacks, and chronic sinus problems. Wood-destroying fungi weaken structural integrity, while high humidity attracts pests carrying disease. The CDC links indoor mold exposure to numerous health complications."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does crawl space encapsulation cost in Virginia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Professional crawl space encapsulation in Virginia typically ranges from $5,000 to $15,000 depending on square footage, moisture severity, and necessary repairs. This includes vapor barriers, dehumidification systems, drainage installation, and structural treatments. Most homeowners see ROI through reduced energy costs and prevented structural damage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I fix crawl space moisture myself?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While minor improvements like adding gutters or improving grading are DIY-friendly, comprehensive moisture remediation requires professional expertise. Proper encapsulation involves vapor barrier installation, dehumidifier sizing, drainage system design, mold remediation, and structural assessment—all requiring specialized equipment and knowledge to prevent costly mistakes."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "What causes crawl space moisture in Virginia homes?",
+    answer: "Virginia crawl spaces experience moisture problems from high humidity (averaging 70-80% in summer), poor ventilation, groundwater seepage through porous soil, plumbing leaks, condensation on cold surfaces, and inadequate drainage systems. The state's clay-heavy soil and seasonal rainfall patterns exacerbate these issues."
+  },
+  {
+    question: "How do I know if my crawl space has a moisture problem?",
+    answer: "Warning signs include musty odors throughout the home, visible mold or mildew on floor joists, condensation on pipes and ducts, wood rot or soft flooring, increased pest activity, higher energy bills, and allergy symptoms worsening indoors. Standing water or damp soil are obvious indicators requiring immediate attention."
+  },
+  {
+    question: "What are the health risks of crawl space moisture?",
+    answer: "Excessive crawl space moisture promotes mold growth that releases spores into living areas, triggering respiratory issues, allergic reactions, asthma attacks, and chronic sinus problems. Wood-destroying fungi weaken structural integrity, while high humidity attracts pests carrying disease. The CDC links indoor mold exposure to numerous health complications."
+  },
+  {
+    question: "How much does crawl space encapsulation cost in Virginia?",
+    answer: "Professional crawl space encapsulation in Virginia typically ranges from $5,000 to $15,000 depending on square footage, moisture severity, and necessary repairs. This includes vapor barriers, dehumidification systems, drainage installation, and structural treatments. Most homeowners see ROI through reduced energy costs and prevented structural damage."
+  },
+  {
+    question: "Can I fix crawl space moisture myself?",
+    answer: "While minor improvements like adding gutters or improving grading are DIY-friendly, comprehensive moisture remediation requires professional expertise. Proper encapsulation involves vapor barrier installation, dehumidifier sizing, drainage system design, mold remediation, and structural assessment—all requiring specialized equipment and knowledge to prevent costly mistakes."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Crawl Space Moisture Problems in Virginia Homes: Causes, Signs, and Solutions',
+  description: 'Virginia crawl space moisture guide: causes, warning signs, health risks, and professional encapsulation solutions. Expert crawl space remediation serving Northern Virginia.',
+  slug: '/blog/crawl-space-moisture-virginia-homes/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const CrawlSpaceMoistureVirginia: React.FC = () => {
   return (
@@ -57,7 +43,7 @@ const CrawlSpaceMoistureVirginia: React.FC = () => {
       <PageMeta
         title="Crawl Space Moisture: Causes & Solutions"
         description="Virginia crawl space moisture guide: causes, warning signs, health risks, and professional encapsulation solutions. Expert crawl space remediation serving Northern Virginia."
-        structuredData={faqSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

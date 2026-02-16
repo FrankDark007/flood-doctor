@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -67,54 +68,14 @@ const HiddenWaterDamageSigns: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Hidden Water Damage: 10 Warning Signs Homeowners Miss",
-    "description": "Expert guide to detecting hidden water damage before it becomes a crisis. Learn the 10 warning signs, professional detection methods, and when to call for inspection.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
-
-  const businessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "24/7 water damage restoration and mold remediation serving Northern Virginia and Washington DC",
-    "telephone": "877-497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "VA",
-      "addressLocality": "Northern Virginia"
-    },
-    "areaServed": ["Arlington", "Alexandria", "Fairfax", "Loudoun County", "Prince William County", "Washington DC"],
-    "priceRange": "$$"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Hidden Water Damage: 10 Warning Signs Homeowners Miss',
+    description: 'Expert guide to detecting hidden water damage before it becomes a crisis. Learn the 10 warning signs, professional detection methods, and when to call for inspection.',
+    slug: '/blog/hidden-water-damage-signs/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Detection Guide',
+  }, faqs);
 
   const warningSigns = [
     {
@@ -390,7 +351,7 @@ const HiddenWaterDamageSigns: React.FC = () => {
       <PageMeta
         title="Hidden Water Damage: 10 Warning Signs"
         description="Learn to identify hidden water damage before it becomes a crisis. Expert guide covering 10 warning signs, professional detection methods, inspection locations, and prevention strategies for Northern Virginia homeowners."
-        schema={[faqSchema, articleSchema, businessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

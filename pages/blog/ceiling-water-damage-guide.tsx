@@ -1,94 +1,40 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the most common causes of ceiling water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The most common causes include roof leaks from storm damage or worn shingles, upstairs bathroom plumbing failures (toilets, tubs, showers), HVAC condensation line clogs, burst pipes in attics or walls, and improper ventilation causing condensation buildup."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a water-damaged ceiling dangerous?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Water-saturated ceiling materials pose serious risks including structural collapse, electrical hazards from wet wiring, mold growth within 24-48 hours, and contamination if the water source is from sewage. Sagging or bulging ceilings require immediate evacuation and professional assessment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I repair or replace a water-damaged ceiling?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Minor staining from clean water may be repairable. However, replacement is necessary when: drywall has sagged or bulged, water exposure exceeded 48 hours, mold is visible, Category 2/3 contaminated water was involved, or structural damage exists. Professional assessment determines the safest approach."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does ceiling water damage repair cost in Northern Virginia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Costs vary widely: minor repairs ($300-$1,200), moderate damage requiring drywall replacement ($1,500-$4,000), extensive damage with structural repairs ($4,000-$10,000+). Emergency water extraction, mold remediation, and roof repairs add to total costs. Most homeowners insurance covers sudden water damage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I fix ceiling water damage myself?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Small, recent stains from clean water may be DIY-manageable. However, professional restoration is essential for: areas larger than 10 square feet, sagging/bulging ceilings, contaminated water sources, visible mold, electrical concerns, or when structural damage is suspected. Improper repairs risk mold, collapse, and voided insurance claims."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Arlington"
-        },
-        {
-          "@type": "City",
-          "name": "Alexandria"
-        },
-        {
-          "@type": "City",
-          "name": "Fairfax"
-        }
-      ],
-      "service": {
-        "@type": "Service",
-        "serviceType": "Ceiling Water Damage Repair & Restoration",
-        "provider": {
-          "@id": "https://flooddoctor.com/#organization"
-        }
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "What are the most common causes of ceiling water damage?",
+    answer: "The most common causes include roof leaks from storm damage or worn shingles, upstairs bathroom plumbing failures (toilets, tubs, showers), HVAC condensation line clogs, burst pipes in attics or walls, and improper ventilation causing condensation buildup."
+  },
+  {
+    question: "Is a water-damaged ceiling dangerous?",
+    answer: "Yes. Water-saturated ceiling materials pose serious risks including structural collapse, electrical hazards from wet wiring, mold growth within 24-48 hours, and contamination if the water source is from sewage. Sagging or bulging ceilings require immediate evacuation and professional assessment."
+  },
+  {
+    question: "Should I repair or replace a water-damaged ceiling?",
+    answer: "Minor staining from clean water may be repairable. However, replacement is necessary when: drywall has sagged or bulged, water exposure exceeded 48 hours, mold is visible, Category 2/3 contaminated water was involved, or structural damage exists. Professional assessment determines the safest approach."
+  },
+  {
+    question: "How much does ceiling water damage repair cost in Northern Virginia?",
+    answer: "Costs vary widely: minor repairs ($300-$1,200), moderate damage requiring drywall replacement ($1,500-$4,000), extensive damage with structural repairs ($4,000-$10,000+). Emergency water extraction, mold remediation, and roof repairs add to total costs. Most homeowners insurance covers sudden water damage."
+  },
+  {
+    question: "Can I fix ceiling water damage myself?",
+    answer: "Small, recent stains from clean water may be DIY-manageable. However, professional restoration is essential for: areas larger than 10 square feet, sagging/bulging ceilings, contaminated water sources, visible mold, electrical concerns, or when structural damage is suspected. Improper repairs risk mold, collapse, and voided insurance claims."
+  },
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Ceiling Water Damage: Causes, Assessment & Repair Guide',
+  description: 'Complete guide to ceiling water damage repair in Northern Virginia. Learn causes, safety risks, assessment methods, repair vs replacement decisions, and professional restoration costs.',
+  slug: '/blog/ceiling-water-damage-guide/',
+  datePublished: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const CeilingWaterDamageGuide: React.FC = () => {
   return (
@@ -96,7 +42,7 @@ const CeilingWaterDamageGuide: React.FC = () => {
       <PageMeta
         title="Ceiling Water Damage: Causes & Repair"
         description="Complete guide to ceiling water damage repair in Northern Virginia. Learn causes, safety risks, assessment methods, repair vs replacement decisions, and professional restoration costs."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

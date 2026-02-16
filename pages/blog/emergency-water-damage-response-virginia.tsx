@@ -3,97 +3,31 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const EmergencyWaterDamageArticle: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What should I do immediately after discovering water damage in my Virginia home?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call (877) 497-0007 for 24/7 emergency response."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly does mold develop after water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mold can begin developing within 24-48 hours after water exposure. This is why immediate action is critical. IICRC standards recommend professional water extraction and drying within the first 24 hours to prevent microbial growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is water damage covered by homeowners insurance in Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Coverage depends on the water source. Sudden and accidental damage (burst pipes, appliance malfunctions) is typically covered. Flooding from external sources requires separate flood insurance. Gradual damage or lack of maintenance is usually excluded. Document everything and contact your insurer immediately."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I remove water damage myself or do I need professionals?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Minor surface water from small spills can be handled with proper drying. However, category 2 or 3 water, water affecting structural materials, or damage exceeding 10 square feet requires IICRC-certified professionals with specialized equipment for proper extraction, drying, and sanitization."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does the water damage restoration process take in Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Timeline varies by severity. Minor damage may dry in 3-5 days. Moderate damage typically requires 5-7 days. Severe structural damage can take 2-4 weeks. Northern Virginia's humidity levels can extend drying times, making professional dehumidification equipment essential."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "What should I do immediately after discovering water damage in my Virginia home?", answer: "Immediately shut off the water source if possible, turn off electricity to affected areas, document damage with photos, remove standing water if safe, and contact a certified water damage restoration company. In Northern Virginia, call (877) 497-0007 for 24/7 emergency response." },
+    { question: "How quickly does mold develop after water damage?", answer: "Mold can begin developing within 24-48 hours after water exposure. This is why immediate action is critical. IICRC standards recommend professional water extraction and drying within the first 24 hours to prevent microbial growth." },
+    { question: "Is water damage covered by homeowners insurance in Virginia?", answer: "Coverage depends on the water source. Sudden and accidental damage (burst pipes, appliance malfunctions) is typically covered. Flooding from external sources requires separate flood insurance. Gradual damage or lack of maintenance is usually excluded. Document everything and contact your insurer immediately." },
+    { question: "Can I remove water damage myself or do I need professionals?", answer: "Minor surface water from small spills can be handled with proper drying. However, category 2 or 3 water, water affecting structural materials, or damage exceeding 10 square feet requires IICRC-certified professionals with specialized equipment for proper extraction, drying, and sanitization." },
+    { question: "How long does the water damage restoration process take in Virginia?", answer: "Timeline varies by severity. Minor damage may dry in 3-5 days. Moderate damage typically requires 5-7 days. Severe structural damage can take 2-4 weeks. Northern Virginia's humidity levels can extend drying times, making professional dehumidification equipment essential." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "image": "https://flooddoctor.com/logo.png",
-    "telephone": "(877) 497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "VA",
-      "addressLocality": "Northern Virginia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1945
-    },
-    "url": "https://flooddoctor.com",
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-23:59",
-    "areaServed": [
-      "Fairfax County",
-      "Arlington County",
-      "Alexandria",
-      "Loudoun County",
-      "Prince William County"
-    ],
-    "serviceType": [
-      "Emergency Water Damage Restoration",
-      "Flood Cleanup",
-      "Water Extraction",
-      "Structural Drying"
-    ]
-  };
-
-  const combinedSchema = [faqSchema, localBusinessSchema];
+  const schema = generateBlogArticleSchema({
+    headline: "Emergency Water Damage: First 24 Hours",
+    description: "Expert guide to handling water damage emergencies in Northern Virginia. Learn critical first 24-hour response steps, IICRC-certified techniques, and when to call professionals.",
+    slug: "/blog/emergency-water-damage-response-virginia",
+    datePublished: "2025-01-01",
+    articleSection: "Emergency Response",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Emergency Water Damage: First 24 Hours"
         description="Expert guide to handling water damage emergencies in Northern Virginia. Learn critical first 24-hour response steps, IICRC-certified techniques, and when to call professionals at (877) 497-0007."
-        structuredData={combinedSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

@@ -4,13 +4,23 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const CommercialWaterDamageRestorationDC: React.FC = () => {
+  const schema = generateBlogArticleSchema({
+    headline: 'Commercial Water Damage Restoration in DC',
+    description: 'Expert guide to commercial water damage restoration in Washington DC. Learn how to minimize downtime, protect revenue, and restore operations quickly.',
+    slug: '/blog/commercial-water-damage-restoration-dc/',
+    datePublished: '2025-01-01',
+    articleSection: 'Water Damage',
+  });
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Commercial Water Damage Restoration in DC"
         description="Expert guide to commercial water damage restoration in Washington DC. Learn how to minimize downtime, protect revenue, and restore operations quickly."
+        schema={schema}
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
         <h1>Commercial Water Damage Restoration: Minimizing Business Downtime in DC</h1>

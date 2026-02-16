@@ -4,61 +4,43 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How quickly should a commercial property respond to water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Businesses should respond to water damage within the first 24-48 hours to prevent extensive secondary damage, mold growth, and prolonged operational disruption. Every hour of delay increases restoration costs by an average of 15-20% and extends business downtime. Our 24/7 emergency response team can be on-site within 60-90 minutes across Tysons, Arlington, and Fairfax to begin immediate mitigation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What documentation is required for commercial water damage insurance claims?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Essential documentation includes: detailed photographic and video evidence of all damage, comprehensive inventory lists of affected equipment and materials, moisture readings and restoration logs, business interruption records showing lost revenue, employee time tracking during closure, vendor invoices for emergency services, and detailed timeline of the incident and response. Professional restoration companies provide detailed documentation packages that streamline the claims process."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can businesses remain operational during commercial water damage restoration?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In many cases, yes. Professional restoration teams can implement phased restoration plans that isolate affected areas, allowing unaffected sections to remain operational. We use containment barriers, negative air pressure systems, and after-hours scheduling to minimize disruption. For businesses in Tysons, Arlington, and Fairfax, we coordinate with property managers to maintain building access and essential services throughout the restoration process."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the most common causes of commercial water damage in Northern Virginia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The most frequent causes include: HVAC system failures and condensate line issues, aging plumbing infrastructure in older commercial buildings, fire sprinkler system malfunctions, roof leaks during severe weather events, broken water supply lines, sewage backups, and flooding from storms. In the Tysons-Arlington-Fairfax corridor, older commercial properties built in the 1970s-1990s face higher risk due to infrastructure age."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does commercial water damage restoration cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Costs vary significantly based on damage extent, affected square footage, and business type. Small incidents (500-1,000 sq ft) typically range from $3,000-$8,000. Medium-scale damage (1,000-5,000 sq ft) averages $8,000-$25,000. Large commercial losses (5,000+ sq ft) can exceed $50,000-$200,000. However, immediate response can reduce these costs by 40-60%. Most commercial insurance policies cover restoration costs when proper documentation and professional services are used."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should be included in a commercial water damage emergency plan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A comprehensive emergency plan should include: designated emergency response team with clear roles, 24/7 contact information for restoration professionals, detailed facility maps showing water shut-off valves and electrical panels, prioritized asset protection list, employee communication protocols, data backup and IT recovery procedures, temporary relocation plan for critical operations, insurance contact information and policy details, and vendor contact list for emergency services. Regular drills and annual plan updates ensure effective implementation during actual emergencies."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "How quickly should a commercial property respond to water damage?",
+    answer: "Businesses should respond to water damage within the first 24-48 hours to prevent extensive secondary damage, mold growth, and prolonged operational disruption. Every hour of delay increases restoration costs by an average of 15-20% and extends business downtime. Our 24/7 emergency response team can be on-site within 60-90 minutes across Tysons, Arlington, and Fairfax to begin immediate mitigation."
+  },
+  {
+    question: "What documentation is required for commercial water damage insurance claims?",
+    answer: "Essential documentation includes: detailed photographic and video evidence of all damage, comprehensive inventory lists of affected equipment and materials, moisture readings and restoration logs, business interruption records showing lost revenue, employee time tracking during closure, vendor invoices for emergency services, and detailed timeline of the incident and response. Professional restoration companies provide detailed documentation packages that streamline the claims process."
+  },
+  {
+    question: "Can businesses remain operational during commercial water damage restoration?",
+    answer: "In many cases, yes. Professional restoration teams can implement phased restoration plans that isolate affected areas, allowing unaffected sections to remain operational. We use containment barriers, negative air pressure systems, and after-hours scheduling to minimize disruption. For businesses in Tysons, Arlington, and Fairfax, we coordinate with property managers to maintain building access and essential services throughout the restoration process."
+  },
+  {
+    question: "What are the most common causes of commercial water damage in Northern Virginia?",
+    answer: "The most frequent causes include: HVAC system failures and condensate line issues, aging plumbing infrastructure in older commercial buildings, fire sprinkler system malfunctions, roof leaks during severe weather events, broken water supply lines, sewage backups, and flooding from storms. In the Tysons-Arlington-Fairfax corridor, older commercial properties built in the 1970s-1990s face higher risk due to infrastructure age."
+  },
+  {
+    question: "How much does commercial water damage restoration cost?",
+    answer: "Costs vary significantly based on damage extent, affected square footage, and business type. Small incidents (500-1,000 sq ft) typically range from $3,000-$8,000. Medium-scale damage (1,000-5,000 sq ft) averages $8,000-$25,000. Large commercial losses (5,000+ sq ft) can exceed $50,000-$200,000. However, immediate response can reduce these costs by 40-60%. Most commercial insurance policies cover restoration costs when proper documentation and professional services are used."
+  },
+  {
+    question: "What should be included in a commercial water damage emergency plan?",
+    answer: "A comprehensive emergency plan should include: designated emergency response team with clear roles, 24/7 contact information for restoration professionals, detailed facility maps showing water shut-off valves and electrical panels, prioritized asset protection list, employee communication protocols, data backup and IT recovery procedures, temporary relocation plan for critical operations, insurance contact information and policy details, and vendor contact list for emergency services. Regular drills and annual plan updates ensure effective implementation during actual emergencies."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Commercial Water Damage in Northern Virginia: Minimizing Business Downtime',
+  description: 'Expert strategies for Northern Virginia businesses to minimize downtime from water damage. Business continuity planning, insurance documentation, and 24/7 emergency response for Tysons, Arlington, and Fairfax commercial properties.',
+  slug: '/blog/commercial-water-damage-business-continuity/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Commercial Water Damage',
+}, faqs);
 
 const CommercialWaterDamageBusinessContinuity: React.FC = () => {
   return (
@@ -66,7 +48,7 @@ const CommercialWaterDamageBusinessContinuity: React.FC = () => {
       <PageMeta
         title="Commercial Water Damage: Minimizing Downtime"
         description="Expert strategies for Northern Virginia businesses to minimize downtime from water damage. Business continuity planning, insurance documentation, and 24/7 emergency response for Tysons, Arlington, and Fairfax commercial properties."
-        structuredData={structuredData}
+        schema={schema}
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
         <div className="not-prose mb-8">

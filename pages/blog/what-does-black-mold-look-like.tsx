@@ -3,81 +3,38 @@ import { Phone, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does black mold look like?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Black mold (Stachybotrys chartarum) appears as dark greenish-black patches with a slimy or wet texture when actively growing. It often has irregular edges and may look fuzzy when dry. Unlike common molds, toxic black mold typically grows in circular patterns and has a distinctly musty, earthy odor."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is all black-colored mold dangerous?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Many common molds appear black but are not the toxic Stachybotrys chartarum. Cladosporium, Aspergillus niger, and other species can appear dark. However, all mold should be treated seriously and removed professionally, as even non-toxic molds cause allergic reactions and respiratory issues in sensitive individuals."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where does black mold typically grow in homes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Black mold thrives in areas with persistent moisture and cellulose materials. Common locations include: behind drywall after water leaks, under sinks, in bathrooms with poor ventilation, basement walls, around HVAC systems, behind wallpaper, in crawl spaces, and areas affected by flooding or chronic leaks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the health symptoms of black mold exposure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Symptoms include chronic coughing, sneezing, eye irritation, skin rashes, persistent headaches, fatigue, difficulty breathing, and in severe cases, memory issues or neurological symptoms. People with asthma, allergies, or compromised immune systems experience more severe reactions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I test for black mold or just remove it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The EPA recommends removal over testing in most cases. If you see mold, it should be removed regardless of species. Testing is useful when: occupants have unexplained health issues, you suspect hidden mold, for real estate transactions, or for insurance claims requiring documentation."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Arlington" },
-        { "@type": "City", "name": "Alexandria" },
-        { "@type": "City", "name": "Fairfax" },
-        { "@type": "City", "name": "McLean" }
-      ],
-      "service": {
-        "@type": "Service",
-        "serviceType": "Black Mold Remediation",
-        "provider": { "@id": "https://flooddoctor.com/#organization" }
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "What does black mold look like?",
+    answer: "Black mold (Stachybotrys chartarum) appears as dark greenish-black patches with a slimy or wet texture when actively growing. It often has irregular edges and may look fuzzy when dry. Unlike common molds, toxic black mold typically grows in circular patterns and has a distinctly musty, earthy odor."
+  },
+  {
+    question: "Is all black-colored mold dangerous?",
+    answer: "No. Many common molds appear black but are not the toxic Stachybotrys chartarum. Cladosporium, Aspergillus niger, and other species can appear dark. However, all mold should be treated seriously and removed professionally, as even non-toxic molds cause allergic reactions and respiratory issues in sensitive individuals."
+  },
+  {
+    question: "Where does black mold typically grow in homes?",
+    answer: "Black mold thrives in areas with persistent moisture and cellulose materials. Common locations include: behind drywall after water leaks, under sinks, in bathrooms with poor ventilation, basement walls, around HVAC systems, behind wallpaper, in crawl spaces, and areas affected by flooding or chronic leaks."
+  },
+  {
+    question: "What are the health symptoms of black mold exposure?",
+    answer: "Symptoms include chronic coughing, sneezing, eye irritation, skin rashes, persistent headaches, fatigue, difficulty breathing, and in severe cases, memory issues or neurological symptoms. People with asthma, allergies, or compromised immune systems experience more severe reactions."
+  },
+  {
+    question: "Should I test for black mold or just remove it?",
+    answer: "The EPA recommends removal over testing in most cases. If you see mold, it should be removed regardless of species. Testing is useful when: occupants have unexplained health issues, you suspect hidden mold, for real estate transactions, or for insurance claims requiring documentation."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'What Does Black Mold Look Like? Complete Identification Guide',
+  description: 'Learn how to identify black mold (Stachybotrys chartarum) in your home. Visual guide covering appearance, common locations, health risks, and when to call professionals in Northern Virginia.',
+  slug: '/blog/what-does-black-mold-look-like/',
+  datePublished: '2026-01-03',
+  articleSection: 'Mold Remediation',
+}, faqs);
 
 const WhatDoesBlackMoldLookLike: React.FC = () => {
   return (
@@ -85,7 +42,7 @@ const WhatDoesBlackMoldLookLike: React.FC = () => {
       <PageMeta
         title="What Does Black Mold Look Like? Photo Guide"
         description="Learn how to identify black mold (Stachybotrys chartarum) in your home. Visual guide covering appearance, common locations, health risks, and when to call professionals in Northern Virginia."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

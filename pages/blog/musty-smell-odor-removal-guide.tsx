@@ -3,7 +3,8 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import ArticleAuthor from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import {
@@ -56,67 +57,14 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Musty Smell After Water Damage: Complete Odor Elimination Guide",
-    "description": "Comprehensive guide to eliminating odors after water damage in Northern Virginia. Learn about odor sources, professional removal methods, hidden damage detection, and prevention strategies.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "877-497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "VA",
-      "addressLocality": "Northern Virginia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1945
-    },
-    "url": "https://flood.doctor",
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-23:59",
-    "areaServed": [
-      "Fairfax County",
-      "Arlington County",
-      "Alexandria",
-      "Loudoun County",
-      "Prince William County"
-    ]
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Musty Smell After Water Damage: Complete Odor Elimination Guide',
+    description: 'Comprehensive guide to eliminating odors after water damage in Northern Virginia. Learn about odor sources, professional removal methods, hidden damage detection, and prevention strategies.',
+    slug: '/blog/musty-smell-odor-removal-guide/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Odor Removal',
+  }, faqs);
 
   const odorSources = [
     {
@@ -555,7 +503,7 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
       <PageMeta
         title="Musty Smell After Water Damage: Odor Guide"
         description="Comprehensive guide to eliminating musty odors and smells after water damage in Northern Virginia. Professional removal methods, hidden problem detection, air quality testing, and prevention strategies."
-        schema={[faqSchema, articleSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

@@ -1,102 +1,52 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const HVACWaterDamageGuide: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What are the most common causes of HVAC water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Common HVAC water damage causes include clogged condensate drain lines, frozen evaporator coils, damaged drain pans, improper installation, refrigerant leaks causing ice buildup, and ductwork condensation. In Northern Virginia's humid climate, condensation issues are particularly prevalent during summer months."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I know if my AC is causing water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Signs include water pooling around the indoor air handler, water stains on ceilings below AC units, musty odors from vents, reduced cooling efficiency, visible mold around vents or registers, damp insulation in ductwork, and increased humidity levels in your home despite AC operation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can HVAC water damage lead to mold in ductwork?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Moisture from leaks or condensation in ductwork creates ideal conditions for mold growth, especially in Northern Virginia's humid climate. Mold in ducts then circulates spores throughout your home via the HVAC system, creating serious health risks and requiring professional duct cleaning and remediation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I replace or repair my HVAC system after flood damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Replace if the system was submerged, contaminated by sewage, shows electrical damage, has corroded components, or is over 10 years old. Repair may be viable for minor water exposure, recent installations under warranty, or if only specific components like drain pans are damaged. Professional assessment is essential."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I maintain my HVAC to prevent water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Schedule professional HVAC maintenance twice yearly (spring and fall). Monthly tasks include checking condensate drain lines, replacing air filters, and inspecting for moisture around units. In Northern Virginia's climate, more frequent checks during peak cooling season (June-August) help prevent condensation-related water damage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover HVAC water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Coverage depends on the cause. Sudden and accidental leaks (burst pipes, drain pan overflow) are typically covered. Gradual damage from lack of maintenance is usually excluded. Flood damage requires separate flood insurance. Document all damage immediately and contact your insurance provider for specific coverage details."
-        }
-      }
-    ]
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "24/7 Emergency Water Damage Restoration and HVAC Water Damage Remediation in Northern Virginia",
-    "telephone": "(877) 497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "Northern Virginia",
-      "addressCountry": "US"
+  const faqs = [
+    {
+      question: "What are the most common causes of HVAC water damage?",
+      answer: "Common HVAC water damage causes include clogged condensate drain lines, frozen evaporator coils, damaged drain pans, improper installation, refrigerant leaks causing ice buildup, and ductwork condensation. In Northern Virginia's humid climate, condensation issues are particularly prevalent during summer months."
     },
-    "areaServed": [
-      "Arlington, VA",
-      "Alexandria, VA",
-      "Fairfax, VA",
-      "Loudoun County, VA",
-      "Prince William County, VA"
-    ],
-    "availableService": {
-      "@type": "Service",
-      "name": "HVAC Water Damage Restoration",
-      "serviceType": "Water Damage Restoration"
-    }
-  };
+    {
+      question: "How do I know if my AC is causing water damage?",
+      answer: "Signs include water pooling around the indoor air handler, water stains on ceilings below AC units, musty odors from vents, reduced cooling efficiency, visible mold around vents or registers, damp insulation in ductwork, and increased humidity levels in your home despite AC operation."
+    },
+    {
+      question: "Can HVAC water damage lead to mold in ductwork?",
+      answer: "Yes. Moisture from leaks or condensation in ductwork creates ideal conditions for mold growth, especially in Northern Virginia's humid climate. Mold in ducts then circulates spores throughout your home via the HVAC system, creating serious health risks and requiring professional duct cleaning and remediation."
+    },
+    {
+      question: "Should I replace or repair my HVAC system after flood damage?",
+      answer: "Replace if the system was submerged, contaminated by sewage, shows electrical damage, has corroded components, or is over 10 years old. Repair may be viable for minor water exposure, recent installations under warranty, or if only specific components like drain pans are damaged. Professional assessment is essential."
+    },
+    {
+      question: "How often should I maintain my HVAC to prevent water damage?",
+      answer: "Schedule professional HVAC maintenance twice yearly (spring and fall). Monthly tasks include checking condensate drain lines, replacing air filters, and inspecting for moisture around units. In Northern Virginia's climate, more frequent checks during peak cooling season (June-August) help prevent condensation-related water damage."
+    },
+    {
+      question: "Does homeowners insurance cover HVAC water damage?",
+      answer: "Coverage depends on the cause. Sudden and accidental leaks (burst pipes, drain pan overflow) are typically covered. Gradual damage from lack of maintenance is usually excluded. Flood damage requires separate flood insurance. Document all damage immediately and contact your insurance provider for specific coverage details."
+    },
+  ];
 
-  const combinedSchema = {
-    "@context": "https://schema.org",
-    "@graph": [faqSchema, localBusinessSchema]
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'HVAC Water Damage: AC Leaks, Condensation & Ductwork Issues in Northern Virginia',
+    description: 'Comprehensive guide to HVAC water damage from AC leaks, frozen coils, and condensation issues in Northern Virginia. Learn emergency response, mold prevention, and when to replace vs repair. 24/7: (877) 497-0007',
+    slug: '/blog/hvac-water-damage-guide/',
+    datePublished: '2024-01-20',
+    articleSection: 'HVAC Systems',
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="HVAC Water Damage: AC Leaks & Ductwork"
         description="Comprehensive guide to HVAC water damage from AC leaks, frozen coils, and condensation issues in Northern Virginia. Learn emergency response, mold prevention, and when to replace vs repair. 24/7: (877) 497-0007"
-        structuredData={combinedSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8">

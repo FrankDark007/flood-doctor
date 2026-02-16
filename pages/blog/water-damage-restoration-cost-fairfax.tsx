@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   DollarSign,
@@ -53,39 +54,14 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "How Much Does Water Damage Restoration Cost in Fairfax County?",
-    "description": "Comprehensive pricing guide for water damage restoration in Fairfax County, Virginia. Average costs, factors affecting price, insurance coverage, and how to get accurate estimates.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'How Much Does Water Damage Restoration Cost in Fairfax County?',
+    description: 'Comprehensive pricing guide for water damage restoration in Fairfax County, Virginia. Average costs, factors affecting price, insurance coverage, and how to get accurate estimates.',
+    slug: '/blog/water-damage-restoration-cost-fairfax/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Pricing Guide',
+  }, faqs);
 
   const costRanges = [
     {
@@ -256,7 +232,7 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration Cost in Fairfax"
         description="Detailed water damage restoration cost guide for Fairfax County homeowners. Average prices, cost factors, insurance coverage, and how to save money on restoration."
-        schema={[faqSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

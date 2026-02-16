@@ -3,81 +3,38 @@ import { Phone, AlertTriangle, CheckCircle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the difference between mold and mildew?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mildew is a surface fungus that appears flat, powdery, and white/gray, easily wiped away with household cleaners. Mold penetrates materials, appears fuzzy or slimy in various colors (black, green, blue), and requires professional removal when extensive. Mildew is essentially an early-stage, surface-level mold."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is mildew dangerous like mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mildew poses fewer health risks than mold but can still cause respiratory irritation, especially in sensitive individuals. The bigger concern is that mildew indicates excess moisture—the same conditions that allow more dangerous mold to develop. Addressing mildew early prevents mold growth."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can mildew turn into mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Mildew and mold are both fungi that thrive in similar conditions. If moisture problems persist, surface mildew often indicates that deeper mold growth is occurring or imminent inside walls, under flooring, or in other hidden areas. Treat mildew as an early warning sign."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you get rid of mildew vs mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mildew can often be cleaned with household products—white vinegar, baking soda, or commercial mildew cleaners—and a scrub brush. Mold, especially when covering more than 10 square feet or growing inside materials, requires professional remediation with containment, HEPA filtration, and proper disposal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does mildew keep coming back in my bathroom?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Recurring mildew indicates inadequate ventilation or persistent moisture. Solutions include: running exhaust fans during and 30 minutes after showers, fixing any leaks, using a dehumidifier, wiping down wet surfaces, and ensuring grout and caulk are properly sealed. Chronic mildew may indicate hidden leaks requiring professional inspection."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Arlington" },
-        { "@type": "City", "name": "Alexandria" },
-        { "@type": "City", "name": "Fairfax" },
-        { "@type": "City", "name": "McLean" }
-      ],
-      "service": {
-        "@type": "Service",
-        "serviceType": "Mold and Mildew Remediation",
-        "provider": { "@id": "https://flooddoctor.com/#organization" }
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "What is the difference between mold and mildew?",
+    answer: "Mildew is a surface fungus that appears flat, powdery, and white/gray, easily wiped away with household cleaners. Mold penetrates materials, appears fuzzy or slimy in various colors (black, green, blue), and requires professional removal when extensive. Mildew is essentially an early-stage, surface-level mold."
+  },
+  {
+    question: "Is mildew dangerous like mold?",
+    answer: "Mildew poses fewer health risks than mold but can still cause respiratory irritation, especially in sensitive individuals. The bigger concern is that mildew indicates excess moisture—the same conditions that allow more dangerous mold to develop. Addressing mildew early prevents mold growth."
+  },
+  {
+    question: "Can mildew turn into mold?",
+    answer: "Yes. Mildew and mold are both fungi that thrive in similar conditions. If moisture problems persist, surface mildew often indicates that deeper mold growth is occurring or imminent inside walls, under flooring, or in other hidden areas. Treat mildew as an early warning sign."
+  },
+  {
+    question: "How do you get rid of mildew vs mold?",
+    answer: "Mildew can often be cleaned with household products—white vinegar, baking soda, or commercial mildew cleaners—and a scrub brush. Mold, especially when covering more than 10 square feet or growing inside materials, requires professional remediation with containment, HEPA filtration, and proper disposal."
+  },
+  {
+    question: "Why does mildew keep coming back in my bathroom?",
+    answer: "Recurring mildew indicates inadequate ventilation or persistent moisture. Solutions include: running exhaust fans during and 30 minutes after showers, fixing any leaks, using a dehumidifier, wiping down wet surfaces, and ensuring grout and caulk are properly sealed. Chronic mildew may indicate hidden leaks requiring professional inspection."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Mildew vs Mold: Key Differences Every Homeowner Should Know',
+  description: 'Learn the critical differences between mildew and mold, how to identify each, when DIY cleaning works, and when professional remediation is necessary. Expert guide for Virginia homeowners.',
+  slug: '/blog/mildew-vs-mold-difference/',
+  datePublished: '2026-01-03',
+  articleSection: 'Mold Remediation',
+}, faqs);
 
 const MildewVsMoldDifference: React.FC = () => {
   return (
@@ -85,7 +42,7 @@ const MildewVsMoldDifference: React.FC = () => {
       <PageMeta
         title="Mildew vs Mold: Key Differences to Know"
         description="Learn the critical differences between mildew and mold, how to identify each, when DIY cleaning works, and when professional remediation is necessary. Expert guide for Virginia homeowners."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

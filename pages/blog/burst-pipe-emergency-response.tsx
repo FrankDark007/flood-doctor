@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -55,39 +56,14 @@ const BurstPipeEmergencyResponse: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Burst Pipe Emergency: Steps to Take Before the Restoration Team Arrives",
-    "description": "Emergency response guide for burst pipes. Expert step-by-step instructions to minimize water damage, protect your home, and prepare for professional restoration.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Burst Pipe Emergency: Steps to Take Before the Restoration Team Arrives',
+    description: 'Emergency response guide for burst pipes. Expert step-by-step instructions to minimize water damage, protect your home, and prepare for professional restoration.',
+    slug: '/blog/burst-pipe-emergency-response/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Emergency Guide',
+  }, faqs);
 
   const emergencySteps = [
     {
@@ -340,7 +316,7 @@ const BurstPipeEmergencyResponse: React.FC = () => {
       <PageMeta
         title="Burst Pipe Emergency: What to Do First"
         description="Expert emergency response guide for burst pipes. Step-by-step instructions to minimize damage, protect your home, and what to do while waiting for professionals."
-        schema={[faqSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

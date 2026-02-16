@@ -4,125 +4,50 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
+
+const faqs = [
+  {
+    question: "What are the most common causes of window and door water intrusion?",
+    answer: "The most common causes include failed caulking and sealants around frames, damaged or missing flashing, worn weatherstripping, improper installation leaving gaps, storm-driven rain penetrating weak points, condensation buildup, and foundation settling causing frame misalignment. In Northern Virginia, wind-driven rain during severe storms exploits even minor seal failures."
+  },
+  {
+    question: "How can I tell if my windows and doors are leaking?",
+    answer: "Look for water stains or discoloration around window and door frames, peeling or bubbling paint near openings, visible mold growth on walls adjacent to windows, musty odors near exterior walls, warped or soft flooring near entries, daylight visible around closed doors, condensation between window panes, and cracked or missing caulk. Active leaks may show water pooling on sills during rainstorms."
+  },
+  {
+    question: "What is flashing and why does it fail?",
+    answer: "Flashing is metal or composite material installed around windows and doors to direct water away from the building envelope. It fails due to improper installation during construction, corrosion from age and weather exposure, physical damage from storms or impacts, separation from siding during expansion and contraction, and missing kickout flashing at critical junctions. Failed flashing allows water to penetrate wall cavities, causing extensive hidden damage."
+  },
+  {
+    question: "Should I repair or replace leaking windows and doors?",
+    answer: "Repair is appropriate for minor seal failures, damaged weatherstripping, failed caulking, or single broken glass panes. Replace when there's extensive frame rot or deterioration, repeated leak problems despite repairs, condensation between double panes indicating seal failure, single-pane windows in older homes, warped frames that won't seal properly, or when windows exceed 20-25 years old. Replacement provides better energy efficiency and long-term reliability."
+  },
+  {
+    question: "How do I prevent future window and door leaks?",
+    answer: "Inspect and replace caulking every 3-5 years, ensure gutters and downspouts direct water away from openings, check and replace worn weatherstripping annually, verify proper drainage and grading around foundations, inspect flashing during roof work, maintain painted surfaces to prevent wood deterioration, test windows during heavy rain to identify weak points, and schedule professional inspections every 5 years for older homes."
+  },
+  {
+    question: "Will homeowners insurance cover window and door water damage?",
+    answer: "Insurance typically covers sudden, accidental water intrusion from storm damage or catastrophic seal failure. Coverage is usually denied for gradual damage from poor maintenance, wear and tear, or pre-existing conditions. Document all damage with photos immediately, report claims within 24-48 hours, demonstrate regular maintenance, and keep records of repairs. Professional water damage restoration companies provide documentation that supports insurance claims."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Window & Door Leaks: Water Intrusion Causes and Solutions for Northern Virginia Homes',
+  description: 'Complete guide to window and door water intrusion in Northern Virginia homes. Learn causes, detection, repair vs replacement, professional sealing, and prevention strategies.',
+  slug: '/blog/window-door-water-intrusion/',
+  datePublished: '2025-01-01',
+  articleSection: 'Prevention Guide',
+}, faqs);
 
 const WindowDoorWaterIntrusion: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are the most common causes of window and door water intrusion?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The most common causes include failed caulking and sealants around frames, damaged or missing flashing, worn weatherstripping, improper installation leaving gaps, storm-driven rain penetrating weak points, condensation buildup, and foundation settling causing frame misalignment. In Northern Virginia, wind-driven rain during severe storms exploits even minor seal failures."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I tell if my windows and doors are leaking?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Look for water stains or discoloration around window and door frames, peeling or bubbling paint near openings, visible mold growth on walls adjacent to windows, musty odors near exterior walls, warped or soft flooring near entries, daylight visible around closed doors, condensation between window panes, and cracked or missing caulk. Active leaks may show water pooling on sills during rainstorms."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is flashing and why does it fail?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Flashing is metal or composite material installed around windows and doors to direct water away from the building envelope. It fails due to improper installation during construction, corrosion from age and weather exposure, physical damage from storms or impacts, separation from siding during expansion and contraction, and missing kickout flashing at critical junctions. Failed flashing allows water to penetrate wall cavities, causing extensive hidden damage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Should I repair or replace leaking windows and doors?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Repair is appropriate for minor seal failures, damaged weatherstripping, failed caulking, or single broken glass panes. Replace when there's extensive frame rot or deterioration, repeated leak problems despite repairs, condensation between double panes indicating seal failure, single-pane windows in older homes, warped frames that won't seal properly, or when windows exceed 20-25 years old. Replacement provides better energy efficiency and long-term reliability."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I prevent future window and door leaks?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Inspect and replace caulking every 3-5 years, ensure gutters and downspouts direct water away from openings, check and replace worn weatherstripping annually, verify proper drainage and grading around foundations, inspect flashing during roof work, maintain painted surfaces to prevent wood deterioration, test windows during heavy rain to identify weak points, and schedule professional inspections every 5 years for older homes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will homeowners insurance cover window and door water damage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Insurance typically covers sudden, accidental water intrusion from storm damage or catastrophic seal failure. Coverage is usually denied for gradual damage from poor maintenance, wear and tear, or pre-existing conditions. Document all damage with photos immediately, report claims within 24-48 hours, demonstrate regular maintenance, and keep records of repairs. Professional water damage restoration companies provide documentation that supports insurance claims."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "Flood Doctor",
-        "description": "Professional water damage restoration and waterproofing services in Northern Virginia",
-        "telephone": "(877) 497-0007",
-        "areaServed": [
-          "Arlington VA",
-          "Alexandria VA",
-          "Fairfax VA",
-          "Falls Church VA",
-          "McLean VA",
-          "Vienna VA",
-          "Reston VA",
-          "Herndon VA",
-          "Tysons VA",
-          "Springfield VA",
-          "Annandale VA",
-          "Burke VA",
-          "Centreville VA",
-          "Chantilly VA",
-          "Great Falls VA",
-          "Oakton VA",
-          "Dunn Loring VA",
-          "Merrifield VA",
-          "Franconia VA",
-          "Kingstowne VA",
-          "Lorton VA",
-          "Newington VA",
-          "Mount Vernon VA",
-          "Fort Belvoir VA",
-          "Fort Hunt VA",
-          "Hybla Valley VA",
-          "Groveton VA",
-          "Rose Hill VA",
-          "Lincolnia VA",
-          "Seven Corners VA",
-          "Bailey's Crossroads VA",
-          "Idylwood VA",
-          "Pimmit Hills VA",
-          "West Falls Church VA",
-          "Mantua VA",
-          "Fairfax Station VA",
-          "Clifton VA",
-          "Fairfax City VA",
-          "Falls Church City VA",
-          "Arlington County VA",
-          "Fairfax County VA",
-          "Alexandria City VA",
-          "Loudoun County VA",
-          "Prince William County VA"
-        ]
-      }
-    ]
-  };
-
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Window & Door Leaks: Causes & Solutions"
         description="Complete guide to window and door water intrusion in Northern Virginia homes. Learn causes, detection, repair vs replacement, professional sealing, and prevention strategies."
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">

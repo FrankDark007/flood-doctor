@@ -3,7 +3,8 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import ArticleAuthor from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles, { InlineArticleLink } from '../../components/ui/RelatedArticles';
 import {
@@ -58,75 +59,14 @@ const BasementFloodingGuide: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Basement Flooding in Northern Virginia: Prevention, Response & Restoration Guide",
-    "description": "Comprehensive guide to basement flooding in Northern Virginia. Learn causes, immediate response steps, DIY vs professional restoration, waterproofing options, insurance coverage, and cost estimates.",
-    "author": generateAuthorSchema(),
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-02",
-    "dateModified": "2025-01-02",
-    "wordCount": 3500
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "24/7 emergency water damage restoration and basement flood cleanup serving Northern Virginia",
-    "telephone": "(877) 497-0007",
-    "areaServed": {
-      "@type": "State",
-      "name": "Virginia"
-    },
-    "serviceArea": [
-      {
-        "@type": "City",
-        "name": "Fairfax",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "VA"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Arlington",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "VA"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "VA"
-        }
-      }
-    ]
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Basement Flooding in Northern Virginia: Prevention, Response & Restoration Guide',
+    description: 'Comprehensive guide to basement flooding in Northern Virginia. Learn causes, immediate response steps, DIY vs professional restoration, waterproofing options, insurance coverage, and cost estimates.',
+    slug: '/blog/basement-flooding-guide/',
+    datePublished: '2025-01-02',
+    dateModified: '2025-01-02',
+    articleSection: 'Water Damage',
+  }, faqs);
 
   const commonCauses = [
     {
@@ -398,7 +338,7 @@ const BasementFloodingGuide: React.FC = () => {
       <PageMeta
         title="Basement Flooding: Prevention & Restoration"
         description="Complete guide to basement flooding in NoVA. Learn causes, immediate response steps, DIY vs professional restoration, waterproofing solutions, insurance coverage, and cost estimates. 24/7 emergency service: (877) 497-0007"
-        schema={[faqSchema, articleSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

@@ -4,13 +4,23 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const SewageCleanupAlexandriaVA: React.FC = () => {
+  const schema = generateBlogArticleSchema({
+    headline: 'Sewage Cleanup in Alexandria: Solutions',
+    description: 'Expert guide to sewage backup cleanup in Alexandria, VA. Learn about health risks, emergency response, and professional remediation for sewage contamination.',
+    slug: '/blog/sewage-cleanup-alexandria-va/',
+    datePublished: '2025-01-01',
+    articleSection: 'Water Damage',
+  });
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Sewage Cleanup in Alexandria: Solutions"
         description="Expert guide to sewage backup cleanup in Alexandria, VA. Learn about health risks, emergency response, and professional remediation for sewage contamination."
+        schema={schema}
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
         <h1>Sewage Backup Cleanup in Alexandria: Health Risks and Professional Solutions</h1>

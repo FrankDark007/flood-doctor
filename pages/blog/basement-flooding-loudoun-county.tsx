@@ -4,37 +4,31 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does basement flood restoration cost in Loudoun County?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Costs vary based on flood severity, affected area size, and required restoration work. Minor flooding may cost $2,000-$5,000, while severe flooding requiring extensive drying, mold remediation, and reconstruction can range from $10,000-$30,000. Most homeowners insurance policies cover water damage restoration when it meets policy criteria."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How quickly can mold grow after basement flooding?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mold can begin growing within 24-48 hours in optimal conditions (moisture, warmth, organic materials). This is why immediate water extraction and thorough drying are critical. Professional restoration within the first 24 hours significantly reduces mold risk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is basement flooding covered by homeowners insurance in Virginia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on the water source. Sudden plumbing failures are typically covered, but groundwater seepage and overland flooding usually require separate flood insurance. Sewer backup coverage is available as a policy endorsement. Review your policy and consider additional coverage based on your risk level."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "How much does basement flood restoration cost in Loudoun County?",
+    answer: "Costs vary based on flood severity, affected area size, and required restoration work. Minor flooding may cost $2,000-$5,000, while severe flooding requiring extensive drying, mold remediation, and reconstruction can range from $10,000-$30,000. Most homeowners insurance policies cover water damage restoration when it meets policy criteria."
+  },
+  {
+    question: "How quickly can mold grow after basement flooding?",
+    answer: "Mold can begin growing within 24-48 hours in optimal conditions (moisture, warmth, organic materials). This is why immediate water extraction and thorough drying are critical. Professional restoration within the first 24 hours significantly reduces mold risk."
+  },
+  {
+    question: "Is basement flooding covered by homeowners insurance in Virginia?",
+    answer: "It depends on the water source. Sudden plumbing failures are typically covered, but groundwater seepage and overland flooding usually require separate flood insurance. Sewer backup coverage is available as a policy endorsement. Review your policy and consider additional coverage based on your risk level."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Basement Flooding in Loudoun County: Causes, Prevention, and Restoration',
+  description: 'Comprehensive guide to basement flooding in Loudoun County, VA. Learn causes, prevention strategies, and professional restoration solutions for water damage.',
+  slug: '/blog/basement-flooding-loudoun-county/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const BasementFloodingLoudounCounty: React.FC = () => {
   return (
@@ -42,7 +36,7 @@ const BasementFloodingLoudounCounty: React.FC = () => {
       <PageMeta
         title="Basement Flooding in Loudoun County"
         description="Comprehensive guide to basement flooding in Loudoun County, VA. Learn causes, prevention strategies, and professional restoration solutions for water damage."
-        structuredData={faqSchema}
+        schema={schema}
       />
 
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">

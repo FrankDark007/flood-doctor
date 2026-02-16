@@ -4,86 +4,38 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can water-damaged carpet be saved?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Water-damaged carpet can often be saved if extraction begins within 24-48 hours and the water source is Category 1 (clean water). However, carpet padding must almost always be replaced. Category 2 (gray water) or Category 3 (black water) typically requires complete carpet removal for health and safety reasons."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does wet carpet take to dry?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "With professional extraction and drying equipment, carpet typically dries in 12-48 hours. However, drying time depends on carpet thickness, water saturation level, ambient humidity, and airflow. Northern Virginia's humid summers can extend drying time by 30-50% compared to ideal conditions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I replace carpet or carpet pad after water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Carpet padding should be replaced in almost all water damage scenarios. It's porous, retains moisture, and cannot be effectively cleaned or dried. Carpet itself may be salvageable with professional extraction and cleaning if the water is clean (Category 1) and response is immediate. Gray water and black water contamination require both pad and carpet replacement."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the health risks of wet carpet?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wet carpet becomes a breeding ground for mold, bacteria, and allergens within 24-48 hours. Health risks include respiratory problems, allergic reactions, asthma aggravation, skin irritation, and exposure to pathogens from contaminated water. Children and individuals with compromised immune systems face higher risks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does it cost to restore water-damaged carpet vs. replace it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Professional carpet restoration (extraction, pad replacement, cleaning, drying) typically costs $3-$7 per square foot. Complete carpet replacement ranges from $8-$15 per square foot including materials and labor. However, restoration is only viable for clean water damage caught early—contaminated water or delayed response requires replacement regardless of cost comparison."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://flooddoctor.com/#business",
-      "name": "Flood Doctor",
-      "image": "https://flooddoctor.com/logo.png",
-      "description": "24/7 water damage restoration and carpet drying services serving Northern Virginia and Washington DC. IICRC certified professionals specializing in emergency water extraction and flood recovery.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Northern Virginia",
-        "addressRegion": "VA",
-        "addressCountry": "US"
-      },
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "areaServed": [
-        "Arlington, VA",
-        "Alexandria, VA",
-        "Fairfax, VA",
-        "Loudoun County, VA",
-        "Prince William County, VA",
-        "Washington, DC"
-      ]
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "Can water-damaged carpet be saved?",
+    answer: "Water-damaged carpet can often be saved if extraction begins within 24-48 hours and the water source is Category 1 (clean water). However, carpet padding must almost always be replaced. Category 2 (gray water) or Category 3 (black water) typically requires complete carpet removal for health and safety reasons."
+  },
+  {
+    question: "How long does wet carpet take to dry?",
+    answer: "With professional extraction and drying equipment, carpet typically dries in 12-48 hours. However, drying time depends on carpet thickness, water saturation level, ambient humidity, and airflow. Northern Virginia's humid summers can extend drying time by 30-50% compared to ideal conditions."
+  },
+  {
+    question: "Should I replace carpet or carpet pad after water damage?",
+    answer: "Carpet padding should be replaced in almost all water damage scenarios. It's porous, retains moisture, and cannot be effectively cleaned or dried. Carpet itself may be salvageable with professional extraction and cleaning if the water is clean (Category 1) and response is immediate. Gray water and black water contamination require both pad and carpet replacement."
+  },
+  {
+    question: "What are the health risks of wet carpet?",
+    answer: "Wet carpet becomes a breeding ground for mold, bacteria, and allergens within 24-48 hours. Health risks include respiratory problems, allergic reactions, asthma aggravation, skin irritation, and exposure to pathogens from contaminated water. Children and individuals with compromised immune systems face higher risks."
+  },
+  {
+    question: "How much does it cost to restore water-damaged carpet vs. replace it?",
+    answer: "Professional carpet restoration (extraction, pad replacement, cleaning, drying) typically costs $3-$7 per square foot. Complete carpet replacement ranges from $8-$15 per square foot including materials and labor. However, restoration is only viable for clean water damage caught early—contaminated water or delayed response requires replacement regardless of cost comparison."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Wet Carpet: Can Water-Damaged Carpet Be Saved?',
+  description: 'Comprehensive guide to carpet water damage: timeline for salvageability, clean vs contaminated water factors, professional extraction process, replacement criteria, health risks, and cost analysis for NoVA homeowners.',
+  slug: '/blog/wet-carpet-water-damage/',
+  datePublished: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const WetCarpetWaterDamage: React.FC = () => {
   return (
@@ -91,7 +43,7 @@ const WetCarpetWaterDamage: React.FC = () => {
       <PageMeta
         title="Wet Carpet: Can It Be Saved After Flooding?"
         description="Comprehensive guide to carpet water damage: timeline for salvageability, clean vs contaminated water factors, professional extraction process, replacement criteria, health risks, and cost analysis for NoVA homeowners."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

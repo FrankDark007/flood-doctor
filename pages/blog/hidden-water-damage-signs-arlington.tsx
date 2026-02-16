@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -55,39 +56,14 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Signs of Hidden Water Damage in Your Arlington Home",
-    "description": "Expert guide to detecting hidden water damage in Arlington VA homes. Learn the warning signs, inspection techniques, and when to call professionals.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Signs of Hidden Water Damage in Your Arlington Home',
+    description: 'Expert guide to detecting hidden water damage in Arlington VA homes. Learn the warning signs, inspection techniques, and when to call professionals.',
+    slug: '/blog/hidden-water-damage-signs-arlington/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Detection Guide',
+  }, faqs);
 
   const visibleSigns = [
     {
@@ -286,7 +262,7 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
       <PageMeta
         title="Hidden Water Damage Signs in Arlington"
         description="Learn how to identify hidden water damage in your Arlington VA home. Expert guide covering visible signs, detection methods, and when to call professionals."
-        schema={[faqSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

@@ -14,6 +14,7 @@ import {
 } from '../../components/ui/blog/BlogInfoGraphic';
 import { TableOfContents } from '../../components/ui/blog/TableOfContents';
 import { DollarSign, Shield, Clock, FileText, Phone, Home } from 'lucide-react';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const tocItems = [
   { id: 'understanding-coverage', title: 'Understanding Water Damage Coverage in Standard Homeowners Policies' },
@@ -32,11 +33,20 @@ const tocItems = [
 ];
 
 const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
+  const schema = generateBlogArticleSchema({
+    headline: 'Water Damage Insurance Coverage in Virginia',
+    description: 'Comprehensive guide to understanding homeowners insurance coverage for water damage in Virginia. Learn what\'s covered, excluded, and how to file successful claims.',
+    slug: '/blog/homeowners-insurance-water-damage-virginia/',
+    datePublished: '2025-01-01',
+    articleSection: 'Water Damage',
+  });
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Insurance Coverage in Virginia"
         description="Comprehensive guide to understanding homeowners insurance coverage for water damage in Virginia. Learn what's covered, excluded, and how to file successful claims."
+        schema={schema}
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
         <h1>Does Homeowners Insurance Cover Water Damage in Virginia? Complete Guide 2024</h1>

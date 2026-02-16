@@ -4,114 +4,32 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const WaterHeaterFloodingGuide: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What are the warning signs that my water heater is about to fail?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Critical warning signs include rusty or discolored water, rumbling or popping noises, moisture or small puddles around the base, age over 10 years, rusty tank surface or corrosion, fluctuating water temperature, and visible mineral buildup on the tank. If you notice any of these signs, schedule a professional inspection immediately."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do immediately if my water heater starts leaking?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at (877) 497-0007 for professional assistance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much water can a failed water heater release?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A standard residential water heater holds 30-80 gallons. A catastrophic tank rupture can release the entire contents within minutes, plus continuous flow from the supply line if not shut off quickly. This can result in hundreds of gallons flooding your home, causing severe damage to floors, walls, ceilings (if located in attic or upper floor), and belongings."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover water heater flooding damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most homeowners insurance covers sudden and accidental water heater failures, including tank ruptures and valve failures. However, damage from gradual leaks due to poor maintenance is typically excluded. The water heater itself may not be covered, but resulting damage to your home and belongings usually is. Always document damage immediately and contact your insurance provider."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where should water heaters be installed to minimize flood damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Basements are ideal for water heater installation in Northern Virginia homes, as leaks drain to lower levels with minimal structural damage. Garage installations also limit damage potential. Avoid attic installations when possible—a leak can cause catastrophic ceiling and multi-floor damage. Always install on a drain pan with a proper drainage system regardless of location."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I have my water heater inspected?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Professional inspection annually for units over 5 years old, or every 2 years for newer units. Monthly visual checks for leaks, corrosion, and proper operation. Flush the tank annually to remove sediment buildup. Test the temperature-pressure relief valve annually. Northern Virginia's hard water makes regular maintenance especially important."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "What are the warning signs that my water heater is about to fail?", answer: "Critical warning signs include rusty or discolored water, rumbling or popping noises, moisture or small puddles around the base, age over 10 years, rusty tank surface or corrosion, fluctuating water temperature, and visible mineral buildup on the tank. If you notice any of these signs, schedule a professional inspection immediately." },
+    { question: "What should I do immediately if my water heater starts leaking?", answer: "Turn off the water supply at the cold water shutoff valve on top of the tank. Turn off the power supply—flip the circuit breaker for electric units or set the gas valve to pilot for gas units. Turn off the gas supply completely if you smell gas. Remove nearby items and begin water extraction. Call emergency water damage restoration at (877) 497-0007 for professional assistance." },
+    { question: "How much water can a failed water heater release?", answer: "A standard residential water heater holds 30-80 gallons. A catastrophic tank rupture can release the entire contents within minutes, plus continuous flow from the supply line if not shut off quickly. This can result in hundreds of gallons flooding your home, causing severe damage to floors, walls, ceilings (if located in attic or upper floor), and belongings." },
+    { question: "Does homeowners insurance cover water heater flooding damage?", answer: "Most homeowners insurance covers sudden and accidental water heater failures, including tank ruptures and valve failures. However, damage from gradual leaks due to poor maintenance is typically excluded. The water heater itself may not be covered, but resulting damage to your home and belongings usually is. Always document damage immediately and contact your insurance provider." },
+    { question: "Where should water heaters be installed to minimize flood damage?", answer: "Basements are ideal for water heater installation in Northern Virginia homes, as leaks drain to lower levels with minimal structural damage. Garage installations also limit damage potential. Avoid attic installations when possible—a leak can cause catastrophic ceiling and multi-floor damage. Always install on a drain pan with a proper drainage system regardless of location." },
+    { question: "How often should I have my water heater inspected?", answer: "Professional inspection annually for units over 5 years old, or every 2 years for newer units. Monthly visual checks for leaks, corrosion, and proper operation. Flush the tank annually to remove sediment buildup. Test the temperature-pressure relief valve annually. Northern Virginia's hard water makes regular maintenance especially important." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "image": "https://flooddoctor.com/logo.png",
-    "@id": "https://flooddoctor.com",
-    "url": "https://flooddoctor.com",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Northern Virginia",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1045
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://www.instagram.com/flooddoctor"
-    ]
-  };
-
-  const combinedSchema = {
-    "@context": "https://schema.org",
-    "@graph": [faqSchema, localBusinessSchema]
-  };
+  const schema = generateBlogArticleSchema({
+    headline: "Water Heater Flooding: Prevention & Response",
+    description: "Comprehensive guide to water heater failures and flooding in Northern Virginia. Learn warning signs, failure types, emergency response, and prevention strategies.",
+    slug: "/blog/water-heater-flooding-guide",
+    datePublished: "2026-01-01",
+    articleSection: "Prevention",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Heater Flooding: Prevention & Response"
         description="Comprehensive guide to water heater failures and flooding in Northern Virginia. Learn warning signs, failure types, emergency response, and prevention strategies. 24/7 service: (877) 497-0007"
-        structuredData={combinedSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8">

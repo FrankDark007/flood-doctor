@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -55,39 +56,14 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Mold After Water Damage: What Northern Virginia Homeowners Need to Know",
-    "description": "Comprehensive guide to mold growth after water damage in Northern Virginia. Learn about growth timelines, health risks, prevention strategies, and when to call professionals.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Mold After Water Damage: What Northern Virginia Homeowners Need to Know',
+    description: 'Comprehensive guide to mold growth after water damage in Northern Virginia. Learn about growth timelines, health risks, prevention strategies, and when to call professionals.',
+    slug: '/blog/mold-after-water-damage-virginia/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Health & Safety',
+  }, faqs);
 
   const moldTimeline = [
     {
@@ -384,7 +360,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
       <PageMeta
         title="Mold After Water Damage: What to Know"
         description="Comprehensive guide to mold growth after water damage in Northern Virginia. Learn growth timelines, health risks, prevention strategies, and when professional remediation is required."
-        schema={[faqSchema, articleSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

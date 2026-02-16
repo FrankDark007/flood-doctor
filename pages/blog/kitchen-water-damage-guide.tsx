@@ -4,140 +4,33 @@ import { Link } from 'react-router-dom';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const KitchenWaterDamageGuide: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What are the most common causes of kitchen water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The most common causes include dishwasher leaks (door gaskets, hoses, valves), sink overflows and supply line failures, refrigerator water line breaks, garbage disposal leaks, and water leaks behind cabinets from failing plumbing connections. Dishwashers and refrigerators account for over 60% of kitchen water damage claims in Northern Virginia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I tell if there's hidden water damage under my kitchen cabinets?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Warning signs include musty odors from cabinets, warping or bubbling of cabinet bottoms, discoloration or soft spots on cabinet floors, peeling laminate or veneer, pooling water in cabinet interiors, mold growth, and loose or separating cabinet joints. Use a flashlight to inspect under sinks and behind appliances monthly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I replace or repair water-damaged kitchen cabinets?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This depends on damage extent and cabinet type. Solid wood cabinets can often be dried and repaired if caught early. Particleboard and MDF cabinets typically require replacement once saturated, as they swell irreversibly. Minor surface damage may be repairable, but structural swelling, mold growth, or delamination usually requires replacement."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What type of kitchen flooring is most vulnerable to water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hardwood and laminate flooring are most vulnerable, warping and cupping within hours of water exposure. Engineered hardwood is slightly more resistant but still at risk. Tile is water-resistant but grout can absorb water, damaging subflooring. Vinyl and luxury vinyl plank (LVP) are most water-resistant, though adhesive can fail if subfloors get wet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly should I respond to kitchen water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Immediately. Turn off water source within the first minute, extract standing water within the first hour, and call professionals within 2-3 hours. Mold begins growing within 24-48 hours in Northern Virginia's humid climate. Cabinet and flooring damage escalates rapidly—quick response means the difference between minor repairs and full replacement."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does kitchen water damage restoration cost in Northern Virginia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Costs vary widely based on damage extent. Minor dishwasher leaks with quick cleanup: $800-$2,000. Moderate damage requiring cabinet removal and floor drying: $3,000-$8,000. Major damage with cabinet replacement, flooring, and appliance removal: $10,000-$25,000+. Quick response significantly reduces costs by preventing secondary damage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use my kitchen while water damage is being repaired?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Limited use is possible depending on damage extent. If only one area is affected, you may use other parts of the kitchen. However, restoration equipment (dehumidifiers, air movers) is loud and runs 24/7. Cabinets may be removed, appliances disconnected, and flooring inaccessible. Plan for reduced kitchen functionality for 3-14 days depending on scope."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "What are the most common causes of kitchen water damage?", answer: "The most common causes include dishwasher leaks (door gaskets, hoses, valves), sink overflows and supply line failures, refrigerator water line breaks, garbage disposal leaks, and water leaks behind cabinets from failing plumbing connections. Dishwashers and refrigerators account for over 60% of kitchen water damage claims in Northern Virginia." },
+    { question: "How can I tell if there's hidden water damage under my kitchen cabinets?", answer: "Warning signs include musty odors from cabinets, warping or bubbling of cabinet bottoms, discoloration or soft spots on cabinet floors, peeling laminate or veneer, pooling water in cabinet interiors, mold growth, and loose or separating cabinet joints. Use a flashlight to inspect under sinks and behind appliances monthly." },
+    { question: "Should I replace or repair water-damaged kitchen cabinets?", answer: "This depends on damage extent and cabinet type. Solid wood cabinets can often be dried and repaired if caught early. Particleboard and MDF cabinets typically require replacement once saturated, as they swell irreversibly. Minor surface damage may be repairable, but structural swelling, mold growth, or delamination usually requires replacement." },
+    { question: "What type of kitchen flooring is most vulnerable to water damage?", answer: "Hardwood and laminate flooring are most vulnerable, warping and cupping within hours of water exposure. Engineered hardwood is slightly more resistant but still at risk. Tile is water-resistant but grout can absorb water, damaging subflooring. Vinyl and luxury vinyl plank (LVP) are most water-resistant, though adhesive can fail if subfloors get wet." },
+    { question: "How quickly should I respond to kitchen water damage?", answer: "Immediately. Turn off water source within the first minute, extract standing water within the first hour, and call professionals within 2-3 hours. Mold begins growing within 24-48 hours in Northern Virginia's humid climate. Cabinet and flooring damage escalates rapidly—quick response means the difference between minor repairs and full replacement." },
+    { question: "How much does kitchen water damage restoration cost in Northern Virginia?", answer: "Costs vary widely based on damage extent. Minor dishwasher leaks with quick cleanup: $800-$2,000. Moderate damage requiring cabinet removal and floor drying: $3,000-$8,000. Major damage with cabinet replacement, flooring, and appliance removal: $10,000-$25,000+. Quick response significantly reduces costs by preventing secondary damage." },
+    { question: "Can I use my kitchen while water damage is being repaired?", answer: "Limited use is possible depending on damage extent. If only one area is affected, you may use other parts of the kitchen. However, restoration equipment (dehumidifiers, air movers) is loud and runs 24/7. Cabinets may be removed, appliances disconnected, and flooring inaccessible. Plan for reduced kitchen functionality for 3-14 days depending on scope." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "description": "24/7 emergency water damage restoration serving Northern Virginia",
-    "url": "https://flood.doctor",
-    "@id": "https://flood.doctor/#organization",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Northern Virginia",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1910
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Arlington",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": []
-  };
+  const schema = generateBlogArticleSchema({
+    headline: "Kitchen Water Damage: Causes & Restoration",
+    description: "Expert guide to kitchen water damage in Northern Virginia homes. Learn about dishwasher leaks, hidden damage under cabinets, emergency response, cabinet vs. flooring repair decisions, and professional restoration.",
+    slug: "/blog/kitchen-water-damage-guide",
+    datePublished: "2025-01-01",
+    articleSection: "Water Damage",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Kitchen Water Damage: Causes & Restoration"
         description="Expert guide to kitchen water damage in Northern Virginia homes. Learn about dishwasher leaks, hidden damage under cabinets, emergency response, cabinet vs. flooring repair decisions, and professional restoration. Available 24/7: (877) 497-0007"
-        structuredData={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8">

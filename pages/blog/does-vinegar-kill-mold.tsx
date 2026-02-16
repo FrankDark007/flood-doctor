@@ -1,83 +1,40 @@
 import React from 'react';
 import { Phone, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Does vinegar kill mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, white vinegar kills approximately 82% of mold species on contact. Its acetic acid disrupts mold cell membranes and prevents spore reproduction. However, vinegar only works on surface mold—it cannot penetrate porous materials where mold roots (mycelium) grow, so mold often returns after vinegar treatment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is vinegar better than bleach for killing mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For porous surfaces, vinegar is more effective than bleach. Bleach kills surface mold but its water content can actually promote mold regrowth in porous materials. Vinegar penetrates slightly deeper and doesn't add moisture. Neither is truly effective for significant mold infestations—professional remediation is required."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you use vinegar to kill mold?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pour undiluted white vinegar (5% acidity) into a spray bottle. Spray affected areas generously and let sit for at least one hour. Scrub with a brush, wipe clean, and allow to dry completely. Repeat if necessary. Always ensure good ventilation and wear a mask to avoid inhaling mold spores disturbed during cleaning."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What types of mold does vinegar not kill?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vinegar is ineffective against some mold species including certain Penicillium strains. More importantly, vinegar cannot kill mold growing inside materials—only surface mold. For mold in walls, under flooring, in HVAC systems, or any mold covering more than 10 square feet, professional remediation is necessary."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I mix vinegar with other cleaners to kill mold better?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Never mix vinegar with bleach—it creates toxic chlorine gas. Vinegar can be used with baking soda (apply baking soda paste, then spray vinegar for foaming action) but this is more effective for cleaning than mold killing. Hydrogen peroxide is a safer alternative that can be used after vinegar dries completely."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "@id": "https://flooddoctor.com/#organization",
-      "url": "https://flooddoctor.com",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Arlington" },
-        { "@type": "City", "name": "Alexandria" },
-        { "@type": "City", "name": "Fairfax" },
-        { "@type": "City", "name": "McLean" }
-      ],
-      "service": {
-        "@type": "Service",
-        "serviceType": "Mold Remediation",
-        "provider": { "@id": "https://flooddoctor.com/#organization" }
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "Does vinegar kill mold?",
+    answer: "Yes, white vinegar kills approximately 82% of mold species on contact. Its acetic acid disrupts mold cell membranes and prevents spore reproduction. However, vinegar only works on surface mold—it cannot penetrate porous materials where mold roots (mycelium) grow, so mold often returns after vinegar treatment."
+  },
+  {
+    question: "Is vinegar better than bleach for killing mold?",
+    answer: "For porous surfaces, vinegar is more effective than bleach. Bleach kills surface mold but its water content can actually promote mold regrowth in porous materials. Vinegar penetrates slightly deeper and doesn't add moisture. Neither is truly effective for significant mold infestations—professional remediation is required."
+  },
+  {
+    question: "How do you use vinegar to kill mold?",
+    answer: "Pour undiluted white vinegar (5% acidity) into a spray bottle. Spray affected areas generously and let sit for at least one hour. Scrub with a brush, wipe clean, and allow to dry completely. Repeat if necessary. Always ensure good ventilation and wear a mask to avoid inhaling mold spores disturbed during cleaning."
+  },
+  {
+    question: "What types of mold does vinegar not kill?",
+    answer: "Vinegar is ineffective against some mold species including certain Penicillium strains. More importantly, vinegar cannot kill mold growing inside materials—only surface mold. For mold in walls, under flooring, in HVAC systems, or any mold covering more than 10 square feet, professional remediation is necessary."
+  },
+  {
+    question: "Can I mix vinegar with other cleaners to kill mold better?",
+    answer: "Never mix vinegar with bleach—it creates toxic chlorine gas. Vinegar can be used with baking soda (apply baking soda paste, then spray vinegar for foaming action) but this is more effective for cleaning than mold killing. Hydrogen peroxide is a safer alternative that can be used after vinegar dries completely."
+  },
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Does Vinegar Kill Mold? What Actually Works',
+  description: 'Learn if vinegar effectively kills mold, how to use it properly, its limitations, and when DIY methods aren\'t enough. Expert guide from Northern Virginia mold remediation professionals.',
+  slug: '/blog/does-vinegar-kill-mold/',
+  datePublished: '2026-01-03',
+  articleSection: 'Mold Remediation',
+}, faqs);
 
 const DoesVinegarKillMold: React.FC = () => {
   return (
@@ -85,7 +42,7 @@ const DoesVinegarKillMold: React.FC = () => {
       <PageMeta
         title="Does Vinegar Kill Mold? What Works"
         description="Learn if vinegar effectively kills mold, how to use it properly, its limitations, and when DIY methods aren't enough. Expert guide from Northern Virginia mold remediation professionals."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

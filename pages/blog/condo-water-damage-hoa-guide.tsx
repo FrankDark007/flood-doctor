@@ -1,124 +1,52 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
 import { Link } from 'react-router-dom';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const CondoWaterDamageHOAGuide: React.FC = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Who is responsible for water damage in a condo - the HOA or the unit owner?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Responsibility depends on where the damage occurs and its source. Generally, HOAs cover common areas, building structure, and shared systems (roof, exterior walls, plumbing mains). Unit owners cover everything inside their unit boundaries (interior walls, flooring, appliances, fixtures). Virginia condo bylaws typically follow either 'walls-in' (owner covers everything from drywall inward) or 'studs-in' (owner covers from wall studs inward) policies. Always review your specific condo association's master deed and bylaws."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does HOA master insurance cover water damage to my condo unit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "HOA master policies typically cover structural damage to the building but not damage to individual unit interiors, personal property, or improvements. Most master policies have a deductible ($5,000-$25,000) that may be assessed to the responsible unit owner. You need your own HO-6 condo insurance policy to cover interior damage, personal belongings, betterments and improvements, loss of use, and liability. The master policy serves as the building's primary coverage, while your HO-6 policy covers everything inside your unit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens when water damage in my condo comes from a neighbor's unit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "When water damage originates from a neighbor's unit, document everything immediately with photos and videos. Notify your HOA and insurance company within 24 hours. File a claim with your own HO-6 insurance first for immediate repairs - they will pursue subrogation against the responsible party's insurance. The neighbor may be liable if damage resulted from negligence (ignoring maintenance, leaving water running). Your insurance company will determine fault and handle recovery from the responsible party's insurance. Never delay restoration waiting for liability determination - water damage worsens rapidly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I work with my HOA during water damage restoration in my condo?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Notify your HOA property manager immediately when water damage occurs - this is typically required within 24-48 hours per condo bylaws. Obtain written approval before starting any restoration work that affects common areas or building structure. Provide your restoration contractor's insurance and licensing information to the HOA. Coordinate access for contractors through building management. Follow all building rules regarding work hours, elevator use, and debris removal. Document all communications with the HOA. Request copies of the master insurance policy and loss assessment information. Professional restoration companies experienced with Northern Virginia condos can help navigate HOA coordination."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is a loss assessment and when am I responsible for it?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A loss assessment is a special fee the HOA charges unit owners to cover insurance deductibles or uninsured losses affecting the building. You may be assessed if: the HOA's master policy deductible is charged to the responsible unit owner (often $5,000-$25,000), damage affects common areas but is determined to be your responsibility, or the HOA must pay for damage not covered by the master policy. Loss assessment coverage is available as an endorsement on your HO-6 policy, typically providing $50,000-$100,000 in protection. This coverage is essential in Virginia's high-rise condo buildings where master policy deductibles can exceed $25,000."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I do immediately after discovering water damage in my condo?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation ((877) 497-0007 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "Flood Doctor",
-        "image": "https://flooddoctorva.com/logo.png",
-        "@id": "https://flooddoctorva.com",
-        "url": "https://flooddoctorva.com",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Northern Virginia",
-          "addressRegion": "VA",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.8816,
-          "longitude": -77.1045
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Arlington"
-          },
-          {
-            "@type": "City",
-            "name": "Alexandria"
-          },
-          {
-            "@type": "City",
-            "name": "Tysons"
-          }
-        ]
-      }
-    ]
-  };
+  const faqs = [
+    {
+      question: "Who is responsible for water damage in a condo - the HOA or the unit owner?",
+      answer: "Responsibility depends on where the damage occurs and its source. Generally, HOAs cover common areas, building structure, and shared systems (roof, exterior walls, plumbing mains). Unit owners cover everything inside their unit boundaries (interior walls, flooring, appliances, fixtures). Virginia condo bylaws typically follow either 'walls-in' (owner covers everything from drywall inward) or 'studs-in' (owner covers from wall studs inward) policies. Always review your specific condo association's master deed and bylaws."
+    },
+    {
+      question: "Does HOA master insurance cover water damage to my condo unit?",
+      answer: "HOA master policies typically cover structural damage to the building but not damage to individual unit interiors, personal property, or improvements. Most master policies have a deductible ($5,000-$25,000) that may be assessed to the responsible unit owner. You need your own HO-6 condo insurance policy to cover interior damage, personal belongings, betterments and improvements, loss of use, and liability. The master policy serves as the building's primary coverage, while your HO-6 policy covers everything inside your unit."
+    },
+    {
+      question: "What happens when water damage in my condo comes from a neighbor's unit?",
+      answer: "When water damage originates from a neighbor's unit, document everything immediately with photos and videos. Notify your HOA and insurance company within 24 hours. File a claim with your own HO-6 insurance first for immediate repairs - they will pursue subrogation against the responsible party's insurance. The neighbor may be liable if damage resulted from negligence (ignoring maintenance, leaving water running). Your insurance company will determine fault and handle recovery from the responsible party's insurance. Never delay restoration waiting for liability determination - water damage worsens rapidly."
+    },
+    {
+      question: "How do I work with my HOA during water damage restoration in my condo?",
+      answer: "Notify your HOA property manager immediately when water damage occurs - this is typically required within 24-48 hours per condo bylaws. Obtain written approval before starting any restoration work that affects common areas or building structure. Provide your restoration contractor's insurance and licensing information to the HOA. Coordinate access for contractors through building management. Follow all building rules regarding work hours, elevator use, and debris removal. Document all communications with the HOA. Request copies of the master insurance policy and loss assessment information. Professional restoration companies experienced with Northern Virginia condos can help navigate HOA coordination."
+    },
+    {
+      question: "What is a loss assessment and when am I responsible for it?",
+      answer: "A loss assessment is a special fee the HOA charges unit owners to cover insurance deductibles or uninsured losses affecting the building. You may be assessed if: the HOA's master policy deductible is charged to the responsible unit owner (often $5,000-$25,000), damage affects common areas but is determined to be your responsibility, or the HOA must pay for damage not covered by the master policy. Loss assessment coverage is available as an endorsement on your HO-6 policy, typically providing $50,000-$100,000 in protection. This coverage is essential in Virginia's high-rise condo buildings where master policy deductibles can exceed $25,000."
+    },
+    {
+      question: "What should I do immediately after discovering water damage in my condo?",
+      answer: "Take these immediate steps: (1) Stop the water source if possible and safe - shut off water valves to affected fixtures or areas; (2) Document all damage with photos and videos, including date/time stamps; (3) Notify your HOA property manager within 24 hours - this is typically required by bylaws; (4) Contact your HO-6 insurance company to file a claim; (5) Call a professional water damage restoration company for emergency mitigation ((877) 497-0007 for 24/7 service); (6) Remove personal property from affected areas to prevent additional damage; (7) Do not begin major repairs until insurance adjusters inspect the damage. Quick response within 24-48 hours prevents mold growth and reduces restoration costs by 40-60%."
+    },
+  ];
+
+  const schema = generateBlogArticleSchema({
+    headline: 'Condo Water Damage: HOA vs Owner Responsibility Guide for Northern Virginia',
+    description: 'Complete guide to condo water damage responsibility in Northern Virginia. Understand HOA master policies vs unit owner insurance, walls-in coverage, multi-unit damage, and working with condo associations during restoration.',
+    slug: '/blog/condo-water-damage-hoa-guide/',
+    datePublished: '2026-01-01',
+    articleSection: 'Condo & HOA Insurance',
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Condo Water Damage: HOA vs Owner Guide"
         description="Complete guide to condo water damage responsibility in Northern Virginia. Understand HOA master policies vs unit owner insurance, walls-in coverage, multi-unit damage, and working with condo associations during restoration."
-        structuredData={schemaMarkup}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">

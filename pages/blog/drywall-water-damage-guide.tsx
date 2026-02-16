@@ -1,56 +1,42 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How can I tell if my drywall has water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Signs include discoloration (yellow, brown, or dark stains), soft or spongy texture when pressed, bubbling or peeling paint, musty odors, visible mold growth, and warping or sagging sections. Water stains may appear far from the actual leak source as water travels through wall cavities."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I repair vs replace water-damaged drywall?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Minor surface staining from clean water may be repairable if dried within 24-48 hours. Replace drywall if: affected area exceeds 2 square feet, water exposure lasted over 48 hours, Category 2/3 water involved (contaminated), visible mold present, structural integrity compromised, or material remains soft after drying."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can mold grow behind drywall without visible signs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Mold frequently grows in wall cavities on the backside of drywall, insulation, and framing where moisture accumulates but isn't visible. Warning signs include musty odors without visible mold, persistent allergic reactions, and moisture meter readings showing elevated levels despite dry-looking surfaces."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does water-damaged drywall repair cost in Northern Virginia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Small repairs (under 10 sq ft): $300-$800. Medium damage (10-50 sq ft): $800-$2,500. Extensive damage (full room): $2,500-$6,000+. Costs include water extraction, drying, mold remediation if needed, drywall replacement, insulation, painting, and finishing. Professional restoration ensures proper moisture removal and prevents recurring mold issues."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I remove wet drywall myself or hire professionals?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "DIY is only appropriate for small, clean water incidents (under 2 sq ft) caught immediately. Hire professionals for: areas over 10 sq ft (EPA guideline), contaminated water, visible mold, HVAC involvement, structural concerns, or insurance claims. Professionals have moisture detection equipment, industrial drying tools, and proper containment protocols."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "How can I tell if my drywall has water damage?",
+    answer: "Signs include discoloration (yellow, brown, or dark stains), soft or spongy texture when pressed, bubbling or peeling paint, musty odors, visible mold growth, and warping or sagging sections. Water stains may appear far from the actual leak source as water travels through wall cavities."
+  },
+  {
+    question: "When should I repair vs replace water-damaged drywall?",
+    answer: "Minor surface staining from clean water may be repairable if dried within 24-48 hours. Replace drywall if: affected area exceeds 2 square feet, water exposure lasted over 48 hours, Category 2/3 water involved (contaminated), visible mold present, structural integrity compromised, or material remains soft after drying."
+  },
+  {
+    question: "Can mold grow behind drywall without visible signs?",
+    answer: "Yes. Mold frequently grows in wall cavities on the backside of drywall, insulation, and framing where moisture accumulates but isn't visible. Warning signs include musty odors without visible mold, persistent allergic reactions, and moisture meter readings showing elevated levels despite dry-looking surfaces."
+  },
+  {
+    question: "How much does water-damaged drywall repair cost in Northern Virginia?",
+    answer: "Small repairs (under 10 sq ft): $300-$800. Medium damage (10-50 sq ft): $800-$2,500. Extensive damage (full room): $2,500-$6,000+. Costs include water extraction, drying, mold remediation if needed, drywall replacement, insulation, painting, and finishing. Professional restoration ensures proper moisture removal and prevents recurring mold issues."
+  },
+  {
+    question: "Should I remove wet drywall myself or hire professionals?",
+    answer: "DIY is only appropriate for small, clean water incidents (under 2 sq ft) caught immediately. Hire professionals for: areas over 10 sq ft (EPA guideline), contaminated water, visible mold, HVAC involvement, structural concerns, or insurance claims. Professionals have moisture detection equipment, industrial drying tools, and proper containment protocols."
+  },
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Water Damaged Drywall: Repair or Replace?',
+  description: 'Expert guide to assessing water-damaged drywall in Northern Virginia homes. Learn when to repair vs replace, hidden mold risks, professional restoration process, and cost breakdowns from IICRC-certified specialists.',
+  slug: '/blog/drywall-water-damage-guide/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const DrywallWaterDamageGuide: React.FC = () => {
   return (
@@ -58,7 +44,7 @@ const DrywallWaterDamageGuide: React.FC = () => {
       <PageMeta
         title="Water Damaged Drywall: Repair or Replace?"
         description="Expert guide to assessing water-damaged drywall in Northern Virginia homes. Learn when to repair vs replace, hidden mold risks, professional restoration process, and cost breakdowns from IICRC-certified specialists."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

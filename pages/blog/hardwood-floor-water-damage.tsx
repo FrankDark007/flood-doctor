@@ -1,78 +1,40 @@
 import React from 'react';
 import { Phone, AlertTriangle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can hardwood floors be saved after water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Many hardwood floors can be saved if action is taken within 24-48 hours. Solid hardwood has higher salvage rates than engineered wood. Success depends on water category, exposure duration, wood species, and whether proper drying techniques are employed immediately."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is cupping in hardwood floors?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cupping occurs when the edges of hardwood boards rise higher than the center, creating a concave surface. This happens when moisture absorbs into the bottom of the floor faster than the top, causing uneven expansion. Cupping often reverses with proper drying but may require sanding and refinishing."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to dry hardwood floors after water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Initial drying takes 7-14 days with professional equipment, followed by 2-4 weeks of acclimation as the wood returns to equilibrium moisture content. Rushing this process causes permanent damage. Total timeline from damage to refinishing is typically 4-8 weeks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I replace or restore water-damaged hardwood floors?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Restoration is often 40-60% cheaper than replacement when floors can be dried within 48 hours, damage is from clean water, cupping/crowning is moderate, and the subfloor is sound. Replacement is necessary for sewage exposure, severe buckling, delaminated engineered wood, or extensive subfloor damage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does insurance cover hardwood floor water damage restoration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most Northern Virginia homeowners policies cover sudden, accidental water damage like burst pipes or appliance failures. Gradual damage from neglected leaks is typically excluded. Professional documentation within 24-48 hours is critical for claims approval."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "description": "Water damage restoration and hardwood floor drying specialists serving Northern Virginia",
-      "telephone": "(877) 497-0007",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "VA",
-        "addressLocality": "Northern Virginia"
-      },
-      "areaServed": [
-        "Arlington, VA",
-        "Alexandria, VA",
-        "Fairfax, VA",
-        "Loudoun County, VA",
-        "Prince William County, VA"
-      ]
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "Can hardwood floors be saved after water damage?",
+    answer: "Many hardwood floors can be saved if action is taken within 24-48 hours. Solid hardwood has higher salvage rates than engineered wood. Success depends on water category, exposure duration, wood species, and whether proper drying techniques are employed immediately."
+  },
+  {
+    question: "What is cupping in hardwood floors?",
+    answer: "Cupping occurs when the edges of hardwood boards rise higher than the center, creating a concave surface. This happens when moisture absorbs into the bottom of the floor faster than the top, causing uneven expansion. Cupping often reverses with proper drying but may require sanding and refinishing."
+  },
+  {
+    question: "How long does it take to dry hardwood floors after water damage?",
+    answer: "Initial drying takes 7-14 days with professional equipment, followed by 2-4 weeks of acclimation as the wood returns to equilibrium moisture content. Rushing this process causes permanent damage. Total timeline from damage to refinishing is typically 4-8 weeks."
+  },
+  {
+    question: "Should I replace or restore water-damaged hardwood floors?",
+    answer: "Restoration is often 40-60% cheaper than replacement when floors can be dried within 48 hours, damage is from clean water, cupping/crowning is moderate, and the subfloor is sound. Replacement is necessary for sewage exposure, severe buckling, delaminated engineered wood, or extensive subfloor damage."
+  },
+  {
+    question: "Does insurance cover hardwood floor water damage restoration?",
+    answer: "Most Northern Virginia homeowners policies cover sudden, accidental water damage like burst pipes or appliance failures. Gradual damage from neglected leaks is typically excluded. Professional documentation within 24-48 hours is critical for claims approval."
+  },
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Hardwood Floor Water Damage: Can Your Floors Be Saved?',
+  description: 'Expert guide to saving water-damaged hardwood floors in Northern Virginia. Learn about cupping, crowning, buckling, professional drying techniques, restoration vs replacement costs, and the critical 24-48 hour window.',
+  slug: '/blog/hardwood-floor-water-damage/',
+  datePublished: '2024-01-15',
+  articleSection: 'Water Damage Restoration',
+}, faqs);
 
 const HardwoodFloorWaterDamage: React.FC = () => {
   return (
@@ -80,7 +42,7 @@ const HardwoodFloorWaterDamage: React.FC = () => {
       <PageMeta
         title="Hardwood Floor Water Damage: Repair Guide"
         description="Expert guide to saving water-damaged hardwood floors in Northern Virginia. Learn about cupping, crowning, buckling, professional drying techniques, restoration vs replacement costs, and the critical 24-48 hour window."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

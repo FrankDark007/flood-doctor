@@ -3,7 +3,8 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
-import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
+import ArticleAuthor from '../../components/ui/ArticleAuthor';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import {
@@ -72,72 +73,14 @@ const FrozenBurstPipesGuide: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Frozen Pipes & Burst Pipe Emergency Guide for Northern Virginia Homeowners",
-    "description": "Comprehensive guide to preventing frozen pipes and responding to burst pipe emergencies in Northern Virginia. Expert prevention tips, warning signs, emergency response steps, and professional restoration guidance.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://flood.doctor/logo.png"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01"
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "(877) 497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "VA",
-      "addressLocality": "Northern Virginia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1045
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "priceRange": "$$"
-  };
+  const schema = generateBlogArticleSchema({
+    headline: 'Frozen Pipes & Burst Pipe Emergency Guide for Northern Virginia Homeowners',
+    description: 'Comprehensive guide to preventing frozen pipes and responding to burst pipe emergencies in Northern Virginia. Expert prevention tips, warning signs, emergency response steps, and professional restoration guidance.',
+    slug: '/blog/frozen-burst-pipes-guide/',
+    datePublished: '2025-01-01',
+    dateModified: '2025-01-01',
+    articleSection: 'Emergency Response',
+  }, faqs);
 
   const vulnerabilityReasons = [
     {
@@ -475,7 +418,7 @@ const FrozenBurstPipesGuide: React.FC = () => {
       <PageMeta
         title="Frozen & Burst Pipes: Emergency Guide"
         description="Comprehensive guide to preventing frozen pipes and responding to burst pipe emergencies in Northern Virginia. Expert prevention strategies, warning signs, emergency response steps, and professional restoration process for NoVA homeowners."
-        schema={[faqSchema, articleSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section - Animated */}

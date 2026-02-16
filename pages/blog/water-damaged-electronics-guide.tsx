@@ -3,105 +3,32 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
 const WaterDamagedElectronicsGuide: React.FC = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What should I do immediately if my electronics get wet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Immediately power off the device, unplug it from all power sources, remove batteries if possible, and do not attempt to turn it on. Dry the exterior with a soft cloth and place it in a dry area. For valuable electronics, contact professional electronics restoration services within 24-48 hours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does putting electronics in rice actually work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. The rice myth is widespread but ineffective. Rice doesn't create sufficient drying conditions and can introduce dust and starch particles into device openings. Professional restoration uses specialized desiccant chambers, vacuum drying, and controlled environments that rice cannot replicate."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can water-damaged laptops and computers be saved?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Recovery depends on water type, exposure duration, and device status when wet. Clean water exposure caught immediately has 60-80% recovery rates with professional restoration. Contaminated water or devices powered on when wet have significantly lower success rates. Data recovery is often possible even when hardware cannot be salvaged."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does homeowners insurance cover water-damaged electronics?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most Northern Virginia homeowners policies cover electronics damaged by sudden, accidental water events (burst pipes, appliance leaks, storm damage). Coverage typically excludes flood damage without separate flood insurance and gradual damage from neglect. Document damage immediately and file claims within 48 hours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does professional electronics restoration cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Costs vary by device complexity. Basic cleaning and drying for smartphones ranges $150-$300. Laptop restoration costs $200-$500. Desktop computers $250-$600. Server and network equipment $500-$2,000+. Data recovery adds $300-$3,000 depending on storage type and damage severity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What electronics cannot be saved after water damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Devices powered on during water exposure often sustain irreversible circuit damage. Category 3 (sewage) water exposure typically requires disposal due to biohazard contamination. Older electronics with corrosion or those submerged for 48+ hours have minimal recovery potential. However, data recovery remains possible in many cases."
-        }
-      }
-    ]
-  };
+  const faqs = [
+    { question: "What should I do immediately if my electronics get wet?", answer: "Immediately power off the device, unplug it from all power sources, remove batteries if possible, and do not attempt to turn it on. Dry the exterior with a soft cloth and place it in a dry area. For valuable electronics, contact professional electronics restoration services within 24-48 hours." },
+    { question: "Does putting electronics in rice actually work?", answer: "No. The rice myth is widespread but ineffective. Rice doesn't create sufficient drying conditions and can introduce dust and starch particles into device openings. Professional restoration uses specialized desiccant chambers, vacuum drying, and controlled environments that rice cannot replicate." },
+    { question: "Can water-damaged laptops and computers be saved?", answer: "Recovery depends on water type, exposure duration, and device status when wet. Clean water exposure caught immediately has 60-80% recovery rates with professional restoration. Contaminated water or devices powered on when wet have significantly lower success rates. Data recovery is often possible even when hardware cannot be salvaged." },
+    { question: "Does homeowners insurance cover water-damaged electronics?", answer: "Most Northern Virginia homeowners policies cover electronics damaged by sudden, accidental water events (burst pipes, appliance leaks, storm damage). Coverage typically excludes flood damage without separate flood insurance and gradual damage from neglect. Document damage immediately and file claims within 48 hours." },
+    { question: "How much does professional electronics restoration cost?", answer: "Costs vary by device complexity. Basic cleaning and drying for smartphones ranges $150-$300. Laptop restoration costs $200-$500. Desktop computers $250-$600. Server and network equipment $500-$2,000+. Data recovery adds $300-$3,000 depending on storage type and damage severity." },
+    { question: "What electronics cannot be saved after water damage?", answer: "Devices powered on during water exposure often sustain irreversible circuit damage. Category 3 (sewage) water exposure typically requires disposal due to biohazard contamination. Older electronics with corrosion or those submerged for 48+ hours have minimal recovery potential. However, data recovery remains possible in many cases." },
+  ];
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor",
-    "image": "https://flooddoctor.com/logo.png",
-    "telephone": "(877) 497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "VA",
-      "addressLocality": "Northern Virginia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.1945
-    },
-    "url": "https://flooddoctor.com",
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-23:59",
-    "areaServed": [
-      "Fairfax County",
-      "Arlington County",
-      "Alexandria",
-      "Loudoun County",
-      "Prince William County"
-    ],
-    "serviceType": [
-      "Water Damage Restoration",
-      "Electronics Drying",
-      "Emergency Water Extraction",
-      "Content Restoration"
-    ]
-  };
-
-  const combinedSchema = [faqSchema, localBusinessSchema];
+  const schema = generateBlogArticleSchema({
+    headline: "Water Damaged Electronics: Can They Be Saved?",
+    description: "Expert guide to salvaging water-damaged electronics in Northern Virginia. Learn immediate response steps, what NOT to do, professional restoration options, and insurance coverage.",
+    slug: "/blog/water-damaged-electronics-guide",
+    datePublished: "2025-01-01",
+    articleSection: "Water Damage",
+  }, faqs);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damaged Electronics: Can They Be Saved?"
         description="Expert guide to salvaging water-damaged electronics in Northern Virginia. Learn immediate response steps, what NOT to do, professional restoration options, and insurance coverage. 24/7 help: (877) 497-0007"
-        structuredData={combinedSchema}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

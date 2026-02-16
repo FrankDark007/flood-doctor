@@ -4,95 +4,38 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { generateBlogArticleSchema } from '../../utils/schema';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can water damaged furniture be saved?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Many types of furniture can be saved if addressed within 24-48 hours. Solid wood furniture, quality upholstery, and valuable antiques often respond well to professional restoration. Particleboard, MDF, and laminate furniture typically cannot be salvaged once waterlogged."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How quickly should I act to save water damaged furniture?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Begin drying within the first 24 hours to prevent permanent damage and mold growth. Remove cushions, open drawers, and increase air circulation immediately. Contact professional furniture restoration services within 48 hours for valuable pieces."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will insurance cover water damaged furniture?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Homeowners insurance typically covers furniture damage from sudden events like burst pipes or storm flooding. Contents coverage pays for repair or replacement based on your policy limits. Document all damage with photos and save damaged items for adjuster inspection."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What types of furniture cannot be restored after water damage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Particleboard and MDF furniture swell irreversibly when wet. Laminate furniture separates and bubbles. Upholstery exposed to Category 2 or 3 water (sewage, flooding) must be discarded due to contamination. Severely mildewed items may not be salvageable."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does professional furniture restoration cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Simple cleaning and drying ranges from $100-$300 per piece. Wood furniture refinishing costs $300-$800. Upholstery cleaning runs $150-$400 per piece. Antique restoration can exceed $1,000 depending on value and damage extent. Insurance often covers these costs."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Flood Doctor",
-      "image": "https://flooddoctor.net/logo.png",
-      "@id": "https://flooddoctor.net",
-      "url": "https://flooddoctor.net",
-      "telephone": "(877) 497-0007",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Northern Virginia",
-        "addressRegion": "VA",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.8816,
-        "longitude": -77.1753
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://www.facebook.com/flooddoctor",
-        "https://www.instagram.com/flooddoctor"
-      ]
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "Can water damaged furniture be saved?",
+    answer: "Many types of furniture can be saved if addressed within 24-48 hours. Solid wood furniture, quality upholstery, and valuable antiques often respond well to professional restoration. Particleboard, MDF, and laminate furniture typically cannot be salvaged once waterlogged."
+  },
+  {
+    question: "How quickly should I act to save water damaged furniture?",
+    answer: "Begin drying within the first 24 hours to prevent permanent damage and mold growth. Remove cushions, open drawers, and increase air circulation immediately. Contact professional furniture restoration services within 48 hours for valuable pieces."
+  },
+  {
+    question: "Will insurance cover water damaged furniture?",
+    answer: "Homeowners insurance typically covers furniture damage from sudden events like burst pipes or storm flooding. Contents coverage pays for repair or replacement based on your policy limits. Document all damage with photos and save damaged items for adjuster inspection."
+  },
+  {
+    question: "What types of furniture cannot be restored after water damage?",
+    answer: "Particleboard and MDF furniture swell irreversibly when wet. Laminate furniture separates and bubbles. Upholstery exposed to Category 2 or 3 water (sewage, flooding) must be discarded due to contamination. Severely mildewed items may not be salvageable."
+  },
+  {
+    question: "How much does professional furniture restoration cost?",
+    answer: "Simple cleaning and drying ranges from $100-$300 per piece. Wood furniture refinishing costs $300-$800. Upholstery cleaning runs $150-$400 per piece. Antique restoration can exceed $1,000 depending on value and damage extent. Insurance often covers these costs."
+  }
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Water Damaged Furniture: What Can Be Restored?',
+  description: 'Expert guide to restoring water damaged furniture in Northern Virginia. Learn what can be saved, DIY vs professional restoration, insurance claims, and contents restoration services.',
+  slug: '/blog/water-damaged-furniture-restoration/',
+  datePublished: '2024-01-15',
+  articleSection: 'Contents Restoration',
+}, faqs);
 
 const WaterDamagedFurnitureRestoration: React.FC = () => {
   return (
@@ -100,7 +43,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
       <PageMeta
         title="Water Damaged Furniture: Restoration Guide"
         description="Expert guide to restoring water damaged furniture in Northern Virginia. Learn what can be saved, DIY vs professional restoration, insurance claims, and contents restoration services."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">

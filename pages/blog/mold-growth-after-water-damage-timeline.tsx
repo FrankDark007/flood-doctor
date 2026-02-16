@@ -1,56 +1,42 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How fast does mold start growing after water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mold spores can begin colonizing within 24-48 hours after water damage in Northern Virginia's humid climate. Within the first 24 hours, moisture creates ideal conditions, and visible growth often appears within 48-72 hours if untreated."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the first signs of mold after water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Early signs include musty odors (often noticeable within 24 hours), discoloration on walls or ceilings, visible dark spots, increased humidity, and allergic reactions like sneezing or respiratory irritation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can mold grow in 12 hours after water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While visible growth is rare in 12 hours, mold spores begin activating and absorbing moisture within the first few hours. In Northern Virginia's warm, humid summers, the colonization process accelerates significantly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What temperature and humidity promote mold growth?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mold thrives in temperatures between 77-86°F with humidity above 60%. Northern Virginia's summer conditions (often 70-90°F with 60-80% humidity) create optimal mold growth environments after water intrusion."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I prevent mold after water damage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Act within 24-48 hours: extract standing water, remove wet materials, use dehumidifiers and fans, increase ventilation, and contact professional restoration services. Professional drying equipment and antimicrobial treatment are critical in Virginia's humid climate."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: "How fast does mold start growing after water damage?",
+    answer: "Mold spores can begin colonizing within 24-48 hours after water damage in Northern Virginia's humid climate. Within the first 24 hours, moisture creates ideal conditions, and visible growth often appears within 48-72 hours if untreated."
+  },
+  {
+    question: "What are the first signs of mold after water damage?",
+    answer: "Early signs include musty odors (often noticeable within 24 hours), discoloration on walls or ceilings, visible dark spots, increased humidity, and allergic reactions like sneezing or respiratory irritation."
+  },
+  {
+    question: "Can mold grow in 12 hours after water damage?",
+    answer: "While visible growth is rare in 12 hours, mold spores begin activating and absorbing moisture within the first few hours. In Northern Virginia's warm, humid summers, the colonization process accelerates significantly."
+  },
+  {
+    question: "What temperature and humidity promote mold growth?",
+    answer: "Mold thrives in temperatures between 77-86°F with humidity above 60%. Northern Virginia's summer conditions (often 70-90°F with 60-80% humidity) create optimal mold growth environments after water intrusion."
+  },
+  {
+    question: "How do I prevent mold after water damage?",
+    answer: "Act within 24-48 hours: extract standing water, remove wet materials, use dehumidifiers and fans, increase ventilation, and contact professional restoration services. Professional drying equipment and antimicrobial treatment are critical in Virginia's humid climate."
+  },
+];
+
+const schema = generateBlogArticleSchema({
+  headline: 'Mold Growth After Water Damage: Timeline',
+  description: 'Expert timeline of mold growth after water damage in Northern Virginia homes. Learn the 24-48 hour critical window and prevention strategies from certified restoration professionals.',
+  slug: '/blog/mold-growth-after-water-damage-timeline/',
+  datePublished: '2024-01-15',
+  dateModified: '2024-01-15',
+  articleSection: 'Mold Remediation',
+}, faqs);
 
 const MoldGrowthTimelineArticle: React.FC = () => {
   return (
@@ -58,7 +44,7 @@ const MoldGrowthTimelineArticle: React.FC = () => {
       <PageMeta
         title="Mold Growth After Water Damage: Timeline"
         description="Expert timeline of mold growth after water damage in Northern Virginia homes. Learn the 24-48 hour critical window and prevention strategies from certified restoration professionals."
-        structuredData={schemaData}
+        schema={schema}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">
