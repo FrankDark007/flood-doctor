@@ -22,9 +22,19 @@ if (!window.__FLOOD_DOCTOR_CITY__) {
   console.error('[city.tsx] window.__FLOOD_DOCTOR_CITY__ not set! This build may be misconfigured.');
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <CityApp />
-  </React.StrictMode>
-);
+// Prerendered pages have content in #root → hydrateRoot preserves DOM
+// SPA fallback (empty #root) → createRoot renders from scratch
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <CityApp />
+    </React.StrictMode>
+  );
+} else {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <CityApp />
+    </React.StrictMode>
+  );
+}
