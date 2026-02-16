@@ -17,12 +17,62 @@ import * as path from 'path';
 import * as http from 'http';
 import { chromium, type Browser, type Page } from 'playwright';
 import { ALL_PRERENDER_ROUTES } from '../config/routes';
+import { SERVICES } from '../data/services';
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const PORT = 4173;
 const CONCURRENCY = 5;
 const TIMEOUT_MS = 15_000;
 const PRODUCTION_ORIGIN = 'https://flood.doctor';
+
+// ── City route enumeration (used in --cities mode) ──────────────────────────
+
+function getCityRoutes(cityId: string): string[] {
+  const staticRoutes = [
+    '/',
+    '/services/',
+    '/about/',
+    '/contact/',
+    '/request/',
+    '/blog/',
+    '/faq/',
+    '/sign/',
+    '/contract/',
+    '/guides/emergency-response/',
+    '/guides/prevention/',
+    '/guides/insurance-claims/',
+  ];
+
+  // Service routes: extract last segment from nested slug paths
+  const serviceRoutes = SERVICES.map(s => {
+    const segments = s.slug.split('/').filter(Boolean);
+    return `/services/${segments[segments.length - 1]}/`;
+  });
+
+  // Blog routes from filesystem
+  const blogDir = path.resolve(process.cwd(), `src/content/cities/${cityId}/blog`);
+  const blogRoutes = fs.existsSync(blogDir)
+    ? fs.readdirSync(blogDir)
+        .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+        .map((f: string) => `/blog/${f.replace('.ts', '')}/`)
+    : [];
+
+  // Neighborhood routes from filesystem
+  const neighborhoodDir = path.resolve(process.cwd(), `src/content/cities/${cityId}/neighborhoods`);
+  const neighborhoodRoutes = fs.existsSync(neighborhoodDir)
+    ? fs.readdirSync(neighborhoodDir)
+        .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+        .map((f: string) => `/neighborhoods/${f.replace('.ts', '')}/`)
+    : [];
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...neighborhoodRoutes];
+}
+
+const ALL_CITY_IDS = [
+  'mclean', 'arlington', 'alexandria', 'fairfax', 'vienna',
+  'tysons', 'reston', 'herndon', 'ashburn', 'springfield',
+  'fallschurch', 'greatfalls', 'lorton',
+] as const;
 
 // ── Custom server: serves static files, SPA fallback uses clean shell ───────
 
@@ -160,6 +210,157 @@ async function processRoutes(browser: Browser, routes: string[]): Promise<Render
   return results;
 }
 
+// ── City prerender mode ─────────────────────────────────────────────────────
+
+function startCityServer(cityDistDir: string, spaShellHtml: string, port: number): Promise<http.Server> {
+  return new Promise((resolve, reject) => {
+    const server = http.createServer((req, res) => {
+      const urlPath = req.url?.split('?')[0] || '/';
+      const filePath = path.join(cityDistDir, urlPath);
+
+      if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+        const ext = path.extname(filePath).toLowerCase();
+        const mimeTypes: Record<string, string> = {
+          '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css',
+          '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg',
+          '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.woff2': 'font/woff2',
+          '.xml': 'application/xml', '.txt': 'text/plain',
+        };
+        res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
+        fs.createReadStream(filePath).pipe(res);
+        return;
+      }
+
+      const dirIndex = path.join(filePath, 'index.html');
+      if (fs.existsSync(dirIndex) && fs.statSync(dirIndex).isFile()) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        fs.createReadStream(dirIndex).pipe(res);
+        return;
+      }
+
+      // SPA fallback during prerender
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(spaShellHtml);
+    });
+
+    server.on('error', reject);
+    server.listen(port, () => resolve(server));
+  });
+}
+
+async function renderCityRoute(page: Page, route: string, cityDistDir: string, origin: string, port: number): Promise<RenderResult> {
+  const url = `http://localhost:${port}${route}`;
+  try {
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
+    await page.waitForFunction('window.__PRERENDER_READY__ === true', { timeout: TIMEOUT_MS });
+
+    let html = await page.content();
+    html = html.replace(new RegExp(`http://localhost:${port}`, 'g'), origin);
+
+    let outPath: string;
+    if (route === '/') {
+      outPath = path.join(cityDistDir, 'index.html');
+    } else {
+      const cleanRoute = route.endsWith('/') ? route : `${route}/`;
+      const dir = path.join(cityDistDir, cleanRoute);
+      fs.mkdirSync(dir, { recursive: true });
+      outPath = path.join(dir, 'index.html');
+    }
+
+    fs.writeFileSync(outPath, html, 'utf-8');
+    const fileSize = Buffer.byteLength(html, 'utf-8');
+    return { route, success: true, fileSize };
+  } catch (err: any) {
+    return { route, success: false, error: err.message };
+  }
+}
+
+async function prerenderCity(browser: Browser, cityId: string, port: number): Promise<{ cityId: string; results: RenderResult[] }> {
+  const cityDistDir = path.resolve(process.cwd(), `dist-cities/${cityId}`);
+  const origin = `https://${cityId}.flood.doctor`;
+  const routes = getCityRoutes(cityId);
+
+  if (!fs.existsSync(cityDistDir)) {
+    console.error(`  ❌ dist-cities/${cityId}/ not found. Run build:cities first.`);
+    return { cityId, results: [] };
+  }
+
+  const spaShellHtml = fs.readFileSync(path.join(cityDistDir, 'index.html'), 'utf-8');
+
+  // Reorder: homepage last
+  const reorderedRoutes = [...routes.filter(r => r !== '/'), '/'];
+
+  console.log(`\n  📍 ${cityId} (${reorderedRoutes.length} routes)`);
+
+  const server = await startCityServer(cityDistDir, spaShellHtml, port);
+  const results: RenderResult[] = [];
+  let index = 0;
+
+  async function worker() {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    while (index < reorderedRoutes.length) {
+      const currentIndex = index++;
+      const route = reorderedRoutes[currentIndex];
+      const result = await renderCityRoute(page, route, cityDistDir, origin, port);
+      results.push(result);
+      const status = result.success ? '\x1b[32m OK\x1b[0m' : '\x1b[31mFAIL\x1b[0m';
+      const sizeInfo = result.fileSize ? ` (${(result.fileSize / 1024).toFixed(1)}KB)` : '';
+      const errorInfo = result.error ? ` - ${result.error.substring(0, 80)}` : '';
+      console.log(`    [${results.length}/${reorderedRoutes.length}] ${status} ${route}${sizeInfo}${errorInfo}`);
+    }
+    await context.close();
+  }
+
+  const workers = Array.from({ length: Math.min(CONCURRENCY, reorderedRoutes.length) }, () => worker());
+  await Promise.all(workers);
+  server.close();
+
+  return { cityId, results };
+}
+
+async function mainCities() {
+  const distCitiesDir = path.resolve(process.cwd(), 'dist-cities');
+  if (!fs.existsSync(distCitiesDir)) {
+    console.error('Error: dist-cities/ not found. Run "npm run build:cities" first.');
+    process.exit(1);
+  }
+
+  const totalRoutes = ALL_CITY_IDS.reduce((sum, id) => sum + getCityRoutes(id).length, 0);
+  console.log(`\n  Pre-rendering ${totalRoutes} routes across ${ALL_CITY_IDS.length} cities...\n`);
+
+  const browser = await chromium.launch({ headless: true });
+  console.log(`  Chromium launched (${CONCURRENCY} concurrent tabs per city)\n`);
+
+  const startTime = Date.now();
+  const allResults: RenderResult[] = [];
+  const CITY_PORT = PORT + 1; // Use different port than main prerender
+
+  for (const cityId of ALL_CITY_IDS) {
+    const { results } = await prerenderCity(browser, cityId, CITY_PORT);
+    allResults.push(...results);
+  }
+
+  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  await browser.close();
+
+  const succeeded = allResults.filter(r => r.success);
+  const failed = allResults.filter(r => !r.success);
+
+  console.log(`\n  Done in ${elapsed}s`);
+  console.log(`  Succeeded: ${succeeded.length}/${allResults.length}`);
+
+  if (failed.length > 0) {
+    console.log(`\n  FAILED ROUTES:`);
+    for (const f of failed) {
+      console.log(`    ${f.route} — ${f.error}`);
+    }
+    process.exit(1);
+  }
+
+  console.log(`\n  All city routes pre-rendered successfully.\n`);
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -216,7 +417,18 @@ async function main() {
   console.log(`\n  All routes pre-rendered successfully.\n`);
 }
 
-main().catch(err => {
-  console.error('Pre-render failed:', err);
-  process.exit(1);
-});
+// ── CLI dispatch ─────────────────────────────────────────────────────────────
+
+const isCitiesMode = process.argv.includes('--cities');
+
+if (isCitiesMode) {
+  mainCities().catch(err => {
+    console.error('City pre-render failed:', err);
+    process.exit(1);
+  });
+} else {
+  main().catch(err => {
+    console.error('Pre-render failed:', err);
+    process.exit(1);
+  });
+}
