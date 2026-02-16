@@ -176,7 +176,7 @@ const serviceGroups: ServiceGroup[] = [
     items: [
       { text: 'Pre-mitigation photo/video documentation', detail: '100+ photos minimum' },
       { text: 'Daily progress photos and moisture readings' },
-      { text: 'Equipment inventory logs', detail: 'What's running, where, how long' },
+      { text: 'Equipment inventory logs', detail: 'What\'s running, where, how long' },
       { text: 'Moisture map diagrams', detail: 'Floor plans with readings' },
       { text: 'Psychrometric data logs' },
       { text: 'Certificate of Satisfactory Completion', detail: 'When dry' },
