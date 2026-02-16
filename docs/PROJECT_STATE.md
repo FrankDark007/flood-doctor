@@ -1,10 +1,10 @@
 # PROJECT_STATE.md
 
-Last updated: 2026-02-15
+Last updated: 2026-02-16
 
 ## Architecture
 
-- **Framework**: Vite + React (client-side rendering)
+- **Framework**: Vite + React 19 + TypeScript + Tailwind CSS
 - **Prerender**: Playwright-based static HTML generation (scripts/prerender.ts)
 - **Hosting**: Apache shared hosting (132.148.253.156:22, user hubbds2w11bg)
 - **Domain**: flood.doctor is an **addon domain** → ~/public_html/flood.doctor/
@@ -26,7 +26,7 @@ Last updated: 2026-02-15
 <!-- METRICS:END -->
 - **Duplicate H1 tags**: 0
 - **Broken internal links**: 0
-- **Build time**: ~15 seconds
+- **Build time**: ~12 seconds
 
 ## Route Breakdown
 
@@ -43,14 +43,14 @@ Last updated: 2026-02-15
 
 ## Completed Work (Chronological)
 
-- **2026-02-15**: Title tag shortening — all 188 pages ≤ 60 chars, 0 duplicates
-- **2026-02-13**: H1 deduplication — 0 duplicate H1 across all pages
-- **2026-02-13**: Broken link repair — 94 source files audited and fixed
-- **2026-02-13**: Route consolidation — 8 city water-damage pages merged to keyword landing pages via 301
-- **2026-02-13**: Sitemap cleanup — removed test pages, duplicate URLs
-- **2026-02-13**: SPA fallback removal — replaced catch-all 200 with real 404
-- **2026-02-13**: Duplicate brand removal — "| Flood Doctor" appeared twice in 29 titles
-- **Pre-2026-02**: Playwright prerender pipeline, config/routes.ts single source of truth, hydration detection, sitemap generation from shared config
+- **2026-02-16**: Service detail post-process layout redesign — removed nested sidebar, added TopicJumpLinks, RelatedResourcesCard, section H2, h2→h3 accordion, controlled accordion state, mobile sidebar slim, aria attrs
+- **2026-02-16**: Standard Project Package (P2 #6) — /resources/standard-project-package/ with 6 service groups, 12 FAQs, schema
+- **2026-02-16**: Cost Calculator audit + fixes (P1 #4) — schema fix, a11y, legal disclaimer, inbound/outbound links
+- **2026-02-15**: Schema markup rollout (P0 #1) — all content pages have structured data via @graph
+- **2026-02-15**: Title tag shortening — all 189 pages ≤ 60 chars, 0 duplicates
+- **2026-02-15**: Location meta description cleanup (P1 #3) — phone numbers removed from 28 pages
+- **2026-02-13**: H1 deduplication, broken link repair, route consolidation, sitemap cleanup, SPA fallback removal
+- **Pre-2026-02**: Playwright prerender pipeline, config/routes.ts SSOT, hydration detection, city subdomain architecture
 
 ## Active Decisions
 
@@ -62,6 +62,8 @@ Last updated: 2026-02-15
 | PageMeta auto-suffix | Consistent branding, single place to change |
 | Static prerender (not SSR) | Shared hosting, no Node server in production |
 | config/routes.ts as SSOT | Prevents route/sitemap/prerender drift |
+| Accordion state lifted to parent | Jump links can control which section is open |
+| No IntersectionObserver for accordion | Deterministic state sync via onSectionChange callback |
 
 ## Known Issues / Open Risks
 
@@ -69,9 +71,10 @@ Last updated: 2026-02-15
 - **Cloudflare cache**: Must purge after deploy or changes won't be visible
 - **PageMeta 45-char limit**: Any new page title must be ≤ 45 chars in source (15 chars reserved for brand suffix)
 - **No automated CI**: Build + prerender verification is manual (run locally before deploy)
-- **Location page meta descriptions**: Some still contain phone numbers (not titles — titles are clean)
+- **max-h-[5000px] accordion**: Can jank on very long content sections
+- **scroll-margin-top: 100px**: Assumes fixed navbar height — update if navbar changes
 
-## What Not To Change
+## Guardrails — What Not To Change
 
 - **Do not** reintroduce SPA catch-all fallback (200 for all routes)
 - **Do not** remove or bypass the prerender pipeline
@@ -80,3 +83,5 @@ Last updated: 2026-02-15
 - **Do not** create duplicate canonical structures (path + subdomain for same content)
 - **Do not** modify homepage (pages/fd-home-v4/*) without explicit permission
 - **Do not** add secrets or API keys to frontend code
+- **Do not** add IntersectionObserver scroll spy to accordion sections
+- **Do not** modify ServiceDetailNew.tsx lines 1–170 (hero through process tiles)

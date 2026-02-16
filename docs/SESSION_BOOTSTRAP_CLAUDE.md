@@ -1,60 +1,69 @@
 # SESSION_BOOTSTRAP_CLAUDE.md
 
-Copy-paste blocks for starting and ending Claude Code sessions on this repo.
+Last updated: 2026-02-16
 
----
-
-## New Session Start
-
-Paste this at the beginning of every new Claude Code session:
+## Quick Resume
 
 ```
-Read the following files in order before doing anything:
-
-1. /docs/PROJECT_STATE.md
-2. /docs/AI_EXECUTION_PROTOCOL.md
-3. /docs/OPEN_PRIORITIES.md
-4. /docs/CHANGELOG_AI.md
-
-Confirm:
-- Current architecture (framework, hosting, prerender pipeline)
-- Key metrics (routes, titles, H1s, broken links)
-- Active decisions (subdomains, PageMeta suffix, static prerender)
-- What NOT to change
-- Current open priorities
-
-Then tell me what you understand and ask what I'd like to work on.
+Read these files before doing anything:
+1. .claude/session.md
+2. .claude/project-history.md
+3. docs/PROJECT_STATE.md
+4. docs/OPEN_PRIORITIES.md
+Then confirm understanding and ask what to work on.
 ```
 
----
+## Architecture (8 bullets)
 
-## End of Session
+- Vite + React 19 + TypeScript + Tailwind CSS, no src/ folder (flat root)
+- Playwright prerender: 189 static HTML pages from config/routes.ts (SSOT)
+- Apache shared hosting + Cloudflare CDN, deploy via SSH/rsync
+- PageMeta auto-appends " | Flood Doctor" (15 chars) → source titles ≤ 45 chars
+- Real 404 via .htaccess, no SPA catch-all
+- 13 independent city subdomain builds (CityApp.tsx)
+- Schema via utils/schema.ts + PageMeta @graph injection
+- Service detail pages: ServiceDetailNew.tsx template (27 services)
 
-Before ending any session, run these steps:
+## Current Metrics
+
+| Metric | Value |
+|--------|-------|
+| Pre-rendered routes | 189 |
+| Titles > 60 chars | 0 |
+| Duplicate titles | 0 |
+| Duplicate H1 | 0 |
+| Broken internal links | 0 |
+| Build time | ~12s |
+
+## Current Priority
+
+See `docs/OPEN_PRIORITIES.md` for ranked backlog.
+
+## Hard Constraints
+
+- Do NOT modify pages/fd-home-v4/* without permission
+- Do NOT add routes without config/routes.ts entry
+- Do NOT inject meta outside PageMeta
+- Do NOT add secrets to frontend code
+- Do NOT add IntersectionObserver to accordion sections
+- Do NOT modify ServiceDetailNew.tsx lines 1–170
+- Route count must stay at 189 unless explicitly adding pages
+
+## SEO Guardrails
+
+- 1 canonical per page, 1 H1 per page
+- Source title ≤ 45 chars (rendered ≤ 60 with brand suffix)
+- Heading hierarchy: H1 → H2 → H3 (no skips)
+- All pages must have structured data via PageMeta schema prop
+- Internal links must use routes from config/routes.ts
+
+## End of Session Checklist
 
 ```
-1. Commit all pending changes (one logical change per commit)
-2. Run: npm run build — confirm 188/188 pass
-3. Run: node /tmp/title-audit.mjs — confirm 0 over-60, 0 duplicates
-4. Update /docs/PROJECT_STATE.md metrics if any changed
-5. Append to /docs/CHANGELOG_AI.md if substantive work was done
-6. Update /docs/OPEN_PRIORITIES.md if any priority was completed or added
-7. Push to origin/main
-8. Report: what changed, metrics before/after, files touched
-```
-
----
-
-## Quick Context Reload
-
-If a session loses context mid-conversation:
-
-```
-Re-read /docs/PROJECT_STATE.md and /docs/AI_EXECUTION_PROTOCOL.md.
-Do not modify any files until you confirm understanding of:
-- 188 pre-rendered routes
-- PageMeta 45-char source title limit
-- Real 404 handling (no SPA fallback)
-- config/routes.ts as single source of truth
-- 0 duplicate titles, 0 duplicate H1, 0 broken links
+1. Commit all changes to main
+2. npm run build — confirm 189/189 pass
+3. node scripts/update-project-state.mjs
+4. Update docs/CHANGELOG_AI.md
+5. Update .claude/session.md + .claude/project-history.md
+6. Report: files changed, metrics, commit hash
 ```
