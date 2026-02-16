@@ -1,102 +1,45 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const FallsChurchMoldRemoval: React.FC = () => {
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor Mold Removal & Remediation - Falls Church",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://falls-church.flood.doctor/mold-removal",
-    "url": "https://falls-church.flood.doctor/mold-removal",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Falls Church",
-      "addressLocality": "Falls Church",
-      "addressRegion": "VA",
-      "postalCode": "22046",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8823,
-      "longitude": -77.1711
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://twitter.com/flooddoctor"
-    ]
-  };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why is mold so common in Falls Church homes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Falls Church's humid climate combined with the area's older housing stock creates ideal conditions for mold growth. Many homes built before 1980 have insufficient ventilation, aging HVAC systems, and moisture issues from outdated construction methods. Basements in Seven Corners and Bailey's Crossroads are particularly susceptible."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly should I address mold in my Falls Church property?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Immediately. Mold can spread rapidly and pose serious health risks to occupants. In Falls Church's humid environment, small mold problems can become major infestations within days. Our 24/7 emergency response ensures we can start remediation before the problem escalates."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide mold testing and inspection in Falls Church?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we offer comprehensive mold testing and inspection services throughout Falls Church City, Merrifield, and surrounding areas. Our certified inspectors use advanced moisture meters, thermal imaging, and air quality testing to identify hidden mold and moisture sources."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is mold removal covered by insurance in Falls Church?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Coverage depends on the cause of the mold. Mold resulting from sudden water damage (like a burst pipe) is often covered, while mold from long-term neglect typically isn't. We work directly with Falls Church insurance companies and help document the source to maximize your claim potential."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas of Falls Church do you serve for mold removal?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We provide mold remediation services throughout all of Falls Church City including Seven Corners, Bailey's Crossroads, Merrifield, Eden Center area, and nearby communities. Our team responds 24/7 to both residential and commercial properties."
-        }
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "Why is mold so common in Falls Church homes?",
+      answer: "Falls Church's humid climate combined with the area's older housing stock creates ideal conditions for mold growth. Many homes built before 1980 have insufficient ventilation, aging HVAC systems, and moisture issues from outdated construction methods. Basements in Seven Corners and Bailey's Crossroads are particularly susceptible."
+    },
+    {
+      question: "How quickly should I address mold in my Falls Church property?",
+      answer: "Immediately. Mold can spread rapidly and pose serious health risks to occupants. In Falls Church's humid environment, small mold problems can become major infestations within days. Our 24/7 emergency response ensures we can start remediation before the problem escalates."
+    },
+    {
+      question: "Do you provide mold testing and inspection in Falls Church?",
+      answer: "Yes, we offer comprehensive mold testing and inspection services throughout Falls Church City, Merrifield, and surrounding areas. Our certified inspectors use advanced moisture meters, thermal imaging, and air quality testing to identify hidden mold and moisture sources."
+    },
+    {
+      question: "Is mold removal covered by insurance in Falls Church?",
+      answer: "Coverage depends on the cause of the mold. Mold resulting from sudden water damage (like a burst pipe) is often covered, while mold from long-term neglect typically isn't. We work directly with Falls Church insurance companies and help document the source to maximize your claim potential."
+    },
+    {
+      question: "What areas of Falls Church do you serve for mold removal?",
+      answer: "We provide mold remediation services throughout all of Falls Church City including Seven Corners, Bailey's Crossroads, Merrifield, Eden Center area, and nearby communities. Our team responds 24/7 to both residential and commercial properties."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Falls Church', address: { addressLocality: 'Falls Church', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Falls Church Mold Removal', path: '/locations/falls-church-mold-removal/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Falls Church, VA"
         description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service. Call (877) 497-0007."
-        schema={[localBusinessSchema, faqSchema]}
+        schema={schema}
       />
 
       <div className="min-h-screen bg-gray-50">

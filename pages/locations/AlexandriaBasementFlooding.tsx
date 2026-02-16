@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -59,83 +60,11 @@ const AlexandriaBasementFlooding: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://alexandria.flood.doctor/basement-flooding",
-    "url": "https://alexandria.flood.doctor/basement-flooding",
-    "name": "Flood Doctor - Basement Flooding Repair Alexandria VA",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "(703) 665-0505",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "containedIn": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Basement Flooding Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Emergency Basement Water Extraction",
-            "description": "24/7 rapid basement flood cleanup in Alexandria, VA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Basement Structural Drying",
-            "description": "Complete basement drying and moisture removal"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Basement Restoration",
-            "description": "Full basement reconstruction and waterproofing"
-          }
-        }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+  const schema = generateLocationPageSchema(
+    { name: 'Alexandria', address: { addressLocality: 'Alexandria', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Alexandria Basement Flooding', path: '/locations/alexandria-basement-flooding/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -240,7 +169,7 @@ const AlexandriaBasementFlooding: React.FC = () => {
       <PageMeta
         title="Basement Flooding Repair Alexandria, VA"
         description="Fast basement flood cleanup in Alexandria, VA. Emergency water extraction, drying & restoration for Old Town, Del Ray, Kingstowne & all Alexandria areas. Call (703) 665-0505."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

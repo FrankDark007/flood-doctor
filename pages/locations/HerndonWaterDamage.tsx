@@ -1,100 +1,38 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function HerndonWaterDamage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Flood Doctor - Water Damage Restoration Herndon VA",
-        "image": "https://flood.doctor/logo.png",
-        "@id": "https://herndon.flood.doctor/water-damage",
-        "url": "https://herndon.flood.doctor/water-damage",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Herndon",
-          "addressLocality": "Herndon",
-          "addressRegion": "VA",
-          "postalCode": "20170",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.9696,
-          "longitude": -77.3861
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Downtown Herndon",
-          "Worldgate",
-          "McNair Farms",
-          "Dulles Area"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can you respond to water damage emergencies in Herndon?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide 24/7 emergency water damage restoration services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our team typically arrives within 60 minutes of your call to (877) 497-0007."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you serve areas near Dulles Airport and the tech corridor?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we serve all of Herndon including properties near Dulles International Airport and the Dulles tech corridor. Our proximity to these areas allows for rapid emergency response for both residential and commercial water damage situations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of water damage do you handle in Herndon homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We handle all types of water damage in Herndon, VA, including burst pipes, flooding, sewage backups, storm damage, appliance leaks, and roof leaks. Our services include water extraction, structural drying, dehumidification, and complete restoration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will you work with my insurance company for water damage claims?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. We work directly with all major insurance companies and assist Herndon homeowners throughout the entire claims process. We provide detailed documentation, photos, and moisture readings to support your water damage claim."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What areas of Herndon do you cover for water damage restoration?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide comprehensive water damage restoration services throughout all Herndon neighborhoods including Downtown Herndon, Worldgate, McNair Farms, Dulles area, and surrounding communities. No job is too large or small."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can you respond to water damage emergencies in Herndon?",
+      answer: "We provide 24/7 emergency water damage restoration services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our team typically arrives within 60 minutes of your call to (877) 497-0007."
+    },
+    {
+      question: "Do you serve areas near Dulles Airport and the tech corridor?",
+      answer: "Yes, we serve all of Herndon including properties near Dulles International Airport and the Dulles tech corridor. Our proximity to these areas allows for rapid emergency response for both residential and commercial water damage situations."
+    },
+    {
+      question: "What types of water damage do you handle in Herndon homes?",
+      answer: "We handle all types of water damage in Herndon, VA, including burst pipes, flooding, sewage backups, storm damage, appliance leaks, and roof leaks. Our services include water extraction, structural drying, dehumidification, and complete restoration."
+    },
+    {
+      question: "Will you work with my insurance company for water damage claims?",
+      answer: "Absolutely. We work directly with all major insurance companies and assist Herndon homeowners throughout the entire claims process. We provide detailed documentation, photos, and moisture readings to support your water damage claim."
+    },
+    {
+      question: "What areas of Herndon do you cover for water damage restoration?",
+      answer: "We provide comprehensive water damage restoration services throughout all Herndon neighborhoods including Downtown Herndon, Worldgate, McNair Farms, Dulles area, and surrounding communities. No job is too large or small."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Herndon', address: { addressLocality: 'Herndon', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Herndon Water Damage', path: '/locations/herndon-water-damage/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
@@ -316,10 +254,10 @@ export default function HerndonWaterDamage() {
               Frequently Asked Questions - Herndon Water Damage
             </h2>
             <div className="space-y-6">
-              {schema['@graph'][1].mainEntity.map((faq, index) => (
+              {faqs.map((faq, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.name}</h3>
-                  <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
             </div>

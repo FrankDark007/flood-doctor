@@ -1,4 +1,5 @@
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function HerndonBasementFlooding() {
@@ -7,68 +8,18 @@ export default function HerndonBasementFlooding() {
   const serviceArea = ['Herndon', 'Reston', 'Sterling', 'Ashburn', 'Leesburg'];
   const neighborhoods = ['Downtown Herndon', 'Fox Mill', 'Franklin Farm', 'Worldgate'];
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": businessName,
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://herndon.flood.doctor/basement-flooding",
-    "url": "https://herndon.flood.doctor/basement-flooding",
-    "telephone": phoneNumber,
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Herndon",
-      "addressRegion": "VA",
-      "postalCode": "20170",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.9695,
-      "longitude": -77.3861
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://twitter.com/flooddoctor"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "287"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Herndon"
-    },
-    "service": {
-      "@type": "Service",
-      "name": "Basement Flooding Repair",
-      "description": "Professional Basement Flooding Repair and Waterproofing Services in Herndon, VA"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Herndon', address: { addressLocality: 'Herndon', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Herndon Basement Flooding', path: '/locations/herndon-basement-flooding/' }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair Herndon, VA"
         description="Expert basement flooding repair in Herndon, VA. Emergency water removal, complete restoration & waterproofing. Serving Fox Mill, Franklin Farm, Downtown Herndon. Call (877) 497-0007!"
-        schema={schemaData}
+        schema={schema}
       />
 
       <div className="min-h-screen bg-gray-50">

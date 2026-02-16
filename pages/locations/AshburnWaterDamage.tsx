@@ -1,96 +1,45 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function AshburnWaterDamage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://ashburn.flood.doctor/water-damage",
-        "name": "Flood Doctor - Ashburn Water Damage Restoration",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://ashburn.flood.doctor/water-damage",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 39.0438,
-          "longitude": -77.4875
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "",
-          "addressLocality": "Ashburn",
-          "addressRegion": "VA",
-          "postalCode": "20147",
-          "addressCountry": "US"
-        },
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "areaServed": [
-          "Ashburn Village",
-          "Broadlands",
-          "One Loudoun",
-          "Brambleton",
-          "Lansdowne"
-        ],
-        "serviceType": "Water Damage Restoration"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can you respond to water emergencies in Ashburn?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide 24/7 emergency water damage restoration services in Ashburn and can typically arrive within 60-90 minutes of your call. Our rapid response is critical to preventing secondary damage in Ashburn's newer construction homes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you serve all Ashburn neighborhoods including One Loudoun and Brambleton?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we serve all Ashburn communities including Ashburn Village, Broadlands, One Loudoun, Brambleton, and Lansdowne. Our team is familiar with both older and newer construction throughout Loudoun County."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What causes water damage in Ashburn's newer homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Common causes in Ashburn include appliance failures, pipe bursts during winter freezes, HVAC condensation issues, and construction defects in rapidly built homes. Loudoun County's growth has led to many new builds that may have installation issues."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will you work with my insurance for water damage claims?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. We work directly with all major insurance companies and can help document damage, provide detailed estimates, and communicate with adjusters throughout the claims process to ensure you receive fair coverage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does water damage restoration take in Ashburn?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Timeline varies by severity, but most residential water damage projects in Ashburn take 3-7 days from extraction through complete drying. We use advanced monitoring equipment to ensure thorough drying before restoration begins."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can you respond to water emergencies in Ashburn?",
+      answer: "We provide 24/7 emergency water damage restoration services in Ashburn and can typically arrive within 60-90 minutes of your call. Our rapid response is critical to preventing secondary damage in Ashburn's newer construction homes."
+    },
+    {
+      question: "Do you serve all Ashburn neighborhoods including One Loudoun and Brambleton?",
+      answer: "Yes, we serve all Ashburn communities including Ashburn Village, Broadlands, One Loudoun, Brambleton, and Lansdowne. Our team is familiar with both older and newer construction throughout Loudoun County."
+    },
+    {
+      question: "What causes water damage in Ashburn's newer homes?",
+      answer: "Common causes in Ashburn include appliance failures, pipe bursts during winter freezes, HVAC condensation issues, and construction defects in rapidly built homes. Loudoun County's growth has led to many new builds that may have installation issues."
+    },
+    {
+      question: "Will you work with my insurance for water damage claims?",
+      answer: "Absolutely. We work directly with all major insurance companies and can help document damage, provide detailed estimates, and communicate with adjusters throughout the claims process to ensure you receive fair coverage."
+    },
+    {
+      question: "How long does water damage restoration take in Ashburn?",
+      answer: "Timeline varies by severity, but most residential water damage projects in Ashburn take 3-7 days from extraction through complete drying. We use advanced monitoring equipment to ensure thorough drying before restoration begins."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Ashburn', address: { addressLocality: 'Ashburn', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Ashburn Water Damage', path: '/locations/ashburn-water-damage/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Ashburn Water Damage Restoration | 24/7 Emergency Service | (877) 497-0007"
         description="24/7 emergency water damage restoration in Ashburn, VA. Serving Ashburn Village, Broadlands, One Loudoun, Brambleton & Lansdowne. Fast response, insurance approved. Call (877) 497-0007"
-        schema={jsonLd}
+        schema={schema}
       />
 
       <div className="min-h-screen">

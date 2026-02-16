@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -58,83 +59,13 @@ const AlexandriaFloodCleanup: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://alexandria.flood.doctor/flood-cleanup",
-    "url": "https://alexandria.flood.doctor/flood-cleanup",
-    "name": "Flood Doctor - Emergency Flood Cleanup Alexandria VA",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "(703) 665-0505",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "containedIn": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Flood Cleanup Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Emergency Flood Water Extraction",
-            "description": "24/7 rapid flood water removal in Alexandria, VA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Flood Damage Restoration",
-            "description": "Complete flood cleanup and structural drying"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Sewage & Contamination Cleanup",
-            "description": "Safe cleanup of contaminated floodwater"
-          }
-        }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Alexandria', address: { addressLocality: 'Alexandria', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Alexandria Flood Cleanup', path: '/locations/alexandria-flood-cleanup/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -233,7 +164,7 @@ const AlexandriaFloodCleanup: React.FC = () => {
       <PageMeta
         title="Flood Cleanup in Alexandria, VA"
         description="Fast flood cleanup in Alexandria, VA. 24/7 emergency response for Old Town, Del Ray, Kingstowne & all Alexandria areas. IICRC certified. Call (703) 665-0505 now."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

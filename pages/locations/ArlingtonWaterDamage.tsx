@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -56,68 +57,7 @@ const ArlingtonWaterDamage: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor Water Damage Restoration - Arlington, VA",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://arlington.flood.doctor/water-damage",
-    "url": "https://arlington.flood.doctor/water-damage",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Service Coverage Area",
-      "addressLocality": "Arlington",
-      "addressRegion": "VA",
-      "postalCode": "22201",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.0910
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://www.instagram.com/flooddoctor"
-    ],
-    "areaServed": {
-      "@type": "City",
-      "name": "Arlington",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Virginia"
-      }
-    }
-  };
 
   const serviceAreas = [
     "Ballston",
@@ -133,6 +73,12 @@ const ArlingtonWaterDamage: React.FC = () => {
     "Westover",
     "Arlington Forest"
   ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Arlington', address: { addressLocality: 'Arlington', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Arlington Water Damage', path: '/locations/arlington-water-damage/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -185,7 +131,7 @@ const ArlingtonWaterDamage: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration in Arlington, VA | 24/7 Emergency Service"
         description="Emergency water damage restoration in Arlington, VA. Serving Ballston, Clarendon, Rosslyn, Crystal City & Pentagon City. IICRC certified. Call (877) 497-0007 for immediate help."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero */}

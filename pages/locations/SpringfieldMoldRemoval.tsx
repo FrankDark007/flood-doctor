@@ -1,117 +1,48 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const SpringfieldMoldRemoval: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://springfield.flood.doctor/mold-removal",
-        "name": "Flood Doctor - Mold Removal & Remediation Springfield VA",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://springfield.flood.doctor/mold-removal",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Springfield Service Area",
-          "addressLocality": "Springfield",
-          "addressRegion": "VA",
-          "postalCode": "22150",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.7891,
-          "longitude": -77.1872
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Springfield",
-          "Kingstowne",
-          "Franconia",
-          "Van Dorn",
-          "West Springfield",
-          "Fairfax County"
-        ],
-        "description": "Professional mold removal and remediation services in Springfield, VA. Serving Springfield Mall area, Kingstowne, Franconia, and all of Fairfax County with 24/7 availability."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can you respond to mold emergencies in Springfield, VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer 24/7 emergency mold remediation services in Springfield, VA with same-day response available. Our certified technicians serve the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and throughout Fairfax County."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What areas of Springfield do you provide mold removal services?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide comprehensive mold removal and remediation throughout Springfield including the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and all surrounding Fairfax County neighborhoods. Our team is equipped to handle residential and commercial mold issues."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer free mold inspections in Springfield, VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we provide free mold inspections for Springfield and Fairfax County residents. Our certified inspectors use advanced moisture detection and air quality testing to identify mold growth, determine the extent of contamination, and create a comprehensive remediation plan."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is mold dangerous to my family's health in Springfield homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, mold exposure can cause serious health issues including respiratory problems, allergic reactions, headaches, and aggravated asthma. Springfield's humid climate can promote mold growth, especially after water damage. Professional mold removal is essential to protect your family's health."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does mold remediation take in Springfield, VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most mold remediation projects in Springfield take 1-5 days depending on the extent of contamination. Small areas may be completed in one day, while larger projects involving multiple rooms or structural mold may take longer. We provide detailed timelines during the inspection."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will insurance cover mold removal in Springfield?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Insurance coverage for mold removal in Springfield depends on the cause. Mold resulting from covered water damage events like burst pipes is typically covered. We work directly with Fairfax County insurance providers to document the damage and help maximize your claim."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can you respond to mold emergencies in Springfield, VA?",
+      answer: "We offer 24/7 emergency mold remediation services in Springfield, VA with same-day response available. Our certified technicians serve the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and throughout Fairfax County."
+    },
+    {
+      question: "What areas of Springfield do you provide mold removal services?",
+      answer: "We provide comprehensive mold removal and remediation throughout Springfield including the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and all surrounding Fairfax County neighborhoods. Our team is equipped to handle residential and commercial mold issues."
+    },
+    {
+      question: "Do you offer free mold inspections in Springfield, VA?",
+      answer: "Yes, we provide free mold inspections for Springfield and Fairfax County residents. Our certified inspectors use advanced moisture detection and air quality testing to identify mold growth, determine the extent of contamination, and create a comprehensive remediation plan."
+    },
+    {
+      question: "Is mold dangerous to my family's health in Springfield homes?",
+      answer: "Yes, mold exposure can cause serious health issues including respiratory problems, allergic reactions, headaches, and aggravated asthma. Springfield's humid climate can promote mold growth, especially after water damage. Professional mold removal is essential to protect your family's health."
+    },
+    {
+      question: "How long does mold remediation take in Springfield, VA?",
+      answer: "Most mold remediation projects in Springfield take 1-5 days depending on the extent of contamination. Small areas may be completed in one day, while larger projects involving multiple rooms or structural mold may take longer. We provide detailed timelines during the inspection."
+    },
+    {
+      question: "Will insurance cover mold removal in Springfield?",
+      answer: "Insurance coverage for mold removal in Springfield depends on the cause. Mold resulting from covered water damage events like burst pipes is typically covered. We work directly with Fairfax County insurance providers to document the damage and help maximize your claim."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Springfield', address: { addressLocality: 'Springfield', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Springfield Mold Removal', path: '/locations/springfield-mold-removal/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Springfield, VA"
         description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections. Call (877) 497-0007 today."
-        schema={structuredData}
+        schema={schema}
       />
 
       <div className="min-h-screen">

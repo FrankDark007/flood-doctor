@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -54,79 +55,13 @@ const FairfaxMoldRemoval: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor - Fairfax Mold Removal",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://fairfax.flood.doctor/mold-removal",
-    "url": "https://fairfax.flood.doctor/mold-removal",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8462236,
-      "longitude": -77.3063733
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Fairfax",
-        "sameAs": "https://en.wikipedia.org/wiki/Fairfax,_Virginia"
-      },
-      {
-        "@type": "City",
-        "name": "Burke"
-      },
-      {
-        "@type": "City",
-        "name": "Mantua"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax Station"
-      },
-      {
-        "@type": "City",
-        "name": "Fair Oaks"
-      }
-    ]
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Fairfax', address: { addressLocality: 'Fairfax', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Fairfax Mold Removal', path: '/locations/fairfax-mold-removal/' }],
+    faqs
+  );
 
   const serviceAreas = [
     "Burke",
@@ -233,14 +168,8 @@ const FairfaxMoldRemoval: React.FC = () => {
       <PageMeta
         title="Mold Removal in Fairfax, VA"
         description="Professional mold remediation in Fairfax, Burke, Mantua & Fair Oaks. IICRC certified. Safe containment. Insurance approved. Call (877) 497-0007 for free inspection."
+        schema={schema}
       />
-
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
 
       <Breadcrumbs
         items={[

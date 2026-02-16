@@ -1,42 +1,21 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 
 const McLeanMoldRemoval: React.FC = () => {
-  const locationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://mclean.flood.doctor/mold-removal",
-    "name": "Flood Doctor - Mold Removal McLean VA",
-    "image": "https://flood.doctor/logo.png",
-    "url": "https://mclean.flood.doctor/mold-removal",
-    "telephone": "+1-877-497-0007",
-    "description": "Professional mold removal and remediation in McLean, VA. EPA-approved methods, IICRC certified, serving Great Falls, Langley, Pimmit Hills, and Tysons.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "McLean",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "McLean" },
-      { "@type": "City", "name": "Great Falls" },
-      { "@type": "City", "name": "Tysons" }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'McLean', address: { addressLocality: 'McLean', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'McLean Mold Removal', path: '/locations/mclean-mold-removal/' }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in McLean, VA"
         description="Professional mold removal and remediation in McLean, VA. EPA-approved methods, IICRC certified. Serving Great Falls, Langley, Pimmit Hills & Tysons. Call (877) 497-0007."
-        structuredData={locationSchema}
+        schema={schema}
       />
 
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">

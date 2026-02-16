@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -57,64 +58,13 @@ const ArlingtonBasementFlooding: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor Basement Flooding Repair - Arlington, VA",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://arlington.flood.doctor/basement-flooding",
-    "url": "https://arlington.flood.doctor/basement-flooding",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Service Coverage Area",
-      "addressLocality": "Arlington",
-      "addressRegion": "VA",
-      "postalCode": "22201",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8816,
-      "longitude": -77.0910
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Arlington",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Virginia"
-      }
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Arlington', address: { addressLocality: 'Arlington', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Arlington Basement Flooding', path: '/locations/arlington-basement-flooding/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -186,7 +136,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
       <PageMeta
         title="Basement Flooding Repair Arlington, VA"
         description="Expert basement flooding repair in Arlington, VA. Emergency water removal, structural drying, waterproofing & permanent solutions. Call (877) 497-0007 now."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero */}

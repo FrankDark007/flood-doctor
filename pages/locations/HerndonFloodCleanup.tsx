@@ -1,4 +1,5 @@
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function HerndonFloodCleanup() {
@@ -7,68 +8,18 @@ export default function HerndonFloodCleanup() {
   const serviceArea = ['Herndon', 'Reston', 'Sterling', 'Ashburn', 'Leesburg'];
   const neighborhoods = ['Downtown Herndon', 'Fox Mill', 'Franklin Farm', 'Worldgate'];
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": businessName,
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://herndon.flood.doctor/flood-cleanup",
-    "url": "https://herndon.flood.doctor/flood-cleanup",
-    "telephone": phoneNumber,
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Herndon",
-      "addressRegion": "VA",
-      "postalCode": "20170",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.9695,
-      "longitude": -77.3861
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://twitter.com/flooddoctor"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "287"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Herndon"
-    },
-    "service": {
-      "@type": "Service",
-      "name": "Emergency Flood Cleanup",
-      "description": "24/7 Emergency Flood Cleanup and Restoration Services in Herndon, VA"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Herndon', address: { addressLocality: 'Herndon', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Herndon Flood Cleanup', path: '/locations/herndon-flood-cleanup/' }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Flood Cleanup in Herndon, VA"
         description="24/7 emergency flood cleanup in Herndon, VA. Rapid water extraction, drying & restoration. Serving Downtown Herndon, Fox Mill, Franklin Farm. Call (877) 497-0007 now!"
-        schema={schemaData}
+        schema={schema}
       />
 
       <div className="min-h-screen bg-gray-50">

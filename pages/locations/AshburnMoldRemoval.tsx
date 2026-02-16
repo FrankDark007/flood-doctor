@@ -1,96 +1,45 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function AshburnMoldRemoval() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://ashburn.flood.doctor/mold-removal",
-        "name": "Flood Doctor - Ashburn Mold Removal & Remediation",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://ashburn.flood.doctor/mold-removal",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 39.0438,
-          "longitude": -77.4875
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "",
-          "addressLocality": "Ashburn",
-          "addressRegion": "VA",
-          "postalCode": "20147",
-          "addressCountry": "US"
-        },
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "areaServed": [
-          "Ashburn Village",
-          "Broadlands",
-          "One Loudoun",
-          "Brambleton",
-          "Lansdowne"
-        ],
-        "serviceType": "Mold Remediation and Removal"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How common is mold in Ashburn's newer homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mold is surprisingly common in Ashburn's newer construction due to rapid building schedules, modern energy-efficient designs that can trap moisture, and HVAC issues. Even new homes in communities like Brambleton and One Loudoun can experience mold growth from construction moisture or installation defects."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are signs of mold in my Ashburn home?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Common signs include musty odors, visible black or green spots on walls or ceilings, water stains, increased allergy symptoms, condensation on windows, and peeling paint or wallpaper. Basements in Ashburn homes are particularly susceptible due to Loudoun County's clay soil and humidity."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you provide mold testing and inspection in Ashburn?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we offer comprehensive mold inspections including visual assessments, moisture mapping, air quality testing, and surface sampling. Our certified inspectors can identify hidden mold behind walls and in crawl spaces common in Ashburn homes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does mold remediation take in Ashburn homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most residential mold remediation projects in Ashburn take 1-5 days depending on the extent of contamination. Small areas may be completed in a day, while whole-basement remediation can take longer. We provide detailed timelines after inspection."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is mold removal covered by homeowners insurance in Virginia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Coverage depends on the cause of mold growth. If mold results from a covered peril like a sudden pipe burst, it may be covered. However, mold from long-term neglect or maintenance issues typically isn't covered. We can help you document the source and work with your insurance company."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How common is mold in Ashburn's newer homes?",
+      answer: "Mold is surprisingly common in Ashburn's newer construction due to rapid building schedules, modern energy-efficient designs that can trap moisture, and HVAC issues. Even new homes in communities like Brambleton and One Loudoun can experience mold growth from construction moisture or installation defects."
+    },
+    {
+      question: "What are signs of mold in my Ashburn home?",
+      answer: "Common signs include musty odors, visible black or green spots on walls or ceilings, water stains, increased allergy symptoms, condensation on windows, and peeling paint or wallpaper. Basements in Ashburn homes are particularly susceptible due to Loudoun County's clay soil and humidity."
+    },
+    {
+      question: "Do you provide mold testing and inspection in Ashburn?",
+      answer: "Yes, we offer comprehensive mold inspections including visual assessments, moisture mapping, air quality testing, and surface sampling. Our certified inspectors can identify hidden mold behind walls and in crawl spaces common in Ashburn homes."
+    },
+    {
+      question: "How long does mold remediation take in Ashburn homes?",
+      answer: "Most residential mold remediation projects in Ashburn take 1-5 days depending on the extent of contamination. Small areas may be completed in a day, while whole-basement remediation can take longer. We provide detailed timelines after inspection."
+    },
+    {
+      question: "Is mold removal covered by homeowners insurance in Virginia?",
+      answer: "Coverage depends on the cause of mold growth. If mold results from a covered peril like a sudden pipe burst, it may be covered. However, mold from long-term neglect or maintenance issues typically isn't covered. We can help you document the source and work with your insurance company."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Ashburn', address: { addressLocality: 'Ashburn', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Ashburn Mold Removal', path: '/locations/ashburn-mold-removal/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Ashburn, VA"
         description="Professional mold removal and remediation in Ashburn, VA. Serving Broadlands, One Loudoun, Brambleton, Lansdowne & Ashburn Village. Certified technicians, 24/7 service. Call (877) 497-0007"
-        schema={jsonLd}
+        schema={schema}
       />
 
       <div className="min-h-screen">

@@ -1,109 +1,44 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const SpringfieldWaterDamage: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://springfield.flood.doctor/water-damage",
-        "name": "Flood Doctor - Water Damage Restoration Springfield VA",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://springfield.flood.doctor/water-damage",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Springfield Service Area",
-          "addressLocality": "Springfield",
-          "addressRegion": "VA",
-          "postalCode": "22150",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.7891,
-          "longitude": -77.1872
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Springfield",
-          "Kingstowne",
-          "Franconia",
-          "Van Dorn",
-          "West Springfield",
-          "Fairfax County"
-        ],
-        "description": "24/7 emergency water damage restoration services in Springfield, VA. Serving Springfield Mall area, Kingstowne, Franconia, and all of Fairfax County."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can you respond to water damage emergencies in Springfield, VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide 24/7 emergency water damage restoration services in Springfield, VA with rapid response times typically within 60-90 minutes. Our team serves the Springfield Mall area, Kingstowne, Franconia, Van Dorn, and West Springfield neighborhoods throughout Fairfax County."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What areas of Springfield and Fairfax County do you serve?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We serve all of Springfield including the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and surrounding Fairfax County communities. Our team is strategically positioned to reach any location quickly for emergency water damage restoration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you work with insurance companies in Springfield, VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we work directly with all major insurance providers serving Springfield and Fairfax County. We handle documentation, communicate with adjusters, and help streamline your water damage claim process to ensure proper coverage and fast restoration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of water damage do you handle in Springfield?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We handle all types of water damage in Springfield including burst pipes, basement flooding, storm damage, sewage backups, appliance leaks, roof leaks, and more. Our certified technicians use advanced equipment for water extraction, drying, dehumidification, and complete restoration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are your water damage restoration services available 24/7 in Springfield?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call (877) 497-0007 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can you respond to water damage emergencies in Springfield, VA?",
+      answer: "We provide 24/7 emergency water damage restoration services in Springfield, VA with rapid response times typically within 60-90 minutes. Our team serves the Springfield Mall area, Kingstowne, Franconia, Van Dorn, and West Springfield neighborhoods throughout Fairfax County."
+    },
+    {
+      question: "What areas of Springfield and Fairfax County do you serve?",
+      answer: "We serve all of Springfield including the Springfield Mall area, Kingstowne, Franconia, Van Dorn, West Springfield, and surrounding Fairfax County communities. Our team is strategically positioned to reach any location quickly for emergency water damage restoration."
+    },
+    {
+      question: "Do you work with insurance companies in Springfield, VA?",
+      answer: "Yes, we work directly with all major insurance providers serving Springfield and Fairfax County. We handle documentation, communicate with adjusters, and help streamline your water damage claim process to ensure proper coverage and fast restoration."
+    },
+    {
+      question: "What types of water damage do you handle in Springfield?",
+      answer: "We handle all types of water damage in Springfield including burst pipes, basement flooding, storm damage, sewage backups, appliance leaks, roof leaks, and more. Our certified technicians use advanced equipment for water extraction, drying, dehumidification, and complete restoration."
+    },
+    {
+      question: "Are your water damage restoration services available 24/7 in Springfield?",
+      answer: "Yes, our emergency water damage restoration services are available 24 hours a day, 7 days a week in Springfield, VA. Call (877) 497-0007 anytime for immediate assistance. We understand water damage doesn't wait for business hours and neither do we."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Springfield', address: { addressLocality: 'Springfield', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Springfield Water Damage', path: '/locations/springfield-water-damage/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Springfield VA | 24/7 Emergency Service | (877) 497-0007"
         description="Expert water damage restoration in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. 24/7 emergency response. Call (877) 497-0007 now."
-        schema={structuredData}
+        schema={schema}
       />
 
       <div className="min-h-screen">

@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -58,83 +59,13 @@ const AlexandriaMoldRemoval: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://alexandria.flood.doctor/mold-removal",
-    "url": "https://alexandria.flood.doctor/mold-removal",
-    "name": "Flood Doctor - Mold Removal Alexandria VA",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "(703) 665-0505",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "containedIn": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Mold Removal Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mold Inspection & Testing",
-            "description": "Professional mold assessment and air quality testing in Alexandria"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mold Remediation",
-            "description": "EPA-compliant mold removal and remediation"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Moisture Control",
-            "description": "Source identification and moisture mitigation"
-          }
-        }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Alexandria', address: { addressLocality: 'Alexandria', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Alexandria Mold Removal', path: '/locations/alexandria-mold-removal/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -219,7 +150,7 @@ const AlexandriaMoldRemoval: React.FC = () => {
       <PageMeta
         title="Mold Removal in Alexandria, VA"
         description="Professional mold removal in Alexandria, VA. EPA-compliant remediation for Old Town, Del Ray, Kingstowne & all Alexandria areas. IICRC certified. Call (703) 665-0505."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

@@ -1,104 +1,37 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const RestonWaterDamage: React.FC = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://reston.flood.doctor/water-damage",
-        "name": "Flood Doctor Water Damage Restoration - Reston VA",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://reston.flood.doctor/water-damage",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Reston Town Center",
-          "addressLocality": "Reston",
-          "addressRegion": "VA",
-          "postalCode": "20190",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.9586,
-          "longitude": -77.3570
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Reston Town Center",
-          "Lake Anne",
-          "South Lakes",
-          "North Point",
-          "Hunters Woods"
-        ],
-        "sameAs": [
-          "https://www.facebook.com/flooddoctor",
-          "https://twitter.com/flooddoctor"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can Flood Doctor respond to water damage emergencies in Reston VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer 24/7 emergency water damage response in Reston and typically arrive within 60 minutes. Our rapid response helps minimize damage to your property in Reston Town Center, Lake Anne, South Lakes, North Point, and Hunters Woods areas."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Flood Doctor serve all Reston VA neighborhoods?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we provide comprehensive water damage restoration services throughout Reston including Reston Town Center, Lake Anne, South Lakes, North Point, and Hunters Woods. Our team is familiar with the unique water damage challenges in each Reston community."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of water damage do you handle in Reston VA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We handle all categories of water damage in Reston including burst pipes, flooding, sewage backups, appliance leaks, storm damage, and basement flooding. Our certified technicians use advanced equipment to restore your Reston property quickly and safely."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will my insurance cover water damage restoration in Reston?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most homeowner's insurance policies cover sudden water damage in Reston. We work directly with all major insurance companies and can help you navigate the claims process to ensure maximum coverage for your water damage restoration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does water damage restoration take in Reston homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Water damage restoration timelines vary based on the extent of damage. Most Reston residential projects are completed within 3-5 days, though larger jobs may take longer. We provide a detailed timeline after our initial assessment of your property."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can Flood Doctor respond to water damage emergencies in Reston VA?",
+      answer: "We offer 24/7 emergency water damage response in Reston and typically arrive within 60 minutes. Our rapid response helps minimize damage to your property in Reston Town Center, Lake Anne, South Lakes, North Point, and Hunters Woods areas."
+    },
+    {
+      question: "Does Flood Doctor serve all Reston VA neighborhoods?",
+      answer: "Yes, we provide comprehensive water damage restoration services throughout Reston including Reston Town Center, Lake Anne, South Lakes, North Point, and Hunters Woods. Our team is familiar with the unique water damage challenges in each Reston community."
+    },
+    {
+      question: "What types of water damage do you handle in Reston VA?",
+      answer: "We handle all categories of water damage in Reston including burst pipes, flooding, sewage backups, appliance leaks, storm damage, and basement flooding. Our certified technicians use advanced equipment to restore your Reston property quickly and safely."
+    },
+    {
+      question: "Will my insurance cover water damage restoration in Reston?",
+      answer: "Most homeowner's insurance policies cover sudden water damage in Reston. We work directly with all major insurance companies and can help you navigate the claims process to ensure maximum coverage for your water damage restoration."
+    },
+    {
+      question: "How long does water damage restoration take in Reston homes?",
+      answer: "Water damage restoration timelines vary based on the extent of damage. Most Reston residential projects are completed within 3-5 days, though larger jobs may take longer. We provide a detailed timeline after our initial assessment of your property."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Reston', address: { addressLocality: 'Reston', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Reston Water Damage', path: '/locations/reston-water-damage/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">

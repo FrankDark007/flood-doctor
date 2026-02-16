@@ -3,42 +3,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Clock, Shield, MapPin, CheckCircle, Star, ArrowRight, Building2, Zap, Users } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const TysonsWaterDamage: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor - Tysons Water Damage Restoration",
-    "@id": "https://tysons.flood.doctor/water-damage",
-    "url": "https://tysons.flood.doctor/water-damage",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "+1-(877) 497-0007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tysons",
-      "addressRegion": "VA",
-      "postalCode": "22102",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.9187,
-      "longitude": -77.2311
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Tysons" },
-      { "@type": "City", "name": "Tysons Corner" },
-      { "@type": "City", "name": "McLean" },
-      { "@type": "City", "name": "Vienna" }
-    ]
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Tysons', address: { addressLocality: 'Tysons', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Tysons Water Damage', path: '/locations/tysons-water-damage/' }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration in Tysons, VA"
         description="Professional water damage restoration in Tysons, VA. 24/7 emergency service for high-rises, offices, and residences. IICRC certified. Call (877) 497-0007"
-        structuredData={structuredData}
+        schema={schema}
       />
 
       {/* Hero */}

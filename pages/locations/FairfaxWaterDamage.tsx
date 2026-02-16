@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -46,117 +47,13 @@ const FairfaxWaterDamage: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor - Fairfax Water Damage Restoration",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://fairfax.flood.doctor/water-damage",
-    "url": "https://fairfax.flood.doctor/water-damage",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8462236,
-      "longitude": -77.3063733
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://twitter.com/flooddoctor"
-    ],
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Fairfax",
-        "sameAs": "https://en.wikipedia.org/wiki/Fairfax,_Virginia"
-      },
-      {
-        "@type": "City",
-        "name": "Burke"
-      },
-      {
-        "@type": "City",
-        "name": "Mantua"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax Station"
-      },
-      {
-        "@type": "City",
-        "name": "Fair Oaks"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Water Damage Restoration Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Emergency Water Extraction"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Structural Drying"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Flood Cleanup"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mold Prevention"
-          }
-        }
-      ]
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Fairfax', address: { addressLocality: 'Fairfax', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Fairfax Water Damage', path: '/locations/fairfax-water-damage/' }],
+    faqs
+  );
 
   const serviceAreas = [
     "Burke",
@@ -225,14 +122,8 @@ const FairfaxWaterDamage: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration in Fairfax, VA | 24/7 Emergency Service"
         description="Expert water damage restoration in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Insurance approved. Call (877) 497-0007 now."
+        schema={schema}
       />
-
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
 
       <Breadcrumbs
         items={[

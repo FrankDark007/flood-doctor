@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -58,88 +59,11 @@ const AlexandriaWaterDamage: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://alexandria.flood.doctor/water-damage",
-    "url": "https://alexandria.flood.doctor/water-damage",
-    "name": "Flood Doctor - Water Damage Restoration Alexandria VA",
-    "image": "https://flood.doctor/logo.png",
-    "telephone": "(703) 665-0505",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8048,
-      "longitude": -77.0469
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Alexandria",
-        "containedIn": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Water Damage Restoration Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Emergency Water Extraction",
-            "description": "24/7 emergency water removal in Alexandria, VA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Structural Drying",
-            "description": "Professional structural drying and dehumidification"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mold Prevention",
-            "description": "Mold remediation and prevention services"
-          }
-        }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+  const schema = generateLocationPageSchema(
+    { name: 'Alexandria', address: { addressLocality: 'Alexandria', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Alexandria Water Damage', path: '/locations/alexandria-water-damage/' }],
+    faqs
+  );
 
   const services = [
     {
@@ -236,7 +160,7 @@ const AlexandriaWaterDamage: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration Alexandria VA | 24/7 Emergency Response"
         description="Fast water damage restoration in Alexandria, VA. Serving Old Town, Del Ray, Kingstowne & all Alexandria neighborhoods. IICRC certified. Call (703) 665-0505 now."
-        schema={[faqSchema, localBusinessSchema]}
+        schema={schema}
       />
 
       {/* Hero Section */}

@@ -1,108 +1,42 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import { Link } from 'react-router-dom';
 
 export default function HerndonMoldRemoval() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Flood Doctor - Mold Removal & Remediation Herndon VA",
-        "image": "https://flood.doctor/logo.png",
-        "@id": "https://herndon.flood.doctor/mold-removal",
-        "url": "https://herndon.flood.doctor/mold-removal",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Herndon",
-          "addressLocality": "Herndon",
-          "addressRegion": "VA",
-          "postalCode": "20170",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.9696,
-          "longitude": -77.3861
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Downtown Herndon",
-          "Worldgate",
-          "McNair Farms",
-          "Dulles Area"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How quickly can you respond to mold emergencies in Herndon?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer 24/7 emergency mold inspection and remediation services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our certified mold specialists can typically arrive within 60 minutes of your call to (877) 497-0007."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What causes mold growth in Herndon homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mold thrives in Herndon's humid climate, especially after water damage, flooding, or plumbing leaks. Common causes include basement moisture, poor ventilation, roof leaks, and HVAC condensation. Our team identifies the moisture source and eliminates it to prevent future mold growth."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you serve commercial properties near the Dulles tech corridor?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we provide comprehensive mold remediation for both residential and commercial properties throughout Herndon, including offices and facilities in the Dulles tech corridor, Downtown Herndon businesses, and properties near Dulles Airport."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is mold dangerous to my family's health?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mold exposure can cause respiratory issues, allergies, and other health problems, especially for children, elderly individuals, and those with compromised immune systems. We use EPA-approved methods and containment procedures to safely remove mold and protect your family's health."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will you work with my insurance for mold remediation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. We work directly with insurance companies and assist Herndon homeowners throughout the claims process. We provide detailed documentation, air quality testing results, and photo evidence to support your mold remediation claim."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What areas of Herndon do you cover for mold removal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We provide complete mold inspection, testing, and remediation services throughout all Herndon neighborhoods including Downtown Herndon, Worldgate, McNair Farms, Dulles area, and surrounding communities in Fairfax County."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How quickly can you respond to mold emergencies in Herndon?",
+      answer: "We offer 24/7 emergency mold inspection and remediation services throughout Herndon, VA, including Downtown Herndon, Worldgate, McNair Farms, and the Dulles corridor. Our certified mold specialists can typically arrive within 60 minutes of your call to (877) 497-0007."
+    },
+    {
+      question: "What causes mold growth in Herndon homes?",
+      answer: "Mold thrives in Herndon's humid climate, especially after water damage, flooding, or plumbing leaks. Common causes include basement moisture, poor ventilation, roof leaks, and HVAC condensation. Our team identifies the moisture source and eliminates it to prevent future mold growth."
+    },
+    {
+      question: "Do you serve commercial properties near the Dulles tech corridor?",
+      answer: "Yes, we provide comprehensive mold remediation for both residential and commercial properties throughout Herndon, including offices and facilities in the Dulles tech corridor, Downtown Herndon businesses, and properties near Dulles Airport."
+    },
+    {
+      question: "Is mold dangerous to my family's health?",
+      answer: "Mold exposure can cause respiratory issues, allergies, and other health problems, especially for children, elderly individuals, and those with compromised immune systems. We use EPA-approved methods and containment procedures to safely remove mold and protect your family's health."
+    },
+    {
+      question: "Will you work with my insurance for mold remediation?",
+      answer: "Absolutely. We work directly with insurance companies and assist Herndon homeowners throughout the claims process. We provide detailed documentation, air quality testing results, and photo evidence to support your mold remediation claim."
+    },
+    {
+      question: "What areas of Herndon do you cover for mold removal?",
+      answer: "We provide complete mold inspection, testing, and remediation services throughout all Herndon neighborhoods including Downtown Herndon, Worldgate, McNair Farms, Dulles area, and surrounding communities in Fairfax County."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Herndon', address: { addressLocality: 'Herndon', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Herndon Mold Removal', path: '/locations/herndon-mold-removal/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
@@ -428,10 +362,10 @@ export default function HerndonMoldRemoval() {
               Frequently Asked Questions - Herndon Mold Removal
             </h2>
             <div className="space-y-6">
-              {schema['@graph'][1].mainEntity.map((faq, index) => (
+              {faqs.map((faq, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#1a73e8]">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.name}</h3>
-                  <p className="text-gray-700">{faq.acceptedAnswer.text}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
             </div>

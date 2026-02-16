@@ -1,42 +1,21 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 
 const McLeanBasementFlooding: React.FC = () => {
-  const locationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://mclean.flood.doctor/basement-flooding",
-    "name": "Flood Doctor - Basement Flooding Repair McLean VA",
-    "image": "https://flood.doctor/logo.png",
-    "url": "https://mclean.flood.doctor/basement-flooding",
-    "telephone": "+1-877-497-0007",
-    "description": "Expert basement flooding repair and waterproofing in McLean, VA. 24/7 emergency response, water extraction, structural drying serving Great Falls, Langley, Pimmit Hills.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "McLean",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "McLean" },
-      { "@type": "City", "name": "Great Falls" },
-      { "@type": "City", "name": "Tysons" }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'McLean', address: { addressLocality: 'McLean', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'McLean Basement Flooding', path: '/locations/mclean-basement-flooding/' }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair McLean, VA"
         description="Expert basement flooding repair in McLean, VA. Emergency water extraction, structural drying, waterproofing. Serving Great Falls, Langley & Pimmit Hills. Call (877) 497-0007."
-        structuredData={locationSchema}
+        schema={schema}
       />
 
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">

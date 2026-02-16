@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -55,79 +56,13 @@ const FairfaxBasementFlooding: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor - Fairfax Basement Flooding Repair",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://fairfax.flood.doctor/basement-flooding",
-    "url": "https://fairfax.flood.doctor/basement-flooding",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8466D Tyco Rd",
-      "addressLocality": "Vienna",
-      "addressRegion": "VA",
-      "postalCode": "22182",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8462236,
-      "longitude": -77.3063733
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Fairfax",
-        "sameAs": "https://en.wikipedia.org/wiki/Fairfax,_Virginia"
-      },
-      {
-        "@type": "City",
-        "name": "Burke"
-      },
-      {
-        "@type": "City",
-        "name": "Mantua"
-      },
-      {
-        "@type": "City",
-        "name": "Fairfax Station"
-      },
-      {
-        "@type": "City",
-        "name": "Fair Oaks"
-      }
-    ]
-  };
+
+  const schema = generateLocationPageSchema(
+    { name: 'Fairfax', address: { addressLocality: 'Fairfax', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Fairfax Basement Flooding', path: '/locations/fairfax-basement-flooding/' }],
+    faqs
+  );
 
   const serviceAreas = [
     "Burke",
@@ -254,14 +189,8 @@ const FairfaxBasementFlooding: React.FC = () => {
       <PageMeta
         title="Basement Flooding Repair Fairfax, VA"
         description="Expert basement flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. Finished basement restoration. Sump pump failure experts. Call (877) 497-0007."
+        schema={schema}
       />
-
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
 
       <Breadcrumbs
         items={[

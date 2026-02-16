@@ -1,102 +1,45 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const FallsChurchWaterDamage: React.FC = () => {
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Flood Doctor Water Damage Restoration - Falls Church",
-    "image": "https://flood.doctor/logo.png",
-    "@id": "https://falls-church.flood.doctor/water-damage",
-    "url": "https://falls-church.flood.doctor/water-damage",
-    "telephone": "(877) 497-0007",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Falls Church",
-      "addressLocality": "Falls Church",
-      "addressRegion": "VA",
-      "postalCode": "22046",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.8823,
-      "longitude": -77.1711
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/flooddoctor",
-      "https://twitter.com/flooddoctor"
-    ]
-  };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why is water damage common in Falls Church's older homes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Falls Church has a significant number of homes built before 1980, many with aging plumbing systems, original pipe materials, and outdated waterproofing. The independent city's compact development and mature tree canopy can also contribute to foundation issues and drainage problems that lead to water intrusion."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you serve all of Falls Church City and surrounding areas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we provide 24/7 emergency water damage restoration throughout Falls Church City, Seven Corners, Bailey's Crossroads, Merrifield, and the Eden Center area. Our rapid response team can reach any location in the independent city within minutes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can you respond to water emergencies in Falls Church?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We offer 24/7 emergency response and can typically arrive at Falls Church properties within 60 minutes of your call. Quick response is critical to preventing secondary damage and mold growth in the area's older housing stock."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will you work with my Falls Church insurance company?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We work directly with all major insurance providers and assist Falls Church residents with the entire claims process, from documentation to final settlement. We provide detailed reports and photos to support your claim."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas of Falls Church do you cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We serve all neighborhoods throughout Falls Church City including Seven Corners, Bailey's Crossroads, Merrifield, Eden Center area, and surrounding communities. No job is too large or small in the Falls Church area."
-        }
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "Why is water damage common in Falls Church's older homes?",
+      answer: "Falls Church has a significant number of homes built before 1980, many with aging plumbing systems, original pipe materials, and outdated waterproofing. The independent city's compact development and mature tree canopy can also contribute to foundation issues and drainage problems that lead to water intrusion."
+    },
+    {
+      question: "Do you serve all of Falls Church City and surrounding areas?",
+      answer: "Yes, we provide 24/7 emergency water damage restoration throughout Falls Church City, Seven Corners, Bailey's Crossroads, Merrifield, and the Eden Center area. Our rapid response team can reach any location in the independent city within minutes."
+    },
+    {
+      question: "How quickly can you respond to water emergencies in Falls Church?",
+      answer: "We offer 24/7 emergency response and can typically arrive at Falls Church properties within 60 minutes of your call. Quick response is critical to preventing secondary damage and mold growth in the area's older housing stock."
+    },
+    {
+      question: "Will you work with my Falls Church insurance company?",
+      answer: "Absolutely. We work directly with all major insurance providers and assist Falls Church residents with the entire claims process, from documentation to final settlement. We provide detailed reports and photos to support your claim."
+    },
+    {
+      question: "What areas of Falls Church do you cover?",
+      answer: "We serve all neighborhoods throughout Falls Church City including Seven Corners, Bailey's Crossroads, Merrifield, Eden Center area, and surrounding communities. No job is too large or small in the Falls Church area."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Falls Church', address: { addressLocality: 'Falls Church', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Falls Church Water Damage', path: '/locations/falls-church-water-damage/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Falls Church VA | 24/7 Emergency Service | (877) 497-0007"
         description="Expert water damage restoration in Falls Church, VA. Serving Falls Church City, Seven Corners, Bailey's Crossroads & Merrifield. 24/7 emergency response. Call (877) 497-0007 now."
-        schema={[localBusinessSchema, faqSchema]}
+        schema={schema}
       />
 
       <div className="min-h-screen bg-gray-50">

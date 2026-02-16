@@ -4,6 +4,7 @@
 
 import React from 'react';
 import PageMeta from '../../ui/PageMeta';
+import { generateLocationPageSchema } from '../../../utils/schema';
 import Breadcrumbs from '../../ui/Breadcrumbs';
 import { ArchetypeContent } from '@/hooks/useArchetypeContent';
 import WineCellarProtection from './WineCellarProtection';
@@ -31,36 +32,17 @@ interface EstatePageProps {
 const CityPageEstate: React.FC<EstatePageProps> = ({ content, service = 'water-damage' }) => {
   const { franchise, cityName, neighborhoods, landmarks, commonIssues, architectureNotes, features, hasWineCellarContent, hasEquestrianFacilities } = content;
 
-  const locationSchema = {
-    "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "EmergencyService"],
-    "additionalType": "https://schema.org/LocalBusiness",
-    "@id": `https://${franchise.id}.flood.doctor/${service}`,
-    "name": `Flood Doctor - Water Damage Restoration ${cityName} VA`,
-    "image": "https://flood.doctor/logo.png",
-    "url": `https://${franchise.id}.flood.doctor/${service}`,
-    "telephone": franchise.phone,
-    "description": `24/7 emergency water damage restoration for ${cityName} luxury estates. Specialized in wine cellar protection, home theater restoration, and high-value asset safeguarding. IICRC certified.`,
-    "areaServed": neighborhoods.slice(0, 5).map(n => ({ "@type": "Place", "name": n })),
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": franchise.coordinates.lat,
-      "longitude": franchise.coordinates.lng
-    }
-  };
+  const schema = generateLocationPageSchema(
+    { name: cityName, address: { addressLocality: cityName, addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: `${cityName} Water Damage`, path: `/locations/${franchise.id}-water-damage/` }]
+  );
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title={`Luxury Estate Water Damage Restoration ${cityName}, VA | Discrete 24/7 Service`}
         description={`${cityName}'s premier water damage restoration for luxury estates. Wine cellar protection, home theater restoration, high-value asset safeguarding. Discrete unmarked vehicles. Call ${franchise.phone}.`}
-        structuredData={locationSchema}
+        schema={schema}
       />
 
       {/* ESTATE HERO - Animated background with premium styling */}

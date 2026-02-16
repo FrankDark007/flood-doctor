@@ -1,104 +1,37 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateLocationPageSchema } from '../../utils/schema';
 
 const RestonMoldRemoval: React.FC = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://reston.flood.doctor/mold-removal",
-        "name": "Flood Doctor Mold Removal - Reston VA",
-        "image": "https://flood.doctor/logo.png",
-        "url": "https://reston.flood.doctor/mold-removal",
-        "telephone": "(877) 497-0007",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Reston Town Center",
-          "addressLocality": "Reston",
-          "addressRegion": "VA",
-          "postalCode": "20190",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.9586,
-          "longitude": -77.3570
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "areaServed": [
-          "Reston Town Center",
-          "Lake Anne",
-          "South Lakes",
-          "North Point",
-          "Hunters Woods"
-        ],
-        "sameAs": [
-          "https://www.facebook.com/flooddoctor",
-          "https://twitter.com/flooddoctor"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I know if I have mold in my Reston home?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call (877) 497-0007 for a professional inspection."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is mold common in Reston VA homes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Reston's humid climate and proximity to water features make mold growth common, especially in older Lake Anne properties, poorly ventilated basements in South Lakes, and after water damage events. Regular inspections and prompt water damage repairs help prevent mold growth."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does mold remediation take in Reston properties?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most residential mold remediation projects in Reston take 1-5 days depending on the extent of contamination. Small areas may be completed in one day, while larger infestations requiring reconstruction may take a week or more. We provide a detailed timeline after inspection."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I stay in my Reston home during mold removal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For small, contained mold removal projects, you may remain in your Reston home. However, larger remediation projects requiring containment barriers and negative air pressure typically require temporary relocation. We'll assess your specific situation and provide guidance on safety."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does homeowners insurance cover mold remediation in Reston?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Insurance coverage for mold in Reston depends on the cause. Mold resulting from sudden water damage (like burst pipes) is often covered, while mold from gradual issues or maintenance neglect typically isn't. We work with your insurance company to maximize coverage."
-            }
-          }
-        ]
-      }
-    ]
-  };
+
+  const faqs = [
+    {
+      question: "How do I know if I have mold in my Reston home?",
+      answer: "Common signs of mold in Reston homes include visible mold growth (often black, green, or white patches), musty odors, water stains on walls or ceilings, increased allergy symptoms, and condensation on windows. If you suspect mold, call (877) 497-0007 for a professional inspection."
+    },
+    {
+      question: "Is mold common in Reston VA homes?",
+      answer: "Yes, Reston's humid climate and proximity to water features make mold growth common, especially in older Lake Anne properties, poorly ventilated basements in South Lakes, and after water damage events. Regular inspections and prompt water damage repairs help prevent mold growth."
+    },
+    {
+      question: "How long does mold remediation take in Reston properties?",
+      answer: "Most residential mold remediation projects in Reston take 1-5 days depending on the extent of contamination. Small areas may be completed in one day, while larger infestations requiring reconstruction may take a week or more. We provide a detailed timeline after inspection."
+    },
+    {
+      question: "Can I stay in my Reston home during mold removal?",
+      answer: "For small, contained mold removal projects, you may remain in your Reston home. However, larger remediation projects requiring containment barriers and negative air pressure typically require temporary relocation. We'll assess your specific situation and provide guidance on safety."
+    },
+    {
+      question: "Does homeowners insurance cover mold remediation in Reston?",
+      answer: "Insurance coverage for mold in Reston depends on the cause. Mold resulting from sudden water damage (like burst pipes) is often covered, while mold from gradual issues or maintenance neglect typically isn't. We work with your insurance company to maximize coverage."
+    }
+  ];
+
+  const schema = generateLocationPageSchema(
+    { name: 'Reston', address: { addressLocality: 'Reston', addressRegion: 'VA', addressCountry: 'US' } },
+    [{ label: 'Locations', path: '/locations/' }, { label: 'Reston Mold Removal', path: '/locations/reston-mold-removal/' }],
+    faqs
+  );
 
   return (
     <main className="flex-grow bg-white">
