@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import NeighborhoodPageRenderer, { NeighborhoodPageContent } from '../../components/city/NeighborhoodPageRenderer';
+import PageMeta from '../../components/ui/PageMeta';
 import { getCityInfo } from '../../utils/contentLoader';
 
 // Import all neighborhood content statically for build-time optimization
@@ -229,6 +230,132 @@ interface RouteParams {
   neighborhood: string;
 }
 
+/**
+ * Normalizes neighborhood content from any of the 4+ content formats into the
+ * NeighborhoodPageContent shape expected by NeighborhoodPageRenderer.
+ *
+ * Content files across 13 cities use inconsistent schemas:
+ *   Format A: { meta, h1, heroSection, neighborhoodIntro, hyperLocalContent, serviceList, testimonialSection, emergencySection, faq: [...], breadcrumbs }
+ *   Format B: { heroSection: { neighborhood, city, tagline, description }, introSection, servicesSection, faqSection: { header, faqs }, testimonialsSection, closingSection }
+ *   Format C: { meta, h1, introSection, processSection, localChallenges, faqSection: [...], serviceAreaSection, finalCTA }
+ *   Format D: { heroH1, heroP, searchDescription, neighborhoodName, mainContent, faqSection: { title, faqs }, closingContent }
+ *   + variants with missing/renamed sub-fields (e.g. hyperLocalContent.streets instead of .schools)
+ *
+ * This function extracts what it can and provides safe defaults so the renderer never crashes.
+ */
+function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string): NeighborhoodPageContent {
+  // Already correct format — but still patch missing sub-fields
+  const neighborhoodLabel = (raw.neighborhoodName || neighborhoodSlug || '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c: string) => c.toUpperCase());
+
+  // Extract meta
+  const meta = raw.meta || {
+    title: raw.heroH1 || `Water Damage Restoration ${neighborhoodLabel} | Flood Doctor`,
+    description: raw.heroP || raw.searchDescription || raw.heroSection?.description || raw.heroSection?.tagline || '',
+    canonical: '',
+  };
+
+  // Extract h1
+  const h1 = raw.h1 || raw.heroH1 || raw.heroSection?.neighborhood
+    ? `Water Damage Restoration in ${raw.heroSection?.neighborhood || neighborhoodLabel}, ${raw.heroSection?.city || cityName}`
+    : `Water Damage Restoration in ${neighborhoodLabel}`;
+
+  // Extract heroSection
+  const heroSection = {
+    headline: raw.heroSection?.headline || raw.heroSection?.tagline || raw.introSection?.header || '',
+    subheadline: raw.heroSection?.subheadline || raw.heroSection?.description || raw.heroP || '',
+    responseTime: raw.heroSection?.responseTime || raw.serviceAreaSection?.responseTime || '60-minute emergency response',
+    backgroundImage: raw.heroSection?.backgroundImage,
+  };
+
+  // Extract neighborhoodIntro
+  const introParagraph = raw.neighborhoodIntro?.paragraph
+    || (raw.introSection?.content || raw.introSection?.paragraphs?.join('\n\n') || raw.mainContent?.overview?.paragraphs?.join('\n\n') || '');
+  const neighborhoodIntro = {
+    paragraph: introParagraph,
+    housingTypes: raw.neighborhoodIntro?.housingTypes || [],
+    commonIssues: raw.neighborhoodIntro?.commonIssues || [],
+  };
+
+  // Extract hyperLocalContent (handle alternate field names)
+  const hlc = raw.hyperLocalContent || {};
+  const hyperLocalContent = {
+    landmarks: hlc.landmarks || [],
+    schools: hlc.schools || hlc.streets || [],
+    subdivisions: hlc.subdivisions || hlc.businessDistrict ? [hlc.businessDistrict].flat().filter(Boolean) : (raw.serviceAreaSection?.neighborhoods || []),
+    localFacts: hlc.localFacts || [],
+  };
+
+  // Extract serviceList (handle servicesSection.services with title→name)
+  let serviceList: Array<{ name: string; description: string }> = raw.serviceList || [];
+  if (serviceList.length === 0 && raw.servicesSection?.services) {
+    serviceList = raw.servicesSection.services.map((s: any) => ({
+      name: s.title || s.name || '',
+      description: s.description || '',
+    }));
+  }
+  if (serviceList.length === 0 && raw.localChallenges?.challenges) {
+    serviceList = raw.localChallenges.challenges.map((c: any) => ({
+      name: c.title || '',
+      description: c.description || '',
+    }));
+  }
+
+  // Extract testimonialSection
+  const rawTestimonials = raw.testimonialSection?.testimonials || raw.testimonialsSection?.testimonials || [];
+  const testimonialSection = {
+    headline: raw.testimonialSection?.headline || raw.testimonialsSection?.header || 'What Our Clients Say',
+    testimonials: rawTestimonials.map((t: any) => ({
+      quote: t.quote || t.text || '',
+      author: t.author || '',
+      location: t.location || '',
+      service: t.service || '',
+    })),
+  };
+
+  // Extract emergencySection
+  const emergencySection = {
+    headline: raw.emergencySection?.headline || raw.emergencySection?.header || '24/7 Emergency Response',
+    localContacts: raw.emergencySection?.localContacts || [],
+    responseNote: raw.emergencySection?.responseNote || raw.emergencySection?.availabilityContent || raw.emergencySection?.ctaText || '',
+  };
+
+  // Extract faq — handle array, object with questions, object with faqs, faqSection
+  let faq: Array<{ question: string; answer: string }> = [];
+  if (Array.isArray(raw.faq)) {
+    faq = raw.faq;
+  } else if (raw.faq?.questions) {
+    faq = raw.faq.questions;
+  } else if (Array.isArray(raw.faqSection)) {
+    faq = raw.faqSection;
+  } else if (raw.faqSection?.faqs) {
+    faq = raw.faqSection.faqs;
+  } else if (raw.faqSection?.questions) {
+    faq = raw.faqSection.questions;
+  }
+
+  // Extract breadcrumbs or generate default
+  const breadcrumbs = raw.breadcrumbs || [
+    { label: 'Home', url: '/' },
+    { label: 'Neighborhoods', url: '/' },
+    { label: neighborhoodLabel, url: `/neighborhoods/${neighborhoodSlug}/` },
+  ];
+
+  return {
+    meta,
+    h1: typeof h1 === 'string' ? h1 : `Water Damage Restoration in ${neighborhoodLabel}`,
+    heroSection,
+    neighborhoodIntro,
+    hyperLocalContent,
+    serviceList,
+    testimonialSection,
+    emergencySection,
+    faq,
+    breadcrumbs,
+  };
+}
+
 const DynamicNeighborhoodPage: React.FC = () => {
   const params = useParams<RouteParams>();
   const neighborhood = params.neighborhood;
@@ -292,19 +419,21 @@ const DynamicNeighborhoodPage: React.FC = () => {
     loadContent();
   }, [city, neighborhood, registryContent]);
 
-  const content = registryContent || dynamicContent;
+  const rawContent = registryContent || dynamicContent;
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        <PageMeta title="Loading..." description="" />
         <div className="animate-pulse text-[#5f6368]">Loading...</div>
       </div>
     );
   }
 
-  if (error || !content) {
+  if (error || !rawContent) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        <PageMeta title="Page Not Found" description="The requested neighborhood page could not be found." />
         <div className="text-center">
           <h1 className="text-2xl font-bold text-[#202124] mb-4">Page Not Found</h1>
           <p className="text-[#5f6368]">{error || 'The requested neighborhood page could not be found.'}</p>
@@ -312,6 +441,9 @@ const DynamicNeighborhoodPage: React.FC = () => {
       </div>
     );
   }
+
+  // Normalize content from any of the 4+ content formats
+  const content = normalizeContent(rawContent, cityInfo.name, neighborhood || '');
 
   return (
     <NeighborhoodPageRenderer

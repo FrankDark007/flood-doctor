@@ -503,7 +503,10 @@ export const CITIES: Record<string, CityConfig> = {
 };
 
 export const getCityBySlug = (slug: string): CityConfig | undefined => {
-  return CITIES[slug];
+  // Direct lookup by slug key
+  if (CITIES[slug]) return CITIES[slug];
+  // Fallback: match by subdomain prefix (e.g., 'fallschurch' → 'falls-church')
+  return Object.values(CITIES).find(c => c.subdomain.startsWith(slug + '.'));
 };
 
 export const getAllCities = (): CityConfig[] => {

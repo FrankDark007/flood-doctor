@@ -104,11 +104,27 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
   // Get archetype for this city to use appropriate visual variants
   const archetype = getArchetype(citySlug);
   const heroVariant = archetypeToHeroVariant[archetype];
+  // Safe array accessors (guard against undefined from mismatched content schemas)
+  const faqItems = Array.isArray(content.faq) ? content.faq : [];
+  const breadcrumbItems = Array.isArray(content.breadcrumbs) ? content.breadcrumbs : [];
+  const housingTypes = content.neighborhoodIntro?.housingTypes || [];
+  const commonIssues = content.neighborhoodIntro?.commonIssues || [];
+  const landmarks = content.hyperLocalContent?.landmarks || [];
+  const schools = content.hyperLocalContent?.schools || [];
+  const subdivisions = content.hyperLocalContent?.subdivisions || [];
+  const localFacts = content.hyperLocalContent?.localFacts || [];
+  const services = Array.isArray(content.serviceList) ? content.serviceList : [];
+  const testimonials = content.testimonialSection?.testimonials || [];
+  const localContacts = content.emergencySection?.localContacts || [];
+  const neighborhoodLabel = breadcrumbItems.length > 0
+    ? breadcrumbItems[breadcrumbItems.length - 1]?.label || ''
+    : '';
+
   // Generate FAQ schema
-  const faqSchema = {
+  const faqSchema = faqItems.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": content.faq.map(faq => ({
+    "mainEntity": faqItems.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -116,24 +132,25 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
         "text": faq.answer
       }
     }))
-  };
+  } : undefined;
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={content.meta.title}
-        description={content.meta.description}
+        title={content.meta?.title || ''}
+        description={content.meta?.description || ''}
         structuredData={faqSchema}
       />
 
       {/* Breadcrumbs */}
+      {breadcrumbItems.length > 0 && (
       <nav className="bg-[#f8f9fa] border-b border-[#dadce0]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px] py-3">
           <ol className="flex items-center gap-2 text-[14px] text-[#5f6368]">
-            {content.breadcrumbs.map((crumb, idx) => (
+            {breadcrumbItems.map((crumb, idx) => (
               <React.Fragment key={idx}>
                 {idx > 0 && <ChevronRight className="w-4 h-4" />}
-                {idx === content.breadcrumbs.length - 1 ? (
+                {idx === breadcrumbItems.length - 1 ? (
                   <span className="text-[#202124] font-medium">{crumb.label}</span>
                 ) : (
                   <Link to={crumb.url} className="hover:text-[#1a73e8] transition-colors">
@@ -145,6 +162,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           </ol>
         </div>
       </nav>
+      )}
 
       {/* Hero Section with Animated Background */}
       <section className="relative min-h-[600px] lg:min-h-[700px] text-white overflow-hidden">
@@ -160,14 +178,14 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
             </div>
 
             <h1 className="text-[32px] sm:text-[40px] lg:text-[56px] font-normal tracking-[-0.5px] text-white mb-6">
-              {content.h1}
+              {content.h1 || ''}
             </h1>
 
             <p className="text-xl text-gray-300 mb-4">
-              {content.heroSection.headline}
+              {content.heroSection?.headline || ''}
             </p>
             <p className="text-lg text-gray-400 mb-8">
-              {content.heroSection.subheadline}
+              {content.heroSection?.subheadline || ''}
             </p>
 
             {/* CTA Buttons with Emergency Badge */}
@@ -190,7 +208,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
             </div>
 
             {/* Trust Badges Component */}
-            <TrustBadges variant="horizontal" responseTime={content.heroSection.responseTime} />
+            <TrustBadges variant="horizontal" responseTime={content.heroSection?.responseTime || ''} />
           </div>
         </div>
       </section>
@@ -208,7 +226,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <div className="prose prose-lg max-w-none">
-                {content.neighborhoodIntro.paragraph.split('\n\n').map((para, idx) => (
+                {(content.neighborhoodIntro?.paragraph || '').split('\n\n').filter(Boolean).map((para, idx) => (
                   <p key={idx} className="text-[18px] lg:text-[20px] text-[#5f6368] mb-6 leading-relaxed">
                     {para}
                   </p>
@@ -218,30 +236,34 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
 
             <div className="space-y-6">
               {/* Housing Types */}
+              {housingTypes.length > 0 && (
               <div className="bg-[#f8f9fa] rounded-2xl p-6 border border-[#dadce0]">
                 <div className="flex items-center gap-2 mb-4">
                   <Home className="w-5 h-5 text-[#1a73e8]" />
                   <h3 className="text-[16px] font-semibold text-[#202124]">Housing Types</h3>
                 </div>
                 <ul className="space-y-2">
-                  {content.neighborhoodIntro.housingTypes.map((type, idx) => (
+                  {housingTypes.map((type, idx) => (
                     <li key={idx} className="text-[14px] text-[#5f6368]">{type}</li>
                   ))}
                 </ul>
               </div>
+              )}
 
               {/* Common Issues */}
+              {commonIssues.length > 0 && (
               <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200">
                 <div className="flex items-center gap-2 mb-4">
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                   <h3 className="text-[16px] font-semibold text-[#202124]">Common Issues</h3>
                 </div>
                 <ul className="space-y-2">
-                  {content.neighborhoodIntro.commonIssues.map((issue, idx) => (
+                  {commonIssues.map((issue, idx) => (
                     <li key={idx} className="text-[14px] text-amber-900">{issue}</li>
                   ))}
                 </ul>
               </div>
+              )}
             </div>
           </div>
         </div>
@@ -251,49 +273,57 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
-            Serving Every Corner of {content.breadcrumbs[content.breadcrumbs.length - 1].label}
+            Serving Every Corner of {neighborhoodLabel}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Landmarks */}
+            {landmarks.length > 0 && (
             <div className="bg-white rounded-xl p-6 border border-[#dadce0]">
               <h3 className="text-[14px] font-semibold text-[#5f6368] uppercase tracking-wide mb-4">Landmarks</h3>
               <ul className="space-y-2">
-                {content.hyperLocalContent.landmarks.map((item, idx) => (
+                {landmarks.map((item, idx) => (
                   <li key={idx} className="text-[14px] text-[#202124]">{item}</li>
                 ))}
               </ul>
             </div>
+            )}
 
             {/* Schools */}
+            {schools.length > 0 && (
             <div className="bg-white rounded-xl p-6 border border-[#dadce0]">
               <h3 className="text-[14px] font-semibold text-[#5f6368] uppercase tracking-wide mb-4">Schools</h3>
               <ul className="space-y-2">
-                {content.hyperLocalContent.schools.map((item, idx) => (
+                {schools.map((item, idx) => (
                   <li key={idx} className="text-[14px] text-[#202124]">{item}</li>
                 ))}
               </ul>
             </div>
+            )}
 
             {/* Subdivisions */}
+            {subdivisions.length > 0 && (
             <div className="bg-white rounded-xl p-6 border border-[#dadce0]">
               <h3 className="text-[14px] font-semibold text-[#5f6368] uppercase tracking-wide mb-4">Subdivisions</h3>
               <ul className="space-y-2">
-                {content.hyperLocalContent.subdivisions.map((item, idx) => (
+                {subdivisions.map((item, idx) => (
                   <li key={idx} className="text-[14px] text-[#202124]">{item}</li>
                 ))}
               </ul>
             </div>
+            )}
 
             {/* Local Facts */}
+            {localFacts.length > 0 && (
             <div className="bg-white rounded-xl p-6 border border-[#dadce0]">
               <h3 className="text-[14px] font-semibold text-[#5f6368] uppercase tracking-wide mb-4">Quick Facts</h3>
               <ul className="space-y-2">
-                {content.hyperLocalContent.localFacts.map((item, idx) => (
+                {localFacts.map((item, idx) => (
                   <li key={idx} className="text-[14px] text-[#202124]">{item}</li>
                 ))}
               </ul>
             </div>
+            )}
           </div>
         </div>
       </section>
@@ -312,34 +342,36 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
-            Our Services in {content.breadcrumbs[content.breadcrumbs.length - 1].label}
+            Our Services in {neighborhoodLabel}
           </h2>
 
           {/* Visual Service Icons Grid */}
           <ServiceIconGrid variant="large" columns={3} className="mb-12" />
 
           {/* Detailed Service Descriptions */}
+          {services.length > 0 && (
           <div className="grid md:grid-cols-2 gap-6">
-            {content.serviceList.map((service, idx) => (
+            {services.map((service, idx) => (
               <div key={idx} className="bg-white rounded-xl p-6 border border-[#dadce0] hover:shadow-lg transition-shadow">
                 <h3 className="text-[18px] font-semibold text-[#202124] mb-3">{service.name}</h3>
                 <p className="text-[16px] text-[#5f6368]">{service.description}</p>
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
       {/* Testimonials */}
-      {content.testimonialSection.testimonials.length > 0 && (
+      {testimonials.length > 0 && (
         <section className="py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
-              {content.testimonialSection.headline}
+              {content.testimonialSection?.headline || 'What Our Customers Say'}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {content.testimonialSection.testimonials.map((testimonial, idx) => (
+              {testimonials.map((testimonial, idx) => (
                 <div key={idx} className="bg-white rounded-2xl p-8 border border-[#dadce0]">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -361,17 +393,19 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       )}
 
       {/* Emergency Contacts */}
+      {(localContacts.length > 0 || content.emergencySection?.headline) && (
       <section className="py-20 lg:py-24 bg-red-50 border-y border-red-200">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[24px] font-semibold text-[#202124] mb-6">
-            {content.emergencySection.headline}
+            {content.emergencySection?.headline || 'Emergency Contacts'}
           </h2>
 
+          {localContacts.length > 0 && (
           <div className="grid md:grid-cols-3 gap-4 mb-6">
-            {content.emergencySection.localContacts.map((contact, idx) => (
+            {localContacts.map((contact, idx) => (
               <a
                 key={idx}
-                href={`tel:${contact.phone.replace(/[^0-9]/g, '')}`}
+                href={`tel:${contact.phone?.replace(/[^0-9]/g, '') || ''}`}
                 className="flex items-center justify-between bg-white rounded-lg p-4 border border-red-200 hover:border-red-400 transition-colors"
               >
                 <div>
@@ -382,12 +416,17 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
               </a>
             ))}
           </div>
+          )}
 
+          {content.emergencySection?.responseNote && (
           <p className="text-[14px] text-red-900">{content.emergencySection.responseNote}</p>
+          )}
         </div>
       </section>
+      )}
 
       {/* FAQ Section */}
+      {faqItems.length > 0 && (
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
@@ -395,7 +434,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           </h2>
 
           <div className="space-y-6">
-            {content.faq.map((faq, idx) => (
+            {faqItems.map((faq, idx) => (
               <div key={idx} className="bg-[#f8f9fa] rounded-xl p-6 border border-[#dadce0]">
                 <h3 className="text-[18px] font-semibold text-[#202124] mb-3">{faq.question}</h3>
                 <p className="text-[16px] text-[#5f6368] leading-relaxed">{faq.answer}</p>
@@ -404,6 +443,7 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* Final CTA with Emergency Badge */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white relative overflow-hidden">
@@ -420,10 +460,10 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
           </div>
 
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] mb-6">
-            Water Emergency in {content.breadcrumbs[content.breadcrumbs.length - 1].label}?
+            Water Emergency in {neighborhoodLabel}?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            {content.heroSection.responseTime}. Call now for immediate help.
+            {content.heroSection?.responseTime || 'Fast response times'}. Call now for immediate help.
           </p>
           <a
             href={`tel:${phone.replace(/[^0-9]/g, '')}`}

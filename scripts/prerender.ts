@@ -250,9 +250,10 @@ function startCityServer(cityDistDir: string, spaShellHtml: string, port: number
 
 async function renderCityRoute(page: Page, route: string, cityDistDir: string, origin: string, port: number): Promise<RenderResult> {
   const url = `http://localhost:${port}${route}`;
+  const routeTimeout = route === '/' ? TIMEOUT_MS * 2 : TIMEOUT_MS; // Homepage needs more time late in batch
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded' });
-    await page.waitForFunction('window.__PRERENDER_READY__ === true', { timeout: TIMEOUT_MS });
+    await page.waitForFunction('window.__PRERENDER_READY__ === true', { timeout: routeTimeout });
 
     let html = await page.content();
     html = html.replace(new RegExp(`http://localhost:${port}`, 'g'), origin);
@@ -333,15 +334,21 @@ async function mainCities() {
   const totalRoutes = ALL_CITY_IDS.reduce((sum, id) => sum + getCityRoutes(id).length, 0);
   console.log(`\n  Pre-rendering ${totalRoutes} routes across ${ALL_CITY_IDS.length} cities...\n`);
 
-  const browser = await chromium.launch({ headless: true });
+  let browser = await chromium.launch({ headless: true });
   console.log(`  Chromium launched (${CONCURRENCY} concurrent tabs per city)\n`);
 
   const startTime = Date.now();
   const allResults: RenderResult[] = [];
   const CITY_PORT = PORT + 1; // Use different port than main prerender
+  const RESTART_EVERY = 5; // Restart browser every N cities to avoid memory pressure
 
-  for (const cityId of ALL_CITY_IDS) {
-    const { results } = await prerenderCity(browser, cityId, CITY_PORT);
+  for (let i = 0; i < ALL_CITY_IDS.length; i++) {
+    if (i > 0 && i % RESTART_EVERY === 0) {
+      await browser.close();
+      browser = await chromium.launch({ headless: true });
+      console.log(`  🔄 Browser restarted (after ${i} cities)\n`);
+    }
+    const { results } = await prerenderCity(browser, ALL_CITY_IDS[i], CITY_PORT);
     allResults.push(...results);
   }
 

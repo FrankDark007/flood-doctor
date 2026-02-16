@@ -9,6 +9,7 @@ import React from 'react';
 import { useCityFranchise } from '@/contexts/CityFranchiseContext';
 import { getCityBySlug } from '@/config/cities';
 import CityLandingNew from '@/pages/city/CityLandingNew';
+import PageMeta from '@/components/ui/PageMeta';
 
 const CityHome: React.FC = () => {
   const franchise = useCityFranchise();
@@ -20,6 +21,7 @@ const CityHome: React.FC = () => {
   if (!cityConfig) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
+        <PageMeta title={`${franchise.city} | Flood Doctor`} description="Water damage restoration services" />
         <div className="text-center">
           <h1 className="text-2xl font-semibold text-gray-900 mb-2">
             City Not Found
