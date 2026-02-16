@@ -4,6 +4,35 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-16 — P2 #6 Standard Project Package
+
+**Commits**: `2577082`, `659c16f`, `a7fed9c`
+**Scope**: 5 files (1 new resource page, 2 hub integrations, 1 route config, 1 sitemap)
+
+### What Changed
+- **New page**: `/resources/standard-project-package/` — Complete scope definition for standard water damage restoration service
+  - 876-line React component with 6 service groups, 4 "NOT included" categories, standard assumptions, 4 documentation phases, 12 FAQs
+  - Hero with promise statement + stats (60min response, 4-10 days, IICRC S500)
+  - Service groups: Emergency Response, Water Extraction, Structural Drying, Antimicrobial Treatment, Containment & Protection, Documentation
+  - NOT included: Reconstruction, mold remediation (>10 sq ft), contents pack-out, building code upgrades
+  - IICRC standard assumptions: Category 1-3 classification, drying goals, timeline expectations, property access requirements
+- **Schema**: Service + FAQPage (12 questions) + BreadcrumbList combined via PageMeta
+- **Integration**: Added to ResourcesHub as first primary featured resource with Package icon and Unsplash image
+- **Cross-links**: Referenced in WaterDamageCostCalculator FAQ ("See our complete Standard Project Package for full scope details")
+- **Sitemap**: Regenerated sitemap-main.xml (189 URLs total, new URL included)
+- **Bug fix**: Escaped apostrophe in equipment inventory detail string to resolve build error
+
+### Production Verification (pending deployment)
+| Check | Result |
+|-------|--------|
+| Standard Project Package page | (to be verified) |
+| JSON-LD | (to be verified) |
+| ResourcesHub featured card | (to be verified) |
+| Fake routes (2 tested) | (to be verified) |
+| Cloudflare cache purge | (to be verified) |
+
+---
+
 ## 2026-02-16 — P1 #4 Cost Calculator Fixes + Deploy
 
 **Commit**: `f0b57c9`
