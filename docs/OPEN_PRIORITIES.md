@@ -28,11 +28,9 @@ Last updated: 2026-02-15
 - **Files likely touched**: pages/resources/WaterDamageCostCalculator.tsx, possibly new components
 - **Do not break**: Existing resource page structure, PageMeta patterns
 
-### 5. Internal Linking Strategy
-- **Goal**: Add contextual cross-links between related blog posts, guides, and service pages
-- **Success metric**: Every blog post links to ≥ 2 related articles; service pages link to relevant guides
-- **Files likely touched**: pages/blog/*.tsx, components/ui/RelatedArticles.tsx
-- **Do not break**: Existing links (0 broken currently), page layouts
+### ~~5. Internal Linking Strategy (Phase 1)~~ ✅ Complete (2026-02-15)
+- **Done**: Added 2-3 contextual internal links to each of 10 priority blog posts (30 total links). All link targets verified 200. Service pages deferred (content is string-based, needs rendering refactor).
+- **Commit**: `81ccf21`
 
 ## P2 — Backlog
 

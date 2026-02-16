@@ -58,6 +58,31 @@
 
 ---
 
+### 2026-02-15: Internal Linking Strategy Phase 1 (P1 #5)
+
+**What:** Added 2-3 contextual internal links to each of 10 priority blog posts (30 total links). Links use React Router `<Link>` with natural anchor text pointing to related blog posts, service pages, and guides.
+
+**Pages modified:**
+- sewage-backup-cleanup-health-risks-virginia.tsx (3 links)
+- emergency-water-damage-response-virginia.tsx (3 links)
+- mold-growth-after-water-damage-timeline.tsx (3 links)
+- homeowners-insurance-water-damage-virginia.tsx (3 links)
+- hidden-water-damage-signs.tsx (3 links)
+- burst-pipe-emergency-response.tsx (2 links)
+- mold-after-water-damage-virginia.tsx (3 links)
+- water-damage-restoration-cost-fairfax.tsx (3 links)
+- water-damage-northern-virginia-guide.tsx (3 links)
+- basement-flooding-guide.tsx (3 links)
+
+**Link targets:** All 11 unique targets verified 200 in dist/. Hub-and-spoke pattern: mold-growth-timeline and insurance-coverage are hubs receiving most inbound links.
+
+**Note:** Service pages deferred — content lives in `data/services.ts` as plain strings rendered via `{item.answer}`. Adding `<Link>` would require refactoring FAQ/content rendering to support JSX or `dangerouslySetInnerHTML`.
+
+**Commits:** `81ccf21`
+**Status:** Complete
+
+---
+
 ### 2026-02-15: Remove Hardcoded LocalBusiness from index.html (P1 #3b)
 
 **What:** Removed 52-line hardcoded `<script type="application/ld+json">` LocalBusiness block from `index.html`. This block was creating a duplicate ld+json script on every page alongside the dynamic PageMeta-injected schema.
