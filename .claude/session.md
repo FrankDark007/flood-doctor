@@ -95,10 +95,26 @@ Created a durable AI project memory system so any AI agent (Claude Code, ChatGPT
 
 ---
 
+## ✅ COMPLETE: Location Meta Description Cleanup — P1 #3 (2026-02-15)
+
+### Status: Complete — committed (`7f17338`)
+
+- Removed phone numbers from 28 location page meta descriptions
+- McLeanWaterDamage.tsx skipped (uses archetype system, no inline PageMeta)
+- Build: 188/188 pass
+- Grep: 0 phone numbers in any location `description=` prop
+- Spot-check: 3 prerendered pages verified clean
+
+---
+
 ## Next Up
 - See `docs/OPEN_PRIORITIES.md` for ranked backlog
 - ~~P0: Schema Markup Audit (JSON-LD)~~ ✅ Complete + Deployed
-- P0: Production Deployment + Verification (schema rollout deployed 2026-02-15)
+- ~~P0: Production Deployment + Verification~~ ✅ Complete (2026-02-15)
+- ~~P1 #3: Location Meta Description Cleanup~~ ✅ Complete (2026-02-15)
+- P1 #3b: Remove hardcoded LocalBusiness from index.html
+- P1 #4: Cost Calculator
+- P1 #5: Internal Linking Strategy
 
 ---
 

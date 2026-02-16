@@ -58,6 +58,20 @@
 
 ---
 
+### 2026-02-15: Location Meta Description Cleanup (P1 #3)
+
+**What:** Removed phone numbers from all 28 location page meta descriptions (McLeanWaterDamage.tsx skipped — uses archetype component system with no inline PageMeta).
+
+**Verification:**
+- Build: 188/188 pass
+- Grep: 0 phone patterns in location `description=` props
+- Spot-check: 3 prerendered pages (Arlington, Fairfax, Herndon) confirmed clean
+
+**Commits:** `7f17338`
+**Status:** Complete
+
+---
+
 ### 2026-02-15: Schema Rollout — Phase 1: PageMeta Infrastructure
 
 **What:** Fixed PageMeta.tsx to emit `@graph` wrapper when schema prop receives an array, and deduplicate entities by `@type`+`@id`.

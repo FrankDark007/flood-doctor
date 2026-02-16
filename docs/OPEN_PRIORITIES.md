@@ -14,11 +14,9 @@ Last updated: 2026-02-15
 
 ## P1 — Important
 
-### 3. Location Page Meta Description Cleanup
-- **Goal**: Remove phone numbers from meta descriptions in location pages (titles already clean)
-- **Success metric**: No phone numbers in any meta description tag across all 188 pages
-- **Files likely touched**: pages/locations/*.tsx (29 files)
-- **Do not break**: Titles (already ≤ 60 chars), H1 tags, canonical URLs
+### ~~3. Location Page Meta Description Cleanup~~ ✅ Complete (2026-02-15)
+- **Done**: Removed phone numbers from 28 location page meta descriptions (McLeanWaterDamage uses archetype system)
+- **Commit**: `7f17338`
 
 ### 3b. Remove Hardcoded LocalBusiness from index.html
 - **Goal**: Remove the site-wide hardcoded `<script type="application/ld+json">` LocalBusiness block from `index.html` — it creates a duplicate ld+json script on every page alongside the dynamic PageMeta-injected schema
