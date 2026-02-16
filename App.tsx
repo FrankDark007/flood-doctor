@@ -115,6 +115,7 @@ const MoldPreventionGuide = lazy(() => import('./pages/resources/MoldPreventionG
 const WaterDamageCategories = lazy(() => import('./pages/resources/WaterDamageCategories'));
 const SignsOfWaterDamage = lazy(() => import('./pages/resources/SignsOfWaterDamage'));
 const WaterDamageCostCalculator = lazy(() => import('./pages/resources/WaterDamageCostCalculator'));
+const StandardProjectPackage = lazy(() => import('./pages/resources/StandardProjectPackage'));
 const BlogIndex = lazy(() => import('./pages/BlogIndex'));
 const NearMeLanding = lazy(() => import('./pages/NearMeLanding'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -500,6 +501,7 @@ const AppLayout: React.FC = () => {
               <Route path="/resources/water-damage-categories/" element={<WaterDamageCategories />} />
               <Route path="/resources/signs-of-water-damage/" element={<SignsOfWaterDamage />} />
               <Route path="/resources/cost-calculator/" element={<WaterDamageCostCalculator />} />
+              <Route path="/resources/standard-project-package/" element={<StandardProjectPackage />} />
               <Route path="/resources/water-damage-classes-guide/" element={<WaterDamageClassesGuide />} />
               <Route path="/resources/virginia-insurance-guide/" element={<VirginiaInsuranceGuide />} />
               <Route path="/resources/structural-drying-guide/" element={<StructuralDryingGuide />} />
