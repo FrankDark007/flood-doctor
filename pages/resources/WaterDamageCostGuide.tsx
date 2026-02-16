@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -190,7 +191,7 @@ const WaterDamageCostGuide: React.FC = () => {
               Water Damage Restoration Cost Guide
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              Understanding restoration costs helps you budget, evaluate estimates, and avoid overpaying. Here's what to expect based on real-world pricing data.
+              Understanding restoration costs helps you budget, evaluate estimates, and avoid overpaying. <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">Try our interactive cost calculator</Link> for a personalized estimate, or review the pricing data below.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">

@@ -673,7 +673,7 @@ const BasementFloodingGuide: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-text mb-2">Insurance Coverage Reduces Out-of-Pocket Costs</h4>
                     <p className="text-sm text-muted leading-relaxed">
-                      Most homeowners insurance policies cover sudden water damage (burst pipes, appliance failures). Learn more about <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> for water damage in Virginia. With typical deductibles of $500-$2,500, insurance significantly reduces your costs. We work directly with all major insurance carriers and handle documentation, providing detailed Xactimate estimates that adjusters accept. You typically pay only your deductible for covered losses.
+                      Most homeowners insurance policies cover sudden water damage (burst pipes, appliance failures). Learn more about <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> for water damage in Virginia, or <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">estimate your restoration cost</Link> before filing a claim. With typical deductibles of $500-$2,500, insurance significantly reduces your costs. We work directly with all major insurance carriers and handle documentation, providing detailed Xactimate estimates that adjusters accept. You typically pay only your deductible for covered losses.
                     </p>
                   </div>
                 </div>

@@ -389,7 +389,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-text mb-2">Professional Restoration Prevents Escalation</h4>
                     <p className="text-sm text-muted leading-relaxed">
-                      Professional water damage restoration companies use industrial dehumidifiers, air movers, moisture meters, and thermal imaging to dry structures completely—preventing the escalation shown above. Most insurance companies pre-approve emergency mitigation because it saves them money versus extensive mold remediation and structural repairs.
+                      Professional water damage restoration companies use industrial dehumidifiers, air movers, moisture meters, and thermal imaging to dry structures completely—preventing the escalation shown above. <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">Estimate your restoration cost</Link> based on damage severity. Most insurance companies pre-approve emergency mitigation because it saves them money versus extensive mold remediation and structural repairs.
                     </p>
                   </div>
                 </div>

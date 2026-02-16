@@ -576,7 +576,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
 
         <h3>Should I file a claim for minor water damage?</h3>
         <p>
-          Consider your deductible, damage extent, and claim history. If repair costs are only slightly above your deductible, paying out of pocket may be better for your long-term rates and insurability. For significant damage exceeding your deductible by $2,000+, filing a claim typically makes sense. Consult with your agent for guidance.
+          Consider your deductible, damage extent, and claim history. If repair costs are only slightly above your deductible, paying out of pocket may be better for your long-term rates and insurability. For significant damage exceeding your deductible by $2,000+, filing a claim typically makes sense. Use our <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">cost calculator</Link> to estimate restoration costs before deciding. Consult with your agent for guidance.
         </p>
       </article>
       <RelatedArticles categories={['insurance', 'water-damage']} currentSlug="/blog/homeowners-insurance-water-damage-virginia/" />

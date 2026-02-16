@@ -31,7 +31,8 @@ import {
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
-import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
+import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
+import { siteConfig } from '../../config/site';
 
 /**
  * WaterDamageCostCalculator - SEO-Optimized Cost Calculator Tool
@@ -319,7 +320,7 @@ const WaterDamageCostCalculator: React.FC = () => {
     {
       class: 2,
       title: 'Class 2 - Moderate',
-      description: 'Entire room affected, moisture wicked up walls &lt;24"',
+      description: 'Entire room affected, moisture wicked up walls <24"',
       examples: 'Whole room flooding, appliance failure',
       costRange: '$550 - $1,000',
       color: 'amber'
@@ -446,26 +447,40 @@ const WaterDamageCostCalculator: React.FC = () => {
     }))
   };
 
-  const articleSchema = generateArticleSchema({
-    headline: 'Water Damage Cost Calculator',
-    description: 'Calculate water damage restoration costs instantly. Free tool uses Xactimate pricing standards. Get estimates by damage class, water category, and square footage. Northern Virginia pricing.',
-    slug: '/resources/cost-calculator/',
+  const webAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Water Damage Cost Calculator',
+    description: 'Calculate water damage restoration costs using Xactimate pricing standards. Get estimates by damage class, water category, and square footage.',
+    url: `${siteConfig.SITE_URL}/resources/cost-calculator/`,
+    applicationCategory: 'UtilityApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'Flood Doctor',
+      url: siteConfig.SITE_URL,
+    },
     datePublished: '2025-01-01',
-    articleSection: 'Resources'
-  });
+    dateModified: '2026-01-01',
+  };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { label: 'Resources', path: '/resources/' },
     { label: 'Cost Calculator', path: '/resources/cost-calculator/' }
   ]);
 
-  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
+  const pageSchema = combineSchemas(breadcrumbSchema, webAppSchema, faqSchema);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Cost Calculator"
-        description="Calculate water damage restoration costs instantly. Free tool uses Xactimate pricing standards. Get estimates by damage class, water category, and square footage. Northern Virginia pricing."
+        description="Calculate water damage restoration costs instantly. Free Xactimate-based tool with estimates by damage class, water category, and square footage."
         schema={pageSchema}
       />
 
@@ -613,8 +628,8 @@ const WaterDamageCostCalculator: React.FC = () => {
                   {/* Row 1: Property Type & Square Footage */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-text mb-3">Property Type</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <label id="property-type-label" className="block text-sm font-medium text-text mb-3">Property Type</label>
+                      <div role="group" aria-labelledby="property-type-label" className="grid grid-cols-2 gap-3">
                         <button
                           onClick={() => setPropertyType('residential')}
                           className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
@@ -645,23 +660,28 @@ const WaterDamageCostCalculator: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-text mb-3">
+                      <label htmlFor="sqft-input" className="block text-sm font-medium text-text mb-3">
                         Affected Area (sq ft)
                       </label>
                       <div className="flex items-center gap-3">
                         <input
+                          id="sqft-range"
                           type="range"
                           min="50"
                           max="5000"
                           step="50"
                           value={squareFootage}
-                          onChange={(e) => setSquareFootage(parseInt(e.target.value))}
+                          onChange={(e) => setSquareFootage(parseInt(e.target.value) || 50)}
+                          aria-label="Affected area slider"
                           className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
                         />
                         <input
+                          id="sqft-input"
                           type="number"
+                          min={50}
+                          max={5000}
                           value={squareFootage}
-                          onChange={(e) => setSquareFootage(parseInt(e.target.value) || 50)}
+                          onChange={(e) => setSquareFootage(Math.max(50, Math.min(5000, parseInt(e.target.value) || 50)))}
                           className="w-24 px-3 py-2 border border-gray-200 rounded-lg text-center font-medium"
                         />
                       </div>
@@ -671,8 +691,8 @@ const WaterDamageCostCalculator: React.FC = () => {
                   {/* Row 2: Rooms & Service Hours */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-text mb-3">Rooms Affected</label>
-                      <div className="flex items-center gap-2">
+                      <label id="rooms-label" className="block text-sm font-medium text-text mb-3">Rooms Affected</label>
+                      <div role="group" aria-labelledby="rooms-label" className="flex items-center gap-2">
                         {[1, 2, 3, 4, 5].map((num) => (
                           <button
                             key={num}
@@ -690,8 +710,8 @@ const WaterDamageCostCalculator: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-text mb-3">Service Timing</label>
-                      <div className="grid grid-cols-3 gap-2">
+                      <label id="timing-label" className="block text-sm font-medium text-text mb-3">Service Timing</label>
+                      <div role="group" aria-labelledby="timing-label" className="grid grid-cols-3 gap-2">
                         {[
                           { key: 'regular', label: 'Regular', subtext: 'Standard' },
                           { key: 'after-hours', label: 'After-Hours', subtext: '+15%' },
@@ -723,6 +743,9 @@ const WaterDamageCostCalculator: React.FC = () => {
                       <div className="text-sm text-muted">Adds extraction costs (+$2.50/sq ft)</div>
                     </div>
                     <button
+                      role="switch"
+                      aria-checked={standingWater}
+                      aria-label="Standing water present"
                       onClick={() => setStandingWater(!standingWater)}
                       className={`relative w-14 h-7 rounded-full transition-colors ${
                         standingWater ? 'bg-primary' : 'bg-gray-300'
@@ -736,10 +759,10 @@ const WaterDamageCostCalculator: React.FC = () => {
 
                   {/* Damage Class */}
                   <div>
-                    <label className="block text-sm font-medium text-text mb-3">
+                    <label id="damage-class-label" className="block text-sm font-medium text-text mb-3">
                       Damage Class (IICRC Standard)
                     </label>
-                    <div className="grid md:grid-cols-2 gap-3">
+                    <div role="group" aria-labelledby="damage-class-label" className="grid md:grid-cols-2 gap-3">
                       {damageClasses.map((dc) => (
                         <button
                           key={dc.class}
@@ -764,10 +787,10 @@ const WaterDamageCostCalculator: React.FC = () => {
 
                   {/* Water Category */}
                   <div>
-                    <label className="block text-sm font-medium text-text mb-3">
+                    <label id="water-category-label" className="block text-sm font-medium text-text mb-3">
                       Water Contamination Level
                     </label>
-                    <div className="space-y-3">
+                    <div role="group" aria-labelledby="water-category-label" className="space-y-3">
                       {waterCategories.map((cat) => (
                         <button
                           key={cat.category}
@@ -810,9 +833,10 @@ const WaterDamageCostCalculator: React.FC = () => {
                     <div className="font-display text-4xl lg:text-5xl font-bold mb-1">
                       ${estimate.low.toLocaleString()} – ${estimate.high.toLocaleString()}
                     </div>
-                    <div className="text-white/60 mb-6">
+                    <div className="text-white/60 mb-2">
                       ${estimate.perSqFtLow} – ${estimate.perSqFtHigh} per sq ft
                     </div>
+                    <p className="text-xs text-white/40 mb-6">*Estimate only. Actual costs may vary based on on-site assessment. Not a guaranteed price.</p>
 
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="bg-white/10 rounded-xl p-3">
@@ -1141,6 +1165,31 @@ const WaterDamageCostCalculator: React.FC = () => {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="font-display text-2xl font-semibold text-text mb-6">Related Resources</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link to="/blog/water-damage-restoration-cost-fairfax/" className="p-5 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all">
+              <div className="font-medium text-text mb-1">Restoration Costs in Fairfax</div>
+              <div className="text-sm text-muted">Average costs, factors, and insurance tips for Fairfax County.</div>
+            </Link>
+            <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="p-5 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all">
+              <div className="font-medium text-text mb-1">Insurance Coverage Guide</div>
+              <div className="text-sm text-muted">What your policy covers and how to maximize your claim.</div>
+            </Link>
+            <Link to="/resources/water-damage-categories/" className="p-5 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all">
+              <div className="font-medium text-text mb-1">Water Damage Categories</div>
+              <div className="text-sm text-muted">Understand Category 1, 2, and 3 water contamination levels.</div>
+            </Link>
+            <Link to="/resources/structural-drying-guide/" className="p-5 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all">
+              <div className="font-medium text-text mb-1">Structural Drying Guide</div>
+              <div className="text-sm text-muted">Equipment, timelines, and what to expect during drying.</div>
+            </Link>
           </div>
         </div>
       </section>

@@ -698,7 +698,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
           </h2>
 
           <p className="text-gray-700 mb-6">
-            Water damage is a race against time. Every hour of delay increases <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">restoration costs</Link>, extends recovery timelines, and elevates health risks from microbial growth. Northern Virginia homeowners face unique challenges from our regional climate and soil conditions that make professional response even more critical.
+            Water damage is a race against time. Every hour of delay increases <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">restoration costs</Link>, extends recovery timelines, and elevates health risks from microbial growth. Use our <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">cost calculator</Link> to estimate what your project may cost. Northern Virginia homeowners face unique challenges from our regional climate and soil conditions that make professional response even more critical.
           </p>
 
           <div className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white rounded-lg p-8 mb-6">

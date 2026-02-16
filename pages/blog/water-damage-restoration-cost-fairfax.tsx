@@ -289,7 +289,7 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
                     <p><strong>Severe damage (entire home/sewage):</strong> $15,000 - $30,000+</p>
                   </div>
                   <p className="text-xs text-blue-700 leading-relaxed">
-                    Most homeowners insurance policies cover water damage restoration costs minus your deductible (typically $500-$2,500). Actual costs vary based on water category, square footage, affected materials, and damage extent.
+                    Most homeowners insurance policies cover water damage restoration costs minus your deductible (typically $500-$2,500). Actual costs vary based on water category, square footage, affected materials, and damage extent. <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">Estimate your cost with our calculator</Link>.
                   </p>
                 </div>
               </div>
