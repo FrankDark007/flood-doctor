@@ -20,6 +20,12 @@ Last updated: 2026-02-15
 - **Files likely touched**: pages/locations/*.tsx (29 files)
 - **Do not break**: Titles (already ≤ 60 chars), H1 tags, canonical URLs
 
+### 3b. Remove Hardcoded LocalBusiness from index.html
+- **Goal**: Remove the site-wide hardcoded `<script type="application/ld+json">` LocalBusiness block from `index.html` — it creates a duplicate ld+json script on every page alongside the dynamic PageMeta-injected schema
+- **Success metric**: Every page has exactly 1 ld+json script (the PageMeta-managed one); no standalone LocalBusiness block in `index.html`
+- **Files likely touched**: `index.html`, possibly `city.html`
+- **Do not break**: Pages that rely on LocalBusiness via `generateLocalBusinessSchema()` in their PageMeta schema prop (blog posts, location pages) — those are unaffected since they get LocalBusiness through the @graph
+
 ### 4. Cost Calculator
 - **Goal**: Interactive water damage cost estimation tool using actual price lists
 - **Success metric**: Functional calculator page at /resources/cost-calculator/ with accurate pricing
