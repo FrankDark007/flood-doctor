@@ -28,6 +28,26 @@
 
 ## Completed Work
 
+### 2026-02-16: Service Detail Post-Process Redesign — IMPLEMENTED
+
+**What:** Executed the 9-task redesign plan in one batch. Redesigned service detail page layout after process tiles for better mobile UX, cleaner heading hierarchy, and enhanced sidebar.
+
+**Files Changed (4):**
+1. `pages/templates/ServiceDetailNew.tsx` — post-process area redesigned with TopicJumpLinks, section H2, controlled accordion, mobile/desktop sidebar split
+2. `generated-layouts/service-page/ServiceDetailedContent.tsx` — removed nested sidebar, h2→h3, added controlled openIndex prop, aria attributes
+3. `components/sections/TopicJumpLinks.tsx` — NEW horizontal scrollable chip navigation
+4. `components/sections/RelatedResourcesCard.tsx` — NEW sidebar card with 4 internal links
+
+**Key Decisions:**
+- Lifted accordion `openIndex` state to parent so jump links can open sections (code review catch)
+- Changed RelatedResourcesCard heading from `<h3>` to `<span>` to avoid orphaned heading in sidebar
+- Added `aria-expanded`, `aria-controls`, `role="region"`, `aria-labelledby` to accordion (a11y fix)
+- Added `scroll-margin-top: 100px` to section divs so scrollIntoView clears sticky navbar
+
+**Verification:** Build PASS, 189/189 routes, 1 H1/page, correct H1→H2→H3, 0 titles >60, 0 duplicates
+
+---
+
 ### 2026-02-16: Service Detail Post-Process Redesign — Plan Created + Reviewed + Patched
 
 **What:** Created, peer-reviewed, and patched implementation plan for redesigning service detail page layout after the process tiles section.

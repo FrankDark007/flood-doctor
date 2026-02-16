@@ -24,6 +24,10 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import EmergencyServiceCard from '../../components/ui/EmergencyServiceCard';
 import ServiceDetailHeroAnimation from '../../components/graphics/ServiceDetailHeroAnimation';
 
+// Post-process layout components
+import TopicJumpLinks from '../../components/sections/TopicJumpLinks';
+import RelatedResourcesCard from '../../components/sections/RelatedResourcesCard';
+
 // Hero Tile Mapping (for services with custom isometric tiles)
 import { getHeroTileBySlug } from '../../data/serviceHeroTiles';
 
@@ -108,6 +112,41 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
     navigate('/request/');
   }, [navigate]);
 
+  // Active section synced to accordion open state (no scroll spy needed)
+  const [activeGuideSection, setActiveGuideSection] = useState<string | null>('section-0');
+  const [accordionOpenIndex, setAccordionOpenIndex] = useState<number | null>(0);
+
+  // Jump link sections derived from detailed content
+  const guideSections = pageData.detailedContent.map((section, idx) => ({
+    id: `section-${idx}`,
+    label: section.heading,
+  }));
+
+  // Related resources for sidebar (internal links only)
+  // All URLs verified in config/routes.ts — do NOT add URLs without checking routes first
+  const relatedResources = [
+    {
+      title: 'Water Damage Cost Calculator',
+      description: 'Estimate restoration costs with our interactive tool.',
+      url: '/resources/cost-calculator/',
+    },
+    {
+      title: 'Standard Project Package',
+      description: 'Complete scope of our restoration service deliverables.',
+      url: '/resources/standard-project-package/',
+    },
+    {
+      title: 'Insurance Claims Guide',
+      description: 'Step-by-step guide to filing your claim successfully.',
+      url: '/resources/insurance-claims-guide/',
+    },
+    {
+      title: 'Water Damage Categories',
+      description: 'Understand Category 1, 2, and 3 water classifications.',
+      url: '/resources/water-damage-categories/',
+    },
+  ];
+
   // Extract service slug (last segment of URL path, without trailing slash)
   const serviceSlug = service.slug?.split('/').filter(Boolean).pop() || '';
 
@@ -169,16 +208,44 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
         </div>
       </section>
 
-      {/* Two-Column Layout: Content + Emergency Sidebar */}
+      {/* Topic Jump Links — Mobile/Desktop Navigation */}
+      {pageData.detailedContent.length > 0 && (
+        <TopicJumpLinks
+          sections={guideSections}
+          activeId={activeGuideSection}
+          onNavigate={(id) => {
+            const idx = parseInt(id.replace('section-', ''), 10);
+            setActiveGuideSection(id);
+            setAccordionOpenIndex(idx);
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        />
+      )}
+
+      {/* Two-Column Layout: Content + Sidebar */}
       <section className="py-12 md:py-16 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
 
             {/* Main Content Column */}
             <div className="lg:col-span-8 space-y-12">
-              {/* Detailed Content Sections (if available) */}
+              {/* In-Depth Guide Section — H2 for SEO */}
               {pageData.detailedContent.length > 0 && (
-                <ServiceDetailedContent sections={pageData.detailedContent} />
+                <div>
+                  <h2 id="guide" className="text-3xl font-semibold text-gray-900 mb-6">
+                    {isLocalPage
+                      ? `${serviceName} Guide for ${cityName} Property Owners`
+                      : 'Complete Restoration Guide'}
+                  </h2>
+                  <ServiceDetailedContent
+                    sections={pageData.detailedContent}
+                    openIndex={accordionOpenIndex}
+                    onSectionChange={(idx) => {
+                      setAccordionOpenIndex(idx);
+                      setActiveGuideSection(idx !== null ? `section-${idx}` : null);
+                    }}
+                  />
+                </div>
               )}
 
               {/* Testimonials */}
@@ -195,7 +262,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
               />
             </div>
 
-            {/* Sticky Sidebar with EmergencyServiceCard */}
+            {/* Desktop Sidebar — sticky with all cards */}
             <aside className="hidden lg:block lg:col-span-4">
               <div className="sticky top-32 space-y-6">
                 <EmergencyServiceCard variant="expanded" />
@@ -217,8 +284,16 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
                     Or request online →
                   </button>
                 </div>
+
+                {/* Related Resources */}
+                <RelatedResourcesCard resources={relatedResources} />
               </div>
             </aside>
+
+            {/* Mobile Related Resources — renders below main content, NOT sticky */}
+            <div className="lg:hidden mt-12">
+              <RelatedResourcesCard resources={relatedResources} />
+            </div>
 
           </div>
         </div>

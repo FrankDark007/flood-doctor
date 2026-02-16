@@ -4,6 +4,30 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-16 — Service Detail Post-Process Layout Redesign
+
+**Scope**: 4 files (2 modified, 2 new components)
+
+### What Changed
+- **Removed nested sidebar** from ServiceDetailedContent — fixes cramped mobile UX
+- **Added TopicJumpLinks** — horizontal scrollable chip row for section navigation (mobile + desktop)
+- **Added RelatedResourcesCard** — sidebar card with 4 verified internal links (cost calculator, project package, insurance guide, water damage categories)
+- **Added section H2** (`id="guide"`) above accordion for proper heading hierarchy
+- **Accordion h2→h3** — accordion titles now render as `<h3>` under the section H2
+- **Controlled accordion** — parent lifts openIndex state so jump links open the correct section
+- **Mobile sidebar slimmed** — only RelatedResourcesCard on mobile; EmergencyServiceCard + Quick CTA desktop-only (ServiceCTASticky handles mobile CTA)
+- **Accessibility** — `aria-expanded`, `aria-controls`, `role="region"`, `aria-labelledby` on accordion items; `scroll-margin-top` for nav offset
+
+### Verification
+- Build: PASS (189/189 routes pre-rendered)
+- H1 count: 1 per page (3 pages spot-checked)
+- Heading hierarchy: H1→H2→H3 correct on all checked pages
+- No new build warnings
+- Titles >60: 0 | Duplicates: 0
+- No broken internal links
+
+---
+
 ## 2026-02-16 — P2 #6 Standard Project Package
 
 **Commits**: `2577082`, `659c16f`, `a7fed9c`

@@ -20,7 +20,7 @@ Last updated: 2026-02-15
 
 <!-- AUTO-UPDATED BY scripts/update-project-state.mjs — do not edit between markers -->
 <!-- METRICS:START -->
-- **Pre-rendered routes**: 188
+- **Pre-rendered routes**: 189
 - **Titles > 60 chars**: 0
 - **Duplicate titles**: 0
 <!-- METRICS:END -->
