@@ -177,6 +177,7 @@ export const RESOURCE_ROUTES: string[] = [
   '/resources/water-damage-categories/',
   '/resources/signs-of-water-damage/',
   '/resources/cost-calculator/',
+  '/resources/standard-project-package/',
   '/resources/water-damage-classes-guide/',
   '/resources/virginia-insurance-guide/',
   '/resources/structural-drying-guide/',

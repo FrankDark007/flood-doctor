@@ -413,7 +413,7 @@ const WaterDamageCostCalculator: React.FC = () => {
     },
     {
       question: 'What is included in water damage restoration cost?',
-      answer: 'Standard restoration includes: emergency response and assessment, water extraction, structural drying with commercial equipment, daily moisture monitoring and documentation, antimicrobial treatment, and deodorization. NOT typically included: reconstruction (drywall, flooring, paint), mold remediation, and contents restoration—these are quoted separately based on your specific needs.'
+      answer: 'Standard restoration includes: emergency response and assessment, water extraction, structural drying with commercial equipment, daily moisture monitoring and documentation, antimicrobial treatment, and deodorization. NOT typically included: reconstruction (drywall, flooring, paint), mold remediation, and contents restoration—these are quoted separately based on your specific needs. See our complete Standard Project Package for full scope details.'
     },
     {
       question: 'How long does water damage restoration take?',

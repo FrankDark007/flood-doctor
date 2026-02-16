@@ -10,7 +10,8 @@ import {
   Search,
   ArrowRight,
   MessageSquare,
-  Phone
+  Phone,
+  Package
 } from 'lucide-react';
 
 /**
@@ -36,6 +37,13 @@ const ResourcesHub: React.FC = () => {
 
   // Primary resources (featured)
   const primaryResources = [
+    {
+      title: "Standard Project Package",
+      description: "Complete scope of our water damage restoration service—what's included, timelines, and deliverables.",
+      icon: Package,
+      link: "/resources/standard-project-package/",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
+    },
     {
       title: "Insurance Claims Guide",
       description: "Complete step-by-step guide to filing and maximizing your water damage insurance claim.",
