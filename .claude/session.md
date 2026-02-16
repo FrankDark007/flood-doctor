@@ -1,35 +1,97 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-15
 
 ---
 
-## ✅ LATEST: ServiceTabs Auto-Play Animation (2026-02-08)
+## 🔴 IN PROGRESS: Schema Markup Audit — P0 #1 (2026-02-15)
 
-### Status: Deployed
+### Status: AUDIT COMPLETE → Implementation Phase 1 ready
+
+### Audit Findings (full report delivered to user)
+
+**Architecture:**
+- All 188 pages use `components/ui/PageMeta.tsx` exclusively
+- `components/seo/*.tsx` are dead code (not used in active routes)
+- `utils/schema.ts` has all needed generators (Article, LocalBusiness, BreadcrumbList, Service, FAQ, HowTo, etc.) — they exist but most pages don't call them
+
+**Critical Issues Found:**
+1. **0/45 blog posts have Article/BlogPosting schema** — `generateBlogArticleSchema()` exists but no blog page calls it
+2. **0/45 blog posts have BreadcrumbList**
+3. **0/21 location pages have BreadcrumbList**; 13/21 missing FAQPage
+4. **12/12 landing pages have ONLY LocalBusiness** — missing Service, BreadcrumbList, FAQ
+5. **Duplicate LocalBusiness on ~8 location pages** — array serialization creates bare JSON array + separate LocalBusiness = 2 conflicting entities
+6. **3/3 service pages missing Service schema**
+
+**PageMeta injection bug:**
+- Single `<script id="json-ld-schema">` element
+- When `schema` receives an array (e.g., `schema={[faqSchema, localBusinessSchema]}`), it serializes as bare JSON array, not `@graph`
+- This + the `generateLocalBusinessSchema()` call elsewhere = duplicate LocalBusiness
+
+**Implementation Plan (5 phases):**
+1. Fix PageMeta: array → `@graph` handling + dedupe (INFRASTRUCTURE — do first)
+2. Blog posts: add `generateBlogArticleSchema()` (45 pages, highest ROI)
+3. Location pages: switch to `generateLocationPageSchema()` (21 pages)
+4. Landing pages: add Service + BreadcrumbList + FAQ (12 pages)
+5. Service/hub pages: add missing schema types
+
+### Next Step
+**Phase 1: Fix PageMeta infrastructure** — array→@graph, dedupe, single script tag. User has a ready prompt for this.
+
+---
+
+## ✅ Statusline + ChatGPT Bootstrap (2026-02-15)
+
+### Status: Complete
+
+### What Was Done
+- Created `scripts/chatgpt-bootstrap.sh` — copies latest bootstrap prompt to clipboard
+- Rewrote `docs/SESSION_BOOTSTRAP_CHATGPT.md` with inlined state (no file references)
+- Added auto-regeneration rule to CLAUDE.md (rule #5)
+- Trimmed Claude Code plugins from ~90 enabled → ~15 (fixed 24.8k token agent warning)
+- Committed: `80dd48b`
+
+---
+
+## ✅ AI Project Memory System (2026-02-15)
+
+### Status: Complete — committed & pushed (`5b29b9f`)
 
 ### What Was Done
 
-Added auto-scrolling animation with progress bar to the "Why Choose Flood Doctor?" tabs section on service pages.
+Created a durable AI project memory system so any AI agent (Claude Code, ChatGPT, etc.) can bootstrap into full project context in one prompt.
 
-#### Features Added
-- Auto-advances through tabs every 5 seconds
-- Progress bar at the top of active tab shows countdown
-- Pauses on mouse hover
-- "Auto-playing" / "Paused" indicator
-- Content panel animates when tab changes
-
-#### Files Updated
+#### Files Created/Updated
 | File | Purpose |
 |------|---------|
-| `/generated-layouts/service-page/ServiceTabs.tsx` | Added auto-play, progress, pause on hover |
-| `/App.tsx` | Removed dangling imports (missing dev files) |
-| `/scripts/deploy.sh` | Updated to use sshpass instead of expect |
+| `docs/PROJECT_STATE.md` | Enhanced with auto-update metrics markers, route breakdown, decisions, risks |
+| `docs/AI_EXECUTION_PROTOCOL.md` | Governance rules for AI agents (created prior commit) |
+| `docs/OPEN_PRIORITIES.md` | P0/P1/P2 ranked backlog (8 items) |
+| `docs/CHANGELOG_AI.md` | Running log of AI work batches (3 entries) |
+| `docs/SESSION_BOOTSTRAP_CLAUDE.md` | Copy-paste blocks for Claude sessions |
+| `docs/SESSION_BOOTSTRAP_CHATGPT.md` | Copy-paste bootstrap for ChatGPT |
+| `scripts/update-project-state.mjs` | Auto-patches METRICS markers in PROJECT_STATE.md |
+| `scripts/preflight-ai-session.sh` | Build + metrics + git health check |
+| `.gitignore` | Added test/CI artifact patterns |
 
-### Verified
-- Site accessible: https://flood.doctor (HTTP 200)
-- JS assets loading correctly
-- Cloudflare cache purged
+---
+
+## ✅ Title Tag Shortening — All Pages (2026-02-15)
+
+### Status: Complete — committed & pushed (`c4324e9`)
+
+### What Was Done
+- Shortened all 188 page titles to ≤ 60 characters rendered
+- 118 pages (62.8%) were over → 0 over
+- 0 duplicate titles maintained throughout
+- Categories: city landing (10), blog (46), static (3), location (21), guides (10), insurance (6), resources (18), other (5)
+
+---
+
+## Next Up
+- See `docs/OPEN_PRIORITIES.md` for ranked backlog
+- P0: Schema Markup Audit (JSON-LD)
+- P0: Production Deployment + Verification
 
 ---
 

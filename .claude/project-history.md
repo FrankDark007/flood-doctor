@@ -28,6 +28,105 @@
 
 ## Completed Work
 
+### 2026-02-15: Schema Markup Audit (P0 #1) — Audit Only
+
+**What:** Full JSON-LD schema coverage and compliance audit across all 188 prerendered pages.
+
+**Key Findings:**
+- `components/ui/PageMeta.tsx` is the sole active injection point (179 pages import it)
+- `components/seo/*.tsx` (LocalBusinessSchema, BlogPostingSchema, FAQSchema, alternate PageMeta) are dead code for active routes
+- `utils/schema.ts` has comprehensive generators (Article, LocalBusiness, BreadcrumbList, Service, FAQ, HowTo, WebSite, Organization, etc.) — most are unused
+
+**Critical Issues:**
+- **0/45 blog posts have Article/BlogPosting schema** — `generateBlogArticleSchema()` exists but no blog calls it
+- **0/45 blog posts have BreadcrumbList**
+- **0/21 location pages have BreadcrumbList**; 13/21 missing FAQPage
+- **12/12 landing pages have only LocalBusiness** — missing Service, BreadcrumbList, FAQ
+- **Duplicate LocalBusiness on ~8 location pages** — PageMeta serializes array as bare JSON array (not @graph), creating 2 conflicting LocalBusiness entities
+- **3/3 service pages missing Service schema**
+
+**Root Cause:** PageMeta uses single `<script id="json-ld-schema">`. When `schema` prop receives an array, `JSON.stringify` emits a bare JSON array instead of a `@graph` wrapper. Combined with other schema sources, this creates duplicate entities.
+
+**Implementation Plan (5 phases):**
+1. Fix PageMeta injection: array → `@graph` + entity dedupe (infrastructure)
+2. Blog posts: add `generateBlogArticleSchema()` (45 pages, highest ROI)
+3. Location pages: switch to `generateLocationPageSchema()` (21 pages)
+4. Landing pages: add Service + BreadcrumbList + FAQ (12 pages)
+5. Service/hub pages: add missing schema types
+
+**Status:** Audit complete. Phase 1 implementation ready (next session).
+
+---
+
+### 2026-02-15: ChatGPT Bootstrap Script + Plugin Optimization
+
+**What:** Created `scripts/chatgpt-bootstrap.sh` (copies inlined bootstrap to clipboard), rewrote `docs/SESSION_BOOTSTRAP_CHATGPT.md` with all state inlined, added auto-regeneration rule to CLAUDE.md. Trimmed Claude Code plugins from ~90 → ~15 enabled (fixed 24.8k token agent description warning).
+
+**Commits:** `80dd48b`
+**Status:** Complete
+
+---
+
+### 2026-02-15: AI Project Memory System
+
+**What:** Created durable documentation and automation so any AI agent can bootstrap into full project context.
+
+**Files Created:**
+- `docs/PROJECT_STATE.md` — Architecture, metrics (with auto-update markers), route breakdown, decisions, risks, guardrails
+- `docs/AI_EXECUTION_PROTOCOL.md` — Governance rules, forbidden actions, SEO guardrails, deployment rules
+- `docs/OPEN_PRIORITIES.md` — P0/P1/P2 ranked backlog (8 items)
+- `docs/CHANGELOG_AI.md` — Running log of AI work batches
+- `docs/SESSION_BOOTSTRAP_CLAUDE.md` — Copy-paste start/end/reload blocks
+- `docs/SESSION_BOOTSTRAP_CHATGPT.md` — Copy-paste bootstrap message
+- `scripts/update-project-state.mjs` — Scans dist/, patches METRICS markers in PROJECT_STATE.md
+- `scripts/preflight-ai-session.sh` — Build + metrics + git + docs health check
+
+**Commits:** `d142b23`, `cce5ac9`, `5b29b9f`
+**Status:** Complete
+
+---
+
+### 2026-02-15: Title Tag Shortening — All 188 Pages
+
+**What:** Shortened all page titles to ≤ 60 characters (rendered with " | Flood Doctor" suffix). Source titles ≤ 45 chars.
+
+**Scope:** 119 files across all page categories (city landing, blog, static, location, guides, insurance, resources, other).
+
+**Before:** 118 pages (62.8%) over 60 chars
+**After:** 0 pages over 60 chars, 0 duplicate titles
+
+**Patterns Applied:**
+- City landing: "Water Damage Restoration in {City}, VA"
+- Blog: "{Topic}: {Benefit}" (removed "Northern Virginia", year brackets)
+- Location: "{Service} in {City}, VA"
+- Insurance: "{Carrier} Water Damage Claim Guide"
+- Guides/Resources: Short descriptive (no pipes, no region)
+
+**Bug Fixed:** EmergencyWaterDamageRestoration shortened title matched homepage — changed to "24/7 Emergency Water Damage Restoration"
+
+**Commits:** `c4324e9`
+**Status:** Complete — 188/188 build, 0 over-60, 0 duplicates
+
+---
+
+### 2026-02-13: SEO Audit & Structural Fixes
+
+**What:** Comprehensive SEO hygiene pass — broken links, duplicate titles/H1s, route consolidation, 404 handling, sitemap cleanup.
+
+**Changes:**
+- Replaced SPA catch-all fallback with real 404 handling
+- Eliminated double "| Flood Doctor" from 29 page titles
+- Fixed all broken internal links across 94 source files
+- Consolidated 8 duplicate city water-damage pages into keyword landing pages with 301 redirects
+- Cleaned sitemaps (removed test pages, redirect URLs)
+- Fixed duplicate H1 tags (ServicesHub residential vs commercial)
+- Regenerated sitemaps with correct lastmod dates
+
+**Commits:** `ef0cf7c`, `0c650fc`, `3694da0`, `c5b96ce`, `fb13820`, `047d48d`
+**Status:** Complete
+
+---
+
 ### 2026-02-13: Security Fix — GEMINI_API_KEY Removed from Frontend
 
 **What:** Removed exposed API credentials from the client-side JavaScript bundle.
