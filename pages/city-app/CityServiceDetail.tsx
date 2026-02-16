@@ -15,13 +15,14 @@ const CityServiceDetail: React.FC = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
   const franchise = useCityFranchise();
 
-  // Find the service by slug
-  // Service slugs in SERVICES are formatted as "/services/water-damage/" etc.
-  const service = SERVICES.find(s =>
-    s.slug === `/services/${serviceSlug}/` ||
-    s.slug === serviceSlug ||
-    s.id === serviceSlug
-  );
+  // CityApp route captures single segment: /services/:serviceSlug/
+  // SERVICES[].slug is a nested path like "/services/residential/cleanup-services/mold-remediation/"
+  // Match by extracting the last segment from each service's slug
+  const service = SERVICES.find(s => {
+    const segments = s.slug.split('/').filter(Boolean);
+    const lastSegment = segments[segments.length - 1];
+    return lastSegment === serviceSlug;
+  });
 
   if (!service) {
     // Redirect to services hub if service not found
