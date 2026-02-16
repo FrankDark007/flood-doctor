@@ -46,7 +46,14 @@ Last updated: 2026-02-15
 - **Files likely touched**: New pages/portal/ directory, API integration layer
 - **Do not break**: Public-facing site (portal is separate authenticated section)
 
-### 8. Blog Content Expansion
+### 8. Neighborhood Page Redesign
+- **Goal**: Redesign the 68 neighborhood pages across 13 city subdomains (e.g., vienna.flood.doctor/neighborhoods/clarks-crossing/)
+- **Why**: Current pages use a basic layout with inconsistent content schemas (4+ formats). Need a polished, conversion-optimized design matching the city homepage quality.
+- **Success metric**: Consistent, professional neighborhood pages with proper content structure across all cities
+- **Files likely touched**: components/city/NeighborhoodPageRenderer.tsx, possibly content files for schema standardization
+- **Do not break**: Prerender pipeline (656/656), city homepage layouts, main domain
+
+### 9. Blog Content Expansion
 - **Goal**: Add 10-15 new blog posts targeting underserved keywords
 - **Success metric**: New posts indexed and ranking for target keywords within 60 days
 - **Files likely touched**: pages/blog/ (new files), config/routes.ts, sitemaps
