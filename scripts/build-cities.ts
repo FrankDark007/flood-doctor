@@ -502,6 +502,35 @@ ${JSON.stringify(schema, null, 2)}
 }
 
 /**
+ * Generate static 404 page for a city subdomain
+ */
+function generate404Html(city: FranchiseData): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — ${city.name}</title>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8f9fa; color: #202124; }
+    .container { text-align: center; max-width: 480px; padding: 2rem; }
+    h1 { font-size: 4rem; font-weight: 600; color: #1a73e8; margin: 0; }
+    p { font-size: 1.125rem; color: #5f6368; line-height: 1.6; }
+    a { color: #1a73e8; text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <p>This page doesn't exist.</p>
+    <p><a href="/">Return to ${city.city} homepage</a></p>
+  </div>
+</body>
+</html>`;
+}
+
+/**
  * Generate sitemap for a specific city
  */
 function generateCitySitemap(city: FranchiseData): string {
@@ -645,9 +674,13 @@ ${preloadLinks.map(link => `  <link rel="modulepreload" crossorigin href="${link
     const robotsTxt = generateRobotsTxt(city.id);
     fs.writeFileSync(path.join(cityDir, 'robots.txt'), robotsTxt);
 
-    // Copy .htaccess for SPA routing
+    // Generate 404.html
+    const html404 = generate404Html(city);
+    fs.writeFileSync(path.join(cityDir, '404.html'), html404);
+
+    // Generate .htaccess with real 404 handling (no SPA fallback)
     const htaccess = `# ${city.name} - Apache Configuration
-# GoDaddy Shared Hosting
+# Prerendered static site — NO SPA fallback
 
 # MIME Types
 AddType application/javascript .js
@@ -664,13 +697,22 @@ RewriteRule ^sitemaps/ - [L]
 RewriteRule ^robots\\.txt$ - [L]
 RewriteRule ^sitemap\\.xml$ - [L]
 
-# Serve existing files
-RewriteCond %{REQUEST_FILENAME} -f [OR]
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Serve existing directories (with index.html)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# SPA fallback (relative path - serves this folder's index.html)
-RewriteRule ^ index.html [L]
+# Enforce trailing slash for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [R=301,L]
+
+# Real 404 for anything not matched
+ErrorDocument 404 /404.html
+RewriteRule ^ - [R=404,L]
 `;
     fs.writeFileSync(path.join(cityDir, '.htaccess'), htaccess);
 
