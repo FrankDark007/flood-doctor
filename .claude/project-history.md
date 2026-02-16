@@ -28,31 +28,43 @@
 
 ## Completed Work
 
-### 2026-02-16: Service Detail Post-Process Redesign (UI/UX) — Plan Created
+### 2026-02-16: Service Detail Post-Process Redesign — Plan Created + Reviewed + Patched
 
-**What:** Created comprehensive implementation plan for redesigning service detail page layout after the process tiles section.
+**What:** Created, peer-reviewed, and patched implementation plan for redesigning service detail page layout after the process tiles section.
 
 **Goal:** Improve mobile UX, simplify nested layouts, add SEO improvements (heading hierarchy, internal links), enhance sidebar with related resources.
 
 **Plan Document:** `docs/plans/2026-02-16-service-detail-post-process-redesign.md`
 
-**Key Changes Designed:**
-1. Remove nested sidebar from ServiceDetailedContent (3-column → 1-column accordion)
-2. Add TopicJumpLinks component for horizontal mobile navigation with scroll arrows
-3. Add RelatedResourcesCard to sidebar with 4 internal resource links
-4. Fix mobile sidebar visibility (stack below content instead of hiding)
-5. Add section H2 heading for proper SEO hierarchy
-6. Add scroll spy to update active jump link chip on scroll
+**Session 1 — Plan Creation:**
+- Audited ServiceDetailNew.tsx (247 lines) and ServiceDetailedContent.tsx (176 lines)
+- Identified 5 issues: nested multi-column, no jump links, missing resources, heading hierarchy, hidden mobile sidebar
+- Wrote 10-task implementation plan with code snippets and acceptance criteria
 
-**Files to Change:**
-- `pages/templates/ServiceDetailNew.tsx` (primary, lines 173-225)
-- `generated-layouts/service-page/ServiceDetailedContent.tsx` (simplify to accordion only)
-- `components/sections/TopicJumpLinks.tsx` (NEW component)
-- `components/sections/RelatedResourcesCard.tsx` (NEW component)
+**Session 2 (Opus 4.6) — Plan Review + Patch:**
+Peer-reviewed the plan and identified 5 issues. Applied all fixes:
+1. **Heading hierarchy**: Accordion `<h2>` → `<h3>` (under section H2) — SEO correctness
+2. **Removed redundant Task 8**: Duplicated Task 4 output, deleted and renumbered to 9 tasks
+3. **Replaced scroll spy**: IntersectionObserver removed (brittle with collapsed accordions), replaced with deterministic `onSectionChange` callback synced to accordion `openIndex`
+4. **Verified resource URLs**: All 4 confirmed in `config/routes.ts` (lines 174-180), documented with line references
+5. **Slimmed mobile sidebar**: Only `RelatedResourcesCard` on mobile; EmergencyServiceCard + Quick CTA desktop-only; `ServiceCTASticky` already handles mobile emergency CTA
 
-**Status:** Plan complete, awaiting execution choice (subagent-driven vs parallel session)
+**Also this session:**
+- Regenerated `docs/SESSION_BOOTSTRAP_CHATGPT.md` with current state (189 routes, all priorities updated, redesign plan as active work)
+- Crafted and iterated execution prompt through 3 review rounds
 
-**Decision:** User wants to restart Claude Code to use Opus 4.6 before executing
+**Commits:**
+- `b213e8b` — docs: refine service detail post-process redesign plan
+- `1713bd1` — docs: regenerate ChatGPT bootstrap with current state
+
+**Files to Change (4 total):**
+1. `pages/templates/ServiceDetailNew.tsx` (modify lines 173-225 only)
+2. `generated-layouts/service-page/ServiceDetailedContent.tsx` (remove nested sidebar, add onSectionChange, h2→h3)
+3. `components/sections/TopicJumpLinks.tsx` (NEW)
+4. `components/sections/RelatedResourcesCard.tsx` (NEW)
+
+**Status:** Plan patched, execution prompt finalized. Ready for ONE-BATCH execution in new session.
+**Execution prompt:** Saved in `.claude/session.md` — copy-paste into fresh Claude Code session
 
 ---
 

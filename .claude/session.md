@@ -1,45 +1,130 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-16 (before Opus 4.6 restart)
+**Last Updated:** 2026-02-16 01:30 AM
 
 ---
 
-## 🔄 PENDING: Service Detail Post-Process Redesign — UI/UX Improvement
+## 🔄 NEXT: Service Detail Post-Process Redesign — Ready to Execute
 
-### Status: Plan Complete, Awaiting Execution Choice
+### Status: Plan patched and reviewed. Ready for ONE-BATCH execution in new session.
 
 **Plan Document:** `docs/plans/2026-02-16-service-detail-post-process-redesign.md`
+**Plan Version:** Patched (commit `b213e8b`) — all review feedback incorporated
 
 ### What This Does
-Redesigns service detail page layout AFTER the process tiles section for:
-- Better mobile UX (horizontal jump links, sidebar stacks below)
+Redesigns service detail page layout AFTER the process tiles section (lines 173-225) for:
+- Better mobile UX (horizontal jump links, slim mobile sidebar)
 - Cleaner desktop layout (remove nested sidebars)
-- Improved SEO (proper heading hierarchy, internal links)
-- Enhanced sidebar (add related resources card)
+- Improved SEO (proper H1→H2→H3 heading hierarchy, internal links)
+- Enhanced sidebar (related resources card with 4 verified internal links)
 
-### Key Changes Planned
-1. Remove nested sidebar from ServiceDetailedContent (accordion only)
-2. Add TopicJumpLinks component (horizontal scrollable chips)
-3. Add RelatedResourcesCard to sidebar (4 internal links)
-4. Fix mobile sidebar visibility (stack below, not hide)
-5. Add section H2 for clean heading hierarchy
-6. Add scroll spy for active section tracking
+### Plan Patches Applied (this session)
+1. **Heading hierarchy fixed**: Accordion titles `<h2>` → `<h3>` (under section H2)
+2. **Redundant task removed**: Old Task 8 deleted (duplicated Task 4), renumbered to 9 tasks
+3. **Scroll spy replaced**: IntersectionObserver removed, replaced with deterministic accordion-synced active state via `onSectionChange` callback
+4. **Resource URLs verified**: All 4 internal links confirmed in `config/routes.ts` lines 174-180
+5. **Mobile sidebar slimmed**: Only `RelatedResourcesCard` on mobile; `ServiceCTASticky` handles emergency CTA; EmergencyServiceCard + Quick CTA are desktop-only
 
-### Files to Change
-- `pages/templates/ServiceDetailNew.tsx` (primary, lines 173-225)
-- `generated-layouts/service-page/ServiceDetailedContent.tsx` (simplify accordion)
-- `components/sections/TopicJumpLinks.tsx` (NEW)
-- `components/sections/RelatedResourcesCard.tsx` (NEW)
+### EXACTLY 4 Files to Change
+1. `pages/templates/ServiceDetailNew.tsx` — post-process area ONLY (lines 173-225)
+2. `generated-layouts/service-page/ServiceDetailedContent.tsx` — remove nested sidebar, add `onSectionChange`, h2→h3
+3. `components/sections/TopicJumpLinks.tsx` — NEW
+4. `components/sections/RelatedResourcesCard.tsx` — NEW
 
-### Next Steps
-User needs to choose execution approach:
-1. **Subagent-Driven (this session)** - Fresh subagent per task + review
-2. **Parallel Session (separate)** - Use executing-plans in new session
+### Execution Prompt (paste in new session)
+The full execution prompt is saved below. Copy-paste it into a fresh Claude Code session:
+
+```
+ONE-BATCH EXECUTION. NO QUESTIONS. NO SCOPE CREEP.
+
+Repo: flood-doctor (fd-google-redesign)
+PLAN: docs/plans/2026-02-16-service-detail-post-process-redesign.md
+
+USE (mandatory)
+- /executing-plans (OVERRIDE: run ALL 9 tasks in ONE batch, ZERO checkpoints)
+- /verification-before-completion
+- Task(superpowers:code-reviewer)
+- scripts/preflight-ai-session.sh
+- scripts/update-project-state.mjs
+
+OVERRIDE
+- Commit cadence: SINGLE commit for entire change-set (do NOT commit per-task)
+
+HARD BOUNDS (do not violate)
+- Do NOT modify ServiceDetailNew.tsx lines 1–170
+- Modify ONLY code AFTER the process tiles section and BEFORE the footer block
+- Do NOT touch pages/fd-home-v4/*
+- Do NOT change architecture, routing model, schema system, PageMeta, or .htaccess
+- Do NOT add routes (prerendered route count must remain EXACTLY 189)
+- Do NOT add meta tags outside PageMeta
+- Do NOT modify any files other than the 4 explicitly listed below
+- Keep: 1 canonical, 1 H1, title source ≤45 chars, strict H1→H2→H3 hierarchy
+- No skipped heading levels (no H4 unless nested under H3 content)
+- No IntersectionObserver / scroll spy
+- No secrets
+
+IMPLEMENT (single coherent diff — EXACTLY 4 files)
+1) Modify: pages/templates/ServiceDetailNew.tsx
+   - Post-process area ONLY (after process tiles)
+2) Modify: generated-layouts/service-page/ServiceDetailedContent.tsx
+   - Remove nested sidebar
+   - Add onSectionChange callback
+   - Convert accordion titles from h2 → h3
+3) Create: components/sections/TopicJumpLinks.tsx
+4) Create: components/sections/RelatedResourcesCard.tsx
+
+Behavior requirements
+- Remove nested sidebar from ServiceDetailedContent (fix cramped mobile UX)
+- Add horizontal TopicJumpLinks (mobile + desktop)
+- Add RelatedResourcesCard in sidebar with EXACTLY 4 internal links already present in config/routes.ts
+- Mobile sidebar: ONLY RelatedResourcesCard (ServiceCTASticky owns mobile CTA)
+- Desktop: keep emergency/quick CTA desktop-only per plan
+- Active jump link MUST sync to accordion openIndex via onSectionChange callback (state-driven only)
+
+VERIFY (must pass)
+1) Run scripts/preflight-ai-session.sh and report results
+2) Run /verification-before-completion with explicit checks:
+   - npm run build PASS
+   - No new build warnings introduced
+   - prerender PASS
+   - prerendered routes = EXACTLY 189
+   - broken internal links = 0
+   - titles > 60 = 0
+   - duplicate titles = 0
+   - duplicate H1 = 0
+   - Spot-check 3 service pages:
+       • mobile + desktop layout correct
+       • heading hierarchy H1→H2→H3 correct
+       • no sidebar duplication
+       • jump link state sync working
+
+REVIEW + FIX
+- Run Task(superpowers:code-reviewer) on final diff
+- Apply fixes ONLY if within bounds (no scope expansion)
+
+DOCS + COMMIT
+- Run scripts/update-project-state.mjs
+- Update docs/CHANGELOG_AI.md with one concise entry (what changed + verification)
+- Make ONE commit:
+  message: "service-detail: post-process layout redesign"
+  include verification notes in commit body
+
+OUTPUT (strict)
+- Execution Report:
+  • files changed
+  • key changes (bullets)
+  • verification results (build, warnings, prerender, routes=189, links, titles/H1)
+  • commit hash
+- Risks (max 5 bullets)
+
+BEGIN NOW.
+```
 
 ### Hard Constraints
 - Do NOT modify content above process tiles (lines 1-170)
 - Do NOT change routes or PageMeta/schema logic
 - Keep Related Services, Service Area Links, Sticky Bottom CTA unchanged
+- EXACTLY 4 files, no more
 
 ---
 
