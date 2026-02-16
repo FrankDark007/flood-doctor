@@ -33,3 +33,10 @@ dist-ssr
 dist-cities/
 flood-doctor-v3.zip
 .next/
+
+# Test / CI artifacts
+playwright-report/
+test-results/
+screenshots/
+artifacts/
+tsconfig.tsbuildinfo
