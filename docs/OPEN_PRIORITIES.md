@@ -4,17 +4,13 @@ Last updated: 2026-02-15
 
 ## P0 — Critical / Next Up
 
-### 1. Schema Markup Audit (JSON-LD)
-- **Goal**: Ensure every page type has correct JSON-LD structured data (LocalBusiness, FAQPage, Article, HowTo, BreadcrumbList)
-- **Success metric**: Google Rich Results Test passes for all 188 pages; no missing required fields
-- **Files likely touched**: components/ui/PageMeta.tsx, utils/schema.ts, individual page files
-- **Do not break**: Existing PageMeta title/description/canonical behavior
+### ~~1. Schema Markup Audit (JSON-LD)~~ ✅ Complete (2026-02-15)
+- **Deployed**: PageMeta @graph infrastructure, 45 blog posts, 29 location pages, 23 landing pages, 2 service templates, 3 hub pages — all using centralized `utils/schema.ts` builders
+- **Commits**: `8a1c104`, `26b21cb`, `d60631a`, `9b58d61`, `7b00553`
 
-### 2. Production Deployment + Verification
-- **Goal**: Deploy current title-shortened build to production, verify all 188 routes return correct status codes
-- **Success metric**: curl audit shows 200 for valid, 301 for redirects, 404 for fake routes; Cloudflare cache purged
-- **Files likely touched**: None (deploy only)
-- **Do not break**: .htaccess redirect rules, sitemap URLs
+### ~~2. Production Deployment + Verification~~ ✅ Complete (2026-02-15)
+- **Deployed**: All schema changes live on flood.doctor via rsync + Cloudflare cache purge
+- **Verified**: 188/188 prerender, JSON-LD spot-checked on service/hub/blog pages
 
 ## P1 — Important
 

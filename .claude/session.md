@@ -4,9 +4,9 @@
 
 ---
 
-## 🔴 IN PROGRESS: Schema Markup Audit — P0 #1 (2026-02-15)
+## ✅ COMPLETE: Schema Markup Audit + Rollout — P0 #1 (2026-02-15)
 
-### Status: AUDIT COMPLETE → Implementation Phase 1 ready
+### Status: ALL PHASES COMPLETE — Deployed to production
 
 ### Audit Findings (full report delivered to user)
 
@@ -35,8 +35,15 @@
 4. Landing pages: add Service + BreadcrumbList + FAQ (12 pages)
 5. Service/hub pages: add missing schema types
 
-### Next Step
-**Phase 1: Fix PageMeta infrastructure** — array→@graph, dedupe, single script tag. User has a ready prompt for this.
+### Commits
+- `8a1c104` — Phase 1: PageMeta @graph + dedupe infrastructure
+- `26b21cb` — Phase 2: 45 blog posts → Article + BreadcrumbList
+- `d60631a` — Phase 2: 29 location pages → BreadcrumbList + LocalBusiness
+- `9b58d61` — Phase 2: 23 landing pages → Service + BreadcrumbList (via template)
+- `7b00553` — Phase 3: Service templates + hub/index BreadcrumbList
+
+### Result
+Every content page now has structured data via centralized builders in `utils/schema.ts`. Deployed 2026-02-15.
 
 ---
 
@@ -90,8 +97,8 @@ Created a durable AI project memory system so any AI agent (Claude Code, ChatGPT
 
 ## Next Up
 - See `docs/OPEN_PRIORITIES.md` for ranked backlog
-- P0: Schema Markup Audit (JSON-LD)
-- P0: Production Deployment + Verification
+- ~~P0: Schema Markup Audit (JSON-LD)~~ ✅ Complete + Deployed
+- P0: Production Deployment + Verification (schema rollout deployed 2026-02-15)
 
 ---
 

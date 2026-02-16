@@ -54,7 +54,59 @@
 4. Landing pages: add Service + BreadcrumbList + FAQ (12 pages)
 5. Service/hub pages: add missing schema types
 
-**Status:** Audit complete. Phase 1 implementation ready (next session).
+**Status:** Audit complete. All phases implemented (see below).
+
+---
+
+### 2026-02-15: Schema Rollout — Phase 1: PageMeta Infrastructure
+
+**What:** Fixed PageMeta.tsx to emit `@graph` wrapper when schema prop receives an array, and deduplicate entities by `@type`+`@id`.
+
+**Commits:** `8a1c104`
+**Status:** Complete
+
+---
+
+### 2026-02-15: Schema Rollout — Phase 2: Blog, Location, Landing Pages
+
+**What:** Replaced all inline JSON-LD schemas across 75 page files with centralized builder calls from `utils/schema.ts`. Executed via 9 parallel sub-agents.
+
+**Blog Posts (45 files):**
+- All inline `articleSchema`, `faqSchema`, `localBusinessSchema`, `combinedSchema`, `schemaData`, `schemaMarkup` declarations removed
+- Replaced with `generateBlogArticleSchema()` → produces Article + BreadcrumbList + LocalBusiness + FAQPage in `@graph`
+- Normalized prop from `structuredData=` to `schema=` on all 45 files
+- Net: +1,056 / -2,885 lines
+
+**Location Pages (29 files):**
+- All inline schemas replaced with `generateLocationPageSchema()`
+- 1 archetype component (`CityPageEstate.tsx`) also updated for McLeanWaterDamage delegation
+- Locations agent created a migration script (deleted after use)
+- Net: +462 / -2,085 lines
+
+**Landing Pages (1 file):**
+- Added `generateServicePageSchema()` to `KeywordLandingTemplate.tsx`
+- Used `useLocation().pathname` for dynamic slug (config has no slug field)
+- Single file change covers all 23 landing pages
+- Net: +16 / -1 lines
+
+**Commits:** `26b21cb` (blogs), `d60631a` (locations), `9b58d61` (landings)
+**Status:** Complete — build 188/188
+
+---
+
+### 2026-02-15: Schema Rollout — Phase 3: Service Templates + Hub/Index Pages
+
+**What:** Closed remaining schema gaps across service detail templates and hub/index pages.
+
+**Changes:**
+- `ServiceDetailNew.tsx` — FAQ-only inline schema → `generateServicePageSchema()` (Service + BreadcrumbList + FAQ)
+- `ServiceDetail.tsx` — Same transformation
+- `LocationsHub.tsx` — No schema → BreadcrumbList (Home > Locations)
+- `ResourcesHub.tsx` — No schema → BreadcrumbList (Home > Resources)
+- `BlogIndex.tsx` — No schema → BreadcrumbList (Home > Blog)
+
+**Commits:** `7b00553`
+**Status:** Complete — build 188/188, deployed to production
 
 ---
 
