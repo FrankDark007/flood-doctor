@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
@@ -60,11 +61,25 @@ const InsuranceGuide: React.FC = () => {
     }
   ];
 
+  const articleSchema = generateArticleSchema({
+    headline: 'Insurance Claims Guide',
+    description: 'Step-by-step guide to handling property insurance claims for water damage in Northern Virginia.',
+    slug: '/resources/insurance-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Insurance Guide', path: '/resources/insurance-guide/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Insurance Claims Guide" 
-        description="Step-by-step guide to handling property insurance claims for water damage in Northern Virginia." 
+      <PageMeta
+        title="Insurance Claims Guide"
+        description="Step-by-step guide to handling property insurance claims for water damage in Northern Virginia."
+        schema={pageSchema}
       />
       
       {/* 1. Hero */}

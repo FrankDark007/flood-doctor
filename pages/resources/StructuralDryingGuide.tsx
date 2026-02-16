@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Thermometer,
@@ -75,6 +76,21 @@ const StructuralDryingGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Structural Drying: How It Works',
+    description: 'Complete guide to structural drying science. Learn psychrometrics, equipment, drying phases, and IICRC S500 standards. Understand how professionals restore water-damaged buildings.',
+    slug: '/resources/structural-drying-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Structural Drying Guide', path: '/resources/structural-drying-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const dryingPrinciples = [
     {
@@ -264,7 +280,7 @@ const StructuralDryingGuide: React.FC = () => {
       <PageMeta
         title="Structural Drying: How It Works"
         description="Complete guide to structural drying science. Learn psychrometrics, equipment, drying phases, and IICRC S500 standards. Understand how professionals restore water-damaged buildings."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

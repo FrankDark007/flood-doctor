@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Shield,
@@ -72,6 +73,21 @@ const ChoosingRestorationCompany: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Choosing a Restoration Company',
+    description: 'Expert guide to choosing a water damage restoration company in Northern Virginia. Essential certifications (IICRC, VA license), questions to ask, red flags, insurance support, and comparison checklist.',
+    slug: '/resources/choosing-restoration-company/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Choosing a Restoration Company', path: '/resources/choosing-restoration-company/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const essentialCertifications = [
     {
@@ -310,7 +326,7 @@ const ChoosingRestorationCompany: React.FC = () => {
       <PageMeta
         title="Choosing a Restoration Company"
         description="Expert guide to choosing a water damage restoration company in Northern Virginia. Essential certifications (IICRC, VA license), questions to ask, red flags, insurance support, and comparison checklist."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

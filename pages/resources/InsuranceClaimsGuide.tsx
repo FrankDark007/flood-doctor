@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Camera,
@@ -73,6 +74,21 @@ const InsuranceClaimsGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Insurance Claims Guide',
+    description: 'Complete guide to filing water damage insurance claims. Step-by-step process, documentation checklist, coverage info, and how to handle adjuster disputes.',
+    slug: '/resources/insurance-claims-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Insurance Claims Guide', path: '/resources/insurance-claims-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const claimsSteps = [
     {
@@ -178,7 +194,7 @@ const InsuranceClaimsGuide: React.FC = () => {
       <PageMeta
         title="Water Damage Insurance Claims Guide"
         description="Complete guide to filing water damage insurance claims. Step-by-step process, documentation checklist, coverage info, and how to handle adjuster disputes."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero Section */}

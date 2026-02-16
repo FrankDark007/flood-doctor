@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Camera,
@@ -75,6 +76,21 @@ const InsuranceDocumentationGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Documentation Guide',
+    description: 'Complete guide to documenting water damage for insurance claims. Photo checklist, written documentation, communication logs, and professional documentation services to maximize your settlement.',
+    slug: '/resources/insurance-documentation-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Insurance Documentation Guide', path: '/resources/insurance-documentation-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const immediateActions = [
     {
@@ -354,7 +370,7 @@ const InsuranceDocumentationGuide: React.FC = () => {
       <PageMeta
         title="Water Damage Documentation Guide"
         description="Complete guide to documenting water damage for insurance claims. Photo checklist, written documentation, communication logs, and professional documentation services to maximize your settlement."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

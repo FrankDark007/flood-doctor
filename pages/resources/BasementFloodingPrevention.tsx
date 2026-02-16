@@ -17,36 +17,21 @@ import {
   ThermometerSnowflake
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 
 const BasementFloodingPrevention: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Prevent Basement Flooding",
-    "description": "Complete guide to preventing basement flooding including drainage, sump pumps, and waterproofing.",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Maintain Sump Pump",
-        "text": "Test monthly, clean pit, install battery backup"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Improve Drainage",
-        "text": "Grade away from house, extend downspouts 6+ feet"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Seal Foundation",
-        "text": "Repair cracks, consider waterproofing if needed"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Prevent Backups",
-        "text": "Install backflow valve, maintain plumbing"
-      }
-    ]
-  };
+  const articleSchema = generateArticleSchema({
+    headline: 'Basement Flooding Prevention Guide',
+    description: 'Prevent basement flooding with proven strategies. Learn about sump pumps, drainage, waterproofing, and what to do when water enters. Northern Virginia experts.',
+    slug: '/resources/basement-flooding-prevention/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Basement Flooding Prevention', path: '/resources/basement-flooding-prevention/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
 
   const floodingCauses = [
     { cause: 'Heavy rain (groundwater rise)', frequency: 'Most common', prevention: 'Sump pump, drainage' },
@@ -77,7 +62,7 @@ const BasementFloodingPrevention: React.FC = () => {
       <PageMeta
         title="Basement Flooding Prevention Guide"
         description="Prevent basement flooding with proven strategies. Learn about sump pumps, drainage, waterproofing, and what to do when water enters. Northern Virginia experts."
-        structuredData={structuredData}
+        schema={pageSchema}
       />
 
       {/* Hero */}

@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 
 /**
  * WaterDamageCostCalculator - SEO-Optimized Cost Calculator Tool
@@ -445,12 +446,27 @@ const WaterDamageCostCalculator: React.FC = () => {
     }))
   };
 
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Cost Calculator',
+    description: 'Calculate water damage restoration costs instantly. Free tool uses Xactimate pricing standards. Get estimates by damage class, water category, and square footage. Northern Virginia pricing.',
+    slug: '/resources/cost-calculator/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Cost Calculator', path: '/resources/cost-calculator/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
+
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Cost Calculator"
         description="Calculate water damage restoration costs instantly. Free tool uses Xactimate pricing standards. Get estimates by damage class, water category, and square footage. Northern Virginia pricing."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero Section with Calculator Preview */}

@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Droplets,
@@ -70,6 +71,21 @@ const WaterDamageClassesGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Classes Guide (1-4)',
+    description: 'Comprehensive guide to water damage classification. Learn how Class 1-4 affects drying time, equipment needs, and restoration costs. Based on IICRC S500 standards.',
+    slug: '/resources/water-damage-classes-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Water Damage Classes Guide', path: '/resources/water-damage-classes-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const classes = [
     {
@@ -233,7 +249,7 @@ const WaterDamageClassesGuide: React.FC = () => {
       <PageMeta
         title="Water Damage Classes Guide (1-4)"
         description="Comprehensive guide to water damage classification. Learn how Class 1-4 affects drying time, equipment needs, and restoration costs. Based on IICRC S500 standards."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

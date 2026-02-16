@@ -13,23 +13,22 @@ import {
   Wind
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import MoldIcon from '../../components/icons/MoldIcon';
 
 const TypesOfMold: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Types of Mold Found in Homes",
-    "description": "Guide to common household mold types including identification, health effects, and remediation requirements.",
-    "author": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Flood Doctor"
-    }
-  };
+  const articleSchema = generateArticleSchema({
+    headline: 'Types of Mold in Homes',
+    description: 'Learn about common household mold types including black mold, Aspergillus, and Penicillium. Identification tips, health risks, and when to call professionals.',
+    slug: '/resources/types-of-mold/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Types of Mold', path: '/resources/types-of-mold/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
 
   const commonMolds = [
     {
@@ -104,7 +103,7 @@ const TypesOfMold: React.FC = () => {
       <PageMeta
         title="Types of Mold in Homes"
         description="Learn about common household mold types including black mold, Aspergillus, and Penicillium. Identification tips, health risks, and when to call professionals."
-        structuredData={structuredData}
+        schema={pageSchema}
       />
 
       {/* Hero */}

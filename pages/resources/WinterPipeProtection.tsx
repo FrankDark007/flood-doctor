@@ -16,43 +16,28 @@ import {
   Wind
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 
 const WinterPipeProtection: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Prevent Frozen and Burst Pipes",
-    "description": "Complete guide to protecting your pipes from freezing during winter in Northern Virginia.",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Insulate Pipes",
-        "text": "Insulate all pipes in unheated areas with foam sleeves or wrap"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Seal Air Leaks",
-        "text": "Seal gaps and cracks near pipes that allow cold air in"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Maintain Heat",
-        "text": "Keep thermostat at 55°F minimum, even when away"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Let Faucets Drip",
-        "text": "During extreme cold, let faucets on exterior walls drip"
-      }
-    ]
-  };
+  const articleSchema = generateArticleSchema({
+    headline: 'Winter Pipe Protection Guide',
+    description: 'Protect your pipes from freezing and bursting this winter. Expert tips on insulation, heating, and emergency response for Northern Virginia homeowners.',
+    slug: '/resources/winter-pipe-protection/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Winter Pipe Protection', path: '/resources/winter-pipe-protection/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title="Winter Pipe Protection Guide"
         description="Protect your pipes from freezing and bursting this winter. Expert tips on insulation, heating, and emergency response for Northern Virginia homeowners."
-        structuredData={structuredData}
+        schema={pageSchema}
       />
 
       {/* Hero */}

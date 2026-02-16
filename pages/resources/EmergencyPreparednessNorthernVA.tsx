@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   MapPin,
@@ -80,6 +81,21 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Emergency Preparedness Guide',
+    description: 'Comprehensive disaster preparedness guide for Northern Virginia. Regional risks, emergency kits, evacuation planning, and local resources for Fairfax, Arlington, Loudoun, and Prince William.',
+    slug: '/resources/emergency-preparedness-northern-va/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Emergency Preparedness', path: '/resources/emergency-preparedness-northern-va/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const regionalRisks = [
     {
@@ -340,7 +356,7 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
       <PageMeta
         title="Emergency Preparedness Guide"
         description="Comprehensive disaster preparedness guide for Northern Virginia. Regional risks, emergency kits, evacuation planning, and local resources for Fairfax, Arlington, Loudoun, and Prince William."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

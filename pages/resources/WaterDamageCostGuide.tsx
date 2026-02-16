@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   DollarSign,
@@ -68,6 +69,21 @@ const WaterDamageCostGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Restoration Cost Guide 2025',
+    description: 'How much does water damage restoration cost? Complete pricing guide with cost ranges by damage severity, factors affecting price, and tips to reduce expenses.',
+    slug: '/resources/water-damage-cost-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Cost Guide', path: '/resources/water-damage-cost-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const costFactors = [
     {
@@ -155,7 +171,7 @@ const WaterDamageCostGuide: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration Cost Guide 2025"
         description="How much does water damage restoration cost? Complete pricing guide with cost ranges by damage severity, factors affecting price, and tips to reduce expenses."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

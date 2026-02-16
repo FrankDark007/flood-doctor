@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Shield,
@@ -74,6 +75,21 @@ const MoldRemediationStandards: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Mold Remediation Standards: IICRC S520',
+    description: 'Complete guide to professional mold remediation standards. Learn IICRC S520 protocols, EPA guidelines, Virginia licensing, and industry best practices for safe mold removal.',
+    slug: '/resources/mold-remediation-standards/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Mold Remediation Standards', path: '/resources/mold-remediation-standards/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const remediationLevels = [
     {
@@ -284,7 +300,7 @@ const MoldRemediationStandards: React.FC = () => {
       <PageMeta
         title="Mold Remediation Standards: IICRC S520"
         description="Complete guide to professional mold remediation standards. Learn IICRC S520 protocols, EPA guidelines, Virginia licensing, and industry best practices for safe mold removal."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

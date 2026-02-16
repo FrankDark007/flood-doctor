@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   AlertTriangle,
@@ -76,6 +77,21 @@ const EmergencyChecklist: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Emergency Checklist',
+    description: 'Step-by-step emergency checklist for water damage. Safety protocols, water shutoff guide, documentation steps, hour-by-hour timeline, and professional contact list for Northern Virginia homeowners.',
+    slug: '/resources/emergency-checklist/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Emergency Checklist', path: '/resources/emergency-checklist/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const safetyChecklist = [
     {
@@ -413,7 +429,7 @@ const EmergencyChecklist: React.FC = () => {
       <PageMeta
         title="Water Damage Emergency Checklist"
         description="Step-by-step emergency checklist for water damage. Safety protocols, water shutoff guide, documentation steps, hour-by-hour timeline, and professional contact list for Northern Virginia homeowners."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

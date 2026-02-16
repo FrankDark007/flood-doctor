@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Clock,
@@ -67,6 +68,21 @@ const MoldPreventionGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Mold Prevention After Water Damage',
+    description: 'How to prevent mold growth after water damage. Timeline, warning signs, prevention steps, and when to call professionals. Act within 24-48 hours.',
+    slug: '/resources/mold-prevention-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Mold Prevention Guide', path: '/resources/mold-prevention-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const timeline = [
     {
@@ -170,7 +186,7 @@ const MoldPreventionGuide: React.FC = () => {
       <PageMeta
         title="Mold Prevention After Water Damage"
         description="How to prevent mold growth after water damage. Timeline, warning signs, prevention steps, and when to call professionals. Act within 24-48 hours."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

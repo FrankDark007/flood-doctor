@@ -13,6 +13,7 @@ import { ArrowRight, Thermometer, Radio, FileCheck, Scan, BarChart3, Map } from 
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import Hero from '../../components/sections/Hero';
 import { TechnologyHeroAnimation } from '../../components/graphics';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 
 // --- DATA: FAQ ---
 const TECHNOLOGY_FAQ = [
@@ -150,12 +151,18 @@ const TECHNOLOGY_SCHEMA = {
 
 
 const Technology: React.FC = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Technology', path: '/resources/technology/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, TECHNOLOGY_SCHEMA);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Restoration Technology and Drying Monitoring" 
+      <PageMeta
+        title="Restoration Technology and Drying Monitoring"
         description="See how Flood Doctor uses thermal imaging, moisture mapping, and real-time monitoring to dry homes efficiently across Northern Virginia, Maryland, and DC. Clear updates, organized documentation, and a client portal."
-        schema={TECHNOLOGY_SCHEMA}
+        schema={pageSchema}
       />
 
       {/* 1. Hero Section */}

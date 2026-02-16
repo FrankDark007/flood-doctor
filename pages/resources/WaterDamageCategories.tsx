@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Droplets,
@@ -68,6 +69,21 @@ const WaterDamageCategories: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Categories: 1, 2, 3',
+    description: 'Understanding water damage categories (1, 2, 3) helps you know health risks, cleanup requirements, and costs. Complete guide to clean, gray, and black water.',
+    slug: '/resources/water-damage-categories/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Water Damage Categories', path: '/resources/water-damage-categories/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const categories = [
     {
@@ -137,7 +153,7 @@ const WaterDamageCategories: React.FC = () => {
       <PageMeta
         title="Water Damage Categories: 1, 2, 3"
         description="Understanding water damage categories (1, 2, 3) helps you know health risks, cleanup requirements, and costs. Complete guide to clean, gray, and black water."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

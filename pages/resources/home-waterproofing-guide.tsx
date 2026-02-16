@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Shield,
@@ -70,6 +71,21 @@ const HomeWaterproofingGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Home Waterproofing Guide',
+    description: 'Comprehensive guide to basement waterproofing, crawl space encapsulation, foundation sealing, and drainage solutions. Costs, methods, and maintenance for Northern VA homes.',
+    slug: '/resources/home-waterproofing-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Home Waterproofing Guide', path: '/resources/home-waterproofing-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const interiorVsExterior = [
     {
@@ -262,7 +278,7 @@ const HomeWaterproofingGuide: React.FC = () => {
       <PageMeta
         title="Home Waterproofing Guide"
         description="Comprehensive guide to basement waterproofing, crawl space encapsulation, foundation sealing, and drainage solutions. Costs, methods, and maintenance for Northern VA homes."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Hero from '../../components/sections/Hero';
 import SupportChatCard from '../../components/ui/illustrations/SupportChatCard';
@@ -28,11 +29,25 @@ const COMMUNICATION_FAQ = [
 ];
 
 const Communication: React.FC = () => {
+  const articleSchema = generateArticleSchema({
+    headline: 'Communication & Support',
+    description: 'We keep you informed every step of the way. Direct access to project managers, daily updates, and seamless insurance coordination.',
+    slug: '/resources/communication/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Communication', path: '/resources/communication/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Communication & Support" 
-        description="We keep you informed every step of the way. Direct access to project managers, daily updates, and seamless insurance coordination." 
+      <PageMeta
+        title="Communication & Support"
+        description="We keep you informed every step of the way. Direct access to project managers, daily updates, and seamless insurance coordination."
+        schema={pageSchema}
       />
       
       <div className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white border-b border-gray-100">

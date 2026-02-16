@@ -1,11 +1,25 @@
 import React from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 
 const FAQ: React.FC = () => {
+  const articleSchema = generateArticleSchema({
+    headline: 'Frequently Asked Questions',
+    description: 'Answers about water damage restoration costs, timing, and insurance.',
+    slug: '/resources/faq/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'FAQ', path: '/resources/faq/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta title="Frequently Asked Questions" description="Answers about water damage restoration costs, timing, and insurance." />
+      <PageMeta title="Frequently Asked Questions" description="Answers about water damage restoration costs, timing, and insurance." schema={pageSchema} />
       
       <div className="pt-12 pb-16 border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

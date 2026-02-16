@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import { 
@@ -75,11 +76,25 @@ const EmergencyChecklists: React.FC = () => {
 
   const activeData = scenarios[activeTab];
 
+  const articleSchema = generateArticleSchema({
+    headline: 'Emergency Checklists',
+    description: 'Immediate safety steps for water damage, sewage backups, and fire. What to do while waiting for help.',
+    slug: '/resources/emergency-checklists/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Emergency Checklists', path: '/resources/emergency-checklists/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Emergency Checklists" 
-        description="Immediate safety steps for water damage, sewage backups, and fire. What to do while waiting for help." 
+      <PageMeta
+        title="Emergency Checklists"
+        description="Immediate safety steps for water damage, sewage backups, and fire. What to do while waiting for help."
+        schema={pageSchema}
       />
       
       {/* 1. Panic Hero */}

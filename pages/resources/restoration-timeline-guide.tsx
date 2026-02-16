@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Clock,
@@ -70,6 +71,21 @@ const RestorationTimelineGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Water Damage Restoration Timeline Guide',
+    description: 'Complete timeline guide for water damage restoration from emergency response through reconstruction. Understand each phase, typical durations, and factors that affect your restoration schedule.',
+    slug: '/resources/restoration-timeline-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Restoration Timeline', path: '/resources/restoration-timeline-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const timelinePhases = [
     {
@@ -267,7 +283,7 @@ const RestorationTimelineGuide: React.FC = () => {
       <PageMeta
         title="Water Damage Restoration Timeline Guide"
         description="Complete timeline guide for water damage restoration from emergency response through reconstruction. Understand each phase, typical durations, and factors that affect your restoration schedule."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

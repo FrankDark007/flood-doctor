@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   FileText,
@@ -72,6 +73,21 @@ const VirginiaInsuranceGuide: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Virginia Disaster Insurance Claims Guide',
+    description: 'Complete guide for Virginia homeowners on disaster insurance claims. Coverage info for hurricanes, floods, fires, and winter storms. FEMA assistance, NFIP requirements, and claim filing steps.',
+    slug: '/resources/virginia-insurance-guide/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Virginia Insurance Guide', path: '/resources/virginia-insurance-guide/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const commonDisasters = [
     {
@@ -230,7 +246,7 @@ const VirginiaInsuranceGuide: React.FC = () => {
       <PageMeta
         title="Virginia Disaster Insurance Claims Guide"
         description="Complete guide for Virginia homeowners on disaster insurance claims. Coverage info for hurricanes, floods, fires, and winter storms. FEMA assistance, NFIP requirements, and claim filing steps."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageMeta from '../../components/ui/PageMeta';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import { 
   Snowflake, 
@@ -91,11 +92,25 @@ const HomeownerGuides: React.FC = () => {
 
   const activeGuides = guides[activeSeason];
 
+  const articleSchema = generateArticleSchema({
+    headline: 'Homeowner Maintenance Guides',
+    description: 'Seasonal prevention tips to protect your home from water damage, mold, and storms.',
+    slug: '/resources/homeowner-guides/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Homeowner Guides', path: '/resources/homeowner-guides/' },
+  ]);
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema);
+
   return (
     <main className="flex-grow bg-white">
-      <PageMeta 
-        title="Homeowner Maintenance Guides" 
-        description="Seasonal prevention tips to protect your home from water damage, mold, and storms." 
+      <PageMeta
+        title="Homeowner Maintenance Guides"
+        description="Seasonal prevention tips to protect your home from water damage, mold, and storms."
+        schema={pageSchema}
       />
       
       {/* 1. Header & Toggle */}

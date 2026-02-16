@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
   Phone,
   Eye,
@@ -68,6 +69,21 @@ const SignsOfWaterDamage: React.FC = () => {
       }
     }))
   };
+
+  const articleSchema = generateArticleSchema({
+    headline: 'Signs of Water Damage: Hidden Leaks',
+    description: 'Learn to identify visible and hidden signs of water damage in your home. Checklist for walls, floors, ceilings, and common leak locations.',
+    slug: '/resources/signs-of-water-damage/',
+    datePublished: '2025-01-01',
+    articleSection: 'Resources'
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Resources', path: '/resources/' },
+    { label: 'Signs of Water Damage', path: '/resources/signs-of-water-damage/' }
+  ]);
+
+  const pageSchema = combineSchemas(breadcrumbSchema, articleSchema, faqSchema);
 
   const visualSigns = [
     {
@@ -215,7 +231,7 @@ const SignsOfWaterDamage: React.FC = () => {
       <PageMeta
         title="Signs of Water Damage: Hidden Leaks"
         description="Learn to identify visible and hidden signs of water damage in your home. Checklist for walls, floors, ceilings, and common leak locations."
-        schema={faqSchema}
+        schema={pageSchema}
       />
 
       {/* Hero */}
