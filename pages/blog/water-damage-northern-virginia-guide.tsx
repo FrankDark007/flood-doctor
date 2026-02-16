@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -239,7 +240,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
               What to Do When You Have Water Damage: A Complete Guide for Northern Virginia Homeowners
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              Discovering water damage in your home is stressful and overwhelming. This comprehensive guide walks Northern Virginia homeowners through immediate emergency steps, regional considerations, and how to minimize damage and restoration costs.
+              Discovering water damage in your home—whether from a <Link to="/blog/burst-pipe-emergency-response/" className="text-[#1a73e8] hover:underline">burst pipe</Link> or appliance failure—is stressful and overwhelming. This comprehensive guide walks Northern Virginia homeowners through immediate emergency steps, regional considerations, and how to minimize damage and restoration costs.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">
@@ -269,7 +270,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-red-900 mb-2">Time Is Critical: Act Within The First Hour</h3>
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
-                    Water damage escalates exponentially with every passing hour. In Northern Virginia's humid climate, mold can begin growing within 24-48 hours. Professional restoration companies can typically arrive within 90 minutes and begin emergency mitigation immediately.
+                    Water damage escalates exponentially with every passing hour. In Northern Virginia's humid climate, <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> can begin within 24-48 hours. Professional restoration companies can typically arrive within 90 minutes and begin emergency mitigation immediately.
                   </p>
                   <Button href="tel:8774970007" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
                     <Phone size={16} className="mr-2" />
@@ -681,7 +682,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
             Don't Wait—Water Damage Gets Worse By The Hour
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Our Northern Virginia emergency response team is standing by 24/7 to minimize damage and start your restoration immediately.
+            Our Northern Virginia emergency response team is standing by 24/7 to minimize damage and manage <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">restoration costs</Link>.
           </p>
           <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
             <Phone size={20} className="mr-2" />

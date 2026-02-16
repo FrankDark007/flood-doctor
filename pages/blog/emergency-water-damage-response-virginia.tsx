@@ -3,6 +3,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { Link } from 'react-router-dom';
 import { generateBlogArticleSchema } from '../../utils/schema';
 
 const EmergencyWaterDamageArticle: React.FC = () => {
@@ -61,7 +62,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
       {/* Introduction */}
       <div className="prose prose-lg max-w-none mb-8">
         <p className="text-xl text-gray-700 leading-relaxed">
-          Water damage doesn't wait for convenient hours. Whether from a burst pipe during a Virginia winter freeze, storm flooding, or appliance failure, the first 24 hours determine whether you face minor repairs or catastrophic structural damage. This comprehensive guide provides IICRC-certified emergency response protocols specifically for Northern Virginia homeowners, where humidity and seasonal weather create unique restoration challenges.
+          Water damage doesn't wait for convenient hours. Whether from a <Link to="/blog/burst-pipe-emergency-response/" className="text-[#1a73e8] hover:underline">burst pipe</Link> during a Virginia winter freeze, storm flooding, or appliance failure, the first 24 hours determine whether you face minor repairs or catastrophic structural damage. This comprehensive guide provides IICRC-certified emergency response protocols specifically for Northern Virginia homeowners, where humidity and seasonal weather create unique restoration challenges.
         </p>
       </div>
 
@@ -114,7 +115,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
             <div className="border-l-4 border-yellow-600 pl-4">
               <h4 className="font-bold text-gray-900">Hours 12-24: Microbial Growth Window</h4>
               <ul className="list-disc ml-6 text-gray-700 mt-2 space-y-1">
-                <li>Mold spores begin colonizing in optimal conditions</li>
+                <li>Mold spores <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">begin colonizing</Link> in optimal conditions</li>
                 <li>Structural materials compromise</li>
                 <li>Contamination spreads to unaffected areas</li>
                 <li>Restoration costs increase significantly</li>
@@ -697,7 +698,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
           </h2>
 
           <p className="text-gray-700 mb-6">
-            Water damage is a race against time. Every hour of delay increases restoration costs, extends recovery timelines, and elevates health risks from microbial growth. Northern Virginia homeowners face unique challenges from our regional climate and soil conditions that make professional response even more critical.
+            Water damage is a race against time. Every hour of delay increases <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">restoration costs</Link>, extends recovery timelines, and elevates health risks from microbial growth. Northern Virginia homeowners face unique challenges from our regional climate and soil conditions that make professional response even more critical.
           </p>
 
           <div className="bg-gradient-to-r from-[#1a73e8] to-[#1557b0] text-white rounded-lg p-8 mb-6">

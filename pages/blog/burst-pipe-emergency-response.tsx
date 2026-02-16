@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -336,7 +337,7 @@ const BurstPipeEmergencyResponse: React.FC = () => {
               Burst Pipe Emergency: Steps to Take Before the Restoration Team Arrives
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              A burst pipe floods your home with gallons of water per minute—time is everything. This expert guide walks you through critical emergency steps to minimize damage, protect your family, and prepare for professional restoration.
+              A burst pipe floods your home with gallons of water per minute, and <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> can begin within 24-48 hours. This expert guide walks you through critical emergency steps to minimize damage, protect your family, and prepare for professional restoration.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">
@@ -771,7 +772,7 @@ const BurstPipeEmergencyResponse: React.FC = () => {
             Burst Pipe? We're On Our Way
           </h2>
           <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
-            Our emergency response team is standing by 24/7 to minimize damage and start restoration immediately. Average response time: 60-90 minutes.
+            Our emergency response team is standing by 24/7 to minimize damage and start restoration immediately. We also help with <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> documentation. Average response time: 60-90 minutes.
           </p>
           <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
             <Phone size={20} className="mr-2" />

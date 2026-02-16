@@ -4,6 +4,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import { generateBlogArticleSchema } from '../../utils/schema';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
+import { Link } from 'react-router-dom';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 
 const faqs = [
@@ -59,7 +60,7 @@ const MoldGrowthTimelineArticle: React.FC = () => {
             <span>8 min read</span>
           </div>
           <p className="text-xl text-gray-700 leading-relaxed">
-            After water damage strikes your Northern Virginia home, the clock starts ticking. Understanding the precise timeline of mold growth can mean the difference between minor cleanup and extensive remediation. Here's what every Virginia homeowner needs to know about the critical 24-48 hour window.
+            After water damage strikes your Northern Virginia home, the clock starts ticking. Understanding the precise timeline of mold growth can mean the difference between minor cleanup and extensive <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline">mold remediation</Link>. Here's what every Virginia homeowner needs to know about the critical 24-48 hour window.
           </p>
         </header>
 
@@ -93,7 +94,7 @@ const MoldGrowthTimelineArticle: React.FC = () => {
             Water damage doesn't just affect your floors and walls—it creates an invisible countdown to mold colonization. In Northern Virginia's humid climate, where summer humidity regularly exceeds 70% and temperatures hover between 75-90°F, mold spores find ideal conditions to rapidly multiply.
           </p>
           <p className="text-gray-700 mb-4 leading-relaxed">
-            Professional restoration experts know that the first 24-48 hours after water intrusion represent the most critical intervention period. During this window, rapid response and proper drying techniques can prevent mold establishment entirely. Miss this window, and you're facing potential structural damage, health risks, and costly remediation.
+            Professional restoration experts know that the first 24-48 hours after water intrusion represent the most critical intervention period. During this window, rapid response and proper <Link to="/services/residential/restoration-services/structural-drying/" className="text-[#1a73e8] hover:underline">drying techniques</Link> can prevent mold establishment entirely. Miss this window, and you're facing potential structural damage, health risks, and <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">costly remediation</Link>.
           </p>
           <p className="text-gray-700 mb-4 leading-relaxed">
             This comprehensive timeline breaks down exactly what happens hour by hour and day by day after water damage occurs, with specific considerations for Virginia's unique climate challenges.

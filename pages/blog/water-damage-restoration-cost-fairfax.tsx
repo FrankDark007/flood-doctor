@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -252,7 +253,7 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
               How Much Does Water Damage Restoration Cost in Fairfax County?
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              Understanding water damage restoration costs helps you budget appropriately and avoid overpaying. This comprehensive guide breaks down average costs, pricing factors, insurance coverage, and how to get accurate estimates in Fairfax County.
+              Understanding water damage restoration costs helps you budget appropriately and avoid overpaying. Delayed response leads to <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> that significantly increases total costs. This comprehensive guide breaks down average costs, pricing factors, insurance coverage, and how to get accurate estimates in Fairfax County.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">
@@ -393,7 +394,7 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
                 What Does Homeowners Insurance Cover?
               </h2>
               <p className="text-muted text-lg mb-12 max-w-2xl">
-                Understanding your insurance coverage helps you anticipate out-of-pocket costs and maximize your claim settlement.
+                Understanding your <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> helps you anticipate out-of-pocket costs and maximize your claim settlement.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -702,7 +703,7 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
             Transparent Pricing, No Surprises
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Get a detailed, line-item estimate for your water damage restoration project. We explain every cost and work directly with your insurance.
+            Get a detailed, line-item estimate for your water damage restoration project, including <Link to="/services/residential/restoration-services/structural-drying/" className="text-[#1a73e8] hover:underline">structural drying</Link>. We explain every cost and work directly with your insurance.
           </p>
           <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
             <Phone size={20} className="mr-2" />

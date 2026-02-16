@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -387,7 +388,7 @@ const BasementFloodingGuide: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-red-900 mb-2">Basement Flooding Right Now? Take Immediate Action</h3>
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
-                    Every hour of delay increases mold risk, structural damage, and restoration costs. Our emergency response team arrives within 90 minutes across Northern Virginia to begin water extraction and damage mitigation.
+                    Every hour of delay increases mold risk—see our <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth timeline</Link>—along with structural damage and restoration costs. Our emergency response team arrives within 90 minutes across Northern Virginia to begin water extraction and damage mitigation.
                   </p>
                   <Button href="tel:8774970007" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
                     <Phone size={16} className="mr-2" />
@@ -407,7 +408,7 @@ const BasementFloodingGuide: React.FC = () => {
             {/* Introduction */}
             <section className="mb-16">
               <p className="text-lg text-muted leading-relaxed mb-4">
-                Basement flooding affects thousands of Northern Virginia homeowners annually, causing tens of thousands of dollars in damage and creating serious health hazards. Whether you're dealing with active flooding or want to prevent future incidents, understanding the unique challenges of NoVA's climate, soil conditions, and housing stock is essential.
+                Basement flooding affects thousands of Northern Virginia homeowners annually, causing tens of thousands of dollars in damage and creating serious health hazards including <Link to="/blog/sewage-backup-cleanup-health-risks-virginia/" className="text-[#1a73e8] hover:underline">sewage health risks</Link>. Whether you're dealing with active flooding or want to prevent future incidents, understanding the unique challenges of NoVA's climate, soil conditions, and housing stock is essential.
               </p>
               <p className="text-lg text-muted leading-relaxed">
                 This comprehensive guide covers everything from immediate emergency response to long-term waterproofing solutions, helping you protect your home and make informed decisions about professional restoration services. If you're experiencing a <InlineArticleLink slug="/blog/burst-pipe-emergency-response/">burst pipe emergency</InlineArticleLink>, take action immediately—every hour of delay increases damage.
@@ -672,7 +673,7 @@ const BasementFloodingGuide: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-text mb-2">Insurance Coverage Reduces Out-of-Pocket Costs</h4>
                     <p className="text-sm text-muted leading-relaxed">
-                      Most homeowners insurance policies cover sudden water damage (burst pipes, appliance failures). With typical deductibles of $500-$2,500, insurance significantly reduces your costs. We work directly with all major insurance carriers and handle documentation, providing detailed Xactimate estimates that adjusters accept. You typically pay only your deductible for covered losses.
+                      Most homeowners insurance policies cover sudden water damage (burst pipes, appliance failures). Learn more about <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> for water damage in Virginia. With typical deductibles of $500-$2,500, insurance significantly reduces your costs. We work directly with all major insurance carriers and handle documentation, providing detailed Xactimate estimates that adjusters accept. You typically pay only your deductible for covered losses.
                     </p>
                   </div>
                 </div>

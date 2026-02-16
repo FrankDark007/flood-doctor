@@ -69,7 +69,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         <h2 id="understanding-coverage">Understanding Water Damage Coverage in Standard Homeowners Policies</h2>
 
         <p>
-          Standard homeowners insurance policies (HO-3 is most common) provide coverage for sudden and accidental water damage from specific perils. However, the source of water, how it entered your home, and the circumstances surrounding the damage determine whether your claim will be approved or denied.
+          Standard homeowners insurance policies (HO-3 is most common) provide coverage for sudden and accidental <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration</Link> from specific perils. However, the source of water, how it entered your home, and the circumstances surrounding the damage determine whether your claim will be approved or denied.
         </p>
 
         <h3>What Water Damage Is Typically Covered</h3>
@@ -79,7 +79,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         </p>
 
         <ul>
-          <li><strong>Burst or frozen pipes:</strong> When plumbing fails suddenly due to freezing, pressure, or age-related deterioration</li>
+          <li><strong><Link to="/blog/burst-pipe-emergency-response/" className="text-[#1a73e8] hover:underline">Burst or frozen pipes</Link>:</strong> When plumbing fails suddenly due to freezing, pressure, or age-related deterioration</li>
           <li><strong>Appliance malfunctions:</strong> Water heater failures, washing machine hose ruptures, dishwasher leaks, and refrigerator line breaks</li>
           <li><strong>HVAC system leaks:</strong> Air conditioning condensation leaks, furnace humidifier failures</li>
           <li><strong>Accidental overflow:</strong> Bathtub or sink overflows, toilet malfunctions (excluding sewage)</li>
@@ -395,7 +395,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
         <h3>Enhanced Mold Coverage Options</h3>
 
         <p>
-          Some insurers offer increased mold coverage through endorsements ($25,000-$50,000 limits) for additional premium. Given Virginia's humid climate—particularly in summer months—and the speed with which mold can develop after water intrusion, enhanced coverage provides valuable protection.
+          Some insurers offer increased mold coverage through endorsements ($25,000-$50,000 limits) for additional premium. Given Virginia's humid climate—particularly in summer months—and the speed with which <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold can develop</Link> after water intrusion, enhanced coverage provides valuable protection.
         </p>
 
         <p>

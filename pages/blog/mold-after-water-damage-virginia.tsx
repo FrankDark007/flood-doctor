@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageMeta from '../../components/ui/PageMeta';
 import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
@@ -380,7 +381,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
               Mold After Water Damage: What Northern Virginia Homeowners Need to Know
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              Water damage and mold go hand-in-hand—but understanding the relationship helps you prevent devastating mold growth. This comprehensive guide covers mold growth timelines, health risks, Virginia-specific factors, and how to protect your home and family.
+              Water damage and mold go hand-in-hand—but understanding the relationship helps you prevent devastating mold growth. Professional <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline">mold remediation</Link> is often necessary when water damage goes unaddressed. This comprehensive guide covers mold growth timelines, health risks, Virginia-specific factors, and how to protect your home and family.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">
@@ -684,7 +685,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-text mb-2">Flood Doctor's Mold Prevention Process</h4>
                     <p className="text-sm text-muted leading-relaxed mb-4">
-                      When we respond to water damage, mold prevention is built into our process. We extract water within hours, use industrial drying equipment to reach safe moisture levels within 3-7 days, apply antimicrobial treatments to all affected surfaces, and verify complete drying with moisture meters. This prevents mold from ever growing—saving you thousands in remediation costs.
+                      When we respond to water damage, mold prevention is built into our <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration</Link> process. We extract water within hours, use industrial drying equipment to reach safe moisture levels within 3-7 days, apply antimicrobial treatments to all affected surfaces, and verify complete drying with moisture meters. This prevents mold from ever growing—saving you thousands in remediation costs.
                     </p>
                     <Button href="tel:8774970007" variant="primary" size="sm">
                       <Phone size={16} className="mr-2" />
@@ -878,7 +879,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
             Prevent Mold with Immediate Water Damage Response
           </h2>
           <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
-            The best mold remediation is prevention. Our 24/7 emergency response team stops mold before it starts with professional extraction and drying.
+            The best mold remediation is prevention. Review your <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> and call our 24/7 emergency response team to stop mold before it starts with professional extraction and drying.
           </p>
           <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-purple-600 border-none hover:bg-purple-50">
             <Phone size={20} className="mr-2" />

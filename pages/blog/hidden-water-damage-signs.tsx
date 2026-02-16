@@ -6,6 +6,7 @@ import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
+import { Link } from 'react-router-dom';
 import { generateBlogArticleSchema } from '../../utils/schema';
 import {
   Phone,
@@ -371,7 +372,7 @@ const HiddenWaterDamageSigns: React.FC = () => {
               Hidden Water Damage: 10 Warning Signs Homeowners Miss
             </h1>
             <p className="font-sans text-xl text-muted leading-relaxed mb-8">
-              Water damage often hides behind walls, under floors, and in crawlspaces for months before visible signs appear. By then, mold growth, structural rot, and costly repairs are inevitable. This expert guide teaches you to identify hidden water damage early—before it becomes a health hazard and financial crisis.
+              Water damage often hides behind walls, under floors, and in crawlspaces for months before visible signs appear. By then, <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline">mold growth</Link>, structural rot, and costly repairs are inevitable. This expert guide teaches you to identify hidden water damage early—before it becomes a health hazard and financial crisis.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="tel:8774970007" variant="primary" size="lg">
@@ -401,7 +402,7 @@ const HiddenWaterDamageSigns: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-red-900 mb-2">Why Hidden Water Damage Is More Dangerous Than Visible Problems</h3>
                   <p className="text-red-800 text-sm leading-relaxed">
-                    Hidden water damage is exponentially more destructive than visible leaks. By the time you notice musty odors, stains, or warping, mold has often been growing for weeks or months in wall cavities, insulation, and structural components. In Northern Virginia's humid climate, hidden moisture creates perfect conditions for toxic mold, wood rot, and structural failure that can cost $15,000-$50,000 to remediate—compared to $2,000-$8,000 for early detection and prevention.
+                    Hidden water damage is exponentially more destructive than visible leaks. By the time you notice musty odors, stains, or warping, mold has often been growing for weeks or months in wall cavities, insulation, and structural components. In Northern Virginia's humid climate, hidden moisture creates perfect conditions for <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">toxic mold</Link>, wood rot, and structural failure that can cost $15,000-$50,000 to remediate—compared to $2,000-$8,000 for early detection and prevention.
                   </p>
                 </div>
               </div>
@@ -953,10 +954,10 @@ const HiddenWaterDamageSigns: React.FC = () => {
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Emergency Checklists
                   </a>
-                  <a href="/resources/insurance-claims-guide/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                  <Link to="/resources/insurance-claims-guide/" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-primary" />
                     Insurance Claims Guide
-                  </a>
+                  </Link>
                 </div>
               </div>
 
