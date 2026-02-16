@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    /* Water Ripple Animation */
+    @keyframes ripple {
+      0% { transform: scale(0.9); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(0.9); opacity: 1; }
+    }
+    .pulse {
+      animation: ripple 3s infinite ease-in-out;
+      transform-origin: center;
+    }
+  </style>
+  <!-- Background circle with ripple animation -->
+  <circle class="pulse" cx="50" cy="50" r="45" fill="#1a73e8" opacity="0.15"/>
+  <!-- Main circle -->
+  <circle cx="50" cy="50" r="40" fill="#1a73e8"/>
+  <!-- Water drop shape -->
+  <path d="M50 20 C50 20 30 45 30 58 C30 69 39 78 50 78 C61 78 70 69 70 58 C70 45 50 20 50 20Z" fill="white"/>
+  <!-- Plus/cross (doctor symbol) -->
+  <rect x="45" y="48" width="10" height="22" rx="2" fill="#1a73e8"/>
+  <rect x="39" y="54" width="22" height="10" rx="2" fill="#1a73e8"/>
+</svg>
