@@ -58,6 +58,20 @@
 
 ---
 
+### 2026-02-15: Remove Hardcoded LocalBusiness from index.html (P1 #3b)
+
+**What:** Removed 52-line hardcoded `<script type="application/ld+json">` LocalBusiness block from `index.html`. This block was creating a duplicate ld+json script on every page alongside the dynamic PageMeta-injected schema.
+
+**Verification:**
+- Build: 188/188 pass
+- 5 pages spot-checked: all have exactly 1 ld+json block (homepage, blog, location, service, resources)
+- `@graph` present on pages with multiple entities (homepage, location, service)
+
+**Commits:** `662c26c`
+**Status:** Complete
+
+---
+
 ### 2026-02-15: Location Meta Description Cleanup (P1 #3)
 
 **What:** Removed phone numbers from all 28 location page meta descriptions (McLeanWaterDamage.tsx skipped — uses archetype component system with no inline PageMeta).

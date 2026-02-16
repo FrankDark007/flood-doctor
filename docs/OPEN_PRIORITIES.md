@@ -18,11 +18,9 @@ Last updated: 2026-02-15
 - **Done**: Removed phone numbers from 28 location page meta descriptions (McLeanWaterDamage uses archetype system)
 - **Commit**: `7f17338`
 
-### 3b. Remove Hardcoded LocalBusiness from index.html
-- **Goal**: Remove the site-wide hardcoded `<script type="application/ld+json">` LocalBusiness block from `index.html` — it creates a duplicate ld+json script on every page alongside the dynamic PageMeta-injected schema
-- **Success metric**: Every page has exactly 1 ld+json script (the PageMeta-managed one); no standalone LocalBusiness block in `index.html`
-- **Files likely touched**: `index.html`, possibly `city.html`
-- **Do not break**: Pages that rely on LocalBusiness via `generateLocalBusinessSchema()` in their PageMeta schema prop (blog posts, location pages) — those are unaffected since they get LocalBusiness through the @graph
+### ~~3b. Remove Hardcoded LocalBusiness from index.html~~ ✅ Complete (2026-02-15)
+- **Done**: Removed 52-line hardcoded LocalBusiness `<script>` from `index.html`. All pages now have exactly 1 ld+json block (PageMeta-managed).
+- **Commit**: `662c26c`
 
 ### 4. Cost Calculator
 - **Goal**: Interactive water damage cost estimation tool using actual price lists
