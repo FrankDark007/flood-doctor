@@ -28,6 +28,101 @@
 
 ## Completed Work
 
+### 2026-02-16: Service Detail Post-Process Redesign (UI/UX) — Plan Created
+
+**What:** Created comprehensive implementation plan for redesigning service detail page layout after the process tiles section.
+
+**Goal:** Improve mobile UX, simplify nested layouts, add SEO improvements (heading hierarchy, internal links), enhance sidebar with related resources.
+
+**Plan Document:** `docs/plans/2026-02-16-service-detail-post-process-redesign.md`
+
+**Key Changes Designed:**
+1. Remove nested sidebar from ServiceDetailedContent (3-column → 1-column accordion)
+2. Add TopicJumpLinks component for horizontal mobile navigation with scroll arrows
+3. Add RelatedResourcesCard to sidebar with 4 internal resource links
+4. Fix mobile sidebar visibility (stack below content instead of hiding)
+5. Add section H2 heading for proper SEO hierarchy
+6. Add scroll spy to update active jump link chip on scroll
+
+**Files to Change:**
+- `pages/templates/ServiceDetailNew.tsx` (primary, lines 173-225)
+- `generated-layouts/service-page/ServiceDetailedContent.tsx` (simplify to accordion only)
+- `components/sections/TopicJumpLinks.tsx` (NEW component)
+- `components/sections/RelatedResourcesCard.tsx` (NEW component)
+
+**Status:** Plan complete, awaiting execution choice (subagent-driven vs parallel session)
+
+**Decision:** User wants to restart Claude Code to use Opus 4.6 before executing
+
+---
+
+### 2026-02-16: Standard Project Package (P2 #6) — Complete + Deployed
+
+**What:** Implemented and deployed Standard Project Package resource page defining complete scope of water damage restoration service deliverables.
+
+**Implementation:**
+- Created 876-line `StandardProjectPackage.tsx` component
+- 6 service groups (Emergency Response, Water Extraction, Structural Drying, Antimicrobial Treatment, Containment & Protection, Documentation & Reporting)
+- 4 "NOT included" categories (Reconstruction, Mold Remediation >10 sq ft, Contents Pack-out, Building Code Upgrades)
+- IICRC standard assumptions (Category 1-3 classification, drying goals, timeline expectations, property access requirements)
+- 4 documentation phases with specific deliverables
+- 12 FAQ items covering timeline, reconstruction, mold, cost, insurance, occupancy, certifications
+
+**SEO Implementation:**
+- Schema: Service + FAQPage (12 questions) + BreadcrumbList combined via PageMeta
+- Title: "Standard Water Damage Restoration Package | Flood Doctor" (62 chars)
+- Single H1, proper heading hierarchy
+- Internal links from ResourcesHub (featured card) and Cost Calculator FAQ
+
+**Cross-Site Integration:**
+- Added to ResourcesHub as first primary featured resource with Package icon
+- Added Unsplash hero image (https://images.unsplash.com/photo-1581578731548-c64695cc6952)
+- Referenced in WaterDamageCostCalculator FAQ answer
+- Route added to config/routes.ts
+- Sitemap regenerated (189 URLs total)
+
+**Bug Fix:**
+- Escaped apostrophe in detail string ("What's running" → "What\'s running") to resolve build error
+
+**Commits:**
+- `2577082` — feat(resources): add Standard Project Package page with complete service scope definition
+- `659c16f` — seo: link standard project package across site
+- `a7fed9c` — fix: escape apostrophe in detail string
+- `ed54d34` — chore: add P2 #6 standard project package to changelog
+- `ea6b584` — chore: deploy and verify standard project package page
+
+**Deployment:**
+- Method: rsync via SSH (132.148.253.156)
+- 548 files transferred
+- Permissions set (755 directories, 644 .htaccess)
+- Cloudflare cache purged (Zone: 7b3b2f087429c5c3e9688253d8df11eb)
+
+**Production Verification (2026-02-16):**
+- Page returns 200 (122.6KB pre-rendered HTML)
+- JSON-LD valid: Service + FAQPage (12 questions) + BreadcrumbList (4 items)
+- ResourcesHub featured card present and links correctly
+- Fake routes return 404 as expected
+- Live URL: https://flood.doctor/resources/standard-project-package/
+
+**Impact:**
+- P2 #6 complete
+- Clear service scope documentation for clients and sales
+- SEO benefit from Service schema and FAQ markup
+- Internal linking improved (4 new contextual links)
+
+---
+
+### 2026-02-16: Cost Calculator Audit + Fixes (P1 #4)
+
+**What:** Audited `/resources/cost-calculator/` for bugs, SEO, a11y, legal compliance. Found 15 issues. Fixed all Critical/High/Medium items.
+
+**Fixes:** HTML entity bug, NaN guard, Article→WebApplication schema, meta desc shortened (189→145), estimate disclaimer, 5 role=group + aria-labelledby, toggle role=switch, id/htmlFor bindings, min/max clamp, 4 outbound + 6 inbound internal links.
+
+**Commits:** `f0b57c9`, `9f8a699`
+**Deployed:** 2026-02-16, verified on production.
+
+---
+
 ### 2026-02-15: Schema Markup Audit (P0 #1) — Audit Only
 
 **What:** Full JSON-LD schema coverage and compliance audit across all 188 prerendered pages.

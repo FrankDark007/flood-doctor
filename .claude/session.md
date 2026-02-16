@@ -1,6 +1,75 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16 (before Opus 4.6 restart)
+
+---
+
+## 🔄 PENDING: Service Detail Post-Process Redesign — UI/UX Improvement
+
+### Status: Plan Complete, Awaiting Execution Choice
+
+**Plan Document:** `docs/plans/2026-02-16-service-detail-post-process-redesign.md`
+
+### What This Does
+Redesigns service detail page layout AFTER the process tiles section for:
+- Better mobile UX (horizontal jump links, sidebar stacks below)
+- Cleaner desktop layout (remove nested sidebars)
+- Improved SEO (proper heading hierarchy, internal links)
+- Enhanced sidebar (add related resources card)
+
+### Key Changes Planned
+1. Remove nested sidebar from ServiceDetailedContent (accordion only)
+2. Add TopicJumpLinks component (horizontal scrollable chips)
+3. Add RelatedResourcesCard to sidebar (4 internal links)
+4. Fix mobile sidebar visibility (stack below, not hide)
+5. Add section H2 for clean heading hierarchy
+6. Add scroll spy for active section tracking
+
+### Files to Change
+- `pages/templates/ServiceDetailNew.tsx` (primary, lines 173-225)
+- `generated-layouts/service-page/ServiceDetailedContent.tsx` (simplify accordion)
+- `components/sections/TopicJumpLinks.tsx` (NEW)
+- `components/sections/RelatedResourcesCard.tsx` (NEW)
+
+### Next Steps
+User needs to choose execution approach:
+1. **Subagent-Driven (this session)** - Fresh subagent per task + review
+2. **Parallel Session (separate)** - Use executing-plans in new session
+
+### Hard Constraints
+- Do NOT modify content above process tiles (lines 1-170)
+- Do NOT change routes or PageMeta/schema logic
+- Keep Related Services, Service Area Links, Sticky Bottom CTA unchanged
+
+---
+
+## ✅ COMPLETE: Standard Project Package — P2 #6 (2026-02-16)
+
+### Status: Deployed to Production
+
+**Live URL:** https://flood.doctor/resources/standard-project-package/
+
+### What Was Done
+- Created 876-line StandardProjectPackage.tsx component
+- 6 service groups, 4 "NOT included" categories, 12 FAQs
+- Schema: Service + FAQPage (12Q) + BreadcrumbList
+- Featured in ResourcesHub as first primary resource
+- Referenced in Cost Calculator FAQ
+- Sitemap regenerated (189 URLs)
+
+### Commits
+- `2577082` — feat(resources): add Standard Project Package page
+- `659c16f` — seo: link standard project package across site
+- `a7fed9c` — fix: escape apostrophe in detail string
+- `ed54d34` — chore: add P2 #6 to changelog
+- `ea6b584` — chore: deploy and verify
+
+### Production Verification ✓
+- Page returns 200 (122.6KB pre-rendered)
+- JSON-LD valid (Service + FAQPage + BreadcrumbList)
+- ResourcesHub integration working
+- Fake routes return 404
+- Cloudflare cache purged
 
 ---
 
@@ -113,8 +182,29 @@ Created a durable AI project memory system so any AI agent (Claude Code, ChatGPT
 - ~~P0: Production Deployment + Verification~~ ✅ Complete (2026-02-15)
 - ~~P1 #3: Location Meta Description Cleanup~~ ✅ Complete (2026-02-15)
 - ~~P1 #3b: Remove hardcoded LocalBusiness from index.html~~ ✅ Complete (2026-02-15)
-- P1 #4: Cost Calculator
+- ~~P1 #4: Cost Calculator Audit + Fixes~~ ✅ Complete + Deployed (2026-02-16)
 - ~~P1 #5: Internal Linking Strategy (Phase 1)~~ ✅ Complete (2026-02-15)
+
+---
+
+## ✅ COMPLETE: Cost Calculator Audit + Fixes — P1 #4 (2026-02-16)
+
+### Status: Complete — Deployed to production
+
+### Audit Findings (15 issues ranked Critical/High/Medium/Low)
+
+### Fixes Applied
+- **Bug**: HTML entity `&lt;` rendered literally in Class 2 description → fixed to `<`
+- **Bug**: Range input NaN guard added (fallback to 50)
+- **Schema**: Article → WebApplication (with Offer, creator, dateModified)
+- **SEO**: Meta description 189 → 145 chars; dateModified = 2026-01-01
+- **Legal**: Estimate disclaimer added under price range
+- **A11y**: 5 button groups with `role="group"` + `aria-labelledby`, toggle with `role="switch"` + `aria-checked`, id/htmlFor bindings, min/max clamp
+- **Links**: 4 outbound (Related Resources section) + 6 inbound from blog/resource pages
+
+### Commits
+- `f0b57c9` — fix(calculator): schema, a11y, links, and estimate safeguards
+- `9f8a699` — chore: deploy and verify cost calculator improvements
 
 ---
 
@@ -361,4 +451,4 @@ npm run prerender:verify  # Post-build verification
 
 ---
 
-*Updated: 2026-02-13 (Static Pre-Rendering Complete)*
+*Updated: 2026-02-16 (Cost Calculator Audit + Fixes Deployed)*
