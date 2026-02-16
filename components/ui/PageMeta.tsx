@@ -3,6 +3,71 @@ import { useLocation } from 'react-router-dom';
 import { siteConfig } from '../../config/site';
 import { getCanonicalBase } from '../../utils/subdomain';
 
+type SchemaInput = Record<string, any> | Record<string, any>[];
+
+/**
+ * Normalize schema input for JSON-LD output:
+ * - Single object: ensure @context present, return as-is
+ * - Array: wrap in @graph, deduplicate entities
+ * - Already has @graph: deduplicate entities within it
+ */
+function normalizeSchema(input: SchemaInput): Record<string, any> {
+  // Single object that already has @graph — dedupe its graph entries
+  if (!Array.isArray(input) && input['@graph'] && Array.isArray(input['@graph'])) {
+    return {
+      '@context': 'https://schema.org',
+      '@graph': dedupeEntities(input['@graph']),
+    };
+  }
+
+  // Single object without @graph — pass through with @context
+  if (!Array.isArray(input)) {
+    if (!input['@context']) {
+      return { '@context': 'https://schema.org', ...input };
+    }
+    return input;
+  }
+
+  // Array — strip per-item @context, wrap in @graph, dedupe
+  const entities = input.map(item => {
+    const { '@context': _, ...rest } = item;
+    return rest;
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': dedupeEntities(entities),
+  };
+}
+
+/**
+ * Deduplicate JSON-LD entities:
+ * 1. By @id — keep first occurrence
+ * 2. By exact serialized match — keep first occurrence
+ */
+function dedupeEntities(entities: Record<string, any>[]): Record<string, any>[] {
+  const seenIds = new Set<string>();
+  const seenHashes = new Set<string>();
+  const result: Record<string, any>[] = [];
+
+  for (const entity of entities) {
+    // Dedupe by @id
+    if (entity['@id']) {
+      if (seenIds.has(entity['@id'])) continue;
+      seenIds.add(entity['@id']);
+    }
+
+    // Dedupe exact duplicates (same serialized content)
+    const hash = JSON.stringify(entity);
+    if (seenHashes.has(hash)) continue;
+    seenHashes.add(hash);
+
+    result.push(entity);
+  }
+
+  return result;
+}
+
 interface PageMetaProps {
   // IMPORTANT: Pass a plain page title (e.g., "About Us").
   // DO NOT append " | Flood Doctor". The component appends the brand name automatically.
@@ -10,8 +75,8 @@ interface PageMetaProps {
   description: string;
   image?: string;
   type?: 'website' | 'article';
-  schema?: Record<string, any>; // Support for JSON-LD
-  structuredData?: Record<string, any>; // Alias for schema
+  schema?: SchemaInput; // Support for JSON-LD (single or array)
+  structuredData?: SchemaInput; // Alias for schema
 }
 
 const PageMeta: React.FC<PageMetaProps> = ({
@@ -100,7 +165,7 @@ const PageMeta: React.FC<PageMetaProps> = ({
         script.setAttribute('type', 'application/ld+json');
         document.head.appendChild(script);
       }
-      script.textContent = JSON.stringify(finalSchema);
+      script.textContent = JSON.stringify(normalizeSchema(finalSchema));
     }
 
     // Signal prerender engine: all metadata applied
