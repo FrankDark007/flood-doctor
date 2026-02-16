@@ -14,8 +14,8 @@ import ServiceQuickFacts from '../../generated-layouts/service-page/ServiceQuick
 import ServiceProblemSolution from '../../generated-layouts/service-page/ServiceProblemSolution';
 import ServiceTabs from '../../generated-layouts/service-page/ServiceTabs';
 import ServiceDetailedContent from '../../generated-layouts/service-page/ServiceDetailedContent';
-import ServiceTestimonials from '../../generated-layouts/service-page/ServiceTestimonials';
-import ServicePricing from '../../generated-layouts/service-page/ServicePricing';
+import ServiceSocialProof from '../../components/service/ServiceSocialProof';
+import ServiceInsuranceBilling from '../../components/service/ServiceInsuranceBilling';
 import ServiceCTASticky from '../../generated-layouts/service-page/ServiceCTASticky';
 
 // V14 Components
@@ -248,11 +248,11 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
                 </div>
               )}
 
-              {/* Testimonials */}
-              <ServiceTestimonials testimonials={pageData.testimonials} />
+              {/* Verified Client Results */}
+              <ServiceSocialProof />
 
-              {/* Pricing / Free Inspection CTA */}
-              <ServicePricing pricing={pageData.pricing} onCtaClick={handleCtaClick} />
+              {/* Insurance Billing & Deductibles */}
+              <ServiceInsuranceBilling />
 
               {/* V14 FAQ Section with Expand All */}
               <GoogleStyleFAQ
