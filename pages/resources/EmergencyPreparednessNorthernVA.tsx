@@ -338,7 +338,7 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Emergency Preparedness Guide for Northern Virginia Homeowners"
+        title="Emergency Preparedness Guide"
         description="Comprehensive disaster preparedness guide for Northern Virginia. Regional risks, emergency kits, evacuation planning, and local resources for Fairfax, Arlington, Loudoun, and Prince William."
         schema={faqSchema}
       />

@@ -75,7 +75,7 @@ const BasementFloodingPrevention: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Basement Flooding Prevention | Stop Water Before It Starts"
+        title="Basement Flooding Prevention Guide"
         description="Prevent basement flooding with proven strategies. Learn about sump pumps, drainage, waterproofing, and what to do when water enters. Northern Virginia experts."
         structuredData={structuredData}
       />

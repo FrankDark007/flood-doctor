@@ -107,7 +107,7 @@ export default function HerndonMoldRemoval() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Herndon VA | Certified Remediation | 24/7 Service | (877) 497-0007"
+        title="Mold Removal in Herndon, VA"
         description="Professional mold removal & remediation in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. Certified specialists. Call (877) 497-0007!"
         schema={schema}
       />

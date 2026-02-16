@@ -217,7 +217,7 @@ const AlexandriaMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Services Alexandria VA | Certified Mold Remediation"
+        title="Mold Removal in Alexandria, VA"
         description="Professional mold removal in Alexandria, VA. EPA-compliant remediation for Old Town, Del Ray, Kingstowne & all Alexandria areas. IICRC certified. Call (703) 665-0505."
         schema={[faqSchema, localBusinessSchema]}
       />

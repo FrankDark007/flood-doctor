@@ -156,7 +156,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Services in Arlington, VA | IICRC Certified"
+        title="Mold Removal in Arlington, VA"
         description="Professional mold removal and remediation in Arlington, VA. Serving Ballston, Clarendon, Rosslyn & all Arlington neighborhoods. IICRC certified. Call (877) 497-0007."
         schema={[faqSchema, localBusinessSchema]}
       />
@@ -488,7 +488,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
               <div className="bg-white border border-gray-100 rounded-[24px] p-6">
                 <h4 className="font-medium text-gray-900 mb-4">Related Services</h4>
                 <div className="space-y-3">
-                  <a href="/locations/arlington-water-damage/" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#1a73e8] transition-colors group">
+                  <a href="/water-damage-restoration-arlington-va/" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#1a73e8] transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-[#1a73e8]" />
                     Arlington Water Damage Restoration
                   </a>

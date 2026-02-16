@@ -30,7 +30,7 @@ export const SERVICE_HUB_ROUTES: string[] = [
   '/services/residential/restoration-services/',
   '/services/residential/cleanup-services/',
   '/services/residential/specialty-services/',
-  '/services/residential/variant-a/',
+
   '/services/commercial/restoration-services/',
   '/services/commercial/cleanup-services/',
   '/services/commercial/technical-services/',
@@ -45,44 +45,36 @@ export const SERVICE_LEAF_ROUTES: string[] = SERVICES.map(s => s.slug);
 // ── Location Pages ──────────────────────────────────────────────────────────
 
 export const LOCATION_ROUTES: string[] = [
-  // Alexandria
-  '/locations/alexandria-water-damage/',
+  // Alexandria (water-damage redirects to /water-damage-restoration-alexandria-va/)
   '/locations/alexandria-mold-removal/',
   '/locations/alexandria-flood-cleanup/',
   '/locations/alexandria-basement-flooding/',
-  // Arlington
-  '/locations/arlington-water-damage/',
+  // Arlington (water-damage redirects to /water-damage-restoration-arlington-va/)
   '/locations/arlington-mold-removal/',
   '/locations/arlington-flood-cleanup/',
   '/locations/arlington-basement-flooding/',
-  // Fairfax
-  '/locations/fairfax-water-damage/',
+  // Fairfax (water-damage redirects to /water-damage-restoration-fairfax-va/)
   '/locations/fairfax-mold-removal/',
   '/locations/fairfax-flood-cleanup/',
   '/locations/fairfax-basement-flooding/',
-  // McLean
-  '/locations/mclean-water-damage/',
+  // McLean (water-damage redirects to /water-damage-restoration-mclean-va/)
   '/locations/mclean-mold-removal/',
   '/locations/mclean-flood-cleanup/',
   '/locations/mclean-basement-flooding/',
   // Tysons
   '/locations/tysons-water-damage/',
-  // Reston
-  '/locations/reston-water-damage/',
+  // Reston (water-damage redirects to /water-damage-restoration-reston-va/)
   '/locations/reston-mold-removal/',
-  // Ashburn
-  '/locations/ashburn-water-damage/',
+  // Ashburn (water-damage redirects to /water-damage-restoration-ashburn-va/)
   '/locations/ashburn-mold-removal/',
   // Herndon
   '/locations/herndon-water-damage/',
   '/locations/herndon-mold-removal/',
   '/locations/herndon-flood-cleanup/',
   '/locations/herndon-basement-flooding/',
-  // Springfield
-  '/locations/springfield-water-damage/',
+  // Springfield (water-damage redirects to /water-damage-restoration-springfield-va/)
   '/locations/springfield-mold-removal/',
-  // Falls Church
-  '/locations/falls-church-water-damage/',
+  // Falls Church (water-damage redirects to /water-damage-restoration-falls-church-va/)
   '/locations/falls-church-mold-removal/',
 ];
 

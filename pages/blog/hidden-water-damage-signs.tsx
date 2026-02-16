@@ -388,7 +388,7 @@ const HiddenWaterDamageSigns: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Hidden Water Damage: 10 Warning Signs Homeowners Miss [Expert Detection Guide]"
+        title="Hidden Water Damage: 10 Warning Signs"
         description="Learn to identify hidden water damage before it becomes a crisis. Expert guide covering 10 warning signs, professional detection methods, inspection locations, and prevention strategies for Northern Virginia homeowners."
         schema={[faqSchema, articleSchema, businessSchema]}
       />

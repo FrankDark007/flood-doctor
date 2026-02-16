@@ -120,7 +120,7 @@ const WindowDoorWaterIntrusion: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Window & Door Leaks: Water Intrusion Causes and Solutions | Northern VA"
+        title="Window & Door Leaks: Causes & Solutions"
         description="Complete guide to window and door water intrusion in Northern Virginia homes. Learn causes, detection, repair vs replacement, professional sealing, and prevention strategies."
         structuredData={schemaMarkup}
       />

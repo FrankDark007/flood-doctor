@@ -35,7 +35,7 @@ const HomeownersInsuranceWaterDamageVirginia: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Does Homeowners Insurance Cover Water Damage in Virginia? Complete Guide 2024"
+        title="Water Damage Insurance Coverage in Virginia"
         description="Comprehensive guide to understanding homeowners insurance coverage for water damage in Virginia. Learn what's covered, excluded, and how to file successful claims."
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">

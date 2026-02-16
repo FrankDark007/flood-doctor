@@ -284,7 +284,7 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Signs of Hidden Water Damage in Your Arlington Home [Expert Detection Guide]"
+        title="Hidden Water Damage Signs in Arlington"
         description="Learn how to identify hidden water damage in your Arlington VA home. Expert guide covering visible signs, detection methods, and when to call professionals."
         schema={[faqSchema, articleSchema]}
       />

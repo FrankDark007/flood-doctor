@@ -34,7 +34,7 @@ const McLeanBasementFlooding: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Basement Flooding Repair in McLean, VA | 24/7 Emergency Service"
+        title="Basement Flooding Repair McLean, VA"
         description="Expert basement flooding repair in McLean, VA. Emergency water extraction, structural drying, waterproofing. Serving Great Falls, Langley & Pimmit Hills. Call (877) 497-0007."
         structuredData={locationSchema}
       />

@@ -34,7 +34,7 @@ const McLeanMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Services in McLean, VA | IICRC Certified Specialists"
+        title="Mold Removal in McLean, VA"
         description="Professional mold removal and remediation in McLean, VA. EPA-approved methods, IICRC certified. Serving Great Falls, Langley, Pimmit Hills & Tysons. Call (877) 497-0007."
         structuredData={locationSchema}
       />

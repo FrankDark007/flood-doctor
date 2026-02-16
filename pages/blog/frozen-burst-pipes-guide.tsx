@@ -473,7 +473,7 @@ const FrozenBurstPipesGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Frozen Pipes & Burst Pipe Emergency Guide for Northern Virginia Homeowners"
+        title="Frozen & Burst Pipes: Emergency Guide"
         description="Comprehensive guide to preventing frozen pipes and responding to burst pipe emergencies in Northern Virginia. Expert prevention strategies, warning signs, emergency response steps, and professional restoration process for NoVA homeowners."
         schema={[faqSchema, articleSchema, localBusinessSchema]}
       />

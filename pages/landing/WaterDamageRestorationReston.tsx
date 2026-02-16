@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Reston VA | 24/7 Service',
+  title: 'Water Damage Restoration in Reston, VA',
   metaDescription: 'Water damage restoration in Reston VA. IICRC certified, 60-minute response, direct insurance billing. Call (877) 497-0007 for emergency help.',
   h1: 'Water Damage Restoration Reston Virginia',
   heroSubtitle: 'Professional water damage restoration serving Reston communities. Fast, reliable, and insurance-friendly service.',

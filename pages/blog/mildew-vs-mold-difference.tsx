@@ -83,7 +83,7 @@ const MildewVsMoldDifference: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mildew vs Mold: Key Differences Homeowners Must Know - Northern Virginia"
+        title="Mildew vs Mold: Key Differences to Know"
         description="Learn the critical differences between mildew and mold, how to identify each, when DIY cleaning works, and when professional remediation is necessary. Expert guide for Virginia homeowners."
         structuredData={schemaData}
       />

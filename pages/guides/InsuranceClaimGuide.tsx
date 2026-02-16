@@ -153,7 +153,7 @@ const InsuranceClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to File a Water Damage Insurance Claim: Complete Guide"
+        title="Filing a Water Damage Insurance Claim"
         description="Step-by-step guide to filing and maximizing your water damage insurance claim. Documentation tips, timelines, negotiation strategies, and how to get the settlement you deserve."
         schema={pageSchema}
       />

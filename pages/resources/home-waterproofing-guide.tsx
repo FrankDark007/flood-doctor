@@ -260,7 +260,7 @@ const HomeWaterproofingGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Complete Home Waterproofing Guide for Northern Virginia Homeowners"
+        title="Home Waterproofing Guide"
         description="Comprehensive guide to basement waterproofing, crawl space encapsulation, foundation sealing, and drainage solutions. Costs, methods, and maintenance for Northern VA homes."
         schema={faqSchema}
       />

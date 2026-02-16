@@ -320,10 +320,11 @@ const AnimatedCrossSellSection: React.FC<AnimatedCrossSellSectionProps> = ({ isC
 interface ServicesHubProps {
   title?: string;
   subtitle?: string;
+  h1?: string;
   filterAudience?: 'RESIDENTIAL' | 'COMMERCIAL';
 }
 
-const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudience }) => {
+const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, h1, filterAudience }) => {
   const isCommercial = filterAudience === 'COMMERCIAL';
 
   // Service images from Unsplash
@@ -510,10 +511,10 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, filterAudien
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: googleEase }}
               >
-                {isCommercial
+                {h1 || (isCommercial
                   ? 'Enterprise restoration for your business'
                   : 'Professional restoration for your home'
-                }
+                )}
               </motion.h1>
 
               <motion.p

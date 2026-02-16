@@ -448,7 +448,7 @@ const WaterDamageCostCalculator: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Cost Calculator 2026 | Free Estimate Tool | Northern Virginia"
+        title="Water Damage Cost Calculator"
         description="Calculate water damage restoration costs instantly. Free tool uses Xactimate pricing standards. Get estimates by damage class, water category, and square footage. Northern Virginia pricing."
         schema={faqSchema}
       />

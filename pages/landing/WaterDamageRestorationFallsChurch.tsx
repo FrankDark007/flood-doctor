@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Falls Church VA | 24/7 Service',
+  title: 'Water Damage Restoration in Falls Church, VA',
   metaDescription: 'Water damage restoration in Falls Church VA. Fast 60-minute response, IICRC certified, direct insurance billing. Call (877) 497-0007.',
   h1: 'Water Damage Restoration Falls Church Virginia',
   heroSubtitle: 'Trusted water damage restoration for Falls Church homes. Fast response, expert service, hassle-free insurance claims.',

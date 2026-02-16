@@ -411,7 +411,7 @@ const EmergencyChecklist: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Emergency Checklist: First 24 Hours Action Guide"
+        title="Water Damage Emergency Checklist"
         description="Step-by-step emergency checklist for water damage. Safety protocols, water shutoff guide, documentation steps, hour-by-hour timeline, and professional contact list for Northern Virginia homeowners."
         schema={faqSchema}
       />

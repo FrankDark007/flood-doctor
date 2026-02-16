@@ -231,7 +231,7 @@ const WaterDamageClassesGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Complete Guide to Water Damage Classes (1, 2, 3, 4) | IICRC Standards"
+        title="Water Damage Classes Guide (1-4)"
         description="Comprehensive guide to water damage classification. Learn how Class 1-4 affects drying time, equipment needs, and restoration costs. Based on IICRC S500 standards."
         schema={faqSchema}
       />

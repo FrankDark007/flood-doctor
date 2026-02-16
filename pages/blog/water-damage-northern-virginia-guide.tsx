@@ -241,7 +241,7 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="What to Do When You Have Water Damage: Complete Northern Virginia Guide"
+        title="What to Do When You Have Water Damage"
         description="Emergency water damage response guide for Northern Virginia homeowners. Expert steps to take immediately, regional considerations, and how to minimize damage and costs."
         schema={[faqSchema, articleSchema]}
       />

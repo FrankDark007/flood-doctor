@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration McLean VA | Premium Service',
+  title: 'Water Damage Restoration in McLean, VA',
   metaDescription: 'Premium water damage restoration in McLean VA. Discrete, professional service for luxury homes. 24/7 response. Call (877) 497-0007.',
   h1: 'Water Damage Restoration McLean Virginia',
   heroSubtitle: 'Premium water damage restoration for McLean\'s finest homes. Discrete service, expert technicians, white-glove treatment.',

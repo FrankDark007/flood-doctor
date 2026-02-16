@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration',
-  title: 'Water Damage Restoration Alexandria VA | Emergency Service',
+  title: 'Water Damage Restoration in Alexandria, VA',
   metaDescription: 'Water damage restoration in Alexandria VA. 24/7 emergency response, IICRC certified, direct insurance billing. Call (877) 497-0007 now.',
   h1: 'Water Damage Restoration Alexandria Virginia',
   heroSubtitle: 'Trusted water damage restoration for Alexandria homes and businesses. Fast response, expert technicians, insurance specialists.',

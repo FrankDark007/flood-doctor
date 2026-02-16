@@ -183,7 +183,7 @@ const StateFarmWaterDamageClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="State Farm Water Damage Claim Guide: Step-by-Step Process"
+        title="State Farm Water Damage Claim Guide"
         description="Complete guide for State Farm policyholders filing water damage claims. Learn the agent-first approach, coverage details, adjuster tips, and how to maximize your settlement."
         schema={pageSchema}
       />

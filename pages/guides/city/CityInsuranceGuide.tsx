@@ -220,7 +220,7 @@ const CityInsuranceGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`${city} Water Damage Insurance Claims Guide | File & Maximize Your Claim`}
+        title={`${city} Water Damage Claims Guide`}
         description={`Complete insurance claims guide for ${city} homeowners. Average claims ${averageClaimRange}. Learn documentation, coverage, and how to maximize your water damage settlement.`}
         schema={pageSchema}
       />

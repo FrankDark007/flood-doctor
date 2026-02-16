@@ -109,7 +109,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Springfield VA | Professional Remediation | (877) 497-0007"
+        title="Mold Removal in Springfield, VA"
         description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections. Call (877) 497-0007 today."
         schema={structuredData}
       />
@@ -631,7 +631,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="/locations/springfield-water-damage"
+                href="/water-damage-restoration-springfield-va"
                 className="inline-block bg-gray-100 hover:bg-[#1a73e8] hover:text-white text-gray-800 px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 Water Damage Restoration

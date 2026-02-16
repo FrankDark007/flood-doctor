@@ -89,7 +89,7 @@ const WetCarpetWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Wet Carpet: Can Water-Damaged Carpet Be Saved? | Northern Virginia Expert Guide"
+        title="Wet Carpet: Can It Be Saved After Flooding?"
         description="Comprehensive guide to carpet water damage: timeline for salvageability, clean vs contaminated water factors, professional extraction process, replacement criteria, health risks, and cost analysis for NoVA homeowners."
         structuredData={schemaData}
       />

@@ -56,7 +56,7 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Sump Pump Failure & Basement Flooding in Northern Virginia | Prevention Guide"
+        title="Sump Pump Failure & Basement Flooding"
         description="Expert guide to preventing sump pump failure and basement flooding in NoVA. Learn warning signs, emergency response steps, and seasonal protection strategies. 24/7 emergency service: (877) 497-0007"
         structuredData={schemaMarkup}
       />

@@ -99,7 +99,7 @@ export default function HerndonWaterDamage() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Herndon VA | 24/7 Emergency Service | (877) 497-0007"
+        title="Water Damage Restoration in Herndon, VA"
         description="Expert water damage restoration in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. 24/7 emergency response. Call (877) 497-0007 now!"
         schema={schema}
       />

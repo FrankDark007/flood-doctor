@@ -436,7 +436,7 @@ const BathroomWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Bathroom Water Damage: Leaks, Overflow & Restoration Guide | Northern Virginia"
+        title="Bathroom Water Damage: Leaks & Restoration"
         description="Expert guide to bathroom water damage in Northern Virginia. Covers toilet overflows, shower leaks, supply line failures, hidden damage behind tiles, emergency response, and professional restoration. Available 24/7: 877-497-0007"
         schema={[faqSchema, localBusinessSchema, articleSchema]}
       />

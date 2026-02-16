@@ -116,7 +116,7 @@ const CondoWaterDamageHOAGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Condo Water Damage: HOA vs Owner Responsibility Guide | Northern VA"
+        title="Condo Water Damage: HOA vs Owner Guide"
         description="Complete guide to condo water damage responsibility in Northern Virginia. Understand HOA master policies vs unit owner insurance, walls-in coverage, multi-unit damage, and working with condo associations during restoration."
         structuredData={schemaMarkup}
       />

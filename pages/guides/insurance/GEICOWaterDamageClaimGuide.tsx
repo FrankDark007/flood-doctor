@@ -176,7 +176,7 @@ const GEICOWaterDamageClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="GEICO Water Damage Claim Guide: Step-by-Step Process"
+        title="GEICO Water Damage Claim Guide"
         description="Complete guide for GEICO homeowners policyholders filing water damage claims. Learn how to work with GEICO underwriters (Homesite, Stillwater), file claims, and maximize your settlement."
         schema={pageSchema}
       />

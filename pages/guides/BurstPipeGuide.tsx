@@ -216,7 +216,7 @@ const BurstPipeGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Handle a Burst Pipe Emergency | Quick Response Guide"
+        title="Burst Pipe Emergency Response Guide"
         description="Emergency burst pipe response guide. Step-by-step instructions to stop the water, prevent damage, and get professional help. 24/7 emergency service in Northern Virginia."
         schema={pageSchema}
       />

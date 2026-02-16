@@ -120,7 +120,7 @@ const ResourcesHub: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Resources & Guides | Insurance Claims Help"
+        title="Water Damage Resources & Guides"
         description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners."
       />
 

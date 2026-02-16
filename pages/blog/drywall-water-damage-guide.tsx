@@ -56,7 +56,7 @@ const DrywallWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damaged Drywall: Repair, Replace, or Restore? Northern Virginia Guide"
+        title="Water Damaged Drywall: Repair or Replace?"
         description="Expert guide to assessing water-damaged drywall in Northern Virginia homes. Learn when to repair vs replace, hidden mold risks, professional restoration process, and cost breakdowns from IICRC-certified specialists."
         structuredData={schemaData}
       />

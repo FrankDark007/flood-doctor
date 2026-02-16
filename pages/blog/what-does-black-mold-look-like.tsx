@@ -83,7 +83,7 @@ const WhatDoesBlackMoldLookLike: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="What Does Black Mold Look Like? Identification Guide with Photos - Northern Virginia"
+        title="What Does Black Mold Look Like? Photo Guide"
         description="Learn how to identify black mold (Stachybotrys chartarum) in your home. Visual guide covering appearance, common locations, health risks, and when to call professionals in Northern Virginia."
         structuredData={schemaData}
       />

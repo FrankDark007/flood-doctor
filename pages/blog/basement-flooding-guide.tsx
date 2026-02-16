@@ -396,7 +396,7 @@ const BasementFloodingGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Basement Flooding in Northern Virginia: Prevention, Response & Restoration Guide"
+        title="Basement Flooding: Prevention & Restoration"
         description="Complete guide to basement flooding in NoVA. Learn causes, immediate response steps, DIY vs professional restoration, waterproofing solutions, insurance coverage, and cost estimates. 24/7 emergency service: (877) 497-0007"
         schema={[faqSchema, articleSchema, localBusinessSchema]}
       />

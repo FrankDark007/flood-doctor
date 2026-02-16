@@ -36,7 +36,7 @@ const TysonsWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Tysons VA | Commercial & Residential"
+        title="Water Damage Restoration in Tysons, VA"
         description="Professional water damage restoration in Tysons, VA. 24/7 emergency service for high-rises, offices, and residences. IICRC certified. Call (877) 497-0007"
         structuredData={structuredData}
       />

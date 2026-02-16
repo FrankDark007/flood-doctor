@@ -155,7 +155,7 @@ const CityGuidesHub: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Water Damage Guides for ${city} | Emergency, Prevention, Insurance`}
+        title={`Water Damage Guides: ${city}`}
         description={`Complete water damage guide library for ${city} homeowners. Emergency response (${responseTime}), prevention tips, insurance claims help, and professional restoration guides.`}
         schema={pageSchema}
       />

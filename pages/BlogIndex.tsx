@@ -44,7 +44,7 @@ const BlogIndex: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Blog | Expert Guides & Prevention Tips"
+        title="Water Damage Blog: Guides & Tips"
         description="Expert guides on water damage restoration, mold prevention, insurance claims, and home protection. Written by IICRC-certified professionals serving Northern Virginia since 2009."
       />
 

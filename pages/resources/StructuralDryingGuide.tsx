@@ -262,7 +262,7 @@ const StructuralDryingGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="The Science of Structural Drying: How Professional Restoration Works"
+        title="Structural Drying: How It Works"
         description="Complete guide to structural drying science. Learn psychrometrics, equipment, drying phases, and IICRC S500 standards. Understand how professionals restore water-damaged buildings."
         schema={faqSchema}
       />

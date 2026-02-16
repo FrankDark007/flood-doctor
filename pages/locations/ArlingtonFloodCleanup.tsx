@@ -157,7 +157,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Emergency Flood Cleanup in Arlington, VA | 24/7 Response"
+        title="Flood Cleanup in Arlington, VA"
         description="24/7 emergency flood cleanup in Arlington, VA. Rapid water extraction, structural drying & restoration. Serving all Arlington neighborhoods. Call (877) 497-0007 now."
         schema={[faqSchema, localBusinessSchema]}
       />
@@ -517,7 +517,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
               <div className="bg-white border border-gray-100 rounded-[24px] p-6">
                 <h4 className="font-medium text-gray-900 mb-4">Related Services</h4>
                 <div className="space-y-3">
-                  <a href="/locations/arlington-water-damage/" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#1a73e8] transition-colors group">
+                  <a href="/water-damage-restoration-arlington-va/" className="flex items-center gap-3 text-sm text-gray-600 hover:text-[#1a73e8] transition-colors group">
                     <ArrowRight size={16} className="text-gray-300 group-hover:text-[#1a73e8]" />
                     Arlington Water Damage Restoration
                   </a>

@@ -102,7 +102,7 @@ const TypesOfMold: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Types of Mold in Homes | Identification & Health Risks"
+        title="Types of Mold in Homes"
         description="Learn about common household mold types including black mold, Aspergillus, and Penicillium. Identification tips, health risks, and when to call professionals."
         structuredData={structuredData}
       />

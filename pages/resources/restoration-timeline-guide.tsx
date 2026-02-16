@@ -265,7 +265,7 @@ const RestorationTimelineGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Restoration Timeline: What to Expect Day by Day"
+        title="Water Damage Restoration Timeline Guide"
         description="Complete timeline guide for water damage restoration from emergency response through reconstruction. Understand each phase, typical durations, and factors that affect your restoration schedule."
         schema={faqSchema}
       />

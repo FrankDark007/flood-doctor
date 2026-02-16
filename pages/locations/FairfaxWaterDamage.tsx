@@ -238,7 +238,7 @@ const FairfaxWaterDamage: React.FC = () => {
         items={[
           { label: 'Home', href: '/' },
           { label: 'Locations', href: '/locations' },
-          { label: 'Fairfax Water Damage', href: '/locations/fairfax-water-damage' }
+          { label: 'Fairfax Water Damage', href: '/water-damage-restoration-fairfax-va' }
         ]}
       />
 

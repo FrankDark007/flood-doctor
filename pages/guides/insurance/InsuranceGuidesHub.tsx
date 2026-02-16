@@ -79,7 +79,7 @@ const InsuranceGuidesHub: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Insurance Claim Guides by Company"
+        title="Water Damage Insurance Claim Guides"
         description="Step-by-step water damage claim guides for USAA, State Farm, Allstate, Nationwide, and GEICO. Company-specific processes, tips, and strategies to maximize your settlement."
         schema={pageSchema}
       />

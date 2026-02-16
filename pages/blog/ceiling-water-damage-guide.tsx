@@ -94,7 +94,7 @@ const CeilingWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Ceiling Water Damage: Causes, Assessment & Repair Guide - Northern Virginia"
+        title="Ceiling Water Damage: Causes & Repair"
         description="Complete guide to ceiling water damage repair in Northern Virginia. Learn causes, safety risks, assessment methods, repair vs replacement decisions, and professional restoration costs."
         structuredData={schemaData}
       />

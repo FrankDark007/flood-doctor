@@ -176,7 +176,7 @@ const USAAWaterDamageClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="USAA Water Damage Claim Guide: Step-by-Step for Military Families"
+        title="USAA Water Damage Claim Guide"
         description="Complete guide for USAA members filing water damage claims. Learn the USAA app process, military-specific scenarios (PCS, deployment), adjuster tips, and how to maximize your settlement."
         schema={pageSchema}
       />

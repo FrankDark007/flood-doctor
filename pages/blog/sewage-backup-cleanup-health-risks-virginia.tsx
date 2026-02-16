@@ -64,7 +64,7 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Sewage Backup in Virginia: Health Risks & Professional Cleanup"
+        title="Sewage Backup: Health Risks & Cleanup"
         description="Sewage backup poses severe health risks from Category 3 black water. Learn about dangerous pathogens, IICRC cleanup standards, insurance coverage, and why professional restoration is essential."
         structuredData={faqSchema}
       />

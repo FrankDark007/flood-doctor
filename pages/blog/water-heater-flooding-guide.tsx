@@ -109,7 +109,7 @@ const WaterHeaterFloodingGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Heater Failure & Flooding: Prevention and Emergency Response | Northern Virginia"
+        title="Water Heater Flooding: Prevention & Response"
         description="Comprehensive guide to water heater failures and flooding in Northern Virginia. Learn warning signs, failure types, emergency response, and prevention strategies. 24/7 service: (877) 497-0007"
         structuredData={combinedSchema}
       />

@@ -352,7 +352,7 @@ const InsuranceDocumentationGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Documentation Guide: Maximizing Your Insurance Claim"
+        title="Water Damage Documentation Guide"
         description="Complete guide to documenting water damage for insurance claims. Photo checklist, written documentation, communication logs, and professional documentation services to maximize your settlement."
         schema={faqSchema}
       />

@@ -164,7 +164,7 @@ const WaterDamageCleanupGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Clean Up Water Damage: Step-by-Step Guide"
+        title="Water Damage Cleanup Guide"
         description="Learn how to clean up water damage yourself. 8-step emergency response guide covering safety, extraction, drying, and mold prevention. Expert tips from IICRC-certified professionals."
         schema={pageSchema}
       />

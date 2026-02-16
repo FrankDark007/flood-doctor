@@ -553,7 +553,7 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Musty Smell After Water Damage: Complete Odor Elimination Guide [2025]"
+        title="Musty Smell After Water Damage: Odor Guide"
         description="Comprehensive guide to eliminating musty odors and smells after water damage in Northern Virginia. Professional removal methods, hidden problem detection, air quality testing, and prevention strategies."
         schema={[faqSchema, articleSchema, localBusinessSchema]}
       />

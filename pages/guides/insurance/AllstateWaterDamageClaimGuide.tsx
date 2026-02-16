@@ -176,7 +176,7 @@ const AllstateWaterDamageClaimGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Allstate Water Damage Claim Guide: Step-by-Step Process"
+        title="Allstate Water Damage Claim Guide"
         description="Complete guide for Allstate policyholders filing water damage claims. Learn the QuickFoto Claim process, Good Hands Repair Network, adjuster tips, and how to maximize your settlement."
         schema={pageSchema}
       />

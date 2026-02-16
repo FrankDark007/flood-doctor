@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Contact Flood Doctor - 24/7 Emergency Response"
+        title="Contact Us for Emergency Service"
         description="Contact Flood Doctor for 24/7 emergency water damage restoration in Northern Virginia. Call (877) 497-0007 for immediate response. Free estimates available."
         schema={generateContactPageSchema()}
       />

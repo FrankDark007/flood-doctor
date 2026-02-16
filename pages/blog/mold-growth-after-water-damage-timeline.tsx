@@ -56,7 +56,7 @@ const MoldGrowthTimelineArticle: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How Fast Does Mold Grow After Water Damage? Virginia Homeowner's Timeline"
+        title="Mold Growth After Water Damage: Timeline"
         description="Expert timeline of mold growth after water damage in Northern Virginia homes. Learn the 24-48 hour critical window and prevention strategies from certified restoration professionals."
         structuredData={schemaData}
       />

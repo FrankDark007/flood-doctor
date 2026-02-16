@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   ChevronDown,
   ChevronUp,
@@ -1420,7 +1421,18 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSignatureChange }) => {
 };
 
 // Main Component
+const ROUTE_META: Record<string, { h1: string; title: string }> = {
+  '/sign/': { h1: 'Sign Your Service Contract', title: 'Sign Service Contract' },
+  '/sign': { h1: 'Sign Your Service Contract', title: 'Sign Service Contract' },
+  '/work-authorization/': { h1: 'Work Authorization', title: 'Work Authorization' },
+  '/work-authorization': { h1: 'Work Authorization', title: 'Work Authorization' },
+  '/contract/': { h1: 'Service Contract', title: 'Work Authorization Contract' },
+  '/contract': { h1: 'Service Contract', title: 'Work Authorization Contract' },
+};
+
 const WorkAuthorization: React.FC = () => {
+  const location = useLocation();
+  const routeMeta = ROUTE_META[location.pathname] || { h1: 'Work Authorization Contract', title: 'Work Authorization Contract' };
   const [openSections, setOpenSections] = useState<Set<string>>(new Set());
   const [checkedSections, setCheckedSections] = useState<Set<string>>(new Set());
   const [sectionInitials, setSectionInitials] = useState<Record<string, string>>({});
@@ -1609,7 +1621,7 @@ const WorkAuthorization: React.FC = () => {
   return (
     <>
       <PageMeta
-        title="Work Authorization Contract"
+        title={routeMeta.title}
         description="Review and sign the Flood Doctor service contract and work authorization."
       />
 
@@ -1627,8 +1639,8 @@ const WorkAuthorization: React.FC = () => {
                 }}
               />
               <div>
-                <h1 className="font-bold text-slate-900">Flood Doctor</h1>
-                <p className="text-xs text-slate-500">Service Contract</p>
+                <h1 className="font-bold text-slate-900">{routeMeta.h1}</h1>
+                <p className="text-xs text-slate-500">Flood Doctor</p>
               </div>
             </div>
             <a

@@ -124,7 +124,7 @@ const VacationWaterDamagePrevention: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage While on Vacation: Prevention Guide for Northern Virginia Homeowners"
+        title="Vacation Water Damage Prevention Guide"
         description="Essential guide to preventing water damage during vacations in Northern Virginia. Learn pre-vacation checklists, smart monitoring systems, emergency response, and insurance considerations. 24/7 help: (877) 497-0007"
         structuredData={combinedSchema}
       />

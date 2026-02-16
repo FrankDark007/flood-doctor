@@ -3,7 +3,7 @@ import KeywordLandingTemplate, { KeywordLandingConfig } from './KeywordLandingTe
 
 const config: KeywordLandingConfig = {
   keyword: 'Water Damage Restoration Services',
-  title: 'Water Damage Restoration Services | 24/7 Emergency',
+  title: 'Water Damage Restoration Services',
   metaDescription: 'Professional water damage restoration services in Northern Virginia. 60-minute response, IICRC certified, direct insurance billing. Call (877) 497-0007.',
   h1: 'Professional Water Damage Restoration Services',
   heroSubtitle: 'Complete water damage restoration services for homes and businesses. From emergency water extraction to full structural repairs.',

@@ -9,7 +9,7 @@ const SewageCleanupAlexandriaVA: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Sewage Backup Cleanup in Alexandria: Health Risks and Professional Solutions"
+        title="Sewage Cleanup in Alexandria: Solutions"
         description="Expert guide to sewage backup cleanup in Alexandria, VA. Learn about health risks, emergency response, and professional remediation for sewage contamination."
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">

@@ -83,7 +83,7 @@ const SignsOfWaterDamageBehindWalls: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Signs of Hidden Water Damage Behind Walls - Detection Guide | Northern Virginia"
+        title="Hidden Water Damage Behind Walls: Signs"
         description="Learn to identify hidden water damage behind walls before it causes mold and structural problems. Expert detection guide covering visual, smell, sound, and touch indicators."
         structuredData={schemaData}
       />

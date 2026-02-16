@@ -98,7 +98,7 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damaged Furniture: What Can Be Restored? | Virginia Guide"
+        title="Water Damaged Furniture: Restoration Guide"
         description="Expert guide to restoring water damaged furniture in Northern Virginia. Learn what can be saved, DIY vs professional restoration, insurance claims, and contents restoration services."
         structuredData={schemaData}
       />

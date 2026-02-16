@@ -89,7 +89,7 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Washing Machine Floods: Laundry Room Water Damage Response | Northern VA"
+        title="Washing Machine Flood: Laundry Room Guide"
         description="Complete guide to washing machine floods and laundry room water damage in Northern Virginia. Emergency response, prevention with steel braided hoses and auto shutoffs, insurance coverage. 24/7: (877) 497-0007"
         structuredData={schemaMarkup}
       />

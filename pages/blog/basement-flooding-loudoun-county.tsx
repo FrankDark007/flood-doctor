@@ -40,7 +40,7 @@ const BasementFloodingLoudounCounty: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Basement Flooding in Loudoun County: Causes, Prevention, and Restoration"
+        title="Basement Flooding in Loudoun County"
         description="Comprehensive guide to basement flooding in Loudoun County, VA. Learn causes, prevention strategies, and professional restoration solutions for water damage."
         structuredData={faqSchema}
       />

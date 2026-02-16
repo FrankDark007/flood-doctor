@@ -91,7 +91,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Emergency Water Damage Response in Virginia: First 24 Hours"
+        title="Emergency Water Damage: First 24 Hours"
         description="Expert guide to handling water damage emergencies in Northern Virginia. Learn critical first 24-hour response steps, IICRC-certified techniques, and when to call professionals at (877) 497-0007."
         structuredData={combinedSchema}
       />

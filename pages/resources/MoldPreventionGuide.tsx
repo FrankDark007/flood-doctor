@@ -168,7 +168,7 @@ const MoldPreventionGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Prevention After Water Damage: Complete Guide"
+        title="Mold Prevention After Water Damage"
         description="How to prevent mold growth after water damage. Timeline, warning signs, prevention steps, and when to call professionals. Act within 24-48 hours."
         schema={faqSchema}
       />

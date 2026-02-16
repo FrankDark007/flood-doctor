@@ -83,7 +83,7 @@ const DoesVinegarKillMold: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Does Vinegar Kill Mold? What Actually Works - Northern Virginia Expert Guide"
+        title="Does Vinegar Kill Mold? What Works"
         description="Learn if vinegar effectively kills mold, how to use it properly, its limitations, and when DIY methods aren't enough. Expert guide from Northern Virginia mold remediation professionals."
         structuredData={schemaData}
       />

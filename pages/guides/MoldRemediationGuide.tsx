@@ -157,7 +157,7 @@ const MoldRemediationGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Handle Mold After Water Damage: Remediation Guide"
+        title="Mold Remediation After Water Damage"
         description="Professional mold remediation guide. Learn to identify, contain, and remove mold safely. When to DIY vs call professionals, safety requirements, and prevention strategies."
         schema={pageSchema}
       />

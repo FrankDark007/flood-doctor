@@ -106,7 +106,7 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage and Home Warranties: What's Covered and What's Not | Northern Virginia"
+        title="Water Damage & Home Warranty Coverage"
         description="Comprehensive guide explaining the difference between home warranties and homeowners insurance for water damage. Learn what's covered, how to file claims correctly, and maximize your protection in Northern Virginia."
         schema={[faqSchema, localBusinessSchema]}
       />

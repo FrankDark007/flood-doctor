@@ -213,7 +213,7 @@ const SignsOfWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Signs of Water Damage: How to Detect Hidden Leaks"
+        title="Signs of Water Damage: Hidden Leaks"
         description="Learn to identify visible and hidden signs of water damage in your home. Checklist for walls, floors, ceilings, and common leak locations."
         schema={faqSchema}
       />

@@ -66,7 +66,7 @@ export default function HerndonFloodCleanup() {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Emergency Flood Cleanup Herndon VA | 24/7 Flood Restoration"
+        title="Flood Cleanup in Herndon, VA"
         description="24/7 emergency flood cleanup in Herndon, VA. Rapid water extraction, drying & restoration. Serving Downtown Herndon, Fox Mill, Franklin Farm. Call (877) 497-0007 now!"
         schema={schemaData}
       />

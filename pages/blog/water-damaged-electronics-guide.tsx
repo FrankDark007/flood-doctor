@@ -99,7 +99,7 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damaged Electronics: What Can Be Saved? | Northern Virginia Guide"
+        title="Water Damaged Electronics: Can They Be Saved?"
         description="Expert guide to salvaging water-damaged electronics in Northern Virginia. Learn immediate response steps, what NOT to do, professional restoration options, and insurance coverage. 24/7 help: (877) 497-0007"
         structuredData={combinedSchema}
       />

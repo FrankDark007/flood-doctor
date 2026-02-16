@@ -94,7 +94,7 @@ const HVACWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="HVAC Water Damage: AC Leaks, Condensation & Ductwork Issues | Northern Virginia Guide"
+        title="HVAC Water Damage: AC Leaks & Ductwork"
         description="Comprehensive guide to HVAC water damage from AC leaks, frozen coils, and condensation issues in Northern Virginia. Learn emergency response, mold prevention, and when to replace vs repair. 24/7: (877) 497-0007"
         structuredData={combinedSchema}
       />

@@ -204,7 +204,7 @@ const HealthcareRestoration: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Healthcare Water Damage Restoration Northern Virginia"
+        title="Healthcare Water Damage Restoration"
         description="24/7 HIPAA-compliant water damage restoration for hospitals, clinics, and medical facilities in Northern Virginia. IICRC certified, minimal disruption to patient care."
         structuredData={combinedSchema}
       />

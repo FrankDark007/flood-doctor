@@ -282,7 +282,7 @@ const MoldRemediationStandards: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Remediation Standards and Best Practices | IICRC S520 Guide"
+        title="Mold Remediation Standards: IICRC S520"
         description="Complete guide to professional mold remediation standards. Learn IICRC S520 protocols, EPA guidelines, Virginia licensing, and industry best practices for safe mold removal."
         schema={faqSchema}
       />

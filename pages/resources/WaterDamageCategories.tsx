@@ -135,7 +135,7 @@ const WaterDamageCategories: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Categories Explained: Category 1, 2, 3"
+        title="Water Damage Categories: 1, 2, 3"
         description="Understanding water damage categories (1, 2, 3) helps you know health risks, cleanup requirements, and costs. Complete guide to clean, gray, and black water."
         schema={faqSchema}
       />

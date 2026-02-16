@@ -228,7 +228,7 @@ const VirginiaInsuranceGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Virginia Homeowner's Guide to Disaster Insurance Claims | NFIP & FEMA"
+        title="Virginia Disaster Insurance Claims Guide"
         description="Complete guide for Virginia homeowners on disaster insurance claims. Coverage info for hurricanes, floods, fires, and winter storms. FEMA assistance, NFIP requirements, and claim filing steps."
         schema={faqSchema}
       />

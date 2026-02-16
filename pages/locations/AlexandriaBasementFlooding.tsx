@@ -238,7 +238,7 @@ const AlexandriaBasementFlooding: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Basement Flooding Repair Alexandria VA | 24/7 Emergency Service"
+        title="Basement Flooding Repair Alexandria, VA"
         description="Fast basement flood cleanup in Alexandria, VA. Emergency water extraction, drying & restoration for Old Town, Del Ray, Kingstowne & all Alexandria areas. Call (703) 665-0505."
         schema={[faqSchema, localBusinessSchema]}
       />

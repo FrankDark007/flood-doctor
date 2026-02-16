@@ -70,7 +70,7 @@ const NearMeLanding: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta 
-        title="Water Damage Restoration Near Me | 24/7 Emergency Service" 
+        title="Water Damage Restoration Near Me" 
         description="Looking for water damage restoration near you? Flood Doctor arrives in 60 minutes or less. Licensed, insured, and top-rated in Northern Virginia." 
       />
       

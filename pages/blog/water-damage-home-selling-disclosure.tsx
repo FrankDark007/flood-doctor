@@ -314,7 +314,7 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Water Damage Disclosure: What Virginia Home Sellers Must Know [2025 Legal Guide]"
+        title="Water Damage Disclosure for Home Sellers"
         description="Complete guide to water damage disclosure laws for Virginia home sellers. Learn legal requirements, documentation needs, liability risks, and how proper restoration protects your sale."
         schema={[faqSchema, articleSchema, localBusinessSchema]}
       />

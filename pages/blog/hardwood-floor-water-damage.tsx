@@ -78,7 +78,7 @@ const HardwoodFloorWaterDamage: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Hardwood Floor Water Damage: Can Your Floors Be Saved? | Northern VA Guide"
+        title="Hardwood Floor Water Damage: Repair Guide"
         description="Expert guide to saving water-damaged hardwood floors in Northern Virginia. Learn about cupping, crowning, buckling, professional drying techniques, restoration vs replacement costs, and the critical 24-48 hour window."
         structuredData={schemaData}
       />

@@ -96,7 +96,7 @@ const AtticWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Attic Water Damage: Roof Leaks, Ice Dams & Condensation | Northern Virginia Guide"
+        title="Attic Water Damage: Leaks & Condensation"
         description="Expert guide to attic water damage in Northern Virginia homes. Learn about roof leaks, ice dam prevention, condensation problems, insulation damage, and professional restoration solutions."
         structuredData={schemaMarkup}
       />

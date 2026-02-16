@@ -135,7 +135,7 @@ const KitchenWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Kitchen Water Damage: Dishwasher Leaks, Sink Overflow & Under-Cabinet Disasters | Northern Virginia"
+        title="Kitchen Water Damage: Causes & Restoration"
         description="Expert guide to kitchen water damage in Northern Virginia homes. Learn about dishwasher leaks, hidden damage under cabinets, emergency response, cabinet vs. flooring repair decisions, and professional restoration. Available 24/7: (877) 497-0007"
         structuredData={[faqSchema, localBusinessSchema]}
       />

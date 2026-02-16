@@ -203,7 +203,7 @@ const CityEmergencyGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title={`Emergency Water Damage Response in ${city} | ${responseTime} Response`}
+        title={`Emergency Water Damage in ${city}`}
         description={`${city} water damage emergency? Act now with our 6-step guide. ${responseTime} professional response available 24/7. Call ${phone} for immediate help.`}
         schema={pageSchema}
       />

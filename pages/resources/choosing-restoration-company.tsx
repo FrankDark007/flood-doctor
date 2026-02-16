@@ -308,7 +308,7 @@ const ChoosingRestorationCompany: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How to Choose a Water Damage Restoration Company: Complete Vetting Guide"
+        title="Choosing a Restoration Company"
         description="Expert guide to choosing a water damage restoration company in Northern Virginia. Essential certifications (IICRC, VA license), questions to ask, red flags, insurance support, and comparison checklist."
         schema={faqSchema}
       />

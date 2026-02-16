@@ -64,7 +64,7 @@ const ApplianceWaterDamageGuide: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Dishwasher & Washing Machine Leaks: Emergency Response Guide | Northern Virginia"
+        title="Appliance Leaks: Dishwasher & Washer Guide"
         description="Expert guide to handling dishwasher and washing machine leaks in Northern Virginia. Learn emergency response steps, prevention tips, and when to call professionals. Available 24/7: (877) 497-0007"
         structuredData={faqSchema}
       />

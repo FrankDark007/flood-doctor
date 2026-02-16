@@ -107,7 +107,7 @@ const ProfessionalDryingDehumidificationArticle: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Professional Water Damage Drying: The Science of Structural Dehumidification in Northern Virginia"
+        title="Structural Drying & Dehumidification Guide"
         description="Expert guide to professional structural drying and dehumidification. Learn about LGR dehumidifiers, psychrometry, IICRC standards, moisture monitoring, and why professional equipment prevents mold growth after water damage in Virginia homes."
         structuredData={schemaData}
       />

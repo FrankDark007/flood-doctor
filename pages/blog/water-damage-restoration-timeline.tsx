@@ -9,7 +9,7 @@ const WaterDamageRestorationTimeline: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="How Long Does Water Damage Restoration Take? Complete Timeline for NoVA Homeowners"
+        title="Water Damage Restoration Timeline"
         description="Detailed timeline for water damage restoration in Northern Virginia. Learn what to expect during each phase from emergency response through final restoration."
       />
       <article className="prose prose-lg max-w-4xl mx-auto px-4 py-12">

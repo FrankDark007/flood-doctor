@@ -96,6 +96,16 @@ RewriteRule ^(mclean|arlington|alexandria|fairfax|vienna|tysons|reston|herndon|a
 # /services/water-damage-restoration/ -> canonical nested route
 RewriteRule ^services/water-damage-restoration/?$ /services/residential/restoration-services/water-damage-restoration/ [R=301,L]
 
+# City water damage dedup: /locations/{city}-water-damage -> /water-damage-restoration-{city}-va/
+RewriteRule ^locations/alexandria-water-damage/?$ /water-damage-restoration-alexandria-va/ [R=301,L]
+RewriteRule ^locations/arlington-water-damage/?$ /water-damage-restoration-arlington-va/ [R=301,L]
+RewriteRule ^locations/fairfax-water-damage/?$ /water-damage-restoration-fairfax-va/ [R=301,L]
+RewriteRule ^locations/mclean-water-damage/?$ /water-damage-restoration-mclean-va/ [R=301,L]
+RewriteRule ^locations/reston-water-damage/?$ /water-damage-restoration-reston-va/ [R=301,L]
+RewriteRule ^locations/ashburn-water-damage/?$ /water-damage-restoration-ashburn-va/ [R=301,L]
+RewriteRule ^locations/springfield-water-damage/?$ /water-damage-restoration-springfield-va/ [R=301,L]
+RewriteRule ^locations/falls-church-water-damage/?$ /water-damage-restoration-falls-church-va/ [R=301,L]
+
 # ============================================
 
 # Security Headers

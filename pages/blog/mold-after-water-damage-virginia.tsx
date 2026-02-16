@@ -382,7 +382,7 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold After Water Damage: What Northern Virginia Homeowners Need to Know [2025]"
+        title="Mold After Water Damage: What to Know"
         description="Comprehensive guide to mold growth after water damage in Northern Virginia. Learn growth timelines, health risks, prevention strategies, and when professional remediation is required."
         schema={[faqSchema, articleSchema]}
       />

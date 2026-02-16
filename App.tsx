@@ -28,7 +28,7 @@ const LocationsHub = lazy(() => import('./pages/LocationsHub'));
 const RequestService = lazy(() => import('./pages/RequestService'));
 const WorkAuthorization = lazy(() => import('./pages/WorkAuthorization'));
 const CategoryLanding = lazy(() => import('./pages/templates/CategoryLanding'));
-const ResidentialVariantA = lazy(() => import('./pages/templates/ResidentialVariantA'));
+
 
 // Dev Layout Variants - rarely accessed
 const ServiceDetailDevA = lazy(() => import('./pages/templates/ServiceDetailDevA'));
@@ -354,8 +354,8 @@ const AppLayout: React.FC = () => {
           {/* NOTE: "/" is now handled in fullscreen mode above */}
 
               {/* Service Hubs */}
-              <Route path="/services/" element={<ServicesHub title="All Restoration Services" subtitle="Comprehensive water damage, mold, and cleanup solutions." />} />
-              <Route path="/services/residential/" element={<ServicesHub title="Residential Services" subtitle="Expert home flood cleanup and water damage restoration." filterAudience="RESIDENTIAL" />} />
+              <Route path="/services/" element={<ServicesHub title="All Restoration Services" subtitle="Comprehensive water damage, mold, and cleanup solutions." h1="Restoration Services | Flood Doctor" />} />
+              <Route path="/services/residential/" element={<ServicesHub title="Residential Services" subtitle="Expert home flood cleanup and water damage restoration." h1="Residential Restoration Services | Flood Doctor" filterAudience="RESIDENTIAL" />} />
               <Route path="/services/commercial/" element={<ServicesHub title="Commercial Services" subtitle="Scalable disaster recovery for businesses and facilities." filterAudience="COMMERCIAL" />} />
 
               {/* Residential Category Pages */}
@@ -372,8 +372,6 @@ const AppLayout: React.FC = () => {
                 element={<CategoryLanding audience="RESIDENTIAL" category="SPECIALTY" title="Residential Specialty Services" description="Specialized solutions for basements, crawl spaces, and roofs." />}
               />
 
-              {/* New Variant Template */}
-              <Route path="/services/residential/variant-a/" element={<ResidentialVariantA />} />
 
               {/* Commercial Category Pages */}
               <Route
@@ -420,26 +418,22 @@ const AppLayout: React.FC = () => {
               {/* See: npm run build:cities, /CityApp.tsx */}
               {/* City routes removed - each city is deployed as its own subdomain site */}
 
-              {/* Location Landing Pages - Alexandria */}
-              <Route path="/locations/alexandria-water-damage/" element={<AlexandriaWaterDamage />} />
+              {/* Location Landing Pages - Alexandria (water-damage 301→/water-damage-restoration-alexandria-va/) */}
               <Route path="/locations/alexandria-mold-removal/" element={<AlexandriaMoldRemoval />} />
               <Route path="/locations/alexandria-flood-cleanup/" element={<AlexandriaFloodCleanup />} />
               <Route path="/locations/alexandria-basement-flooding/" element={<AlexandriaBasementFlooding />} />
 
-              {/* Location Landing Pages - Arlington */}
-              <Route path="/locations/arlington-water-damage/" element={<ArlingtonWaterDamage />} />
+              {/* Location Landing Pages - Arlington (water-damage 301→/water-damage-restoration-arlington-va/) */}
               <Route path="/locations/arlington-mold-removal/" element={<ArlingtonMoldRemoval />} />
               <Route path="/locations/arlington-flood-cleanup/" element={<ArlingtonFloodCleanup />} />
               <Route path="/locations/arlington-basement-flooding/" element={<ArlingtonBasementFlooding />} />
 
-              {/* Location Landing Pages - Fairfax */}
-              <Route path="/locations/fairfax-water-damage/" element={<FairfaxWaterDamage />} />
+              {/* Location Landing Pages - Fairfax (water-damage 301→/water-damage-restoration-fairfax-va/) */}
               <Route path="/locations/fairfax-mold-removal/" element={<FairfaxMoldRemoval />} />
               <Route path="/locations/fairfax-flood-cleanup/" element={<FairfaxFloodCleanup />} />
               <Route path="/locations/fairfax-basement-flooding/" element={<FairfaxBasementFlooding />} />
 
-              {/* Location Landing Pages - McLean */}
-              <Route path="/locations/mclean-water-damage/" element={<McLeanWaterDamage />} />
+              {/* Location Landing Pages - McLean (water-damage 301→/water-damage-restoration-mclean-va/) */}
               <Route path="/locations/mclean-mold-removal/" element={<McLeanMoldRemoval />} />
               <Route path="/locations/mclean-flood-cleanup/" element={<McLeanFloodCleanup />} />
               <Route path="/locations/mclean-basement-flooding/" element={<McLeanBasementFlooding />} />
@@ -447,12 +441,10 @@ const AppLayout: React.FC = () => {
               {/* Location Landing Pages - Tysons */}
               <Route path="/locations/tysons-water-damage/" element={<TysonsWaterDamage />} />
 
-              {/* Location Landing Pages - Reston */}
-              <Route path="/locations/reston-water-damage/" element={<RestonWaterDamage />} />
+              {/* Location Landing Pages - Reston (water-damage 301→/water-damage-restoration-reston-va/) */}
               <Route path="/locations/reston-mold-removal/" element={<RestonMoldRemoval />} />
 
-              {/* Location Landing Pages - Ashburn */}
-              <Route path="/locations/ashburn-water-damage/" element={<AshburnWaterDamage />} />
+              {/* Location Landing Pages - Ashburn (water-damage 301→/water-damage-restoration-ashburn-va/) */}
               <Route path="/locations/ashburn-mold-removal/" element={<AshburnMoldRemoval />} />
 
               {/* Location Landing Pages - Herndon */}
@@ -461,12 +453,10 @@ const AppLayout: React.FC = () => {
               <Route path="/locations/herndon-flood-cleanup/" element={<HerndonFloodCleanup />} />
               <Route path="/locations/herndon-basement-flooding/" element={<HerndonBasementFlooding />} />
 
-              {/* Location Landing Pages - Springfield */}
-              <Route path="/locations/springfield-water-damage/" element={<SpringfieldWaterDamage />} />
+              {/* Location Landing Pages - Springfield (water-damage 301→/water-damage-restoration-springfield-va/) */}
               <Route path="/locations/springfield-mold-removal/" element={<SpringfieldMoldRemoval />} />
 
-              {/* Location Landing Pages - Falls Church */}
-              <Route path="/locations/falls-church-water-damage/" element={<FallsChurchWaterDamage />} />
+              {/* Location Landing Pages - Falls Church (water-damage 301→/water-damage-restoration-falls-church-va/) */}
               <Route path="/locations/falls-church-mold-removal/" element={<FallsChurchMoldRemoval />} />
 
               {/* Keyword Landing Pages - Location Specific */}

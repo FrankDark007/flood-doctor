@@ -94,7 +94,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
   return (
     <main className="flex-grow bg-white">
       <PageMeta
-        title="Mold Removal Falls Church VA | Certified Mold Remediation | (877) 497-0007"
+        title="Mold Removal in Falls Church, VA"
         description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service. Call (877) 497-0007."
         schema={[localBusinessSchema, faqSchema]}
       />
@@ -262,7 +262,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
                 <p className="text-gray-700 mb-4">
                   Rapid water extraction and drying services prevent mold growth after flooding, leaks, or water damage incidents throughout Falls Church.
                 </p>
-                <a href="/locations/falls-church-water-damage" className="text-[#1a73e8] hover:underline mt-2 inline-block">Learn more →</a>
+                <a href="/water-damage-restoration-falls-church-va" className="text-[#1a73e8] hover:underline mt-2 inline-block">Learn more →</a>
               </div>
               <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-bold mb-4 text-[#1a73e8]">Reconstruction Services</h3>
