@@ -121,7 +121,7 @@ const FairfaxWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration in Fairfax, VA | 24/7 Emergency Service"
-        description="Expert water damage restoration in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Insurance approved. Call (877) 497-0007 now."
+        description="Expert water damage restoration in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Insurance approved."
         schema={schema}
       />
 

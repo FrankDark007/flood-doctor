@@ -108,7 +108,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Flood Cleanup in Arlington, VA"
-        description="24/7 emergency flood cleanup in Arlington, VA. Rapid water extraction, structural drying & restoration. Serving all Arlington neighborhoods. Call (877) 497-0007 now."
+        description="24/7 emergency flood cleanup in Arlington, VA. Rapid water extraction, structural drying & restoration. Serving all Arlington neighborhoods."
         schema={schema}
       />
 

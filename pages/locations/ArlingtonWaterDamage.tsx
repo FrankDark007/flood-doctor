@@ -130,7 +130,7 @@ const ArlingtonWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration in Arlington, VA | 24/7 Emergency Service"
-        description="Emergency water damage restoration in Arlington, VA. Serving Ballston, Clarendon, Rosslyn, Crystal City & Pentagon City. IICRC certified. Call (877) 497-0007 for immediate help."
+        description="Emergency water damage restoration in Arlington, VA. Serving Ballston, Clarendon, Rosslyn, Crystal City & Pentagon City. IICRC certified."
         schema={schema}
       />
 

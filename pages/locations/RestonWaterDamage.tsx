@@ -37,7 +37,7 @@ const RestonWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Reston VA | 24/7 Emergency Response | (877) 497-0007"
-        description="Expert water damage restoration in Reston VA. 24/7 emergency response to Reston Town Center, Lake Anne, South Lakes. Call (877) 497-0007 for immediate help."
+        description="Expert water damage restoration in Reston VA. 24/7 emergency response to Reston Town Center, Lake Anne, South Lakes."
         schema={schema}
       />
 

@@ -37,7 +37,7 @@ const SpringfieldWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Springfield VA | 24/7 Emergency Service | (877) 497-0007"
-        description="Expert water damage restoration in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. 24/7 emergency response. Call (877) 497-0007 now."
+        description="Expert water damage restoration in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. 24/7 emergency response."
         schema={schema}
       />
 

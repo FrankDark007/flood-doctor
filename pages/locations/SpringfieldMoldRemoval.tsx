@@ -41,7 +41,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Springfield, VA"
-        description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections. Call (877) 497-0007 today."
+        description="Expert mold removal & remediation in Springfield, VA. Serving Kingstowne, Franconia, West Springfield & Fairfax County. Free inspections."
         schema={schema}
       />
 

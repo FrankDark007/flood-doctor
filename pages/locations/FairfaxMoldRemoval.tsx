@@ -167,7 +167,7 @@ const FairfaxMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Fairfax, VA"
-        description="Professional mold remediation in Fairfax, Burke, Mantua & Fair Oaks. IICRC certified. Safe containment. Insurance approved. Call (877) 497-0007 for free inspection."
+        description="Professional mold remediation in Fairfax, Burke, Mantua & Fair Oaks. IICRC certified. Safe containment. Insurance approved."
         schema={schema}
       />
 

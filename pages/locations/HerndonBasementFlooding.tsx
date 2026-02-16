@@ -18,7 +18,7 @@ export default function HerndonBasementFlooding() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair Herndon, VA"
-        description="Expert basement flooding repair in Herndon, VA. Emergency water removal, complete restoration & waterproofing. Serving Fox Mill, Franklin Farm, Downtown Herndon. Call (877) 497-0007!"
+        description="Expert basement flooding repair in Herndon, VA. Emergency water removal, complete restoration & waterproofing. Serving Fox Mill, Franklin Farm, Downtown Herndon."
         schema={schema}
       />
 

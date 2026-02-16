@@ -107,7 +107,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Arlington, VA"
-        description="Professional mold removal and remediation in Arlington, VA. Serving Ballston, Clarendon, Rosslyn & all Arlington neighborhoods. IICRC certified. Call (877) 497-0007."
+        description="Professional mold removal and remediation in Arlington, VA. Serving Ballston, Clarendon, Rosslyn & all Arlington neighborhoods. IICRC certified."
         schema={schema}
       />
 

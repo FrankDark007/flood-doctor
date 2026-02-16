@@ -37,7 +37,7 @@ const RestonMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Reston, VA"
-        description="Professional mold removal and remediation in Reston VA. Certified technicians, 24/7 service. Serving Reston Town Center, Lake Anne, South Lakes. Call (877) 497-0007."
+        description="Professional mold removal and remediation in Reston VA. Certified technicians, 24/7 service. Serving Reston Town Center, Lake Anne, South Lakes."
         schema={schema}
       />
 

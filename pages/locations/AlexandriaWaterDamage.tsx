@@ -159,7 +159,7 @@ const AlexandriaWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Alexandria VA | 24/7 Emergency Response"
-        description="Fast water damage restoration in Alexandria, VA. Serving Old Town, Del Ray, Kingstowne & all Alexandria neighborhoods. IICRC certified. Call (703) 665-0505 now."
+        description="Fast water damage restoration in Alexandria, VA. Serving Old Town, Del Ray, Kingstowne & all Alexandria neighborhoods. IICRC certified."
         schema={schema}
       />
 

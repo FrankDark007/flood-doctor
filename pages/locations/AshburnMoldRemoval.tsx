@@ -38,7 +38,7 @@ export default function AshburnMoldRemoval() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Ashburn, VA"
-        description="Professional mold removal and remediation in Ashburn, VA. Serving Broadlands, One Loudoun, Brambleton, Lansdowne & Ashburn Village. Certified technicians, 24/7 service. Call (877) 497-0007"
+        description="Professional mold removal and remediation in Ashburn, VA. Serving Broadlands, One Loudoun, Brambleton, Lansdowne & Ashburn Village. Certified technicians, 24/7 service."
         schema={schema}
       />
 

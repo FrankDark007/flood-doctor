@@ -135,7 +135,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair Arlington, VA"
-        description="Expert basement flooding repair in Arlington, VA. Emergency water removal, structural drying, waterproofing & permanent solutions. Call (877) 497-0007 now."
+        description="Expert basement flooding repair in Arlington, VA. Emergency water removal, structural drying, waterproofing & permanent solutions."
         schema={schema}
       />
 

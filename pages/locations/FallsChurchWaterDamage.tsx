@@ -38,7 +38,7 @@ const FallsChurchWaterDamage: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Water Damage Restoration Falls Church VA | 24/7 Emergency Service | (877) 497-0007"
-        description="Expert water damage restoration in Falls Church, VA. Serving Falls Church City, Seven Corners, Bailey's Crossroads & Merrifield. 24/7 emergency response. Call (877) 497-0007 now."
+        description="Expert water damage restoration in Falls Church, VA. Serving Falls Church City, Seven Corners, Bailey's Crossroads & Merrifield. 24/7 emergency response."
         schema={schema}
       />
 

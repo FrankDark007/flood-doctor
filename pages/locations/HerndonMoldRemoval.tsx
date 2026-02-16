@@ -42,7 +42,7 @@ export default function HerndonMoldRemoval() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Herndon, VA"
-        description="Professional mold removal & remediation in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. Certified specialists. Call (877) 497-0007!"
+        description="Professional mold removal & remediation in Herndon, VA. Serving Downtown Herndon, Worldgate, McNair Farms & Dulles area. Certified specialists."
         schema={schema}
       />
 

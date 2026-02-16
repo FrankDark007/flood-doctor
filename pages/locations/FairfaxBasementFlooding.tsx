@@ -188,7 +188,7 @@ const FairfaxBasementFlooding: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Basement Flooding Repair Fairfax, VA"
-        description="Expert basement flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. Finished basement restoration. Sump pump failure experts. Call (877) 497-0007."
+        description="Expert basement flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. Finished basement restoration. Sump pump failure experts."
         schema={schema}
       />
 

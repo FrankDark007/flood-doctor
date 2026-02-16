@@ -38,7 +38,7 @@ export default function AshburnWaterDamage() {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Ashburn Water Damage Restoration | 24/7 Emergency Service | (877) 497-0007"
-        description="24/7 emergency water damage restoration in Ashburn, VA. Serving Ashburn Village, Broadlands, One Loudoun, Brambleton & Lansdowne. Fast response, insurance approved. Call (877) 497-0007"
+        description="24/7 emergency water damage restoration in Ashburn, VA. Serving Ashburn Village, Broadlands, One Loudoun, Brambleton & Lansdowne. Fast response, insurance approved."
         schema={schema}
       />
 

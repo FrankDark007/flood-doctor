@@ -38,7 +38,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Mold Removal in Falls Church, VA"
-        description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service. Call (877) 497-0007."
+        description="Professional mold removal & remediation in Falls Church, VA. Certified experts serving Falls Church City, Seven Corners & Bailey's Crossroads. 24/7 emergency service."
         schema={schema}
       />
 

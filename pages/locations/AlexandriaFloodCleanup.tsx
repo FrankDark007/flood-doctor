@@ -163,7 +163,7 @@ const AlexandriaFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Flood Cleanup in Alexandria, VA"
-        description="Fast flood cleanup in Alexandria, VA. 24/7 emergency response for Old Town, Del Ray, Kingstowne & all Alexandria areas. IICRC certified. Call (703) 665-0505 now."
+        description="Fast flood cleanup in Alexandria, VA. 24/7 emergency response for Old Town, Del Ray, Kingstowne & all Alexandria areas. IICRC certified."
         schema={schema}
       />
 

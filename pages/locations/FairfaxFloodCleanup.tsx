@@ -159,7 +159,7 @@ const FairfaxFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Flood Cleanup in Fairfax, VA"
-        description="24/7 emergency flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Flood insurance experts. Call (877) 497-0007 now."
+        description="24/7 emergency flood cleanup in Fairfax, Burke, Mantua & Fair Oaks. 60-min response. IICRC certified. Flood insurance experts."
         schema={schema}
       />
 

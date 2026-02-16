@@ -14,7 +14,7 @@ const McLeanFloodCleanup: React.FC = () => {
     <main className="flex-grow bg-white">
       <PageMeta
         title="Flood Cleanup in McLean, VA"
-        description="24/7 emergency flood cleanup in McLean, VA. Rapid water extraction and restoration serving Great Falls, Langley, Pimmit Hills & Tysons. Call (877) 497-0007 now."
+        description="24/7 emergency flood cleanup in McLean, VA. Rapid water extraction and restoration serving Great Falls, Langley, Pimmit Hills & Tysons."
         schema={schema}
       />
 
