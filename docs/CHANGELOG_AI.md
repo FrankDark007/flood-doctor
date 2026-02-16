@@ -4,6 +4,32 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-16 — P1 #4 Cost Calculator Fixes + Deploy
+
+**Commit**: `f0b57c9`
+**Scope**: 7 files (1 calculator page, 5 blog posts, 1 resource page)
+
+### What Changed
+- **Bug fix**: HTML entity `&lt;` rendered literally in damage class description → replaced with `<`
+- **Bug fix**: Range input `parseInt` could produce NaN → added fallback
+- **Schema**: Replaced incorrect `Article` schema with `WebApplication` (+ Offer, creator, dateModified)
+- **SEO**: Meta description shortened from 189 → 145 chars; dateModified set to `2026-01-01`
+- **Legal**: Added estimate disclaimer under price range: "Estimate only. Actual costs may vary."
+- **A11y**: Added `role="group"` + `aria-labelledby` to 5 button groups, `role="switch"` + `aria-checked` to toggle, `htmlFor`/`id` bindings, `min`/`max` + clamp on number input
+- **Internal links**: Added 4 outbound links (Related Resources section) + 6 inbound links from blog/resource pages
+
+### Production Verification (2026-02-16)
+| Check | Result |
+|-------|--------|
+| Calculator page | 200, meta desc present (145 chars) |
+| JSON-LD | 1 block: WebApplication + FAQPage + BreadcrumbList |
+| Disclaimer | Rendered in HTML |
+| 6 inbound link pages | All contain `/resources/cost-calculator/` link |
+| Fake routes (3 tested) | All 404 |
+| Cloudflare cache purge | Confirmed |
+
+---
+
 ## 2026-02-15 — P0 Schema Rollout + Production Deploy
 
 **Commits**: `8a1c104`, `26b21cb`, `d60631a`, `9b58d61`, `7b00553`, `81f7bb4`
