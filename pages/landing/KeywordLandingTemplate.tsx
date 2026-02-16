@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Phone,
   ArrowRight,
@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
+import { generateServicePageSchema } from '../../utils/schema';
 
 export interface KeywordLandingConfig {
   // SEO & Meta
@@ -64,9 +65,22 @@ const defaultValues = [
 
 const KeywordLandingTemplate: React.FC<{ config: KeywordLandingConfig }> = ({ config }) => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const { pathname } = useLocation();
 
   const neighborhoods = config.neighborhoods || defaultNeighborhoods;
   const values = config.valueProps || defaultValues;
+
+  // Generate Service + BreadcrumbList schema (+ FAQ if present)
+  const schema = generateServicePageSchema(
+    {
+      name: config.title,
+      description: config.metaDescription,
+      slug: pathname,
+      serviceType: 'Water Damage Restoration',
+    },
+    [{ label: config.title, path: pathname }],
+    config.faqs
+  );
 
   const services = [
     {
@@ -126,6 +140,7 @@ const KeywordLandingTemplate: React.FC<{ config: KeywordLandingConfig }> = ({ co
       <PageMeta
         title={config.title}
         description={config.metaDescription}
+        schema={schema}
       />
 
       {/* Hero - Editorial Bold */}
