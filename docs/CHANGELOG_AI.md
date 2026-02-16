@@ -22,14 +22,14 @@ Running log of major AI-assisted work batches.
 - **Sitemap**: Regenerated sitemap-main.xml (189 URLs total, new URL included)
 - **Bug fix**: Escaped apostrophe in equipment inventory detail string to resolve build error
 
-### Production Verification (pending deployment)
+### Production Verification (2026-02-16)
 | Check | Result |
 |-------|--------|
-| Standard Project Package page | (to be verified) |
-| JSON-LD | (to be verified) |
-| ResourcesHub featured card | (to be verified) |
-| Fake routes (2 tested) | (to be verified) |
-| Cloudflare cache purge | (to be verified) |
+| Standard Project Package page | 200, 122.6KB pre-rendered HTML |
+| JSON-LD | 1 block: Service + FAQPage (12 questions) + BreadcrumbList (4 items) |
+| ResourcesHub featured card | Present, links to new page |
+| Fake routes (2 tested) | All 404 |
+| Cloudflare cache purge | Confirmed (Zone: 7b3b2f087429c5c3e9688253d8df11eb) |
 
 ---
 
