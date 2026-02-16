@@ -15,6 +15,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import { SERVICES } from '../data/services';
 
 // ES Module compatibility for __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -537,19 +538,45 @@ function generateCitySitemap(city: FranchiseData): string {
   const baseUrl = `https://${city.id}.${BASE_DOMAIN}`;
   const today = new Date().toISOString().split('T')[0];
 
-  const routes = [
+  // Static routes with priorities
+  const staticRoutes = [
     { path: '/', priority: '1.0' },
-    { path: '/services', priority: '0.9' },
-    { path: '/services/water-damage', priority: '0.9' },
-    { path: '/services/residential/cleanup-services/mold-remediation/', priority: '0.8' },
-    { path: '/services/fire-damage', priority: '0.8' },
-    { path: '/services/storm-damage', priority: '0.8' },
-    { path: '/about', priority: '0.7' },
-    { path: '/contact', priority: '0.8' },
-    { path: '/blog', priority: '0.6' }
+    { path: '/services/', priority: '0.9' },
+    { path: '/about/', priority: '0.7' },
+    { path: '/contact/', priority: '0.8' },
+    { path: '/request/', priority: '0.7' },
+    { path: '/blog/', priority: '0.6' },
+    { path: '/faq/', priority: '0.5' },
+    { path: '/guides/emergency-response/', priority: '0.6' },
+    { path: '/guides/prevention/', priority: '0.6' },
+    { path: '/guides/insurance-claims/', priority: '0.6' },
   ];
 
-  const urls = routes.map(route => `  <url>
+  // Service detail routes (extract last segment from nested slug paths)
+  const serviceRoutes = SERVICES.map(s => {
+    const segments = s.slug.split('/').filter(Boolean);
+    return { path: `/services/${segments[segments.length - 1]}/`, priority: '0.8' };
+  });
+
+  // Blog article routes from filesystem
+  const blogDir = path.resolve(__dirname, `../src/content/cities/${city.id}/blog`);
+  const blogRoutes = fs.existsSync(blogDir)
+    ? fs.readdirSync(blogDir)
+        .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+        .map((f: string) => ({ path: `/blog/${f.replace('.ts', '')}/`, priority: '0.6' }))
+    : [];
+
+  // Neighborhood routes from filesystem
+  const neighborhoodDir = path.resolve(__dirname, `../src/content/cities/${city.id}/neighborhoods`);
+  const neighborhoodRoutes = fs.existsSync(neighborhoodDir)
+    ? fs.readdirSync(neighborhoodDir)
+        .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+        .map((f: string) => ({ path: `/neighborhoods/${f.replace('.ts', '')}/`, priority: '0.7' }))
+    : [];
+
+  const allRoutes = [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...neighborhoodRoutes];
+
+  const urls = allRoutes.map(route => `  <url>
     <loc>${baseUrl}${route.path}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
@@ -664,6 +691,9 @@ ${preloadLinks.map(link => `  <link rel="modulepreload" crossorigin href="${link
 
     // Write city index.html
     fs.writeFileSync(path.join(cityDir, 'index.html'), cityIndexHtml);
+
+    // Save clean SPA shell for prerender (before homepage gets overwritten by prerender)
+    fs.writeFileSync(path.join(cityDir, '.spa-shell.html'), cityIndexHtml);
 
     // Generate and write sitemap
     const sitemap = generateCitySitemap(city);

@@ -1,6 +1,6 @@
 // pages/city/DynamicNeighborhoodPage.tsx
 // Dynamic neighborhood page that loads city-specific content from TypeScript files
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import NeighborhoodPageRenderer, { NeighborhoodPageContent } from '../../components/city/NeighborhoodPageRenderer';
 import { getCityInfo } from '../../utils/contentLoader';
@@ -245,13 +245,25 @@ const DynamicNeighborhoodPage: React.FC = () => {
     }
   }
 
-  const [content, setContent] = useState<NeighborhoodPageContent | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
   const cityInfo = getCityInfo(city || '');
 
+  // Synchronous registry lookup — renders NeighborhoodPageRenderer on FIRST render
+  // (critical for prerender: PageMeta must fire without waiting for useEffect)
+  const registryContent = useMemo(() => {
+    if (city && neighborhood && contentRegistry[city]?.[neighborhood]) {
+      return contentRegistry[city][neighborhood];
+    }
+    return null;
+  }, [city, neighborhood]);
+
+  // Dynamic import fallback (only if not in registry)
+  const [dynamicContent, setDynamicContent] = useState<NeighborhoodPageContent | null>(null);
+  const [loading, setLoading] = useState(!registryContent);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
+    if (registryContent) return; // Already resolved synchronously
+
     async function loadContent() {
       if (!city || !neighborhood) {
         setError('City or neighborhood not specified');
@@ -259,21 +271,13 @@ const DynamicNeighborhoodPage: React.FC = () => {
         return;
       }
 
-      // Try static registry first
-      if (contentRegistry[city]?.[neighborhood]) {
-        setContent(contentRegistry[city][neighborhood]);
-        setLoading(false);
-        return;
-      }
-
-      // Dynamic import fallback
       try {
         const module = await import(`../../src/content/cities/${city}/neighborhoods/${neighborhood}.ts`);
         const exportName = Object.keys(module).find(key =>
           key.includes('Content') || key.includes('Neighborhood')
         );
         if (exportName) {
-          setContent(module[exportName] as NeighborhoodPageContent);
+          setDynamicContent(module[exportName] as NeighborhoodPageContent);
         } else {
           setError('Content not found in module');
         }
@@ -286,7 +290,9 @@ const DynamicNeighborhoodPage: React.FC = () => {
     }
 
     loadContent();
-  }, [city, neighborhood]);
+  }, [city, neighborhood, registryContent]);
+
+  const content = registryContent || dynamicContent;
 
   if (loading) {
     return (

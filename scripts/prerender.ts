@@ -22,7 +22,7 @@ import { SERVICES } from '../data/services';
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const PORT = 4173;
 const CONCURRENCY = 5;
-const TIMEOUT_MS = 15_000;
+const TIMEOUT_MS = 30_000;
 const PRODUCTION_ORIGIN = 'https://flood.doctor';
 
 // ── City route enumeration (used in --cities mode) ──────────────────────────
@@ -285,7 +285,11 @@ async function prerenderCity(browser: Browser, cityId: string, port: number): Pr
     return { cityId, results: [] };
   }
 
-  const spaShellHtml = fs.readFileSync(path.join(cityDistDir, 'index.html'), 'utf-8');
+  // Use the clean SPA shell (not index.html, which may be prerendered from a previous run)
+  const shellPath = path.join(cityDistDir, '.spa-shell.html');
+  const spaShellHtml = fs.existsSync(shellPath)
+    ? fs.readFileSync(shellPath, 'utf-8')
+    : fs.readFileSync(path.join(cityDistDir, 'index.html'), 'utf-8');
 
   // Reorder: homepage last
   const reorderedRoutes = [...routes.filter(r => r !== '/'), '/'];
@@ -314,7 +318,7 @@ async function prerenderCity(browser: Browser, cityId: string, port: number): Pr
 
   const workers = Array.from({ length: Math.min(CONCURRENCY, reorderedRoutes.length) }, () => worker());
   await Promise.all(workers);
-  server.close();
+  await new Promise<void>((resolve) => server.close(() => resolve()));
 
   return { cityId, results };
 }

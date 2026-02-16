@@ -96,6 +96,7 @@ const DynamicBlogArticle: React.FC = () => {
   }
 
   // Get slug from params or path
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
   const slug = params.slug || pathParts[pathParts.length - 1] || '';
 
   const cityInfo = getCityInfo(city);
