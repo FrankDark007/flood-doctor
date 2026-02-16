@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
+import { generateBreadcrumbSchema, combineSchemas } from '../utils/schema';
 import { Clock, ArrowRight, Phone } from 'lucide-react';
 import { BLOG_ARTICLES, getCategories } from '../data/blog-articles';
 
@@ -46,6 +47,9 @@ const BlogIndex: React.FC = () => {
       <PageMeta
         title="Water Damage Blog: Guides & Tips"
         description="Expert guides on water damage restoration, mold prevention, insurance claims, and home protection. Written by IICRC-certified professionals serving Northern Virginia since 2009."
+        schema={generateBreadcrumbSchema([
+          { label: 'Blog', path: '/blog/' },
+        ])}
       />
 
       {/* Hero Section - Google Style */}

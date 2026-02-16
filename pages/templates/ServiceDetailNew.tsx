@@ -6,6 +6,7 @@ import ServiceAreaLinks from '../../components/sections/ServiceAreaLinks';
 import RelatedServices from '../../components/sections/RelatedServices';
 import { useFranchise } from '@/hooks/useFranchise';
 import { adaptServiceToPageData } from '../../utils/adapters';
+import { generateServicePageSchema } from '../../utils/schema';
 
 // Generated Layout Components
 import ServiceHeroCompact from '../../generated-layouts/service-page/ServiceHeroCompact';
@@ -64,19 +65,20 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
     ? `Professional ${serviceName.toLowerCase()} in ${cityName}, ${stateAbbr}. ${franchise.responseTime || '60-minute response'}. IICRC certified. Call ${emergencyPhone} for 24/7 emergency service.`
     : (service?.metaDescription || pageData.subtitle);
 
-  // FAQ Schema for SEO
-  const faqSchema = pageData.faqs.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": pageData.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  } : undefined;
+  // Service + BreadcrumbList + FAQ schema
+  const schema = generateServicePageSchema(
+    {
+      name: serviceName,
+      description: metaDescription,
+      slug: service.slug || '/',
+      serviceType: 'Water Damage Restoration',
+    },
+    [
+      { label: 'Services', path: '/services/' },
+      { label: serviceName, path: service.slug || '/' },
+    ],
+    pageData.faqs.length > 0 ? pageData.faqs : undefined
+  );
 
   // Track when hero scrolls out of view to show sticky CTA
   useEffect(() => {
@@ -132,7 +134,7 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
       <PageMeta
         title={metaTitle}
         description={metaDescription}
-        schema={faqSchema}
+        schema={schema}
       />
 
       {/* Hero Section with V14 Visual */}

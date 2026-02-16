@@ -16,6 +16,7 @@ import { ServiceData } from '../../types';
 import ServiceAreaLinks from '../../components/sections/ServiceAreaLinks';
 import RelatedServices from '../../components/sections/RelatedServices';
 import { useFranchise } from '@/hooks/useFranchise';
+import { generateServicePageSchema } from '../../utils/schema';
 
 // Google-style easing curve
 const googleEase = [0.22, 1, 0.36, 1];
@@ -769,19 +770,20 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
     }
   ];
 
-  // FAQ Schema for SEO
-  const faqSchema = faqs.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  } : undefined;
+  // Service + BreadcrumbList + FAQ schema
+  const schema = generateServicePageSchema(
+    {
+      name: serviceName,
+      description: service?.metaDescription || serviceTagline,
+      slug: service.slug || '/',
+      serviceType: 'Water Damage Restoration',
+    },
+    [
+      { label: 'Services', path: '/services/' },
+      { label: serviceName, path: service.slug || '/' },
+    ],
+    faqs.length > 0 ? faqs : undefined
+  );
 
   // SEO-CRITICAL: Meta title MUST include city name at the BEGINNING for local SEO
   const metaTitle = isLocalPage
@@ -797,7 +799,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
       <PageMeta
         title={metaTitle}
         description={metaDescription}
-        schema={faqSchema}
+        schema={schema}
       />
 
       {/* Hero Section - Animated, Google-style */}

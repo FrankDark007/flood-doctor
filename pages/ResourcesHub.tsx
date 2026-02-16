@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
+import { generateBreadcrumbSchema } from '../utils/schema';
 import {
   FileText,
   HelpCircle,
@@ -122,6 +123,9 @@ const ResourcesHub: React.FC = () => {
       <PageMeta
         title="Water Damage Resources & Guides"
         description="Free guides on water damage restoration, insurance claims, mold prevention, and emergency preparedness. Expert checklists and cost calculators for Northern Virginia homeowners."
+        schema={generateBreadcrumbSchema([
+          { label: 'Resources', path: '/resources/' },
+        ])}
       />
 
       {/* Search Hero - Google Style */}
