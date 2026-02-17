@@ -16,7 +16,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { SERVICES } from '../data/services';
-import { mapCitySlugs } from '../data/city-service-map';
+import { mapCitySlugs, getFlatToNestedRedirects } from '../data/city-service-map';
 
 // ES Module compatibility for __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -733,8 +733,44 @@ ${preloadLinks.map(link => `  <link rel="modulepreload" crossorigin href="${link
     const html404 = generate404Html(city);
     fs.writeFileSync(path.join(cityDir, '404.html'), html404);
 
+    // Generate flat-to-nested service redirects for this city
+    const citySlugs = getCityServiceSlugs(city.id);
+    const serviceRedirects = getFlatToNestedRedirects(citySlugs);
+
+    // Redirect flat city slugs to nested paths (e.g., /services/water-damage/ → /services/residential/restoration-services/water-damage-restoration/)
+    const flatToNestedRules = serviceRedirects.map(r => {
+      const flatSlug = r.from.replace(/^\/services\//, '').replace(/\/$/, '');
+      return `RewriteRule ^services/${flatSlug}/?$ ${r.to} [R=301,L]`;
+    }).join('\n');
+
+    // Also redirect main slugs when accessed as flat URLs (for mismatched slugs)
+    const mainSlugRedirects = serviceRedirects
+      .filter(r => {
+        const citySlugPart = r.from.replace(/^\/services\//, '').replace(/\/$/, '');
+        const nestedSlug = r.to.split('/').filter(Boolean).pop();
+        return citySlugPart !== nestedSlug; // Only if city slug differs from main slug
+      })
+      .map(r => {
+        const nestedSlug = r.to.split('/').filter(Boolean).pop();
+        return `RewriteRule ^services/${nestedSlug}/?$ ${r.to} [R=301,L]`;
+      })
+      .join('\n');
+
+    // For services WITHOUT city content, redirect flat URL to services hub
+    const allMainSlugs = SERVICES.map(s => {
+      const segments = s.slug.split('/').filter(Boolean);
+      return segments[segments.length - 1];
+    });
+    const mappedSlugs = new Set([
+      ...serviceRedirects.map(r => r.from.replace(/^\/services\//, '').replace(/\/$/, '')),
+      ...serviceRedirects.map(r => r.to.split('/').filter(Boolean).pop() || ''),
+    ]);
+    const unmappedRedirects = allMainSlugs
+      .filter(slug => !mappedSlugs.has(slug))
+      .map(slug => `RewriteRule ^services/${slug}/?$ /services/ [R=301,L]`)
+      .join('\n');
+
     // Generate .htaccess with real 404 handling (no SPA fallback)
-    // Includes 301 redirects for main-domain-only paths to prevent broken nav links
     const htaccess = `# ${city.name} - Apache Configuration
 # Prerendered static site — NO SPA fallback
 
@@ -762,12 +798,21 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # -----------------------------------------------
+# 301 Redirects: flat service URLs → nested paths
+# City services with content redirect to nested URL
+# -----------------------------------------------
+${flatToNestedRules}
+
+# Redirect main slugs that differ from city slugs (mismatched aliases)
+${mainSlugRedirects}
+
+# Flat service URLs without city content → services hub
+${unmappedRedirects}
+
+# -----------------------------------------------
 # 301 Redirects: main-domain-only paths
 # Catches old/crawled links that don't exist on city subdomains
-# Single-hop 301 to https://flood.doctor equivalent
 # -----------------------------------------------
-RewriteRule ^services/residential/(.*) https://flood.doctor/services/residential/$1 [R=301,L]
-RewriteRule ^services/commercial/(.*) https://flood.doctor/services/commercial/$1 [R=301,L]
 RewriteRule ^locations/(.*) https://flood.doctor/locations/$1 [R=301,L]
 RewriteRule ^resources/(.*) https://flood.doctor/resources/$1 [R=301,L]
 RewriteRule ^reviews/(.*)$ https://flood.doctor/reviews/$1 [R=301,L]
