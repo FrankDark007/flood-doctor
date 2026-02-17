@@ -18,8 +18,7 @@ import {
 } from 'lucide-react';
 import Button from '../ui/Button';
 import NavLink from './NavLink';
-import { isCityApp, getCityServiceSlugs } from '../../hooks/useCityApp';
-import { SERVICES } from '../../data/services';
+import { isCityApp, getCityServiceMap } from '../../hooks/useCityApp';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -97,22 +96,30 @@ const MAIN_MENU_STRUCTURE: MenuItem[] = [
 ];
 
 /**
- * Build city mobile menu: only city-local pages, flat service links.
+ * Build city mobile menu: content-gated services with Residential/Commercial sections.
  */
 function buildCityMenuStructure(): MenuItem[] {
-  const citySlugs = getCityServiceSlugs();
+  const cityMap = getCityServiceMap();
 
-  // Map city slugs to {label, path} using SERVICES data
-  const cityServiceChildren = citySlugs
-    .map(slug => {
-      const service = SERVICES.find(s => {
-        const segments = s.slug.split('/').filter(Boolean);
-        return segments[segments.length - 1] === slug;
-      });
-      if (!service) return null;
-      return { label: service.title, path: `/services/${slug}/` };
-    })
-    .filter((item): item is { label: string; path: string } => item !== null);
+  const residential = cityMap
+    .filter(m => m.audience === 'residential')
+    .map(m => ({ label: m.title, path: m.nestedPath }));
+
+  const commercial = cityMap
+    .filter(m => m.audience === 'commercial')
+    .map(m => ({ label: m.title, path: m.nestedPath }));
+
+  const serviceChildren: { label: string; path: string }[] = [
+    { label: 'All Services', path: '/services/' },
+  ];
+  if (residential.length > 0) {
+    serviceChildren.push({ label: '── Residential ──', path: '/services/residential/' });
+    serviceChildren.push(...residential);
+  }
+  if (commercial.length > 0) {
+    serviceChildren.push({ label: '── Commercial ──', path: '/services/commercial/' });
+    serviceChildren.push(...commercial);
+  }
 
   return [
     {
@@ -125,10 +132,7 @@ function buildCityMenuStructure(): MenuItem[] {
       label: 'Services',
       icon: Briefcase,
       type: 'accordion',
-      children: [
-        { label: 'All Services', path: '/services/' },
-        ...cityServiceChildren,
-      ]
+      children: serviceChildren
     },
     {
       label: 'Guides',

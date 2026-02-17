@@ -78,6 +78,8 @@ const Footer: React.FC = () => {
                 >
                     <ul className="space-y-3">
                         <li><Link to="/services/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">All Services</Link></li>
+                        <li><Link to="/services/residential/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Residential</Link></li>
+                        <li><Link to="/services/commercial/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Commercial</Link></li>
                     </ul>
                 </MobileAccordionItem>
 
