@@ -16,6 +16,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { SERVICES } from '../data/services';
+import { mapCitySlugs } from '../data/city-service-map';
 
 // ES Module compatibility for __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -455,6 +456,17 @@ ${JSON.stringify(schema, null, 2)}
       // Pre-set city context before app loads
       window.__FLOOD_DOCTOR_CITY__ = '${city.id}';
       window.__FLOOD_DOCTOR_CITY_SERVICES__ = ${JSON.stringify(getCityServiceSlugs(city.id))};
+      window.__FLOOD_DOCTOR_CITY_SERVICE_MAP__ = ${JSON.stringify(
+        mapCitySlugs(getCityServiceSlugs(city.id)).map(m => ({
+          citySlug: m.citySlug,
+          mainSlug: m.mainSlug,
+          serviceId: m.serviceId,
+          audience: m.audience,
+          subcategory: m.subcategory,
+          nestedPath: m.nestedPath,
+          title: m.service.title,
+        }))
+      )};
     </script>
     <style>
       :focus-visible {

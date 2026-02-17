@@ -10,10 +10,21 @@
  * - List only services that have city-specific content
  */
 
+export interface CityServiceMapEntry {
+  citySlug: string;
+  mainSlug: string;
+  serviceId: string;
+  audience: 'residential' | 'commercial';
+  subcategory: string;
+  nestedPath: string;
+  title: string;
+}
+
 declare global {
   interface Window {
     __FLOOD_DOCTOR_CITY__?: string;
     __FLOOD_DOCTOR_CITY_SERVICES__?: string[];
+    __FLOOD_DOCTOR_CITY_SERVICE_MAP__?: CityServiceMapEntry[];
   }
 }
 
@@ -46,6 +57,24 @@ export function getCityServiceSlugs(): string[] {
     return window.__FLOOD_DOCTOR_CITY_SERVICES__;
   }
   return [];
+}
+
+/**
+ * Returns the full service map for this city (with nested path info).
+ * Empty array on main site.
+ */
+export function getCityServiceMap(): CityServiceMapEntry[] {
+  if (typeof window !== 'undefined' && window.__FLOOD_DOCTOR_CITY_SERVICE_MAP__) {
+    return window.__FLOOD_DOCTOR_CITY_SERVICE_MAP__;
+  }
+  return [];
+}
+
+/**
+ * Check if a service (by main slug) has city content.
+ */
+export function hasCityServiceContent(mainSlug: string): boolean {
+  return getCityServiceMap().some(m => m.mainSlug === mainSlug);
 }
 
 /**
