@@ -138,7 +138,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
                 {content.finalCTA.phone}
               </a>
               <Link
-                to="/contact"
+                to="/request/"
                 className="hidden md:inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 h-12 px-8 rounded-full font-semibold transition-all border border-white/20"
               >
                 Request Service
@@ -271,7 +271,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
             {content.serviceAreaSection.neighborhoods.map((hood, idx) => (
               <Link
                 key={idx}
-                to={`/city/${citySlug}/neighborhoods/${hood.toLowerCase().replace(/\s+/g, '-')}`}
+                to={`/neighborhoods/${hood.toLowerCase().replace(/\s+/g, '-')}/`}
                 className="px-4 py-2 bg-[#f8f9fa] hover:bg-[#e8eaed] rounded-full text-[#202124] text-[14px] border border-[#dadce0] transition-colors"
               >
                 {hood}
@@ -353,7 +353,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
               {content.relatedServices.map((service, idx) => (
                 <Link
                   key={idx}
-                  to={`/city/${citySlug}${service}`}
+                  to={`/services${service}/`}
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-[#e8eaed] rounded-full text-[#1a73e8] text-[14px] font-medium border border-[#dadce0] transition-colors"
                 >
                   {service.replace('/', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
