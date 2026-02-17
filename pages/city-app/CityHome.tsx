@@ -9,10 +9,16 @@ import React from 'react';
 import { useCityFranchise } from '@/contexts/CityFranchiseContext';
 import { getCityBySlug } from '@/config/cities';
 import CityLandingNew from '@/pages/city/CityLandingNew';
+import McLeanHome from './mclean/McLeanHome';
 import PageMeta from '@/components/ui/PageMeta';
 
 const CityHome: React.FC = () => {
   const franchise = useCityFranchise();
+
+  // McLean pilot: test LandingPageA template as city homepage
+  if (franchise.id === 'mclean') {
+    return <McLeanHome />;
+  }
 
   // Get CityConfig from the franchise ID
   // The franchise.id matches the city slug (e.g., 'mclean', 'arlington')

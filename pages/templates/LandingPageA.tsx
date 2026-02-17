@@ -104,6 +104,7 @@ interface LandingPageAProps {
   // CTA
   ctaTitle?: string;
   ctaSubtitle?: string;
+  ctaPhone?: { label: string; href: string };
 
   // Certifications
   certifications?: Certification[];
@@ -146,6 +147,7 @@ const LandingPageA: React.FC<LandingPageAProps> = ({
   serviceAreas = ['Fairfax', 'Arlington', 'Alexandria', 'McLean', 'Reston', 'Ashburn', 'Loudoun', 'DC Metro'],
   ctaTitle = 'Ready to restore your property?',
   ctaSubtitle = 'Get a free assessment and see why thousands of Northern Virginia homeowners trust Flood Doctor.',
+  ctaPhone = { label: '(877) 497-0007', href: 'tel:8774970007' },
   certifications = [
     { name: 'IICRC Certified', abbrev: 'IICRC' },
     { name: 'BBB A+ Rated', abbrev: 'BBB' },
@@ -513,13 +515,13 @@ const LandingPageA: React.FC<LandingPageAProps> = ({
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              href="tel:8774970007"
+              href={ctaPhone.href}
               variant="secondary"
               size="lg"
               className="bg-white text-slate-900 hover:bg-gray-100 text-lg h-14 px-8"
             >
               <Phone size={20} className="mr-2" />
-              (877) 497-0007
+              {ctaPhone.label}
             </Button>
             <Button
               to="/request/"

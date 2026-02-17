@@ -290,4 +290,14 @@ export const variants: VariantEntry[] = [
     Component: lazy(() => import('../templates/ResidentialVariantA')),
     notes: 'Residential service variant with Google colors',
   },
+
+  // ── City Homepage Variants ──
+  {
+    slug: 'mclean-home',
+    title: 'McLean Home (LandingPageA)',
+    kind: 'city',
+    Component: lazy(() => import('../city-app/mclean/McLeanHome')),
+    notes: 'McLean city homepage using LandingPageA template',
+    fullscreen: true,
+  },
 ];
