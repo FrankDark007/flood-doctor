@@ -18,6 +18,7 @@ import * as http from 'http';
 import { chromium, type Browser, type Page } from 'playwright';
 import { ALL_PRERENDER_ROUTES } from '../config/routes';
 import { SERVICES } from '../data/services';
+import { getCityServiceRoutes } from '../data/city-service-map';
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const PORT = 4173;
@@ -26,6 +27,14 @@ const TIMEOUT_MS = 30_000;
 const PRODUCTION_ORIGIN = 'https://flood.doctor';
 
 // ── City route enumeration (used in --cities mode) ──────────────────────────
+
+function getCityServiceSlugsFromFS(cityId: string): string[] {
+  const servicesDir = path.resolve(process.cwd(), `src/content/cities/${cityId}/services`);
+  if (!fs.existsSync(servicesDir)) return [];
+  return fs.readdirSync(servicesDir)
+    .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+    .map((f: string) => f.replace('.ts', ''));
+}
 
 function getCityRoutes(cityId: string): string[] {
   const staticRoutes = [
@@ -43,11 +52,9 @@ function getCityRoutes(cityId: string): string[] {
     '/guides/insurance-claims/',
   ];
 
-  // Service routes: extract last segment from nested slug paths
-  const serviceRoutes = SERVICES.map(s => {
-    const segments = s.slug.split('/').filter(Boolean);
-    return `/services/${segments[segments.length - 1]}/`;
-  });
+  // Service routes: nested paths, content-gated (includes hub + subcategory + detail)
+  const citySlugs = getCityServiceSlugsFromFS(cityId);
+  const serviceRoutes = getCityServiceRoutes(citySlugs);
 
   // Blog routes from filesystem
   const blogDir = path.resolve(process.cwd(), `src/content/cities/${cityId}/blog`);

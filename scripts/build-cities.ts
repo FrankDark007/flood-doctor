@@ -577,11 +577,17 @@ function generateCitySitemap(city: FranchiseData): string {
     { path: '/guides/insurance-claims/', priority: '0.6' },
   ];
 
-  // Service detail routes (extract last segment from nested slug paths)
-  const serviceRoutes = SERVICES.map(s => {
-    const segments = s.slug.split('/').filter(Boolean);
-    return { path: `/services/${segments[segments.length - 1]}/`, priority: '0.8' };
-  });
+  // Service routes: nested, content-gated
+  const citySlugs = getCityServiceSlugs(city.id);
+  const serviceMappings = mapCitySlugs(citySlugs);
+  const serviceRoutes = serviceMappings.map(m => ({ path: m.nestedPath, priority: '0.8' }));
+
+  // Hub routes (only if they have content)
+  const audiences = new Set(serviceMappings.map(m => m.audience));
+  const audienceRoutes = [...audiences].map(aud => ({ path: `/services/${aud}/`, priority: '0.7' }));
+
+  const subcategories = new Set(serviceMappings.map(m => `${m.audience}/${m.subcategory}`));
+  const subcategoryRoutes = [...subcategories].map(sub => ({ path: `/services/${sub}/`, priority: '0.6' }));
 
   // Blog article routes from filesystem
   const blogDir = path.resolve(__dirname, `../src/content/cities/${city.id}/blog`);
@@ -599,7 +605,7 @@ function generateCitySitemap(city: FranchiseData): string {
         .map((f: string) => ({ path: `/neighborhoods/${f.replace('.ts', '')}/`, priority: '0.7' }))
     : [];
 
-  const allRoutes = [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...neighborhoodRoutes];
+  const allRoutes = [...staticRoutes, ...serviceRoutes, ...audienceRoutes, ...subcategoryRoutes, ...blogRoutes, ...neighborhoodRoutes];
 
   const urls = allRoutes.map(route => `  <url>
     <loc>${baseUrl}${route.path}</loc>
