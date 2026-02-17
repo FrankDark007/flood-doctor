@@ -10,11 +10,16 @@ interface CategoryLandingProps {
   category: ServiceCategory;
   title: string;
   description: string;
+  /** When provided, only show services whose id is in this set (content-gating for city hubs) */
+  filterServiceIds?: Set<string>;
 }
 
-const CategoryLanding: React.FC<CategoryLandingProps> = ({ audience, category, title, description }) => {
-  // O(1) lookup using pre-computed index
-  const categoryServices = getServicesByCategory(audience, category);
+const CategoryLanding: React.FC<CategoryLandingProps> = ({ audience, category, title, description, filterServiceIds }) => {
+  // O(1) lookup using pre-computed index, then optionally content-gate
+  const allCategoryServices = getServicesByCategory(audience, category);
+  const categoryServices = filterServiceIds
+    ? allCategoryServices.filter(s => filterServiceIds.has(s.id))
+    : allCategoryServices;
   
   const breadcrumbs = [
     { label: 'Services', path: '/services/' },

@@ -30,7 +30,11 @@ const PageLoader = () => (
 // City-App Pages - Lazy loaded for code splitting
 const CityHome = lazy(() => import('./pages/city-app/CityHome'));
 const CityServicesHub = lazy(() => import('./pages/city-app/CityServicesHub'));
+const CityResidentialHub = lazy(() => import('./pages/city-app/CityResidentialHub'));
+const CityCommercialHub = lazy(() => import('./pages/city-app/CityCommercialHub'));
+const CitySubcategoryHub = lazy(() => import('./pages/city-app/CitySubcategoryHub'));
 const CityServiceDetail = lazy(() => import('./pages/city-app/CityServiceDetail'));
+const CityServiceDetailLegacyRedirect = lazy(() => import('./pages/city-app/CityServiceDetailLegacyRedirect'));
 const CityNeighborhood = lazy(() => import('./pages/city-app/CityNeighborhood'));
 const CityBlogIndex = lazy(() => import('./pages/city-app/CityBlogIndex'));
 const CityBlogArticle = lazy(() => import('./pages/city-app/CityBlogArticle'));
@@ -76,10 +80,25 @@ const CityApp: React.FC = () => {
 
                   {/* ============================================
                       SERVICES
-                      City-specific service hub and detail pages
+                      City-specific service hub, audience hubs,
+                      subcategory hubs, and detail pages
                       ============================================ */}
                   <Route path="/services/" element={<CityServicesHub />} />
-                  <Route path="/services/:serviceSlug/" element={<CityServiceDetail />} />
+
+                  {/* Audience hubs */}
+                  <Route path="/services/residential/" element={<CityResidentialHub />} />
+                  <Route path="/services/commercial/" element={<CityCommercialHub />} />
+
+                  {/* Subcategory hubs */}
+                  <Route path="/services/residential/:subcategory/" element={<CitySubcategoryHub />} />
+                  <Route path="/services/commercial/:subcategory/" element={<CitySubcategoryHub />} />
+
+                  {/* Nested service detail pages */}
+                  <Route path="/services/residential/:subcategory/:serviceSlug/" element={<CityServiceDetail />} />
+                  <Route path="/services/commercial/:subcategory/:serviceSlug/" element={<CityServiceDetail />} />
+
+                  {/* Legacy flat route redirect (SPA navigation only; .htaccess handles prerendered) */}
+                  <Route path="/services/:serviceSlug/" element={<CityServiceDetailLegacyRedirect />} />
 
                   {/* ============================================
                       NEIGHBORHOODS
