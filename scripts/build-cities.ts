@@ -704,6 +704,18 @@ async function buildAllCities(): Promise<void> {
       }
     }
 
+    // Copy public images (hero, features, process tiles, etc.)
+    const cityBuildImagesDir = path.join(cityDistDir, 'images');
+    if (fs.existsSync(cityBuildImagesDir)) {
+      fs.cpSync(cityBuildImagesDir, path.join(cityDir, 'images'), { recursive: true });
+    }
+
+    // Copy fonts
+    const cityBuildFontsDir = path.join(cityDistDir, 'fonts');
+    if (fs.existsSync(cityBuildFontsDir)) {
+      fs.cpSync(cityBuildFontsDir, path.join(cityDir, 'fonts'), { recursive: true });
+    }
+
     // Generate city-specific index.html
     let cityIndexHtml = generateCityIndexHtml(city);
 
