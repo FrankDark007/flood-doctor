@@ -23,7 +23,7 @@ import { getCityServiceRoutes } from '../data/city-service-map';
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const PORT = 4173;
 const CONCURRENCY = 5;
-const TIMEOUT_MS = 30_000;
+const TIMEOUT_MS = 45_000;
 const PRODUCTION_ORIGIN = 'https://flood.doctor';
 
 // ── City route enumeration (used in --cities mode) ──────────────────────────
