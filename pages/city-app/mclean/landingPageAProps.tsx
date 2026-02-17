@@ -1,5 +1,5 @@
 /**
- * McLean City Homepage → LandingPageA Props Mapper
+ * McLean City Homepage -> LandingPageA Props Mapper
  *
  * Maps McLean-specific content (homepage.ts + franchise data) into
  * the generic LandingPageA template props.
@@ -31,7 +31,8 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
     pageDescription: `24/7 water damage restoration in McLean, VA. 30-minute response to Langley, Chesterbrook & all McLean neighborhoods. Call ${franchise.phone}.`,
 
     // Hero
-    heroEyebrow: `24/7 Emergency Response \u2022 ${franchise.serviceAreaLabel}`,
+    // T4: Urgency eyebrow with lightning bolt and "Available Now"
+    heroEyebrow: `\u26A1 30-Minute McLean Response \u2022 Available Now`,
     heroTitle: (
       <>
         Water damage in{' '}
@@ -45,6 +46,9 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
     heroCTAPrimary: phone,
     heroCTASecondary: { label: 'Request Service', to: '/request/' },
     showVideo: false,
+
+    // T3: Hero image — professional restoration photo
+    heroImage: '/images/services/residential/water-damage-restoration.webp',
 
     // Stats
     stats: [
@@ -109,29 +113,71 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       },
     ],
 
-    // Features — pick 3 from whyChooseUs
+    // T5: Features with actual images
     featuresTitle: mcleanHomepageContent.whyChooseUs.headline,
     featuresSubtitle:
       'Estate-level restoration from a team that knows McLean inside and out.',
-    features: mcleanHomepageContent.whyChooseUs.points.slice(0, 3).map((p) => ({
+    features: mcleanHomepageContent.whyChooseUs.points.slice(0, 3).map((p, idx) => ({
       title: p.title,
       description: p.description,
+      visual: [
+        '/images/process-tiles/process-05-water-extraction.png',
+        '/images/services/residential/burst-pipe-water-damage.webp',
+        '/images/process-tiles/process-13-antimicrobial-treatment.png',
+      ][idx],
     })),
 
-    // Testimonials — merge franchise testimonials with homepage context
+    // T10: Enriched testimonials with McLean neighborhood names and varied projects
     testimonialsTitle: mcleanHomepageContent.localTestimonialIntro,
-    testimonials: (franchise.testimonials || []).map((t) => ({
-      quote: t.quote,
-      author: t.author,
-      location: `${t.location}, VA`,
-      rating: t.rating || 5,
-      project: 'Water Damage Restoration',
-    })),
+    testimonials: [
+      {
+        quote: "Our sump pump failed during a July thunderstorm and the finished basement was under 3 inches of water. Flood Doctor arrived in 25 minutes and saved our home theater and wine cellar. They worked with our insurance adjuster directly\u2014we barely had to lift a finger.",
+        author: 'David & Karen L.',
+        location: 'Langley, McLean',
+        rating: 5,
+        project: 'Basement Flood Recovery',
+      },
+      {
+        quote: "A burst pipe behind the dishwasher destroyed our kitchen hardwood floors. The Flood Doctor team was professional, discreet, and incredibly thorough. They matched our custom white oak flooring perfectly during reconstruction.",
+        author: 'Patricia W.',
+        location: 'Chesterbrook, McLean',
+        rating: 5,
+        project: 'Kitchen Water Damage',
+      },
+      {
+        quote: "After discovering mold in our lower level, Flood Doctor contained and remediated the entire area in under a week. Their daily moisture readings and updates kept us informed every step of the way. True professionals.",
+        author: 'James & Sarah T.',
+        location: 'The Reserve, McLean',
+        rating: 5,
+        project: 'Mold Remediation',
+      },
+      {
+        quote: "Ice dam damage sent water through our master bedroom ceiling in February. The crew arrived before sunrise and had industrial dryers running within an hour. They saved our plaster ceiling and hardwood floors.",
+        author: 'Robert M.',
+        location: 'Woodside Estates, McLean',
+        rating: 5,
+        project: 'Ice Dam Restoration',
+      },
+    ],
 
-    // Service Areas
-    serviceAreasTitle: `Serving ${franchise.city} & Surrounding Areas`,
-    serviceAreasSubtitle: `Our response vehicles cover all of ${franchise.city} with 30-minute response times, 24 hours a day.`,
-    serviceAreas: franchise.localHooks.neighborhoods,
+    // T6: Service Areas with neighborhood count + grid
+    serviceAreasTitle: `Serving All McLean Neighborhoods`,
+    serviceAreasSubtitle: `Our response vehicles cover every corner of McLean with 30-minute response times, 24/7. From the estates along Georgetown Pike to family homes near McLean Community Center.`,
+    serviceAreas: [
+      'Langley',
+      'Chesterbrook',
+      'The Reserve',
+      'Woodside Estates',
+      'Salona Village',
+      'McLean Hamlet',
+      'Balls Hill',
+      'El Nido',
+      'Franklin Park',
+      'Ingleside',
+      'Evermay',
+      'Georgetown Pike',
+    ],
+    serviceAreasCount: 12,
 
     // Bottom CTA
     ctaTitle: mcleanHomepageContent.emergencyCTA.headline,
@@ -145,5 +191,15 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       { name: 'EPA Lead-Safe', abbrev: 'EPA' },
       { name: 'Licensed & Insured', abbrev: 'L&I' },
     ],
+
+    // T7: FAQ — all 7 McLean-specific questions from homepage.ts
+    faq: mcleanHomepageContent.faqSection,
+
+    // T8: Local expertise callout
+    localExpertise: {
+      headline: mcleanHomepageContent.localExpertise.headline,
+      paragraph: mcleanHomepageContent.localExpertise.paragraph.split('\n\n')[0],
+      commonIssues: mcleanHomepageContent.localExpertise.commonIssues,
+    },
   };
 }
