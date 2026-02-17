@@ -10,8 +10,7 @@ import NavLink from './NavLink';
 import Button from '../ui/Button';
 import { ServiceData, ServiceCategory } from '../../types';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
-import { isCityApp, getCityServiceSlugs } from '../../hooks/useCityApp';
-import { SERVICES } from '../../data/services';
+import { isCityApp, getCityServiceMap } from '../../hooks/useCityApp';
 
 // Helper to Group Services by Category within an Audience - O(1) lookup
 const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
@@ -35,26 +34,7 @@ const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
   })).filter(group => group.items.length > 0);
 };
 
-/**
- * Build city-local service nav items by matching city service slugs
- * against the SERVICES array to get display titles.
- */
-function getCityServiceNavItems(): { label: string; path: string }[] {
-  const citySlugs = getCityServiceSlugs();
-  if (citySlugs.length === 0) return [];
-
-  return citySlugs
-    .map(slug => {
-      // Match city slug (e.g., 'water-damage') to SERVICES by last segment
-      const service = SERVICES.find(s => {
-        const segments = s.slug.split('/').filter(Boolean);
-        return segments[segments.length - 1] === slug;
-      });
-      if (!service) return null;
-      return { label: service.title, path: `/services/${slug}/` };
-    })
-    .filter((item): item is { label: string; path: string } => item !== null);
-}
+// City service nav items come from getCityServiceMap() — content-gated, nested paths
 
 /** City-mode nav items (no Locations, no About dropdown) */
 const CITY_NAV_ITEMS = [
@@ -120,8 +100,8 @@ const Header: React.FC = () => {
   const residentialGroups = useMemo(() => getGroupedServices('RESIDENTIAL'), []);
   const commercialGroups = useMemo(() => getGroupedServices('COMMERCIAL'), []);
 
-  // City-mode: available services for this city
-  const cityServiceItems = useMemo(() => cityMode ? getCityServiceNavItems() : [], [cityMode]);
+  // City-mode: service map with nested paths (content-gated)
+  const cityServiceMap = useMemo(() => cityMode ? getCityServiceMap() : [], [cityMode]);
 
   // Choose nav items based on mode
   const navItems = cityMode ? CITY_NAV_ITEMS : MAIN_NAV_ITEMS;
@@ -226,26 +206,48 @@ const Header: React.FC = () => {
                           SERVICES DROPDOWN: City Mode (simplified)
                           ============================================ */}
                       {isOpen && item.dropdownId === 'services' && cityMode && (
-                        <div className="absolute left-0 mt-2 w-[280px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
-                          <div className="px-4 py-2 border-b border-gray-100">
-                            <Link to="/services/" className="text-sm font-bold text-gray-900 hover:text-primary transition-colors">
-                              All Services
-                            </Link>
+                        <div className="absolute left-[-100px] mt-2 w-[600px] max-w-[95vw] bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
+                          <div className="grid grid-cols-2 gap-8">
+                            {/* Residential Column */}
+                            {cityServiceMap.some(m => m.audience === 'residential') && (
+                              <div>
+                                <Link to="/services/residential/" className="text-sm font-bold text-gray-900 hover:text-primary transition-colors">
+                                  Residential Services
+                                </Link>
+                                <div className="mt-3 space-y-1">
+                                  {cityServiceMap
+                                    .filter(m => m.audience === 'residential')
+                                    .map(m => (
+                                      <Link key={m.serviceId} to={m.nestedPath} className="block px-2 py-1.5 text-[13px] text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+                                        {m.title}
+                                      </Link>
+                                    ))
+                                  }
+                                </div>
+                              </div>
+                            )}
+                            {/* Commercial Column */}
+                            {cityServiceMap.some(m => m.audience === 'commercial') && (
+                              <div>
+                                <Link to="/services/commercial/" className="text-sm font-bold text-gray-900 hover:text-primary transition-colors">
+                                  Commercial Services
+                                </Link>
+                                <div className="mt-3 space-y-1">
+                                  {cityServiceMap
+                                    .filter(m => m.audience === 'commercial')
+                                    .map(m => (
+                                      <Link key={m.serviceId} to={m.nestedPath} className="block px-2 py-1.5 text-[13px] text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors">
+                                        {m.title}
+                                      </Link>
+                                    ))
+                                  }
+                                </div>
+                              </div>
+                            )}
                           </div>
-                          <div className="py-1">
-                            {cityServiceItems.map(svc => (
-                              <Link
-                                key={svc.path}
-                                to={svc.path}
-                                className="block px-4 py-2 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors"
-                              >
-                                {svc.label}
-                              </Link>
-                            ))}
-                          </div>
-                          <div className="px-4 pt-2 pb-1 border-t border-gray-100">
-                            <Link to="/services/" className="text-[13px] font-medium text-primary hover:underline">
-                              View All Services &rarr;
+                          <div className="mt-4 pt-3 border-t border-gray-100">
+                            <Link to="/services/" className="text-sm text-primary font-medium hover:text-primaryHover transition-colors">
+                              View All Services →
                             </Link>
                           </div>
                         </div>
