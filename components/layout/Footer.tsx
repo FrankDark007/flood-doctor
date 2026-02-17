@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, ChevronDown, MapPin } from 'lucide-react';
 import NavLink from './NavLink';
+import { isCityApp } from '../../hooks/useCityApp';
 
 interface MobileAccordionItemProps {
   title: string;
@@ -33,6 +34,7 @@ const MobileAccordionItem: React.FC<MobileAccordionItemProps> = ({ title, isOpen
 
 const Footer: React.FC = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const cityMode = isCityApp();
 
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({
@@ -43,9 +45,9 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-white border-t border-gray-200 mt-auto">
-        
+
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 sm:px-6 lg:px-8">
-            
+
             {/* Top Row: Socials */}
             <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-gray-100 pb-8 mb-4 md:mb-12">
                <h3 className="text-lg font-semibold text-gray-900 mb-4 md:mb-0">Follow us</h3>
@@ -66,11 +68,60 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Link Columns / Accordions */}
-            <div className="grid grid-cols-1 md:grid-cols-4 md:gap-12 lg:gap-16">
-                
-                <MobileAccordionItem 
-                  title="Services" 
-                  isOpen={!!openSections["Services"]} 
+            {cityMode ? (
+              /* ── City Footer: only links that exist in city routing ── */
+              <div className="grid grid-cols-1 md:grid-cols-4 md:gap-12 lg:gap-16">
+                <MobileAccordionItem
+                  title="Services"
+                  isOpen={!!openSections["Services"]}
+                  onToggle={() => toggleSection("Services")}
+                >
+                    <ul className="space-y-3">
+                        <li><Link to="/services/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">All Services</Link></li>
+                    </ul>
+                </MobileAccordionItem>
+
+                <MobileAccordionItem
+                  title="Resources"
+                  isOpen={!!openSections["Resources"]}
+                  onToggle={() => toggleSection("Resources")}
+                >
+                    <ul className="space-y-3">
+                         <li><Link to="/blog/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Blog</Link></li>
+                         <li><Link to="/faq/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">FAQ</Link></li>
+                         <li><Link to="/guides/emergency-response/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Emergency Guide</Link></li>
+                         <li><Link to="/guides/insurance-claims/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Insurance Guide</Link></li>
+                    </ul>
+                </MobileAccordionItem>
+
+                <MobileAccordionItem
+                  title="Company"
+                  isOpen={!!openSections["Company"]}
+                  onToggle={() => toggleSection("Company")}
+                >
+                    <ul className="space-y-3">
+                        <li><Link to="/about/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">About Us</Link></li>
+                        <li><Link to="/contact/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Contact</Link></li>
+                    </ul>
+                </MobileAccordionItem>
+
+                <MobileAccordionItem
+                  title="Help"
+                  isOpen={!!openSections["Help"]}
+                  onToggle={() => toggleSection("Help")}
+                >
+                    <ul className="space-y-3">
+                        <li><Link to="/request/" className="block text-sm text-gray-500 hover:text-primary transition-colors py-2 md:py-0">Request Service</Link></li>
+                    </ul>
+                </MobileAccordionItem>
+              </div>
+            ) : (
+              /* ── Main Site Footer ── */
+              <div className="grid grid-cols-1 md:grid-cols-4 md:gap-12 lg:gap-16">
+
+                <MobileAccordionItem
+                  title="Services"
+                  isOpen={!!openSections["Services"]}
                   onToggle={() => toggleSection("Services")}
                 >
                     <ul className="space-y-3">
@@ -86,7 +137,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </MobileAccordionItem>
 
-                <MobileAccordionItem 
+                <MobileAccordionItem
                   title="Resources"
                   isOpen={!!openSections["Resources"]}
                   onToggle={() => toggleSection("Resources")}
@@ -99,7 +150,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </MobileAccordionItem>
 
-                <MobileAccordionItem 
+                <MobileAccordionItem
                   title="Company"
                   isOpen={!!openSections["Company"]}
                   onToggle={() => toggleSection("Company")}
@@ -113,7 +164,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </MobileAccordionItem>
 
-                <MobileAccordionItem 
+                <MobileAccordionItem
                   title="Help & Legal"
                   isOpen={!!openSections["Help & Legal"]}
                   onToggle={() => toggleSection("Help & Legal")}
@@ -125,7 +176,8 @@ const Footer: React.FC = () => {
                     </ul>
                 </MobileAccordionItem>
 
-            </div>
+              </div>
+            )}
 
             {/* Areas We Serve - Subdomain Links for SEO */}
             <div className="mt-10 pt-8 border-t border-gray-100">
