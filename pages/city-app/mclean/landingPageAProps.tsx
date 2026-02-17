@@ -3,6 +3,13 @@
  *
  * Maps McLean-specific content (homepage.ts + franchise data) into
  * the generic LandingPageA template props.
+ *
+ * Premium 2026 redesign with custom photography:
+ * - hero4.jpeg as cinematic hero background
+ * - Alex D. project manager trust card + FAQ sidebar
+ * - Before/after gallery with real McLean projects
+ * - Truck on Georgetown Pike as local expertise background
+ * - Truck arriving in rain as bottom CTA background
  */
 
 import React from 'react';
@@ -30,8 +37,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
     pageTitle: `Water Damage Restoration McLean VA | Flood Doctor of McLean`,
     pageDescription: `24/7 water damage restoration in McLean, VA. 30-minute response to Langley, Chesterbrook & all McLean neighborhoods. Call ${franchise.phone}.`,
 
-    // Hero
-    // T4: Urgency eyebrow with lightning bolt and "Available Now"
+    // Hero — cinematic full-bleed with restoration photo
     heroEyebrow: `\u26A1 30-Minute McLean Response \u2022 Available Now`,
     heroTitle: (
       <>
@@ -39,16 +45,22 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">
           McLean
         </span>
-        ? We're on our way.
+        ? We&rsquo;re on our way.
       </>
     ),
     heroSubtitle: mcleanHomepageContent.heroSubheadline,
     heroCTAPrimary: phone,
     heroCTASecondary: { label: 'Request Service', to: '/request/' },
     showVideo: false,
+    heroImage: '/images/mclean/hero4.jpeg',
 
-    // T3: Hero image — professional restoration photo
-    heroImage: '/images/services/residential/water-damage-restoration.webp',
+    // Alex D. project manager trust card in hero
+    managerCard: {
+      name: 'Alex D.',
+      title: 'McLean Project Manager \u2022 15+ Years',
+      image: '/images/mclean/alex-d-project-manager.jpeg',
+      phone,
+    },
 
     // Stats
     stats: [
@@ -58,7 +70,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       { value: 4.9, suffix: '/5', label: 'Customer Rating' },
     ],
 
-    // Services
+    // Services — 3-col grid with photos
     servicesTitle: 'Complete restoration for McLean homes',
     servicesSubtitle:
       'From emergency water extraction to full reconstruction of estate properties.',
@@ -70,6 +82,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
           'Emergency water extraction, structural drying, and complete restoration for McLean estates and family homes.',
         color: 'from-blue-500 to-blue-600',
         link: '/services/water-damage/',
+        image: '/images/mclean/team-carpet-removal.jpeg',
       },
       {
         icon: Flame,
@@ -91,7 +104,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
         icon: Wind,
         title: 'Storm Damage Repair',
         description:
-          "McLean's mature tree canopy increases storm risk. We handle wind, rain, and tree-fall damage.",
+          "McLean\u2019s mature tree canopy increases storm risk. We handle wind, rain, and tree-fall damage.",
         color: 'from-slate-500 to-slate-700',
         link: '/services/storm-damage/',
       },
@@ -113,7 +126,33 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       },
     ],
 
-    // T5: Features with actual images
+    // Before/After Gallery — real McLean project photos
+    beforeAfterTitle: 'Real McLean restoration results',
+    beforeAfterSubtitle: 'Drag the slider to see the transformation. Every project completed by our McLean team.',
+    beforeAfterItems: [
+      {
+        before: '/images/mclean/before-after-1.jpeg',
+        after: '/images/mclean/before-after-1.jpeg',
+        label: 'Living Room Water Damage \u2014 Langley Estate',
+      },
+      {
+        before: '/images/mclean/before-during-livingroom.jpeg',
+        after: '/images/mclean/before-during-livingroom.jpeg',
+        label: 'Estate Great Room \u2014 Stone Fireplace Restoration',
+      },
+      {
+        before: '/images/mclean/before-after-3.jpeg',
+        after: '/images/mclean/before-after-3.jpeg',
+        label: 'Luxury Kitchen \u2014 Penthouse Water Damage',
+      },
+      {
+        before: '/images/mclean/before-after-5.jpeg',
+        after: '/images/mclean/before-after-5.jpeg',
+        label: 'Double-Height Living \u2014 Full Structural Dry',
+      },
+    ],
+
+    // Features with real restoration photos
     featuresTitle: mcleanHomepageContent.whyChooseUs.headline,
     featuresSubtitle:
       'Estate-level restoration from a team that knows McLean inside and out.',
@@ -121,13 +160,13 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       title: p.title,
       description: p.description,
       visual: [
-        '/images/process-tiles/process-05-water-extraction.png',
-        '/images/services/residential/burst-pipe-water-damage.webp',
-        '/images/process-tiles/process-13-antimicrobial-treatment.png',
+        '/images/mclean/technician-moisture-meter.jpeg',
+        '/images/mclean/team-carpet-removal.jpeg',
+        '/images/mclean/truck-georgetown-pike.jpeg',
       ][idx],
     })),
 
-    // T10: Enriched testimonials with McLean neighborhood names and varied projects
+    // Testimonials — asymmetric grid
     testimonialsTitle: mcleanHomepageContent.localTestimonialIntro,
     testimonials: [
       {
@@ -160,7 +199,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       },
     ],
 
-    // T6: Service Areas with neighborhood count + grid
+    // Service Areas
     serviceAreasTitle: `Serving All McLean Neighborhoods`,
     serviceAreasSubtitle: `Our response vehicles cover every corner of McLean with 30-minute response times, 24/7. From the estates along Georgetown Pike to family homes near McLean Community Center.`,
     serviceAreas: [
@@ -179,10 +218,11 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
     ],
     serviceAreasCount: 12,
 
-    // Bottom CTA
+    // Bottom CTA — truck arriving in rain as background
     ctaTitle: mcleanHomepageContent.emergencyCTA.headline,
     ctaSubtitle: mcleanHomepageContent.emergencyCTA.subtext,
     ctaPhone: phone,
+    ctaBackgroundImage: '/images/mclean/truck-arriving-rain.jpeg',
 
     // Certifications
     certifications: [
@@ -192,14 +232,21 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
       { name: 'Licensed & Insured', abbrev: 'L&I' },
     ],
 
-    // T7: FAQ — all 7 McLean-specific questions from homepage.ts
+    // FAQ with sidebar proof card
     faq: mcleanHomepageContent.faqSection,
+    faqSidebarCard: {
+      name: 'Alex D.',
+      title: 'McLean Project Manager',
+      image: '/images/mclean/alex-d-project-manager.jpeg',
+      phone,
+    },
 
-    // T8: Local expertise callout
+    // Local Expertise — Georgetown Pike truck as background
     localExpertise: {
       headline: mcleanHomepageContent.localExpertise.headline,
       paragraph: mcleanHomepageContent.localExpertise.paragraph.split('\n\n')[0],
       commonIssues: mcleanHomepageContent.localExpertise.commonIssues,
     },
+    localExpertiseImage: '/images/mclean/truck-georgetown-pike.jpeg',
   };
 }

@@ -710,6 +710,14 @@ async function buildAllCities(): Promise<void> {
       fs.cpSync(cityBuildImagesDir, path.join(cityDir, 'images'), { recursive: true });
     }
 
+    // Also copy city-specific images from main dist (public/images/{city}/)
+    const mainDistCityImages = path.join('dist', 'images', city.id);
+    if (fs.existsSync(mainDistCityImages)) {
+      const targetCityImages = path.join(cityDir, 'images', city.id);
+      fs.mkdirSync(targetCityImages, { recursive: true });
+      fs.cpSync(mainDistCityImages, targetCityImages, { recursive: true });
+    }
+
     // Copy fonts
     const cityBuildFontsDir = path.join(cityDistDir, 'fonts');
     if (fs.existsSync(cityBuildFontsDir)) {
