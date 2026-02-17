@@ -144,6 +144,7 @@ interface LandingPageAProps {
   ctaSubtitle?: string;
   ctaPhone?: { label: string; href: string };
   ctaBackgroundImage?: string;
+  ctaDispatchText?: string;
 
   // Certifications
   certifications?: Certification[];
@@ -311,6 +312,7 @@ const LandingPageA: React.FC<LandingPageAProps> = ({
   ctaSubtitle = 'Get a free assessment and see why thousands of Northern Virginia homeowners trust Flood Doctor.',
   ctaPhone = { label: '(877) 497-0007', href: 'tel:8774970007' },
   ctaBackgroundImage,
+  ctaDispatchText = 'Crews available now \u2014 dispatching to your area',
   certifications = [
     { name: 'IICRC Certified', abbrev: 'IICRC' },
     { name: 'BBB A+ Rated', abbrev: 'BBB' },
@@ -843,10 +845,10 @@ const LandingPageA: React.FC<LandingPageAProps> = ({
           {/* Dispatch pulse */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium mb-8 backdrop-blur-sm border border-emerald-500/20">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Crews available now — dispatching to McLean
+            {ctaDispatchText}
           </div>
 
-          <h2 className="font-display text-3xl lg:text-5xl font-semibold mb-6">
+          <h2 className="font-display text-3xl lg:text-5xl font-semibold text-white mb-6">
             {ctaTitle}
           </h2>
           <p className="text-xl text-white/60 mb-10 max-w-2xl mx-auto">

@@ -223,6 +223,7 @@ export function getMcLeanLandingProps(franchise: FranchiseData) {
     ctaSubtitle: mcleanHomepageContent.emergencyCTA.subtext,
     ctaPhone: phone,
     ctaBackgroundImage: '/images/mclean/truck-arriving-rain.jpeg',
+    ctaDispatchText: 'Crews available now \u2014 dispatching to McLean',
 
     // Certifications
     certifications: [

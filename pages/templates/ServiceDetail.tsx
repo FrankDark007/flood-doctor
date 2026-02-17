@@ -612,7 +612,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
   // Get current city from franchise context for LOCAL SEO
   const franchise = useFranchise();
   const isLocalPage = franchise.id !== 'hq';
-  const cityName = isLocalPage ? franchise.name : '';
+  const cityName = isLocalPage ? (franchise.city || franchise.name) : '';
   const stateAbbr = isLocalPage ? (franchise.state || 'VA') : '';
 
   const serviceName = service?.title || 'Water Damage Restoration';

@@ -109,7 +109,7 @@ From the estates along Georgetown Pike to the family neighborhoods near McLean C
 
   // Emergency CTA
   emergencyCTA: {
-    headline: "Water Emergency in McLean?",
+    headline: "Water Damage Emergency in McLean?",
     subtext: "Don't wait—water damage doubles every hour. Our crews are stationed throughout McLean for immediate response.",
     buttonText: "Call (703) 656-0101 Now"
   },
