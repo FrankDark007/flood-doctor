@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   X,
@@ -18,23 +18,33 @@ import {
 } from 'lucide-react';
 import Button from '../ui/Button';
 import NavLink from './NavLink';
+import { isCityApp, getCityServiceSlugs } from '../../hooks/useCityApp';
+import { SERVICES } from '../../data/services';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// Data Structure for Accordions
-const MENU_STRUCTURE = [
-  { 
-    label: 'Home', 
-    path: '/', 
-    icon: Home, 
-    type: 'link' 
+interface MenuItem {
+  label: string;
+  path?: string;
+  icon: React.FC<{ size?: number; className?: string }>;
+  type: 'link' | 'accordion';
+  children?: { label: string; path: string }[];
+}
+
+// Main site menu structure
+const MAIN_MENU_STRUCTURE: MenuItem[] = [
+  {
+    label: 'Home',
+    path: '/',
+    icon: Home,
+    type: 'link'
   },
-  { 
-    label: 'Services', 
-    icon: Briefcase, 
+  {
+    label: 'Services',
+    icon: Briefcase,
     type: 'accordion',
     children: [
       { label: 'All Services', path: '/services/' },
@@ -44,16 +54,16 @@ const MENU_STRUCTURE = [
       { label: 'Commercial Services', path: '/services/commercial/' },
     ]
   },
-  { 
-    label: 'Locations', 
-    path: '/locations/', 
-    icon: MapPin, 
-    type: 'link' 
+  {
+    label: 'Locations',
+    path: '/locations/',
+    icon: MapPin,
+    type: 'link'
   },
-  { 
-    label: 'Resources', 
-    icon: BookOpen, 
-    type: 'accordion', 
+  {
+    label: 'Resources',
+    icon: BookOpen,
+    type: 'accordion',
     children: [
       { label: 'Help Center', path: '/resources/' },
       { label: 'Insurance Guide', path: '/resources/insurance-guide/' },
@@ -62,11 +72,11 @@ const MENU_STRUCTURE = [
       { label: 'FAQ', path: '/resources/faq/' },
     ]
   },
-  { 
-    label: 'Reviews', 
-    path: '/reviews/', 
-    icon: Star, 
-    type: 'link' 
+  {
+    label: 'Reviews',
+    path: '/reviews/',
+    icon: Star,
+    type: 'link'
   },
   {
     label: 'About',
@@ -78,23 +88,100 @@ const MENU_STRUCTURE = [
       { label: 'Careers', path: '/careers/' },
     ]
   },
-  { 
-    label: 'Contact', 
-    path: '/contact/', 
-    icon: Phone, 
-    type: 'link' 
+  {
+    label: 'Contact',
+    path: '/contact/',
+    icon: Phone,
+    type: 'link'
   }
 ];
+
+/**
+ * Build city mobile menu: only city-local pages, flat service links.
+ */
+function buildCityMenuStructure(): MenuItem[] {
+  const citySlugs = getCityServiceSlugs();
+
+  // Map city slugs to {label, path} using SERVICES data
+  const cityServiceChildren = citySlugs
+    .map(slug => {
+      const service = SERVICES.find(s => {
+        const segments = s.slug.split('/').filter(Boolean);
+        return segments[segments.length - 1] === slug;
+      });
+      if (!service) return null;
+      return { label: service.title, path: `/services/${slug}/` };
+    })
+    .filter((item): item is { label: string; path: string } => item !== null);
+
+  return [
+    {
+      label: 'Home',
+      path: '/',
+      icon: Home,
+      type: 'link'
+    },
+    {
+      label: 'Services',
+      icon: Briefcase,
+      type: 'accordion',
+      children: [
+        { label: 'All Services', path: '/services/' },
+        ...cityServiceChildren,
+      ]
+    },
+    {
+      label: 'Guides',
+      icon: BookOpen,
+      type: 'accordion',
+      children: [
+        { label: 'Emergency Response', path: '/guides/emergency-response/' },
+        { label: 'Prevention Guide', path: '/guides/prevention/' },
+        { label: 'Insurance Claims', path: '/guides/insurance-claims/' },
+      ]
+    },
+    {
+      label: 'Blog',
+      path: '/blog/',
+      icon: FileText,
+      type: 'link'
+    },
+    {
+      label: 'About',
+      path: '/about/',
+      icon: Info,
+      type: 'link'
+    },
+    {
+      label: 'FAQ',
+      path: '/faq/',
+      icon: HelpCircle,
+      type: 'link'
+    },
+    {
+      label: 'Contact',
+      path: '/contact/',
+      icon: Phone,
+      type: 'link'
+    }
+  ];
+}
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const cityMode = isCityApp();
+
+  const menuStructure = useMemo(
+    () => cityMode ? buildCityMenuStructure() : MAIN_MENU_STRUCTURE,
+    [cityMode]
+  );
 
   // Toggle Accordion Logic
   const toggleAccordion = (label: string) => {
-    setExpandedItems(prev => 
-      prev.includes(label) 
-        ? prev.filter(item => item !== label) 
+    setExpandedItems(prev =>
+      prev.includes(label)
+        ? prev.filter(item => item !== label)
         : [...prev, label]
     );
   };
@@ -129,17 +216,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Backdrop (for fade effect) */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Slide-Over Panel */}
-      <div 
+      <div
         className={`fixed inset-y-0 right-0 w-full sm:max-w-sm bg-white z-[70] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        
+
         {/* 1. Header */}
         <div className="flex items-center justify-between px-6 h-16 border-b border-gray-100 shrink-0">
           <span className="font-display font-bold text-lg text-gray-900 tracking-tight">
@@ -157,11 +244,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         {/* 2. Scrollable Content */}
         <div className="flex-1 overflow-y-auto">
           <nav className="px-4 py-6 space-y-2">
-            {MENU_STRUCTURE.map((item) => {
-              const isActive = item.path === '/' 
-                ? location.pathname === '/' 
+            {menuStructure.map((item) => {
+              const isActive = item.path === '/'
+                ? location.pathname === '/'
                 : item.path ? location.pathname.startsWith(item.path) : false;
-              
+
               const isExpanded = expandedItems.includes(item.label);
               const Icon = item.icon;
 
@@ -178,27 +265,27 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                         <Icon size={20} className={isActive || isExpanded ? 'text-primary' : 'text-gray-400'} />
                         <span>{item.label}</span>
                       </div>
-                      <ChevronDown 
-                        size={20} 
-                        className={`transition-transform duration-300 ${isExpanded ? 'rotate-180 text-primary' : 'text-gray-300'}`} 
+                      <ChevronDown
+                        size={20}
+                        className={`transition-transform duration-300 ${isExpanded ? 'rotate-180 text-primary' : 'text-gray-300'}`}
                       />
                     </button>
-                    
+
                     {/* Sub-menu Animation */}
-                    <div 
+                    <div
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        isExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                       }`}
                     >
                       <div className="bg-gray-50/50 rounded-b-xl pb-2">
                         {item.children?.map((child) => (
-                          <NavLink
+                          <Link
                             key={child.path}
                             to={child.path}
                             className="flex items-center w-full pl-14 pr-4 py-3 text-[15px] text-gray-600 hover:text-primary transition-colors"
                           >
                             {child.label}
-                          </NavLink>
+                          </Link>
                         ))}
                       </div>
                     </div>

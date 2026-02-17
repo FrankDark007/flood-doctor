@@ -1,6 +1,174 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-16 01:30 AM
+**Last Updated:** 2026-02-16
+
+---
+
+## 📦 CITY SEO CONTENT INVENTORY (2026-02-16)
+
+Complete discovery audit of all city-specific SEO content across the project ecosystem.
+
+### PRIMARY: `src/content/cities/` (PRODUCTION — in use)
+
+**Path:** `~/flood-doctor/fd-google-redesign/src/content/cities/`
+**Format:** TypeScript modules (.ts) exporting typed content objects
+**Total:** 296 files, 3.3 MB
+**Status:** Committed to `main`, all 656 city routes prerendering
+
+| City | Services | Blog | Neighborhoods | Homepage | Index |
+|------|----------|------|---------------|----------|-------|
+| alexandria | 8 | 5 | 6 | 1 | 1 |
+| arlington | 9 | 5 | 6 | 1 | 1 |
+| ashburn | 8 | 5 | 5 | 1 | 1 |
+| fairfax | 8 | 5 | 5 | 1 | 1 |
+| fallschurch | 8 | 3 | 5 | 1 | 1 |
+| greatfalls | 8 | 3 | 5 | 1 | 1 |
+| herndon | 8 | 3 | 5 | 1 | 1 |
+| lorton | 8 | 3 | 5 | 1 | 1 |
+| mclean | 8 | 5 | 5 | 1 | 1 |
+| reston | 8 | 5 | 5 | 1 | 1 |
+| springfield | 8 | 3 | 5 | 1 | 1 |
+| tysons | 8 | 5 | 5 | 1 | 1 |
+| vienna | 8 | 5 | 6 | 1 | 1 |
+| **TOTAL** | **105** | **55** | **68** | **13** | **13** |
+
+**Content types per file:**
+- Services: `ServicePageContent` — meta, h1, introSection, localContext, processSteps, faq, schema (~278 lines each)
+- Blog: Article data — title, slug, content sections, local references (~150-300 lines each)
+- Neighborhoods: `NeighborhoodPageContent` (4+ schema variants — normalizer in DynamicNeighborhoodPage.tsx)
+- Homepage: City homepage hero, stats, local signals (~163 lines each)
+
+### SECONDARY: `seo-project/content-output/` (REFERENCE — earlier generation)
+
+**Path:** `~/flood-doctor/seo-project/content-output/city-pages/`
+**GitHub:** `FrankDark007/flood-doctor-seo`
+**Format:** Markdown (.md)
+**Total:** 31 city landing pages (13 match current subdomains + 18 extended markets)
+**Matching files:** mclean-va.md, arlington-va.md, alexandria-va.md, fairfax-va.md, falls-church-va.md, great-falls-va.md, herndon-va.md, lorton-va.md, ashburn-va.md, reston-va.md, springfield-va.md, tysons-va.md, vienna-va.md
+
+**Also in seo-project:**
+- `content-output/*.md` — 8 service pages (water-damage, mold, flood-cleanup, etc.)
+- `content-output/core-pages/` — 10 core pages (about, contact, insurance, etc.)
+- `content-output/resources/` — 14 resource guides (cost, timeline, categories, etc.)
+- `competitor-reports/` — 6 competitor analysis reports
+- `website-build-spec/` — 7 build specification docs
+- `nap-citation-strategy/` — 5 NAP/citation files
+- `research-phase-3/` — 8 research docs including city subdomain playbook
+
+### TEMPLATE-DRIVEN PAGES (NOT unique per-city content)
+
+These routes exist on every city subdomain but use shared React components with `useFranchise()` context injection:
+
+| Route | Component | Lines |
+|-------|-----------|-------|
+| `/about/` | `pages/city-app/CityAbout.tsx` | 185 |
+| `/contact/` | `pages/city-app/CityContact.tsx` | 176 |
+| `/request/` | `pages/city-app/CityRequest.tsx` | 20 |
+| `/guides/emergency-response/` | `pages/guides/city/CityEmergencyGuide.tsx` | 531 |
+| `/guides/prevention/` | `pages/guides/city/CityPreventionGuide.tsx` | 555 |
+| `/guides/insurance-claims/` | `pages/guides/city/CityInsuranceGuide.tsx` | 590 |
+| `/faq/` | Shared FAQ component | — |
+
+### BACKUPS (do not modify — archive copies)
+
+| Location | Files | Notes |
+|----------|-------|-------|
+| `~/flood-doctor/Mission-Control-APP/ops/uploads/projects/flood-doctor-website/` | 592 | 2 extracted zip snapshots |
+| `~/Desktop/CODEX/flood-doctor/src/content/cities/` | 296 | CODEX backup |
+| `~/Desktop/CODEX/flood-doctor-main 2/src/content/cities/` | 296 | CODEX backup #2 |
+
+### OTHER SEO DATA
+
+| Path | Description |
+|------|-------------|
+| `src/data/seo/content-matrix.ts` | SEO content strategy matrix |
+| `src/data/seo/keywords/mclean.ts` | McLean keyword data |
+| `content/blog/*.md` | 10 main-domain blog posts (some city-specific) |
+| `ASHBURN_CONTENT_SUMMARY.md` | 161-line Ashburn content summary |
+
+### GAPS — Content NOT unique per city
+
+| Content Type | Status | Recommendation |
+|-------------|--------|----------------|
+| About pages | Template-driven | Could generate unique team/history/community copy |
+| Contact pages | Template-driven | Minimal SEO value in uniquifying |
+| Guide pages (3) | Template + archetype | Could generate city-specific emergency/prevention tips |
+| FAQ page | Shared component | Could generate unique city-specific FAQ sets |
+| Resources | Not routed on subdomains | N/A |
+| Blog (5 cities have only 3) | fallschurch, greatfalls, herndon, lorton, springfield | Need 2 more posts each to match others |
+
+### Google Drive
+**Status:** Mount exists at `~/Google Drive/` but is empty/inaccessible. No city content found there.
+
+### GitHub Repos Checked
+- `FrankDark007/flood-doctor` (= fd-google-redesign) — primary content
+- `FrankDark007/flood-doctor-seo` (= seo-project) — reference content
+- `FrankDark007/Mission-Control-APP` — backup snapshots
+- `FrankDark007/CODEX` — backup copies
+- `FrankDark007/flood-repair-nextjs` — no city content
+- 30+ other repos — no city content
+
+---
+
+## ✅ COMPLETE: City Subdomain Nav Link Fix (2026-02-16)
+
+### Status: Deployed to all 13 cities + main site. Browser verified.
+
+**Commit:** `ed4cbd8` — fix: repair city subdomain nav links and add 301 redirects
+
+### Problem
+Shared layout components (Header, Footer, MobileMenu) used React Router `<Link>` for ALL nav paths. On city subdomains, paths like `/services/residential/...`, `/guides/`, `/reviews/`, `/locations/` don't exist — causing 404s.
+
+### Solution: Two-Layer Fix
+1. **Client-side: NavLink component** — Detects city context via `window.__FLOOD_DOCTOR_CITY__`, renders `<a href="https://flood.doctor/...">` for main-domain-only paths, `<Link>` for city-local paths
+2. **Server-side: .htaccess 301 redirects** — 10 redirect rules for crawled/bookmarked URLs that hit city subdomains
+
+### Files Changed (6)
+| File | Action |
+|------|--------|
+| `hooks/useCityApp.ts` | NEW — city context detection utilities |
+| `components/layout/NavLink.tsx` | NEW — smart link component with city-local route allowlist |
+| `components/layout/Header.tsx` | MODIFIED — Link→NavLink for all nav links |
+| `components/layout/Footer.tsx` | MODIFIED — Link→NavLink for all footer links |
+| `components/layout/MobileMenu.tsx` | MODIFIED — Link→NavLink for all mobile menu links |
+| `scripts/build-cities.ts` | MODIFIED — added 10 single-hop 301 redirect rules in .htaccess template |
+
+### Key Design Decisions
+- **Allowlist pattern** (not blocklist) — new main-domain routes automatically excluded from city-local
+- `/services/residential/` and `/services/commercial/` explicitly excluded as NOT city-local (audience hubs)
+- `/guides/` index excluded (no index page on city app, only sub-paths)
+- Logo `<Link to="/">` and `<Button to="/request/">` kept as-is (both exist on city app)
+
+### Verification
+- Main build: 189/189 ✅
+- City build + prerender: 656/656 ✅
+- Browser verified on mclean.flood.doctor — all nav links correct
+- Deployed: 13/13 cities + main site
+
+---
+
+## ✅ COMPLETE: City Neighborhood Prerender Fix (2026-02-16)
+
+### Status: All 656/656 city routes prerender successfully (was 619/656)
+
+**Commit:** `61c82e5` — fix(cities): stabilize neighborhood prerender and avoid hydration crashes
+
+### Root Cause
+- 68 neighborhood content files use 4+ different TypeScript schemas, all hidden by `as unknown as NeighborhoodPageContent` casts
+- NeighborhoodPageRenderer.tsx had 14 unsafe `.map()` calls that crash on undefined
+- `getCityBySlug()` couldn't find fallschurch/greatfalls/lorton because slugs use hyphens but build IDs don't
+
+### Fixes Applied (5 files)
+1. **DynamicNeighborhoodPage.tsx** — Content normalizer maps any format to expected shape
+2. **NeighborhoodPageRenderer.tsx** — All .map() calls use safe variables with `|| []` defaults
+3. **config/cities.ts** — `getCityBySlug()` fallback matches by subdomain prefix
+4. **pages/city-app/CityHome.tsx** — PageMeta in error state so `__PRERENDER_READY__` always fires
+5. **scripts/prerender.ts** — Browser restart every 5 cities + doubled homepage timeout
+
+### Verification
+- City prerender: 656/656 ✅ (54.6s)
+- Main domain: 189/189 ✅
+- No content file changes needed
 
 ---
 
@@ -536,4 +704,4 @@ npm run prerender:verify  # Post-build verification
 
 ---
 
-*Updated: 2026-02-16 (Cost Calculator Audit + Fixes Deployed)*
+*Updated: 2026-02-16 (City Subdomain Nav Link Fix Deployed)*

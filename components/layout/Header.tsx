@@ -10,7 +10,8 @@ import NavLink from './NavLink';
 import Button from '../ui/Button';
 import { ServiceData, ServiceCategory } from '../../types';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
-import { isCityApp, mainDomainUrl } from '../../hooks/useCityApp';
+import { isCityApp, getCityServiceSlugs } from '../../hooks/useCityApp';
+import { SERVICES } from '../../data/services';
 
 // Helper to Group Services by Category within an Audience - O(1) lookup
 const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
@@ -33,6 +34,42 @@ const getGroupedServices = (audience: 'RESIDENTIAL' | 'COMMERCIAL') => {
     items: getServicesByCategory(audience, catKey)
   })).filter(group => group.items.length > 0);
 };
+
+/**
+ * Build city-local service nav items by matching city service slugs
+ * against the SERVICES array to get display titles.
+ */
+function getCityServiceNavItems(): { label: string; path: string }[] {
+  const citySlugs = getCityServiceSlugs();
+  if (citySlugs.length === 0) return [];
+
+  return citySlugs
+    .map(slug => {
+      // Match city slug (e.g., 'water-damage') to SERVICES by last segment
+      const service = SERVICES.find(s => {
+        const segments = s.slug.split('/').filter(Boolean);
+        return segments[segments.length - 1] === slug;
+      });
+      if (!service) return null;
+      return { label: service.title, path: `/services/${slug}/` };
+    })
+    .filter((item): item is { label: string; path: string } => item !== null);
+}
+
+/** City-mode nav items (no Locations, no About dropdown) */
+const CITY_NAV_ITEMS = [
+  { label: 'Services', type: 'dropdown', dropdownId: 'services' },
+  { label: 'Guides', type: 'dropdown', dropdownId: 'guides' },
+  { label: 'Blog', path: '/blog/', type: 'link' },
+  { label: 'About', path: '/about/', type: 'link' },
+  { label: 'Contact', path: '/contact/', type: 'link' },
+];
+
+const CITY_GUIDE_ITEMS = [
+  { label: 'Emergency Response', path: '/guides/emergency-response/' },
+  { label: 'Prevention Guide', path: '/guides/prevention/' },
+  { label: 'Insurance Claims', path: '/guides/insurance-claims/' },
+];
 
 const Header: React.FC = () => {
   const { isEmergencyMode } = useEmergencyData();
@@ -77,9 +114,17 @@ const Header: React.FC = () => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
+  const cityMode = isCityApp();
+
   // Memoize grouped services to prevent recalculation on every render
   const residentialGroups = useMemo(() => getGroupedServices('RESIDENTIAL'), []);
   const commercialGroups = useMemo(() => getGroupedServices('COMMERCIAL'), []);
+
+  // City-mode: available services for this city
+  const cityServiceItems = useMemo(() => cityMode ? getCityServiceNavItems() : [], [cityMode]);
+
+  // Choose nav items based on mode
+  const navItems = cityMode ? CITY_NAV_ITEMS : MAIN_NAV_ITEMS;
 
   // Split locations for 2-column layout in dropdown
   const locationMid = Math.ceil(LOCATIONS.length / 2);
@@ -162,12 +207,12 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 ml-8 flex-1" ref={navRef}>
               
-              {MAIN_NAV_ITEMS.map((item) => {
+              {navItems.map((item) => {
                 if (item.type === 'dropdown') {
                   const isOpen = activeDropdown === item.dropdownId;
                   return (
                     <div key={item.label} className="relative group">
-                      <button 
+                      <button
                         onClick={() => toggleDropdown(item.dropdownId!)}
                         className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors ${isOpen ? 'text-primary bg-blue-50' : 'text-gray-600 hover:text-primary hover:bg-gray-50'}`}
                         aria-expanded={isOpen}
@@ -177,14 +222,45 @@ const Header: React.FC = () => {
                         <ChevronDown size={16} className={`ml-1 transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                       </button>
 
-                      {/* Mega Menu Logic: Services */}
-                      {isOpen && item.dropdownId === 'services' && (
+                      {/* ============================================
+                          SERVICES DROPDOWN: City Mode (simplified)
+                          ============================================ */}
+                      {isOpen && item.dropdownId === 'services' && cityMode && (
+                        <div className="absolute left-0 mt-2 w-[280px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
+                          <div className="px-4 py-2 border-b border-gray-100">
+                            <Link to="/services/" className="text-sm font-bold text-gray-900 hover:text-primary transition-colors">
+                              All Services
+                            </Link>
+                          </div>
+                          <div className="py-1">
+                            {cityServiceItems.map(svc => (
+                              <Link
+                                key={svc.path}
+                                to={svc.path}
+                                className="block px-4 py-2 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors"
+                              >
+                                {svc.label}
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="px-4 pt-2 pb-1 border-t border-gray-100">
+                            <Link to="/services/" className="text-[13px] font-medium text-primary hover:underline">
+                              View All Services &rarr;
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* ============================================
+                          SERVICES MEGA MENU: Main Site
+                          ============================================ */}
+                      {isOpen && item.dropdownId === 'services' && !cityMode && (
                         <div className="absolute left-[-150px] mt-2 w-[1100px] max-w-[95vw] bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-8 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden border border-gray-100">
-                          
+
                           {/* Content Area */}
                           <div className="max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar overscroll-contain">
                             <div className="grid grid-cols-2 gap-12 divide-x divide-gray-100">
-                                
+
                                 {/* Residential Column */}
                                 <div className="pr-4">
                                     <NavLink to="/services/residential/" className="flex items-center gap-3 text-lg font-bold text-gray-900 mb-6 group">
@@ -222,8 +298,27 @@ const Header: React.FC = () => {
                         </div>
                       )}
 
-                      {/* Dropdown: About */}
-                      {isOpen && item.dropdownId === 'about' && (
+                      {/* ============================================
+                          GUIDES DROPDOWN: City Mode
+                          ============================================ */}
+                      {isOpen && item.dropdownId === 'guides' && cityMode && (
+                        <div className="absolute left-0 mt-2 w-[240px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
+                          {CITY_GUIDE_ITEMS.map(guide => (
+                            <Link
+                              key={guide.path}
+                              to={guide.path}
+                              className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium"
+                            >
+                              {guide.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* ============================================
+                          ABOUT DROPDOWN: Main Site only
+                          ============================================ */}
+                      {isOpen && item.dropdownId === 'about' && !cityMode && (
                         <div className="absolute right-0 mt-2 w-[220px] bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-gray-100">
                           <NavLink to="/about/" className="block px-4 py-2.5 text-[14px] text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors font-medium">
                             About Us
@@ -237,12 +332,14 @@ const Header: React.FC = () => {
                         </div>
                       )}
 
-                      {/* Mega Menu Logic: Locations */}
-                      {isOpen && item.dropdownId === 'locations' && (
+                      {/* ============================================
+                          LOCATIONS MEGA MENU: Main Site only
+                          ============================================ */}
+                      {isOpen && item.dropdownId === 'locations' && !cityMode && (
                         <div className="absolute left-[-200px] mt-2 w-[800px] max-w-[95vw] bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-8 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden border border-gray-100">
-                          
+
                           <div className="grid grid-cols-3 gap-8">
-                            
+
                             {/* Column 1: NOVA Part 1 */}
                             <div>
                                <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-3">Northern Virginia</h3>

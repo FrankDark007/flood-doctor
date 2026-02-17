@@ -21,6 +21,18 @@ import { SERVICES } from '../data/services';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * Get available service slugs for a city by reading its services directory.
+ * Returns array of slug strings like ['water-damage', 'mold-remediation', ...]
+ */
+function getCityServiceSlugs(cityId: string): string[] {
+  const servicesDir = path.resolve(__dirname, `../src/content/cities/${cityId}/services`);
+  if (!fs.existsSync(servicesDir)) return [];
+  return fs.readdirSync(servicesDir)
+    .filter((f: string) => f.endsWith('.ts') && f !== 'index.ts')
+    .map((f: string) => f.replace('.ts', ''));
+}
+
 // Import franchise data types (we'll read from the compiled output)
 interface FranchiseData {
   id: string;
@@ -442,6 +454,7 @@ ${JSON.stringify(schema, null, 2)}
 
       // Pre-set city context before app loads
       window.__FLOOD_DOCTOR_CITY__ = '${city.id}';
+      window.__FLOOD_DOCTOR_CITY_SERVICES__ = ${JSON.stringify(getCityServiceSlugs(city.id))};
     </script>
     <style>
       :focus-visible {

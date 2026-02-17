@@ -28,6 +28,36 @@
 
 ## Completed Work
 
+### 2026-02-16: City Subdomain Nav Link Fix — Complete + Deployed
+
+**What:** Fixed all header/footer/mobile-menu links on city subdomains that were 404ing because shared layout components used React Router `<Link>` for paths that only exist on the main domain.
+
+**Solution:** Created a NavLink smart component that detects city context via `window.__FLOOD_DOCTOR_CITY__` and renders `<a href="https://flood.doctor/...">` for main-domain-only paths while keeping city-local paths as `<Link>` for SPA navigation. Also added 10 single-hop 301 redirect rules in city .htaccess for crawled/bookmarked URLs.
+
+**Files Created (2):**
+- `hooks/useCityApp.ts` — City context detection (`isCityApp()`, `mainDomainUrl()`)
+- `components/layout/NavLink.tsx` — Smart link with city-local route allowlist + special `/services/` handling
+
+**Files Modified (4):**
+- `components/layout/Header.tsx` — Link→NavLink for all nav links
+- `components/layout/Footer.tsx` — Link→NavLink for all footer links
+- `components/layout/MobileMenu.tsx` — Link→NavLink for all mobile menu links
+- `scripts/build-cities.ts` — 10 redirect rules in .htaccess (residential, commercial, locations, resources, reviews, nearme, awards, careers, privacy-policy, terms)
+
+**Key Design Decisions:**
+- Allowlist pattern: city-local routes explicitly listed; new main-domain routes auto-excluded
+- `/services/residential/` and `/services/commercial/` explicitly excluded (audience hubs, not city routes)
+- `/guides/` index excluded (city app has only specific guide sub-paths)
+- Two-layer fix: client-side NavLink prevents broken links + server-side 301s catch crawled URLs
+
+**Bug Fixed During Implementation:**
+- First NavLink version classified `/services/residential/` as city-local (segments.length <= 2 matched). Fixed by adding explicit check for 'residential'/'commercial' segments.
+
+**Commits:** `ed4cbd8`
+**Deployed:** All 13 cities + main site. Browser verified on mclean.flood.doctor.
+
+---
+
 ### 2026-02-16: Service Detail Post-Process Redesign — IMPLEMENTED
 
 **What:** Executed the 9-task redesign plan in one batch. Redesigned service detail page layout after process tiles for better mobile UX, cleaner heading hierarchy, and enhanced sidebar.
