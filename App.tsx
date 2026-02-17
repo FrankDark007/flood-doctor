@@ -125,6 +125,9 @@ const GeneratedLayoutsLab = lazy(() => import('./pages/GeneratedLayoutsLab'));
 // const VariantIndex = lazy(() => import('./pages/VariantIndex')); // File removed
 // const ComponentShowcase = lazy(() => import('./pages/ComponentShowcase')); // File removed
 
+// DEV-ONLY: Variant gallery (lazy — never in production bundle)
+const VariantsGallery = import.meta.env.DEV ? lazy(() => import('./pages/__variants')) : null;
+
 // Landing Page Templates
 const LandingPageA = lazy(() => import('./pages/templates/LandingPageA'));
 const LandingPageB = lazy(() => import('./pages/templates/LandingPageB'));
@@ -591,6 +594,9 @@ const AppLayout: React.FC = () => {
               <Route path="/blog/mildew-vs-mold-difference/" element={<MildewVsMoldDifference />} />
               <Route path="/blog/does-vinegar-kill-mold/" element={<DoesVinegarKillMold />} />
               <Route path="/blog/signs-of-water-damage-behind-walls/" element={<SignsOfWaterDamageBehindWalls />} />
+
+              {/* DEV-ONLY: Variant Gallery at /__variants */}
+              {VariantsGallery && <Route path="/__variants/*" element={<Suspense fallback={<PageLoader />}><VariantsGallery /></Suspense>} />}
 
               {/* Tools & Demos */}
               <Route path="/portal-demo/" element={<ClientPortalDemo />} />
