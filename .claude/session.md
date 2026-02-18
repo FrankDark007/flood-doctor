@@ -57,7 +57,20 @@ No remaining pages below Competitive tier.
 - Hash fragment URLs (#about, #services, #contact) indexed as separate pages — diluting authority
 - **BLOCKED on strategic decision:** Optimize WordPress pages vs launch flood.doctor with 301 redirects
 - See `citylift/gsc/export-0/Pages.csv` and `Queries.csv` for raw data
-### P3 — Full City Uniqueness Expansion
+### P3a — Cross-City Duplication Analysis ✅ COMPLETE (commit `1129d84`)
+- 624 pairwise comparisons across 8 service clusters
+- Found 32 pairs >50% overlap, all involving herndon/mclean/springfield/ashburn
+- Root cause: template-cloned content generation batch (Jan 3, 2026)
+- Analysis script: `scripts/citylift-duplication-analysis.mjs`
+
+### P3b — Service Cluster Differentiation — IN PROGRESS
+- **Mold Remediation ✅ COMPLETE** (commit `1129d84`) — 4 cities rewritten, max pair 11.2%
+- Sewage Cleanup ⬜ NEXT
+- Flood Cleanup ⬜
+- Burst Pipe ⬜
+- Fire Damage ⬜
+- Basement Flooding ⬜ (may not need full rewrite — only 1 pair >50%)
+- Target: all 6 pairs per cluster below 30% similarity
 
 ### CityLift Session Continuity
 On resume, always read:
