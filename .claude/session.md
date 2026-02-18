@@ -49,7 +49,14 @@
 ### All P1 Expand-Tier Pages — ✅ COMPLETE
 No remaining pages below Competitive tier.
 
-### P2 — High-Impression / Low-CTR Pages (requires GSC baseline)
+### P2 — High-Impression / Low-CTR Pages ✅ AUDIT COMPLETE
+- GSC data exported from flooddoctorva.com (12 months, stored in `citylift/gsc/export-0/`)
+- **Key finding:** ALL high-impression pages rank position 20-42 (pages 2-5). Zero pages on page 1.
+- No CTR optimization opportunity at current positions — the problem is ranking, not titles
+- Top ROI pages by proximity to page 1: ashburn (20.6), herndon (19.6), lorton (21.8), fairfax (22.8)
+- Hash fragment URLs (#about, #services, #contact) indexed as separate pages — diluting authority
+- **BLOCKED on strategic decision:** Optimize WordPress pages vs launch flood.doctor with 301 redirects
+- See `citylift/gsc/export-0/Pages.csv` and `Queries.csv` for raw data
 ### P3 — Full City Uniqueness Expansion
 
 ### CityLift Session Continuity
