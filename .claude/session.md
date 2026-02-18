@@ -127,4 +127,16 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-17 (CityLift P1 Content Strength Audit Complete — awaiting approval)*
+*Updated: 2026-02-17 (CityLift P1 Vienna Pilot Complete — commit 9fb5e52)*
+
+## Resume Command
+```
+Pick up where we left off on the CityLift plan
+```
+
+## Decision Needed on Resume
+User must choose one of:
+1. **Scale P1** — remediate Great Falls (8 pages, avg 68) + Arlington /emergency-water-removal (40)
+2. **Proceed to P2** — High-Impression / Low-CTR (requires GSC export)
+3. **Deploy Vienna** — push Vienna changes to production first
+4. **Other priority** — different project or task
