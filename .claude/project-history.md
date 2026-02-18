@@ -1338,6 +1338,44 @@ We have 80+ neighborhood content files ready to render.
 
 ---
 
+### 2026-02-18: CityLift P2 — GSC Audit Complete (Data-Only)
+
+**What:** Imported Google Search Console data from flooddoctorva.com (12 months) and analyzed all pages for high-impression / low-CTR optimization opportunities.
+
+**Key Finding:** ALL high-impression pages rank position 20-42 (pages 2-5). Zero pages are on page 1. The problem is ranking authority, not title/meta optimization.
+
+**Top ROI pages by proximity to page 1:**
+1. herndon.flooddoctorva.com — position 19.6 (5.7K impressions)
+2. ashburn.flooddoctorva.com — position 20.6 (43.7K impressions)
+3. lorton.flooddoctorva.com — position 21.8 (14.7K impressions)
+4. fairfax.flooddoctorva.com — position 22.8 (124K impressions)
+
+**Additional finding:** Hash fragment URLs (#about, #services, #contact) indexed as separate pages across all city subdomains — diluting authority across ~20 phantom URLs.
+
+**Strategic decision pending:** Whether to optimize WordPress pages (temporary) or launch flood.doctor with 301 redirects first (recommended).
+
+**Data:** `citylift/gsc/export-0/` (Pages.csv, Queries.csv, Chart.csv, Countries.csv, Devices.csv)
+**Commit:** `2900d71`
+
+---
+
+### 2026-02-18: CityLift P1 — Herndon + Springfield Storm-Damage Upgrade ✅
+
+**What:** Upgraded both storm-damage pages from Expand tier (~74) to Competitive tier (~97-98). Replaced shallow `stormTypes` + `emergencyServices` sections with deep `localChallenges` (5 city-specific problem→solution items) and `equipmentSection` (8 items with brands).
+
+**Herndon themes:** Fox Mill mature canopy, Worldgate shared-roof townhomes, Sugarland Run watershed, aging colonial roofs, power outage cascades
+**Springfield themes:** Split-level below-grade flooding, Accotink Creek watershed, Kingstowne shared-structure damage, West Springfield 1960s canopy, sump pump failures
+
+**Metrics:**
+| City | Before | After |
+|------|--------|-------|
+| Herndon | 1,428 words | 2,814 words |
+| Springfield | 1,405 words | 2,973 words |
+
+**Commit:** `4c94676`
+
+---
+
 ### 2026-02-17: CityLift P0 — Service Title Normalization ✅
 
 **What:** Normalized all 91 city service page meta titles from avg 78 chars (max 103) to ≤60 chars (max 59). Part of CityLift multi-phase SEO audit project (FD-CITYLIFT-PLAN-005).
