@@ -1,6 +1,7 @@
 // src/content/cities/mclean/services/flood-cleanup.ts
-// Generated: January 3, 2026
+// Rewritten: February 18, 2026
 // McLean Flood Cleanup Service Page - 100% Unique
+// Angle: High-value finishes, multi-level estates, contents protection
 
 export const mcleanFloodCleanupContent = {
   meta: {
@@ -12,151 +13,148 @@ export const mcleanFloodCleanupContent = {
   h1: "Flood Cleanup Services in McLean, Virginia",
 
   introSection: {
-    headline: "Professional Flood Cleanup for McLean Estate Homes",
+    headline: "Estate-Scale Flood Response for McLean's Finest Properties",
     paragraphs: [
-      `Summer storms roll through Northern Virginia with little warning. One moment your Langley estate is peaceful; an hour later, eight inches of rain has overwhelmed storm drains, breached window wells, and sent muddy water cascading into your finished basement. Your wine cellar, home theater, and guest quarters—spaces you've invested years perfecting—now sit under brown water.
+      `Three inches of rain in ninety minutes. Pimmit Run crests its banks in Chesterbrook, and sheet water rolls across the hillside toward a Langley estate's walk-out lower level. The French doors breach first — muddy creek water pours across imported travertine into the home theater, where acoustic panels begin wicking moisture upward. Simultaneously, the wine cellar takes water through the stairwell from the level above, and the au pair suite floods through its own exterior door. Three distinct zones, three different material profiles, all taking water at once. The contents in those rooms — a curated art collection, fourteen thousand dollars in wine, a custom media system built into millwork cabinetry — represent more value than many entire homes in surrounding counties.
 
-Flood Doctor has cleaned up after every major storm event in McLean since 2005. We've pumped out The Reserve's gated estates after flash floods, extracted storm water from Chesterbrook colonials, and restored Woodside Estates properties after summer deluges. When NOAA issues a flash flood warning for Fairfax County, our phones light up with McLean addresses—and our trucks are already positioned to respond.`,
-
-      `Flood cleanup differs from typical water damage. Storm water carries soil, debris, and contaminants that complicate restoration. The clay-laden runoff from McLean's hills deposits sediment in carpet fibers, hardwood grain, and HVAC systems. Flash floods overwhelm sump pumps, breach foundation walls, and create contamination categories that require specialized protocols.
-
-Our IICRC-certified crews understand McLean's flood patterns: the low-lying areas near Potomac tributaries, the window well vulnerabilities in Balls Hill properties, the overwhelmed storm drains along Georgetown Pike. We don't just pump and leave—we extract, decontaminate, and restore.`
+McLean flood events operate on a different scale than standard residential water damage. A 4,000-square-foot finished basement with walk-out access, radiant-heated stone floors, hand-scraped hardwood in the guest suite, and rubber exercise flooring in the gym is not a weekend project involving box fans and a rented dehumidifier. Thermal imaging after extraction routinely reveals moisture migration through plaster walls, beneath stone flooring where radiant tubing complicates sub-floor access, and behind custom cabinetry that took a craftsman three months to install. Category 2 contamination from creek tributary water escalates to Category 3 within 48 hours if extraction and antimicrobial treatment don't begin immediately — turning a restorable situation into a demolition project. Every hour of delay compounds damage exponentially across materials that cannot be replaced with off-the-shelf alternatives.`
     ],
-    localContext: "McLean's topography creates unique flood risks. Properties near creek tributaries, low-lying sections of Salona Village, and homes along natural drainage paths face higher flooding probability during severe storms."
+    localContext: "McLean sits within the Potomac tributary watershed, with Pimmit Run, Dead Run, and Scott Run creeks threading through Langley, Chesterbrook, and El Nido neighborhoods. Estate-scale basements ranging from 3,000 to 5,000 finished square feet and high-value contents define the unique flood restoration challenge here."
   },
 
   processSection: {
-    headline: "Our McLean Flood Cleanup Process",
+    headline: "McLean Estate Flood Cleanup Protocol",
     steps: [
       {
         number: 1,
-        title: "Emergency Storm Response",
-        description: "When storms hit McLean, we dispatch multiple crews simultaneously. Your Chesterbrook colonial isn't waiting while we finish in Tysons—we have capacity for McLean's concentrated emergency needs. Call (703) 656-0101 and we're moving within minutes.",
+        title: "Estate-Scale Emergency Dispatch",
+        description: "Our crews stage along Route 123 and the George Washington Parkway corridor during storm warnings, positioning truck-mounted extraction units within minutes of McLean's estate neighborhoods. Each dispatch includes not just water removal equipment but contents protection supplies — acid-free tissue, moving blankets, moisture-barrier wrap, and plastic crating materials. When your Langley property calls (703) 656-0101 during a Pimmit Run flood event, the truck arriving at your door carries everything needed to simultaneously extract water and protect the irreplaceable items in its path.",
         timeframe: "30-minute response"
       },
       {
         number: 2,
-        title: "Safety Assessment & Power Coordination",
-        description: "Flood water and electricity don't mix. We assess electrical hazards, coordinate with Dominion Energy if needed, and ensure safe working conditions before extraction begins. In McLean estates with complex electrical systems, this assessment prevents secondary disasters.",
-        timeframe: "First 30 minutes"
+        title: "Multi-Zone Moisture Mapping",
+        description: "A McLean estate basement is not one room — it is four or five distinct environments with different materials, different moisture tolerances, and different drying targets. We map each zone independently using FLIR thermal imaging and both pin-type and pinless moisture meters. The home theater with acoustic wall panels and carpet reads differently than the wine cellar with stone walls and sealed concrete. The guest suite's hand-scraped hardwood has different saturation thresholds than the exercise studio's rubber flooring over concrete. Each zone receives its own moisture baseline, documented with readings at wall, floor, and ceiling levels, creating the map that drives every subsequent decision.",
+        timeframe: "First 60 minutes"
       },
       {
         number: 3,
-        title: "High-Volume Water Extraction",
-        description: "Storm flooding often deposits thousands of gallons in McLean basements. Our truck-mounted extraction systems remove water faster than portable pumps—essential when your Langley estate's lower level holds standing water across 3,000 square feet.",
-        timeframe: "Hours 1-4"
+        title: "Contents Triage and Pack-Out",
+        description: "In McLean, contents protection often takes priority alongside extraction — not after it. Our crew splits into extraction and contents teams working simultaneously. Every item is photographed in place, cataloged with barcode tracking, condition-assessed, and wrapped with material-appropriate protection before being moved to climate-controlled storage. Framed artwork gets acid-free interleaving and flat transport. Wine bottles are inventoried by label and vintage, packed upright in temperature-stable containers. Electronics are documented by serial number. Antique furniture receives padded wrapping and moisture-barrier sheeting. This pack-out documentation feeds directly into insurance contents claims, and in McLean, the contents claim frequently exceeds the structure restoration cost.",
+        timeframe: "Hours 1-4, concurrent with extraction"
       },
       {
         number: 4,
-        title: "Debris & Sediment Removal",
-        description: "Storm water carries McLean's clay soil, leaves, and debris into your home. We remove visible sediment, extract contaminated carpet padding, and prepare surfaces for decontamination. This step prevents the long-term damage that settling sediment causes.",
-        timeframe: "Hours 2-6"
+        title: "Material-Specific Extraction Protocols",
+        description: "Different flooring materials demand fundamentally different extraction approaches, and McLean homes often have three or four types across a single lower level. Hand-scraped hardwood requires weighted extraction — you cannot walk heavy equipment across boards that are already cupping without causing irreversible crowning damage. We use low-profile weighted extractors that press water upward out of wood grain without mechanical stress. Stone floors with grouted joints need grout-line suction because contaminated water trapped in porous grout becomes a long-term odor and bacteria source even after the stone surface appears dry. Carpet zones receive standard wand extraction followed by pad removal. Rubber gym flooring lifts for extraction of trapped water beneath. Each material zone gets the protocol its composition requires.",
+        timeframe: "Hours 1-6"
       },
       {
         number: 5,
-        title: "Antimicrobial Treatment",
-        description: "Flood water is Category 2 or Category 3—contaminated with soil bacteria, sewage overflow, and organic matter. We apply EPA-registered antimicrobials to all affected surfaces, eliminating health hazards that untreated flood damage creates.",
-        timeframe: "Hours 4-8"
+        title: "Zoned Dehumidification Strategy",
+        description: "A wine cellar and a home theater cannot dry under the same dehumidification protocol. The cellar requires desiccant dehumidifiers running a slow, controlled humidity reduction — crashing the relative humidity with aggressive LGR units damages cork integrity and separates wine labels, destroying collection value. We target a gradual step-down over days, not hours. The theater, by contrast, gets aggressive LGR dehumidification with high-velocity air movement to strip moisture from acoustic panels and carpet before mold colonization begins at the 48-hour mark. The guest suite follows standard residential protocol. Each zone operates as an independent drying chamber with its own equipment, its own monitoring schedule, and its own target metrics. Containment barriers separate zones when Category 3 contamination in one area threatens clean zones adjacent to it.",
+        timeframe: "Days 1-7, monitored daily per zone"
       },
       {
         number: 6,
-        title: "Structural Drying & Monitoring",
-        description: "Flood-saturated materials require aggressive drying. We deploy industrial dehumidifiers and air movers scaled for McLean's larger homes, monitor moisture levels daily, and document progress for your insurance claim.",
-        timeframe: "Days 2-7"
+        title: "Drying Verification and Contents Return",
+        description: "Each zone must independently meet IICRC S500 dry standard before clearance — no averaging across zones, no assumptions. Pin meter readings at multiple depths confirm wood moisture content has returned to equilibrium with ambient conditions. Thermal imaging verifies no residual moisture pockets behind walls or under flooring. Relative humidity in the wine cellar must stabilize within its operational range before bottles return. Only after every zone passes verification do we coordinate contents return, placing items on confirmed-dry surfaces with protective pads beneath furniture legs and monitoring for 48 hours post-return to catch any residual moisture migration.",
+        timeframe: "Day 5-10"
       }
     ]
   },
 
   floodTypes: {
-    headline: "Types of Flooding We Handle in McLean",
+    headline: "Flood Types Affecting McLean Properties",
     types: [
       {
-        name: "Flash Flood Cleanup",
-        description: "Summer thunderstorms drop inches of rain in hours, overwhelming McLean's storm drainage. Flash floods breach window wells, flow through basement doors, and deposit contaminated water throughout lower levels. We respond during active storms when safe.",
-        commonAreas: ["Balls Hill", "El Nido", "properties near Potomac tributaries"]
+        name: "Potomac Tributary Overbank Flooding",
+        description: "Pimmit Run, Dead Run, and Scott Run creeks wind through McLean's most established neighborhoods, normally running as modest streams. During intense storms dropping two or more inches per hour, these tributaries overtop their banks and send actual creek water — carrying streambed sediment, organic debris, and upstream contaminants — directly into walk-out lower levels in Langley, Chesterbrook, and El Nido. This is not seepage or groundwater rise. It is surface water entering through doors and windows at grade level, depositing inches of turbid water across finished spaces within minutes.",
+        commonAreas: ["Langley", "Chesterbrook", "El Nido", "properties along Pimmit Run and Dead Run"]
       },
       {
-        name: "Storm Surge Flooding",
-        description: "Extended rain events saturate McLean's clay soil, raise water tables, and create hydrostatic pressure against foundations. Even well-sealed basements can take on water when ground saturation exceeds design limits.",
-        commonAreas: ["Salona Village", "McLean Hamlet", "low-lying Chesterbrook sections"]
+        name: "Hydrostatic Pressure Foundation Intrusion",
+        description: "McLean's clay-heavy soil becomes saturated during extended rain events, building hydrostatic pressure against poured and stone foundations. Water appears at floor-wall joints, weeps through hairline foundation cracks, and seeps around pipe penetrations and utility conduits. There is no dramatic breach — just persistent, distributed seepage across the entire below-grade perimeter. A 4,000-square-foot basement can accumulate an inch of standing water in 24 hours through this mechanism alone, saturating hardwood edges, wicking into drywall, and reaching behind built-in cabinetry before the homeowner notices.",
+        commonAreas: ["Salona Village", "McLean Hamlet", "Balls Hill", "Woodside Estates"]
       },
       {
-        name: "Sump Pump Overwhelm",
-        description: "McLean sump pumps work constantly during storms. When rainfall exceeds pump capacity—or power fails—water rises rapidly. We've seen finished basements in The Reserve flood within hours of pump failure during heavy storms.",
-        commonAreas: ["The Reserve", "Woodside Estates", "older Langley properties"]
+        name: "Walk-Out Basement Door Ingress",
+        description: "McLean's hillside estates feature walk-out lower levels where grade-level French doors and sliding glass doors open onto stone patios. During intense storms, sheet flow across patios overwhelms door thresholds designed for normal drainage, sending water across the sill and into finished spaces. The volume can be substantial — patios act as collection surfaces, concentrating rainfall from the surrounding grade change. Homes with decorative patio drainage channels designed for aesthetics rather than storm capacity are most vulnerable.",
+        commonAreas: ["Langley hillside estates", "The Reserve", "Evermay", "Clearspring Manor"]
       },
       {
-        name: "Window Well Flooding",
-        description: "Improperly drained window wells become collection points during heavy rain. Water breaches basement windows, flooding finished spaces below grade. This is especially common in McLean's hillside properties.",
-        commonAreas: ["Georgetown Pike hillside homes", "Evermay", "Clearspring Manor"]
+        name: "Cascading Multi-Level Flooding",
+        description: "In McLean's multi-level estates, water entering at walk-out grade flows through interior stairwells, elevator shafts, and utility chases to reach deeper basement zones below the walk-out level. The home theater and wine cellar — often situated below even the walk-out floor for temperature stability and acoustic isolation — receive secondary flooding from the level above. This cascading pattern means zones that have no direct exterior exposure still flood, often with water that has already picked up contaminants from the first level it crossed.",
+        commonAreas: ["Multi-level Langley estates", "Chesterbrook colonials with tiered lower levels", "custom-built properties with sub-walk-out rooms"]
       },
       {
-        name: "Combined Sewer Overflow",
-        description: "During extreme storms, Fairfax County's combined sewers can back up, sending contaminated water into basements through floor drains. This Category 3 situation requires specialized biohazard cleanup protocols.",
-        commonAreas: ["Older McLean infrastructure areas", "Pimmit Hills"]
+        name: "Landscape Feature Failure Flooding",
+        description: "McLean estates invest heavily in hardscape and landscape design — retaining walls, decorative drainage channels, terraced gardens, stone-lined swales. These features are engineered for visual appeal and standard rainfall, not for the concentrated runoff that accompanies severe storms. When retaining walls saturate and weep, when decorative channels overflow, when terraced plantings direct sheet flow toward rather than away from foundations, the landscaping itself becomes the flood delivery mechanism. Upstream development in McLean's infill areas has increased impervious surface, sending more runoff volume through properties designed for pre-development drainage patterns.",
+        commonAreas: ["Georgetown Pike hillside properties", "Langley Farms", "Ingleside", "properties with significant hardscape investment"]
       }
     ]
   },
 
   contaminationSection: {
-    headline: "Understanding Flood Water Contamination",
+    headline: "Flood Water Contamination in McLean Properties",
     categories: [
       {
         category: "Category 2 (Gray Water)",
-        description: "Contains significant contamination from soil, organic matter, and minor sewage. Most McLean storm flooding falls into this category. Requires antimicrobial treatment and may require removal of porous materials like carpet padding.",
-        protocol: "Extraction, antimicrobial application, aggressive drying, possible material removal"
+        description: "Creek tributary water from Pimmit Run or Dead Run carries streambed sediment, dissolved organic matter, lawn treatment chemicals washed from estate grounds, and soil bacteria. This water deposits fine alluvial silt that embeds in hardwood grain, fills stone grout lines, and coats surfaces with a film that looks clean after drying but harbors bacterial colonies. Material-specific decontamination is essential — the antimicrobial protocol for Italian marble differs fundamentally from the treatment for engineered hardwood or acoustic fabric panels. Grout in stone floors absorbs contamination below the surface, requiring extraction and treatment at depth, not just surface wiping.",
+        protocol: "Material-specific extraction, grout-line decontamination, targeted antimicrobial application by surface type, aggressive monitored drying"
       },
       {
         category: "Category 3 (Black Water)",
-        description: "Contains serious pathogens from sewage backup, flood water mixed with septic overflow, or standing water exceeding 48 hours. Requires full PPE, biohazard protocols, and disposal of contaminated materials.",
-        protocol: "PPE-protected extraction, biohazard disposal, antimicrobial treatment, structural drying, air quality testing"
+        description: "Any flood water standing longer than 48 hours automatically escalates to Category 3 regardless of its original source, and any sewage-mixed water is Category 3 from contact. In McLean wine cellars and interior rooms with limited ventilation, bacterial proliferation accelerates faster than in open-plan spaces — warm, still, humid conditions are ideal growth environments. Porous materials that have absorbed Category 3 water become biohazard waste requiring disposal: acoustic panels, carpet and padding, upholstered furniture, paper-backed drywall, and any fabric or cellulose material that cannot be surface-decontaminated. Containment barriers isolate Category 3 zones from adjacent clean spaces to prevent cross-contamination through shared air or water migration.",
+        protocol: "Full PPE crew, containment barriers, biohazard material disposal, structural decontamination with EPA-registered antimicrobials, HEPA air scrubbing, post-treatment clearance testing"
       }
     ],
-    localNote: "McLean properties on private septic systems face higher Category 3 risk during flooding. Saturated soil can cause septic backflow, contaminating flood water that would otherwise be Category 2."
+    localNote: "Properties near Great Falls and along McLean's western edge often rely on private septic systems rather than municipal sewer. During heavy rainfall and soil saturation, septic systems can backflow through floor drains, instantly converting what might have been Category 2 storm water intrusion into a full Category 3 biohazard event requiring the most aggressive decontamination protocols."
   },
 
   equipmentSection: {
-    headline: "Flood Cleanup Equipment for McLean Properties",
+    headline: "Specialized Equipment for McLean Estate Flood Cleanup",
     equipment: [
       {
-        name: "Submersible Flood Pumps",
-        purpose: "Remove standing water from flooded basements, handling debris that would clog standard pumps"
+        name: "Truck-Mounted Extraction with Soft-Surface Attachments",
+        purpose: "High-volume water removal using weighted extractors for hardwood floors that prevent mechanical damage to cupping boards, low-pressure wands for natural stone surfaces, and standard extraction heads for carpet zones — switching tools as the crew moves between material types across the lower level"
       },
       {
-        name: "Truck-Mounted Extraction",
-        purpose: "High-volume water removal essential for McLean's larger finished basements"
+        name: "FLIR Thermal Imaging Cameras",
+        purpose: "Mapping moisture presence behind plaster walls, beneath stone flooring, inside HVAC chases, and around radiant heat tubing without destructive investigation — identifying hidden saturation that pin meters alone cannot detect through finished surfaces"
       },
       {
-        name: "Industrial Air Scrubbers",
-        purpose: "Remove airborne contaminants, mold spores, and flood-related particulates"
+        name: "Desiccant Dehumidification Units",
+        purpose: "Controlled, gradual humidity reduction for wine cellars and climate-sensitive spaces where aggressive moisture removal would damage cork integrity, separate wine labels, warp wooden racks, or shock humidity-sensitive contents like rare books and artwork"
       },
       {
-        name: "Low-Grain Dehumidifiers",
-        purpose: "Extract moisture even in humid post-storm conditions"
+        name: "LGR (Low-Grain Refrigerant) Dehumidifiers",
+        purpose: "Aggressive moisture extraction for theaters, guest suites, exercise studios, and open-plan spaces where rapid drying to IICRC standards prevents mold colonization on acoustic materials, carpet, and drywall within the critical 48-hour window"
       },
       {
-        name: "Antimicrobial Sprayers",
-        purpose: "Apply EPA-registered treatments to contaminated surfaces"
+        name: "Injectidry Wall Drying Systems",
+        purpose: "Forced-air panel systems that dry behind custom millwork, built-in cabinetry, and wainscoting without requiring demolition — preserving irreplaceable finish carpentry by accessing wall cavities through small ports concealed behind trim pieces"
       },
       {
-        name: "Moisture Detection Equipment",
-        purpose: "Identify hidden moisture in walls, floors, and cavities after flood events"
+        name: "Digital Content Inventory and Pack-Out System",
+        purpose: "Barcode-tagged inventory tracking with photographic documentation of every packed item, condition assessment at time of removal, chain-of-custody logging during climate-controlled transport and storage, and insurance-ready reporting that satisfies both structure and contents claim requirements"
       }
     ],
-    localNote: "Our McLean crews carry extra submersible pumps and extraction equipment during storm season. When multiple properties flood simultaneously, we have capacity to respond to your Langley or Chesterbrook emergency without delays."
+    localNote: "McLean estate flood response requires substantially more equipment per job than standard residential work. A typical deployment to a Langley property with a 4,000-square-foot finished lower level involves two to three times the dehumidification capacity, multiple extraction tool configurations, and a dedicated contents crew working alongside the water mitigation team."
   },
 
   pricingSection: {
     headline: "Flood Cleanup Costs in McLean",
-    intro: "Flood cleanup costs depend on water volume, contamination category, affected materials, and property size. McLean's finished basements—with wine cellars, home theaters, and custom materials—require more complex restoration than unfinished spaces. Most flood damage is covered by homeowner's insurance; we handle direct billing.",
+    intro: "Flood cleanup pricing for McLean estates reflects the scale and complexity that distinguishes these properties from standard residential work. A finished lower level spanning 3,000 to 5,000 square feet with multiple material types, custom finishes, and high-value contents requires more equipment, more specialized labor, and longer monitored drying than a typical basement. Contents pack-out and climate-controlled storage — standard protocol for McLean properties — adds a cost layer that does not exist in most residential flood jobs. In our experience working McLean properties, the contents insurance claim frequently matches or exceeds the structure restoration claim, making thorough inventory documentation as important as the physical cleanup.",
     factors: [
-      "Square footage affected—McLean basements often exceed 2,000 finished square feet",
-      "Contamination category—Category 3 requires biohazard protocols and material disposal",
-      "Water depth and duration—deeper flooding and longer standing time increase damage",
-      "Material types—custom millwork, hardwood, and specialty finishes affect approach",
-      "Content cleaning—furniture, electronics, and belongings may require restoration"
+      "Total finished square footage across all affected zones — multi-room estates require independent drying equipment per zone, multiplying equipment deployment",
+      "Contents pack-out scope — volume of art, wine, electronics, antiques, and furnishings requiring professional handling, inventory, and climate-controlled storage",
+      "Material complexity — hand-scraped hardwood, imported stone, radiant-heat-embedded tile, acoustic panels, and custom carpet each require different extraction and drying protocols",
+      "Multi-zone drying duration — wine cellars on controlled slow-dry protocols extend project timelines beyond what standard spaces require",
+      "Fine arts and specialty documentation — conservation-grade assessment, detailed condition reporting, and coordination with art conservators for damaged pieces",
+      "Contamination category — Category 3 biohazard protocols require containment barriers, PPE crews, material disposal, and clearance testing that substantially increase scope"
     ],
-    cta: "Call (703) 656-0101 for emergency response and free assessment. We'll evaluate damage, explain contamination categories, and provide detailed estimates."
+    cta: "Call (703) 656-0101 for immediate emergency response and a detailed damage assessment. We evaluate every zone independently, document material-specific damage, and provide transparent estimates that account for both structure and contents restoration."
   },
 
   serviceAreaSection: {
@@ -177,33 +175,33 @@ Our IICRC-certified crews understand McLean's flood patterns: the low-lying area
       "Langley Farms",
       "Pimmit Hills"
     ],
-    responseTime: "30-minute emergency response during storms. We pre-position crews throughout McLean when severe weather approaches, ensuring rapid response to Langley, Chesterbrook, and The Reserve."
+    responseTime: "30-minute emergency response during active storms. We pre-position extraction and contents protection crews along the Route 123 and GW Parkway corridor when severe weather threatens Fairfax County, ensuring Langley, Chesterbrook, and The Reserve properties receive rapid deployment without cross-town transit delays."
   },
 
   faqSection: [
     {
-      question: "Should I wait until the storm passes to call for flood cleanup?",
-      answer: "Call immediately, even during the storm. We dispatch when it's safe to travel—often before rain fully stops. Earlier calls mean earlier response times. Standing flood water continues damaging your McLean home every hour it remains. Our crews know McLean's roads and can reach Langley, Chesterbrook, and The Reserve as soon as conditions allow."
+      question: "Can you save my hardwood floors after flooding?",
+      answer: "Hardwood salvageability depends on saturation depth, water contact duration, and how quickly extraction begins. When we arrive within hours and perform weighted extraction — pulling water upward out of the wood grain without mechanical pressure that worsens cupping — most hardwood floors can be saved. Cupping is reversible with controlled drying if caught before the wood fibers permanently deform. Once boards begin crowning — arching upward at center — the wood has passed its recovery threshold and sections require replacement. Hand-scraped and character-grade hardwood complicates replacement because matching the original finish profile is difficult. Early extraction is the single most important factor in hardwood floor survival."
     },
     {
-      question: "Is flood water from a storm contaminated?",
-      answer: "Almost always yes. Storm water picks up soil bacteria, lawn chemicals, animal waste, and debris as it flows. If it mixed with sewage backup—common during heavy storms—it's Category 3 biohazard. We assess contamination level and apply appropriate protocols. Don't wade through flood water without protection."
+      question: "How do you protect my wine collection during flood cleanup?",
+      answer: "Wine receives immediate pack-out to temperature-controlled storage at the start of the cleanup, not after extraction finishes. Bottles are inventoried by label, vintage, and rack position, then packed upright in insulated transport containers to maintain temperature stability during the move. The cellar itself dries on a controlled protocol using desiccant dehumidifiers — we deliberately avoid the aggressive LGR dehumidification used in other rooms because rapid humidity drops compromise cork seals and cause label separation. Wooden racks are evaluated for moisture absorption and treated in place when salvageable. Bottles return only after the cellar environment stabilizes within its operational humidity and temperature range."
     },
     {
-      question: "Will my insurance cover flood damage from a storm?",
-      answer: "Standard homeowner's insurance typically covers storm damage, including water intrusion from overwhelmed drainage, window well flooding, and sump pump failure. Separate flood insurance is needed for rising water events. We document everything for your claim and work directly with adjusters."
+      question: "Will flood cleanup damage my custom built-ins and millwork?",
+      answer: "We use Injectidry wall drying systems specifically to avoid removing custom cabinetry and millwork whenever possible. These panel systems introduce warm, dry air behind the built-ins through small access ports concealed behind trim pieces, drying the wall cavity and the back face of the cabinetry without pulling units off the wall. Before any situation where selective demolition becomes unavoidable — when saturation has reached levels that cannot be dried in place — we photograph, measure, and document every detail of the millwork to support exact replication. In most cases where we arrive within the first 24 hours, Injectidry treatment preserves the original installations."
     },
     {
-      question: "How long does flood cleanup take in a McLean home?",
-      answer: "Initial water extraction takes hours; complete drying takes 5-10 days depending on affected area and materials. McLean's finished basements with custom millwork require careful, monitored drying. Rushing creates mold problems later. We provide daily updates and realistic timelines."
+      question: "How do you handle art and antiques after a flood?",
+      answer: "Every piece receives in-place photographic documentation before anything moves, establishing pre-pack-out condition for insurance purposes. Items are then assessed by material type: framed works get acid-free interleaving and flat transport, sculptures and dimensional pieces receive padded cradle packing, textiles are rolled on acid-free tubes, and furniture is wrapped with moisture-barrier sheeting before moving to climate-controlled storage. For pieces that sustained direct water contact, we coordinate with professional art conservators and furniture restorers — our role is safe extraction and documentation, not conservation treatment. The insurance contents claim documentation we generate during pack-out typically satisfies both standard homeowner's policy and scheduled personal property rider requirements."
     },
     {
-      question: "Can my furniture and belongings be saved after flooding?",
-      answer: "Many items can be cleaned and restored. We assess each item, separate salvageable from unsalvageable, and provide content cleaning services. Porous materials that absorbed contaminated water—like upholstered furniture in Category 3 flooding—typically require disposal for health reasons."
+      question: "Why did my walk-out basement flood when it never has before?",
+      answer: "Several factors converge over time to create first-time flooding in properties that have been dry for decades. Landscape settling gradually redirects surface drainage toward foundations. Decorative hardscape channels designed for moderate rainfall overflow during intense storms. Retaining walls develop internal drainage failures that are invisible from the surface. Most significantly, infill development upstream increases impervious surface area — new driveways, patios, and rooftops that shed water rather than absorbing it — sending substantially more runoff volume through drainage paths your property was designed to handle under pre-development conditions. A storm that your property easily managed ten years ago now delivers twice the water volume to your walk-out level."
     },
     {
-      question: "What about my wine cellar after flooding?",
-      answer: "Wine cellars are a specialty for McLean flood cleanup. We protect your collection during extraction, maintain temperature stability when possible, and use controlled drying that won't shock your wines. Bottles themselves typically survive flooding—it's the cellar environment we restore."
+      question: "Does my homeowner's insurance cover creek flooding in McLean?",
+      answer: "Standard homeowner's insurance policies exclude rising water and overbank flooding — the exact scenario that Pimmit Run, Dead Run, and Scott Run produce when they crest during heavy storms. Coverage for creek-source flooding requires a separate flood insurance policy, either through the National Flood Insurance Program or a private-market flood carrier. Many McLean homeowners carry both a standard policy and a flood policy without realizing which covers what. We document all flood damage in a format that satisfies both claim pathways simultaneously: structure damage documentation for whichever policy applies, and separate contents documentation for scheduled personal property riders and fine arts endorsements. Our documentation has supported successful claims under standard, flood, and excess liability policies."
     }
   ],
 
@@ -217,7 +215,7 @@ Our IICRC-certified crews understand McLean's flood patterns: the low-lying area
 
   finalCTA: {
     headline: "Flood Emergency in McLean?",
-    paragraph: "Don't wait for the storm to pass. Our crews are positioned throughout McLean and ready to respond the moment conditions allow. One call starts the extraction process that protects your home from escalating damage.",
+    paragraph: "When creek water is pouring through your walk-out doors and your finished lower level is taking water across every zone, the response that arrives needs to handle extraction, contents protection, and contamination control simultaneously — not sequentially. Our estate-scale crews carry the equipment, the materials expertise, and the contents handling protocols that McLean properties require. One call deploys the full operation.",
     phone: "(703) 656-0101",
     buttonText: "Call Now for Emergency Flood Cleanup"
   }
