@@ -12,3 +12,6 @@
 | 2026-02-17 | 4 content formats detected (A/B/C/D) — scoring adapts per format | Different cities use different TS structures; parsers must handle all 4 to avoid false negatives | Claude | Y |
 | 2026-02-17 | Content strength uses 6 weighted dimensions (15/25/20/20/10/10) | Matches PLAN-005 rubric: word count, topical depth, E-E-A-T, local specificity, semantic coverage, originality | Human + Claude | Y |
 | 2026-02-17 | Calibration validated: McLean water-damage=98, Vienna flood-cleanup=39 | Strong anchor scores 80+ as expected; thin anchor scores <40 as expected | Claude | Y |
+| 2026-02-17 | Convert Vienna Format B → Format A (not just content patch) | Format B lacked processSection, localChallenges, equipmentSection, pricingSection, serviceAreaSection — structurally unable to score well. Converting to Format A also fixes ServicePageRenderer rendering (was getting undefined for all sections via `as unknown` cast) | Claude | Y |
+| 2026-02-17 | Pilot remediation scoped to Vienna only (5 pages) | Plan listed /emergency-water-removal but that's Arlington; strict "Vienna only" boundary respected per EXEC-005 | Human + Claude | Y |
+| 2026-02-17 | Vienna content enriched with neighborhoods, equipment brands, pricing factors | Local specificity was weakest dimension (46 pages); Vienna pilot proves Format A with rich local content scores 96-100 | Claude | Y |

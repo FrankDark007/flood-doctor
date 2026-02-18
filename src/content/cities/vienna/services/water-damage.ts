@@ -1,527 +1,351 @@
-import { ServicePageContent } from '../../../../types/content';
+/**
+ * Vienna, VA — Water Damage Restoration (Flagship Service Page)
+ * Format A: ServicePageContent interface for ServicePageRenderer
+ */
+
+export interface ServicePageContent {
+  meta: { title: string; description: string; canonical: string };
+  h1: string;
+  introSection: { headline: string; paragraphs: string[]; localContext: string };
+  processSection: {
+    headline: string;
+    steps: Array<{
+      number: number;
+      title: string;
+      description: string;
+      timeframe: string;
+    }>;
+  };
+  localChallenges: {
+    headline: string;
+    challenges: Array<{
+      title: string;
+      description: string;
+      solution: string;
+    }>;
+  };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{ name: string; purpose: string; brand?: string }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
+  faqSection: Array<{ question: string; answer: string }>;
+  relatedServices: string[];
+  finalCTA: {
+    headline: string;
+    paragraph: string;
+    phone: string;
+    buttonText: string;
+  };
+}
 
 export const viennaWaterDamage: ServicePageContent = {
-  city: 'Vienna',
-  state: 'VA',
-  serviceType: 'water-damage',
-
-  hero: {
-    title: '24/7 Emergency Water Damage Restoration Vienna, VA',
-    subtitle: 'Expert Restoration for Historic Colonials & Luxury New Construction',
-    description: '24/7 emergency water damage restoration serving Vienna Town, Oakton, Dunn Loring, and Wolf Trap. Certified technicians protecting Vienna\'s charming homes since 2005.',
-    primaryCTA: 'Get Emergency Help',
-    primaryCTALink: 'tel:7036560105',
-    secondaryCTA: 'Learn About Our Process',
-    secondaryCTALink: '#process',
-    backgroundImage: '/images/services/vienna-water-damage.jpg',
-    backgroundAlt: 'Vienna Virginia water damage restoration service'
+  meta: {
+    title: 'Water Damage in Vienna, VA | Flood Doctor',
+    description:
+      'Professional water damage restoration in Vienna, VA. 24/7 emergency response with 45-minute arrival. IICRC-certified technicians specializing in historic colonials, luxury estates, and townhomes. Call (703) 656-0105.',
+    canonical: 'https://vienna.flood.doctor/water-damage',
   },
 
-  intro: {
-    heading: 'Vienna\'s Trusted Water Damage Restoration Experts',
+  h1: 'Water Damage Restoration in Vienna, Virginia',
+
+  introSection: {
+    headline: "Vienna's Trusted Water Damage Restoration Experts",
     paragraphs: [
-      'Vienna\'s distinctive blend of charming 1950s-70s colonials and modern luxury estates requires specialized water damage restoration expertise. From the historic homes lining Church Street in Vienna Town to contemporary new construction in Oakton, our certified technicians understand the unique challenges facing Vienna properties when water damage strikes.',
-      'Whether you\'re dealing with a burst pipe in an older Clarks Crossing colonial, basement flooding in a Dunn Loring townhome, or storm damage near Wolf Trap, our rapid response team delivers comprehensive restoration solutions tailored to your home\'s specific construction type and architectural character.',
-      'With average response times of 45 minutes throughout Vienna and 24/7 emergency availability, we combine advanced restoration technology with deep knowledge of Vienna\'s diverse housing stock to protect your investment and restore your peace of mind.'
-    ]
+      "Vienna's distinctive blend of charming 1950s-70s colonials along Church Street, modern luxury estates in Oakton, and townhome communities in Dunn Loring demands specialized water damage restoration expertise that generic restoration companies simply cannot provide. When water invades your Vienna home — whether from a burst galvanized pipe hidden behind plaster walls, foundation seepage driven by Northern Virginia's heavy clay soil, or a flash flood event near Difficult Run Creek — you need a restoration partner who understands the unique construction methods, materials, and architectural character that define this community.",
+      "Flood Doctor has served Vienna homeowners for nearly two decades, building an unmatched understanding of the water damage risks specific to this area. We know that the beautiful original oak hardwood floors in a 1960s Vienna Town colonial require a fundamentally different drying approach than the engineered hardwood in a newly built Oakton estate. We understand that plaster walls crack and delaminate under aggressive drying techniques, and that period trim in a mid-century home cannot simply be replaced with modern stock molding from a home center.",
+      "Our IICRC-certified technicians combine advanced restoration technology — thermal imaging, psychrometric monitoring, specialized wall cavity drying systems — with the hands-on craftsmanship required to preserve your home's character. Every restoration plan we develop is custom-tailored to your property's age, construction type, and the specific nature of the water intrusion, ensuring we protect both the structure and the details that make your Vienna home uniquely yours.",
+      "From the moment you call our 24/7 emergency line, our Vienna-based response team mobilizes immediately. With average arrival times of 45 minutes to any neighborhood in the community, we begin mitigating damage fast — because in water damage restoration, every hour of delay translates to exponentially greater destruction, higher costs, and increased risk of secondary mold contamination.",
+    ],
+    localContext:
+      "Vienna sits at the confluence of several water damage risk factors: aging housing stock with original plumbing, heavy Piedmont clay soil that shifts and cracks foundations, mature tree canopies whose roots infiltrate sewer lines, and proximity to Difficult Run and Wolf Trap Creek flood zones. These factors combine to make water damage the single most common property emergency in the community, affecting hundreds of Vienna homes annually.",
   },
 
-  services: {
-    heading: 'Comprehensive Water Damage Services for Vienna Homes',
-    description: 'Complete restoration solutions addressing every type of water damage affecting Vienna properties.',
-    servicesList: [
+  processSection: {
+    headline: 'Our Vienna Water Damage Restoration Process',
+    steps: [
       {
-        title: 'Emergency Water Extraction',
-        description: 'Rapid water removal using industrial-grade extraction equipment. We remove standing water from flooded basements in Vienna colonials, burst pipe incidents in luxury Oakton homes, and storm damage throughout the community—minimizing damage and beginning the restoration process immediately.',
-        features: [
-          'Truck-mounted extraction systems for maximum water removal',
-          'Portable extractors for upstairs water damage',
-          'Hardwood floor protection during extraction',
-          'Carpet water removal and pad assessment',
-          'Subfloor moisture extraction when needed',
-          'Complete basement water removal',
-          'Continuous extraction during active water events'
-        ],
-        icon: 'water-extraction'
+        number: 1,
+        title: 'Emergency Contact & Rapid Vienna Dispatch',
+        description:
+          "Call (703) 656-0105 any time — day, night, weekends, or holidays. Our dispatch center immediately mobilizes IICRC-certified technicians to your Vienna location. While our team is en route, our emergency coordinator walks you through critical first steps: shutting off the water source if accessible, moving valuables to dry areas, and avoiding electrical hazards. We maintain dedicated response crews positioned throughout Northern Virginia to guarantee rapid arrival to every Vienna neighborhood.",
+        timeframe: '0–15 minutes',
       },
       {
-        title: 'Structural Drying & Dehumidification',
-        description: 'Advanced drying systems tailored to Vienna\'s varied construction types. We ensure complete structural drying in plaster walls common to older homes, modern drywall systems, hardwood floors, and finished basements using thermal imaging and continuous moisture monitoring.',
-        features: [
-          'High-velocity air movers positioned strategically',
-          'Commercial dehumidification removing moisture from air',
-          'Thermal imaging identifying hidden moisture',
-          'Moisture meters tracking drying progress',
-          'Wall cavity drying for older plaster construction',
-          'Hardwood floor drying preventing cupping and warping',
-          'Daily monitoring ensuring complete drying'
-        ],
-        icon: 'structural-drying'
+        number: 2,
+        title: 'Comprehensive Damage Assessment & Documentation',
+        description:
+          "Our lead technician conducts a thorough property inspection using FLIR thermal imaging cameras to detect hidden moisture behind walls and under floors, pin-type and pinless moisture meters to establish baseline readings in all affected materials, and a detailed visual assessment of structural and cosmetic damage. We identify the water source and contamination category (clean, gray, or black water), evaluate your home's specific construction — plaster vs. drywall, hardwood vs. carpet, finished vs. unfinished basement — and develop a restoration plan tailored to your property. Every finding is photographed and documented for your insurance claim.",
+        timeframe: '45–90 minutes',
       },
       {
-        title: 'Plaster Wall & Historic Home Restoration',
-        description: 'Specialized restoration for Vienna\'s historic colonials with plaster walls, vintage hardwoods, and period details. Our craftsmen understand traditional construction methods and use appropriate restoration techniques preserving your home\'s original character.',
-        features: [
-          'Plaster wall assessment and repair expertise',
-          'Historic hardwood floor restoration',
-          'Period trim and molding replacement matching',
-          'Traditional plaster repair techniques',
-          'Careful drying preventing plaster cracking',
-          'Preservation of architectural details',
-          'Character-appropriate materials and finishes'
-        ],
-        icon: 'historic-restoration'
+        number: 3,
+        title: 'Industrial Water Extraction',
+        description:
+          "Standing water is removed using Prochem truck-mounted extraction units capable of pulling hundreds of gallons per minute from flooded basements, combined with portable weighted extractors for carpeted areas and hard surfaces on upper floors. For Vienna's many homes with original hardwood floors, we use specialized low-pressure extraction heads that remove water without gouging or damaging the wood surface. Pad extraction, subfloor water removal, and continuous extraction during active water events are all part of this critical phase.",
+        timeframe: '2–8 hours',
       },
       {
-        title: 'Luxury Home Water Damage',
-        description: 'High-end restoration for Oakton\'s luxury new construction. We protect premium finishes, coordinate with builders and designers, and use advanced restoration methods appropriate for modern estates with sophisticated systems and expensive materials.',
-        features: [
-          'Premium finish protection and restoration',
-          'Custom millwork and cabinetry care',
-          'High-end flooring expertise (engineered hardwood, luxury vinyl)',
-          'Smart home system coordination',
-          'Builder and designer collaboration',
-          'Matching high-end materials exactly',
-          'White-glove service throughout restoration'
-        ],
-        icon: 'luxury-restoration'
+        number: 4,
+        title: 'Strategic Drying System Deployment',
+        description:
+          "This is where Vienna-specific expertise matters most. We deploy Dri-Eaz low-grain refrigerant dehumidifiers sized to the cubic footage of your affected space, position axial air movers to create calculated airflow patterns across wet surfaces, and install Injectidry wall drying panels behind plaster walls in older colonials — delivering warm, dry air directly into wall cavities without the aggressive open-air drying that causes plaster to crack. For hardwood floors showing early signs of cupping, we deploy floor mat drying systems that pull moisture upward through the wood grain. Every piece of equipment is placed according to psychrometric calculations, not guesswork.",
+        timeframe: '4–8 hours for setup',
       },
       {
-        title: 'Basement Water Damage',
-        description: 'Complete basement restoration addressing Vienna\'s common basement issues—foundation seepage in older homes, sump pump failures, finished basement flooding, and chronic moisture problems. We provide solutions that work long-term.',
-        features: [
-          'Foundation seepage source identification',
-          'Complete basement water extraction',
-          'Finished basement restoration (walls, flooring, ceiling)',
-          'Mold prevention in basement environments',
-          'Sump pump assessment and recommendations',
-          'Drainage improvement suggestions',
-          'Waterproofing coordination when needed'
-        ],
-        icon: 'basement-flooding'
+        number: 5,
+        title: 'Daily Monitoring, Adjustment & Progress Reporting',
+        description:
+          "A certified technician visits your Vienna home daily to take moisture readings in all affected materials, compare them against target dry standards, and adjust equipment placement and settings to optimize drying. We track ambient temperature, relative humidity, grain depression, and material moisture content at every visit, documenting the drying curve to demonstrate measurable progress. If any area is drying slower than projected, we investigate immediately — hidden moisture pockets, inadequate airflow, or unexpected construction barriers. You receive a progress update after every monitoring visit.",
+        timeframe: '3–5 days (typical Vienna home)',
       },
       {
-        title: 'Hardwood Floor Water Damage',
-        description: 'Expert hardwood floor restoration common throughout Vienna homes. From original oak floors in Vienna Town colonials to engineered hardwood in modern construction, we assess damage, perform specialized drying, and restore or replace flooring as needed.',
-        features: [
-          'Moisture content testing in hardwood',
-          'Specialized hardwood drying mats',
-          'Cupping and warping assessment',
-          'Floor refinishing coordination',
-          'Engineered hardwood restoration',
-          'Subfloor moisture remediation',
-          'Matching replacement flooring when necessary'
-        ],
-        icon: 'hardwood-restoration'
+        number: 6,
+        title: 'Antimicrobial Treatment & Odor Elimination',
+        description:
+          "Once structural drying reaches target levels, we apply EPA-registered antimicrobial treatments to all affected surfaces to eliminate bacteria and prevent mold colonization. Vaportek hydroxyl generators neutralize odors at the molecular level — safely, without ozone — addressing the musty smell that often lingers after water events in Vienna's older homes with limited ventilation. HEPA air scrubbers filter airborne particulates, and all ductwork in the affected zone is inspected and cleaned if contaminated.",
+        timeframe: '1–2 days',
       },
       {
-        title: 'Contents Pack-Out & Storage',
-        description: 'Professional contents handling protecting your belongings during restoration. We inventory, pack, transport to climate-controlled storage, clean, and return your possessions—providing peace of mind during the restoration process.',
-        features: [
-          'Complete room-by-room inventory',
-          'Careful packing and protection',
-          'Climate-controlled storage facility',
-          'Contents cleaning and deodorization',
-          'Electronics assessment and restoration',
-          'Document and photo drying services',
-          'Coordinated return when restoration completes'
-        ],
-        icon: 'contents-restoration'
+        number: 7,
+        title: 'Restoration, Reconstruction & Finish Matching',
+        description:
+          "Our construction crews restore your Vienna home to pre-loss condition — or better. For historic colonials, this means traditional plaster repair techniques, period-appropriate trim matching milled to your home's existing profiles, and hardwood floor refinishing that blends seamlessly with undamaged areas. For luxury Oakton estates, we coordinate with your original builder or designer to source matching materials and maintain the home's design intent. Every detail — from paint sheen to grout color to hardware finish — is matched precisely.",
+        timeframe: '5–14 days depending on scope',
       },
       {
-        title: 'Complete Reconstruction',
-        description: 'Full-service reconstruction restoring Vienna homes to pre-loss condition—or better. Our construction teams handle everything from replacing water-damaged drywall to complete bathroom rebuilds, matching your home\'s original character and quality.',
-        features: [
-          'Drywall removal and replacement',
-          'Plaster repair and restoration',
-          'Flooring installation (all types)',
-          'Trim and molding replacement',
-          'Paint and finishing',
-          'Kitchen and bathroom restoration',
-          'Matching historic home character or modern luxury'
-        ],
-        icon: 'reconstruction'
-      }
-    ]
+        number: 8,
+        title: 'Final Verification, Prevention Plan & Warranty',
+        description:
+          "A senior technician conducts a final inspection: moisture readings confirming every material has returned to normal levels, quality review of all reconstruction work, and a walkthrough with you to verify satisfaction. We provide a written prevention report identifying vulnerabilities specific to your property — recommendations for plumbing upgrades, drainage improvements, sump pump installation, or waterproofing that reduce your risk of future water damage. All work is backed by our restoration warranty.",
+        timeframe: '2–4 hours',
+      },
+    ],
   },
 
-  waterDamageTypes: {
-    heading: 'Common Water Damage Scenarios in Vienna Homes',
-    description: 'Vienna properties face specific water damage risks based on age, location, and construction type.',
-    types: [
+  localChallenges: {
+    headline: 'Water Damage Challenges Unique to Vienna Properties',
+    challenges: [
       {
-        title: 'Foundation Seepage in Older Colonials',
-        description: 'Vienna\'s 1950s-70s colonials frequently experience basement foundation seepage, particularly during heavy rain. Hydrostatic pressure forces water through aging foundation walls and floor cracks, creating chronic moisture issues.',
-        causes: [
-          'Aging foundation walls in 50-70 year old homes',
-          'Inadequate exterior drainage systems',
-          'High water table in certain Vienna areas',
-          'Deteriorated foundation waterproofing',
-          'Clogged or damaged footer drains',
-          'Poor grading directing water toward foundations'
-        ],
-        solutions: [
-          'Immediate water extraction and basement drying',
-          'Interior drainage system assessment',
-          'Sump pump evaluation and recommendations',
-          'Exterior drainage improvement suggestions',
-          'Foundation crack sealing coordination',
-          'Long-term waterproofing solutions'
-        ],
-        image: '/images/damage-types/foundation-seepage.jpg'
+        title: 'Heavy Clay Soil & Foundation Shifts',
+        description:
+          "Vienna sits on Piedmont clay soil that expands dramatically when saturated and contracts during dry periods. This seasonal cycle creates lateral pressure against foundation walls and causes hairline cracks that widen over time. During heavy rain events, hydrostatic pressure drives water through these cracks into basements and crawl spaces. Homes built in the 1950s through 1970s — the majority of Vienna's housing stock — have foundations that have endured 50 to 70 years of this relentless expansion-contraction cycle, making them particularly vulnerable to seepage.",
+        solution:
+          "We identify all active intrusion points using thermal imaging and moisture mapping, extract standing water, deploy targeted drying systems, and coordinate with foundation specialists for permanent crack injection and exterior waterproofing when needed. Our restoration addresses the damage while our prevention recommendations address the root cause.",
       },
       {
-        title: 'Hot Water Heater Failures',
-        description: 'Hot water heaters in Vienna\'s older homes often reach end of service life, failing catastrophically and flooding finished basements, utility rooms, and adjacent living spaces. Gallon-per-minute water flow causes extensive damage quickly.',
-        causes: [
-          'Aging water heaters (10-15+ years old)',
-          'Corroded tanks in older homes',
-          'Failed temperature/pressure relief valves',
-          'Sediment buildup accelerating tank failure',
-          'Supply line connection failures',
-          'Installation in finished basement spaces'
-        ],
-        solutions: [
-          'Rapid water extraction stopping continued flooding',
-          'Complete structural drying of affected areas',
-          'Finished basement restoration',
-          'Water heater replacement coordination',
-          'Preventive recommendations (drain pans, shutoff valves)',
-          'Insurance documentation for replacement costs'
-        ],
-        image: '/images/damage-types/water-heater-failure.jpg'
+        title: 'Mature Tree Root Sewer Line Infiltration',
+        description:
+          "Vienna's beautiful canopy of mature oaks, maples, and other hardwoods sends aggressive root systems seeking moisture — and aging clay or cast-iron sewer laterals are a prime target. Roots enter through pipe joints, creating blockages that cause sewage backups into basements and lower levels. These Category 3 (black water) events require the most aggressive restoration protocols and pose serious health risks if not addressed immediately and thoroughly.",
+        solution:
+          "Our certified technicians follow strict IICRC S500 protocols for Category 3 contamination: immediate extraction, removal of all porous materials contacted by sewage, antimicrobial treatment of structural surfaces, HEPA air filtration, and clearance testing before reconstruction. We coordinate with licensed plumbers for root removal and pipe repair or replacement to prevent recurrence.",
       },
       {
-        title: 'Burst Pipes in Historic Homes',
-        description: 'Original galvanized plumbing in Vienna\'s oldest homes corrodes over decades, leading to pinhole leaks and catastrophic pipe bursts. Winter freeze events also cause supply line failures throughout the community.',
-        causes: [
-          'Corroded galvanized plumbing (50+ years old)',
-          'Frozen pipes during cold snaps',
-          'Inadequate insulation in older homes',
-          'Supply line failures behind walls',
-          'Fixture connection failures',
-          'Aging shutoff valves preventing quick water stoppage'
-        ],
-        solutions: [
-          'Emergency water extraction throughout affected floors',
-          'Wall cavity drying preventing hidden mold growth',
-          'Plaster wall preservation techniques',
-          'Hardwood floor specialized drying',
-          'Complete restoration matching historic character',
-          'Plumbing upgrade recommendations'
-        ],
-        image: '/images/damage-types/burst-pipe.jpg'
+        title: 'High Water Table Near Difficult Run Creek',
+        description:
+          "Properties within the Difficult Run watershed — particularly in the Wolf Trap, Clarks Crossing, and parts of Vienna Town — sit above a seasonally high water table that rises during spring snowmelt and sustained rain events. When the water table reaches foundation footer level, water enters through floor-wall joints, floor cracks, and any path of least resistance. Sump pumps in these areas run frequently, and any pump failure during a storm creates rapid basement flooding.",
+        solution:
+          "We provide emergency water extraction and structural drying for flood events, then work with you to develop a long-term moisture management strategy: backup sump pump systems with battery or water-powered failover, interior drainage channels, vapor barrier installation, and commercial-grade dehumidification for finished basements in high water table zones.",
       },
       {
-        title: 'Storm Damage & Flash Flooding',
-        description: 'Vienna\'s proximity to Difficult Run and Wolf Trap Creek creates flash flood risks during heavy storms. Properties near these waterways face basement flooding, while severe weather causes roof leaks and exterior water intrusion.',
-        causes: [
-          'Flash flooding from Difficult Run and tributaries',
-          'Overwhelmed storm drainage systems',
-          'Sump pump failures during power outages',
-          'Roof damage from severe storms',
-          'Clogged gutters and downspouts',
-          'Poor lot grading in established neighborhoods'
-        ],
-        solutions: [
-          'Emergency storm damage response',
-          'Complete basement water extraction',
-          'Roof leak repairs and water damage restoration',
-          'Structural drying and dehumidification',
-          'Mold prevention in storm-damaged areas',
-          'Flood prevention recommendations'
-        ],
-        image: '/images/damage-types/storm-flooding.jpg'
+        title: 'Aging Galvanized Plumbing Failures',
+        description:
+          "Many Vienna colonials still have original galvanized steel supply lines that are now 50 to 70 years old. Galvanized pipe corrodes from the inside out — mineral deposits narrow the interior diameter for decades before a pinhole leak or catastrophic burst occurs. These failures often happen inside walls, above ceilings, or under floors where the leak runs undetected for hours or days, causing extensive hidden damage to plaster, insulation, framing, and flooring before the homeowner notices.",
+        solution:
+          "Our thermal imaging and moisture detection protocols identify the full extent of hidden water migration — not just the visible damage. We open walls surgically, dry all affected cavities, treat framing with antimicrobials, and reconstruct with materials matching your home's original construction. We strongly recommend full plumbing evaluation and selective or whole-house repiping to prevent future failures.",
+      },
+      {
+        title: 'Foundation Seepage During Heavy Rainstorms',
+        description:
+          "Vienna experiences an average of 43 inches of rainfall annually, with summer thunderstorms capable of dropping 2 to 3 inches in a single hour. When storm intensity overwhelms gutters, downspouts, and exterior grading, water pools against foundations and forces its way through walls and floor joints. Finished basements with carpet, drywall, and stored belongings suffer the most — and the damage compounds rapidly as materials absorb water.",
+        solution:
+          "Our storm response teams deploy within 45 minutes for active flooding events. We extract water continuously during the storm if needed, deploy commercial drying systems immediately after extraction, and perform complete finished basement restoration including drywall replacement, carpet or flooring restoration, and trim replacement. Post-restoration, we assess your exterior drainage, grading, gutter system, and downspout routing to recommend improvements that reduce future storm infiltration.",
       },
       {
         title: 'Townhome Shared-Wall Water Events',
-        description: 'Dunn Loring and other Vienna townhome communities face unique water damage challenges when leaks affect multiple units. Shared walls, connected plumbing, and HOA coordination requirements complicate restoration.',
-        causes: [
-          'Shared plumbing systems between units',
-          'Washing machine supply line failures',
-          'Upstairs bathroom leaks affecting neighbors',
-          'HVAC condensate line failures',
-          'Common wall water migration',
-          'Shared attic or crawlspace water intrusion'
-        ],
-        solutions: [
-          'Multi-unit coordination and communication',
-          'Shared wall water extraction and drying',
-          'HOA documentation and compliance',
-          'Neighbor notification and coordination',
-          'Matching finishes across connected units',
-          'Insurance coordination for multiple policies'
-        ],
-        image: '/images/damage-types/townhome-water.jpg'
+        description:
+          "Vienna's townhome communities in Dunn Loring, Tysons Woods, and surrounding developments face a unique challenge: water from a burst pipe, overflowing fixture, or appliance failure in one unit migrates through shared walls, floors, and ceilings into adjacent units. These multi-unit events require coordination between multiple homeowners, HOA management companies, and sometimes multiple insurance carriers — all while water continues to cause damage across property lines.",
+        solution:
+          "We specialize in multi-unit townhome restoration: simultaneous extraction and drying across affected units, clear documentation delineating damage by unit for insurance purposes, direct communication with HOA management, and finish matching that maintains community aesthetic standards. Our project managers handle the coordination complexity so you don't have to.",
       },
-      {
-        title: 'Finished Basement Moisture Issues',
-        description: 'Vienna\'s many finished basements in older colonials often have inadequate vapor barriers and ventilation, leading to chronic moisture problems, musty odors, and mold growth even without obvious water events.',
-        causes: [
-          'Inadequate vapor barriers in older basements',
-          'Poor ventilation and air circulation',
-          'Condensation on cold surfaces',
-          'Minor foundation seepage accumulating over time',
-          'Clothes dryer venting issues',
-          'Bathroom exhaust inadequacy'
-        ],
-        solutions: [
-          'Moisture source identification using thermal imaging',
-          'Complete basement drying and dehumidification',
-          'Mold remediation when present',
-          'Ventilation improvement recommendations',
-          'Vapor barrier assessment',
-          'Long-term humidity control strategies'
-        ],
-        image: '/images/damage-types/basement-moisture.jpg'
-      }
-    ]
+    ],
   },
 
-  process: {
-    heading: 'Our Vienna Water Damage Restoration Process',
-    description: 'Proven methodology delivering complete restoration for Vienna\'s diverse property types.',
-    steps: [
+  equipmentSection: {
+    headline: 'Professional-Grade Restoration Equipment',
+    equipment: [
       {
-        step: 1,
-        title: 'Emergency Contact & Vienna Dispatch',
-        description: 'Call (703) 656-0105 any time, day or night. Our dispatch center sends certified technicians immediately to your Vienna location. We typically arrive within 45 minutes throughout Vienna Town, Oakton, Dunn Loring, Wolf Trap, and surrounding neighborhoods.',
-        details: [
-          '24/7/365 emergency phone line answered immediately',
-          'Rapid dispatch of Vienna-area response teams',
-          'GPS routing ensuring fastest arrival time',
-          'Emergency guidance while technicians travel',
-          'All-hours access throughout Vienna communities',
-          'Holiday and weekend availability'
-        ],
-        duration: '0-15 minutes',
-        icon: 'emergency-call'
+        name: 'Truck-Mounted Extraction System',
+        purpose:
+          'Removes hundreds of gallons of standing water per minute from flooded basements and lower levels, powered directly from our service vehicle for unlimited runtime during extended extraction operations.',
+        brand: 'Prochem',
       },
       {
-        step: 2,
-        title: 'Comprehensive Damage Assessment',
-        description: 'Thorough property inspection using thermal imaging cameras, moisture meters, and visual assessment. We document all damage with photos and detailed notes for insurance claims while identifying hidden moisture that could cause future problems.',
-        details: [
-          'Thermal imaging revealing hidden moisture in walls',
-          'Moisture meter readings throughout affected areas',
-          'Complete photo documentation for insurance',
-          'Assessment of structural concerns',
-          'Evaluation of your home\'s specific construction type',
-          'Detailed scope of work development',
-          'Clear explanation of restoration process'
-        ],
-        duration: '45-90 minutes',
-        icon: 'inspection'
+        name: 'Low-Grain Refrigerant Dehumidifiers',
+        purpose:
+          'Pulls moisture from saturated air at the molecular level, achieving grain depression levels that standard dehumidifiers cannot reach. Critical for drying plaster walls and hardwood floors in Vienna homes without creating conditions that cause cracking or excessive shrinkage.',
+        brand: 'Dri-Eaz',
       },
       {
-        step: 3,
-        title: 'Water Extraction & Removal',
-        description: 'Industrial extraction equipment removes standing water throughout affected areas. Truck-mounted systems provide maximum extraction power for flooded basements, while portable extractors address upstairs water damage. We protect hardwood floors and belongings during extraction.',
-        details: [
-          'Truck-mounted extraction for basement flooding',
-          'Portable extractors for multi-level water damage',
-          'Carpet and pad water removal',
-          'Hardwood floor protection during extraction',
-          'Furniture and contents elevation',
-          'Continuous extraction during active water events',
-          'Subfloor water removal when necessary'
-        ],
-        duration: '2-6 hours',
-        icon: 'water-extraction'
+        name: 'Thermal Imaging Cameras',
+        purpose:
+          'Detects hidden moisture behind walls, above ceilings, and under floors by identifying temperature differentials invisible to the naked eye. Essential for mapping the full extent of water migration in Vienna colonials where water travels along plaster lath and balloon-frame cavities far from the original source.',
+        brand: 'FLIR',
       },
       {
-        step: 4,
-        title: 'Structural Drying Setup',
-        description: 'Strategic placement of high-velocity air movers and commercial dehumidifiers creates optimal drying conditions. We tailor drying strategies to Vienna\'s varied construction—plaster walls in older homes require different approaches than modern drywall systems.',
-        details: [
-          'High-velocity air movers (10-30 depending on damage)',
-          'Commercial dehumidifiers extracting moisture from air',
-          'Specialized equipment for hardwood floors',
-          'Wall cavity drying when needed',
-          'Airflow patterns optimized for your floor plan',
-          'Dehumidification calculations based on affected area',
-          'Equipment positioning protecting your belongings'
-        ],
-        duration: '4-8 hours',
-        icon: 'drying-equipment'
+        name: 'Wall Cavity Drying System',
+        purpose:
+          'Delivers warm, dry air directly into wall cavities through small, discreet panel ports — drying plaster and lath walls from the inside out without the aggressive open-air exposure that causes historic plaster to crack, delaminate, and fail. This system is our primary tool for preserving the plaster walls in Vienna\'s older homes.',
+        brand: 'Injectidry',
       },
       {
-        step: 5,
-        title: 'Drying Monitoring & Adjustment',
-        description: 'Daily monitoring visits track moisture levels and ensure drying progresses properly. Technicians take moisture readings, adjust equipment as needed, and document progress toward complete drying. Vienna homes typically require 3-5 days for complete structural drying.',
-        details: [
-          'Daily moisture readings in all affected materials',
-          'Equipment adjustment optimizing drying',
-          'Thermal imaging confirming moisture reduction',
-          'Progress documentation for insurance',
-          'Problem identification if drying slows',
-          'Timeline updates based on actual progress',
-          'Continued monitoring until target moisture levels achieved'
-        ],
-        duration: '3-7 days',
-        icon: 'monitoring'
+        name: 'Hydroxyl Generators',
+        purpose:
+          'Neutralizes odors at the molecular level using hydroxyl radical technology — safely eliminating musty water damage smells without ozone, which can damage rubber seals, artwork, and electronics. Safe to operate in occupied spaces during the drying process.',
+        brand: 'Vaportek',
       },
       {
-        step: 6,
-        title: 'Cleaning & Sanitization',
-        description: 'Thorough cleaning of all affected surfaces using EPA-approved antimicrobial treatments. We address contamination concerns, eliminate odors, and prevent mold growth. All cleanable contents receive professional cleaning before restoration completes.',
-        details: [
-          'HEPA vacuuming removing particulates',
-          'Surface cleaning with antimicrobial solutions',
-          'Odor elimination treating source causes',
-          'Mold prevention treatment when appropriate',
-          'Contents cleaning (furniture, belongings)',
-          'Duct cleaning if HVAC system affected',
-          'Final air quality verification'
-        ],
-        duration: '1-2 days',
-        icon: 'cleaning'
+        name: 'Axial Air Movers',
+        purpose:
+          'High-velocity airflow across wet surfaces accelerates evaporation from carpet, hardwood, drywall, and concrete. Strategically positioned based on psychrometric calculations to create optimal drying conditions across the affected footprint. We deploy 10 to 30 units depending on the scope of damage.',
       },
       {
-        step: 7,
-        title: 'Restoration & Reconstruction',
-        description: 'Complete restoration returning your Vienna home to pre-loss condition. Our construction teams replace water-damaged materials, match finishes to your home\'s character (historic or modern), and coordinate all trades. We handle everything from minor drywall replacement to complete room rebuilds.',
-        details: [
-          'Water-damaged material removal and disposal',
-          'Drywall or plaster replacement as appropriate',
-          'Hardwood floor refinishing or replacement',
-          'Trim and molding matching and installation',
-          'Paint and finish work',
-          'Fixture and finish coordination',
-          'Final walkthrough ensuring satisfaction'
-        ],
-        duration: '3-14 days',
-        icon: 'reconstruction'
+        name: 'Hardwood Floor Drying Mats',
+        purpose:
+          "Specialty vacuum-and-heat mat system that draws moisture upward through hardwood planks, reversing early-stage cupping and preventing permanent damage to Vienna's valuable original oak floors. This targeted approach saves floors that would otherwise require full replacement.",
       },
       {
-        step: 8,
-        title: 'Final Verification & Prevention',
-        description: 'Comprehensive final inspection confirming complete restoration. We provide final moisture readings, ensure all work meets our quality standards, and offer recommendations preventing future water damage specific to your Vienna home and neighborhood.',
-        details: [
-          'Final moisture readings confirming complete drying',
-          'Quality inspection of all restoration work',
-          'Walkthrough with homeowner',
-          'Prevention recommendations for your property',
-          'Maintenance suggestions',
-          'Warranty information and documentation',
-          'Follow-up contact ensuring continued satisfaction'
-        ],
-        duration: '2-4 hours',
-        icon: 'final-inspection'
-      }
-    ]
+        name: 'HEPA Air Scrubbers',
+        purpose:
+          'Filters airborne particulates, mold spores, and contaminants from the indoor environment during restoration. Creates negative air pressure in contained work areas to prevent cross-contamination to unaffected rooms.',
+      },
+      {
+        name: 'Moisture Detection Instruments',
+        purpose:
+          'Pin-type and pinless moisture meters, thermo-hygrometers, and data loggers providing precise measurement of moisture content in wood, drywall, plaster, concrete, and ambient air. These readings drive every drying decision and document progress for insurance.',
+        brand: 'Delmhorst / Tramex',
+      },
+    ],
+    localNote:
+      "Our equipment inventory is specifically curated for the restoration challenges we encounter most frequently in Vienna: Injectidry systems for the community's abundant plaster-wall colonials, hardwood drying mats for preserving original oak floors, and oversized dehumidification capacity for the large finished basements common in Vienna estates. We maintain enough equipment to handle multiple simultaneous Vienna projects without delays.",
   },
 
-  faq: {
-    heading: 'Vienna Water Damage Restoration FAQs',
-    description: 'Common questions from Vienna homeowners about water damage restoration.',
-    questions: [
-      {
-        question: 'How quickly can you respond to water damage emergencies in Vienna?',
-        answer: 'Our average response time throughout Vienna is 45 minutes. We maintain emergency teams ready to dispatch 24/7 to all Vienna neighborhoods including Vienna Town, Oakton, Dunn Loring, Wolf Trap, and surrounding areas. Call (703) 656-0105 for immediate assistance—we typically have certified technicians on-site within an hour of your call, often faster for severe emergencies.'
-      },
-      {
-        question: 'Can you restore older Vienna colonials with plaster walls?',
-        answer: 'Absolutely. We\'ve restored hundreds of Vienna\'s 1950s-70s colonials and specialize in historic home water damage. Our craftsmen understand plaster wall construction, use appropriate drying techniques preventing cracking, and perform traditional plaster repairs matching your home\'s original character. We also have expertise with the hardwood floors, vintage trim, and period details common in Vienna\'s older homes.'
-      },
-      {
-        question: 'Do you work on luxury new construction in Oakton?',
-        answer: 'Yes, high-end restoration is a specialty. Our Oakton teams have extensive experience protecting premium finishes, coordinating with builders and designers, and using restoration methods appropriate for luxury homes. We understand the investment Vienna homeowners have made in new construction and treat every detail with white-glove care—from custom millwork to high-end flooring and smart home systems.'
-      },
-      {
-        question: 'What causes basement flooding in Vienna homes?',
-        answer: 'Vienna basement flooding typically results from foundation seepage in older colonials (hydrostatic pressure during heavy rain), sump pump failures, inadequate drainage systems, or storm-related events near Difficult Run and Wolf Trap Creek. We extract water immediately, perform complete structural drying, and provide recommendations addressing the underlying cause to prevent recurrence.'
-      },
-      {
-        question: 'Will you work with my insurance company?',
-        answer: 'Yes, insurance coordination is a core service. We document damage thoroughly with photos and moisture readings, provide detailed estimates matching insurance requirements, communicate directly with adjusters, and bill approved claims directly when possible. Our experience with Vienna-area insurance providers and local adjusters helps ensure fair settlements for restoration costs.'
-      },
-      {
-        question: 'How long does water damage restoration take?',
-        answer: 'Timeline depends on damage extent. Minor water damage may take 3-5 days for drying and restoration. Significant damage to Vienna colonials with plaster walls or extensive basement flooding may require 2-3 weeks for complete restoration including reconstruction. We provide accurate timelines after initial assessment and keep you informed as work progresses.'
-      },
-      {
-        question: 'Can you handle townhome water damage requiring HOA coordination?',
-        answer: 'Absolutely. We have extensive experience with Vienna townhome communities, particularly in Dunn Loring. Our teams coordinate with HOAs and property management, provide necessary documentation, address shared-wall concerns, and ensure restoration meets community standards. We understand the unique challenges of townhome water damage and multi-unit coordination requirements.'
-      },
-      {
-        question: 'Do you restore water-damaged hardwood floors?',
-        answer: 'Yes, hardwood floor restoration is a specialty. Vienna homes often have beautiful original oak floors or modern engineered hardwood that require specialized drying techniques. We assess moisture content, use hardwood drying mats when appropriate, and determine whether floors can be saved through refinishing or require replacement. Our goal is preserving original floors whenever possible.'
-      },
-      {
-        question: 'What should I do immediately after discovering water damage?',
-        answer: 'First ensure family safety and shut off the water source if possible. Then call us immediately at (703) 656-0105—faster response significantly reduces damage. Move valuables to dry areas if safe to do so, but avoid walking through standing water. Don\'t use household vacuums on water. Our emergency team will guide you through immediate steps while dispatching to your Vienna location.'
-      },
-      {
-        question: 'Do you provide mold remediation after water damage?',
-        answer: 'Yes, mold remediation is included when needed. Vienna\'s older homes often have ventilation issues making them susceptible to mold growth after water damage. We provide EPA-approved mold remediation, address underlying moisture sources, and implement prevention strategies. All water damage restoration includes antimicrobial treatment preventing future mold development.'
-      }
-    ]
+  pricingSection: {
+    headline: 'Water Damage Restoration Pricing for Vienna Homes',
+    intro:
+      "Every water damage event is unique, and restoration costs depend on several factors specific to your Vienna property. We provide detailed written estimates after our initial assessment — no hidden fees, no surprises. Most homeowner insurance policies cover water damage restoration, and we work directly with your carrier to streamline the claims process.",
+    factors: [
+      'Square footage of affected area — Vienna estate homes and large colonials often have damage spanning multiple rooms or entire finished basements exceeding 1,000 square feet',
+      'Water contamination category — clean water from a supply line break requires different protocols than gray water from an appliance or black water from a sewer backup, with Category 3 events requiring the most extensive remediation',
+      'Construction type and materials affected — plaster wall restoration in historic colonials requires specialized techniques and longer drying times compared to modern drywall, directly impacting labor and equipment costs',
+      'Hardwood floor preservation vs. replacement — saving original oak floors through specialized drying and refinishing is often more cost-effective than full replacement, but the decision depends on damage severity and floor condition',
+      'Duration of water exposure before restoration begins — water that sat for 24 hours causes significantly more damage than water addressed within 2 hours, affecting the scope of demolition, drying, and reconstruction required',
+      'Accessibility and complexity — multi-level water migration, finished basement restoration, wine cellar recovery, and homes with custom millwork or luxury finishes require more time, specialized skills, and premium materials',
+      'Mold remediation requirements — secondary mold growth discovered during restoration adds containment, removal, treatment, and clearance testing to the project scope',
+    ],
+    cta: 'Call (703) 656-0105 for a free on-site assessment. We respond 24/7 and provide a detailed estimate before any work begins. Insurance-accepted estimates — we bill your carrier directly when approved.',
   },
 
-  cta: {
-    heading: 'Vienna Water Damage? We Respond Immediately',
-    subheading: 'Expert restoration for historic colonials and luxury new construction',
-    buttonText: 'Call (703) 656-0105',
-    buttonLink: 'tel:7036560105',
-    secondaryText: 'Available 24/7 throughout Vienna',
-    emergencyText: 'Average 45-minute response time to all Vienna neighborhoods'
+  serviceAreaSection: {
+    headline: 'Serving Every Vienna Neighborhood',
+    neighborhoods: [
+      'Vienna Town',
+      'Oakton',
+      'Dunn Loring',
+      'Wolf Trap',
+      'Clarks Crossing',
+      'Tysons Woods',
+      'Windover Heights',
+      'Ayr Hill',
+      'Moorefield Station',
+      'Peachtree',
+      'Vienna Woods',
+      'Westbriar',
+      'Country Creek',
+      'Wolf Trap Woods',
+      'Hunter Mill Estates',
+    ],
+    responseTime:
+      '45 minutes average response time throughout Vienna. Our technicians are positioned across Northern Virginia to ensure rapid arrival to every neighborhood — from the historic homes near Church Street to the newest communities in Oakton. 24/7/365 emergency availability with no after-hours surcharges for emergency response.',
   },
 
-  relatedServices: [
+  faqSection: [
     {
-      title: 'Basement Flooding Solutions',
-      description: 'Complete basement water removal and restoration',
-      link: '/locations/vienna/services/residential/specialty-services/basement-flooding/'
+      question: 'How quickly can you respond to a water damage emergency in Vienna?',
+      answer:
+        'Our average response time throughout Vienna is 45 minutes. We maintain 24/7 emergency crews positioned across Northern Virginia, and our dispatch center sends the nearest available certified team the moment you call. We serve all Vienna neighborhoods — Vienna Town, Oakton, Dunn Loring, Wolf Trap, Clarks Crossing, Tysons Woods, and surrounding areas — with equal priority. Call (703) 656-0105 for immediate dispatch.',
     },
     {
-      title: 'Burst Pipe Restoration',
-      description: 'Emergency pipe repair and water damage restoration',
-      link: '/locations/vienna/services/burst-pipe'
+      question: 'Can you restore plaster walls in older Vienna colonials without causing more damage?',
+      answer:
+        "Yes — plaster wall preservation is one of our core specialties. Many Vienna homes built in the 1950s through 1970s have original plaster-and-lath walls that respond poorly to aggressive drying techniques. Standard high-velocity air movers aimed directly at wet plaster cause rapid moisture loss on the surface while the substrate remains wet, leading to cracking, delamination, and failure. We use Injectidry wall cavity drying systems that deliver warm, dry air behind the plaster through small panel ports, drying the wall assembly evenly from the inside out. This controlled approach preserves your home's original plaster walls while achieving complete structural drying.",
     },
     {
-      title: 'Mold Remediation',
-      description: 'Professional mold removal and prevention',
-      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
-    }
+      question: 'Can you save water-damaged hardwood floors, or do they need to be replaced?',
+      answer:
+        "In most cases, we can save hardwood floors if we begin drying within 24 to 48 hours of the water event. We take pin-type moisture readings across the affected area to map the damage, then deploy specialty hardwood drying mat systems that draw moisture upward through the wood grain, reversing early-stage cupping. We monitor moisture content daily until readings return to normal equilibrium. If the floor has been submerged for extended periods or shows permanent buckling, we coordinate refinishing or selective plank replacement that blends with your existing floor. Our goal is always to preserve Vienna's beautiful original oak floors whenever structurally possible.",
+    },
+    {
+      question: 'What causes basement flooding in Vienna homes, and how can I prevent it?',
+      answer:
+        "Vienna basements flood for several interconnected reasons: heavy Piedmont clay soil creates hydrostatic pressure against aging foundations, driving water through cracks and floor-wall joints during rain. High water tables near Difficult Run Creek cause chronic seepage in certain neighborhoods. Sump pump failures during power outages — common in Vienna thunderstorms — leave basements unprotected during the highest-risk events. Aging footer drains clog with sedite and root intrusion. After we complete emergency extraction and restoration, we provide a detailed prevention report: backup sump pump systems with battery failover, exterior grading corrections, gutter and downspout improvements, foundation crack repair, and interior drainage options specific to your property's risk profile.",
+    },
+    {
+      question: 'Do you work with insurance companies for water damage claims in Vienna?',
+      answer:
+        "Insurance coordination is a core part of our service. We document every aspect of the damage with timestamped photos, moisture readings, thermal images, and detailed scope notes formatted to meet insurance industry standards. We provide Xactimate-compatible estimates that adjusters can process efficiently. Our project managers communicate directly with your insurance adjuster throughout the restoration, advocate for fair coverage of necessary work, and handle supplemental claims when hidden damage is discovered during the project. We bill approved claims directly to your carrier, so your out-of-pocket expense is limited to your deductible in most cases.",
+    },
+    {
+      question: 'How long does the entire water damage restoration process take?',
+      answer:
+        "Timeline depends on the severity and scope of damage. A contained water event — a single-room supply line leak caught quickly — typically requires 3 to 5 days for drying plus 2 to 3 days for restoration. A significant event — multi-room flooding, full basement inundation, or extensive hidden water migration through a Vienna colonial's plaster walls and hardwood floors — may require 5 to 7 days for drying plus 1 to 2 weeks for reconstruction. Category 3 sewage events add time for demolition and antimicrobial protocols. We provide an accurate timeline estimate after our initial assessment and keep you updated as the project progresses.",
+    },
+    {
+      question: 'How do you handle water damage in Vienna townhomes that affects multiple units?',
+      answer:
+        "Multi-unit townhome water events are common in Vienna's Dunn Loring and Tysons Woods communities, and we have extensive experience managing them. We perform simultaneous extraction and drying across all affected units, clearly document damage by unit and by responsible party for insurance delineation, communicate directly with HOA management companies, and ensure all restoration work meets community aesthetic and construction standards. Our project managers serve as the single coordination point between homeowners, HOAs, and multiple insurance carriers — eliminating the confusion and finger-pointing that often delays townhome water damage resolution.",
+    },
+    {
+      question: 'What steps should I take immediately after discovering water damage in my home?',
+      answer:
+        "First, ensure family safety — avoid standing water near electrical outlets or panels. If you can safely reach the main water shutoff valve, turn off the water supply to stop the flow. Then call us immediately at (703) 656-0105 — speed is the single most important factor in limiting water damage. While our team is en route, move portable valuables, electronics, and documents to a dry area if you can do so safely. Lift furniture legs off wet carpet using aluminum foil or plastic. Do not use household vacuums on standing water. Do not turn on ceiling fans or your HVAC system if ceilings are wet — this can cause collapse or spread contamination. Our emergency coordinator will guide you through additional steps specific to your situation while technicians drive to your Vienna home.",
+    },
+    {
+      question: 'How do you prevent mold growth after water damage in Vienna homes?',
+      answer:
+        "Mold prevention is built into every phase of our restoration process. Rapid response limits the moisture exposure window — mold requires 48 to 72 hours of sustained moisture to colonize. Our structural drying achieves target dry standards that eliminate the moisture mold needs to grow. We apply EPA-registered antimicrobial treatments to all affected surfaces, including wall cavities, subfloors, and framing. HEPA air scrubbers filter airborne spores throughout the drying period. Vienna's older homes with limited ventilation and finished basements are particularly susceptible to post-water-damage mold, which is why we monitor moisture levels daily and do not remove equipment until every reading confirms complete drying. If pre-existing mold is discovered during restoration, we perform full IICRC S520-compliant remediation.",
+    },
+    {
+      question: 'Do you handle water damage restoration for luxury and custom homes in the Oakton area?',
+      answer:
+        "Absolutely. Luxury home restoration is a dedicated service line for us, and we have extensive experience in Oakton's high-end communities. Our approach accounts for premium materials and finishes: custom millwork, imported tile, designer fixtures, engineered hardwood and natural stone flooring, wine cellars, home theaters, and integrated smart home systems. We coordinate with original builders, interior designers, and specialty tradespeople to source matching materials and maintain your home's design intent. Every member of our luxury restoration team understands that these homes represent significant investments and that the restoration standard must match the original construction quality — no compromises.",
+    },
   ],
 
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Water Damage Restoration',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Flood Doctor - Vienna',
-      telephone: '(703) 656-0105',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Vienna',
-        addressRegion: 'VA',
-        addressCountry: 'US'
-      }
-    },
-    areaServed: {
-      '@type': 'City',
-      name: 'Vienna',
-      '@id': 'https://en.wikipedia.org/wiki/Vienna,_Virginia'
-    },
-    availableChannel: {
-      '@type': 'ServiceChannel',
-      servicePhone: {
-        '@type': 'ContactPoint',
-        telephone: '(703) 656-0105',
-        contactType: 'Emergency Services',
-        availableLanguage: 'English',
-        'areaServed': 'Vienna, VA'
-      }
-    },
-    description: 'Professional water damage restoration in Vienna, VA. 24/7 emergency response for historic colonials and luxury new construction. Expert water extraction, structural drying, and complete restoration.',
-    hoursAvailable: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59'
-    }
-  }
+  relatedServices: [
+    '/flood-cleanup',
+    '/basement-flooding',
+    '/burst-pipe',
+    '/mold-remediation',
+    '/storm-damage',
+  ],
+
+  finalCTA: {
+    headline: 'Water Damage in Your Vienna Home? Call Now.',
+    paragraph:
+      "Every minute counts when water is damaging your home. Our IICRC-certified technicians are standing by 24/7 with an average 45-minute response time to every Vienna neighborhood. We handle everything — extraction, drying, restoration, insurance coordination — so you can focus on your family. One call starts the process.",
+    phone: '(703) 656-0105',
+    buttonText: 'Call (703) 656-0105 — 24/7 Emergency Response',
+  },
 };

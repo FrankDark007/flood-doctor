@@ -1,524 +1,342 @@
-import { ServicePageContent } from '../../../../types/content';
+// src/content/cities/vienna/services/basement-flooding.ts
+// Format A — ServicePageRenderer compatible
+// Generated: February 17, 2026
+
+interface ServicePageContent {
+  meta: { title: string; description: string; canonical: string };
+  h1: string;
+  introSection: { headline: string; paragraphs: string[]; localContext: string };
+  processSection: {
+    headline: string;
+    steps: Array<{
+      number: number;
+      title: string;
+      description: string;
+      timeframe: string;
+    }>;
+  };
+  localChallenges: {
+    headline: string;
+    challenges: Array<{
+      title: string;
+      description: string;
+      solution: string;
+    }>;
+  };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{ name: string; purpose: string; brand?: string }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
+  faqSection: Array<{ question: string; answer: string }>;
+  relatedServices: string[];
+  finalCTA: {
+    headline: string;
+    paragraph: string;
+    phone: string;
+    buttonText: string;
+  };
+}
 
 export const viennaBasementFlooding: ServicePageContent = {
-  city: 'Vienna',
-  state: 'VA',
-  serviceType: 'basement-flooding',
-
-  hero: {
-    title: 'Vienna Basement Flooding Solutions',
-    subtitle: 'Foundation Seepage & Sump Pump Failure Experts',
-    description: '24/7 basement water removal for Vienna\'s older colonials. Expert solutions for foundation seepage, sump pump failures, and chronic moisture issues throughout Vienna Town, Clarks Crossing, and surrounding neighborhoods.',
-    primaryCTA: 'Get Immediate Help',
-    primaryCTALink: 'tel:7036560105',
-    secondaryCTA: 'Learn About Solutions',
-    secondaryCTALink: '#solutions',
-    backgroundImage: '/images/services/residential/specialty-services/basement-flooding/-vienna.jpg',
-    backgroundAlt: 'Vienna basement flooding restoration'
+  meta: {
+    title: "Basement Flooding in Vienna, VA | Flood Doctor",
+    description:
+      "Vienna basement flooding experts. Foundation seepage, sump pump failure, and storm flooding solutions for colonials throughout Vienna Town, Oakton & Dunn Loring. 24/7 response. (703) 656-0105.",
+    canonical: "https://vienna.flood.doctor/basement-flooding",
   },
 
-  intro: {
-    heading: 'Vienna\'s Basement Flooding Restoration Specialists',
+  h1: "Basement Flooding Solutions in Vienna, Virginia",
+
+  introSection: {
+    headline: "Vienna's Basement Flooding Restoration Specialists",
     paragraphs: [
-      'Basement flooding is the most common water damage issue affecting Vienna\'s 1950s-70s colonials. Foundation seepage during heavy rain, sump pump failures, and aging drainage systems create chronic moisture problems requiring specialized expertise and long-term solutions.',
-      'From finished basements in Clarks Crossing to storage basements in Vienna Town, our certified technicians understand the unique challenges facing Vienna properties. We provide complete water removal, structural drying, restoration, and recommendations preventing future basement flooding incidents.',
-      'With 24/7 emergency response throughout Vienna and extensive experience with older home foundations, we deliver basement flooding solutions that work—protecting your home\'s structural integrity and your family\'s health from water damage and mold growth.'
-    ]
+      `A flooded basement in Vienna isn't a minor inconvenience—it's a direct threat to your home's structural integrity, your family's health, and tens of thousands of dollars in finished living space. Vienna's 1950s–1970s colonials were built when foundation waterproofing meant a single coat of tar and a prayer. Fifty to seventy years later, that original waterproofing has deteriorated completely, leaving foundations vulnerable to hydrostatic pressure every time it rains. The result: chronic seepage through foundation walls, water pooling on basement floors, and sump pumps running overtime until they finally fail.
+
+Flood Doctor has extracted water from hundreds of Vienna basements since 2005. We've responded to foundation seepage in Vienna Town colonials at 3 AM, pumped out finished basements in Clarks Crossing after sump pump failures, and dried Oakton properties where window well leaks saturated drywall and carpet for days before homeowners noticed. When your basement floods, the clock starts immediately—mold colonizes wet materials within 24–48 hours, and every hour of standing water increases structural damage exponentially.`,
+
+      `Vienna's basement flooding problems stem from a combination of aging housing stock, clay-heavy soil, and proximity to waterways like Difficult Run Creek and Wolf Trap Stream. Clay soil doesn't absorb water—it channels it toward your foundation. When heavy storms overwhelm municipal drainage systems, water tables rise and hydrostatic pressure forces groundwater through every crack, cold joint, and deteriorated seal in your foundation walls and floor. Properties near Wolf Trap and along the Difficult Run corridor face additional flash flood risk when these waterways overflow their banks during severe weather events.
+
+Our approach goes beyond pumping water and dropping fans. We identify the entry point, extract every gallon, dry every material to verified moisture targets, treat surfaces to prevent mold colonization, and provide specific recommendations addressing the root cause. Vienna families don't need a company that treats symptoms—they need one that solves the problem and prevents the next flood.`,
+
+      `Whether your basement holds a home office, a kids' playroom, a guest suite, or decades of irreplaceable belongings, the response protocol is the same: fast extraction, thorough drying, professional restoration, and honest prevention guidance. We respond 24/7 throughout Vienna—including holidays and weekends—because basement flooding doesn't wait for business hours.`,
+    ],
+    localContext:
+      "Vienna's older colonials—from Church Street to Oakton, Dunn Loring to Wolf Trap—share common basement vulnerabilities: deteriorated foundation waterproofing, aging sump systems, clay soil, and drainage infrastructure that hasn't kept pace with development. We've worked in every Vienna neighborhood and understand the specific challenges each area presents.",
   },
 
-  services: {
-    heading: 'Complete Basement Flooding Services',
-    description: 'Comprehensive solutions addressing every cause of Vienna basement water intrusion.',
-    servicesList: [
-      {
-        title: 'Emergency Basement Water Extraction',
-        description: 'Rapid basement water removal using truck-mounted extraction systems and submersible pumps. We remove standing water quickly—whether inches or feet deep—protecting your foundation, belongings, and finished basement investments from further damage.',
-        features: [
-          'Truck-mounted extraction for maximum water removal',
-          'Submersible pumps for deep basement flooding',
-          'Continuous extraction during active water events',
-          'Furniture and contents elevation',
-          'Carpet and pad water removal',
-          'Concrete floor water extraction',
-          'Immediate response throughout Vienna'
-        ],
-        icon: 'water-extraction'
-      },
-      {
-        title: 'Foundation Seepage Remediation',
-        description: 'Expert solutions for foundation seepage common in Vienna\'s older homes. We identify water entry points, remove water, perform structural drying, and provide recommendations for permanent drainage improvements addressing underlying causes.',
-        features: [
-          'Foundation crack identification',
-          'Hydrostatic pressure assessment',
-          'Wall and floor seepage source location',
-          'Footer drain evaluation',
-          'Exterior drainage review',
-          'Waterproofing coordination options',
-          'Long-term prevention strategies'
-        ],
-        icon: 'foundation-repair'
-      },
-      {
-        title: 'Sump Pump Failure Response',
-        description: 'Immediate response when sump pumps fail during storms. We extract accumulated water, assess pump and discharge system problems, and coordinate emergency pump replacement when needed—preventing continued basement flooding.',
-        features: [
-          'Rapid water removal after pump failure',
-          'Sump pump system evaluation',
-          'Discharge line assessment',
-          'Backup pump recommendations',
-          'Battery backup system suggestions',
-          'Maintenance guidance preventing future failures',
-          'Emergency pump installation coordination'
-        ],
-        icon: 'sump-pump'
-      },
-      {
-        title: 'Finished Basement Restoration',
-        description: 'Complete restoration for Vienna\'s many finished basements. We remove water-damaged materials (drywall, flooring, trim), perform structural drying, prevent mold growth, and rebuild to original condition using appropriate materials and construction methods.',
-        features: [
-          'Carpet and pad removal when necessary',
-          'Drywall flood cut and replacement',
-          'Baseboard and trim removal/replacement',
-          'Insulation assessment and replacement',
-          'Subfloor drying and treatment',
-          'Mold prevention treatment',
-          'Complete reconstruction matching original finishes'
-        ],
-        icon: 'basement-restoration'
-      },
-      {
-        title: 'Structural Drying & Dehumidification',
-        description: 'Advanced basement drying systems removing moisture from concrete, drywall, framing, and contents. Strategic air mover placement and commercial dehumidification ensure complete drying—preventing mold growth and structural damage in basement environments.',
-        features: [
-          'High-velocity air movers creating airflow',
-          'Commercial dehumidifiers extracting moisture',
-          'Concrete floor drying techniques',
-          'Wall cavity drying when needed',
-          'Daily moisture monitoring',
-          'Thermal imaging verifying complete drying',
-          'Typically 4-7 days for Vienna basements'
-        ],
-        icon: 'structural-drying'
-      },
-      {
-        title: 'Mold Prevention & Remediation',
-        description: 'Comprehensive mold prevention in basement flooding situations. Basements\' naturally higher humidity and organic materials make them susceptible to mold—we provide EPA-approved antimicrobial treatment and remediation when mold is already present.',
-        features: [
-          'Antimicrobial treatment preventing mold growth',
-          'Mold inspection when flooding was prolonged',
-          'EPA-approved mold remediation protocols',
-          'Contents mold cleaning',
-          'HEPA air filtration during work',
-          'Post-remediation verification',
-          'Humidity control recommendations'
-        ],
-        icon: 'mold-prevention'
-      },
-      {
-        title: 'Basement Waterproofing Coordination',
-        description: 'While we focus on restoration, we coordinate with waterproofing specialists when Vienna homeowners want permanent basement water solutions. We provide referrals to trusted contractors offering interior drainage systems, exterior waterproofing, and foundation repairs.',
-        features: [
-          'Assessment of waterproofing needs',
-          'Referrals to licensed waterproofing contractors',
-          'Interior drainage system education',
-          'Exterior waterproofing options explained',
-          'Cost-benefit analysis of solutions',
-          'Coordination with waterproofing installation',
-          'Post-waterproofing restoration services'
-        ],
-        icon: 'waterproofing'
-      },
-      {
-        title: 'Contents Restoration & Storage',
-        description: 'Professional handling of basement contents during restoration. We inventory affected items, move to dry areas or climate-controlled storage, clean and restore salvageable belongings, and dispose of items beyond repair appropriately.',
-        features: [
-          'Complete contents inventory',
-          'Contents pack-out to storage when needed',
-          'Professional contents cleaning',
-          'Electronics assessment and restoration',
-          'Document and photo drying services',
-          'Odor removal from stored items',
-          'Coordinated return when restoration completes'
-        ],
-        icon: 'contents-restoration'
-      }
-    ]
-  },
-
-  waterDamageTypes: {
-    heading: 'Common Vienna Basement Flooding Causes',
-    description: 'Understanding why Vienna basements flood helps prevent future incidents.',
-    types: [
-      {
-        title: 'Foundation Seepage in 1950s-70s Colonials',
-        description: 'Vienna\'s established neighborhoods feature homes built 50-70 years ago when foundation waterproofing standards differed significantly from today. During heavy rain, hydrostatic pressure forces water through aging foundation walls and floor cracks.',
-        causes: [
-          'Original foundation waterproofing deteriorated over decades',
-          'Hydrostatic pressure during heavy rainfall',
-          'Foundation wall cracks from settling',
-          'Cold joint seepage where walls meet floors',
-          'Clogged or damaged footer drains',
-          'High water table in certain Vienna areas'
-        ],
-        solutions: [
-          'Immediate water extraction and structural drying',
-          'Source identification (walls vs. floor)',
-          'Interior drainage system assessment',
-          'Sump pump evaluation and recommendations',
-          'Exterior drainage improvement suggestions',
-          'Waterproofing contractor referrals for permanent solutions'
-        ],
-        image: '/images/damage-types/foundation-seepage.jpg'
-      },
-      {
-        title: 'Sump Pump System Failures',
-        description: 'Many Vienna homes rely on sump pumps managing groundwater and foundation drainage. Pump failures during storms—often due to power outages, mechanical failure, or overwhelmed systems—result in rapid basement flooding.',
-        causes: [
-          'Power outages during storms disabling pumps',
-          'Mechanical pump failure (motors burn out)',
-          'Float switch malfunctions',
-          'Discharge line freezing in winter',
-          'Inadequate pump capacity for water volume',
-          'Lack of backup pump systems',
-          'Poor maintenance and testing'
-        ],
-        solutions: [
-          'Emergency water extraction throughout basement',
-          'Pump system evaluation and testing',
-          'Battery backup system recommendations',
-          'Discharge line assessment and improvements',
-          'Pump capacity calculations',
-          'Maintenance scheduling education',
-          'Emergency pump installation when needed'
-        ],
-        image: '/images/damage-types/sump-pump-failure.jpg'
-      },
-      {
-        title: 'Inadequate Exterior Drainage',
-        description: 'Poor lot grading and inadequate gutter systems direct water toward Vienna foundations rather than away. Mature landscaping often alters drainage patterns over decades, while clogged gutters overflow during heavy rain.',
-        causes: [
-          'Lot grading sloping toward foundations',
-          'Settled soil creating low spots near houses',
-          'Clogged gutters overflowing at foundation',
-          'Inadequate downspout extensions',
-          'Mature trees and landscaping affecting drainage',
-          'Missing or damaged gutters'
-        ],
-        solutions: [
-          'Basement water extraction and drying',
-          'Exterior drainage assessment and documentation',
-          'Gutter and downspout evaluation',
-          'Grading improvement recommendations',
-          'Landscape drainage suggestions',
-          'Coordination with landscaping contractors',
-          'Preventive maintenance education'
-        ],
-        image: '/images/damage-types/drainage-issues.jpg'
-      },
-      {
-        title: 'Storm-Related Flooding Near Waterways',
-        description: 'Properties near Difficult Run, Wolf Trap Creek, and tributaries face flash flood risks during severe storms. Overwhelmed storm drainage systems and rising water tables cause basement flooding even in homes without typical water issues.',
-        causes: [
-          'Flash flooding from nearby creeks and streams',
-          'Overwhelmed municipal storm drainage',
-          'Rising water tables during extended rain',
-          'Inadequate property-level flood protection',
-          'Low-lying lot positions',
-          'Upstream drainage overwhelming local systems'
-        ],
-        solutions: [
-          'Emergency flood water extraction',
-          'Complete structural drying and dehumidification',
-          'Contamination assessment (creek water)',
-          'Flood prevention recommendations',
-          'Elevation of critical systems and utilities',
-          'Flood insurance discussion',
-          'Long-term flood mitigation strategies'
-        ],
-        image: '/images/damage-types/storm-flooding.jpg'
-      },
-      {
-        title: 'Window Well & Egress Window Leaks',
-        description: 'Basement window wells in Vienna colonials often lack proper drainage and waterproofing. During heavy rain, window wells fill with water that seeps through windows or deteriorated seals, flooding basements from above rather than foundations.',
-        causes: [
-          'Clogged window well drains',
-          'Missing or damaged window well covers',
-          'Deteriorated window seals',
-          'Inadequate window well waterproofing',
-          'Debris accumulation preventing drainage',
-          'Improperly sized or installed window wells'
-        ],
-        solutions: [
-          'Water extraction from affected basement areas',
-          'Window well cleaning and drain clearing',
-          'Window seal assessment and replacement',
-          'Window well cover recommendations',
-          'Drainage improvement suggestions',
-          'Waterproofing around basement windows',
-          'Preventive maintenance education'
-        ],
-        image: '/images/damage-types/window-well-flooding.jpg'
-      },
-      {
-        title: 'Plumbing Failures in Basement Utilities',
-        description: 'Hot water heaters, washing machines, and HVAC systems located in Vienna basements create flooding risks. When these systems fail—burst tanks, supply line breaks, or drain clogs—they flood finished basement spaces rapidly.',
-        causes: [
-          'Hot water heater tank failures',
-          'Washing machine supply line bursts',
-          'HVAC condensate line clogs',
-          'Water softener malfunctions',
-          'Sump pump discharge line backups',
-          'Aging utility connections and hoses'
-        ],
-        solutions: [
-          'Immediate water extraction throughout basement',
-          'Utility system shutoff and assessment',
-          'Complete structural drying',
-          'Finished basement restoration',
-          'Preventive recommendations (drain pans, shutoff valves)',
-          'Utility replacement coordination',
-          'Insurance documentation for replacement costs'
-        ],
-        image: '/images/damage-types/utility-flooding.jpg'
-      }
-    ]
-  },
-
-  process: {
-    heading: 'Vienna Basement Flooding Restoration Process',
-    description: 'Systematic approach delivering complete basement recovery and long-term solutions.',
+  processSection: {
+    headline: "Our Basement Flooding Response Process",
     steps: [
       {
-        step: 1,
-        title: 'Emergency Response & Assessment',
-        description: 'Call (703) 656-0105 for immediate basement flooding help. Our Vienna teams typically arrive within 45 minutes, assess the flooding extent, identify the water source, and begin extraction immediately—minimizing damage and protecting your investment.',
-        details: [
-          '24/7 emergency phone line',
-          'Rapid Vienna-area dispatch',
-          'Water source identification',
-          'Flooding extent assessment',
-          'Safety evaluation',
-          'Initial photo documentation',
-          'Immediate extraction planning'
-        ],
-        duration: '0-60 minutes',
-        icon: 'emergency-response'
+        number: 1,
+        title: "Emergency Dispatch & Phone Guidance",
+        description:
+          "Call (703) 656-0105 any time—day, night, weekend, holiday. A live person answers and dispatches our nearest Vienna crew immediately. While our team is en route, we walk you through safety steps: don't enter standing water if electrical outlets are submerged, shut off the basement circuit breaker if accessible safely, and move valuables above the water line if you can do so without risk. We stay on the line until our crew arrives.",
+        timeframe: "Immediate dispatch, 45-minute average arrival",
       },
       {
-        step: 2,
-        title: 'Complete Water Extraction',
-        description: 'Industrial extraction equipment removes all standing water from your basement. Truck-mounted systems provide maximum extraction power, while submersible pumps handle deep water. We extract from carpets, concrete floors, and all affected materials.',
-        details: [
-          'Truck-mounted extraction systems',
-          'Submersible pumps for deep water',
-          'Carpet and pad extraction',
-          'Concrete floor water removal',
-          'Furniture elevation protecting belongings',
-          'Continuous extraction if water continues entering',
-          'Complete water removal before drying begins'
-        ],
-        duration: '2-6 hours',
-        icon: 'water-extraction'
+        number: 2,
+        title: "Water Source Identification & Safety Assessment",
+        description:
+          "Before extracting a single gallon, our lead technician identifies where water is entering. Foundation wall seepage, floor cracks, sump pump failure, window well overflow, burst supply line—each source requires a different containment and extraction approach. We also assess electrical safety, check for sewage contamination indicators, and evaluate structural concerns. In Vienna colonials, water often enters through multiple pathways simultaneously, and missing one means the basement floods again during the next rain.",
+        timeframe: "First 15–30 minutes on site",
       },
       {
-        step: 3,
-        title: 'Damaged Material Removal',
-        description: 'Water-damaged materials requiring removal are identified and carefully extracted. Finished basement drywall typically requires "flood cuts" 12-24 inches above water lines. Carpet padding, wet insulation, and damaged trim are removed and properly disposed.',
-        details: [
-          'Drywall flood cut assessment',
-          'Carpet and padding removal when necessary',
-          'Wet insulation extraction',
-          'Baseboard and trim removal',
-          'Contents removal to dry areas',
-          'Proper disposal of damaged materials',
-          'Preparation for structural drying'
-        ],
-        duration: '4-8 hours',
-        icon: 'demolition'
+        number: 3,
+        title: "Rapid Water Extraction",
+        description:
+          "Truck-mounted extraction systems remove thousands of gallons per hour from your basement. For deep flooding—common when sump pumps fail during Vienna storms—we deploy submersible pumps first to reduce water levels, then switch to truck-mounted units for thorough extraction from carpet, concrete, and hard-to-reach areas. If water continues entering during extraction (active foundation seepage during rain), we run extraction continuously until the event subsides.",
+        timeframe: "2–6 hours depending on volume and basement size",
       },
       {
-        step: 4,
-        title: 'Structural Drying Setup',
-        description: 'Strategic placement of air movers and dehumidifiers creates optimal drying conditions for Vienna basements. We position equipment to dry concrete floors, wall cavities, framing, and remaining materials completely—preventing mold growth and structural damage.',
-        details: [
-          'High-velocity air movers (10-20 units typical)',
-          'Commercial dehumidifiers extracting moisture',
-          'Airflow patterns optimized for basement drying',
-          'Wall cavity drying equipment when needed',
-          'Concrete floor drying techniques',
-          'Equipment positioning for maximum effectiveness',
-          'Continuous operation until drying completes'
-        ],
-        duration: '6-12 hours',
-        icon: 'drying-equipment'
+        number: 4,
+        title: "Damaged Material Assessment & Removal",
+        description:
+          "Water-saturated materials that can't be dried safely get removed. In finished Vienna basements, this typically means flood cuts—removing drywall 12–24 inches above the water line to expose wall cavities for drying and prevent mold growth behind walls. Carpet padding almost always requires removal. Carpet itself can sometimes be saved with rapid extraction. Wet insulation, warped baseboards, and saturated trim are removed and cataloged for insurance documentation.",
+        timeframe: "4–8 hours",
       },
       {
-        step: 5,
-        title: 'Moisture Monitoring & Adjustment',
-        description: 'Daily monitoring visits track drying progress using moisture meters and thermal imaging. Technicians take readings in concrete, framing, and remaining materials, adjust equipment as needed, and document progress. Vienna basements typically require 4-7 days for complete drying.',
-        details: [
-          'Daily moisture readings throughout basement',
-          'Concrete moisture testing',
-          'Thermal imaging confirming moisture reduction',
-          'Equipment adjustment optimizing drying',
-          'Progress documentation for insurance',
-          'Timeline updates based on actual drying',
-          'Continued monitoring until target moisture achieved'
-        ],
-        duration: '4-7 days',
-        icon: 'monitoring'
+        number: 5,
+        title: "Structural Drying & Dehumidification Setup",
+        description:
+          "Strategic placement of commercial air movers and LGR dehumidifiers creates optimal drying conditions throughout your basement. Vienna's older colonials often have compartmentalized basement layouts requiring 15–25 pieces of drying equipment positioned to create airflow across concrete floors, through wall cavities, and around structural framing. We calculate moisture loads based on materials, square footage, and ambient conditions—then deploy equipment to achieve drying targets within the shortest possible timeframe.",
+        timeframe: "6–12 hours for initial setup",
       },
       {
-        step: 6,
-        title: 'Cleaning, Sanitization & Mold Prevention',
-        description: 'Thorough cleaning and antimicrobial treatment of all affected basement surfaces. We address contamination concerns (especially important with foundation seepage), eliminate musty odors, and apply mold-preventive treatments protecting your basement long-term.',
-        details: [
-          'HEPA vacuuming removing particulates and dust',
-          'Surface cleaning with EPA-approved products',
-          'Antimicrobial treatment preventing mold growth',
-          'Odor elimination addressing source causes',
-          'Contents cleaning when salvageable',
-          'Air quality verification',
-          'Humidity control recommendations'
-        ],
-        duration: '1-2 days',
-        icon: 'cleaning'
+        number: 6,
+        title: "Daily Moisture Monitoring & Equipment Adjustment",
+        description:
+          "Technicians return daily to measure moisture content in concrete, framing, drywall, and subfloor materials using pin and pinless moisture meters. Thermal imaging identifies hidden moisture pockets that meters alone can miss. Equipment gets repositioned as drying progresses—areas that dry first get equipment redirected to slower-drying zones. Vienna basements with concrete slab floors typically require 4–7 days for complete drying. We document every reading for insurance records.",
+        timeframe: "4–7 days of monitoring",
       },
       {
-        step: 7,
-        title: 'Basement Reconstruction',
-        description: 'Complete restoration of your finished basement to pre-loss condition. Our construction teams install new drywall, flooring, trim, and paint—matching original finishes. We coordinate all trades delivering quality craftsmanship throughout your Vienna basement.',
-        details: [
-          'Drywall installation and finishing',
-          'Flooring replacement (carpet, luxury vinyl, etc.)',
-          'Baseboard and trim installation',
-          'Paint and finish work',
-          'Fixture reinstallation',
-          'Final cleanup and detailing',
-          'Quality inspection ensuring satisfaction'
-        ],
-        duration: '3-10 days',
-        icon: 'reconstruction'
+        number: 7,
+        title: "Cleaning, Sanitization & Mold Prevention",
+        description:
+          "Once moisture readings hit target levels, we clean all affected surfaces with EPA-registered antimicrobial products that kill bacteria and prevent mold colonization. HEPA air scrubbers filter airborne particulates and mold spores throughout the drying process. For foundation seepage events where groundwater entered the basement, we treat all contacted surfaces for biological contamination. Odor elimination addresses the musty smell that lingers after basement flooding in older homes.",
+        timeframe: "1–2 days",
       },
       {
-        step: 8,
-        title: 'Prevention Recommendations & Follow-Up',
-        description: 'Comprehensive review of flooding causes and prevention strategies specific to your Vienna property. We provide recommendations for drainage improvements, sump pump upgrades, waterproofing options, and maintenance practices preventing future basement flooding.',
-        details: [
-          'Flooding cause analysis and documentation',
-          'Drainage improvement recommendations',
-          'Sump pump system evaluation and suggestions',
-          'Waterproofing options explained',
-          'Maintenance practices preventing future issues',
-          'Referrals to trusted contractors when needed',
-          'Follow-up ensuring continued satisfaction'
-        ],
-        duration: '1-2 hours',
-        icon: 'prevention'
-      }
-    ]
+        number: 8,
+        title: "Prevention Recommendations & Follow-Up",
+        description:
+          "Before closing the project, we provide a detailed assessment of what caused your basement to flood and specific recommendations to prevent recurrence. For Vienna properties, this typically includes sump pump upgrade or backup system installation, exterior drainage improvements, foundation waterproofing referrals, window well cover installation, and gutter/downspout modifications. We provide referrals to licensed contractors we trust for permanent waterproofing work and follow up to ensure your basement stays dry.",
+        timeframe: "1–2 hours for consultation",
+      },
+    ],
   },
 
-  faq: {
-    heading: 'Vienna Basement Flooding FAQs',
-    description: 'Common questions about basement water damage in Vienna homes.',
-    questions: [
+  localChallenges: {
+    headline: "Why Vienna Basements Flood",
+    challenges: [
       {
-        question: 'Why do Vienna basements flood so frequently?',
-        answer: 'Vienna\'s many 1950s-70s colonials were built when foundation waterproofing standards differed from today. Aging foundations, deteriorated waterproofing, inadequate drainage systems, and hydrostatic pressure during heavy rain combine to create basement flooding. Properties near Difficult Run and Wolf Trap Creek face additional flash flood risks. The good news: most basement flooding is preventable with proper drainage and waterproofing improvements.'
+        title: "Foundation Seepage in 1950s–1970s Colonials",
+        description:
+          "Vienna's established neighborhoods—Vienna Town, Clarks Crossing, areas along Maple Avenue—feature colonials built when foundation waterproofing consisted of a thin coat of asphalt dampproofing applied to exterior walls. After 50–70 years, that coating has cracked, peeled, and deteriorated completely. During heavy rain, hydrostatic pressure builds against foundation walls as clay soil becomes saturated, forcing groundwater through hairline cracks, cold joints where walls meet footings, and porous concrete block. The result is water weeping through walls, pooling at the base of foundation walls, and saturating finished basement materials from the bottom up.",
+        solution:
+          "We identify every entry point using thermal imaging and visual inspection, extract all water, and dry the foundation walls and floor completely. We then document seepage locations and provide specific waterproofing recommendations—interior drainage systems, exterior membrane application, or both—with referrals to contractors who specialize in Vienna's older foundations.",
       },
       {
-        question: 'How quickly can you remove water from my flooded basement?',
-        answer: 'We typically arrive within 45 minutes throughout Vienna and begin extraction immediately. Most Vienna basements can be completely extracted in 2-6 hours depending on water depth and basement size. Our truck-mounted extraction systems remove water rapidly—the faster we extract, the less damage your basement sustains and the shorter overall restoration time.'
+        title: "Sump Pump Failures During Storms",
+        description:
+          "Many Vienna homes depend entirely on sump pumps to manage groundwater and foundation drainage. When storms knock out power—common in Vienna's tree-heavy neighborhoods—pumps without battery backup stop working at the exact moment water volume peaks. Even with power, aging pump motors burn out under sustained load, float switches stick from debris accumulation, and discharge lines freeze in winter or clog with sediment. Builder-grade pumps installed 20–30 years ago were often undersized for actual water volumes and were never designed to run continuously during multi-day rain events.",
+        solution:
+          "We extract flood water immediately while evaluating your entire sump system—pump capacity, pit condition, float mechanism, discharge routing, and backup power. We recommend specific upgrades: primary pump replacement with appropriately sized units, battery backup systems that activate automatically during outages, and water-powered backup pumps for extended power failures. Prevention through proper sump maintenance costs a fraction of repeated basement flooding restoration.",
       },
       {
-        question: 'Will my finished basement need to be completely gutted?',
-        answer: 'Not always. If we arrive quickly and water hasn\'t saturated materials for extended periods, we may save drywall, flooring, and finishes through aggressive extraction and drying. However, basement flooding often requires "flood cuts"—removing drywall 12-24 inches above water lines—to dry wall cavities and prevent mold. We assess each situation individually and save materials whenever possible while ensuring complete drying.'
+        title: "Inadequate Exterior Drainage & Grading",
+        description:
+          "Decades of landscaping, tree root growth, soil settling, and additions have altered drainage patterns around many Vienna properties. Lot grading that originally directed water away from foundations has reversed in spots. Gutters overflow because downspouts terminate too close to foundations or discharge into underground pipes that have collapsed. Mature trees near foundations create root channels that funnel water directly to basement walls. Flower beds built against foundations trap moisture instead of shedding it.",
+        solution:
+          "After extracting and drying your basement, we conduct a drainage assessment documenting every contributing factor. We provide prioritized recommendations: downspout extensions, grading corrections, French drain installation, and landscape modifications. These relatively inexpensive improvements often eliminate chronic basement moisture problems that no amount of interior waterproofing can fix.",
       },
       {
-        question: 'What causes sump pumps to fail during storms?',
-        answer: 'The most common cause is power outages disabling pumps precisely when needed most. Other failures include burned-out motors, float switch malfunctions, frozen discharge lines in winter, and pumps undersized for water volume. We recommend battery backup systems, proper pump maintenance, and testing pumps before storm season. After pump failure flooding, we assess your system and provide upgrade recommendations.'
+        title: "Storm Flooding Near Difficult Run & Wolf Trap Stream",
+        description:
+          "Properties along the Difficult Run Creek corridor, near Wolf Trap Stream, and in low-lying areas throughout Vienna face flash flood risk during severe storms. When these waterways overflow their banks or storm drainage systems become overwhelmed, water rises from below—saturating soil, overwhelming sump systems, and flooding basements through floor drains, utility penetrations, and foundation cracks simultaneously. These events affect properties that never experience water issues under normal conditions.",
+        solution:
+          "Storm flood response requires rapid, high-volume extraction using multiple submersible pumps and truck-mounted systems working simultaneously. Because creek and storm water carries sediment, bacteria, and organic contamination, we follow Category 2/3 water protocols—removing porous materials that contacted flood water and applying biocide treatment to all structural surfaces. We also help homeowners evaluate flood insurance options and mitigation measures for properties in flood-prone zones.",
       },
       {
-        question: 'How do you prevent mold after basement flooding?',
-        answer: 'Mold prevention requires complete structural drying (moisture levels below 15% in all materials), antimicrobial treatment of affected surfaces, and proper humidity control. Vienna basements are especially susceptible to mold due to naturally higher humidity. We use commercial dehumidifiers, monitor moisture daily, and treat all surfaces with EPA-approved antimicrobial products. Complete drying before reconstruction is essential—rushed restoration often leads to mold problems months later.'
+        title: "Window Well Leaks & Egress Failures",
+        description:
+          "Basement window wells in Vienna colonials accumulate debris, lose drainage capacity over time, and often lack proper covers. During heavy rain, window wells fill like bathtubs. Water enters through deteriorated window glazing, cracked frames, and gaps between window units and foundation walls. Egress windows installed during basement finishing projects sometimes lack proper waterproofing, creating new leak pathways that didn't exist in the original construction. Water entering through window wells floods basements from wall height rather than floor level, damaging drywall, insulation, and framing before reaching the floor.",
+        solution:
+          "We extract water, remove damaged drywall and insulation around affected windows, and dry wall cavities thoroughly. We then assess window well drainage, recommend covers and drain improvements, and coordinate with window contractors when replacement is needed. Proper window well maintenance is one of the simplest and most effective basement flood prevention measures available.",
       },
       {
-        question: 'Can you fix the underlying cause of my basement flooding?',
-        answer: 'We focus on restoration and emergency water removal, but we coordinate with waterproofing specialists for permanent solutions. After extracting water and completing restoration, we assess your specific flooding cause—foundation seepage, inadequate drainage, sump pump issues—and provide referrals to trusted contractors offering interior drainage systems, exterior waterproofing, or other solutions. We can perform restoration work after waterproofing installation if needed.'
+        title: "Plumbing & Appliance Failures in Basement Utilities",
+        description:
+          "Vienna basements house water heaters, washing machines, HVAC systems, water softeners, and other appliances that connect to pressurized water supply lines. When a water heater tank corrodes and ruptures, a washing machine supply hose bursts, or an HVAC condensate drain clogs, water floods the basement continuously until someone discovers it and shuts off supply. A 50-gallon water heater failure releases its full tank contents plus continuous supply pressure until the valve is closed—flooding finished basements in minutes.",
+        solution:
+          "We extract water, assess affected utilities for safety, and coordinate with licensed plumbers and HVAC technicians for repair or replacement. We recommend preventive measures: stainless steel braided supply hoses, automatic shutoff valves, water leak detectors with alarms, drain pans under water heaters, and regular appliance inspection schedules. These low-cost measures prevent the most common—and most preventable—basement flooding events.",
       },
-      {
-        question: 'Will insurance cover basement flooding restoration?',
-        answer: 'Coverage depends on the water source. Sudden internal events (burst pipes, hot water heater failures, sump pump malfunctions) are typically covered. Foundation seepage may have limited coverage. Surface water flooding usually requires separate flood insurance. We document everything thoroughly, work directly with insurance companies, and help maximize coverage regardless of the flooding source. Call us immediately after flooding—we\'ll guide you through insurance notification while dispatching to your location.'
-      },
-      {
-        question: 'How long will basement flooding restoration take?',
-        answer: 'Timeline depends on damage extent. Minor flooding with quick response may take 4-6 days (3-5 days drying, 1-2 days restoration). Significant finished basement flooding requiring extensive material removal and reconstruction may take 2-3 weeks. We provide accurate timelines after initial assessment and keep you informed throughout the process. Proper drying cannot be rushed—complete moisture removal is essential for successful restoration.'
-      },
-      {
-        question: 'What should I do while waiting for your emergency team?',
-        answer: 'First ensure family safety—avoid walking through deep standing water. Shut off electricity to the basement if you can do so safely. Move valuable items to higher ground if possible. Don\'t use household vacuums on water (electrical hazard). Document damage with photos for insurance if safe to do so. Our emergency team will guide you through additional steps while traveling to your Vienna location—call (703) 656-0105 immediately.'
-      },
-      {
-        question: 'Do you service all Vienna neighborhoods for basement flooding?',
-        answer: 'Yes, we provide 24/7 basement flooding response throughout Vienna including Vienna Town, Oakton, Dunn Loring, Wolf Trap, Clarks Crossing, Tysons Woods, and all surrounding areas. Our Vienna-based teams know local streets and common basement issues in different neighborhoods. Whether you have an older colonial near Church Street or newer construction in Oakton, we have expertise with your property type.'
-      }
-    ]
+    ],
   },
 
-  cta: {
-    heading: 'Basement Flooding? We Respond Immediately',
-    subheading: '24/7 Emergency Water Removal Throughout Vienna',
-    buttonText: 'Call (703) 656-0105',
-    buttonLink: 'tel:7036560105',
-    secondaryText: 'Average 45-minute response time',
-    emergencyText: 'Serving Vienna Town, Oakton, Dunn Loring & surrounding areas'
+  equipmentSection: {
+    headline: "Basement Flooding Equipment We Deploy",
+    equipment: [
+      {
+        name: "Truck-Mounted Extraction System",
+        purpose:
+          "Removes thousands of gallons per hour from flooded basements through continuous vacuum extraction. Truck-mounted units generate far more suction than portable extractors, pulling water from carpet fibers, concrete pores, and hard-to-reach basement areas.",
+        brand: "Prochem",
+      },
+      {
+        name: "Submersible Sump Pumps",
+        purpose:
+          "Handle deep standing water in severely flooded basements. Deployed when water depth exceeds what extraction wands can reach—common in full-basement flooding after sump pump failure. Pump continuously until water level drops enough for extraction equipment.",
+        brand: "Wayne",
+      },
+      {
+        name: "LGR Dehumidifiers",
+        purpose:
+          "Low-grain refrigerant dehumidifiers extract moisture from saturated basement air more efficiently than conventional units. Essential for drying concrete slab floors and block walls in Vienna's older homes where moisture loads are extremely high after flooding.",
+        brand: "Dri-Eaz",
+      },
+      {
+        name: "High-Velocity Air Movers",
+        purpose:
+          "Create focused airflow across basement floors, walls, and into cavities to accelerate evaporation. Positioned strategically based on basement layout—Vienna colonial basements typically require 15–25 units for adequate coverage.",
+        brand: "Dri-Eaz",
+      },
+      {
+        name: "Thermal Imaging Cameras",
+        purpose:
+          "Detect hidden moisture behind walls, under flooring, and in ceiling cavities without destructive testing. Identifies wet areas that visual inspection and standard moisture meters miss—critical in finished basements where water travels behind drywall.",
+        brand: "FLIR",
+      },
+      {
+        name: "Pin & Pinless Moisture Meters",
+        purpose:
+          "Measure exact moisture content in concrete, drywall, wood framing, and subfloor materials. Daily readings verify drying progress and confirm when materials reach safe moisture levels before reconstruction begins.",
+        brand: "Delmhorst",
+      },
+      {
+        name: "HEPA Air Scrubbers",
+        purpose:
+          "Filter airborne mold spores, dust, and particulates during demolition and drying. Maintain air quality throughout the basement during restoration—especially important when removing water-damaged drywall and insulation that may harbor mold growth.",
+        brand: "Abatement Technologies",
+      },
+      {
+        name: "Injection Drying Systems",
+        purpose:
+          "Force warm, dry air into wall cavities, under floating floors, and behind built-in cabinetry. Essential for drying finished Vienna basements where removing all materials isn't necessary but trapped moisture behind surfaces must be eliminated.",
+        brand: "Injectidry",
+      },
+    ],
+    localNote:
+      "Our Vienna trucks carry equipment sized for typical 800–1,400 square foot basement footprints found in area colonials. We arrive with sufficient capacity to handle your entire basement on the first trip—no waiting for additional equipment while water continues damaging your home.",
   },
 
-  relatedServices: [
+  pricingSection: {
+    headline: "Basement Flooding Restoration Costs in Vienna",
+    intro:
+      "Basement flooding costs in Vienna vary significantly based on the scope of damage. A minor sump pump overflow caught within hours may cost $2,000–$4,000 to extract and dry. A finished basement with 12 inches of standing water requiring demolition, full structural drying, mold prevention, and reconstruction can reach $15,000–$30,000 or more. Most sudden flooding events are covered by homeowners insurance. We work directly with your insurance company, provide detailed documentation supporting your claim, and bill insurance directly when possible. Free on-site assessment before any work begins.",
+    factors: [
+      "Water depth and total volume—two inches across 1,000 square feet requires different resources than two feet of standing water in the same space",
+      "Finished versus unfinished basement—finished basements with drywall, carpet, insulation, and built-ins cost significantly more to restore than unfinished concrete utility spaces",
+      "Water source and contamination level—clean water from supply line failure versus groundwater seepage versus sewage backup each require different protocols and treatment levels",
+      "Response speed—basements addressed within the first 6 hours sustain dramatically less damage than those left standing for 24–48 hours before extraction begins",
+      "Materials affected—carpet, engineered flooring, drywall, insulation, stored contents, and specialty finishes all factor into total restoration cost",
+      "Mold remediation needs—prolonged moisture exposure before professional response often requires mold testing and remediation as an additional scope of work",
+    ],
+    cta: "Call (703) 656-0105 for immediate basement flooding response in Vienna. We assess damage on site, explain your insurance options, and begin extraction the moment we arrive.",
+  },
+
+  serviceAreaSection: {
+    headline: "Basement Flooding Response Throughout Vienna",
+    neighborhoods: [
+      "Vienna Town",
+      "Oakton",
+      "Dunn Loring",
+      "Wolf Trap",
+      "Clarks Crossing",
+      "Tysons Woods",
+      "Windover Heights",
+      "Vienna Woods",
+      "Moorefield Station",
+      "Ayr Hill",
+      "Patrick Henry",
+      "Southside",
+    ],
+    responseTime:
+      "24/7 emergency response to all Vienna neighborhoods. Our crews reach Vienna Town, Oakton, Dunn Loring, Wolf Trap, Clarks Crossing, and Tysons Woods within 45 minutes of your call—including nights, weekends, and holidays.",
+  },
+
+  faqSection: [
     {
-      title: 'Water Damage Restoration',
-      description: 'Complete water damage solutions for all Vienna properties',
-      link: '/locations/vienna/services/water-damage'
+      question: "Why do Vienna basements flood so frequently?",
+      answer:
+        "Vienna's basement flooding problems come down to three factors: aging housing stock, clay soil, and inadequate drainage infrastructure. Most Vienna colonials were built in the 1950s–1970s with foundation waterproofing that has completely deteriorated over 50–70 years. The clay-heavy soil throughout Vienna doesn't absorb rainfall—it channels water directly to foundations where hydrostatic pressure forces it through every crack and weak point. Properties near Difficult Run Creek and Wolf Trap Stream face additional risk from rising water tables and flash flooding during severe storms. The combination means that without modern waterproofing, sump systems, and drainage improvements, basement flooding in Vienna is a matter of when, not if.",
     },
     {
-      title: 'Mold Remediation',
-      description: 'Professional mold removal after basement flooding',
-      link: '/locations/vienna/services/residential/cleanup-services/mold-remediation/'
+      question:
+        "How fast can you extract water from my flooded Vienna basement?",
+      answer:
+        "We dispatch immediately when you call (703) 656-0105 and typically arrive within 45 minutes anywhere in Vienna. Extraction begins the moment we're on site—our truck-mounted systems remove thousands of gallons per hour. Most Vienna basements are fully extracted within 2–6 hours depending on water volume and basement size. For deep flooding after sump pump failure, we deploy submersible pumps first to reduce water levels rapidly, then follow with truck-mounted extraction for thorough removal. The faster we extract, the less secondary damage develops and the lower your total restoration cost.",
     },
     {
-      title: 'Sewage Cleanup',
-      description: 'Emergency sewage backup restoration',
-      link: '/locations/vienna/services/residential/cleanup-services/sewage-cleanup/'
-    }
+      question:
+        "Does my finished basement need to be completely gutted after flooding?",
+      answer:
+        "Not necessarily, but it depends on how long materials were wet and what type of water caused the flooding. If we respond within hours to a clean water event (sump pump failure, supply line burst), we can often save drywall above the water line and sometimes carpet through aggressive extraction and drying. However, drywall below the water line almost always requires flood cuts—removal 12–24 inches above the high water mark—to access wall cavities for drying and mold prevention. Carpet padding rarely survives flooding and is replaced. Sewage or contaminated groundwater events typically require more extensive material removal. We assess each situation individually, save everything that can be safely saved, and are transparent about what needs replacement.",
+    },
+    {
+      question: "What causes sump pumps to fail during storms?",
+      answer:
+        "The number one cause is power outages—storms knock out electricity precisely when your sump pump needs to run hardest. Without battery backup, your pump sits idle while water rises. Beyond power issues: motors burn out from continuous operation during extended rain events, float switches stick due to debris in the pit, discharge lines freeze in winter or clog with sediment, and pumps installed by builders 20–30 years ago were often undersized for actual water volumes. We evaluate your complete sump system after every pump failure response and recommend specific upgrades—battery backup, appropriately sized primary pump, clean discharge routing, and regular maintenance schedules.",
+    },
+    {
+      question: "How do you prevent mold after basement flooding?",
+      answer:
+        "Mold prevention after basement flooding requires three things: speed, thoroughness, and verification. Speed means extracting water and beginning structural drying within hours of the flood—mold colonizes wet organic materials within 24–48 hours. Thoroughness means drying every material to verified moisture targets, not just until surfaces feel dry. Concrete, wall cavities, and subfloor areas hold moisture long after surfaces appear dry. We use moisture meters and thermal imaging daily to track drying progress in every material. Finally, we apply EPA-registered antimicrobial products to all affected surfaces and maintain HEPA air filtration throughout the drying period. We don't declare the job dry until instruments confirm it—because assumptions about dryness are how mold problems start.",
+    },
+    {
+      question:
+        "Can you coordinate with a waterproofing company to fix the underlying problem?",
+      answer:
+        "Yes. Our restoration work and a waterproofing contractor's prevention work are complementary—we handle the emergency and restoration, they handle the permanent fix. After drying your basement, we document every water entry point and provide our assessment of contributing factors: foundation condition, drainage issues, sump system adequacy, and exterior grading problems. We maintain relationships with licensed waterproofing contractors who work specifically on Vienna's older foundations and can provide referrals. Ideally, waterproofing happens after our drying is complete but before reconstruction—that way your new drywall and finishes go up over a properly waterproofed foundation.",
+    },
+    {
+      question: "Will my homeowners insurance cover basement flooding?",
+      answer:
+        "Coverage depends entirely on the water source. Sudden, accidental events are generally covered: sump pump failure, burst supply lines, water heater rupture, appliance malfunctions. Many policies include or offer endorsements for sump pump overflow and water backup coverage—check your policy or ask your agent. Gradual seepage from deferred foundation maintenance is typically excluded. Surface water flooding (from storms, rising waterways) requires separate flood insurance through NFIP or private carriers. We document every detail of your flooding event—source, timeline, affected areas, materials, photos—and work directly with your insurance adjuster to support your claim. Call us before calling insurance; we'll guide you through notification while our crew responds.",
+    },
+    {
+      question:
+        "Is it safe to go into my basement during or after flooding?",
+      answer:
+        "Exercise extreme caution. Standing water in a basement with electrical outlets, appliances, or any powered equipment presents a serious electrocution risk. Do not enter standing water unless you have confirmed the basement electrical circuit is off at the breaker panel—and only if the panel is accessible without entering water. Do not use household vacuums or shop vacs to remove water—they are not designed for flood conditions and present electrical hazard. If you smell gas, leave the house immediately and call the gas company. If sewage is involved, avoid all contact with the water. When you call us at (703) 656-0105, we walk you through safety assessment specific to your situation while our team is en route.",
+    },
   ],
 
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Basement Flooding Restoration',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Flood Doctor - Vienna',
-      telephone: '(703) 656-0105',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Vienna',
-        addressRegion: 'VA',
-        addressCountry: 'US'
-      }
-    },
-    areaServed: {
-      '@type': 'City',
-      name: 'Vienna',
-      '@id': 'https://en.wikipedia.org/wiki/Vienna,_Virginia'
-    },
-    description: 'Professional basement flooding restoration in Vienna, VA. Expert solutions for foundation seepage, sump pump failures, and water damage in Vienna\'s older colonials. 24/7 emergency response.',
-    hoursAvailable: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59'
-    }
-  }
+  relatedServices: [
+    "/water-damage",
+    "/flood-cleanup",
+    "/mold-remediation",
+    "/sewage-cleanup",
+    "/storm-damage",
+  ],
+
+  finalCTA: {
+    headline: "Basement Flooding in Vienna? Call Now.",
+    paragraph:
+      "Every hour of standing water increases damage to your foundation, finishes, and belongings. Our emergency crews respond to Vienna Town, Oakton, Dunn Loring, Wolf Trap, Clarks Crossing, and all Vienna neighborhoods within 45 minutes—24/7, including nights and holidays. Professional extraction, structural drying, mold prevention, and full restoration from one team, one call.",
+    phone: "(703) 656-0105",
+    buttonText: "Call (703) 656-0105 for Emergency Response",
+  },
 };

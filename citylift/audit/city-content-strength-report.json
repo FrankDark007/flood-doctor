@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-02-18T03:38:19.851Z",
+  "capturedAt": "2026-02-18T03:57:04.691Z",
   "planVersion": "FD-CITYLIFT-PLAN-005",
   "executionVersion": "FD-CITYLIFT-EXEC-004",
   "totalPages": 105,
@@ -17,21 +17,21 @@
       "Reston": 84,
       "Springfield": 83,
       "Tysons": 89,
-      "Vienna": 67
+      "Vienna": 98
     },
     "tierCounts": {
-      "Competitive": 72,
+      "Competitive": 77,
       "Expand": 27,
-      "Thin": 5,
-      "Rewrite": 1
+      "Thin": 1,
+      "Rewrite": 0
     },
     "lowestCity": {
-      "city": "Vienna",
-      "avgScore": 67
+      "city": "Great Falls",
+      "avgScore": 68
     },
     "mostCommonWeakness": {
       "dimension": "localSpecificity",
-      "count": 46
+      "count": 48
     },
     "calibration": {
       "strongAnchor": {
@@ -41,62 +41,22 @@
         "tier": "Competitive"
       },
       "thinAnchor": {
-        "city": "Vienna",
-        "route": "/flood-cleanup",
-        "score": 39,
-        "word_count": 774,
-        "tier": "Rewrite"
+        "city": "Great Falls",
+        "route": "/mold-remediation",
+        "score": 63,
+        "word_count": 1312,
+        "tier": "Expand"
       }
     }
   },
   "priorityTargets": {
     "bottom10": [
       {
-        "city": "Vienna",
-        "route": "/flood-cleanup",
-        "score": 39,
-        "tier": "Rewrite",
-        "word_count": 774,
-        "diagnostic": "low word count (774w); missing key sections"
-      },
-      {
         "city": "Arlington",
         "route": "/emergency-water-removal",
         "score": 40,
         "tier": "Thin",
         "word_count": 1402,
-        "diagnostic": "missing key sections; weak E-E-A-T signals"
-      },
-      {
-        "city": "Vienna",
-        "route": "/burst-pipe",
-        "score": 50,
-        "tier": "Thin",
-        "word_count": 2006,
-        "diagnostic": "missing key sections; weak E-E-A-T signals"
-      },
-      {
-        "city": "Vienna",
-        "route": "/basement-flooding",
-        "score": 51,
-        "tier": "Thin",
-        "word_count": 3064,
-        "diagnostic": "missing key sections; weak E-E-A-T signals"
-      },
-      {
-        "city": "Vienna",
-        "route": "/water-damage",
-        "score": 51,
-        "tier": "Thin",
-        "word_count": 3108,
-        "diagnostic": "missing key sections; weak E-E-A-T signals"
-      },
-      {
-        "city": "Vienna",
-        "route": "/fire-damage",
-        "score": 52,
-        "tier": "Thin",
-        "word_count": 1649,
         "diagnostic": "missing key sections; weak E-E-A-T signals"
       },
       {
@@ -130,6 +90,46 @@
         "tier": "Expand",
         "word_count": 1312,
         "diagnostic": "weak E-E-A-T signals"
+      },
+      {
+        "city": "Great Falls",
+        "route": "/sewage-cleanup",
+        "score": 63,
+        "tier": "Expand",
+        "word_count": 1317,
+        "diagnostic": "weak E-E-A-T signals"
+      },
+      {
+        "city": "Great Falls",
+        "route": "/fire-damage",
+        "score": 64,
+        "tier": "Expand",
+        "word_count": 1473,
+        "diagnostic": "weak E-E-A-T signals"
+      },
+      {
+        "city": "Great Falls",
+        "route": "/storm-damage",
+        "score": 64,
+        "tier": "Expand",
+        "word_count": 1381,
+        "diagnostic": "weak E-E-A-T signals"
+      },
+      {
+        "city": "Herndon",
+        "route": "/storm-damage",
+        "score": 74,
+        "tier": "Expand",
+        "word_count": 1482,
+        "diagnostic": "Strong content across all dimensions"
+      },
+      {
+        "city": "Springfield",
+        "route": "/storm-damage",
+        "score": 74,
+        "tier": "Expand",
+        "word_count": 1459,
+        "diagnostic": "Strong content across all dimensions"
       }
     ]
   },
@@ -1786,16 +1786,16 @@
     {
       "city": "Vienna",
       "route": "/basement-flooding",
-      "word_count": 3064,
-      "score": 51,
-      "tier": "Thin",
-      "diagnostic": "missing key sections; weak E-E-A-T signals",
+      "word_count": 3954,
+      "score": 98,
+      "tier": "Competitive",
+      "diagnostic": "Strong content across all dimensions",
       "dimensions": {
         "wordCount": 1,
-        "topicalDepth": 0.3333333333333333,
-        "eeatSignals": 0.1,
-        "localSpecificity": 0.3,
-        "semanticCoverage": 0.9333333333333333,
+        "topicalDepth": 1,
+        "eeatSignals": 0.9,
+        "localSpecificity": 1,
+        "semanticCoverage": 1,
         "originality": 1
       },
       "weakest_dimension": "eeatSignals"
@@ -1803,53 +1803,53 @@
     {
       "city": "Vienna",
       "route": "/burst-pipe",
-      "word_count": 2006,
-      "score": 50,
-      "tier": "Thin",
-      "diagnostic": "missing key sections; weak E-E-A-T signals",
+      "word_count": 3696,
+      "score": 96,
+      "tier": "Competitive",
+      "diagnostic": "Strong content across all dimensions",
       "dimensions": {
         "wordCount": 1,
-        "topicalDepth": 0.3333333333333333,
-        "eeatSignals": 0.1,
-        "localSpecificity": 0.25,
-        "semanticCoverage": 0.9333333333333333,
+        "topicalDepth": 1,
+        "eeatSignals": 0.95,
+        "localSpecificity": 0.85,
+        "semanticCoverage": 1,
         "originality": 1
       },
-      "weakest_dimension": "eeatSignals"
+      "weakest_dimension": "localSpecificity"
     },
     {
       "city": "Vienna",
       "route": "/fire-damage",
-      "word_count": 1649,
-      "score": 52,
-      "tier": "Thin",
-      "diagnostic": "missing key sections; weak E-E-A-T signals",
+      "word_count": 3905,
+      "score": 97,
+      "tier": "Competitive",
+      "diagnostic": "Strong content across all dimensions",
       "dimensions": {
         "wordCount": 1,
-        "topicalDepth": 0.3333333333333333,
-        "eeatSignals": 0.2,
-        "localSpecificity": 0.25,
-        "semanticCoverage": 0.9333333333333333,
+        "topicalDepth": 1,
+        "eeatSignals": 0.95,
+        "localSpecificity": 0.9,
+        "semanticCoverage": 1,
         "originality": 1
       },
-      "weakest_dimension": "eeatSignals"
+      "weakest_dimension": "localSpecificity"
     },
     {
       "city": "Vienna",
       "route": "/flood-cleanup",
-      "word_count": 774,
-      "score": 39,
-      "tier": "Rewrite",
-      "diagnostic": "low word count (774w); missing key sections",
+      "word_count": 3480,
+      "score": 100,
+      "tier": "Competitive",
+      "diagnostic": "Strong content across all dimensions",
       "dimensions": {
-        "wordCount": 0.33,
-        "topicalDepth": 0.3,
-        "eeatSignals": 0.2,
-        "localSpecificity": 0.25,
-        "semanticCoverage": 0.7333333333333333,
+        "wordCount": 1,
+        "topicalDepth": 1,
+        "eeatSignals": 1,
+        "localSpecificity": 1,
+        "semanticCoverage": 1,
         "originality": 1
       },
-      "weakest_dimension": "eeatSignals"
+      "weakest_dimension": "wordCount"
     },
     {
       "city": "Vienna",
@@ -1905,19 +1905,19 @@
     {
       "city": "Vienna",
       "route": "/water-damage",
-      "word_count": 3108,
-      "score": 51,
-      "tier": "Thin",
-      "diagnostic": "missing key sections; weak E-E-A-T signals",
+      "word_count": 4145,
+      "score": 100,
+      "tier": "Competitive",
+      "diagnostic": "Strong content across all dimensions",
       "dimensions": {
         "wordCount": 1,
-        "topicalDepth": 0.3333333333333333,
-        "eeatSignals": 0.1,
-        "localSpecificity": 0.3,
-        "semanticCoverage": 0.9333333333333333,
+        "topicalDepth": 1,
+        "eeatSignals": 1,
+        "localSpecificity": 1,
+        "semanticCoverage": 1,
         "originality": 1
       },
-      "weakest_dimension": "eeatSignals"
+      "weakest_dimension": "wordCount"
     }
   ]
 }

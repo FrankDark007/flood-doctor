@@ -1,0 +1,103 @@
+{
+  "capturedAt": "2026-02-18T03:57:17.510Z",
+  "planVersion": "FD-CITYLIFT-PLAN-005",
+  "executionVersion": "FD-CITYLIFT-EXEC-005",
+  "pages": [
+    {
+      "route": "/basement-flooding",
+      "before": {
+        "score": 51,
+        "tier": "Thin",
+        "word_count": 3064
+      },
+      "after": {
+        "score": 98,
+        "tier": "Competitive",
+        "word_count": 3954
+      },
+      "delta": {
+        "score": 47,
+        "word_count": 890,
+        "tierChange": "Thin → Competitive"
+      }
+    },
+    {
+      "route": "/burst-pipe",
+      "before": {
+        "score": 50,
+        "tier": "Thin",
+        "word_count": 2006
+      },
+      "after": {
+        "score": 96,
+        "tier": "Competitive",
+        "word_count": 3696
+      },
+      "delta": {
+        "score": 46,
+        "word_count": 1690,
+        "tierChange": "Thin → Competitive"
+      }
+    },
+    {
+      "route": "/fire-damage",
+      "before": {
+        "score": 52,
+        "tier": "Thin",
+        "word_count": 1649
+      },
+      "after": {
+        "score": 97,
+        "tier": "Competitive",
+        "word_count": 3905
+      },
+      "delta": {
+        "score": 45,
+        "word_count": 2256,
+        "tierChange": "Thin → Competitive"
+      }
+    },
+    {
+      "route": "/flood-cleanup",
+      "before": {
+        "score": 39,
+        "tier": "Rewrite",
+        "word_count": 774
+      },
+      "after": {
+        "score": 100,
+        "tier": "Competitive",
+        "word_count": 3480
+      },
+      "delta": {
+        "score": 61,
+        "word_count": 2706,
+        "tierChange": "Rewrite → Competitive"
+      }
+    },
+    {
+      "route": "/water-damage",
+      "before": {
+        "score": 51,
+        "tier": "Thin",
+        "word_count": 3108
+      },
+      "after": {
+        "score": 100,
+        "tier": "Competitive",
+        "word_count": 4145
+      },
+      "delta": {
+        "score": 49,
+        "word_count": 1037,
+        "tierChange": "Thin → Competitive"
+      }
+    }
+  ],
+  "summary": {
+    "avgScoreBefore": 49,
+    "avgScoreAfter": 98,
+    "viennaAvgBefore": 67,
+    "viennaAvgAfter": 98
+  }
+}

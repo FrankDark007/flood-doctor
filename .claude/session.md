@@ -20,7 +20,32 @@
 - After: `citylift/audit/p0-after-metrics.json`
 - Refactor script: `scripts/citylift-p0-title-refactor.mjs`
 
-### P1 — Thin Content Remediation (NOT STARTED — awaiting approval)
+### P1 — Content Strength Audit ✅ SCORING COMPLETE (commit `cf960e2`)
+- 105 service pages scored on 6 dimensions (word count, topical depth, E-E-A-T, local specificity, semantic coverage, originality)
+- Discovered 4 content formats: A (90 files), B (5 Vienna), C (6 Alexandria+Arlington), D (4 Tysons)
+
+### P1 — Vienna Pilot Remediation ✅ COMPLETE
+- Converted 5 Vienna pages from Format B → Format A
+- All 5 pages now score 96-100 (Competitive tier)
+- Vienna city avg: 67 → 98 (+31 points)
+- Total word count added: ~8,600 words across 5 pages
+- Before/after report: `citylift/audit/p1-vienna-after.json`
+- Build: 189/189 routes OK, no duplicate titles, no other cities modified
+
+| Page | Before | After | Tier Change |
+|------|--------|-------|-------------|
+| /flood-cleanup | 39 (774w) | 100 (3480w) | Rewrite → Competitive |
+| /water-damage | 51 (3108w) | 100 (4145w) | Thin → Competitive |
+| /basement-flooding | 51 (3064w) | 98 (3954w) | Thin → Competitive |
+| /burst-pipe | 50 (2006w) | 96 (3696w) | Thin → Competitive |
+| /fire-damage | 52 (1649w) | 97 (3905w) | Thin → Competitive |
+
+### Remaining Low-Scoring Pages (for future remediation)
+1. Arlington /emergency-water-removal — 40 (Thin, Format C)
+2. Great Falls — 8 pages avg 68 (all Expand)
+3. Herndon /storm-damage — 74 (Expand)
+4. Springfield /storm-damage — 74 (Expand)
+
 ### P2 — High-Impression / Low-CTR Pages (requires GSC baseline)
 ### P3 — Full City Uniqueness Expansion
 
@@ -102,4 +127,4 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-17 (CityLift P0 Title Normalization Complete)*
+*Updated: 2026-02-17 (CityLift P1 Content Strength Audit Complete — awaiting approval)*
