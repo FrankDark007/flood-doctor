@@ -9,3 +9,6 @@
 | 2026-02-17 | Service name shortening map (9 canonical keywords) | Deterministic mapping eliminates redundant modifiers while preserving search intent | Claude | Y |
 | 2026-02-17 | CityServicesHub title shortened to "Restoration Services in {city}, VA" | Falls Church was 64 chars, now 53 | Claude | Y |
 | 2026-02-17 | Differentiator segments moved out of titles | They exceeded 60 char limit; differentiators belong in meta descriptions | Human + Claude | Y |
+| 2026-02-17 | 4 content formats detected (A/B/C/D) — scoring adapts per format | Different cities use different TS structures; parsers must handle all 4 to avoid false negatives | Claude | Y |
+| 2026-02-17 | Content strength uses 6 weighted dimensions (15/25/20/20/10/10) | Matches PLAN-005 rubric: word count, topical depth, E-E-A-T, local specificity, semantic coverage, originality | Human + Claude | Y |
+| 2026-02-17 | Calibration validated: McLean water-damage=98, Vienna flood-cleanup=39 | Strong anchor scores 80+ as expected; thin anchor scores <40 as expected | Claude | Y |
