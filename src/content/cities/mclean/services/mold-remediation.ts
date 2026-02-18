@@ -1,6 +1,6 @@
-// src/content/cities/mclean/services/residential/cleanup-services/mold-remediation/.ts
-// Generated: January 3, 2026
-// McLean Mold Remediation Service Page - 100% Unique
+// src/content/cities/mclean/services/mold-remediation.ts
+// CityLift P3b — Fully differentiated for McLean luxury estate housing stock
+// Rewritten: February 18, 2026
 
 export const mcleanMoldRemediationContent = {
   meta: {
@@ -12,141 +12,145 @@ export const mcleanMoldRemediationContent = {
   h1: "Mold Remediation Services in McLean, Virginia",
 
   introSection: {
-    headline: "Professional Mold Remediation for McLean Homes",
+    headline: "Estate-Grade Mold Remediation for McLean's Luxury Properties",
     paragraphs: [
-      `That musty smell in your Langley basement isn't just unpleasant—it's a warning sign of mold growth that may have spread far beyond what you can see. McLean's estate homes, with their extensive finished basements, complex HVAC systems, and mature landscaping, create environments where mold thrives hidden from view. By the time you notice the smell or see discoloration, colonies have often established throughout wall cavities and under flooring.
+      `McLean's estate homes present mold remediation challenges that standard restoration companies cannot handle. Behind the hand-scraped walnut paneling in your Langley library, inside the climate-controlled wine cellar beneath your Chesterbrook colonial, or within the multi-zone HVAC ductwork serving your 10,000-square-foot Salona Village residence, mold colonies establish themselves in spaces that require specialized access, containment strategies, and material-preservation protocols that go far beyond typical residential work.
 
-Flood Doctor's IICRC-certified mold remediation technicians have cleared mold from McLean properties for nearly two decades. We've remediated hidden growth in The Reserve's wine cellars, eliminated mold colonies behind the walls of Chesterbrook colonials, and restored healthy air quality in Woodside Estates homes where previous water damage went unaddressed. Mold doesn't respect property values—your million-dollar estate is just as vulnerable as any home.`,
+The fundamental problem with McLean's estate housing stock is architectural complexity. Homes built between 1960 and 1985 feature masonry-and-stone foundations with limited original waterproofing, deep below-grade finished spaces that extend three or four levels, and mechanical systems designed for comfort rather than moisture management. A single water intrusion event in a Langley estate can affect custom Italian marble flooring, irreplaceable hand-carved trim, museum-quality built-in cabinetry, and temperature-sensitive collections — all requiring remediation approaches that protect materials worth tens of thousands of dollars per room.`,
 
-      `McLean's mold challenges stem from its housing characteristics. Clay soil creates high water tables that increase basement humidity. Mature trees in Langley and Salona Village shade foundations, preventing natural drying. Finished basements with poor ventilation trap moisture. Large HVAC systems spread spores throughout 10,000-square-foot homes before anyone notices the source.
+      `What distinguishes McLean mold problems from those in other Northern Virginia communities is the sheer scale of concealed finished space. Your Woodside Estates home likely has 4,000 square feet of below-grade living area — finished media rooms, guest suites, exercise studios, and wine storage — all wrapped in drywall and carpet over concrete that sweats moisture through capillary action year-round. The mature oak and hickory canopy that makes McLean neighborhoods so desirable also shades foundations, preventing solar drying and creating perpetually damp perimeters where moisture wicks through decades-old mortar joints.
 
-We don't simply spray bleach and hope for the best. Professional mold remediation requires containment, HEPA filtration, source elimination, surface treatment, and verification testing. For McLean homeowners with health concerns, real estate transactions pending, or visible mold growth, proper remediation protects both health and property value.`
+Flood Doctor has remediated mold in over 300 McLean properties since 2008. We understand that your Clearspring Manor home's custom millwork cannot be replaced from stock, that the hand-laid stone in your El Nido wine cellar requires lime-morite treatment rather than standard antimicrobials, and that containment in a 12,000-square-foot home with six HVAC zones demands a fundamentally different engineering approach than a standard three-bedroom colonial. Our protocols protect both the structure and the irreplaceable craftsmanship that defines McLean living.`
     ],
-    localContext: "McLean's combination of finished basements, high property values, and discerning homeowners demands thorough mold remediation. Incomplete work shows up in home inspections, affects resale, and puts families at risk."
+    localContext: "McLean's combination of estate-scale homes, mature tree canopy, masonry foundations built before modern waterproofing standards, and extensive below-grade finished space creates the highest-value mold remediation scenarios in Northern Virginia. The average McLean remediation involves materials and finishes worth 3-5x what's found in typical suburban homes."
   },
 
   processSection: {
-    headline: "Our McLean Mold Remediation Process",
+    headline: "Estate Mold Remediation: Our McLean-Specific Protocol",
     steps: [
       {
         number: 1,
-        title: "Initial Assessment & Testing",
-        description: "We inspect visible mold, identify moisture sources, and assess affected areas. For McLean properties where mold extent is unclear, we recommend air quality testing and surface sampling to determine species and scope before creating a remediation plan.",
-        timeframe: "1-2 hours (testing results: 2-3 days)"
+        title: "Comprehensive Estate Assessment",
+        description: "McLean properties require assessment protocols scaled to their complexity. We survey all finished below-grade spaces, inspect each HVAC zone independently, use borescopes to examine wall cavities behind paneling without destructive testing, and deploy thermal imaging across every level. For properties with climate-controlled collections (wine, art, instruments), we assess environmental controls separately. Assessment includes air quality sampling in each zone.",
+        timeframe: "3-5 hours for estates; 1-2 hours for smaller properties"
       },
       {
         number: 2,
-        title: "Containment Setup",
-        description: "Mold spores spread easily through air. We establish containment barriers with negative air pressure, sealing affected areas from the rest of your McLean estate. This prevents cross-contamination to your wine cellar, living areas, or HVAC system during remediation.",
-        timeframe: "2-4 hours"
+        title: "Multi-Zone Containment Engineering",
+        description: "Standard single-barrier containment fails in McLean's open-plan estates. We engineer zone-specific containment that isolates affected areas while maintaining HVAC service to unaffected zones. Each containment zone gets its own negative air system. We install temporary HEPA filtration on HVAC returns serving adjacent zones to prevent cross-contamination through ductwork — a step most restoration companies skip entirely.",
+        timeframe: "4-8 hours depending on property size"
       },
       {
         number: 3,
-        title: "HEPA Air Filtration",
-        description: "Industrial HEPA air scrubbers run continuously during remediation, capturing airborne spores. In McLean's larger homes, we position multiple units to ensure adequate air changes throughout the project.",
-        timeframe: "Continuous throughout project"
+        title: "Material-Sensitive Removal",
+        description: "In McLean estates, the distinction between 'remove and replace' versus 'treat in place' involves materials worth thousands per linear foot. We evaluate each surface individually: custom mahogany paneling may be salvageable with antimicrobial treatment, while the drywall behind it requires full removal. Marble and stone surfaces receive specialized pH-neutral treatments. We photograph and catalog all trim profiles, finishes, and hardware before any demolition to ensure accurate reconstruction.",
+        timeframe: "Days 1-3, phased by zone"
       },
       {
         number: 4,
-        title: "Material Removal",
-        description: "Porous materials with established mold growth—drywall, insulation, carpet—must be removed and disposed of properly. We carefully remove affected materials to prevent spore release, bag them at the source, and transport them as contaminated waste.",
-        timeframe: "Days 1-2"
+        title: "Structural Drying with Finish Protection",
+        description: "Our drying protocol for McLean estates uses controlled dehumidification that protects sensitive finishes. Rapid forced-air drying cracks plaster, warps hardwood, and damages veneered surfaces. We use desiccant dehumidifiers that extract moisture gradually while maintaining stable temperature and humidity gradients. Psychrometric monitoring at 12-hour intervals ensures drying proceeds without creating conditions that damage surrounding materials.",
+        timeframe: "5-10 days monitored continuously"
       },
       {
         number: 5,
-        title: "Surface Treatment",
-        description: "Structural surfaces (studs, joists, concrete) receive antimicrobial treatment. We apply EPA-registered mold remediation products that eliminate remaining spores and help prevent regrowth on surfaces that remain in place.",
-        timeframe: "Day 2-3"
+        title: "Source Elimination and Prevention Engineering",
+        description: "For McLean's masonry foundations, moisture source correction often requires exterior waterproofing, French drain installation, or foundation wall injection systems. We coordinate with waterproofing contractors who understand estate-grade work — including landscape restoration after excavation. Interior solutions include commercial-grade whole-house dehumidification integrated with your existing HVAC zones, vapor barrier installation in crawlspace-to-basement transitions, and condensation management on supply ducts in humid months.",
+        timeframe: "1-3 weeks (concurrent with remediation where possible)"
       },
       {
         number: 6,
-        title: "Moisture Source Correction",
-        description: "Mold returns if moisture persists. We identify and address the water source: humidity issues, hidden leaks, foundation seepage, HVAC condensation. For McLean homes, this often involves coordination with plumbers or waterproofing specialists.",
-        timeframe: "Concurrent with remediation"
-      },
-      {
-        number: 7,
-        title: "Post-Remediation Verification",
-        description: "After remediation, we recommend clearance testing by an independent industrial hygienist. This third-party verification confirms successful remediation—important for McLean real estate transactions and homeowner peace of mind.",
-        timeframe: "After containment removal"
+        title: "Independent Verification and Documentation",
+        description: "We arrange third-party clearance testing by a certified industrial hygienist — not our own staff. For McLean real estate transactions, we provide documentation packages that include pre-remediation assessment, remediation protocols used, material disposal manifests, clearance test results, and moisture source correction details. This comprehensive documentation satisfies the most rigorous buyer inspection requirements.",
+        timeframe: "3-5 days after remediation completion"
       }
     ]
   },
 
-  moldTypes: {
-    headline: "Common Mold Types Found in McLean Homes",
-    types: [
+  localChallenges: {
+    headline: "Why McLean Estates Are Uniquely Vulnerable to Mold",
+    challenges: [
       {
-        name: "Cladosporium",
-        description: "One of the most common molds in McLean basements and HVAC systems. Olive-green to brown in color, often found on damp walls, window frames, and around HVAC components. Can trigger allergic reactions and respiratory issues.",
-        commonLocations: "Basements, bathrooms, around windows, HVAC systems"
+        title: "Masonry Foundation Moisture Migration",
+        description: "Most McLean estates built before 1985 have stone or block foundations with original mortar-and-parging waterproofing that has deteriorated over 40+ years. Moisture migrates through foundation walls via capillary action, creating a constant humidity source behind finished basement walls. This moisture never appears as a visible leak — the wall simply stays damp year-round, creating perfect mold conditions between the foundation and drywall.",
+        solution: "We use deep-wall moisture probes and thermal imaging to map moisture migration patterns through masonry. After remediation, we recommend interior drainage mat installation and commercial-grade dehumidification to manage ongoing capillary moisture without requiring costly exterior excavation."
       },
       {
-        name: "Aspergillus",
-        description: "Frequently found in water-damaged McLean homes. Multiple species exist with varying colors. Some species produce mycotoxins. Often found in insulation, drywall, and HVAC ductwork after water events.",
-        commonLocations: "Wall cavities, insulation, HVAC ducts, water-damaged materials"
+        title: "Multi-Zone HVAC Cross-Contamination",
+        description: "McLean's larger estates operate 4-6 separate HVAC zones, often with shared return air plenums. Mold spores from a contaminated basement zone enter the return air system and distribute throughout the entire home. By the time you smell mold in your third-floor primary suite, the ductwork serving every zone may carry elevated spore counts. Standard remediation that treats only visible mold misses the HVAC distribution pathway entirely.",
+        solution: "Our protocol includes independent air sampling from each HVAC zone's supply registers, followed by targeted duct cleaning and HEPA filtration of any zone showing elevated counts. We install UV-C germicidal systems in air handlers serving formerly affected zones for ongoing protection."
       },
       {
-        name: "Penicillium",
-        description: "Blue-green mold commonly found after water damage. Spreads rapidly and produces musty odors. Often found in McLean homes with past water damage that wasn't properly dried.",
-        commonLocations: "Wallpaper, carpet, mattresses, water-damaged materials"
+        title: "Mature Canopy and Foundation Shade",
+        description: "Langley, Salona Village, and Woodside Estates feature 80-100 year old hardwood canopy that shades foundations throughout the growing season. This prevents solar drying of foundation perimeters, keeps soil moisture elevated year-round, and creates condensation conditions on below-grade walls. Root systems from mature oaks also compromise foundation drainage systems, redirecting groundwater toward the structure.",
+        solution: "Post-remediation, we recommend targeted foundation perimeter grading adjustments, downspout extension to carry water beyond the canopy drip line, and strategic root barrier installation where tree roots have compromised drainage tile."
       },
       {
-        name: "Stachybotrys (Black Mold)",
-        description: "The mold that makes headlines. Requires consistently wet conditions and cellulose material. Produces mycotoxins and requires careful remediation with full containment. Less common but more serious.",
-        commonLocations: "Chronically wet drywall, ceiling tiles, areas with ongoing water intrusion"
+        title: "Climate-Controlled Collection Spaces",
+        description: "Wine cellars, art storage rooms, and humidor rooms in McLean estates operate at humidity levels (55-70% RH) that are ideal for mold growth. These spaces are intentionally maintained at conditions that invite colonization. When cooling systems malfunction or condensation develops on cellar walls, mold establishes rapidly on cork, paper labels, wooden racks, and frame materials. The contents often exceed the value of the remediation itself.",
+        solution: "We develop collection-specific remediation protocols: wine is relocated to temperature-controlled storage during remediation, art is documented and transferred to climate-stable areas, and remediation proceeds with enhanced containment to prevent spore exposure to remaining collection items. Post-remediation, we calibrate HVAC controls to maintain the lowest humidity compatible with collection preservation."
       },
       {
-        name: "Chaetomium",
-        description: "Often found alongside Stachybotrys in chronically wet areas. Produces musty odor and can cause health effects. Common in McLean basements with persistent moisture problems.",
-        commonLocations: "Water-damaged drywall, window frames, basement walls"
+        title: "Custom Material Preservation Requirements",
+        description: "Standard remediation demolishes contaminated drywall and replaces it with stock materials. In McLean estates, contaminated surfaces include hand-carved crown molding with profiles that no longer exist, imported stone tile that requires 12-week lead times, and custom-milled hardwood trim matched to 1970s-era species selections. Destructive remediation approaches create reconstruction challenges that extend projects by months and cost tens of thousands in custom fabrication.",
+        solution: "Our assessment distinguishes between materials requiring removal and those salvageable with surface treatment. We maintain relationships with architectural millwork shops, stone fabricators, and finish carpenters experienced in estate-grade work. When removal is necessary, we template and photograph every profile for accurate replication."
       }
     ]
   },
 
-  healthConcerns: {
-    headline: "Health Effects of Mold Exposure",
-    effects: [
+  equipmentSection: {
+    headline: "Estate-Scale Remediation Equipment",
+    equipment: [
       {
-        category: "Allergic Reactions",
-        symptoms: "Sneezing, runny nose, red eyes, skin rash, congestion",
-        riskGroups: "Everyone, especially those with existing allergies"
+        name: "Desiccant Dehumidification Systems",
+        purpose: "Low-temperature moisture extraction that protects sensitive finishes — operates without the heat output of refrigerant systems that can damage wood and leather",
+        brand: "Munters DryCool"
       },
       {
-        category: "Respiratory Issues",
-        symptoms: "Coughing, wheezing, shortness of breath, asthma attacks",
-        riskGroups: "Asthmatics, those with respiratory conditions, children"
+        name: "Multi-Zone Negative Air Machines",
+        purpose: "Independent containment pressurization for each remediation zone — critical in homes with 4-6 HVAC zones to prevent cross-contamination",
+        brand: "Omnitec Design OmniAire"
       },
       {
-        category: "Immune Response",
-        symptoms: "Fatigue, headaches, difficulty concentrating, sinus infections",
-        riskGroups: "Immunocompromised individuals, elderly, infants"
+        name: "Borescope Inspection Systems",
+        purpose: "Non-destructive wall cavity inspection — examines behind paneling, stone veneers, and custom millwork without demolition",
+        brand: "FLIR VS290"
       },
       {
-        category: "Mycotoxin Exposure",
-        symptoms: "Varies by species—can include neurological effects, organ damage",
-        riskGroups: "Everyone, especially with prolonged exposure to toxic species"
+        name: "Deep-Wall Moisture Mapping",
+        purpose: "Measures moisture content through masonry and finished wall assemblies up to 6 inches deep — identifies migration patterns invisible to surface meters",
+        brand: "Tramex CME5"
+      },
+      {
+        name: "UV-C Germicidal HVAC Systems",
+        purpose: "Installed in air handlers post-remediation to provide continuous spore neutralization in ductwork — protects against recontamination through HVAC distribution",
+        brand: "RGF REME HALO"
+      },
+      {
+        name: "Psychrometric Monitoring Network",
+        purpose: "Wireless sensors placed throughout the estate during drying — monitors temperature, humidity, and dew point in real time across all zones simultaneously",
+        brand: "Restoration Sciences Academy (RSA) monitoring protocol"
       }
     ],
-    note: "If family members experience unexplained respiratory symptoms that improve away from home, mold should be investigated. McLean's finished basements often harbor hidden growth that affects whole-house air quality."
+    localNote: "McLean's estate properties require equipment typically reserved for commercial restoration. Our investment in desiccant dehumidification, multi-zone negative air systems, and non-destructive inspection tools reflects the material values and architectural complexity we encounter daily in this community."
   },
 
   pricingSection: {
-    headline: "Mold Remediation Costs in McLean",
-    intro: "Mold remediation costs depend on affected area size, mold species, materials requiring removal, and accessibility. McLean's finished basements with custom materials typically require more careful removal and reconstruction. We provide detailed estimates after assessment.",
+    headline: "Mold Remediation Investment for McLean Estates",
+    intro: "McLean mold remediation costs reflect the scale, complexity, and material values involved. A remediation project in a 3,000-square-foot finished basement with custom finishes, wine cellar, and multi-zone HVAC requires fundamentally different resources than a standard residential project. We provide detailed, room-by-room estimates that account for material preservation, custom reconstruction, and the extended drying protocols estate properties demand.",
     factors: [
-      "Square footage of affected area—larger colonization requires more extensive work",
-      "Material types—custom millwork and specialty finishes affect removal approach",
-      "Accessibility—mold behind finished walls requires more demolition",
-      "Mold species—toxic species require enhanced protocols",
-      "Moisture source correction—may require plumbing or waterproofing coordination"
+      "Finished square footage affected — estate basements with 4,000+ sq ft of finished space require proportionally more containment, equipment, and labor",
+      "Material value and preservation requirements — custom millwork, imported stone, and irreplaceable finishes require treatment-in-place protocols rather than standard demolish-and-replace",
+      "HVAC zone complexity — each contaminated zone requires independent air sampling, duct cleaning, and filtration, adding $800-1,500 per zone",
+      "Collection protection — wine cellar, art room, or library remediation includes content relocation, climate-controlled temporary storage, and return coordination",
+      "Foundation moisture source correction — masonry waterproofing, drainage improvements, and whole-house dehumidification systems represent long-term investments beyond the remediation itself"
     ],
-    insuranceNote: "Most homeowner policies don't cover mold remediation as a standalone issue. However, if mold resulted from a covered water damage event (burst pipe, appliance failure), remediation may be covered. We help document the connection for insurance purposes.",
-    cta: "Call (703) 656-0101 for a professional mold assessment. We'll identify the scope, explain options, and provide a detailed estimate."
+    insuranceNote: "McLean homeowner policies with replacement cost coverage should cover mold remediation when it results from a covered water event. However, adjusters often underestimate the cost of estate-grade restoration. We provide detailed documentation including material specifications, custom fabrication quotes, and preservation-grade treatment protocols that justify coverage amounts appropriate to your property's finishes and construction quality.",
+    cta: "Call (703) 656-0101 for an estate mold assessment. We understand the complexity of McLean properties and provide assessments calibrated to the materials and systems in your home."
   },
 
   serviceAreaSection: {
-    headline: "Mold Remediation Throughout McLean",
+    headline: "Serving McLean's Estate Communities",
     neighborhoods: [
       "Langley",
       "Chesterbrook",
@@ -163,33 +167,33 @@ We don't simply spray bleach and hope for the best. Professional mold remediatio
       "Langley Farms",
       "Pimmit Hills"
     ],
-    responseTime: "Same-day assessment appointments available. For McLean properties with visible mold growth or health concerns, we prioritize scheduling to begin containment quickly."
+    responseTime: "Same-day assessment scheduling for McLean properties. For active water damage with mold risk, we deploy containment teams within 2 hours to prevent colonization from establishing in your estate's finished spaces."
   },
 
   faqSection: [
     {
-      question: "How do I know if I have a mold problem in my McLean home?",
-      answer: "Warning signs include musty odors, visible discoloration on walls or ceilings, water stains, condensation on windows, and unexplained respiratory symptoms that improve when you're away from home. McLean's finished basements often hide mold behind walls—if you had water damage that wasn't professionally dried, mold may have developed unseen."
+      question: "My McLean home has a musty smell only in the basement wine cellar — is that mold?",
+      answer: "Wine cellars operate at 55-65% relative humidity, which is within the mold growth range. A musty smell distinct from normal cellar aromas likely indicates colonization on wood racks, ceiling joists, or wall surfaces behind racking. We perform air quality testing specific to cellar environments and can remediate without disturbing your collection — wine bottles are relocated to our climate-controlled partner facility during the process."
     },
     {
-      question: "Is black mold dangerous?",
-      answer: "Stachybotrys ('black mold') produces mycotoxins and requires careful remediation with full containment. However, mold color doesn't determine danger—many dark molds are harmless while some lighter species are problematic. Professional testing identifies species. Regardless of type, visible mold in your home should be remediated."
+      question: "Our estate has six HVAC zones — can mold spread through the ductwork to unaffected areas?",
+      answer: "Yes, and this is one of the most common scenarios we encounter in McLean estates. Mold spores enter return air intakes in affected zones and distribute through shared plenums, supply ducts, and even transfer grilles between zones. We sample air from every zone's supply registers independently and remediate ductwork in any zone showing elevated spore counts. Post-remediation, UV-C germicidal systems installed in affected air handlers provide ongoing protection."
     },
     {
-      question: "Can I clean mold myself?",
-      answer: "Small areas (under 10 square feet) of surface mold on non-porous materials can sometimes be cleaned by homeowners. However, mold in wall cavities, HVAC systems, or porous materials requires professional remediation. Improper cleaning spreads spores throughout your McLean home. When in doubt, get professional assessment."
+      question: "Will mold remediation damage the custom millwork in our 1970s colonial?",
+      answer: "Not with our protocols. We distinguish between materials requiring removal (typically drywall and insulation behind the millwork) and surfaces treatable in place (the millwork itself). Custom crown molding, chair rail, wainscoting, and built-in cabinetry often survive intact when mold hasn't penetrated the wood grain. We template and photograph every profile before any adjacent demolition, ensuring accurate reconstruction if replacement becomes necessary."
     },
     {
-      question: "Will mold come back after remediation?",
-      answer: "Not if the moisture source is corrected. Mold requires moisture to grow—eliminate the water problem and mold won't return. Our remediation includes moisture source identification. For McLean basements with chronic humidity, this may involve dehumidification systems or waterproofing improvements."
+      question: "How do I handle mold remediation during a McLean home sale?",
+      answer: "Virginia disclosure law requires sellers to report known mold issues. Professional remediation with third-party clearance testing by an independent industrial hygienist is far stronger than a 'clean bill of health' from a home inspector. We provide buyer-ready documentation packages including pre-remediation assessment, protocol descriptions, clearance test results, and moisture source correction details. In McLean's high-end market, documented professional remediation actually strengthens your position versus undisclosed risk."
     },
     {
-      question: "How long does mold remediation take?",
-      answer: "Most residential projects take 3-7 days depending on scope. McLean's larger homes with extensive growth may take longer. Testing results take 2-3 additional days. We provide realistic timelines after assessment—thorough remediation takes time but protects your family and property value."
+      question: "Our Langley home has a stone foundation — is mold inevitable?",
+      answer: "Stone foundations are more moisture-permeable than modern poured concrete, but mold isn't inevitable. The key is managing relative humidity in finished spaces adjacent to stone walls. After remediation, we install drainage mat systems between the stone and new finish materials, ensuring moisture migrates to perimeter drains rather than into living space. Commercial-grade dehumidification maintains finished basement humidity below 50% regardless of what the foundation transmits."
     },
     {
-      question: "Will mold remediation affect my home's resale value?",
-      answer: "Proper remediation with third-party clearance testing actually protects value. Undisclosed or improperly treated mold creates liability and negotiation leverage for buyers. Many McLean real estate transactions include mold inspection—having documented professional remediation with clearance certification is far better than visible problems."
+      question: "What does mold remediation cost in a McLean estate?",
+      answer: "Estate remediation costs are driven by finished square footage, material complexity, and HVAC zone count rather than simple area measurements. A 4,000-square-foot finished basement with custom finishes, wine cellar, and 3 HVAC zones represents a fundamentally different project than a standard finished basement. We provide room-by-room estimates after assessment so you understand exactly what drives the cost and can make informed decisions about scope."
     }
   ],
 
@@ -201,9 +205,9 @@ We don't simply spray bleach and hope for the best. Professional mold remediatio
   ],
 
   finalCTA: {
-    headline: "Concerned About Mold in Your McLean Home?",
-    paragraph: "Don't ignore musty odors or visible growth. Our IICRC-certified technicians provide professional assessment and thorough remediation that protects your family's health and your property value.",
+    headline: "Protecting McLean's Finest Homes from Mold",
+    paragraph: "Your estate deserves remediation that matches its construction quality. Our IICRC-certified technicians specialize in the complex containment, material-sensitive removal, and precision drying that McLean's luxury properties demand.",
     phone: "(703) 656-0101",
-    buttonText: "Schedule Mold Assessment"
+    buttonText: "Schedule Estate Assessment"
   }
 };
