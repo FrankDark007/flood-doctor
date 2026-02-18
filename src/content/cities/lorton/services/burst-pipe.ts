@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const lortonBurstPipeContent: ServicePageContent = {
   meta: {
-    title: "Burst Pipe Repair in Lorton, VA | Emergency 24/7 Response | Flood Doctor",
+    title: "Burst Pipe Repair in Lorton, VA | Flood Doctor",
     description: "Emergency burst pipe repair & water damage restoration in Lorton. Serving Laurel Hill, Mason Neck & Occoquan. 30-min response. Call (703) 656-0113.",
     canonical: "https://lorton.flood.doctor/burst-pipe-repair"
   },

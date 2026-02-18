@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const arlingtonFloodCleanupContent: ServicePageContent = {
   meta: {
-    title: "Flood Cleanup Services in Arlington, VA | Storm & Flash Flood Response | Flood Doctor",
+    title: "Flood Cleanup in Arlington, VA | Flood Doctor",
     description: "Arlington flood cleanup specialists. Rapid response to Four Mile Run flooding, underground parking emergencies & storm damage. HOA coordination. Call (703) 656-0102.",
     canonical: "https://arlington.flood.doctor/flood-cleanup"
   },

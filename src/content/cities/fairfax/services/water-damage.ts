@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const fairfaxWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "24/7 Emergency Water Damage Restoration Fairfax, VA | Family Home Experts | Flood Doctor",
+    title: "Water Damage Restoration in Fairfax, VA | Flood Doctor",
     description: "Fairfax's trusted water damage pros. Expert colonial and split-level restoration in Burke, Fairfax City & Kings Park. Fast family-focused service. Call (703) 656-0104.",
     canonical: "https://fairfax.flood.doctor/water-damage-restoration"
   },

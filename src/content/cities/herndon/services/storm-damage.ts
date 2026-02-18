@@ -4,7 +4,7 @@
 
 export const herndonStormDamageContent = {
   meta: {
-    title: "Storm Damage Restoration Herndon VA | Wind, Hail & Water | Flood Doctor",
+    title: "Storm Damage Restoration in Herndon, VA | Flood Doctor",
     description: "Herndon storm damage restoration. 24/7 emergency response for wind damage, hail, fallen trees & water intrusion. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
     canonical: "https://herndon.flood.doctor/storm-damage"
   },

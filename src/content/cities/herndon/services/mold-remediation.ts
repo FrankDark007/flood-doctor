@@ -4,7 +4,7 @@
 
 export const herndonMoldRemediationContent = {
   meta: {
-    title: "Mold Remediation Herndon VA | Certified Mold Removal | Flood Doctor",
+    title: "Mold Remediation in Herndon, VA | Flood Doctor",
     description: "Herndon mold removal experts. IICRC-certified remediation for basement mold, hidden growth & water damage mold. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
     canonical: "https://herndon.flood.doctor/mold-remediation"
   },

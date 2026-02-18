@@ -4,7 +4,7 @@
 
 export const mcleanStormDamageContent = {
   meta: {
-    title: "Storm Damage Restoration McLean VA | Wind, Hail & Water | Flood Doctor",
+    title: "Storm Damage Restoration in McLean, VA | Flood Doctor",
     description: "McLean storm damage restoration. 24/7 emergency response for wind damage, hail, fallen trees & water intrusion. Langley, Chesterbrook, The Reserve. Call (703) 656-0101.",
     canonical: "https://mclean.flood.doctor/storm-damage"
   },

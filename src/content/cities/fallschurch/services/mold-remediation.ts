@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const fallschurchMoldRemediationContent: ServicePageContent = {
   meta: {
-    title: "Mold Remediation Falls Church, VA | IICRC Certified | Flood Doctor",
+    title: "Mold Remediation in Falls Church, VA | Flood Doctor",
     description: "Falls Church mold remediation specialists. IICRC-certified crews for Seven Corners, Lake Barcroft & Falls Church City. Safe removal & prevention. Call (703) 656-0111.",
     canonical: "https://fallschurch.flood.doctor/mold-remediation"
   },

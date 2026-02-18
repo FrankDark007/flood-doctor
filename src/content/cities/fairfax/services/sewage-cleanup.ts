@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const fairfaxSewageCleanupContent: ServicePageContent = {
   meta: {
-    title: "Sewage Cleanup & Backup Remediation Fairfax VA | Biohazard Certified | Flood Doctor",
+    title: "Sewage Cleanup in Fairfax, VA | Flood Doctor",
     description: "Fairfax sewage cleanup specialists. 30-min response for sewer backups, toilet overflows & septic failures. Burke, Burke Centre, Kings Park, Mantua. Call (703) 656-0104.",
     canonical: "https://fairfax.flood.doctor/sewage-cleanup"
   },

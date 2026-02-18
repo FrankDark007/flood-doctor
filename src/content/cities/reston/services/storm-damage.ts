@@ -4,7 +4,7 @@
 
 export const restonStormDamageContent = {
   meta: {
-    title: "Storm Damage Restoration Reston VA | Wind, Hail & Water | Flood Doctor",
+    title: "Storm Damage Restoration in Reston, VA | Flood Doctor",
     description: "Reston storm damage restoration. 24/7 emergency response for wind damage, hail, fallen trees & water intrusion. Lake Anne, South Lakes, North Point. Call (703) 656-0107.",
     canonical: "https://reston.flood.doctor/storm-damage"
   },

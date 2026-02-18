@@ -46,7 +46,7 @@ export interface ServicePageContent {
 
 export const greatfallsMoldRemediationContent: ServicePageContent = {
   meta: {
-    title: "Mold Remediation Great Falls, VA | Estate Mold Removal Specialists | Flood Doctor",
+    title: "Mold Remediation in Great Falls, VA | Flood Doctor",
     description: "Great Falls mold remediation experts. Discrete service for wine cellars, art environments & estate homes. Protecting high-value properties. Call (703) 656-0112.",
     canonical: "https://greatfalls.flood.doctor/mold-remediation"
   },

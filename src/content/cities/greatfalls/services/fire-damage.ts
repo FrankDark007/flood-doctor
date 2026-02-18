@@ -46,7 +46,7 @@ export interface ServicePageContent {
 
 export const greatfallsFireDamageContent: ServicePageContent = {
   meta: {
-    title: "Fire Damage Restoration Great Falls, VA | Estate Fire Recovery Specialists | Flood Doctor",
+    title: "Fire Damage Restoration in Great Falls, VA | Flood Doctor",
     description: "Great Falls fire damage restoration. Smoke, soot & water damage from firefighting. Protecting art, wine collections & irreplaceable assets. Call (703) 656-0112.",
     canonical: "https://greatfalls.flood.doctor/fire-damage"
   },

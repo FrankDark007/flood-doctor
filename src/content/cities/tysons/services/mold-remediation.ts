@@ -67,7 +67,7 @@ export interface ServicePageContent {
 
 export const tysonsMoldRemediationContent: ServicePageContent = {
   meta: {
-    title: "Mold Remediation in Tysons, VA | HVAC & High-Rise Specialists | Flood Doctor",
+    title: "Mold Remediation in Tysons, VA | Flood Doctor",
     description: "Tysons mold removal for commercial buildings & high-rises. HVAC system mold, multi-unit remediation, property management coordination. Call (703) 656-0106.",
     canonical: "https://tysons.flood.doctor/mold-remediation"
   },

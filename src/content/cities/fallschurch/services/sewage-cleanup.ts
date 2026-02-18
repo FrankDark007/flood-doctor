@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const fallschurchSewageCleanupContent: ServicePageContent = {
   meta: {
-    title: "Sewage Cleanup Falls Church, VA | 24/7 Biohazard Response | Flood Doctor",
+    title: "Sewage Cleanup in Falls Church, VA | Flood Doctor",
     description: "Falls Church sewage cleanup specialists. 30-min biohazard response for Seven Corners, Lake Barcroft & Falls Church City. IICRC certified. Call (703) 656-0111.",
     canonical: "https://fallschurch.flood.doctor/sewage-cleanup"
   },

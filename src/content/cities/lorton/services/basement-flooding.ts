@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const lortonBasementFloodingContent: ServicePageContent = {
   meta: {
-    title: "Basement Flooding Repair in Lorton, VA | 24/7 Emergency Response | Flood Doctor",
+    title: "Basement Flooding Repair in Lorton, VA | Flood Doctor",
     description: "Emergency basement flooding repair in Lorton. Serving Laurel Hill, Gunston & South County. Crawlspace specialists. 30-min response. Call (703) 656-0113.",
     canonical: "https://lorton.flood.doctor/basement-flooding"
   },

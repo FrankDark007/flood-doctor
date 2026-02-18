@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const alexandriaStormDamageContent: ServicePageContent = {
   meta: {
-    title: "Storm Damage Restoration in Alexandria, VA | Historic Property Specialists | Flood Doctor",
+    title: "Storm Damage Restoration in Alexandria, VA | Flood Doctor",
     description: "Alexandria storm damage restoration. 30-min response for roof damage, wind damage & storm flooding. BAR-compliant historic repairs. Call (703) 656-0103.",
     canonical: "https://alexandria.flood.doctor/storm-damage"
   },

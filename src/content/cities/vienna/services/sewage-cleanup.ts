@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const viennaSewageCleanupContent: ServicePageContent = {
   meta: {
-    title: "Sewage Cleanup & Remediation in Vienna, VA | Biohazard Certified | Flood Doctor",
+    title: "Sewage Cleanup in Vienna, VA | Flood Doctor",
     description: "Vienna sewage backup cleanup specialists. Biohazard-certified crews for Church Street, Oakton & Wolf Trap. 30-min emergency response. Call (703) 656-0105.",
     canonical: "https://vienna.flood.doctor/sewage-cleanup"
   },

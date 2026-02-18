@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const fallschurchBasementFloodingContent: ServicePageContent = {
   meta: {
-    title: "Basement Flooding Cleanup Falls Church, VA | 30-Min Response | Flood Doctor",
+    title: "Basement Flooding Repair in Falls Church, VA | Flood Doctor",
     description: "Falls Church basement flooding experts. 30-min response for Seven Corners, Lake Barcroft & Falls Church City. Protecting finished basements. Call (703) 656-0111.",
     canonical: "https://fallschurch.flood.doctor/basement-flooding"
   },

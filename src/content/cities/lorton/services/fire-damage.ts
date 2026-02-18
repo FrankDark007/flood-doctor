@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const lortonFireDamageContent: ServicePageContent = {
   meta: {
-    title: "Fire Damage Restoration in Lorton, VA | Smoke & Water Damage Experts | Flood Doctor",
+    title: "Fire Damage Restoration in Lorton, VA | Flood Doctor",
     description: "24/7 fire damage restoration in Lorton. Smoke, soot & water damage specialists. Serving all Lorton neighborhoods. Emergency response. Call (703) 656-0113.",
     canonical: "https://lorton.flood.doctor/fire-damage-restoration"
   },

@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const fallschurchFireDamageContent: ServicePageContent = {
   meta: {
-    title: "Fire Damage Restoration Falls Church, VA | Smoke & Soot Cleanup | Flood Doctor",
+    title: "Fire Damage Restoration in Falls Church, VA | Flood Doctor",
     description: "Falls Church fire damage restoration. Board-up, water extraction, smoke cleanup for Seven Corners, Lake Barcroft & Falls Church City. Call (703) 656-0111.",
     canonical: "https://fallschurch.flood.doctor/fire-damage"
   },

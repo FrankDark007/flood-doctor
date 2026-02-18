@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const ashburnWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "24/7 Emergency Water Damage Restoration Ashburn, VA | New Construction | Flood Doctor",
+    title: "Water Damage Restoration in Ashburn, VA | Flood Doctor",
     description: "Ashburn's trusted water damage restoration experts. 30-min response to Broadlands, Brambleton & One Loudoun. Builder warranty claim specialists. Call (703) 656-0109.",
     canonical: "https://ashburn.flood.doctor/water-damage-restoration"
   },

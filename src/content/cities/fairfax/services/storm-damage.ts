@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const fairfaxStormDamageContent: ServicePageContent = {
   meta: {
-    title: "Storm Damage Restoration Fairfax VA | Emergency Response | Flood Doctor",
+    title: "Storm Damage Restoration in Fairfax, VA | Flood Doctor",
     description: "Fairfax storm damage restoration. 30-min response for roof leaks, wind damage, fallen trees & flooding. Burke, Burke Centre, Kings Park, Mantua. Call (703) 656-0104.",
     canonical: "https://fairfax.flood.doctor/storm-damage"
   },

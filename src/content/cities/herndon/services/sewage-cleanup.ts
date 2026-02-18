@@ -4,7 +4,7 @@
 
 export const herndonSewageCleanupContent = {
   meta: {
-    title: "Sewage Cleanup Herndon VA | Backup & Overflow Emergency | Flood Doctor",
+    title: "Sewage Cleanup in Herndon, VA | Flood Doctor",
     description: "Herndon sewage backup cleanup. Biohazard-certified crews for sewer overflow, septic failure & drain backups. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
     canonical: "https://herndon.flood.doctor/sewage-cleanup"
   },

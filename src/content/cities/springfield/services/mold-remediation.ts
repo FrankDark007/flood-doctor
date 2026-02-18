@@ -4,7 +4,7 @@
 
 export const springfieldMoldRemediationContent = {
   meta: {
-    title: "Mold Remediation Springfield VA | Certified Mold Removal | Flood Doctor",
+    title: "Mold Remediation in Springfield, VA | Flood Doctor",
     description: "Springfield mold removal experts. IICRC-certified remediation for basement mold, hidden growth & water damage mold. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
     canonical: "https://springfield.flood.doctor/mold-remediation"
   },

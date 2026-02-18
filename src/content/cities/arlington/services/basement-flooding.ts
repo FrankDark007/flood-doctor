@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const arlingtonBasementFloodingContent: ServicePageContent = {
   meta: {
-    title: "Basement Flooding Restoration in Arlington, VA | Underground Parking & Storage | Flood Doctor",
+    title: "Basement Flooding Repair in Arlington, VA | Flood Doctor",
     description: "Arlington basement & underground parking flood specialists. Rapid response to Rosslyn, Crystal City & Pentagon City underground levels. HOA coordination. Call (703) 656-0102.",
     canonical: "https://arlington.flood.doctor/basement-flooding"
   },

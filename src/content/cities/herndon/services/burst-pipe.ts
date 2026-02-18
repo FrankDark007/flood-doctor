@@ -4,7 +4,7 @@
 
 export const herndonBurstPipeContent = {
   meta: {
-    title: "Burst Pipe Repair & Cleanup Herndon VA | Frozen Pipe Emergency | Flood Doctor",
+    title: "Burst Pipe Repair in Herndon, VA | Flood Doctor",
     description: "Herndon burst pipe emergency response. 30-min arrival for frozen pipes, supply line breaks & water main damage. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
     canonical: "https://herndon.flood.doctor/burst-pipe-repair"
   },

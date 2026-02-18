@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-02-18T03:08:15.031Z",
+  "planVersion": "FD-CITYLIFT-PLAN-005",
+  "executionVersion": "FD-CITYLIFT-EXEC-003",
+  "phase": "P0-after",
+  "contentFileCount": 91,
+  "duplicateTitles": [],
+  "duplicateH1s": [],
+  "titlesOver60Chars": [],
+  "longestTitle": {
+    "title": "Basement Flooding Repair in Falls Church, VA | Flood Doctor",
+    "length": 59,
+    "city": "fallschurch",
+    "file": "basement-flooding.ts"
+  },
+  "h1TemplateBugCount": 0,
+  "buildStatus": "189/189 OK",
+  "flaggedForManualReview": []
+}

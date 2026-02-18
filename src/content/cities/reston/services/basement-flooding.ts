@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const restonBasementFloodingContent: ServicePageContent = {
   meta: {
-    title: "Basement Flooding Reston VA | Lake Property Experts | Flood Doctor",
+    title: "Basement Flooding Repair in Reston, VA | Flood Doctor",
     description: "Reston basement flooding specialists. Lake-adjacent property expertise, groundwater intrusion solutions, wooded lot moisture control. 24/7 emergency response. (703) 656-0107",
     canonical: "https://reston.flood.doctor/basement-flooding"
   },

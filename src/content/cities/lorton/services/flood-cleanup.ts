@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const lortonFloodCleanupContent: ServicePageContent = {
   meta: {
-    title: "Flood Cleanup in Lorton, VA | Occoquan River Flooding Specialists | Flood Doctor",
+    title: "Flood Cleanup in Lorton, VA | Flood Doctor",
     description: "Professional flood cleanup in Lorton. Occoquan River watershed flooding experts. Serving Mason Neck & waterfront properties. 24/7 response. Call (703) 656-0113.",
     canonical: "https://lorton.flood.doctor/flood-cleanup"
   },

@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const arlingtonMoldRemediationContent: ServicePageContent = {
   meta: {
-    title: "Mold Remediation in Arlington, VA | High-Rise & Condo Specialists | Flood Doctor",
+    title: "Mold Remediation in Arlington, VA | Flood Doctor",
     description: "Arlington mold removal experts. HVAC system contamination, multi-unit spread, HOA coordination. Rosslyn to Crystal City high-rise specialists. Call (703) 656-0102.",
     canonical: "https://arlington.flood.doctor/mold-remediation"
   },

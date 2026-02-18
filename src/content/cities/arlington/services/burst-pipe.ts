@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const arlingtonBurstPipeContent: ServicePageContent = {
   meta: {
-    title: "Burst Pipe Repair & Water Cleanup in Arlington, VA | High-Rise Specialists | Flood Doctor",
+    title: "Burst Pipe Repair in Arlington, VA | Flood Doctor",
     description: "Arlington burst pipe emergency response. 30-min arrival to Rosslyn, Clarendon & Crystal City high-rises. Multi-unit coordination, HOA documentation. Call (703) 656-0102.",
     canonical: "https://arlington.flood.doctor/burst-pipe-repair"
   },

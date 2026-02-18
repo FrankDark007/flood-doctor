@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const lortonWaterDamageContent: ServicePageContent = {
   meta: {
-    title: "24/7 Emergency Water Damage Restoration Lorton, VA | Waterfront Specialists | Flood Doctor",
+    title: "Water Damage Restoration in Lorton, VA | Flood Doctor",
     description: "Lorton's trusted water damage restoration experts. 30-min response to Laurel Hill, Mason Neck & Occoquan. Waterfront property specialists. Call (703) 656-0113.",
     canonical: "https://lorton.flood.doctor/water-damage-restoration"
   },

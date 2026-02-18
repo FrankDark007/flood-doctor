@@ -23,7 +23,7 @@ const CityServicesHub: React.FC = () => {
   return (
     <main className="flex-grow bg-white pb-24 md:pb-0">
       <PageMeta
-        title={`Water Damage Restoration Services in ${franchise.city} | Flood Doctor`}
+        title={`Restoration Services in ${franchise.city}, VA | Flood Doctor`}
         description={`Emergency restoration, cleanup, and repair services for ${franchise.city}, ${franchise.state} homeowners and businesses.`}
       />
       <ServiceArchiveGrid

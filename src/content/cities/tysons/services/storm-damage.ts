@@ -67,7 +67,7 @@ export interface ServicePageContent {
 
 export const tysonsStormDamageContent: ServicePageContent = {
   meta: {
-    title: "Storm Damage Restoration in Tysons, VA | Commercial & High-Rise Specialists | Flood Doctor",
+    title: "Storm Damage Restoration in Tysons, VA | Flood Doctor",
     description: "Tysons storm damage restoration for commercial buildings & high-rises. 24/7 response for urban flooding, roof damage & building envelope failures. Call (703) 656-0106.",
     canonical: "https://tysons.flood.doctor/storm-damage"
   },

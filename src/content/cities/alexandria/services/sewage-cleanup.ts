@@ -66,7 +66,7 @@ export interface ServicePageContent {
 
 export const alexandriaSewageCleanupContent: ServicePageContent = {
   meta: {
-    title: "Sewage Cleanup in Alexandria, VA | Combined Sewer Backup Specialists | Flood Doctor",
+    title: "Sewage Cleanup in Alexandria, VA | Flood Doctor",
     description: "Alexandria sewage cleanup experts. 30-min response for Old Town combined sewer overflows, cast iron failures & basement backups. Biohazard certified. Call (703) 656-0103.",
     canonical: "https://alexandria.flood.doctor/sewage-cleanup"
   },

@@ -4,7 +4,7 @@
 
 export const herndonFireDamageContent = {
   meta: {
-    title: "Fire Damage Restoration Herndon VA | Smoke & Soot Cleanup | Flood Doctor",
+    title: "Fire Damage Restoration in Herndon, VA | Flood Doctor",
     description: "Herndon fire damage restoration. 24/7 emergency response for fire, smoke & soot damage. IICRC certified. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
     canonical: "https://herndon.flood.doctor/fire-damage-restoration"
   },

@@ -6,7 +6,7 @@ import type { ServicePageContent } from './water-damage';
 
 export const fairfaxFireDamageContent: ServicePageContent = {
   meta: {
-    title: "Fire Damage Restoration Fairfax VA | Smoke & Soot Cleanup | Flood Doctor",
+    title: "Fire Damage Restoration in Fairfax, VA | Flood Doctor",
     description: "Fairfax fire damage restoration & smoke cleanup. 30-min emergency response for fire, smoke, and water damage from firefighting. Burke, Kings Park, Mantua. Call (703) 656-0104.",
     canonical: "https://fairfax.flood.doctor/fire-damage"
   },

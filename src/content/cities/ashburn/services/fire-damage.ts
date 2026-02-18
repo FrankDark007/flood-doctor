@@ -6,7 +6,7 @@ import { ServicePageContent } from './water-damage';
 
 export const ashburnFireDamageContent: ServicePageContent = {
   meta: {
-    title: "Fire Damage Restoration Ashburn VA | Smoke & Water Damage Recovery | Flood Doctor",
+    title: "Fire Damage Restoration in Ashburn, VA | Flood Doctor",
     description: "Emergency fire damage restoration in Ashburn. Smoke removal, water damage from firefighting, complete recovery. 24/7 response to Broadlands, Brambleton, One Loudoun. Call (703) 656-0109.",
     canonical: "https://ashburn.flood.doctor/fire-damage-restoration"
   },

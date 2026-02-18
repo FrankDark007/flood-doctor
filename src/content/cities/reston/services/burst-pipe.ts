@@ -4,7 +4,7 @@
 
 export const restonBurstPipeContent = {
   meta: {
-    title: "Burst Pipe Repair & Cleanup Reston VA | Frozen Pipe Emergency | Flood Doctor",
+    title: "Burst Pipe Repair in Reston, VA | Flood Doctor",
     description: "Reston burst pipe emergency response. 30-min arrival for frozen pipes, supply line breaks & water main damage. Lake Anne, South Lakes, North Point. Call (703) 656-0107.",
     canonical: "https://reston.flood.doctor/burst-pipe-repair"
   },
