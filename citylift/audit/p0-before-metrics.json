@@ -1,0 +1,565 @@
+{
+  "capturedAt": "2026-02-18T02:46:35.226Z",
+  "planVersion": "FD-CITYLIFT-PLAN-005",
+  "phase": "P0-before",
+  "contentFileCount": 91,
+  "duplicateTitles": [],
+  "duplicateH1s": [],
+  "titlesOver60Chars": [
+    {
+      "city": "alexandria",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation in Alexandria, VA | Historic Property Specialists | Flood Doctor",
+      "length": 81
+    },
+    {
+      "city": "alexandria",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup in Alexandria, VA | Combined Sewer Backup Specialists | Flood Doctor",
+      "length": 83
+    },
+    {
+      "city": "alexandria",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration in Alexandria, VA | Historic Property Specialists | Flood Doctor",
+      "length": 89
+    },
+    {
+      "city": "arlington",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Restoration in Arlington, VA | Underground Parking & Storage | Flood Doctor",
+      "length": 93
+    },
+    {
+      "city": "arlington",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Water Cleanup in Arlington, VA | High-Rise Specialists | Flood Doctor",
+      "length": 89
+    },
+    {
+      "city": "arlington",
+      "file": "emergency-water-removal.ts",
+      "title": "Emergency Water Removal Arlington VA | 30-Min High-Rise Response | Flood Doctor",
+      "length": 79
+    },
+    {
+      "city": "arlington",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration in Arlington, VA | High-Rise & Multi-Unit Specialists | Flood Doctor",
+      "length": 92
+    },
+    {
+      "city": "arlington",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services in Arlington, VA | Storm & Flash Flood Response | Flood Doctor",
+      "length": 85
+    },
+    {
+      "city": "arlington",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation in Arlington, VA | High-Rise & Condo Specialists | Flood Doctor",
+      "length": 80
+    },
+    {
+      "city": "arlington",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup in Arlington, VA | High-Rise & Building Backup Specialists | Flood Doctor",
+      "length": 88
+    },
+    {
+      "city": "arlington",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration in Arlington, VA | Wind, Water & Roof Damage | Flood Doctor",
+      "length": 84
+    },
+    {
+      "city": "arlington",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Arlington, VA | High-Rise Specialists | Flood Doctor",
+      "length": 92
+    },
+    {
+      "city": "ashburn",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair Ashburn VA | Finished Basement Experts | Flood Doctor",
+      "length": 78
+    },
+    {
+      "city": "ashburn",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup Ashburn VA | Frozen Pipe Emergency | Flood Doctor",
+      "length": 77
+    },
+    {
+      "city": "ashburn",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Ashburn VA | Smoke & Water Damage Recovery | Flood Doctor",
+      "length": 81
+    },
+    {
+      "city": "ashburn",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services Ashburn VA | Storm & Water Flooding | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "ashburn",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Ashburn VA | Certified Mold Removal | Flood Doctor",
+      "length": 67
+    },
+    {
+      "city": "ashburn",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Ashburn VA | Emergency Biohazard Restoration | Flood Doctor",
+      "length": 74
+    },
+    {
+      "city": "ashburn",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Ashburn VA | Emergency Wind & Water Damage | Flood Doctor",
+      "length": 82
+    },
+    {
+      "city": "ashburn",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Ashburn, VA | New Construction | Flood Doctor",
+      "length": 85
+    },
+    {
+      "city": "fairfax",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair in Fairfax, VA | Split-Level Specialists | Flood Doctor",
+      "length": 80
+    },
+    {
+      "city": "fairfax",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair in Fairfax, VA | 24/7 Emergency Response | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "fairfax",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Fairfax VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 72
+    },
+    {
+      "city": "fairfax",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup & Restoration Fairfax VA | Storm Flooding Experts | Flood Doctor",
+      "length": 78
+    },
+    {
+      "city": "fairfax",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation & Removal Fairfax VA | IICRC Certified | Flood Doctor",
+      "length": 70
+    },
+    {
+      "city": "fairfax",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup & Backup Remediation Fairfax VA | Biohazard Certified | Flood Doctor",
+      "length": 83
+    },
+    {
+      "city": "fairfax",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Fairfax VA | Emergency Response | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "fairfax",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Fairfax, VA | Family Home Experts | Flood Doctor",
+      "length": 88
+    },
+    {
+      "city": "fallschurch",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Cleanup Falls Church, VA | 30-Min Response | Flood Doctor",
+      "length": 75
+    },
+    {
+      "city": "fallschurch",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Water Damage Falls Church, VA | Emergency Response | Flood Doctor",
+      "length": 76
+    },
+    {
+      "city": "fallschurch",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Falls Church, VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 78
+    },
+    {
+      "city": "fallschurch",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services Falls Church, VA | Storm & Natural Flood | Flood Doctor",
+      "length": 78
+    },
+    {
+      "city": "fallschurch",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Falls Church, VA | IICRC Certified | Flood Doctor",
+      "length": 66
+    },
+    {
+      "city": "fallschurch",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Falls Church, VA | 24/7 Biohazard Response | Flood Doctor",
+      "length": 72
+    },
+    {
+      "city": "fallschurch",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Falls Church, VA | 24/7 Emergency | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "fallschurch",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Falls Church, VA | Historic Homes | Flood Doctor",
+      "length": 88
+    },
+    {
+      "city": "greatfalls",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Cleanup Great Falls, VA | Wine Cellar & Estate Lower Level Specialists | Flood Doctor",
+      "length": 103
+    },
+    {
+      "city": "greatfalls",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup Great Falls, VA | Estate Plumbing Emergency Specialists | Flood Doctor",
+      "length": 98
+    },
+    {
+      "city": "greatfalls",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Great Falls, VA | Estate Fire Recovery Specialists | Flood Doctor",
+      "length": 89
+    },
+    {
+      "city": "greatfalls",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Great Falls, VA | Estate Flood Restoration Specialists | Flood Doctor",
+      "length": 83
+    },
+    {
+      "city": "greatfalls",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Great Falls, VA | Estate Mold Removal Specialists | Flood Doctor",
+      "length": 81
+    },
+    {
+      "city": "greatfalls",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Great Falls, VA | Septic Backup Specialists | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "greatfalls",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Great Falls, VA | Estate Emergency Response | Flood Doctor",
+      "length": 83
+    },
+    {
+      "city": "greatfalls",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Great Falls, VA | Estate Specialists | Flood Doctor",
+      "length": 91
+    },
+    {
+      "city": "herndon",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair Herndon VA | Finished Basement Experts | Flood Doctor",
+      "length": 78
+    },
+    {
+      "city": "herndon",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup Herndon VA | Frozen Pipe Emergency | Flood Doctor",
+      "length": 77
+    },
+    {
+      "city": "herndon",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Herndon VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 72
+    },
+    {
+      "city": "herndon",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services Herndon VA | Storm & Water Flooding | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "herndon",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Herndon VA | Certified Mold Removal | Flood Doctor",
+      "length": 67
+    },
+    {
+      "city": "herndon",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Herndon VA | Backup & Overflow Emergency | Flood Doctor",
+      "length": 70
+    },
+    {
+      "city": "herndon",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Herndon VA | Wind, Hail & Water | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "herndon",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Herndon, VA | Fast Response | Flood Doctor",
+      "length": 82
+    },
+    {
+      "city": "lorton",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair in Lorton, VA | 24/7 Emergency Response | Flood Doctor",
+      "length": 79
+    },
+    {
+      "city": "lorton",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair in Lorton, VA | Emergency 24/7 Response | Flood Doctor",
+      "length": 72
+    },
+    {
+      "city": "lorton",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration in Lorton, VA | Smoke & Water Damage Experts | Flood Doctor",
+      "length": 83
+    },
+    {
+      "city": "lorton",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup in Lorton, VA | Occoquan River Flooding Specialists | Flood Doctor",
+      "length": 80
+    },
+    {
+      "city": "lorton",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation in Lorton, VA | Waterfront Moisture Specialists | Flood Doctor",
+      "length": 79
+    },
+    {
+      "city": "lorton",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup in Lorton, VA | Emergency Biohazard Response | Flood Doctor",
+      "length": 74
+    },
+    {
+      "city": "lorton",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration in Lorton, VA | Wind & Water Emergency Response | Flood Doctor",
+      "length": 87
+    },
+    {
+      "city": "lorton",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Lorton, VA | Waterfront Specialists | Flood Doctor",
+      "length": 90
+    },
+    {
+      "city": "mclean",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair McLean VA | Finished Basement Experts | Flood Doctor",
+      "length": 77
+    },
+    {
+      "city": "mclean",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup McLean VA | Frozen Pipe Emergency | Flood Doctor",
+      "length": 76
+    },
+    {
+      "city": "mclean",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration McLean VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "mclean",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services McLean VA | Storm & Water Flooding | Flood Doctor",
+      "length": 72
+    },
+    {
+      "city": "mclean",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation McLean VA | Certified Mold Removal | Flood Doctor",
+      "length": 66
+    },
+    {
+      "city": "mclean",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup McLean VA | Backup & Overflow Emergency | Flood Doctor",
+      "length": 69
+    },
+    {
+      "city": "mclean",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration McLean VA | Wind, Hail & Water | Flood Doctor",
+      "length": 70
+    },
+    {
+      "city": "mclean",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration McLean, VA | Estate Specialists | Flood Doctor",
+      "length": 86
+    },
+    {
+      "city": "reston",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Reston VA | Lake Property Experts | Flood Doctor",
+      "length": 66
+    },
+    {
+      "city": "reston",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup Reston VA | Frozen Pipe Emergency | Flood Doctor",
+      "length": 76
+    },
+    {
+      "city": "reston",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Reston VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "reston",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services Reston VA | Storm & Lake Flooding | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "reston",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Reston VA | Certified Mold Removal | Flood Doctor",
+      "length": 66
+    },
+    {
+      "city": "reston",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Reston VA | Backup & Overflow Emergency | Flood Doctor",
+      "length": 69
+    },
+    {
+      "city": "reston",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Reston VA | Wind, Hail & Water | Flood Doctor",
+      "length": 70
+    },
+    {
+      "city": "reston",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Reston, VA | HOA Coordination | Flood Doctor",
+      "length": 84
+    },
+    {
+      "city": "springfield",
+      "file": "basement-flooding.ts",
+      "title": "Basement Flooding Repair Springfield VA | Split-Level Specialists | Flood Doctor",
+      "length": 80
+    },
+    {
+      "city": "springfield",
+      "file": "burst-pipe.ts",
+      "title": "Burst Pipe Repair & Cleanup Springfield VA | Frozen Pipe Emergency | Flood Doctor",
+      "length": 81
+    },
+    {
+      "city": "springfield",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration Springfield VA | Smoke & Soot Cleanup | Flood Doctor",
+      "length": 76
+    },
+    {
+      "city": "springfield",
+      "file": "flood-cleanup.ts",
+      "title": "Flood Cleanup Services Springfield VA | Storm & Water Flooding | Flood Doctor",
+      "length": 77
+    },
+    {
+      "city": "springfield",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation Springfield VA | Certified Mold Removal | Flood Doctor",
+      "length": 71
+    },
+    {
+      "city": "springfield",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup Springfield VA | Backup & Overflow Emergency | Flood Doctor",
+      "length": 74
+    },
+    {
+      "city": "springfield",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration Springfield VA | Wind, Hail & Water | Flood Doctor",
+      "length": 75
+    },
+    {
+      "city": "springfield",
+      "file": "water-damage.ts",
+      "title": "24/7 Emergency Water Damage Restoration Springfield, VA | Fast Response | Flood Doctor",
+      "length": 86
+    },
+    {
+      "city": "tysons",
+      "file": "fire-damage.ts",
+      "title": "Fire Damage Restoration in Tysons, VA | Commercial & High-Rise Specialists | Flood Doctor",
+      "length": 89
+    },
+    {
+      "city": "tysons",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation in Tysons, VA | HVAC & High-Rise Specialists | Flood Doctor",
+      "length": 76
+    },
+    {
+      "city": "tysons",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup in Tysons, VA | Commercial & High-Rise Specialists | Flood Doctor",
+      "length": 80
+    },
+    {
+      "city": "tysons",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration in Tysons, VA | Commercial & High-Rise Specialists | Flood Doctor",
+      "length": 90
+    },
+    {
+      "city": "vienna",
+      "file": "mold-remediation.ts",
+      "title": "Mold Remediation & Removal in Vienna, VA | IICRC Certified | Flood Doctor",
+      "length": 73
+    },
+    {
+      "city": "vienna",
+      "file": "sewage-cleanup.ts",
+      "title": "Sewage Cleanup & Remediation in Vienna, VA | Biohazard Certified | Flood Doctor",
+      "length": 79
+    },
+    {
+      "city": "vienna",
+      "file": "storm-damage.ts",
+      "title": "Storm Damage Restoration in Vienna, VA | 24/7 Emergency | Flood Doctor",
+      "length": 70
+    }
+  ],
+  "h1TemplateBugCount": 0,
+  "titleTemplateBugCount": 0,
+  "templateRenderedTitleIssues": [
+    {
+      "page": "CityServicesHub",
+      "renderedTitle": "Water Damage Restoration Services in Falls Church | Flood Doctor",
+      "length": 64
+    }
+  ]
+}
