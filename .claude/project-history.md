@@ -28,6 +28,80 @@
 
 ## Completed Work
 
+### 2026-02-17: DEV-Only Variant Gallery at `/__variants` — Complete
+
+**What:** Discovered 56 page variants scattered across the repo (7 homepages, 4 GBP clones, 9 About/Contact/Services variants, 13 service detail variants, 10 service pages, 3 landing pages, 3 litho, 2 gemini, 3 dev tools, 2 templates) and wired them into a DEV-only gallery.
+
+**Safety approach:** Zero changes to production imports. All variant imports live in a self-contained registry (`pages/__variants/registry.ts`) using `React.lazy()`. The route is `null` in production — completely tree-shaken.
+
+**Files Created:**
+- `pages/__variants/registry.ts` — 56-entry lazy registry
+- `pages/__variants/index.tsx` — Gallery + slug viewer with floating dev banner
+
+**Files Modified:**
+- `App.tsx` — +2 lines (DEV-guarded import + route)
+- `pages/VariantIndex.tsx` — Updated with tags and counts
+
+**Commit:** `2594081` — feat: add DEV-only variant gallery at /__variants
+
+**Verification:** Build 189/189, `/__variants` absent from dist, gallery renders all 56 variants in dev.
+
+---
+
+### 2026-02-16: Phase 2 — City Services Parity (Nested URLs + Content-Gated Nav) — Complete + Deployed
+
+**What:** Gave all 13 city subdomains nested service URL structure matching the main site (`/services/residential/restoration-services/water-damage-restoration/` instead of flat `/services/water-damage/`), with content-gated visibility — only services with city content files are linked, prerendered, and visible in nav/hubs.
+
+**Architecture:**
+- City content files use flat slugs (e.g., `water-damage.ts`) that differ from main taxonomy slugs (e.g., `water-damage-restoration`). 4 of 8 have mismatches. Created a comprehensive slug mapping layer.
+- `filterServiceIds` prop added to `CategoryLanding` for content-gating.
+- Hub pages only show services with city content. Subcategory hubs redirect to parent if zero services match.
+- Flat URLs 301 redirect to nested paths via .htaccess.
+
+**Files Created (6):**
+- `data/city-service-map.ts` — Slug mapping layer (mapCitySlugs, getFlatToNestedRedirects, getCityServiceRoutes)
+- `pages/city-app/CityServiceDetailLegacyRedirect.tsx` — SPA-side flat→nested redirect
+- `pages/city-app/CityResidentialHub.tsx` — Content-gated residential hub
+- `pages/city-app/CityCommercialHub.tsx` — Content-gated commercial hub
+- `pages/city-app/CitySubcategoryHub.tsx` — Content-gated subcategory hub
+- `docs/plans/2026-02-16-city-services-parity-phase-2.md` — Implementation plan
+
+**Files Modified (8):**
+- `hooks/useCityApp.ts` — Added getCityServiceMap(), hasCityServiceContent(), CityServiceMapEntry
+- `scripts/build-cities.ts` — Inject __FLOOD_DOCTOR_CITY_SERVICE_MAP__, dynamic .htaccess redirects, nested sitemap routes
+- `scripts/prerender.ts` — Content-gated nested routes via getCityServiceRoutes()
+- `CityApp.tsx` — Nested route tree (audience/subcategory/detail routes)
+- `pages/city-app/CityServicesHub.tsx` — Rewritten with content-gated ServiceArchiveGrid
+- `pages/templates/CategoryLanding.tsx` — Added filterServiceIds prop
+- `components/layout/Header.tsx` — Content-gated mega menu (Residential/Commercial columns)
+- `components/layout/MobileMenu.tsx` — Residential/Commercial sections via getCityServiceMap()
+- `components/layout/Footer.tsx` — Added Residential/Commercial hub links
+
+**Key Metrics:**
+- Route count: 656 → 436 (content-gated, no dead routes)
+- 4 slug mismatches handled: water-damage→water-damage-restoration, fire-damage→fire-smoke-cleanup, storm-damage→storm-damage-restoration, burst-pipe→burst-pipe-cleanup
+- Arlington alias: emergency-water-removal→water-damage-restoration
+
+**Commits (8):**
+- `c4a7bf9` — docs: add Phase 2 parity audit and implementation plan
+- `91e77bc` — feat: add city-to-main service slug mapping layer
+- `f6631b8` — feat: inject city service map with nested paths at build time
+- `455dac4` — feat: add nested service routes and content-gated hub pages to CityApp
+- `f59d55d` — feat: generate flat-to-nested 301 redirects in city .htaccess
+- `b4fd3dc` — feat: content-gated nested routes for city prerender and sitemap
+- `021429e` — feat: replace city nav flat dropdown with content-gated mega menu
+- `cda78c8` — feat: update city mobile menu and footer with nested service structure
+
+**Verification:**
+- Main build: 189/189 ✅
+- City prerender: 436/436 ✅
+- 13/13 city sites deployed
+- Nested URL returns 200, flat URL 301→nested ✅
+- Canonical = city subdomain ✅
+- No flood.doctor links in city nav ✅
+
+---
+
 ### 2026-02-16: City Subdomain Nav Link Fix — Complete + Deployed
 
 **What:** Fixed all header/footer/mobile-menu links on city subdomains that were 404ing because shared layout components used React Router `<Link>` for paths that only exist on the main domain.
@@ -1261,5 +1335,43 @@ We have 80+ neighborhood content files ready to render.
 
 **Files Modified:**
 - `pages/RequestService.tsx`
+
+---
+
+### 2026-02-17: CityLift P0 — Service Title Normalization ✅
+
+**What:** Normalized all 91 city service page meta titles from avg 78 chars (max 103) to ≤60 chars (max 59). Part of CityLift multi-phase SEO audit project (FD-CITYLIFT-PLAN-005).
+
+**Root Cause:** Titles used pattern `{Service} {City}, VA | {Differentiator} | Flood Doctor` with double-pipe segments causing all titles to exceed Google's 60-char display limit.
+
+**Fix:** Script-based deterministic refactor mapping 25+ service name variants to 9 canonical keywords. New pattern: `{Primary Keyword} in {City}, VA | Flood Doctor`. Also fixed CityServicesHub template title (64→53 chars for Falls Church).
+
+**Results:**
+- Before: 91/91 titles >60 chars | After: 0/91 titles >60 chars
+- 0 duplicate titles, 0 duplicate H1s
+- Build: 189/189 routes OK
+
+**Key Decision:** Differentiator segments (e.g., "Estate Specialists", "High-Rise Specialists") removed from titles, preserved in meta descriptions. Logged in `citylift/DECISIONS.md`.
+
+**Files Created:**
+- `citylift/` directory (STATE.md, DECISIONS.md, ARTIFACTS.md)
+- `citylift/audit/p0-before-metrics.json`
+- `citylift/audit/p0-after-metrics.json`
+- `scripts/citylift-p0-title-refactor.mjs`
+- `scripts/citylift-p0-audit.mjs`
+- `scripts/citylift-p0-after-audit.mjs`
+- `scripts/citylift-test-titles.mjs`
+- `docs/plans/2026-02-17-citylift-seo-audit-plan.md`
+
+**Files Modified:**
+- 91 service content files (`src/content/cities/*/services/*.ts`) — meta.title only
+- `pages/city-app/CityServicesHub.tsx` — PageMeta title
+
+**Commits:**
+- `46ba6df` — feat: CityLift project infrastructure
+- `7e31656` — feat: CityLift P0 baseline snapshot
+- `5ac41b0` — feat: CityLift P0 — normalize all 91 service titles to ≤60 chars
+
+**Next:** P1 (thin content remediation) — awaiting human approval
 
 ---

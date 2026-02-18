@@ -4,9 +4,42 @@
 
 ---
 
+## 🔵 ACTIVE: CityLift — Multi-Phase SEO Audit & Content System
+
+**Plan:** FD-CITYLIFT-PLAN-005
+**Tracker:** `citylift/STATE.md` (read this first for CityLift work)
+**Plan doc:** `docs/plans/2026-02-17-citylift-seo-audit-plan.md`
+
+### P0 — Title Normalization ✅ COMPLETE (commit `5ac41b0`)
+- 91/91 service page titles normalized to ≤60 chars
+- Pattern: `{Primary Keyword} in {City}, VA | Flood Doctor`
+- CityServicesHub template title also fixed
+- Before: avg 78 chars, max 103 | After: max 59 chars
+- 0 duplicate titles, 0 duplicate H1s, build 189/189 OK
+- Baseline: `citylift/audit/p0-before-metrics.json`
+- After: `citylift/audit/p0-after-metrics.json`
+- Refactor script: `scripts/citylift-p0-title-refactor.mjs`
+
+### P1 — Thin Content Remediation (NOT STARTED — awaiting approval)
+### P2 — High-Impression / Low-CTR Pages (requires GSC baseline)
+### P3 — Full City Uniqueness Expansion
+
+### CityLift Session Continuity
+On resume, always read:
+1. `citylift/STATE.md`
+2. `citylift/DECISIONS.md`
+3. `citylift/ARTIFACTS.md`
+
+### CityLift AI Role Assignments
+- **Claude Code:** Steps 0–3, Step 6 orchestration, all file writes
+- **ChatGPT:** Steps 4–5 scoring design, content drafting
+- **Human:** Approval gates, GSC exports, phase transitions
+
+---
+
 ## ✅ COMPLETE: McLean Homepage Premium Redesign (2026-02-17)
 
-### Status: Committed + Built. 10 design enhancements implemented.
+### Status: Committed + Built + Deployed. 10 design enhancements implemented.
 
 **Commits:**
 - `ae7006c` — 10-task McLean homepage UI/UX redesign
@@ -17,35 +50,10 @@
 - `57d4897` — fix: ServicePageRenderer link corrections
 - `e0c56c4` — fix: prerender timeout increase to 45s
 
-### 10 Design Enhancements
-1. Cinematic hero with full-bleed background photo (hero4.jpeg)
-2. Manager trust card (Alex D. headshot)
-3. Before/After slider with drag interaction
-4. 3-column services grid with photo reveals
-5. Numbered alternating features
-6. Full-bleed local expertise with photo background
-7. Asymmetric testimonial card grid
-8. FAQ with sidebar proof card
-9. Bottom CTA with background photo + dispatch pulse
-10. Glassmorphism stats bar
-
 ### Critical Bug Fix: City Service Pages "Thin Content"
 **Root Cause:** CityServiceDetail.tsx was using generic ServiceDetailNew template (thin H1 + generic content). Rich city-specific content in src/content/cities/{city}/services/*.ts existed but wasn't rendered.
 
-**Fix:** Rewrote CityServiceDetail.tsx to check contentRegistry (104 city×service content files) and render via ServicePageRenderer when available. Falls back to ServiceDetailNew for services without city content.
-
-**Result:** All 13 cities × 8 services now show deep, SEO-optimized content:
-- City-specific H1 and meta tags
-- Local challenges and solutions
-- Neighborhood references
-- Equipment section with local notes
-- Pricing section with local context
-- City-specific FAQ with schema markup
-- Service area neighborhoods
-
-### H1 Grammar Fix
-**Bug:** "Basement Flooding in Flood Doctor of McLean" — franchise.name used as city name
-**Fix:** `franchise.name` → `(franchise.city || franchise.name)` in ServiceDetailNew.tsx + ServiceDetail.tsx
+**Fix:** Rewrote CityServiceDetail.tsx to check contentRegistry (104 city×service content files) and render via ServicePageRenderer when available.
 
 ### Content Inventory
 | City | Service Files | Words | Homepage Words |
@@ -65,18 +73,20 @@
 | lorton | 8 | 14,665 | 1,349 |
 | **TOTAL** | **105** | **200,730** | **18,345** |
 
-### Build Status
-- Main site: 189/189 ✅
-- City sites: 404/~436 prerendered (timeouts are intermittent, SPA fallback handles rest)
-
 ---
 
 ## ✅ DEPLOYED: All sites live (2026-02-17)
 - Main site: https://flood.doctor ✅ 200
 - All 13 city subdomains: ✅ 200 (rsync + Cloudflare purge)
-- Rich city service content verified live on mclean.flood.doctor
 
-## Next Up
+## Tooling Updates (2026-02-17 evening)
+- Created `/rl` slash command alias for ralph-loop
+- Installed `firecrawl-cli` globally (525 credits, free tier)
+- Stored all credentials in `~/.claude/credentials.local`
+- Added CLAUDE.md rules: always use Firecrawl for web ops
+- Deploy reads SSH password from credentials.local
+
+## Next Up (after CityLift)
 - **P2 #7:** Client Portal (CompanyCam + Matterport)
 - **P2 #8:** Neighborhood Page Redesign (68 pages)
 - **P2 #9:** Blog Content Expansion (5 cities need 2 more posts)
@@ -92,4 +102,4 @@
 
 ---
 
-*Updated: 2026-02-17 (City Service Content Wiring)*
+*Updated: 2026-02-17 (CityLift P0 Title Normalization Complete)*
