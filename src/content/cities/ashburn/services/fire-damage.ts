@@ -1,6 +1,6 @@
 // src/content/cities/ashburn/services/fire-damage.ts
-// Generated: January 3, 2026
-// Ashburn Fire Damage Restoration Service Page - 100% Unique
+// Rewritten: February 18, 2026
+// Ashburn Fire Damage Restoration — Modern Construction, Synthetic Smoke, Smart Home Electrical
 
 import { ServicePageContent } from './water-damage';
 
@@ -14,17 +14,13 @@ export const ashburnFireDamageContent: ServicePageContent = {
   h1: "Fire Damage Restoration in Ashburn, Virginia",
 
   introSection: {
-    headline: "Comprehensive Fire & Smoke Damage Recovery for Ashburn Homes",
+    headline: "Dual-Track Fire and Water Recovery for Modern Ashburn Homes",
     paragraphs: [
-      `Fire damage in Ashburn creates a complex restoration challenge that extends far beyond the burned areas. Smoke permeates your entire Brambleton townhome, traveling through HVAC systems and settling in areas untouched by flames. Water from firefighting efforts floods your basement, soaking carpets and drywall. Soot particles embed in porous materials throughout your One Loudoun condo. And the clock is ticking—every hour of exposure means deeper penetration and higher restoration costs.
+      `A grease fire ignites on the builder-grade range in your Brambleton townhome kitchen. The residential sprinkler head activates within 90 seconds, containing the fire to the stove area — excellent suppression. But that sprinkler ran for 8 minutes before shutoff, releasing over 400 gallons across your kitchen floor, through subfloor penetrations into the basement, and along the open-concept main level where water reached the living room carpet 30 feet away. Meanwhile, the 30 seconds of open flame sent synthetic smoke rolling across the ceiling of your connected kitchen-living-dining area. No interior walls slowed it. By the time the sprinkler activated, corrosive petroleum-based soot from burning PVC trim, vinyl plank flooring, and engineered lumber had deposited on every surface across the 1,800 square foot main level — walls, furniture, ceiling fans, and every HVAC return register. Small fire. Massive combined water and smoke damage.`,
 
-Flood Doctor has provided comprehensive fire damage restoration throughout Ashburn since the community's explosive growth. We've restored kitchen fires in Broadlands townhomes where cooking incidents damaged entire levels, electrical fires in Belmont homes where builder defects caused ignition, dryer fires in Ashburn Farm properties where inadequate venting created hazards, and total loss events requiring complete reconstruction. Our crews arrive within 30 minutes carrying specialized equipment for smoke removal, water extraction, and odor elimination.`,
-
-      `Ashburn's newer construction creates specific fire damage patterns. Open floor plans allow smoke to distribute throughout connected living spaces rapidly. Synthetic building materials—common in modern construction—produce toxic smoke that requires specialized cleaning protocols. Water damage from sprinkler systems or firefighting affects finished basements and living spaces more severely than older homes with unfinished lower levels.
-
-Our IICRC-certified fire and smoke damage specialists understand these modern construction challenges. We know how to address smoke in HVAC systems serving your entire home, how to remove soot from the synthetic surfaces common in new construction, and how to dry fire-related water damage while coordinating with contractors for structural repairs. We've restored fire damage across every major Ashburn development—and we know exactly what comprehensive recovery requires.`
+      `This scenario defines Ashburn fire restoration. Synthetic building materials produce smoke that is chemically distinct from natural-material fires — petroleum-based, physically stickier, more acidic, and faster to corrode metal surfaces and damage electronics. Open floor plans with 2,000-plus square foot main levels and 9-to-10-foot ceilings create enormous connected air volumes where smoke distributes instantly rather than being contained by room walls. Residential sprinkler systems contain fires effectively but release hundreds of gallons that create a parallel water damage event. Restoring a fire-damaged Ashburn home means running fire remediation and water extraction simultaneously from the first hour — a single integrated operation, not sequential problems.`
     ],
-    localContext: "Ashburn's rapid development from 3,393 residents in 1990 to over 49,000 today created neighborhoods of newer homes with modern fire safety systems—but also construction patterns that accelerate smoke and water damage spread."
+    localContext: "Synthetic material smoke chemistry, sprinkler water damage, open-concept distribution, smart home electrical risks."
   },
 
   processSection: {
@@ -32,39 +28,39 @@ Our IICRC-certified fire and smoke damage specialists understand these modern co
     steps: [
       {
         number: 1,
-        title: "Emergency Fire Damage Response",
-        description: "When fire damages your Ashburn home, call (703) 656-0109 immediately—ideally while firefighters are still on scene. Our crews arrive within 30 minutes from our Route 28 position, coordinating with Loudoun County Fire & Rescue to begin restoration the moment firefighting operations conclude.",
-        timeframe: "Within 30 minutes"
+        title: "Dual-Track Emergency Deployment",
+        description: "Sprinkler-activated fires need two specialized crews from minute one. We dispatch fire restoration and water extraction teams simultaneously from our Route 28 staging position. The water crew begins extracting sprinkler discharge while the fire crew assesses smoke distribution and soot composition. Running both tracks in parallel prevents sprinkler water from compounding into mold and structural damage while fire assessment proceeds. A single-track response loses critical drying hours.",
+        timeframe: "Sub-30-minute arrival"
       },
       {
         number: 2,
-        title: "Damage Assessment & Emergency Protection",
-        description: "We assess fire damage extent, smoke distribution, and water damage from firefighting. Before restoration begins, we secure your property: board-up services for broken windows or damaged doors, tarping for roof damage, and content protection for salvageable items. For Ashburn HOAs, we coordinate with architectural review boards during emergency protection.",
-        timeframe: "Hours 1-3"
+        title: "Open-Concept Contamination Mapping",
+        description: "In open floor plans, smoke contamination varies by height and distance from fire origin. Ceiling surfaces directly above carry the heaviest soot; far walls show lighter deposits. Surfaces below the smoke layer accumulate settling particles proportional to distance. We map contamination density across the entire volume, assigning cleaning intensity per zone. Heavy solvent cleaning near the fire origin, light treatment at the periphery. This zoned approach prevents both under-treatment and wasteful over-treatment.",
+        timeframe: "Hours 1-4"
       },
       {
         number: 3,
-        title: "Water Extraction from Firefighting",
-        description: "Firefighting efforts often cause extensive water damage—sometimes exceeding the fire damage itself. Our truck-mounted extraction systems remove standing water from basements, carpets, and living spaces before it causes secondary damage. This immediate extraction prevents mold growth and structural deterioration.",
-        timeframe: "Hours 3-8"
+        title: "Synthetic Soot Classification and Protocol Selection",
+        description: "Synthetic soot from PVC, vinyl, and engineered wood is petroleum-based — a sticky, oily film that bonds differently than dry soot from natural materials. Water-based cleaners drive synthetic soot deeper into porous surfaces and smear it permanently across hard surfaces. We test residue composition before selecting agents. Petroleum residue requires solvent-based cleaners; natural-material soot in the same fire uses different protocols. Most Ashburn fires produce a mix requiring multiple cleaning approaches applied material-by-material.",
+        timeframe: "Hours 2-6"
       },
       {
         number: 4,
-        title: "Smoke & Soot Removal",
-        description: "Smoke particles permeate your entire home through HVAC systems and natural air movement. We use HEPA air scrubbers to filter airborne particles, apply specialized cleaning agents to remove soot from walls and ceilings, and clean or seal affected surfaces. For Ashburn's newer homes, this includes detailed HVAC system cleaning to prevent smoke recirculation.",
-        timeframe: "Days 1-3"
+        title: "Temporary Containment in Open Volumes",
+        description: "Open-concept homes have no doors or walls separating contaminated from clean zones. We erect frame-supported polyethylene barrier walls with sealed seams, creating enclosed treatment zones within the open volume. Each zone gets negative air pressure drawing contaminated air through HEPA filtration before exhausting outside. HVAC returns in contaminated zones are sealed to prevent the central system from distributing soot-laden air to clean areas. These temporary walls transform an uncontrollable open space into manageable treatment sections.",
+        timeframe: "Hours 3-8"
       },
       {
         number: 5,
-        title: "Odor Elimination & Air Purification",
-        description: "Fire odor persists long after visible damage is addressed. We use thermal fogging, hydroxyl generators, and ozone treatment (when property is unoccupied) to eliminate odors at the molecular level—not just mask them. Complete odor elimination often takes multiple treatment cycles.",
-        timeframe: "Days 3-7"
+        title: "Smart Home and Electrical Assessment",
+        description: "Modern Ashburn homes carry electrical loads that didn't exist a decade ago: smart switches, USB-integrated outlets, Level 2 EV charger circuits pulling 40-50 amps, automation hubs coordinating dozens of devices. We test each circuit with megohm meters for insulation breakdown, scan panels with thermal cameras for invisible heat damage, and evaluate controller boards in smart systems. When a device is suspected as fire cause, we document model, installation quality, wiring configuration, and failure indicators for insurance claims and potential product liability.",
+        timeframe: "Days 1-3"
       },
       {
         number: 6,
-        title: "Structural Drying & Restoration Coordination",
-        description: "We continue drying water-damaged areas using industrial dehumidifiers and air movers, monitoring daily until all materials return to normal moisture levels. Simultaneously, we coordinate with contractors for structural repairs, reconstruction, and final restoration to return your Ashburn home to pre-loss condition.",
-        timeframe: "Days 5-30+"
+        title: "Builder-Grade vs Premium Restoration Decisions",
+        description: "Builder-grade hollow-core doors, MDF trim, laminate counters, and basic vinyl do not clean well after smoke exposure — MDF absorbs soot permanently, laminate delaminates under solvent cleaning, hollow-core doors warp from heat and moisture. These are replaced. Premium hardwood trim, solid doors, granite counters, and engineered hardwood can often be professionally cleaned and preserved. We evaluate each material individually, directing insurance budget toward replacing unsalvageable builder-grade while preserving the premium finishes homeowners paid to upgrade.",
+        timeframe: "Days 2-5"
       }
     ]
   },
@@ -73,83 +69,82 @@ Our IICRC-certified fire and smoke damage specialists understand these modern co
     headline: "Fire Damage Challenges Specific to Ashburn Homes",
     challenges: [
       {
-        title: "Open Floor Plan Smoke Distribution",
-        description: "Ashburn's modern homes feature open-concept layouts connecting kitchens, living rooms, and dining areas. When fire occurs in one area, smoke rapidly distributes throughout all connected spaces—requiring comprehensive smoke remediation across the entire level rather than isolated rooms.",
-        solution: "We deploy HEPA air scrubbers throughout affected zones, clean all surfaces exposed to smoke, and treat HVAC systems to prevent recirculation. Our protocols address the reality of smoke distribution in modern open floor plans."
+        title: "Synthetic Smoke Corrosion Timeline",
+        description: "Petroleum-based soot from synthetic materials actively corrodes metal within hours. Chrome fixtures pit within 24 hours. Copper connections tarnish and increase resistance. Aluminum HVAC components oxidize under the acidic film. Stainless steel develops permanent etching after 48 hours. The corrosion is chemical — acidic compounds react with metal progressively, accelerating as humidity activates the acid.",
+        solution: "We prioritize metal surface cleaning in the first 24 hours, wiping corrosive residue from appliances, fixtures, electrical panels, and HVAC components before permanent damage sets in. Surfaces cleaned within 24 hours show 80-90 percent salvage rates. After 72 hours, salvage drops below 40 percent."
       },
       {
-        title: "Synthetic Material Toxic Smoke",
-        description: "Newer construction uses synthetic materials—engineered lumber, plastic plumbing, synthetic carpeting—that produce more toxic smoke than traditional materials when burned. This smoke requires specialized cleaning protocols and protective equipment during restoration.",
-        solution: "Our crews use appropriate respiratory protection and apply cleaning agents rated for synthetic material smoke residue. We test air quality throughout restoration to ensure safe levels before reoccupation."
+        title: "Sprinkler Water Volume in Open Floor Plans",
+        description: "A residential sprinkler head discharges 15-25 gallons per minute. An 8-minute activation releases 200-plus gallons with no walls to contain spread. Water flows across the entire main level, through floor register openings into basement ductwork, under baseboards into wall cavities, and through subfloor penetrations to lower levels. A kitchen sprinkler activation routinely damages the basement family room below and living spaces 30 feet from the sprinkler head.",
+        solution: "Dual-track response deploys water extraction simultaneously with fire assessment. Truck-mounted extractors pull standing water from lowest points while portable units address carpet saturation. We trace migration paths through floor penetrations and HVAC trunk lines to identify every affected area — including rooms receiving moisture through ductwork with no direct fire or sprinkler exposure."
       },
       {
-        title: "Sprinkler System Water Damage",
-        description: "Many newer Ashburn homes include fire sprinkler systems required by code. While sprinklers prevent fire spread, they create extensive water damage—often flooding finished basements and living spaces with hundreds of gallons before systems are shut down.",
-        solution: "We respond immediately to extract sprinkler water before it causes permanent damage. Our rapid extraction and drying prevents the secondary damage (mold, structural deterioration) that would otherwise result from sprinkler activation."
+        title: "ERV/HRV System Contamination",
+        description: "Energy recovery ventilators continuously exchange indoor and outdoor air through a heat-exchange core. During fire events, smoke exiting through windows can be pulled back inside through the ERV outdoor intake, contaminating bedrooms and other rooms served by the ventilation system that are entirely separated from the fire area — clean zones receiving smoke-contaminated air through their fresh air supply registers.",
+        solution: "We shut down ERV/HRV systems immediately and inspect cores and supply ductwork for contamination. Heat exchange cores that passed smoke-laden air require replacement — cleaning cannot remove soot from the fine passages. Supply ducts are cleaned or sealed depending on contamination level. Systems stay offline until air quality testing confirms clean operation."
       },
       {
-        title: "Builder Defect Fire Causation",
-        description: "Some Ashburn fires result from construction defects: electrical systems improperly installed, dryer vents inadequately designed, or appliances with clearance violations. When defects cause fires, builder warranty and liability questions affect insurance claims and restoration costs.",
-        solution: "Our fire damage assessment documents potential defect causation. We photograph electrical installations, measure appliance clearances, and provide reports supporting your insurance claim or builder liability case."
+        title: "Smart Device and EV Charger Fire Causation",
+        description: "Level 2 EV chargers sustain the highest continuous load in most residential panels. Smart outlets with USB charging handle always-on loads generating cumulative heat in connections not designed for continuous operation. IoT devices with lithium batteries present thermal runaway risks. When these cause fires, the causation chain involves device manufacturers, electrical installers, and panel manufacturers.",
+        solution: "We document device condition before cleanup disturbs evidence: manufacturer, model, wiring gauge, connection quality, breaker sizing, and visible failure indicators. This documentation supports insurance causation determination and provides the evidentiary foundation for product liability or installer negligence claims."
       },
       {
-        title: "HOA Restoration Compliance",
-        description: "Ashburn's master-planned communities impose architectural review requirements even for fire damage restoration. Exterior repairs must match original appearance and receive HOA approval—adding complexity to an already stressful process.",
-        solution: "We coordinate with Ashburn HOA architectural review boards throughout restoration, ensuring compliance while expediting approvals. Our experience with Broadlands, Brambleton, and Belmont HOAs streamlines this process."
+        title: "HOA Exterior Compliance During Restoration",
+        description: "Ashburn communities — Broadlands, Brambleton, Stone Ridge, Willowsford, Moorefield Green — require architectural review approval for exterior fire repairs. Replacement siding, roofing, and trim must match community standards. Starting work without approval risks stop-work orders and mandatory removal of non-compliant materials.",
+        solution: "We submit architectural plans before beginning exterior work, specifying materials from each community's pre-approved palette. Our Ashburn project files include approved specifications for major communities, allowing compliant first submissions. This cuts approval timelines from 4-6 weeks to 10-14 days."
       }
     ]
   },
 
   equipmentSection: {
-    headline: "Professional Fire & Smoke Damage Equipment",
+    headline: "Specialized Equipment for Modern Ashburn Fire Events",
     equipment: [
       {
-        name: "HEPA Air Scrubbers",
-        purpose: "Remove airborne smoke particles and soot preventing further contamination during restoration"
+        name: "High-Volume HEPA Air Scrubbers",
+        purpose: "500-plus CFM units sized for open-concept volumes — standard 300 CFM residential units cannot achieve effective particle capture rates in 2,000 square foot connected spaces with 9-foot ceilings"
+      },
+      {
+        name: "Solvent-Based Synthetic Soot Cleaning System",
+        purpose: "Petroleum-rated agents that dissolve the oily binder in synthetic smoke residue without smearing — water-based cleaners permanently drive synthetic soot into porous surfaces"
+      },
+      {
+        name: "Temporary Containment Wall System",
+        purpose: "Aluminum frame supports with sealed polyethylene barriers creating negative-pressure treatment zones inside open floor plans where no permanent walls exist"
       },
       {
         name: "Truck-Mounted Water Extraction",
-        purpose: "Rapid removal of firefighting water from basements, carpets, and living spaces",
+        purpose: "Deployed simultaneously with fire restoration for sprinkler-activated events — extracting hundreds of gallons while the fire team addresses smoke above",
         brand: "Prochem"
       },
       {
+        name: "Synthetic-Rated Thermal Fogging",
+        purpose: "Standard deodorizers underperform against petroleum-based smoke — our thermal foggers disperse counteractants formulated for the specific chemical odor profile of burned PVC, vinyl, and engineered wood"
+      },
+      {
+        name: "Smart Home Circuit Testing Equipment",
+        purpose: "Megohm insulation resistance meters and thermal cameras for post-fire electrical assessment — identifies heat-damaged wiring, compromised smart circuits, and automation board failures invisible to visual inspection"
+      },
+      {
         name: "Hydroxyl Generators",
-        purpose: "Eliminate fire odors at molecular level while safe for occupied spaces—critical for Ashburn families remaining in partially damaged homes",
+        purpose: "Break down smoke odor compounds at molecular level while remaining safe for occupancy — critical for families staying in the unaffected portion of partially damaged homes during restoration",
         brand: "Vaportek"
-      },
-      {
-        name: "Ozone Generators",
-        purpose: "Powerful odor elimination for unoccupied properties requiring aggressive treatment"
-      },
-      {
-        name: "Thermal Foggers",
-        purpose: "Distribute deodorizing agents into all spaces smoke reached, including wall cavities and HVAC systems"
-      },
-      {
-        name: "Industrial Dehumidifiers",
-        purpose: "Remove moisture from firefighting water damage preventing mold and structural deterioration",
-        brand: "Dri-Eaz"
-      },
-      {
-        name: "Specialized Cleaning Agents",
-        purpose: "Soot and smoke residue removal from various surfaces including painted walls, synthetic materials, and sealed wood"
       }
     ],
-    localNote: "Our fire damage response vehicles carry specialized smoke remediation equipment not found in standard water damage trucks. When fire damages your Ashburn home, we arrive prepared for comprehensive smoke, soot, and water damage restoration."
+    localNote: "Ashburn fire events require both fire restoration AND water damage equipment simultaneously. A fire-only crew arriving without extraction equipment loses critical hours on sprinkler water while waiting for a second team — our dual-equipped response eliminates that gap."
   },
 
   pricingSection: {
     headline: "Fire Damage Restoration Costs in Ashburn",
-    intro: "Fire damage restoration costs vary dramatically based on fire extent, smoke distribution, water damage from firefighting, and required reconstruction. We provide free inspections and detailed estimates before work begins. Fire damage is covered by homeowner's insurance—we handle direct billing and claims documentation.",
+    intro: "Sprinkler-activated fires frequently cost more to restore than non-sprinkler fires — the fire damage may be minor, but hundreds of gallons of sprinkler discharge across open floor plans creates extensive water restoration scope. We provide detailed estimates before work begins and handle direct insurance billing.",
     factors: [
-      "Fire extent—localized kitchen fires differ from total loss events requiring complete reconstruction",
-      "Smoke distribution—open floor plans require comprehensive treatment across connected spaces",
-      "Water damage from firefighting—sprinkler systems and hose lines create extensive water damage",
-      "Contents restoration—salvageable items require specialized cleaning; total loss items need documentation",
-      "Structural repairs—reconstruction costs depend on fire damage severity and HOA compliance requirements",
-      "Response speed—immediate calls prevent smoke and water damage from becoming permanent"
+      "Sprinkler water damage scope — discharge volume, migration through floor penetrations, and number of levels affected often drive costs higher than the fire damage itself",
+      "Synthetic soot cleaning complexity — petroleum-based residue requires labor-intensive solvent-based protocols rather than standard soot removal",
+      "Open-concept decontamination scale — connected main levels of 1,800 to 2,500 square feet require full-volume treatment rather than room-by-room containment",
+      "Smart home system replacement — damaged switches, hubs, EV charger circuits, and connected devices each require individual assessment and documentation",
+      "HOA architectural compliance — exterior restoration must use pre-approved materials and pass review, affecting material selection and timeline",
+      "Builder-grade replacement vs premium preservation — MDF and laminate require full replacement while hardwood and stone may be restored, affecting cost allocation"
     ],
-    cta: "Call (703) 656-0109 immediately after fire damage—ideally while firefighters are still on scene. Free inspection, detailed estimates, and direct insurance billing. We coordinate the entire restoration process."
+    cta: "Call (703) 656-0109 for immediate dual-track response. Free assessment, detailed documentation, and direct insurance billing. We coordinate complete restoration — fire, water, structural, and HOA compliance — through a single point of contact."
   },
 
   serviceAreaSection: {
@@ -171,37 +166,37 @@ Our IICRC-certified fire and smoke damage specialists understand these modern co
       "Farmwell Station",
       "Ryan Park"
     ],
-    responseTime: "30-minute emergency response to all Ashburn fire damage events. Our crews coordinate with Loudoun County Fire & Rescue to begin restoration the moment firefighting operations conclude."
+    responseTime: "Dual-track fire and water extraction crews respond within 30 minutes to all Ashburn neighborhoods, deploying simultaneously from our Route 28 position with equipment for both fire remediation and sprinkler water damage."
   },
 
   faqSection: [
     {
-      question: "When should I call after a fire—immediately or after assessment?",
-      answer: "Call (703) 656-0109 immediately—ideally while firefighters are still on scene. Every hour of delay means deeper smoke penetration, more extensive water damage from firefighting efforts, and higher restoration costs. We coordinate with fire departments to begin restoration the moment firefighting concludes."
+      question: "My sprinklers contained the fire quickly — why is restoration still expensive?",
+      answer: "Sprinkler systems suppress fire effectively but create massive water damage. A single head running 8 minutes releases over 400 gallons. In open-concept homes, that water spreads across the entire main level, seeps through floor penetrations into the basement, and saturates subfloor materials. The fire damage from a sprinkler-contained event is often minor — limited to the ignition area. But water extraction, structural drying, flooring replacement, and basement restoration from sprinkler discharge frequently exceeds the fire repair cost. Your estimate reflects both components."
     },
     {
-      question: "Will my homeowner's insurance cover fire damage restoration?",
-      answer: "Yes. Standard homeowner's policies cover fire damage including smoke removal, water damage from firefighting, content restoration, and structural repairs. We provide comprehensive documentation for insurance claims and handle direct billing with all major carriers."
+      question: "What's different about smoke from synthetic materials?",
+      answer: "When PVC trim, vinyl flooring, engineered lumber, and synthetic carpet burn, they produce petroleum-based smoke with oily, adhesive particles that form a sticky film rather than dry powdery residue. This film is acidic and corrodes metal within 24 hours. Critically, water-based cleaners emulsify the oily binder and drive it deeper into porous materials or smear it permanently across hard surfaces. Solvent-based cleaners are required. Using the wrong agent causes irreversible damage — we test residue composition before selecting any cleaning protocol."
     },
     {
-      question: "Can you remove the smoke smell from my entire Ashburn home?",
-      answer: "Yes. We use multi-stage odor elimination: HEPA air scrubbing, surface cleaning, thermal fogging, and hydroxyl or ozone treatment. Complete smoke odor removal often takes multiple treatment cycles, but we don't stop until your home returns to normal air quality."
+      question: "My smart thermostat stopped working after the fire — is that covered?",
+      answer: "Yes. All fire-damaged electronics and smart home components are covered under standard homeowner's fire provisions. We document every affected device — thermostats, smart switches, hubs, sensors, outlets, connected appliances — with photographs, model numbers, and damage descriptions. Circuit boards corrode rapidly from acidic synthetic soot, so even devices appearing intact may have degraded connections. We test each component and document failures for your claim."
     },
     {
-      question: "What about water damage from firefighting—do you handle that too?",
-      answer: "Absolutely. Firefighting often causes water damage exceeding the fire damage itself. We extract standing water immediately, dry all affected materials, and prevent secondary damage like mold growth and structural deterioration. Our fire damage service includes complete water damage restoration."
+      question: "Can you tell if my EV charger caused the fire?",
+      answer: "We document physical evidence for causation analysis — device condition, wiring gauge, connection quality, breaker sizing, arc marks, thermal discoloration. For EV chargers, we check installation against manufacturer specs and code requirements. For smart devices, we record manufacturer, model, and failure mode. Official determination comes from the fire marshal and adjuster, but our documentation provides the evidentiary foundation for insurance claims and potential liability action."
     },
     {
-      question: "Can contents like furniture and clothing be saved after smoke exposure?",
-      answer: "Many items can be professionally cleaned and restored. We assess all contents, clean salvageable items using specialized processes, and document total loss items for insurance claims. Our goal is maximizing what can be saved while ensuring thorough smoke removal."
+      question: "Why do you build temporary walls in my open-concept home?",
+      answer: "Without containment, cleaning a soot-covered wall sends particles airborne that settle on already-cleaned surfaces or uncontaminated areas. Our sealed polyethylene barriers create enclosed treatment zones with individual negative-pressure filtration. We can aggressively clean the high-contamination zone near the fire without recontaminating lighter-deposit areas. Once a zone tests clean, we remove its barrier and move outward through the space systematically."
     },
     {
-      question: "Do you coordinate with contractors for structural repairs?",
-      answer: "Yes. We handle the entire restoration process: emergency protection, smoke and water damage remediation, and coordination with contractors for structural repairs and reconstruction. One call brings complete fire damage recovery from emergency response to final restoration."
+      question: "Should I replace builder-grade trim or try to clean it?",
+      answer: "MDF baseboard and crown molding, laminate counters, and hollow-core doors should be replaced. MDF absorbs soot into its fiber matrix beyond surface cleaning reach and re-releases odor for months. Laminate delaminates under required solvent cleaners. Hollow-core doors warp from moisture. Solid hardwood trim, real wood doors, and granite or quartz countertops respond well to professional cleaning and can typically be preserved. We evaluate material by material and direct insurance dollars accordingly."
     },
     {
-      question: "How long does complete fire damage restoration take?",
-      answer: "Emergency protection and water extraction occur within hours. Smoke remediation typically takes 5-7 days. Structural repairs and reconstruction depend on damage severity—minor fires might complete in 2-3 weeks, while major damage requiring reconstruction can take months. We coordinate the entire timeline."
+      question: "Will my HOA delay fire restoration?",
+      answer: "Not with proactive management. We submit architectural plans before starting exterior work using materials from your community's pre-approved palette. Our files include approved specs for Broadlands, Brambleton, Stone Ridge, Willowsford, and other Ashburn communities — allowing compliant first submissions that typically achieve approval in 10-14 days versus 4-6 weeks for unapproved materials. Interior restoration proceeds in parallel, so exterior approval rarely extends the overall timeline."
     }
   ],
 
@@ -214,9 +209,9 @@ Our IICRC-certified fire and smoke damage specialists understand these modern co
   ],
 
   finalCTA: {
-    headline: "Fire Damage Emergency in Ashburn?",
-    paragraph: "Fire damage worsens every hour. Smoke penetrates deeper, water from firefighting causes secondary damage, and restoration costs escalate. Our crews respond within 30 minutes for complete fire, smoke, and water damage recovery.",
+    headline: "Sprinkler-Activated Fire in Your Ashburn Home?",
+    paragraph: "Modern Ashburn fires create dual emergencies — synthetic smoke contaminating your open-concept living space and hundreds of gallons of sprinkler water flooding through floor levels. Every hour means deeper soot corrosion on metal surfaces and more water migration through subfloor penetrations. Our dual-track crews deploy fire restoration and water extraction simultaneously, arriving within 30 minutes equipped for both emergencies.",
     phone: "(703) 656-0109",
-    buttonText: "Call Now for Emergency Response"
+    buttonText: "Call Now for Dual-Track Emergency Response"
   }
 };
