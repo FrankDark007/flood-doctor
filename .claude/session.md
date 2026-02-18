@@ -71,8 +71,12 @@
 
 ---
 
+## ✅ DEPLOYED: All sites live (2026-02-17)
+- Main site: https://flood.doctor ✅ 200
+- All 13 city subdomains: ✅ 200 (rsync + Cloudflare purge)
+- Rich city service content verified live on mclean.flood.doctor
+
 ## Next Up
-- **Deploy** latest changes to production
 - **P2 #7:** Client Portal (CompanyCam + Matterport)
 - **P2 #8:** Neighborhood Page Redesign (68 pages)
 - **P2 #9:** Blog Content Expansion (5 cities need 2 more posts)
