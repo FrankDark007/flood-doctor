@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -138,6 +158,87 @@ Our IICRC-certified crews understand that storm restoration in Great Falls means
         solution: "Asset protection is immediate priority. We establish barriers, coordinate relocation when necessary, and maintain climate control for sensitive environments throughout the restoration process."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Storm Damage Emergency Equipment for Great Falls Estates",
+    equipment: [
+      {
+        name: "Emergency Tarping System",
+        purpose: "Heavy-duty tarps and fastening systems designed for the slate, copper, and complex roof geometries found on Great Falls estates. Proper emergency tarping stops water intrusion immediately while permanent roof repairs are scheduled—protecting your home's interior from ongoing exposure.",
+      },
+      {
+        name: "Truck-Mounted Water Extractor",
+        purpose: "Removes storm water and rain intrusion at rates up to 100 gallons per minute. When tree strikes breach a roof and rain enters the estate, truck-mounted extraction clears water from multiple affected floors before secondary damage compounds.",
+        brand: "Prochem"
+      },
+      {
+        name: "Portable Generator System",
+        purpose: "Provides independent power for all drying and extraction equipment during the power outages that frequently accompany severe storms in Great Falls. Our crews operate without relying on your property's electrical system—full restoration capability regardless of grid status.",
+        brand: "Honda"
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Traces water migration from roof breaches through ceiling cavities, walls, and floor systems to identify the full extent of interior damage. In multi-story estates, storm water travels paths that aren't visible without thermal detection.",
+        brand: "FLIR"
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Provides structural drying for areas saturated by storm water intrusion. We deploy multiple units per affected floor, with precision settings for wine cellars and climate-sensitive spaces exposed to storm damage.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "High-Velocity Axial Air Movers",
+        purpose: "Creates airflow across wet surfaces to accelerate evaporation of storm water from floors, walls, and ceiling systems. For Great Falls estates with multiple affected rooms across several floors, we deploy dozens of units simultaneously.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "HEPA Air Scrubber",
+        purpose: "Filters debris particles, insulation fibers, and potential mold spores from indoor air after storm damage exposes interior spaces to outdoor elements. Maintains safe air quality throughout the restoration process.",
+        brand: "Prochem"
+      },
+      {
+        name: "Board-Up and Securing Materials",
+        purpose: "Plywood, hardware, and securing systems for broken windows, damaged doors, and structural openings. Immediate securing prevents further weather damage, vandalism, and animal entry after storm events.",
+      }
+    ],
+    localNote: "Great Falls storm responses require tree damage mitigation, multi-structure tarping capacity, and generator-powered drying systems. When a summer microburst or nor'easter hits multiple structures on an estate, we arrive with equipment for every building—main residence, guest house, pool house, and equestrian facilities."
+  },
+
+  pricingSection: {
+    headline: "Storm Damage Restoration Costs in Great Falls",
+    intro: "Storm damage pricing for Great Falls estates depends on the scope of damage across all structures, the extent of water intrusion, and the emergency measures required to prevent ongoing deterioration. We provide on-site assessments during our emergency response and detailed written estimates before restoration begins. Storm claims for high-value properties require comprehensive documentation—our Xactimate estimates and photographic evidence support complete coverage.",
+    factors: [
+      "Number of structures affected—main residence, guest house, pool house, and equestrian facilities each require separate assessment and response",
+      "Roof damage scope and tarping requirements for slate, copper, and complex roof systems",
+      "Interior water damage from rain intrusion through breached roofs, windows, or walls",
+      "Tree strike assessment and safe removal coordination alongside structural protection",
+      "High-value asset protection including wine cellar, art, and antique safeguarding from exposure",
+      "Duration of structural drying required after water intrusion, factoring in estate scale and material types",
+      "Emergency board-up and securing requirements for broken windows and structural openings"
+    ],
+    cta: "Call (703) 656-0112 during or immediately after a storm. We respond within 30 minutes with tarping, extraction, and asset protection. Free assessment and insurance coordination for all Great Falls storm damage."
+  },
+
+  serviceAreaSection: {
+    headline: "Storm Damage Response Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "30-minute storm damage response to all Great Falls properties, 24/7/365. During severe weather events, we monitor conditions and pre-position crews for rapid deployment. We prioritize based on damage severity and ongoing exposure risk—breached roofs with active rain receive immediate response."
   },
 
   faqSection: [

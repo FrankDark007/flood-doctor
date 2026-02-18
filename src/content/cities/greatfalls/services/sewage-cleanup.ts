@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -138,6 +158,86 @@ Our IICRC Master Water Restorers and biohazard-certified crews understand that s
         solution: "All our Great Falls work is discrete by default. Unmarked vehicles, professional crews, and coordinated timing ensure your neighbors remain unaware of what's happened at your property."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Biohazard Sewage Cleanup Equipment for Great Falls",
+    equipment: [
+      {
+        name: "Biohazard-Rated Extraction System",
+        purpose: "Dedicated extraction equipment used exclusively for sewage and biohazard events. Unlike general-purpose extractors, our biohazard units are sealed and decontaminated between jobs to prevent cross-contamination—essential for the Category 3 protocols that sewage cleanup demands.",
+        brand: "Prochem"
+      },
+      {
+        name: "EPA-Registered Antimicrobial Treatment System",
+        purpose: "Applies hospital-grade antimicrobial agents to all surfaces that contacted sewage. Our treatment systems ensure complete coverage of floors, walls, and structural members, neutralizing bacteria, viruses, and parasites before drying begins.",
+      },
+      {
+        name: "Negative Air Machine with HEPA Filtration",
+        purpose: "Creates containment zones that prevent sewage-contaminated air from spreading to unaffected areas of your estate. Multiple units maintain negative pressure barriers between the contaminated zone and clean spaces—protecting wine cellars, living areas, and guest quarters.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Provides structural drying after decontamination is complete. We deploy dehumidifiers only after antimicrobial treatment has been verified, ensuring that drying proceeds on clean surfaces and prevents the amplification of any remaining contamination.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Identifies the full extent of sewage contamination behind finished walls and under flooring. Sewage often wicks further than visible contamination suggests—thermal imaging ensures we find and treat all affected materials.",
+        brand: "FLIR"
+      },
+      {
+        name: "Personal Protective Equipment (Tyvek Suits, Respirators)",
+        purpose: "Full biohazard PPE for all crew members working in sewage-contaminated areas. Category 3 work requires respiratory protection, impervious suits, and decontamination protocols that protect both our technicians and your property.",
+      },
+      {
+        name: "Hydroxyl Generator",
+        purpose: "Eliminates sewage-related odors without the ozone damage that affects sensitive materials. Safe for use near wine cellars and art environments while providing thorough odor neutralization throughout affected and adjacent spaces.",
+        brand: "Vaportek"
+      },
+      {
+        name: "Sewer Line Camera System",
+        purpose: "Inspects septic lines to identify the backup cause—root infiltration, collapsed pipe, tank overflow, or drain field failure. Understanding the root cause is essential to preventing recurrence after cleanup is complete.",
+      }
+    ],
+    localNote: "Great Falls sewage responses require biohazard-rated equipment that standard restoration companies don't carry. Our dedicated Category 3 inventory includes sealed extraction units, hospital-grade antimicrobials, and sewer camera systems for root cause identification in the private septic systems that serve nearly every Great Falls property."
+  },
+
+  pricingSection: {
+    headline: "Sewage Cleanup Costs for Great Falls Properties",
+    intro: "Sewage cleanup pricing reflects the biohazard protocols required for safe decontamination. We provide on-site assessments within our 30-minute emergency response window. All pricing is itemized using Xactimate and directly compatible with insurance adjuster formats. Sewage backup claims often involve both homeowner's insurance and optional sewer/septic endorsements—we help navigate coverage across all applicable policies.",
+    factors: [
+      "Square footage of contaminated area and extent of sewage penetration into structural materials",
+      "Water category confirmation—septic backup is Category 3 requiring the most aggressive decontamination protocols",
+      "Volume of porous materials requiring removal—carpet, pad, drywall, insulation, and unsealed wood that contacted sewage",
+      "High-value asset protection in adjacent spaces including wine cellars, home theaters, and custom-finished areas",
+      "Septic system diagnosis and repair coordination—addressing the root cause alongside immediate cleanup",
+      "Antimicrobial treatment scope and air quality verification requirements",
+      "Emergency timing and the complexity of biohazard response protocols for after-hours events"
+    ],
+    cta: "Call (703) 656-0112 immediately for sewage backup response. We arrive within 30 minutes with full biohazard equipment and provide a written estimate before beginning decontamination work. Insurance coordination and septic specialist referrals included."
+  },
+
+  serviceAreaSection: {
+    headline: "Sewage & Septic Cleanup Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "30-minute biohazard response to all Great Falls properties, 24/7/365. Nearly every Great Falls home operates on private septic—our crews are trained specifically for the septic system failures common in this community. Discrete service is standard for all sewage-related work."
   },
 
   faqSection: [

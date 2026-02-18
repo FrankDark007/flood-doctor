@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -144,6 +164,86 @@ Our IICRC-certified fire restorers understand that Great Falls fire recovery mea
         solution: "We assess all areas served by HVAC, not just visibly damaged spaces. Air sampling identifies contamination levels throughout your estate, and HVAC cleaning prevents ongoing redistribution of particles."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Fire Damage Restoration Equipment for Great Falls Estates",
+    equipment: [
+      {
+        name: "Truck-Mounted Water Extractor",
+        purpose: "Removes firefighting water that has cascaded through multiple floors. In Great Falls estates, fire suppression water often reaches finished basements, wine cellars, and lower-level spaces far below the fire location—requiring the same extraction capacity as a major flooding event.",
+        brand: "Prochem"
+      },
+      {
+        name: "Hydroxyl Generator",
+        purpose: "Eliminates smoke odor molecules without ozone damage. Unlike ozone generators, hydroxyl units are safe for fine art, wine collections, and occupied spaces—critical for Great Falls estates where standard deodorization methods would damage assets more valuable than the restoration itself.",
+        brand: "Vaportek"
+      },
+      {
+        name: "HEPA Air Scrubber",
+        purpose: "Filters smoke particles and soot down to 0.3 microns from the air. In large estates where HVAC systems distribute smoke throughout 20,000+ square feet, multiple air scrubbers restore indoor air quality across all zones.",
+        brand: "Prochem"
+      },
+      {
+        name: "Thermal Fogging System",
+        purpose: "Penetrates smoke odor into the same surfaces and cavities that smoke reached during the fire. Thermal fog reaches inside wall cavities, above ceilings, and into structural voids where liquid cleaning can't reach—matching smoke's own penetration path.",
+      },
+      {
+        name: "Ultrasonic Cleaning System",
+        purpose: "Removes soot from delicate items and electronics using microscopic cavitation bubbles in cleaning solution. Safe for light fixtures, decorative hardware, and electronics that can't tolerate abrasive or chemical cleaning methods.",
+      },
+      {
+        name: "Dry Ice Blasting System",
+        purpose: "Removes soot and char from structural surfaces using compressed CO2 pellets that sublimate on impact, leaving no secondary waste. Effective for cleaning stone, brick, and masonry surfaces common in Great Falls estate fireplaces and exterior walls.",
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Provides structural drying for areas affected by firefighting water. Deployed alongside air movers to dry floors, walls, and ceiling cavities saturated during fire suppression—preventing the secondary water damage that compounds fire losses.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Identifies hidden water damage from firefighting operations and detects hot spots that indicate incomplete fire suppression. Non-invasive assessment preserves custom finishes while ensuring complete damage identification.",
+        brand: "FLIR"
+      }
+    ],
+    localNote: "Great Falls fire damage responses require both smoke remediation and water extraction equipment deployed simultaneously. Our inventory includes hydroxyl generators safe for art and wine environments, dry ice blasting for specialty surfaces, and multi-floor drying capacity—because fire damage in a 20,000-square-foot estate creates compound damage that requires compound solutions."
+  },
+
+  pricingSection: {
+    headline: "Fire Damage Restoration Costs in Great Falls",
+    intro: "Fire damage restoration pricing for Great Falls estates reflects the compound nature of the damage—fire, smoke, soot, and water all require different remediation approaches. We provide comprehensive assessments that address all damage types and provide itemized estimates before work begins. Fire claims for high-value properties are complex, and our detailed documentation supports complete coverage with both standard and specialty insurers.",
+    factors: [
+      "Fire damage scope—direct flame damage area versus smoke and soot distribution throughout the estate",
+      "Smoke penetration extent—HVAC-distributed smoke can affect 20,000+ square feet even from a small fire",
+      "Firefighting water extraction and drying requirements across multiple floors and structures",
+      "High-value asset protection including art handling, wine cellar stabilization, and antique preservation",
+      "Soot cleaning complexity—different cleaning methods required for plaster, stone, millwork, textiles, and electronics",
+      "Odor elimination scope and method—hydroxyl generation for art-safe environments versus thermal fogging for structural spaces",
+      "Restoration coordination for custom millwork, plaster, and specialty finishes that require artisan-level repair"
+    ],
+    cta: "Call (703) 656-0112 as soon as fire crews clear your property for entry. We respond within 30 minutes to begin protecting your assets from ongoing smoke, soot, and water damage. Free assessment and insurance coordination included."
+  },
+
+  serviceAreaSection: {
+    headline: "Fire Damage Restoration Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "30-minute response after fire department clearance to all Great Falls properties. Smoke and soot damage worsens every hour—we respond immediately to begin asset protection and prevent secondary damage. During large fire events, we pre-stage equipment for rapid deployment."
   },
 
   faqSection: [

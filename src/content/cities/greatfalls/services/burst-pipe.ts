@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -138,6 +158,89 @@ Our IICRC Master Water Restorers understand the complexity of Great Falls estate
         solution: "We work with plumbers who specialize in Great Falls' high-end residential properties. Our coordination ensures repair happens efficiently while we handle all water damage aspects simultaneously."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Burst Pipe Emergency Equipment for Great Falls Estates",
+    equipment: [
+      {
+        name: "Truck-Mounted Water Extractor",
+        purpose: "Removes burst pipe water at rates up to 100 gallons per minute. When a supply line failure floods multiple floors of a Great Falls estate, truck-mounted suction power clears water faster than portable units can manage across 10,000+ square feet of affected space.",
+        brand: "Prochem"
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Traces the complete path of water migration from the burst location through walls, ceiling cavities, and floors to distant areas of the estate. In multi-wing properties, thermal imaging reveals damage in guest quarters and lower levels far from the burst that visual inspection would miss.",
+        brand: "FLIR"
+      },
+      {
+        name: "Injectidry Wall Cavity Drying System",
+        purpose: "Dries inside wall cavities where burst pipe water accumulates behind finished surfaces. Forces warm dry air through small access points, preserving custom plaster, stone veneer, and millwork without demolition—critical for the irreplaceable finishes in Great Falls estates.",
+        brand: "Injectidry"
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Extracts up to 30 gallons of moisture per day from saturated structures. We deploy multiple units per floor in Great Falls estates, maintaining controlled drying rates that protect custom finishes and climate-sensitive spaces like wine cellars.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Ceiling Cavity Drying System",
+        purpose: "Specialized equipment that dries above-ceiling spaces where burst pipe water pools on top of finished ceilings below. Prevents ceiling collapse and plaster damage in the ornate ceiling systems common in Great Falls manors.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "High-Velocity Axial Air Movers",
+        purpose: "Creates targeted airflow across wet surfaces to accelerate evaporation. For burst pipe events affecting multiple rooms and floors, we deploy 30+ units simultaneously to ensure all affected areas dry at the rate needed to prevent mold and secondary damage.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Pin-Type and Non-Invasive Moisture Meters",
+        purpose: "Provides precise moisture readings in structural members and finished surfaces. Pin-type meters measure moisture depth in wood framing while non-invasive scanners map wet areas across large surfaces without damaging custom finishes.",
+        brand: "Delmhorst"
+      },
+      {
+        name: "Hardwood Floor Drying Mat System",
+        purpose: "Saves original and exotic hardwood floors by drawing trapped moisture upward through controlled vacuum pressure. Burst pipe water on upper floors often soaks through to hardwood on the level below—mat drying preserves these floors without removal.",
+        brand: "Dri-Eaz"
+      }
+    ],
+    localNote: "For Great Falls burst pipe emergencies, we carry ceiling cavity drying equipment and multi-floor deployment capacity that standard restoration companies don't stock. A burst pipe in a 15,000-square-foot manor creates a multi-story water event requiring equipment scaled for the property, not for subdivision homes."
+  },
+
+  pricingSection: {
+    headline: "Burst Pipe Restoration Costs in Great Falls",
+    intro: "Burst pipe damage costs depend on how long the pipe ran, how far water migrated, and what materials and assets were affected. We provide free on-site assessments during our 30-minute emergency response. All pricing is itemized using Xactimate software, directly compatible with insurance adjuster formats. We handle direct billing with all carriers and provide the documentation that high-value property claims require.",
+    factors: [
+      "Duration of water flow before shutoff—every hour of an undetected burst increases damage exponentially in large estates",
+      "Number of floors and structures affected by water migration from the burst location",
+      "Pipe type and failure cause—well system pressure tank failure, frozen pipe, or supply line corrosion each create different damage patterns",
+      "High-value asset exposure including art, wine cellars, electronics, and custom millwork in the water path",
+      "Material types requiring preservation—custom plaster ceilings, imported hardwood, stone, and specialty finishes demand precision drying",
+      "Plumber coordination for pipe repair and system assessment alongside water damage restoration",
+      "Emergency timing and the complexity of accessing the burst location within the estate's plumbing network"
+    ],
+    cta: "Call (703) 656-0112 for immediate burst pipe response. We'll guide you to shut off water during the call, arrive within 30 minutes, and provide a written estimate before restoration work begins. Insurance coordination is included."
+  },
+
+  serviceAreaSection: {
+    headline: "Burst Pipe Emergency Response Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "30-minute guaranteed response to all Great Falls properties, 24/7/365. During winter freeze events, we pre-position crews for faster response to the frozen pipe bursts that affect unheated wings, pool houses, and outbuildings throughout Great Falls estates."
   },
 
   faqSection: [

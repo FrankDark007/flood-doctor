@@ -127,16 +127,41 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-17 (CityLift P1 Vienna Pilot Complete — commit 9fb5e52)*
+*Updated: 2026-02-17 (CityLift P1 Great Falls + Arlington Expansion — IN PROGRESS)*
 
-## Resume Command
-```
-Pick up where we left off on the CityLift plan
-```
+## ⚠️ ACTIVE WORK — UNCOMMITTED CHANGES IN WORKING TREE
 
-## Decision Needed on Resume
-User must choose one of:
-1. **Scale P1** — remediate Great Falls (8 pages, avg 68) + Arlington /emergency-water-removal (40)
-2. **Proceed to P2** — High-Impression / Low-CTR (requires GSC export)
-3. **Deploy Vienna** — push Vienna changes to production first
-4. **Other priority** — different project or task
+**Execution Plan:** FD-CITYLIFT-EXEC-006
+**Status:** Content written, NOT YET committed. Needs build verification, scoring, state updates, commit.
+
+### What Was Done This Session
+- 7 Great Falls service pages expanded with equipmentSection, pricingSection, serviceAreaSection
+- 1 Arlington emergency-water-removal converted from Format C → Format A
+- All 8 interfaces updated to full Format A schema
+- TypeScript type check passed (no new errors from our files)
+
+### Files Modified (uncommitted):
+1. `src/content/cities/greatfalls/services/flood-cleanup.ts`
+2. `src/content/cities/greatfalls/services/basement-flooding.ts`
+3. `src/content/cities/greatfalls/services/burst-pipe.ts`
+4. `src/content/cities/greatfalls/services/mold-remediation.ts`
+5. `src/content/cities/greatfalls/services/sewage-cleanup.ts`
+6. `src/content/cities/greatfalls/services/fire-damage.ts`
+7. `src/content/cities/greatfalls/services/storm-damage.ts`
+8. `src/content/cities/arlington/services/emergency-water-removal.ts`
+
+### Remaining Steps (resume here):
+1. **Run `npm run build`** — verify 189/189 routes, no errors
+2. **Generate audit report** — `citylift/audit/p1-greatfalls-after.json` with before/after scores
+3. **Verify** — no duplicate titles, no duplicate H1s, only intended files changed
+4. **Update** — STATE.md, DECISIONS.md, ARTIFACTS.md
+5. **Commit** — to main
+
+### NOT modified (per plan rules):
+- No titles changed
+- No H1s changed
+- No schema changed
+- No routes changed
+- No Vienna files touched
+- No other cities touched
+- water-damage.ts (already score 100) NOT touched

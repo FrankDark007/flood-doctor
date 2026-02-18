@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -138,6 +158,88 @@ Our IICRC Master Water Restorers understand these Great Falls-specific challenge
         solution: "We assess and dry the entire lower level, not just visibly wet areas. Thermal imaging ensures we find moisture that's migrated behind finished walls and under flooring throughout the space."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Basement Flooding Equipment for Great Falls Estates",
+    equipment: [
+      {
+        name: "Truck-Mounted Water Extractor",
+        purpose: "Removes standing basement water at rates up to 100 gallons per minute. Great Falls finished lower levels often exceed 5,000 square feet—our truck-mounted units maintain consistent suction power across these large spaces where portable units lose effectiveness.",
+        brand: "Prochem"
+      },
+      {
+        name: "Submersible Sump Pumps",
+        purpose: "Deployed when basement water depth exceeds extractor capacity, common during groundwater intrusion events along the Riverbend corridor. Bulk water removal allows precision extraction to begin on saturated materials.",
+        brand: "Tsurumi"
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Precision moisture removal that maintains climate control in sensitive spaces. For Great Falls wine cellars, we configure dehumidifiers to dry structural moisture while preserving the temperature and humidity ranges your collection requires.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Desiccant Dehumidifier",
+        purpose: "Provides ultra-precise humidity control for wine cellars and art storage that require specific climate maintenance during restoration. Removes moisture without the temperature fluctuations that standard refrigerant units create.",
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Traces water migration paths behind finished walls and under flooring without destructive testing. In Great Falls basements with custom stone, millwork, and built-in cabinetry, non-invasive detection preserves finishes while identifying hidden moisture.",
+        brand: "FLIR"
+      },
+      {
+        name: "Injectidry Wall Cavity Drying System",
+        purpose: "Dries behind finished walls through small access points without removing custom finishes. Essential for Great Falls lower levels where imported stone, built-in wine racks, and specialty millwork cannot be removed and replaced.",
+        brand: "Injectidry"
+      },
+      {
+        name: "Hardwood Floor Drying Mat System",
+        purpose: "Creates controlled vacuum pressure on hardwood floors, drawing trapped moisture upward through the wood grain without removal. Saves original hardwood and exotic flooring common in Great Falls finished basements.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Portable Generator",
+        purpose: "Provides independent power for drying equipment when basement flooding coincides with power outages—common during the storm events that cause groundwater intrusion. Our crews operate without relying on your property's electrical system.",
+        brand: "Honda"
+      }
+    ],
+    localNote: "Great Falls basement responses include specialty drying equipment for wine cellars, home theaters, and finished spaces with custom materials. We carry desiccant dehumidifiers and precision climate controls that standard restoration companies don't stock—because Great Falls lower levels contain assets that standard drying methods can damage."
+  },
+
+  pricingSection: {
+    headline: "Basement Flooding Restoration Costs in Great Falls",
+    intro: "Great Falls basement flooding costs vary based on the scale of your lower level and the assets involved. We provide free on-site assessments within our 30-minute response window. Our pricing is itemized using Xactimate software compatible with all insurance carriers, and we handle direct billing. For high-value claims involving wine cellars and specialty spaces, our documentation meets the requirements of specialty insurers.",
+    factors: [
+      "Total square footage of the affected lower level—Great Falls basements range from 3,000 to over 8,000 square feet",
+      "Water source and category—clean well water failure differs from septic backup requiring Category 3 biohazard protocols",
+      "High-value asset protection including wine cellar climate management, home theater electronics safeguarding, and art relocation",
+      "Custom finish preservation—imported stone, built-in wine storage, specialty millwork, and exotic flooring require precision drying",
+      "Depth and duration of flooding, which determines saturation extent in structural materials and finish work",
+      "Sump pump, well system, or septic repair coordination—we manage these specialists alongside our restoration work",
+      "Emergency timing and response requirements for after-hours and weekend flooding events"
+    ],
+    cta: "Call (703) 656-0112 for a free basement flooding assessment. We'll evaluate the damage, protect your wine cellar and valuables, and provide a written estimate before beginning work. Insurance coordination included."
+  },
+
+  serviceAreaSection: {
+    headline: "Basement Flooding Response Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "30-minute response to all Great Falls properties, day or night. Properties in the Riverbend corridor and low-lying areas near the Potomac receive priority dispatch during high water table events and heavy rainfall. Our crews are positioned along the Georgetown Pike corridor for immediate deployment."
   },
 
   faqSection: [

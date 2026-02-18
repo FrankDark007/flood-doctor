@@ -31,6 +31,26 @@ export interface ServicePageContent {
       solution: string;
     }>;
   };
+  equipmentSection: {
+    headline: string;
+    equipment: Array<{
+      name: string;
+      purpose: string;
+      brand?: string;
+    }>;
+    localNote: string;
+  };
+  pricingSection: {
+    headline: string;
+    intro: string;
+    factors: string[];
+    cta: string;
+  };
+  serviceAreaSection: {
+    headline: string;
+    neighborhoods: string[];
+    responseTime: string;
+  };
   faqSection: Array<{
     question: string;
     answer: string;
@@ -138,6 +158,89 @@ Our IICRC Master Water Restorers understand that flood cleanup in Great Falls me
         solution: "We use precision climate-controlled drying for wine cellars. When collections face extended exposure, we coordinate with specialty wine storage for temporary relocation. Your investment receives protection throughout."
       }
     ]
+  },
+
+  equipmentSection: {
+    headline: "Professional Flood Cleanup Equipment for Great Falls Estates",
+    equipment: [
+      {
+        name: "Truck-Mounted Water Extractor",
+        purpose: "Removes standing floodwater at rates up to 100 gallons per minute. Essential for Great Falls estates where flooded lower levels can exceed 5,000 square feet with thousands of gallons of standing water from Potomac overflow or storm surge.",
+        brand: "Prochem"
+      },
+      {
+        name: "Submersible Sump Pumps",
+        purpose: "Deployed for deep-water basement flooding common during Potomac River events. When water depth exceeds what extractors can handle efficiently, submersible pumps remove bulk volume before precision extraction begins.",
+        brand: "Tsurumi"
+      },
+      {
+        name: "Low-Grain Refrigerant Dehumidifier",
+        purpose: "Pulls up to 30 gallons of moisture per day from saturated structures. We deploy multiple units across Great Falls estates, with precision settings for wine cellars and climate-sensitive spaces that require controlled drying.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Thermal Imaging Camera",
+        purpose: "Detects hidden moisture behind finished walls, under stone floors, and in ceiling cavities without destructive investigation. Critical for tracing flood migration paths through multi-story Great Falls estates where water travels far from the entry point.",
+        brand: "FLIR"
+      },
+      {
+        name: "High-Velocity Axial Air Movers",
+        purpose: "Creates strategic airflow across wet surfaces to accelerate evaporation. Great Falls estates with cathedral ceilings and open floor plans require dozens of units positioned at calculated angles for effective drying coverage.",
+        brand: "Dri-Eaz"
+      },
+      {
+        name: "Injectidry Wall Cavity Drying System",
+        purpose: "Forces warm dry air into wall cavities through small access points, drying framing and insulation from the inside without removing finished surfaces. Preserves custom plaster, stone veneer, and millwork found in Great Falls homes.",
+        brand: "Injectidry"
+      },
+      {
+        name: "HEPA Air Scrubber",
+        purpose: "Filters airborne contaminants including mold spores, sediment particles, and bacteria down to 0.3 microns. Required equipment for Category 2 and Category 3 floodwater restoration, which is common with Potomac overflow and storm runoff events.",
+        brand: "Prochem"
+      },
+      {
+        name: "Pin-Type and Non-Invasive Moisture Meters",
+        purpose: "Measures moisture content at specific depths in wood, stone, concrete, and drywall. We use both pin-type for precise readings in structural members and non-invasive scanners for mapping moisture across large areas without surface damage.",
+        brand: "Delmhorst"
+      }
+    ],
+    localNote: "For Great Falls flood responses, we carry additional submersible pumping capacity for the deep-water events common along the Potomac and Riverbend corridors. Our equipment inventory is scaled for estate properties spanning 15,000+ square feet across multiple structures—main residence, guest house, pool house, and equestrian facilities."
+  },
+
+  pricingSection: {
+    headline: "Flood Cleanup Costs for Great Falls Properties",
+    intro: "Every flood event is different, and honest pricing requires an on-site assessment. We provide free estimates within our 30-minute response window. Our pricing is transparent, itemized using industry-standard Xactimate software, and directly compatible with insurance adjuster estimates. We never charge for idle equipment and remove units as soon as moisture readings confirm an area is dry.",
+    factors: [
+      "Total volume of floodwater and affected square footage across all structures on the property",
+      "Flood source and water category—clean groundwater intrusion differs from contaminated Potomac overflow requiring Category 3 protocols",
+      "Number of structures affected—main residence, guest house, pool house, and equestrian facilities each require separate assessment",
+      "High-value asset protection requirements including wine cellar climate management, art relocation coordination, and specialty drying for custom finishes",
+      "Material types affected—imported stone, custom millwork, and equestrian equipment require different restoration approaches than standard construction",
+      "Duration of structural drying, which varies based on estate size, material density, and the severity of saturation across multiple levels",
+      "Emergency timing including after-hours, weekend, and holiday response when immediate intervention is critical"
+    ],
+    cta: "Call (703) 656-0112 for a free on-site flood assessment. We'll evaluate your Great Falls property, explain the full scope of work, and provide a written estimate before any restoration begins. We handle direct billing with all insurance carriers."
+  },
+
+  serviceAreaSection: {
+    headline: "Flood Cleanup Throughout Great Falls",
+    neighborhoods: [
+      "Great Falls Village",
+      "Forestville",
+      "Hickory Farms",
+      "Seneca Estates",
+      "Riverbend",
+      "Beach Mill Estates",
+      "Springvale",
+      "Utterback Store Road corridor",
+      "Walker Road estates",
+      "Leigh Mill Road",
+      "Riva Ridge",
+      "Timberlake",
+      "The Preserve",
+      "Colvin Run"
+    ],
+    responseTime: "Our crews respond to any Great Falls property within 30 minutes, 24 hours a day, 7 days a week. During active storm events or Potomac flood warnings, we pre-position crews along the Georgetown Pike corridor and monitor river levels to reduce response times for the Riverbend and low-lying properties most likely to flood."
   },
 
   faqSection: [
