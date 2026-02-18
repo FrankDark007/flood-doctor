@@ -4,6 +4,42 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-18 — CityLift P1: Herndon + Springfield Storm-Damage Upgrade
+
+**Scope**: 2 files modified (storm-damage content files)
+**Commit**: `4c94676`
+
+### What Changed
+- **Replaced stormTypes + emergencyServices** with `localChallenges` (5 city-specific problem→solution items) and `equipmentSection` (8 items with brands: Prochem, FLIR, Dri-Eaz, Honda)
+- **Added TypeScript `ServicePageContent` interface** matching Vienna/Great Falls baseline
+- **Expanded neighborhoods** from 10 → 15 per city
+- **Added 2 FAQs** per page (6 → 8 questions)
+- **Added `/roof-leak-damage`** to related services (4 → 5)
+- **Localized pricing** with city-specific intro and 7 factors (from 5 generic)
+- **E-E-A-T signals**: IICRC certification, thermal imaging, moisture mapping, building envelope terminology, direct billing, Xactimate estimates
+
+### Metrics
+| City | Before | After |
+|------|--------|-------|
+| Herndon | 1,428 words / ~74 score | 2,814 words / ~97 projected |
+| Springfield | 1,405 words / ~74 score | 2,973 words / ~98 projected |
+
+### Herndon Local Themes
+- Fox Mill mature canopy hazards (1970s-80s plantings)
+- Worldgate/Franklin Farm shared-roof townhome damage
+- Sugarland Run watershed flooding
+- Aging colonial roof systems
+- Power outage cascade failures
+
+### Springfield Local Themes
+- Split-level below-grade flooding
+- Accotink Creek watershed overflow
+- Kingstowne shared-structure townhome damage
+- West Springfield 1960s mature canopy
+- Power outage sump pump failures
+
+---
+
 ## 2026-02-16 — Service Detail Post-Process Layout Redesign
 
 **Scope**: 4 files (2 modified, 2 new components)

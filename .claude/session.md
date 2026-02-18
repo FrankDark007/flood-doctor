@@ -40,11 +40,14 @@
 | /burst-pipe | 50 (2006w) | 96 (3696w) | Thin → Competitive |
 | /fire-damage | 52 (1649w) | 97 (3905w) | Thin → Competitive |
 
-### Remaining Low-Scoring Pages (for future remediation)
-1. Arlington /emergency-water-removal — 40 (Thin, Format C)
-2. Great Falls — 8 pages avg 68 (all Expand)
-3. Herndon /storm-damage — 74 (Expand)
-4. Springfield /storm-damage — 74 (Expand)
+### P1 — Herndon + Springfield Storm-Damage Upgrade ✅ COMPLETE (commit `4c94676`)
+- Herndon /storm-damage: 1,428 → 2,814 words, Format A with localChallenges + equipmentSection
+- Springfield /storm-damage: 1,405 → 2,973 words, Format A with localChallenges + equipmentSection
+- Both: TypeScript interface, 15 neighborhoods, 8 FAQs, 7 pricing factors, 5 related services
+- E-E-A-T: IICRC, thermal imaging, Prochem/FLIR/Dri-Eaz/Honda brands, direct billing, Xactimate
+
+### All P1 Expand-Tier Pages — ✅ COMPLETE
+No remaining pages below Competitive tier.
 
 ### P2 — High-Impression / Low-CTR Pages (requires GSC baseline)
 ### P3 — Full City Uniqueness Expansion
@@ -129,39 +132,13 @@ On resume, always read:
 
 *Updated: 2026-02-17 (CityLift P1 Great Falls + Arlington Expansion — IN PROGRESS)*
 
-## ⚠️ ACTIVE WORK — UNCOMMITTED CHANGES IN WORKING TREE
+## ✅ PREVIOUS SESSION WORK — COMMITTED
 
-**Execution Plan:** FD-CITYLIFT-EXEC-006
-**Status:** Content written, NOT YET committed. Needs build verification, scoring, state updates, commit.
+### Great Falls + Arlington Expansion (commit `1ae84ac`)
+- 7 Great Falls pages expanded, 1 Arlington page converted Format C → A
+- Build verified, committed to main
 
-### What Was Done This Session
-- 7 Great Falls service pages expanded with equipmentSection, pricingSection, serviceAreaSection
-- 1 Arlington emergency-water-removal converted from Format C → Format A
-- All 8 interfaces updated to full Format A schema
-- TypeScript type check passed (no new errors from our files)
-
-### Files Modified (uncommitted):
-1. `src/content/cities/greatfalls/services/flood-cleanup.ts`
-2. `src/content/cities/greatfalls/services/basement-flooding.ts`
-3. `src/content/cities/greatfalls/services/burst-pipe.ts`
-4. `src/content/cities/greatfalls/services/mold-remediation.ts`
-5. `src/content/cities/greatfalls/services/sewage-cleanup.ts`
-6. `src/content/cities/greatfalls/services/fire-damage.ts`
-7. `src/content/cities/greatfalls/services/storm-damage.ts`
-8. `src/content/cities/arlington/services/emergency-water-removal.ts`
-
-### Remaining Steps (resume here):
-1. **Run `npm run build`** — verify 189/189 routes, no errors
-2. **Generate audit report** — `citylift/audit/p1-greatfalls-after.json` with before/after scores
-3. **Verify** — no duplicate titles, no duplicate H1s, only intended files changed
-4. **Update** — STATE.md, DECISIONS.md, ARTIFACTS.md
-5. **Commit** — to main
-
-### NOT modified (per plan rules):
-- No titles changed
-- No H1s changed
-- No schema changed
-- No routes changed
-- No Vienna files touched
-- No other cities touched
-- water-damage.ts (already score 100) NOT touched
+### Herndon + Springfield Storm-Damage Upgrade (commit `4c94676`)
+- Both pages upgraded from Expand tier (~74) to Competitive tier (~97-98)
+- stormTypes/emergencyServices replaced with localChallenges + equipmentSection
+- Full Format A with TypeScript interface, E-E-A-T signals, localized content
