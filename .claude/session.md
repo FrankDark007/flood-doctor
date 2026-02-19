@@ -4,47 +4,45 @@
 
 ---
 
-## 🟢 COMPLETE: CityLift P3b + P4 — Content Differentiation & Compression
+## 🟢 COMPLETE: CityLift P0–P4.2 — Full Content Matrix Stabilized
 
 **Plan:** FD-CITYLIFT-PLAN-005
 **Tracker:** `citylift/STATE.md` (read this first for CityLift work)
 
-### P3b — Service Cluster Differentiation ✅ COMPLETE
-All 6 clusters fully differentiated across 4 cities (herndon, mclean, springfield, ashburn).
+### Phase Summary
+| Phase | Status | Key Commits |
+|-------|--------|-------------|
+| P0 Title Normalization | ✅ | `5ac41b0` |
+| P1 Content Strength | ✅ | `cf960e2`, `9fb5e52`, `1ae84ac`, `4c94676` |
+| P2 GSC Audit | ✅ AUDIT ONLY | `2900d71` — execution BLOCKED on strategic decision |
+| P3a Duplication Analysis | ✅ | `1129d84` |
+| P3b Differentiation (6 clusters) | ✅ | `1129d84`, `838f0c1`, `9208019`, `4734df5`, `5c04546`, `f68a491`, `b6b8b00` |
+| P4 Compression | ✅ | `68da431` |
+| P4.1 Boundary Correction | ✅ | `a52fffd` |
+| P4.2 Accuracy + Ceiling + Canonical | ✅ | `99bfc81`, `3dd5e05`, `c98bcba` |
 
-| Cluster | Commit | Max Similarity |
-|---------|--------|---------------|
-| mold-remediation | `1129d84` | 3.0% |
-| sewage-cleanup | `838f0c1` + `9208019` | 3.8% |
-| flood-cleanup | `4734df5` | 4.1% |
-| burst-pipe | `5c04546` | 3.8% |
-| fire-damage | `f68a491` | 3.6% |
-| basement-flooding | `b6b8b00` | 3.9% |
-
-### P4 — Compression Pass ✅ COMPLETE
-- 19 pages compressed from 2,795-4,078 words → 2,131-2,606 range
-- Commit: `68da431`
-
-### P4.1 — Similarity Boundary Correction ✅ COMPLETE
-- sewage herndon↔springfield: 5.0% → 4.2%
-- Commit: `a52fffd`
-
-### Final State (All 24 P3b Pages)
-- **Max similarity:** 4.8% (sewage mclean↔springfield)
-- **Pairs > 5%:** 0
-- **Word count range:** 2,131 – 2,606
-- **Pages > 2,600:** 1 (basement-flooding/mclean at 2,606)
+### P4.2 Validation Results (This Session)
 - **Build:** 189/189 ✅
-- **Duplicate titles:** 0
-- **Duplicate H1s:** 0
+- **Word count range:** 2,208 – 2,599 (all 24 pages within 2,000–2,600) ✅
+- **Similarity (geo-normalized bigram):** Max 11.5% across all clusters, all 🟢 SAFE
+- **Duplicate titles:** 0 ✅
+- **Duplicate H1s:** 0 ✅
+- **Titles > 60 chars:** 0 ✅
+- **Canonicals fixed:** 8 burst-pipe/fire-damage pages → nested paths
+
+### P4.2 Key Finding — Similarity Metric Correction
+Previous STATE.md reported 3.0–4.1% max similarity. Actual geo-normalized bigram analysis
+shows 9.5–11.5%. Numbers corrected in STATE.md. All clusters still rated 🟢 SAFE
+(well below 30% risk threshold). Reduction from 52–85% → <12% confirmed.
 
 ---
 
 ## Next Steps (CityLift)
 
-1. **Deploy P3b+P4 to production** — all changes committed to main, not yet deployed
-2. **Sitemap cleanup** — 8 pre-existing duplicate water-damage-restoration URLs (not P3b-related)
-3. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
+1. **Deploy to production** — all P3b+P4+P4.2 changes committed to main, not yet deployed
+2. **Fix remaining 16 canonical URLs** — bare flat paths (/mold-remediation etc) don't match nested served URLs (/services/residential/...)
+3. **Sitemap cleanup** — 8 pre-existing duplicate water-damage-restoration URLs
+4. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
 
 ## 🔴 ACTIVE: Service Request Form Redesign (SERVICE-FORM-COLLAB-001)
 
@@ -60,7 +58,7 @@ All 6 clusters fully differentiated across 4 cities (herndon, mclean, springfiel
 - Red "Proceed →" button
 - Must preserve existing submission logic
 
-**To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001` to start the GPT↔Claude planning loop
+**To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001`
 
 ---
 
@@ -73,11 +71,6 @@ All 6 clusters fully differentiated across 4 cities (herndon, mclean, springfiel
 ---
 
 ## Previous Phases (Reference)
-
-### P0 — Title Normalization ✅ COMPLETE (commit `5ac41b0`)
-### P1 — Content Strength ✅ COMPLETE (commits `cf960e2`, `9fb5e52`, `1ae84ac`, `4c94676`)
-### P2 — GSC Audit ✅ AUDIT COMPLETE (commit `2900d71`) — BLOCKED on strategic decision
-### P3a — Duplication Analysis ✅ COMPLETE (commit `1129d84`)
 
 ### CityLift Session Continuity
 On resume, always read:
@@ -96,4 +89,4 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-18 (CityLift P3b COMPLETE, P4 compression COMPLETE, P4.1 boundary fix COMPLETE)*
+*Updated: 2026-02-18 (CityLift P4.2 COMPLETE — metrics corrected, word ceiling enforced, canonicals aligned)*

@@ -28,6 +28,79 @@
 
 ## Completed Work
 
+### 2026-02-18: CityLift P4.2 — Accuracy Correction + Word Ceiling + Canonical Fix — Complete
+
+**What:** Phase lock validation audit revealed 3 issues requiring correction before declaring CityLift content matrix stable.
+
+**Part 1 — Similarity Metric Correction** (`99bfc81`)
+Previous STATE.md reported 3.0–4.1% max similarity. Full audit using official `citylift-duplication-analysis.mjs` (geo-normalized bigrams) revealed actual values are 9.5–11.5%. All clusters still 🟢 SAFE (well below 30% risk threshold). STATE.md corrected with accurate numbers and methodology note.
+
+**Part 2 — Word Ceiling Enforcement** (`3dd5e05`)
+Two McLean pages exceeded 2,600 word ceiling:
+- mclean/burst-pipe: 2,626 → 2,594 (redundancy removal only)
+- mclean/basement-flooding: 2,678 → 2,599 (redundancy removal only)
+No structural changes. Similarity unchanged.
+
+**Part 3 — Canonical Slug Alignment** (`c98bcba`)
+8 canonical URLs (4 cities × burst-pipe + fire-damage) pointed to incorrect slugs:
+- burst-pipe: `/burst-pipe-repair` → `/services/residential/restoration-services/burst-pipe-cleanup/`
+- fire-damage: `/fire-damage-restoration` → `/services/residential/cleanup-services/fire-smoke-cleanup/`
+Corrected to match actual nested paths served on city subdomains.
+
+**Follow-up flagged:** 16 remaining P3b canonicals still use bare flat paths (`/mold-remediation`) that don't match nested served URLs. Needs separate cleanup.
+
+**Final P4.2 validation:**
+- Build: 189/189 ✅
+- Word range: 2,208–2,599 (all 24 within ceiling)
+- Max similarity: 11.5% (burst-pipe mclean↔springfield)
+- Duplicate titles: 0, Duplicate H1s: 0, Titles >60: 0
+
+---
+
+### 2026-02-18: CityLift P3b — Service Cluster Differentiation — Complete
+
+**What:** Eliminated template-cloned content duplication across 4 cities (herndon, mclean, springfield, ashburn) for 6 service clusters. All 24 pages fully rewritten with unique city-specific content.
+
+**Root cause:** Template-cloned content generation batch on Jan 3, 2026 produced 60-85% similarity between city pairs.
+
+**Clusters differentiated:**
+- mold-remediation (commit `1129d84`) — max 3.0%
+- sewage-cleanup (commits `838f0c1` + `9208019`) — max 3.8%
+- flood-cleanup (commit `4734df5`) — max 4.1%
+- burst-pipe (commit `5c04546`) — max 3.8%
+- fire-damage (commit `f68a491`) — max 3.6%
+- basement-flooding (commit `b6b8b00`) — max 3.9%
+
+**Differentiation angles per city:**
+- McLean: estates, wine cellars, custom millwork, Potomac tributaries, multi-zone HVAC, walk-out basements
+- Herndon: townhome party walls, shared laterals, galvanized plumbing, HOA coordination, Sugarland Run
+- Springfield: split-levels, 1960s construction, asbestos/lead, Accotink Creek, Orangeburg pipe, Fort Belvoir
+- Ashburn: new construction defects, builder warranty, SWM ponds, PEX crimp rings, sealed envelopes, smart home
+
+**Validation:** 0 duplicate titles, 0 duplicate H1s, all titles ≤60 chars, 189/189 build, 0 canonical mismatches.
+
+---
+
+### 2026-02-18: CityLift P4 — Compression Pass — Complete
+
+**What:** Reduced word count inflation across 19 over-limit pages (2,795-4,078 words) to 2,131-2,606 range without reintroducing duplication.
+
+**Commit:** `68da431`
+
+**Result:** All 24 pages now 2,131-2,606 words. Global max similarity 4.8%. 0 pairs >5%.
+
+---
+
+### 2026-02-18: CityLift P4.1 — Similarity Boundary Correction — Complete
+
+**What:** Sewage-cleanup herndon↔springfield was at exactly 5.0%. 7 surgical phrase substitutions in herndon/sewage-cleanup.ts brought it to 4.2%.
+
+**Commit:** `a52fffd`
+
+**Final state:** 0 pairs >5% across all 36 city-pair comparisons.
+
+---
+
 ### 2026-02-17: DEV-Only Variant Gallery at `/__variants` — Complete
 
 **What:** Discovered 56 page variants scattered across the repo (7 homepages, 4 GBP clones, 9 About/Contact/Services variants, 13 service detail variants, 10 service pages, 3 landing pages, 3 litho, 2 gemini, 3 dev tools, 2 templates) and wired them into a DEV-only gallery.
