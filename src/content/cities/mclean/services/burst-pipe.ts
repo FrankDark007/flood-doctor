@@ -6,7 +6,7 @@ export const mcleanBurstPipeContent = {
   meta: {
     title: "Burst Pipe Repair in McLean, VA | Flood Doctor",
     description: "McLean burst pipe emergency response. 30-min arrival for frozen pipes, supply line breaks & water main damage. Langley, Chesterbrook, The Reserve. Call (703) 656-0101.",
-    canonical: "https://mclean.flood.doctor/burst-pipe-repair"
+    canonical: "https://mclean.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Cleanup in McLean, Virginia",

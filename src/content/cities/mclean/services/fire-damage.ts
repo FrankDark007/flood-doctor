@@ -7,7 +7,7 @@ export const mcleanFireDamageContent = {
   meta: {
     title: "Fire Damage Restoration in McLean, VA | Flood Doctor",
     description: "McLean fire damage restoration. 24/7 emergency response for fire, smoke & soot damage. IICRC certified. Langley, Chesterbrook, The Reserve. Call (703) 656-0101.",
-    canonical: "https://mclean.flood.doctor/fire-damage-restoration"
+    canonical: "https://mclean.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration in McLean, Virginia",

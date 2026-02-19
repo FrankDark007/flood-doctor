@@ -6,7 +6,7 @@ export const springfieldFireDamageContent = {
   meta: {
     title: "Fire Damage Restoration in Springfield, VA | Flood Doctor",
     description: "Springfield fire damage restoration. 24/7 emergency response for fire, smoke & soot damage. IICRC certified. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
-    canonical: "https://springfield.flood.doctor/fire-damage-restoration"
+    canonical: "https://springfield.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration in Springfield, Virginia",

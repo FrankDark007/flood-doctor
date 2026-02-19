@@ -6,7 +6,7 @@ export const springfieldBurstPipeContent = {
   meta: {
     title: "Burst Pipe Repair in Springfield, VA | Flood Doctor",
     description: "Springfield burst pipe emergency response. 30-min arrival for frozen pipes, supply line breaks & water main damage. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
-    canonical: "https://springfield.flood.doctor/burst-pipe-repair"
+    canonical: "https://springfield.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Cleanup in Springfield, Virginia",

@@ -6,7 +6,7 @@ export const ashburnBurstPipeContent = {
   meta: {
     title: "Burst Pipe Repair in Ashburn, VA | Flood Doctor",
     description: "Ashburn burst pipe emergency response. 30-min arrival for frozen pipes, supply line breaks & water damage. Broadlands, Brambleton, One Loudoun. Call (703) 656-0109.",
-    canonical: "https://ashburn.flood.doctor/burst-pipe-repair"
+    canonical: "https://ashburn.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Cleanup in Ashburn, Virginia",
