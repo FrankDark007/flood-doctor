@@ -6,7 +6,7 @@ export const springfieldFloodCleanupContent = {
   meta: {
     title: "Flood Cleanup in Springfield, VA | Flood Doctor",
     description: "Springfield flood cleanup experts. 30-min emergency response for storm flooding, flash floods & water damage. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
-    canonical: "https://springfield.flood.doctor/flood-cleanup"
+    canonical: "https://springfield.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Springfield, Virginia",

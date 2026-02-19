@@ -21,7 +21,7 @@ export const viennaFireDamage: ServicePageContent = {
   meta: {
     title: 'Fire Damage in Vienna, VA | Flood Doctor',
     description: 'Professional fire damage restoration in Vienna, VA. 24/7 emergency response for fire, smoke, and water damage from firefighting. IICRC-certified technicians serving Vienna Town, Oakton, Dunn Loring, and Wolf Trap. Call (703) 656-0105.',
-    canonical: 'https://vienna.flood.doctor/fire-damage',
+    canonical: 'https://vienna.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/',
   },
 
   h1: 'Fire Damage Restoration in Vienna, Virginia',

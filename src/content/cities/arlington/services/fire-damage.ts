@@ -8,7 +8,7 @@ export const arlingtonFireDamageContent: ServicePageContent = {
   meta: {
     title: "Fire Damage Restoration in Arlington, VA | Flood Doctor",
     description: "Arlington fire damage restoration experts. Smoke migration through high-rises, multi-unit coordination, HOA documentation. Rapid response. Call (703) 656-0102.",
-    canonical: "https://arlington.flood.doctor/fire-damage"
+    canonical: "https://arlington.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration in Arlington, Virginia",

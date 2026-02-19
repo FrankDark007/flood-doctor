@@ -6,7 +6,7 @@ export const restonMoldRemediationContent = {
   meta: {
     title: "Mold Remediation in Reston, VA | Flood Doctor",
     description: "Reston mold removal experts. IICRC-certified remediation for basement mold, hidden growth & water damage mold. Lake Anne, South Lakes, North Point. Call (703) 656-0107.",
-    canonical: "https://reston.flood.doctor/mold-remediation"
+    canonical: "https://reston.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation Services in Reston, Virginia",

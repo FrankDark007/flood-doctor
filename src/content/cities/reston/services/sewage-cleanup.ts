@@ -6,7 +6,7 @@ export const restonSewageCleanupContent = {
   meta: {
     title: "Sewage Cleanup in Reston, VA | Flood Doctor",
     description: "Reston sewage backup cleanup. Biohazard-certified crews for sewer overflow, drain backups & storm-related sewage. Lake Anne, South Lakes, North Point. Call (703) 656-0107.",
-    canonical: "https://reston.flood.doctor/sewage-cleanup"
+    canonical: "https://reston.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup Services in Reston, Virginia",

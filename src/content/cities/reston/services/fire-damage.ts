@@ -6,7 +6,7 @@ export const restonFireDamageContent = {
   meta: {
     title: "Fire Damage Restoration in Reston, VA | Flood Doctor",
     description: "Reston fire damage restoration. 24/7 emergency response for fire, smoke & soot damage. IICRC certified. Lake Anne, South Lakes, Reston Town Center. Call (703) 656-0107.",
-    canonical: "https://reston.flood.doctor/fire-damage-restoration"
+    canonical: "https://reston.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration in Reston, Virginia",

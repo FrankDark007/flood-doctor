@@ -61,7 +61,7 @@ export const viennaFloodCleanup: ServicePageContent = {
     title: "Flood Cleanup in Vienna, VA | Flood Doctor",
     description:
       "Professional flood cleanup services in Vienna, VA. IICRC-certified technicians respond within 45 minutes. We handle Difficult Run Creek overflow, storm surge, and basement flooding in Vienna homes. Call (703) 656-0105.",
-    canonical: "https://vienna.flood.doctor/flood-cleanup",
+    canonical: "https://vienna.flood.doctor/services/residential/restoration-services/flood-cleanup/",
   },
 
   h1: "Flood Cleanup in Vienna, Virginia",

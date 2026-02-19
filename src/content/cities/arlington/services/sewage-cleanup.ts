@@ -8,7 +8,7 @@ export const arlingtonSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Arlington, VA | Flood Doctor",
     description: "Arlington sewage cleanup experts. Multi-unit backup response, drain stack failures, HOA coordination. Biohazard certified. Call (703) 656-0102 for immediate response.",
-    canonical: "https://arlington.flood.doctor/sewage-cleanup"
+    canonical: "https://arlington.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup in Arlington, Virginia",

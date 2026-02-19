@@ -69,7 +69,7 @@ export const tysonsSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Tysons, VA | Flood Doctor",
     description: "Tysons sewage cleanup for commercial buildings & high-rises. 24/7 biohazard response for sanitary failures, lift station backups & Category 3 contamination. Call (703) 656-0106.",
-    canonical: "https://tysons.flood.doctor/sewage-cleanup"
+    canonical: "https://tysons.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup Services in Tysons, Virginia",

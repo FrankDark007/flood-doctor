@@ -68,7 +68,7 @@ export const greatfallsBurstPipeContent: ServicePageContent = {
   meta: {
     title: "Burst Pipe Repair in Great Falls, VA | Flood Doctor",
     description: "Great Falls burst pipe emergency response. 30-min discrete service. Protecting estates from supply line failures, frozen pipes & plumbing disasters. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/burst-pipe-repair"
+    canonical: "https://greatfalls.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Water Damage Cleanup in Great Falls, Virginia",

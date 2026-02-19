@@ -68,7 +68,7 @@ export const springfieldStormDamageContent: ServicePageContent = {
   meta: {
     title: "Storm Damage Restoration in Springfield, VA | Flood Doctor",
     description: "Springfield storm damage restoration. 24/7 emergency response for wind damage, hail, fallen trees & water intrusion. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
-    canonical: "https://springfield.flood.doctor/storm-damage"
+    canonical: "https://springfield.flood.doctor/services/residential/restoration-services/storm-damage-restoration/"
   },
 
   h1: "Storm Damage Restoration in Springfield, Virginia",

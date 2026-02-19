@@ -68,7 +68,7 @@ export const greatfallsFloodCleanupContent: ServicePageContent = {
   meta: {
     title: "Flood Cleanup in Great Falls, VA | Flood Doctor",
     description: "Great Falls flood cleanup experts. 30-min response to storm flooding, Potomac overflow & groundwater intrusion. Protecting estates & equestrian properties. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/flood-cleanup"
+    canonical: "https://greatfalls.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Great Falls, Virginia",

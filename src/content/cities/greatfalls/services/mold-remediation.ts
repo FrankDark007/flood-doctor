@@ -68,7 +68,7 @@ export const greatfallsMoldRemediationContent: ServicePageContent = {
   meta: {
     title: "Mold Remediation in Great Falls, VA | Flood Doctor",
     description: "Great Falls mold remediation experts. Discrete service for wine cellars, art environments & estate homes. Protecting high-value properties. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/mold-remediation"
+    canonical: "https://greatfalls.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation Services in Great Falls, Virginia",

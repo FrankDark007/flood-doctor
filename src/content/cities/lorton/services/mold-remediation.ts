@@ -8,7 +8,7 @@ export const lortonMoldRemediationContent: ServicePageContent = {
   meta: {
     title: "Mold Remediation in Lorton, VA | Flood Doctor",
     description: "Professional mold remediation in Lorton. Mason Neck crawlspace specialists. Serving waterfront & new construction. 30-min response. Call (703) 656-0113.",
-    canonical: "https://lorton.flood.doctor/mold-remediation"
+    canonical: "https://lorton.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation & Removal in Lorton, Virginia",

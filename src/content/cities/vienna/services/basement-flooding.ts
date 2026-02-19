@@ -54,7 +54,7 @@ export const viennaBasementFlooding: ServicePageContent = {
     title: "Basement Flooding in Vienna, VA | Flood Doctor",
     description:
       "Vienna basement flooding experts. Foundation seepage, sump pump failure, and storm flooding solutions for colonials throughout Vienna Town, Oakton & Dunn Loring. 24/7 response. (703) 656-0105.",
-    canonical: "https://vienna.flood.doctor/basement-flooding",
+    canonical: "https://vienna.flood.doctor/services/residential/specialty-services/basement-flooding/",
   },
 
   h1: "Basement Flooding Solutions in Vienna, Virginia",

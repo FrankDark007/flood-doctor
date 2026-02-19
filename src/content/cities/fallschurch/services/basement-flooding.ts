@@ -68,7 +68,7 @@ export const fallschurchBasementFloodingContent: ServicePageContent = {
   meta: {
     title: "Basement Flooding Repair in Falls Church, VA | Flood Doctor",
     description: "Falls Church basement flooding experts. 30-min response for Seven Corners, Lake Barcroft & Falls Church City. Protecting finished basements. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/basement-flooding"
+    canonical: "https://fallschurch.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Cleanup in Falls Church, Virginia",

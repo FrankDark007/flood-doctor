@@ -68,7 +68,7 @@ export const herndonWaterDamageContent: ServicePageContent = {
   meta: {
     title: "Water Damage Restoration in Herndon, VA | Flood Doctor",
     description: "Herndon's trusted water damage restoration experts. 30-min response to Fox Mill, Downtown, Worldgate & Franklin Farm. Commercial & residential. Call (703) 656-0108.",
-    canonical: "https://herndon.flood.doctor/water-damage-restoration"
+    canonical: "https://herndon.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
   },
 
   h1: "Water Damage Restoration in Herndon, Virginia",

@@ -61,7 +61,7 @@ export const viennaBurstPipe: ServicePageContent = {
     title: 'Burst Pipe Repair in Vienna, VA | Flood Doctor',
     description:
       'Emergency burst pipe restoration in Vienna, VA. 45-minute response for frozen pipes, corroded galvanized plumbing, and hot water heater failures. IICRC-certified. Call (703) 656-0105.',
-    canonical: 'https://vienna.flood.doctor/burst-pipe',
+    canonical: 'https://vienna.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/',
   },
 
   h1: 'Burst Pipe Restoration in Vienna, Virginia',

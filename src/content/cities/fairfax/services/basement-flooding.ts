@@ -8,7 +8,7 @@ export const fairfaxBasementFloodingContent: ServicePageContent = {
   meta: {
     title: "Basement Flooding Repair in Fairfax, VA | Flood Doctor",
     description: "Fairfax basement flooding experts. Split-level and colonial basement specialists serving Burke, Kings Park & Mantua. Sump pump failures fixed fast. (703) 656-0104.",
-    canonical: "https://fairfax.flood.doctor/basement-flooding"
+    canonical: "https://fairfax.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Repair in Fairfax, Virginia",

@@ -68,7 +68,7 @@ export const greatfallsBasementFloodingContent: ServicePageContent = {
   meta: {
     title: "Basement Flooding Repair in Great Falls, VA | Flood Doctor",
     description: "Great Falls basement flooding experts. 30-min response. Protecting wine cellars, home theaters & finished lower levels in estate homes. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/basement-flooding"
+    canonical: "https://greatfalls.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Cleanup in Great Falls, Virginia",

@@ -8,7 +8,7 @@ export const fairfaxMoldRemediationContent: ServicePageContent = {
   meta: {
     title: "Mold Remediation in Fairfax, VA | Flood Doctor",
     description: "Fairfax mold remediation specialists. Safe removal from Burke, Burke Centre, Kings Park & Mantua homes. Basement mold, hidden mold, testing & prevention. Call (703) 656-0104.",
-    canonical: "https://fairfax.flood.doctor/mold-remediation"
+    canonical: "https://fairfax.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation & Removal in Fairfax, Virginia",

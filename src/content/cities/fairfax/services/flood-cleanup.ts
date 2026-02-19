@@ -8,7 +8,7 @@ export const fairfaxFloodCleanupContent: ServicePageContent = {
   meta: {
     title: "Flood Cleanup in Fairfax, VA | Flood Doctor",
     description: "Fairfax flood cleanup specialists. 30-min storm response to Burke, Burke Centre, Kings Park & Mantua. Summer thunderstorm flooding, flash floods. Call (703) 656-0104.",
-    canonical: "https://fairfax.flood.doctor/flood-cleanup"
+    canonical: "https://fairfax.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup & Restoration in Fairfax, Virginia",

@@ -68,7 +68,7 @@ export const mcleanWaterDamageContent: ServicePageContent = {
   meta: {
     title: "Water Damage Restoration in McLean, VA | Flood Doctor",
     description: "McLean's trusted water damage restoration experts. 30-min response to Langley, Chesterbrook & The Reserve. Protecting wine cellars & home theaters. Call (703) 656-0101.",
-    canonical: "https://mclean.flood.doctor/water-damage-restoration"
+    canonical: "https://mclean.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
   },
 
   h1: "Water Damage Restoration in McLean, Virginia",

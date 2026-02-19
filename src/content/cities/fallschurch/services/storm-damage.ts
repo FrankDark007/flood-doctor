@@ -68,7 +68,7 @@ export const fallschurchStormDamageContent: ServicePageContent = {
   meta: {
     title: "Storm Damage Restoration in Falls Church, VA | Flood Doctor",
     description: "Falls Church storm damage restoration. 30-min response for Seven Corners, Lake Barcroft & Falls Church City. Roof leaks, tree damage & flooding. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/storm-damage"
+    canonical: "https://fallschurch.flood.doctor/services/residential/restoration-services/storm-damage-restoration/"
   },
 
   h1: "Storm Damage Restoration in Falls Church, Virginia",

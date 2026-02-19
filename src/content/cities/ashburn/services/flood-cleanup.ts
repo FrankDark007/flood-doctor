@@ -7,7 +7,7 @@ export const ashburnFloodCleanupContent = {
   meta: {
     title: "Flood Cleanup in Ashburn, VA | Flood Doctor",
     description: "Ashburn flood cleanup experts. 30-min emergency response for storm flooding, flash floods & water damage. Broadlands, Brambleton, Lansdowne. Call (703) 656-0109.",
-    canonical: "https://ashburn.flood.doctor/flood-cleanup"
+    canonical: "https://ashburn.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Ashburn, Virginia",

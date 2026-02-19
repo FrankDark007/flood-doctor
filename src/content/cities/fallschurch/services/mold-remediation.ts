@@ -68,7 +68,7 @@ export const fallschurchMoldRemediationContent: ServicePageContent = {
   meta: {
     title: "Mold Remediation in Falls Church, VA | Flood Doctor",
     description: "Falls Church mold remediation specialists. IICRC-certified crews for Seven Corners, Lake Barcroft & Falls Church City. Safe removal & prevention. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/mold-remediation"
+    canonical: "https://fallschurch.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation in Falls Church, Virginia",

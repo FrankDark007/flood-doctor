@@ -68,7 +68,7 @@ export const alexandriaMoldRemediationContent: ServicePageContent = {
   meta: {
     title: "Mold Remediation in Alexandria, VA | Flood Doctor",
     description: "Alexandria mold remediation experts. Safe removal from Old Town historic properties, basement apartments & Del Ray homes. Preserving original materials. Call (703) 656-0103.",
-    canonical: "https://alexandria.flood.doctor/mold-remediation"
+    canonical: "https://alexandria.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation in Alexandria, Virginia",

@@ -68,7 +68,7 @@ export const fallschurchBurstPipeContent: ServicePageContent = {
   meta: {
     title: "Burst Pipe Repair in Falls Church, VA | Flood Doctor",
     description: "Falls Church burst pipe emergency response. 30-min arrival to Seven Corners, Lake Barcroft & Falls Church City. Older home pipe specialists. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/burst-pipe-repair"
+    canonical: "https://fallschurch.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Water Damage Restoration in Falls Church, Virginia",

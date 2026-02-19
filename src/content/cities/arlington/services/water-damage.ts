@@ -68,7 +68,7 @@ export const arlingtonWaterDamageContent: ServicePageContent = {
   meta: {
     title: "Water Damage Restoration in Arlington, VA | Flood Doctor",
     description: "Arlington's trusted water damage restoration experts. 30-min response to Rosslyn, Clarendon, Ballston & Crystal City high-rises. HOA coordination included. Call (703) 656-0102.",
-    canonical: "https://arlington.flood.doctor/water-damage-restoration"
+    canonical: "https://arlington.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
   },
 
   h1: "Water Damage Restoration in Arlington, Virginia",

@@ -6,7 +6,7 @@ export const springfieldBasementFloodingContent = {
   meta: {
     title: "Basement Flooding Repair in Springfield, VA | Flood Doctor",
     description: "Springfield basement flooding experts. 30-min response for split-level lower levels, finished basements & family rooms. West Springfield, Kingstowne, Franconia. Call (703) 656-0110.",
-    canonical: "https://springfield.flood.doctor/basement-flooding"
+    canonical: "https://springfield.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Repair in Springfield, Virginia",

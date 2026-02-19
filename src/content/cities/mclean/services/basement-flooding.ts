@@ -6,7 +6,7 @@ export const mcleanBasementFloodingContent = {
   meta: {
     title: "Basement Flooding Repair in McLean, VA | Flood Doctor",
     description: "McLean basement flooding experts. 30-min response for finished basements, wine cellars & home theaters. Langley, Chesterbrook, The Reserve. Call (703) 656-0101.",
-    canonical: "https://mclean.flood.doctor/basement-flooding"
+    canonical: "https://mclean.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Repair in McLean, Virginia",

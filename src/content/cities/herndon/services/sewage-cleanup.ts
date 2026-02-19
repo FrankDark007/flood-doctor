@@ -7,7 +7,7 @@ export const herndonSewageCleanupContent = {
   meta: {
     title: "Sewage Cleanup in Herndon, VA | Flood Doctor",
     description: "Herndon sewage backup cleanup. Biohazard-certified crews for sewer overflow, septic failure & drain backups. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
-    canonical: "https://herndon.flood.doctor/sewage-cleanup"
+    canonical: "https://herndon.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup Services in Herndon, Virginia",

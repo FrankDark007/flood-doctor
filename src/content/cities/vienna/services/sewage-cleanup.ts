@@ -68,7 +68,7 @@ export const viennaSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Vienna, VA | Flood Doctor",
     description: "Vienna sewage backup cleanup specialists. Biohazard-certified crews for Church Street, Oakton & Wolf Trap. 30-min emergency response. Call (703) 656-0105.",
-    canonical: "https://vienna.flood.doctor/sewage-cleanup"
+    canonical: "https://vienna.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup & Remediation in Vienna, Virginia",

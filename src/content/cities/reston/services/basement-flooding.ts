@@ -68,7 +68,7 @@ export const restonBasementFloodingContent: ServicePageContent = {
   meta: {
     title: "Basement Flooding Repair in Reston, VA | Flood Doctor",
     description: "Reston basement flooding specialists. Lake-adjacent property expertise, groundwater intrusion solutions, wooded lot moisture control. 24/7 emergency response. (703) 656-0107",
-    canonical: "https://reston.flood.doctor/basement-flooding"
+    canonical: "https://reston.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Restoration in Reston, Virginia",

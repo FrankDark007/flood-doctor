@@ -6,7 +6,7 @@ export const ashburnMoldRemediationContent = {
   meta: {
     title: "Mold Remediation in Ashburn, VA | Flood Doctor",
     description: "Ashburn mold removal experts. IICRC-certified remediation for basement mold, hidden growth & water damage mold. Broadlands, Brambleton, Lansdowne. Call (703) 656-0109.",
-    canonical: "https://ashburn.flood.doctor/mold-remediation"
+    canonical: "https://ashburn.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation Services in Ashburn, Virginia",

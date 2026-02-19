@@ -68,7 +68,7 @@ export const fallschurchFloodCleanupContent: ServicePageContent = {
   meta: {
     title: "Flood Cleanup in Falls Church, VA | Flood Doctor",
     description: "Falls Church flood cleanup specialists. 30-min response for Seven Corners, Lake Barcroft & Falls Church City. Storm and natural flooding experts. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/flood-cleanup"
+    canonical: "https://fallschurch.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Falls Church, Virginia",

@@ -8,7 +8,7 @@ export const arlingtonStormDamageContent: ServicePageContent = {
   meta: {
     title: "Storm Damage Restoration in Arlington, VA | Flood Doctor",
     description: "Arlington storm damage restoration. Flat roof ponding, high-rise wind damage, underground flooding. Rapid response to Rosslyn to Shirlington. Call (703) 656-0102.",
-    canonical: "https://arlington.flood.doctor/storm-damage"
+    canonical: "https://arlington.flood.doctor/services/residential/restoration-services/storm-damage-restoration/"
   },
 
   h1: "Storm Damage Restoration in Arlington, Virginia",

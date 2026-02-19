@@ -6,7 +6,7 @@ export const restonFloodCleanupContent = {
   meta: {
     title: "Flood Cleanup in Reston, VA | Flood Doctor",
     description: "Reston flood cleanup experts. 30-min emergency response for storm flooding, lake-area flooding & water damage. Lake Anne, South Lakes, North Point. Call (703) 656-0107.",
-    canonical: "https://reston.flood.doctor/flood-cleanup"
+    canonical: "https://reston.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Reston, Virginia",

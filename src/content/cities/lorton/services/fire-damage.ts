@@ -8,7 +8,7 @@ export const lortonFireDamageContent: ServicePageContent = {
   meta: {
     title: "Fire Damage Restoration in Lorton, VA | Flood Doctor",
     description: "24/7 fire damage restoration in Lorton. Smoke, soot & water damage specialists. Serving all Lorton neighborhoods. Emergency response. Call (703) 656-0113.",
-    canonical: "https://lorton.flood.doctor/fire-damage-restoration"
+    canonical: "https://lorton.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration & Smoke Cleanup in Lorton, Virginia",

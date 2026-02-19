@@ -8,7 +8,7 @@ export const lortonStormDamageContent: ServicePageContent = {
   meta: {
     title: "Storm Damage Restoration in Lorton, VA | Flood Doctor",
     description: "Emergency storm damage restoration in Lorton. Tropical storm specialists for Occoquan watershed. Wind & water damage experts. 24/7 response. Call (703) 656-0113.",
-    canonical: "https://lorton.flood.doctor/storm-damage"
+    canonical: "https://lorton.flood.doctor/services/residential/restoration-services/storm-damage-restoration/"
   },
 
   h1: "Storm Damage Restoration & Emergency Response in Lorton, Virginia",

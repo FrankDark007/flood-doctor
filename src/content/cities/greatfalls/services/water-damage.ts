@@ -68,7 +68,7 @@ export const greatfallsWaterDamageContent: ServicePageContent = {
   meta: {
     title: "Water Damage Restoration in Great Falls, VA | Flood Doctor",
     description: "Great Falls' trusted water damage restoration experts. 30-min discrete response to all estates. Protecting wine cellars, art collections & equestrian properties. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/water-damage-restoration"
+    canonical: "https://greatfalls.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
   },
 
   h1: "Water Damage Restoration in Great Falls, Virginia",

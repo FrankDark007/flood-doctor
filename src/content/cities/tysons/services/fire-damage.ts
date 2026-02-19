@@ -69,7 +69,7 @@ export const tysonsFireDamageContent: ServicePageContent = {
   meta: {
     title: "Fire Damage Restoration in Tysons, VA | Flood Doctor",
     description: "Tysons fire damage restoration for commercial buildings & high-rises. 24/7 response for fire suppression water damage, smoke remediation & multi-unit coordination. Call (703) 656-0106.",
-    canonical: "https://tysons.flood.doctor/fire-damage"
+    canonical: "https://tysons.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
   },
 
   h1: "Fire Damage Restoration in Tysons, Virginia",

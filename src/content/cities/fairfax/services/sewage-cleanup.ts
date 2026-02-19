@@ -8,7 +8,7 @@ export const fairfaxSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Fairfax, VA | Flood Doctor",
     description: "Fairfax sewage cleanup specialists. 30-min response for sewer backups, toilet overflows & septic failures. Burke, Burke Centre, Kings Park, Mantua. Call (703) 656-0104.",
-    canonical: "https://fairfax.flood.doctor/sewage-cleanup"
+    canonical: "https://fairfax.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup & Backup Remediation in Fairfax, Virginia",

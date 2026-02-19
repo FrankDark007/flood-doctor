@@ -55,7 +55,7 @@ export const viennaWaterDamage: ServicePageContent = {
     title: 'Water Damage in Vienna, VA | Flood Doctor',
     description:
       'Professional water damage restoration in Vienna, VA. 24/7 emergency response with 45-minute arrival. IICRC-certified technicians specializing in historic colonials, luxury estates, and townhomes. Call (703) 656-0105.',
-    canonical: 'https://vienna.flood.doctor/water-damage',
+    canonical: 'https://vienna.flood.doctor/services/residential/restoration-services/water-damage-restoration/',
   },
 
   h1: 'Water Damage Restoration in Vienna, Virginia',

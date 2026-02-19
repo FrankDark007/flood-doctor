@@ -68,7 +68,7 @@ export const viennaStormDamageContent: ServicePageContent = {
   meta: {
     title: "Storm Damage Restoration in Vienna, VA | Flood Doctor",
     description: "Vienna storm damage restoration. 24/7 response for wind damage, fallen trees, roof leaks & flooding. Oakton, Wolf Trap & Vienna Town. Call (703) 656-0105.",
-    canonical: "https://vienna.flood.doctor/storm-damage"
+    canonical: "https://vienna.flood.doctor/services/residential/restoration-services/storm-damage-restoration/"
   },
 
   h1: "Storm Damage Restoration in Vienna, Virginia",

@@ -8,7 +8,7 @@ export const arlingtonFloodCleanupContent: ServicePageContent = {
   meta: {
     title: "Flood Cleanup in Arlington, VA | Flood Doctor",
     description: "Arlington flood cleanup specialists. Rapid response to Four Mile Run flooding, underground parking emergencies & storm damage. HOA coordination. Call (703) 656-0102.",
-    canonical: "https://arlington.flood.doctor/flood-cleanup"
+    canonical: "https://arlington.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Arlington, Virginia",

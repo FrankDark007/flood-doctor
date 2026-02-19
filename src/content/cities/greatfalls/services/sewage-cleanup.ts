@@ -68,7 +68,7 @@ export const greatfallsSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Great Falls, VA | Flood Doctor",
     description: "Great Falls sewage & septic backup cleanup. 24/7 biohazard response. Private septic system specialists. Discrete estate service. Call (703) 656-0112.",
-    canonical: "https://greatfalls.flood.doctor/sewage-cleanup"
+    canonical: "https://greatfalls.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup & Septic Backup Services in Great Falls, Virginia",

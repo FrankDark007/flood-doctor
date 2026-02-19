@@ -6,7 +6,7 @@ export const mcleanMoldRemediationContent = {
   meta: {
     title: "Mold Remediation in McLean, VA | Flood Doctor",
     description: "McLean mold removal experts. IICRC-certified remediation for basement mold, hidden growth & water damage mold. Langley, Chesterbrook, The Reserve. Call (703) 656-0101.",
-    canonical: "https://mclean.flood.doctor/mold-remediation"
+    canonical: "https://mclean.flood.doctor/services/residential/cleanup-services/mold-remediation/"
   },
 
   h1: "Mold Remediation Services in McLean, Virginia",

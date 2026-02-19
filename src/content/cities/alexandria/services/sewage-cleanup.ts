@@ -68,7 +68,7 @@ export const alexandriaSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Alexandria, VA | Flood Doctor",
     description: "Alexandria sewage cleanup experts. 30-min response for Old Town combined sewer overflows, cast iron failures & basement backups. Biohazard certified. Call (703) 656-0103.",
-    canonical: "https://alexandria.flood.doctor/sewage-cleanup"
+    canonical: "https://alexandria.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup Services in Alexandria, Virginia",

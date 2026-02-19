@@ -68,7 +68,7 @@ export const fallschurchWaterDamageContent: ServicePageContent = {
   meta: {
     title: "Water Damage Restoration in Falls Church, VA | Flood Doctor",
     description: "Falls Church's trusted water damage restoration experts. 30-min response to Falls Church City, Seven Corners & Lake Barcroft. Protecting historic homes. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/water-damage-restoration"
+    canonical: "https://fallschurch.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
   },
 
   h1: "Water Damage Restoration in Falls Church, Virginia",

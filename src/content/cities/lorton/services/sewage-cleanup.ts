@@ -8,7 +8,7 @@ export const lortonSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Lorton, VA | Flood Doctor",
     description: "Emergency sewage cleanup & biohazard restoration in Lorton. Septic system specialists for Gunston & Occoquan. 24/7 response. Call (703) 656-0113.",
-    canonical: "https://lorton.flood.doctor/sewage-cleanup"
+    canonical: "https://lorton.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup & Biohazard Restoration in Lorton, Virginia",

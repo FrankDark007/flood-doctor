@@ -6,7 +6,7 @@ export const herndonFloodCleanupContent = {
   meta: {
     title: "Flood Cleanup in Herndon, VA | Flood Doctor",
     description: "Herndon flood cleanup experts. 30-min emergency response for storm flooding, flash floods & water damage. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
-    canonical: "https://herndon.flood.doctor/flood-cleanup"
+    canonical: "https://herndon.flood.doctor/services/residential/restoration-services/flood-cleanup/"
   },
 
   h1: "Flood Cleanup Services in Herndon, Virginia",

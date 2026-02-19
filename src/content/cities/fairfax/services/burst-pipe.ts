@@ -8,7 +8,7 @@ export const fairfaxBurstPipeContent: ServicePageContent = {
   meta: {
     title: "Burst Pipe Repair in Fairfax, VA | Flood Doctor",
     description: "Fairfax burst pipe emergency? Fast water damage repair for washing machine lines, supply pipes & freeze damage. Burke, Kings Park & Mantua service. (703) 656-0104.",
-    canonical: "https://fairfax.flood.doctor/burst-pipe-repair"
+    canonical: "https://fairfax.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Water Damage Restoration in Fairfax, Virginia",

@@ -68,7 +68,7 @@ export const fallschurchSewageCleanupContent: ServicePageContent = {
   meta: {
     title: "Sewage Cleanup in Falls Church, VA | Flood Doctor",
     description: "Falls Church sewage cleanup specialists. 30-min biohazard response for Seven Corners, Lake Barcroft & Falls Church City. IICRC certified. Call (703) 656-0111.",
-    canonical: "https://fallschurch.flood.doctor/sewage-cleanup"
+    canonical: "https://fallschurch.flood.doctor/services/residential/cleanup-services/sewage-cleanup/"
   },
 
   h1: "Sewage Cleanup Services in Falls Church, Virginia",

@@ -6,7 +6,7 @@ export const herndonBasementFloodingContent = {
   meta: {
     title: "Basement Flooding Repair in Herndon, VA | Flood Doctor",
     description: "Herndon basement flooding experts. 30-min response for finished basements, home offices & recreation rooms. Fox Mill, Downtown, Worldgate. Call (703) 656-0108.",
-    canonical: "https://herndon.flood.doctor/basement-flooding"
+    canonical: "https://herndon.flood.doctor/services/residential/specialty-services/basement-flooding/"
   },
 
   h1: "Basement Flooding Repair in Herndon, Virginia",

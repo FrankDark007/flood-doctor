@@ -8,7 +8,7 @@ export const arlingtonBurstPipeContent: ServicePageContent = {
   meta: {
     title: "Burst Pipe Repair in Arlington, VA | Flood Doctor",
     description: "Arlington burst pipe emergency response. 30-min arrival to Rosslyn, Clarendon & Crystal City high-rises. Multi-unit coordination, HOA documentation. Call (703) 656-0102.",
-    canonical: "https://arlington.flood.doctor/burst-pipe-repair"
+    canonical: "https://arlington.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
   },
 
   h1: "Burst Pipe Repair & Cleanup in Arlington, Virginia",
