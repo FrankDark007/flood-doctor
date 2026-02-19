@@ -37,7 +37,7 @@ Standard drying does not apply when protecting two hundred thousand dollars in c
       {
         number: 2,
         title: "Manifold Leak Isolation & Zone Pressure Testing",
-        description: "In a McLean estate with a manifold system, we take a surgical approach: locate the manifold panel, connect a pressure gauge to individual zone valves, and pressure-test each line to identify exactly which run has failed. The broken zone gets shut off while every other zone stays live — your family keeps water to unaffected bathrooms, kitchen, and laundry during multi-day restorations.",
+        description: "We locate the manifold panel, connect a pressure gauge to individual zone valves, and pressure-test each line to identify which run has failed. The broken zone gets shut off while every other zone stays live — your family keeps water to unaffected bathrooms, kitchen, and laundry during multi-day restorations.",
         timeframe: "First 30 minutes on-site"
       },
       {
@@ -55,13 +55,13 @@ Standard drying does not apply when protecting two hundred thousand dollars in c
       {
         number: 5,
         title: "Millwork-Preservation Drying Protocol",
-        description: "Conventional high-volume drying destroys hardwood and millwork — rapid moisture loss causes wood cells to shrink unevenly, cracking boards and opening joints. Instead, we install Injectidry injection panels behind wainscoting and built-in cabinetry, delivering controlled airflow directly into wall cavities without removing trim. Desiccant dehumidifiers reduce ambient humidity gradually, drawing moisture out at a rate the cellular structure can tolerate. Target moisture content percentages are set by wood species: cherry and walnut require different endpoints than white oak or maple.",
+        description: "Conventional high-volume drying destroys hardwood and millwork — rapid moisture loss causes wood cells to shrink unevenly, cracking boards and opening joints. We install Injectidry injection panels behind wainscoting and built-in cabinetry, delivering controlled airflow directly into wall cavities without removing trim. Desiccant dehumidifiers reduce ambient humidity gradually at a rate the cellular structure can tolerate. Target moisture content is set by wood species: cherry and walnut require different endpoints than white oak or maple.",
         timeframe: "Days 1-7 (millwork preservation extends standard timelines)"
       },
       {
         number: 6,
         title: "Drying Verification & Insurance Documentation",
-        description: "Drying is complete when pin-meter readings at depth confirm moisture content has returned to IICRC dry standard for each material. We take readings at multiple depths in hardwood, behind millwork through discrete sensor ports, and inside wall cavities using extended-probe meters. Daily drying logs record moisture readings, equipment placement, ambient conditions, and photographic documentation — the submission package McLean adjusters expect for full coverage approval.",
+        description: "Drying is complete when pin-meter readings at depth confirm moisture content has returned to IICRC dry standard for each material. We take readings at multiple depths in hardwood, behind millwork through discrete sensor ports, and inside wall cavities using extended-probe meters. Daily drying logs record readings, equipment placement, ambient conditions, and photos — the submission package McLean adjusters expect for full coverage approval.",
         timeframe: "Final day of drying cycle"
       }
     ]
@@ -72,7 +72,7 @@ Standard drying does not apply when protecting two hundred thousand dollars in c
     types: [
       {
         name: "Manifold Fitting Separation",
-        description: "PEX manifold crimp rings and expansion fittings handle constant pressure cycling from every fixture. Over years, connections loosen, and when one separates, water releases at full pressure inside the enclosed manifold closet — flooding into living spaces before anyone notices. Common in Langley estates, The Reserve, and Woodside homes where manifold systems were installed during the early 2000s PEX conversion.",
+        description: "PEX manifold crimp rings and expansion fittings handle constant pressure cycling from every fixture. Over years, connections loosen, and when one separates, water releases at full pressure inside the enclosed manifold closet — flooding into living spaces before anyone notices. Common in Langley estates, The Reserve, and Woodside homes with early 2000s PEX manifold systems.",
         commonLocations: "Manifold closets, utility rooms, basement mechanical chases",
         season: "Year-round, pressure cycling accelerates fitting fatigue"
       },
@@ -96,7 +96,7 @@ Standard drying does not apply when protecting two hundred thousand dollars in c
       },
       {
         name: "Guest Cottage & Pool House Freeze Burst",
-        description: "Detached structures — guest cottages, au pair suites, pool houses, home offices above garages — have independent plumbing vulnerable when unoccupied. A thermostat failure, power outage, or simply forgetting to maintain heat creates conditions for a complete freeze event affecting every pipe simultaneously. We respond to these in Langley, El Nido, and Evermay every winter — homeowners open pool house doors to find ceiling collapse, mold growth, and warped flooring from pipes that burst months earlier.",
+        description: "Detached structures — guest cottages, au pair suites, pool houses, home offices above garages — have independent plumbing vulnerable when unoccupied. A thermostat failure, power outage, or forgetting to maintain heat creates conditions for a complete freeze event affecting every pipe simultaneously. We respond to these in Langley, El Nido, and Evermay every winter — homeowners discover ceiling collapse, mold, and warped flooring from pipes that burst months earlier.",
         commonLocations: "Pool houses, guest cottages, au pair suites, detached home offices, carriage houses",
         season: "December through March, discovered anytime"
       }

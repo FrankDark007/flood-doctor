@@ -20,7 +20,7 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
 
       `Flood Doctor serves McLean because this market demands a restoration approach that most companies cannot deliver. A finished estate basement is not an unfinished utility space with a few inches of water on a concrete slab. It contains temperature-sensitive collections, irreplaceable custom millwork, integrated audiovisual systems, and secondary living quarters — all built to a standard that requires equally precise restoration. We carry desiccant dehumidification units for temperature-critical zones. We deploy Injectidry systems to save millwork without demolition. We understand that the homeowner who built a $120,000 wine cellar is not looking for the same crew that pumps out a flooded townhouse in Tysons. Call (703) 656-0101 when the water appears. What happens in the first two hours determines whether your basement is restored or rebuilt.`
     ],
-    localContext: "McLean basements function as extensions of the primary living space — wine storage, home theaters, custom libraries, guest suites with full kitchens. Finish values of $150–$250 per square foot are standard. Restoration must match the precision of the original buildout or the space loses both function and resale value."
+    localContext: "McLean basements function as extensions of the primary living space — wine storage, home theaters, custom libraries, guest suites. Finish values of $150–$250 per square foot are standard. Restoration must match the precision of the original buildout or the space loses both function and resale value."
   },
 
   processSection: {
@@ -34,12 +34,12 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
       {
         number: 2,
         title: "Groundwater Source Determination",
-        description: "Four mechanisms cause McLean basement flooding, each requiring different remediation. Potomac water table rise pushes up through slab cracks via hydrostatic pressure — perimeter sealing cannot stop it. Perched water tables form when clay lenses trap rainwater, creating pressure against foundation walls. Surface runoff overwhelms walk-out grade transitions, entering through door seals and window wells. Plumbing failure from aging cast iron introduces Category 2 or 3 water with different contamination protocols. We test water on-site, inspect entry points with thermal imaging, and correlate with precipitation data before extraction begins."
+        description: "Four mechanisms cause McLean basement flooding, each requiring different remediation. Potomac water table rise pushes up through slab cracks via hydrostatic pressure. Perched water tables form when clay lenses trap rainwater, creating pressure against foundation walls. Surface runoff overwhelms walk-out grade transitions, entering through door seals and window wells. Plumbing failure from aging cast iron introduces Category 2 or 3 water with different contamination protocols. We test water on-site, inspect entry points with thermal imaging, and correlate with precipitation data before extraction begins."
       },
       {
         number: 3,
         title: "Zoned Extraction by Finish Priority",
-        description: "Extraction sequence follows material vulnerability. Hand-scraped hardwood comes first — irreversible cupping begins within 4–6 hours. Custom stone traps water beneath mortar beds where it wicks into adjacent drywall. Built-in cabinetry swells at joints before showing visible damage. Truck-mounted systems pull bulk volume while weighted extractors work beneath floating floors. Theater carpet with acoustic underlayment requires immediate extraction to prevent pad delamination."
+        description: "Extraction sequence follows material vulnerability. Hand-scraped hardwood comes first — irreversible cupping begins within 4–6 hours. Custom stone traps water beneath mortar beds where it wicks into adjacent drywall. Built-in cabinetry swells at joints before showing visible damage. Truck-mounted systems pull bulk volume while weighted extractors work beneath floating floors. Theater carpet with acoustic underlayment requires immediate extraction to prevent delamination."
       },
       {
         number: 4,
@@ -49,7 +49,7 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
       {
         number: 5,
         title: "Injectidry Wall Cavity Drying for Millwork Preservation",
-        description: "Custom millwork costing $40,000–$80,000 to replicate — library shelving, wainscoting, coffered ceilings, entertainment surrounds. Standard protocol calls for demolition. Injectidry offers an alternative: hoses inserted through access points force dry air through wall cavities and ceiling plenums. The process takes five to seven days versus immediate demolition but preserves irreplaceable finish work. Daily moisture meter readings at mapped sensor points confirm cavity drying progress."
+        description: "Custom millwork costing $40,000–$80,000 to replicate — library shelving, wainscoting, coffered ceilings, entertainment surrounds. Standard protocol calls for demolition. Injectidry offers an alternative: hoses inserted through access points force dry air through wall cavities and ceiling plenums. Five to seven days versus immediate demolition, but preserves irreplaceable finish work. Daily moisture meter readings at mapped sensor points confirm progress."
       }
     ]
   },
@@ -85,22 +85,22 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
     areas: [
       {
         name: "Wine Cellars",
-        content: "Purpose-built McLean cellars run 200 to 1,500 bottles with dedicated cooling, vapor barriers, and insulated glass doors. When flooding shorts the cooling system, cellar temperature climbs above 65°F within hours, stressing corks and accelerating oxidation. Our protocol stabilizes temperature with portable cooling before water removal. Bottles are inventoried and relocated to insulated staging. Racking systems are dried in place where structurally sound. Vapor barrier integrity is verified post-drying — a compromised barrier causes chronic humidity that ruins collections over months.",
+        content: "Purpose-built McLean cellars run 200 to 1,500 bottles with dedicated cooling, vapor barriers, and insulated glass doors. When flooding shorts the cooling system, cellar temperature climbs above 65°F within hours, stressing corks and accelerating oxidation. Our protocol stabilizes temperature with portable cooling before water removal. Bottles are inventoried and relocated to insulated staging. Racking is dried in place where structurally sound. Vapor barrier integrity is verified post-drying — a compromised barrier causes chronic humidity that ruins collections over months.",
         keywords: ["wine cellar water damage", "wine cellar flooding", "wine collection protection"]
       },
       {
         name: "Home Theaters with Acoustic Treatments",
-        content: "McLean home theaters represent $60,000–$150,000 in equipment and acoustic engineering. Fabric-wrapped panels become mold incubators within 48 hours. Specialized wool-blend carpet traps water beneath its mass. Recessed equipment racks sit directly in the flood path. MDF riser platforms swell and lose structural integrity. We power-isolate at the panel, extract from carpet and risers simultaneously, and deploy low-humidity drying to protect electronics from condensation. Equipment evaluation by a certified AV integrator follows — we coordinate with McLean-area firms who understand the systems.",
+        content: "McLean home theaters represent $60,000–$150,000 in equipment and acoustic engineering. Fabric-wrapped panels become mold incubators within 48 hours. Specialized carpet traps water beneath its mass. Recessed equipment racks sit directly in the flood path. MDF riser platforms swell and lose structural integrity. We power-isolate at the panel, extract from carpet and risers simultaneously, and deploy low-humidity drying to protect electronics. Equipment evaluation by a certified AV integrator follows — we coordinate with McLean-area firms who understand the systems.",
         keywords: ["home theater flooding", "home theater water damage", "electronics protection"]
       },
       {
         name: "Custom Libraries and Studies",
-        content: "Floor-to-ceiling shelving, raised panel wainscoting, coffered ceilings — McLean estate libraries represent months of millwork fabrication. Solid wood expands unevenly when wet: face frames swell, panel inserts bow, crown molding separates, veneer lifts from substrate. Injectidry wall cavity drying preserves these installations without disassembly, forcing dry air through cavities via existing gaps behind baseboard returns and above crown transitions. Five to seven days versus demolition in one — but it saves $40,000–$80,000 in irreplaceable craftsmanship.",
+        content: "Floor-to-ceiling shelving, raised panel wainscoting, coffered ceilings — McLean estate libraries represent months of millwork fabrication. Solid wood expands unevenly when wet: face frames swell, panel inserts bow, crown molding separates, veneer lifts from substrate. Injectidry wall cavity drying preserves these installations without disassembly, forcing dry air through cavities via existing gaps behind baseboard returns and above crown transitions. Five to seven days versus demolition — but it saves $40,000–$80,000 in irreplaceable craftsmanship.",
         keywords: ["custom millwork water damage", "built-in cabinet restoration", "library water damage"]
       },
       {
         name: "Au Pair and Nanny Suites",
-        content: "Dual-career professional and diplomatic households make au pair quarters a standard McLean estate feature — complete apartments with bedroom, full bath, kitchenette, separate entrance, and independent climate control. Restoration requires the same approach as a standalone residence: appliance inspection, fixture evaluation, cabinet drying, carpet extraction. The separate below-grade stairwell entrance acts as a water collection point, making these suites among the first zones to flood.",
+        content: "Dual-career professional and diplomatic households make au pair quarters a standard McLean estate feature — complete apartments with bedroom, full bath, kitchenette, and separate entrance. Restoration requires the same approach as a standalone residence: appliance inspection, fixture evaluation, cabinet drying, carpet extraction. The below-grade stairwell entrance acts as a water collection point, making these suites among the first zones to flood.",
         keywords: ["basement apartment flooding", "guest suite water damage", "au pair suite restoration"]
       }
     ]
@@ -108,7 +108,7 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
 
   pricingSection: {
     headline: "Basement Flooding Restoration Costs in McLean",
-    intro: "Costs scale with affected square footage, water category, and finish complexity. A 2,500-square-foot finished basement with wine cellar, theater, and custom millwork affected by Category 2 groundwater is a multi-week project requiring specialized equipment. We scope after on-site assessment — never over the phone — because accurate pricing requires seeing the space, testing the water, and understanding the materials.",
+    intro: "Costs scale with affected square footage, water category, and finish complexity. We scope after on-site assessment — never over the phone — because accurate pricing requires seeing the space, testing the water, and understanding the materials.",
     factors: [
       "Total affected square footage — McLean basements commonly range from 1,500 to 3,500 square feet of finished space",
       "Water category and source — clean groundwater versus sewage backup versus contaminated runoff require different decontamination protocols",
@@ -136,33 +136,33 @@ This is not a wet carpet problem. At $200 or more per square foot in finish valu
       "Clearspring Manor",
       "Langley Farms"
     ],
-    responseTime: "30-minute emergency response to all McLean neighborhoods. Crews are positioned along the Georgetown Pike and Chain Bridge Road corridors — not dispatched from a central warehouse across the county. When your Langley estate takes on water at midnight or your El Nido walk-out floods during a Saturday storm, the truck is already within the response radius."
+    responseTime: "30-minute emergency response to all McLean neighborhoods. Crews are positioned along Georgetown Pike and Chain Bridge Road — not dispatched from a central warehouse across the county. When your Langley estate takes on water at midnight or your El Nido walk-out floods during a Saturday storm, the truck is already within response radius."
   },
 
   faqSection: [
     {
       question: "Can you save my wine collection if the cellar floods?",
-      answer: "In most cases, yes — if we arrive within 12–24 hours. The immediate threat is temperature, not water contact. When the cooling system fails, cellar temperature climbs toward 65–72°F, stressing corks and accelerating oxidation. We deploy portable cooling to stabilize temperature while extracting water. Bottles are inventoried and relocated to insulated staging. Racking is dried in place when sound. The vapor barrier is assessed after water removal — if compromised, it must be replaced before the cellar returns to service. Call (703) 656-0101 immediately. Collection survival depends more on the cooling timeline than water depth."
+      answer: "In most cases, yes — if we arrive within 12–24 hours. The immediate threat is temperature, not water contact. When the cooling system fails, cellar temperature climbs toward 65–72°F, stressing corks and accelerating oxidation. We deploy portable cooling to stabilize temperature while extracting water. Bottles are inventoried and relocated to insulated staging. Racking is dried in place when sound. The vapor barrier is assessed after water removal — if compromised, it must be replaced before the cellar returns to service. Collection survival depends more on the cooling timeline than water depth."
     },
     {
       question: "My walk-out basement floods every heavy rain — is this fixable or just manageable?",
-      answer: "Fixable — but only with the correct diagnosis. Walk-out basements flood through three pathways: surface runoff pooling against the downhill wall (grading problem), door seal or window well failure (maintenance issue), or subsurface water pressure against below-grade walls (waterproofing problem). Many homeowners spend tens of thousands on the wrong fix. We document exact entry points during restoration at no additional charge. With accurate diagnosis, recurrent walk-out flooding is solvable, not just manageable."
+      answer: "Fixable — but only with the correct diagnosis. Walk-out basements flood through three pathways: surface runoff pooling against the downhill wall (grading problem), door seal or window well failure (maintenance issue), or subsurface water pressure against below-grade walls (waterproofing problem). Many homeowners spend tens of thousands on the wrong fix. We document exact entry points during restoration at no additional charge. With accurate diagnosis, recurrent flooding is solvable, not just manageable."
     },
     {
       question: "How do you dry hardwood floors without pulling them up?",
-      answer: "It depends on species and submersion duration. Solid oak and walnut submerged less than 24 hours can typically be saved using weighted extraction followed by floor mat systems that apply low-pressure suction to board faces. The critical requirement is slow, even drying — rapid drying causes cupping as the surface dries faster than the subfloor side. We monitor moisture daily with pin meters at mapped points. Engineered hardwood is less forgiving due to veneer delamination. Floors submerged beyond 48 hours or in contaminated water generally require replacement."
+      answer: "It depends on species and submersion duration. Solid oak and walnut submerged less than 24 hours can typically be saved using weighted extraction followed by floor mat systems applying low-pressure suction to board faces. The critical requirement is slow, even drying — rapid drying causes cupping as the surface dries faster than the subfloor side. We monitor moisture daily with pin meters. Engineered hardwood is less forgiving due to veneer delamination. Floors submerged beyond 48 hours or in contaminated water generally require replacement."
     },
     {
       question: "The basement smells musty but I don't see water — what's happening?",
-      answer: "Three likely conditions. First: concealed moisture behind finished walls, where water wicks through the foundation into drywall and supports hidden mold growth. Second: a failing French drain allowing chronic humidity — common in McLean's 1960s–1970s estates with collapsing original drain tile. Third: HVAC condensation creating a mold reservoir that distributes spores every time the system runs. Each requires different investigation — thermal imaging, drain inspection, or duct inspection respectively. Do not ignore it. Musty odor means active microbial growth."
+      answer: "Three likely conditions. First: concealed moisture behind finished walls where water wicks through the foundation and supports hidden mold growth. Second: a failing French drain allowing chronic humidity — common in McLean's 1960s–1970s estates with collapsing original drain tile. Third: HVAC condensation creating a mold reservoir that distributes spores every time the system runs. Each requires different investigation — thermal imaging, drain inspection, or duct inspection. Musty odor means active microbial growth."
     },
     {
       question: "My home theater has $80K in equipment — what's the protection protocol?",
-      answer: "Power isolation at the breaker panel comes first — not at the equipment. Energized electronics in standing water suffer arcing damage that water alone would not cause. Floor-level rack equipment is elevated immediately; wall-mounted components get anti-static sheeting. After extraction, we coordinate with the AV integrator who installed the system for component-level evaluation. Nothing reconnects until space and equipment both pass humidity thresholds. Insurance documentation covers serial numbers, model info, and condition notes for every piece."
+      answer: "Power isolation at the breaker panel comes first — not at the equipment. Energized electronics in standing water suffer arcing damage that water alone would not cause. Floor-level rack equipment is elevated immediately; wall-mounted components get anti-static sheeting. After extraction, we coordinate with the AV integrator for component-level evaluation. Nothing reconnects until space and equipment both pass humidity thresholds. Insurance documentation covers serial numbers, model info, and condition notes for every piece."
     },
     {
       question: "Should I file insurance or handle this privately?",
-      answer: "McLean homeowners ask this more than most, and the calculus is specific to high-net-worth property insurance. Filing creates a loss history entry that affects future premiums and coverage availability. For minor events, some homeowners prefer private payment to preserve claims history. For significant events, coverage typically offsets the premium impact. We document every project to insurance standards regardless of payment method, so you retain the option to file later if scope expands. We do not advise for or against filing — that decision involves your agent, your policy, and your risk tolerance."
+      answer: "The calculus is specific to high-net-worth property insurance. Filing creates a loss history entry that affects future premiums and coverage availability. For minor events, some homeowners prefer private payment to preserve claims history. For significant events, coverage typically offsets the premium impact. We document every project to insurance standards regardless of payment method, so you retain the option to file later if scope expands. We do not advise for or against filing — that decision involves your agent, your policy, and your risk tolerance."
     }
   ],
 
