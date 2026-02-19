@@ -82,6 +82,37 @@ Last updated: 2026-02-19
 - **max-h-[5000px] accordion**: Can jank on very long content sections
 - **scroll-margin-top: 100px**: Assumes fixed navbar height — update if navbar changes
 
+## Production Deployment Checklist
+
+**Release:** `prod_citylift_phase1_2026-02-19` → `f2c59be`
+
+### Pre-Deploy
+1. `npm ci && npm run build` → confirm 189/189 routes
+2. `git log --oneline -1` → confirm HEAD matches expected commit
+
+### Deploy
+3. `./scripts/deploy.sh <password>` → main site (flood.doctor)
+4. Deploy `dist-city/` to city subdomains (13 cities)
+5. Cloudflare cache purge: zone `7b3b2f087429c5c3e9688253d8df11eb`
+
+### Smoke Tests (10 URLs)
+6. https://flood.doctor/ — homepage loads, no console errors
+7. https://flood.doctor/sitemaps/sitemap-index.xml — references sitemap-main.xml
+8. https://flood.doctor/sitemaps/sitemap-main.xml — valid XML, no stale entries
+9. https://reston.flood.doctor/sitemaps/sitemap-reston.xml — city sitemap loads
+10. https://herndon.flood.doctor/services/mold-remediation — canonical tag present
+11. https://mclean.flood.doctor/services/burst-pipe — canonical tag present
+12. https://springfield.flood.doctor/services/sewage-cleanup — content renders
+13. https://ashburn.flood.doctor/services/basement-flooding — content renders
+14. https://alexandria.flood.doctor/services/flood-cleanup — content renders
+15. https://arlington.flood.doctor/services/emergency-water-removal — content renders
+
+### Verification
+16. **Junk-URL 404 check:** Request a nonsense path (e.g., `/services/fake-service-xyz`) on both main domain and a city subdomain — must return 404, NOT 200
+17. **Sitemap validation:** No duplicate `<loc>` entries across sitemap-index children; all URLs return 200
+18. **Canonical spot-check:** View source on 3 random city service pages — `<link rel="canonical">` must match the nested `/services/residential/...` path
+19. **Content-type check:** Run `./scripts/verify-deployment.sh` — CSS/JS/images must return correct MIME types (not text/html)
+
 ## Guardrails — What Not To Change
 
 - **Do not** reintroduce SPA catch-all fallback (200 for all routes)
