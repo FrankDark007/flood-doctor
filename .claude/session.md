@@ -1,10 +1,10 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-18
+**Last Updated:** 2026-02-19
 
 ---
 
-## 🟢 COMPLETE: CityLift P0–P4.2 — Full Content Matrix Stabilized
+## 🟢 COMPLETE: CityLift P0–P5 — Full Content Matrix + Structural Cleanup
 
 **Plan:** FD-CITYLIFT-PLAN-005
 **Tracker:** `citylift/STATE.md` (read this first for CityLift work)
@@ -20,29 +20,36 @@
 | P4 Compression | ✅ | `68da431` |
 | P4.1 Boundary Correction | ✅ | `a52fffd` |
 | P4.2 Accuracy + Ceiling + Canonical | ✅ | `99bfc81`, `3dd5e05`, `c98bcba` |
+| P5 Canonical + Sitemap Cleanup | ✅ | `a80ac11`, `8d702ed` |
 
-### P4.2 Validation Results (This Session)
+### P5 Results (This Session — 2026-02-19)
+- **Canonical fixes:** 87 files across 13 cities × 8 services — all flat paths replaced with nested served paths
+- **Sitemap cleanup:** Removed 13 stale city sitemaps from main domain; city sitemaps now solely from `build-cities.ts`
 - **Build:** 189/189 ✅
-- **Word count range:** 2,208 – 2,599 (all 24 pages within 2,000–2,600) ✅
-- **Similarity (geo-normalized bigram):** Max 11.5% across all clusters, all 🟢 SAFE
-- **Duplicate titles:** 0 ✅
-- **Duplicate H1s:** 0 ✅
-- **Titles > 60 chars:** 0 ✅
-- **Canonicals fixed:** 8 burst-pipe/fire-damage pages → nested paths
+- **Flat-path canonicals remaining:** 0
+- **Key finding:** `meta.canonical` in content files is NOT rendered in HTML — `PageMeta` auto-generates from URL path. Fixed for data consistency.
+- **9 files (5 Alexandria, 4 Tysons)** use older `ServicePageContent` format without `meta.canonical` — no action needed, canonical auto-generated correctly by PageMeta.
 
-### P4.2 Key Finding — Similarity Metric Correction
-Previous STATE.md reported 3.0–4.1% max similarity. Actual geo-normalized bigram analysis
-shows 9.5–11.5%. Numbers corrected in STATE.md. All clusters still rated 🟢 SAFE
-(well below 30% risk threshold). Reduction from 52–85% → <12% confirmed.
+### Canonical Mapping Applied (P5)
+| City Slug | Correct Nested Path |
+|---|---|
+| `mold-remediation` | `/services/residential/cleanup-services/mold-remediation/` |
+| `sewage-cleanup` | `/services/residential/cleanup-services/sewage-cleanup/` |
+| `flood-cleanup` | `/services/residential/restoration-services/flood-cleanup/` |
+| `basement-flooding` | `/services/residential/specialty-services/basement-flooding/` |
+| `storm-damage` | `/services/residential/restoration-services/storm-damage-restoration/` |
+| `burst-pipe` | `/services/residential/restoration-services/burst-pipe-cleanup/` |
+| `fire-damage` | `/services/residential/cleanup-services/fire-smoke-cleanup/` |
+| `water-damage` | `/services/residential/restoration-services/water-damage-restoration/` |
 
 ---
 
 ## Next Steps (CityLift)
 
-1. **Deploy to production** — all P3b+P4+P4.2 changes committed to main, not yet deployed
-2. **Fix remaining 16 canonical URLs** — bare flat paths (/mold-remediation etc) don't match nested served URLs (/services/residential/...)
-3. **Sitemap cleanup** — 8 pre-existing duplicate water-damage-restoration URLs
-4. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
+1. **Deploy to production** — all P3b through P5 changes committed to main, not yet deployed
+2. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
+
+---
 
 ## 🔴 ACTIVE: Service Request Form Redesign (SERVICE-FORM-COLLAB-001)
 
@@ -89,4 +96,4 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-18 (CityLift P4.2 COMPLETE — metrics corrected, word ceiling enforced, canonicals aligned)*
+*Updated: 2026-02-19 (CityLift P5 COMPLETE — 87 canonicals fixed, legacy city sitemaps removed)*
