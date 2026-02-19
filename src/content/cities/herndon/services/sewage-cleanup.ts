@@ -15,9 +15,9 @@ export const herndonSewageCleanupContent = {
   introSection: {
     headline: "Professional Sewage Cleanup for Herndon Properties",
     paragraphs: [
-      `When sewage erupts through the floor drain of a Worldgate townhome at two in the morning, the problem rarely stays in one unit. Herndon's townhome-dense communities — Worldgate, Franklin Farm, Herndon Station — connect four to six homes to a single shared sewer lateral beneath the common parking area. A blockage forces raw sewage backward into the lowest-elevation unit first, then cascades into adjacent properties as pressure builds. These townhome blocks were built between 1978 and 1986 using galvanized steel drain stacks that have corroded into narrowed, scale-encrusted passages after four decades. The pipe rusts shut from the inside, and when the final inch of effective diameter closes, every unit on that lateral backs up simultaneously. Flood Doctor has responded to hundreds of these multi-unit events across Herndon, deploying parallel crews to triage, extract, and decontaminate multiple townhomes in a single coordinated operation.`,
+      `When sewage erupts through the floor drain of a Worldgate townhome before dawn on a Tuesday, the problem rarely stays in one unit. Herndon's townhome-dense communities — Worldgate, Franklin Farm, Herndon Station — connect four to six homes to a single shared sewer lateral beneath the common parking area. A blockage forces raw sewage backward into the lowest-elevation unit first, then cascades into adjacent properties as pressure builds. These townhome blocks were built between 1978 and 1986 using galvanized steel drain stacks that have corroded into narrowed, scale-encrusted passages after four decades. The pipe rusts shut from the inside, and when the final inch of effective diameter closes, every unit on that lateral backs up simultaneously. Flood Doctor has responded to hundreds of these multi-unit events across Herndon, deploying parallel crews to triage, extract, and decontaminate multiple townhomes in a single coordinated operation.`,
 
-      `Beyond the townhome communities, Fox Mill's older single-family homes contend with tree root infiltration through deteriorating clay joints, and properties along Sugarland Run face storm-driven sewer surcharge when the creek overwhelms outfall capacity. Downtown Herndon includes condo conversions from former apartment stock where commercial plumbing serves individual owners in configurations never anticipated. From the galvanized stacks of Franklin Farm to the root-compromised lines of Fox Mill to the mismatched plumbing of converted condos near Elden Street — Flood Doctor brings the biohazard certification and simultaneous-deployment capability Herndon demands.`
+      `Beyond the townhome communities, Fox Mill's older single-family homes contend with tree root infiltration through deteriorating clay joints, and properties along Sugarland Run face storm-driven surcharge events when runoff volume exceeds the collection system's discharge capacity. Downtown Herndon includes condo conversions from former apartment stock where commercial plumbing serves individual owners in configurations never anticipated. From the galvanized stacks of Franklin Farm to the root-compromised lines of Fox Mill to the mismatched plumbing of converted condos near Elden Street — Flood Doctor brings the biohazard certification and simultaneous-deployment capability Herndon demands.`
     ],
     localContext: "Shared lateral infrastructure serving townhome blocks of 4-6 units and aging galvanized steel drain plumbing from the late 1970s and 1980s define Herndon's sewage risk profile, creating multi-unit cascade failures that require parallel response operations."
   },
@@ -81,14 +81,14 @@ export const herndonSewageCleanupContent = {
       },
       {
         name: "Galvanized Stack Corrosion Failure",
-        description: "Herndon's 1978-1986 townhomes used galvanized steel for drain-waste-vent piping that fails from the inside out. Iron oxide scale traps grease and organic matter, reducing a three-inch pipe to under one inch after forty years. At corroded joints, pressurized sewage bursts through the pipe wall into wall cavities — saturating insulation and framing for hours before visible evidence appears.",
+        description: "Herndon's 1978-1986 townhomes used galvanized steel for drain-waste-vent piping that fails from the inside out. Iron oxide scale traps grease and organic matter, reducing a three-inch pipe to under one inch after forty years. At corroded joints, pressurized sewage bursts through the pipe wall into wall cavities — saturating insulation and framing for hours before any outward sign becomes apparent.",
         commonCauses: "Internal iron oxide scale accumulation, corrosion at threaded joints, galvanic reaction at dissimilar metal connections",
         affectedAreas: ["Franklin Farm", "Worldgate older sections", "Herndon Station", "Dulles Park townhomes"]
       },
       {
         name: "Sugarland Run Storm Surcharge",
-        description: "During sustained rainfall, Sugarland Run rises above sewer outfall elevations, preventing discharge. Combined flow backs into the lowest homes through floor drains and basement fixtures. Contamination is severe because surcharge mixes stormwater pollutants with sanitary sewage from the entire upstream collection area.",
-        commonCauses: "Creek level exceeding sewer outfall elevation, groundwater infiltration through aging joints, combined system capacity exceedance",
+        description: "During sustained rainfall, Sugarland Run's volume prevents the sanitary system from discharging at normal outfall points. Pressurized combined flow reverses into the lowest-elevation homes through every below-grade fixture and drain opening. Contamination is severe because surcharge mixes stormwater pollutants with sanitary sewage from the entire upstream collection area.",
+        commonCauses: "Runoff volume exceeding collection system discharge capacity, groundwater infiltration through degraded pipe joints, tributary overflow during sustained rainfall"",
         affectedAreas: ["Fox Mill Estates", "Chandon", "Reflection Lake", "Properties within 500 feet of Sugarland Run"]
       },
       {
@@ -168,8 +168,8 @@ export const herndonSewageCleanupContent = {
       answer: "Depends on where the failure occurred. Shared lateral obstruction: HOA's master policy typically covers all affected homes. Individual branch line failure: your homeowner's insurance. Our camera inspection identifies the exact blockage location with timestamped video provided to both parties."
     },
     {
-      question: "My Herndon townhome has galvanized drain pipes — should I replace them proactively?",
-      answer: "Yes. Galvanized drains from 1978-1986 construction have reached or exceeded their functional lifespan. Proactive replacement costs a fraction of emergency cleanup after failure. Coordinate with neighbors and your HOA — shared wall access for stack replacement is more efficient across multiple units simultaneously. Several Franklin Farm and Worldgate HOAs have begun phased replacement programs."
+      question: "My Herndon townhome still has galvanized drain pipes — is preventive replacement worth the cost?",
+      answer: "Yes. Galvanized drains from 1978-1986 construction have reached or exceeded their functional lifespan. Planned replacement runs roughly one-tenth the cost of emergency remediation after catastrophic failure. Coordinate with neighbors and your HOA — shared wall access for stack replacement is more efficient across multiple units simultaneously. Several Franklin Farm and Worldgate HOAs have begun phased replacement programs."
     },
     {
       question: "Can sewage contamination travel through the party walls between my townhome and my neighbor's?",
