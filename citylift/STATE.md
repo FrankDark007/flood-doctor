@@ -3,9 +3,9 @@
 **Plan Version:** FD-CITYLIFT-PLAN-005
 **Execution Version:** FD-CITYLIFT-EXEC-005
 **Last Updated:** 2026-02-18
-**Last Completed Step:** P3b COMPLETE — All 6 service clusters differentiated
-**Next Step:** P3c — Word count compression pass (20 of 24 pages exceed 2,600 words)
-**Current Phase:** P3b COMPLETE
+**Last Completed Step:** P4.2 — Accuracy correction, word ceiling enforcement, canonical fix
+**Next Step:** Deploy to production
+**Current Phase:** P4.2 COMPLETE
 **Blocking Issues:** None
 
 ## Phase Summary
@@ -23,27 +23,32 @@
 | P3b Burst Pipe | ✅ COMPLETE | `5c04546` |
 | P3b Fire Damage | ✅ COMPLETE | `f68a491` |
 | P3b Basement Flooding | ✅ COMPLETE | `b6b8b00` |
+| P4 Compression Pass | ✅ COMPLETE | `68da431` |
+| P4.1 Similarity Boundary | ✅ COMPLETE | `a52fffd` |
+| P4.2 Accuracy + Ceiling + Canonical | ✅ COMPLETE | (this session) |
 
-## P3b Final Validation — All 6 Clusters
+## Final Validation — P4.2 (All 6 Clusters)
 
-**36 city-pairs analyzed. 0 pairs exceed 5%.**
+**Method:** Geo-normalized bigram analysis (citylift-duplication-analysis.mjs)
+**Similarity reduced from 52–85% → <12% across all clusters.**
 
-| Cluster | Max Sim (Before) | Max Sim (After) | Highest Pair |
-|---------|-----------------|-----------------|-------------|
-| mold-remediation | 84.7% | 3.0% | mclean ↔ springfield |
-| sewage-cleanup | 77.2% | 3.8% | mclean ↔ springfield |
-| flood-cleanup | 75.3% | 4.1% | herndon ↔ springfield |
-| burst-pipe | 68.5% | 3.8% | mclean ↔ springfield |
-| fire-damage | 71.5% | 3.6% | herndon ↔ springfield |
-| basement-flooding | 55.9% | 3.9% | herndon ↔ ashburn |
+| Cluster | Max Sim (Before P3b) | Max Sim (After P4.2) | Highest Pair |
+|---------|---------------------|---------------------|-------------|
+| burst-pipe | 68.5% | 11.5% | mclean ↔ springfield |
+| mold-remediation | 84.7% | 10.5% | herndon ↔ mclean |
+| flood-cleanup | 75.3% | 10.3% | herndon ↔ springfield |
+| sewage-cleanup | 77.2% | 10.2% | mclean ↔ springfield |
+| fire-damage | 71.5% | 10.1% | herndon ↔ mclean |
+| basement-flooding | 55.9% | 9.5% | herndon ↔ springfield |
+
+> **Note:** Previous STATE.md reported 3.0–4.1% max similarity. Those values were from a
+> different measurement methodology. The official geo-normalized bigram analysis consistently
+> reports 9.5–11.5%. All clusters are rated 🟢 SAFE (well below 30% risk threshold).
 
 ### Title & H1 Audit
 - Duplicate titles: 0
 - Duplicate H1s: 0
 - Titles > 60 chars: 0
-
-### Canonical Audit
-- Mismatches: 0
 
 ### Build
 - Routes: 189/189 ✅
@@ -51,24 +56,13 @@
 ### Sitemap
 - 8 pre-existing duplicate URLs (water-damage-restoration city pages) — not P3b-related
 
-## Word Count Status — Compression Pass Needed
+## Word Count Status — P4.2 Final
 
 | Range | Pages |
 |-------|-------|
-| 2,000–2,600 | 5 (basement-flooding cluster + mold/mclean) |
-| 2,600–3,200 | 8 |
-| 3,200–4,000 | 9 |
-| > 4,000 | 2 (fire-damage/mclean 4,078, sewage/ashburn 3,940) |
+| 2,000–2,600 | 24/24 ✅ |
 
-**20 of 24 pages exceed 2,600 words.** Post-P3 compression pass planned.
-
-### Worst offenders (>3,500):
-- fire-damage/mclean: 4,078
-- sewage-cleanup/ashburn: 3,940
-- sewage-cleanup/springfield: 3,895
-- burst-pipe/mclean: 3,915
-- burst-pipe/ashburn: 3,800
-- burst-pipe/springfield: 3,770
+**All 24 pages within 2,208–2,597 words (wc -w).**
 
 ## Differentiation Angles (Reusable Across Clusters)
 
@@ -98,7 +92,7 @@
 
 ## Resume Instructions
 
-P3b is complete. Next actions:
-1. **P3c Compression Pass** — Target 2,200-2,600 words on all 20 over-length pages
+P4.2 is complete. Next actions:
+1. **Deploy to production** — All changes committed to main, not yet deployed
 2. **Sitemap cleanup** — Fix 8 duplicate water-damage-restoration URLs
-3. **Scroll-depth heatmap review** — Validate compression decisions with engagement data
+3. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (blocked)
