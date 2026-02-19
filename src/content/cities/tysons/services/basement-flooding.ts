@@ -1,6 +1,11 @@
 import type { ServicePageContent } from '../../types';
 
 export const basementFloodingContent: ServicePageContent = {
+  meta: {
+    title: "Basement & Underground Parking Flooding Solutions in Tysons, VA",
+    description: "24/7 basement and underground parking garage flood cleanup in Tysons VA. Specialized in high-rise building drainage systems and below-grade water removal.",
+    canonical: "https://tysons.flood.doctor/services/residential/specialty-services/basement-flooding/"
+  },
   heroH1: "Basement & Underground Parking Flooding Solutions in Tysons, VA",
   heroP: "Expert below-grade flooding remediation for Tysons' underground parking garages, basement retail spaces, and lower-level commercial areas. 24/7 emergency response for garage flooding, mechanical room water damage, and subsurface water intrusion.",
 

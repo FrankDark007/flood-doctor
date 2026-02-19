@@ -1,6 +1,11 @@
 import { ServicePageContent } from '../../types';
 
 export const alexandriaBasementFlooding: ServicePageContent = {
+  meta: {
+    title: "Alexandria Basement Flooding Solutions",
+    description: "Professional basement flooding solutions in Alexandria VA. High water table expertise, combined sewer backup response. 24/7 emergency service.",
+    canonical: "https://alexandria.flood.doctor/services/residential/specialty-services/basement-flooding/"
+  },
   heroSection: {
     title: "Alexandria Basement Flooding Solutions",
     subtitle: "High Water Table Expertise & Combined Sewer Backup Response",

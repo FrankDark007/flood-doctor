@@ -1,6 +1,11 @@
 import { ServicePageContent } from '../../types';
 
 export const alexandriaBurstPipe: ServicePageContent = {
+  meta: {
+    title: "Alexandria Burst Pipe Emergency Restoration",
+    description: "Emergency burst pipe repair and water damage restoration in Alexandria VA. Cast iron pipe failure specialists. 24/7 response throughout Old Town and all Alexandria neighborhoods.",
+    canonical: "https://alexandria.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
+  },
   heroSection: {
     title: "Alexandria Burst Pipe Emergency Restoration",
     subtitle: "Cast Iron Pipe Failure Specialists & 24/7 Emergency Response",

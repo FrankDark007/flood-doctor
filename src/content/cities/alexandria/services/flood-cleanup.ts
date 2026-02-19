@@ -1,6 +1,11 @@
 import { ServicePageContent } from '../../types';
 
 export const alexandriaFloodCleanup: ServicePageContent = {
+  meta: {
+    title: "Alexandria Flood Cleanup & Restoration",
+    description: "Professional flood cleanup and restoration in Alexandria VA. Historic plaster wall drying, Potomac floodplain expertise. 24/7 emergency response.",
+    canonical: "https://alexandria.flood.doctor/services/residential/restoration-services/flood-cleanup/"
+  },
   heroSection: {
     title: "Alexandria Flood Cleanup & Restoration",
     subtitle: "Historic Plaster Wall Drying & Potomac Floodplain Expertise",

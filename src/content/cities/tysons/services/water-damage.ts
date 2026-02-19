@@ -1,6 +1,11 @@
 import type { ServicePageContent } from '../../types';
 
 export const waterDamageContent: ServicePageContent = {
+  meta: {
+    title: "24/7 Emergency Water Damage Restoration in Tysons, VA",
+    description: "Expert high-rise and commercial water damage restoration in Tysons VA. Fast 60-min response for condo flooding, office building leaks, and HVAC system failures.",
+    canonical: "https://tysons.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
+  },
   heroH1: "24/7 Emergency Water Damage Restoration in Tysons, VA",
   heroP: "Expert high-rise and commercial water damage restoration serving Tysons Corner, The Boro, and Tysons Central. Available 24/7 for emergency response to condo flooding, office building leaks, and HVAC system failures.",
 

@@ -1,6 +1,11 @@
 import type { ServicePageContent } from '../../types';
 
 export const burstPipeContent: ServicePageContent = {
+  meta: {
+    title: "Burst Pipe Repair & Water Damage Restoration in Tysons, VA",
+    description: "Emergency burst pipe repair and water damage restoration in Tysons VA. Specialized in high-rise plumbing failures, multi-floor flooding, and complex building system repairs.",
+    canonical: "https://tysons.flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/"
+  },
   heroH1: "Burst Pipe Repair & Water Damage Restoration in Tysons, VA",
   heroP: "24/7 emergency response for burst pipe flooding in Tysons high-rise buildings. Expert restoration for plumbing failures affecting luxury condos, Class A offices, and commercial properties throughout Tysons Corner and Tysons Central.",
 

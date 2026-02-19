@@ -1,6 +1,11 @@
 import type { ServicePageContent } from '../../types';
 
 export const floodCleanupContent: ServicePageContent = {
+  meta: {
+    title: "Commercial Flood Cleanup & Office Water Damage in Tysons, VA",
+    description: "24/7 commercial flood cleanup in Tysons VA. Specialized in office building water damage, retail flooding, and business continuity during restoration.",
+    canonical: "https://tysons.flood.doctor/services/residential/restoration-services/flood-cleanup/"
+  },
   heroH1: "Commercial Flood Cleanup & Office Water Damage in Tysons, VA",
   heroP: "Expert commercial flood cleanup for Tysons' Class A office buildings, retail spaces, and mixed-use developments. 24/7 emergency response minimizing business interruption and protecting commercial operations.",
 

@@ -5,6 +5,11 @@
 import { ServicePageContent } from '../../types';
 
 export const alexandriaFireDamage: ServicePageContent = {
+  meta: {
+    title: "Alexandria Fire Damage Restoration",
+    description: "Expert fire damage restoration in Alexandria VA. Historic property specialists, BAR-compliant reconstruction. 24/7 emergency smoke and fire cleanup.",
+    canonical: "https://alexandria.flood.doctor/services/residential/cleanup-services/fire-smoke-cleanup/"
+  },
   heroSection: {
     title: "Alexandria Fire Damage Restoration",
     subtitle: "Historic Property Specialists & BAR-Compliant Reconstruction",

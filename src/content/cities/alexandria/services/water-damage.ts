@@ -1,6 +1,11 @@
 import { ServicePageContent } from '../../types';
 
 export const alexandriaWaterDamage: ServicePageContent = {
+  meta: {
+    title: "24/7 Emergency Water Damage Restoration Alexandria, VA",
+    description: "Expert water damage restoration in Alexandria VA. Historic building expertise, BAR-compliant emergency response. 60-minute response to Old Town, Del Ray, Rosemont.",
+    canonical: "https://alexandria.flood.doctor/services/residential/restoration-services/water-damage-restoration/"
+  },
   heroSection: {
     title: "24/7 Emergency Water Damage Restoration Alexandria, VA",
     subtitle: "Historic Building Expertise & BAR-Compliant Emergency Response",
