@@ -4,6 +4,55 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-19 — CityLift P5.1: Legacy Canonical Gap + Audit Artifact Cleanup
+
+**Commits**: `4053cf2`, `aa7a6b1`
+**Scope**: 9 content files + .gitignore
+
+### What Changed
+- **Added `meta.canonical`** to 9 old-format service content files that lacked canonical URLs entirely:
+  - Alexandria: water-damage, burst-pipe, flood-cleanup, fire-damage, basement-flooding (Format A: `heroSection`/`introduction`)
+  - Tysons: water-damage, burst-pipe, flood-cleanup, basement-flooding (Format B: `heroH1`/`heroP`)
+- **Root cause**: These files predated the `meta` block pattern and imported from a non-existent `../../types` module (transpiler ignores, no runtime impact)
+- **Gitignored `citylift/audit/`** — untracked 5 ephemeral analysis JSON artifacts to eliminate rebuild noise
+
+### Verification
+- Build: 189/189 ✅
+- Service files missing canonical: 0 (was 9)
+- Known exception: `arlington/services/emergency-water-removal` (extra page, not in standard 8-service matrix)
+
+---
+
+## 2026-02-18 — CityLift P5: Canonical URL Normalization + Sitemap Cleanup
+
+**Commits**: `a80ac11`, `8d702ed`
+**Scope**: 87 content files + sitemap generator + 13 stale XML files
+
+### What Changed
+- **Fixed 87 canonical URLs** across all 13 cities × 8 services from flat paths (`/services/water-damage`) to correct nested served paths (`/services/residential/restoration-services/water-damage-restoration/`)
+- **Removed legacy city sitemap generation** from `generate-sitemaps.ts` — was producing flat-slug URLs that conflicted with the nested paths served by `build-cities.ts`
+- **Deleted 13 stale city sitemap XML files** from `public/sitemaps/`
+- **Key discovery**: `PageMeta.tsx` auto-generates canonical from browser pathname at runtime; content file `meta.canonical` is for data consistency, not directly rendered in HTML
+
+### Canonical Mapping (service slug → nested path)
+| Flat Slug | Nested Path |
+|-----------|-------------|
+| water-damage | restoration-services/water-damage-restoration |
+| burst-pipe | restoration-services/burst-pipe-cleanup |
+| flood-cleanup | restoration-services/flood-cleanup |
+| storm-damage | restoration-services/storm-damage-restoration |
+| fire-damage | cleanup-services/fire-smoke-cleanup |
+| mold-remediation | cleanup-services/mold-remediation |
+| sewage-cleanup | cleanup-services/sewage-cleanup |
+| basement-flooding | specialty-services/basement-flooding |
+
+### Verification
+- Build: 189/189 ✅
+- Flat-path canonicals: 0
+- Missing canonicals: 0
+
+---
+
 ## 2026-02-18 — CityLift P1: Herndon + Springfield Storm-Damage Upgrade
 
 **Scope**: 2 files modified (storm-damage content files)

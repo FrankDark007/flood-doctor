@@ -1,6 +1,6 @@
 # PROJECT_STATE.md
 
-Last updated: 2026-02-16
+Last updated: 2026-02-19
 
 ## Architecture
 
@@ -27,6 +27,9 @@ Last updated: 2026-02-16
 - **Duplicate H1 tags**: 0
 - **Broken internal links**: 0
 - **Build time**: ~12 seconds
+- **Canonical status**: All 105 city service pages aligned to nested served paths (0 flat-path, 0 missing)
+- **Sitemap status**: Single generator (build-cities.ts) for city sitemaps; legacy flat-slug generator removed
+- **Content similarity**: Geo-normalized bigram, max cluster avg ~16.5% (water-damage), 0 pairs >50%
 
 ## Route Breakdown
 
@@ -43,6 +46,11 @@ Last updated: 2026-02-16
 
 ## Completed Work (Chronological)
 
+- **2026-02-19**: CityLift P6 closeout — final verification, state freeze, all phases P0–P5.1 complete
+- **2026-02-19**: CityLift P5.1 — canonical meta added to 9 legacy-format service pages (5 Alexandria, 4 Tysons); audit artifacts gitignored
+- **2026-02-18**: CityLift P5 — 87 canonical URLs fixed to nested paths, legacy city sitemaps removed (13 stale XMLs), generate-sitemaps.ts cleaned to main-site-only
+- **2026-02-18**: CityLift P4.2 — accuracy correction, word ceiling enforcement, canonical slug alignment across 24-page city service matrix
+- **2026-02-18**: CityLift P3a — cross-city duplication analysis (geo-normalized bigram similarity), all clusters <17% avg
 - **2026-02-16**: Service detail post-process layout redesign — removed nested sidebar, added TopicJumpLinks, RelatedResourcesCard, section H2, h2→h3 accordion, controlled accordion state, mobile sidebar slim, aria attrs
 - **2026-02-16**: Standard Project Package (P2 #6) — /resources/standard-project-package/ with 6 service groups, 12 FAQs, schema
 - **2026-02-16**: Cost Calculator audit + fixes (P1 #4) — schema fix, a11y, legal disclaimer, inbound/outbound links
