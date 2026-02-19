@@ -4,140 +4,86 @@
 
 ---
 
-## 🔵 ACTIVE: CityLift — Multi-Phase SEO Audit & Content System
+## 🟢 COMPLETE: CityLift P3b + P4 — Content Differentiation & Compression
 
 **Plan:** FD-CITYLIFT-PLAN-005
 **Tracker:** `citylift/STATE.md` (read this first for CityLift work)
-**Plan doc:** `docs/plans/2026-02-17-citylift-seo-audit-plan.md`
+
+### P3b — Service Cluster Differentiation ✅ COMPLETE
+All 6 clusters fully differentiated across 4 cities (herndon, mclean, springfield, ashburn).
+
+| Cluster | Commit | Max Similarity |
+|---------|--------|---------------|
+| mold-remediation | `1129d84` | 3.0% |
+| sewage-cleanup | `838f0c1` + `9208019` | 3.8% |
+| flood-cleanup | `4734df5` | 4.1% |
+| burst-pipe | `5c04546` | 3.8% |
+| fire-damage | `f68a491` | 3.6% |
+| basement-flooding | `b6b8b00` | 3.9% |
+
+### P4 — Compression Pass ✅ COMPLETE
+- 19 pages compressed from 2,795-4,078 words → 2,131-2,606 range
+- Commit: `68da431`
+
+### P4.1 — Similarity Boundary Correction ✅ COMPLETE
+- sewage herndon↔springfield: 5.0% → 4.2%
+- Commit: `a52fffd`
+
+### Final State (All 24 P3b Pages)
+- **Max similarity:** 4.8% (sewage mclean↔springfield)
+- **Pairs > 5%:** 0
+- **Word count range:** 2,131 – 2,606
+- **Pages > 2,600:** 1 (basement-flooding/mclean at 2,606)
+- **Build:** 189/189 ✅
+- **Duplicate titles:** 0
+- **Duplicate H1s:** 0
+
+---
+
+## Next Steps (CityLift)
+
+1. **Deploy P3b+P4 to production** — all changes committed to main, not yet deployed
+2. **Sitemap cleanup** — 8 pre-existing duplicate water-damage-restoration URLs (not P3b-related)
+3. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
+
+## 🔴 ACTIVE: Service Request Form Redesign (SERVICE-FORM-COLLAB-001)
+
+**Status:** Bootstrap created, ready for GPT↔Claude collab loop
+**Bootstrap:** `collab-log/SERVICE-FORM-COLLAB-001-bootstrap.md`
+
+**Goal:** Redesign the service request form to match approved reference design:
+- Card-style layout with subtle shadow, light gray bg
+- 2-column grid: First/Last Name, Email/Phone, Address 1/Address 2
+- 3-column row: City/State dropdown/Zip
+- Bold uppercase labels, red asterisks for required, icons in fields
+- Phone field with US flag +1 prefix
+- Red "Proceed →" button
+- Must preserve existing submission logic
+
+**To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001` to start the GPT↔Claude planning loop
+
+---
+
+## Next Steps (Beyond CityLift)
+
+- Client Portal (CompanyCam + Matterport)
+- Neighborhood Page Redesign (68 pages)
+- Blog Content Expansion (5 cities need 2 more posts)
+
+---
+
+## Previous Phases (Reference)
 
 ### P0 — Title Normalization ✅ COMPLETE (commit `5ac41b0`)
-- 91/91 service page titles normalized to ≤60 chars
-- Pattern: `{Primary Keyword} in {City}, VA | Flood Doctor`
-- CityServicesHub template title also fixed
-- Before: avg 78 chars, max 103 | After: max 59 chars
-- 0 duplicate titles, 0 duplicate H1s, build 189/189 OK
-- Baseline: `citylift/audit/p0-before-metrics.json`
-- After: `citylift/audit/p0-after-metrics.json`
-- Refactor script: `scripts/citylift-p0-title-refactor.mjs`
-
-### P1 — Content Strength Audit ✅ SCORING COMPLETE (commit `cf960e2`)
-- 105 service pages scored on 6 dimensions (word count, topical depth, E-E-A-T, local specificity, semantic coverage, originality)
-- Discovered 4 content formats: A (90 files), B (5 Vienna), C (6 Alexandria+Arlington), D (4 Tysons)
-
-### P1 — Vienna Pilot Remediation ✅ COMPLETE
-- Converted 5 Vienna pages from Format B → Format A
-- All 5 pages now score 96-100 (Competitive tier)
-- Vienna city avg: 67 → 98 (+31 points)
-- Total word count added: ~8,600 words across 5 pages
-- Before/after report: `citylift/audit/p1-vienna-after.json`
-- Build: 189/189 routes OK, no duplicate titles, no other cities modified
-
-| Page | Before | After | Tier Change |
-|------|--------|-------|-------------|
-| /flood-cleanup | 39 (774w) | 100 (3480w) | Rewrite → Competitive |
-| /water-damage | 51 (3108w) | 100 (4145w) | Thin → Competitive |
-| /basement-flooding | 51 (3064w) | 98 (3954w) | Thin → Competitive |
-| /burst-pipe | 50 (2006w) | 96 (3696w) | Thin → Competitive |
-| /fire-damage | 52 (1649w) | 97 (3905w) | Thin → Competitive |
-
-### P1 — Herndon + Springfield Storm-Damage Upgrade ✅ COMPLETE (commit `4c94676`)
-- Herndon /storm-damage: 1,428 → 2,814 words, Format A with localChallenges + equipmentSection
-- Springfield /storm-damage: 1,405 → 2,973 words, Format A with localChallenges + equipmentSection
-- Both: TypeScript interface, 15 neighborhoods, 8 FAQs, 7 pricing factors, 5 related services
-- E-E-A-T: IICRC, thermal imaging, Prochem/FLIR/Dri-Eaz/Honda brands, direct billing, Xactimate
-
-### All P1 Expand-Tier Pages — ✅ COMPLETE
-No remaining pages below Competitive tier.
-
-### P2 — High-Impression / Low-CTR Pages ✅ AUDIT COMPLETE
-- GSC data exported from flooddoctorva.com (12 months, stored in `citylift/gsc/export-0/`)
-- **Key finding:** ALL high-impression pages rank position 20-42 (pages 2-5). Zero pages on page 1.
-- No CTR optimization opportunity at current positions — the problem is ranking, not titles
-- Top ROI pages by proximity to page 1: ashburn (20.6), herndon (19.6), lorton (21.8), fairfax (22.8)
-- Hash fragment URLs (#about, #services, #contact) indexed as separate pages — diluting authority
-- **BLOCKED on strategic decision:** Optimize WordPress pages vs launch flood.doctor with 301 redirects
-- See `citylift/gsc/export-0/Pages.csv` and `Queries.csv` for raw data
-### P3a — Cross-City Duplication Analysis ✅ COMPLETE (commit `1129d84`)
-- 624 pairwise comparisons across 8 service clusters
-- Found 32 pairs >50% overlap, all involving herndon/mclean/springfield/ashburn
-- Root cause: template-cloned content generation batch (Jan 3, 2026)
-- Analysis script: `scripts/citylift-duplication-analysis.mjs`
-
-### P3b — Service Cluster Differentiation — IN PROGRESS
-- **Mold Remediation ✅ COMPLETE** (commit `1129d84`) — 4 cities rewritten, max pair 11.2%
-- Sewage Cleanup ⬜ NEXT
-- Flood Cleanup ⬜
-- Burst Pipe ⬜
-- Fire Damage ⬜
-- Basement Flooding ⬜ (may not need full rewrite — only 1 pair >50%)
-- Target: all 6 pairs per cluster below 30% similarity
+### P1 — Content Strength ✅ COMPLETE (commits `cf960e2`, `9fb5e52`, `1ae84ac`, `4c94676`)
+### P2 — GSC Audit ✅ AUDIT COMPLETE (commit `2900d71`) — BLOCKED on strategic decision
+### P3a — Duplication Analysis ✅ COMPLETE (commit `1129d84`)
 
 ### CityLift Session Continuity
 On resume, always read:
 1. `citylift/STATE.md`
 2. `citylift/DECISIONS.md`
 3. `citylift/ARTIFACTS.md`
-
-### CityLift AI Role Assignments
-- **Claude Code:** Steps 0–3, Step 6 orchestration, all file writes
-- **ChatGPT:** Steps 4–5 scoring design, content drafting
-- **Human:** Approval gates, GSC exports, phase transitions
-
----
-
-## ✅ COMPLETE: McLean Homepage Premium Redesign (2026-02-17)
-
-### Status: Committed + Built + Deployed. 10 design enhancements implemented.
-
-**Commits:**
-- `ae7006c` — 10-task McLean homepage UI/UX redesign
-- `5572a9b` — fix: copy images and fonts to city build output
-- `60d3cda` — premium 2026 redesign with 10 design enhancements
-- `5b30a96` — fix: CTA contrast, H1 city name, dispatch text
-- `5a31b2d` — feat: wire city-specific service content into CityServiceDetail
-- `57d4897` — fix: ServicePageRenderer link corrections
-- `e0c56c4` — fix: prerender timeout increase to 45s
-
-### Critical Bug Fix: City Service Pages "Thin Content"
-**Root Cause:** CityServiceDetail.tsx was using generic ServiceDetailNew template (thin H1 + generic content). Rich city-specific content in src/content/cities/{city}/services/*.ts existed but wasn't rendered.
-
-**Fix:** Rewrote CityServiceDetail.tsx to check contentRegistry (104 city×service content files) and render via ServicePageRenderer when available.
-
-### Content Inventory
-| City | Service Files | Words | Homepage Words |
-|------|-------------|-------|----------------|
-| mclean | 8 | 13,444 | 1,380 |
-| arlington | 9 | 16,943 | 1,384 |
-| alexandria | 8 | 19,329 | 1,489 |
-| fairfax | 8 | 15,655 | 1,415 |
-| vienna | 8 | 16,426 | 2,544 |
-| tysons | 8 | 21,187 | 1,390 |
-| reston | 8 | 14,574 | 1,375 |
-| herndon | 8 | 13,215 | 1,348 |
-| ashburn | 8 | 14,495 | 1,409 |
-| springfield | 8 | 13,189 | 1,384 |
-| fallschurch | 8 | 15,172 | 1,423 |
-| greatfalls | 8 | 12,436 | 1,454 |
-| lorton | 8 | 14,665 | 1,349 |
-| **TOTAL** | **105** | **200,730** | **18,345** |
-
----
-
-## ✅ DEPLOYED: All sites live (2026-02-17)
-- Main site: https://flood.doctor ✅ 200
-- All 13 city subdomains: ✅ 200 (rsync + Cloudflare purge)
-
-## Tooling Updates (2026-02-17 evening)
-- Created `/rl` slash command alias for ralph-loop
-- Installed `firecrawl-cli` globally (525 credits, free tier)
-- Stored all credentials in `~/.claude/credentials.local`
-- Added CLAUDE.md rules: always use Firecrawl for web ops
-- Deploy reads SSH password from credentials.local
-
-## Next Up (after CityLift)
-- **P2 #7:** Client Portal (CompanyCam + Matterport)
-- **P2 #8:** Neighborhood Page Redesign (68 pages)
-- **P2 #9:** Blog Content Expansion (5 cities need 2 more posts)
 
 ---
 
@@ -150,15 +96,4 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-18 (CityLift P1 COMPLETE, P2 GSC audit COMPLETE, awaiting strategic decision)*
-
-## ✅ PREVIOUS SESSION WORK — COMMITTED
-
-### Great Falls + Arlington Expansion (commit `1ae84ac`)
-- 7 Great Falls pages expanded, 1 Arlington page converted Format C → A
-- Build verified, committed to main
-
-### Herndon + Springfield Storm-Damage Upgrade (commit `4c94676`)
-- Both pages upgraded from Expand tier (~74) to Competitive tier (~97-98)
-- stormTypes/emergencyServices replaced with localChallenges + equipmentSection
-- Full Format A with TypeScript interface, E-E-A-T signals, localized content
+*Updated: 2026-02-18 (CityLift P3b COMPLETE, P4 compression COMPLETE, P4.1 boundary fix COMPLETE)*
