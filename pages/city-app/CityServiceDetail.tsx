@@ -329,10 +329,18 @@ const CityServiceDetail: React.FC = () => {
   const serviceKey = resolveServiceKey(serviceSlug || '');
   const cityId = franchise.id;
 
-  // Check if city-specific rich content exists
+  // Check if city-specific rich content exists AND has minimum required fields
+  // Some old-format content (Alexandria, Tysons) has different schemas (heroSection/introduction)
+  // that are incompatible with ServicePageRenderer — fall through to generic template
   const cityContent = contentRegistry[cityId]?.[serviceKey] || null;
+  const isRenderable = cityContent &&
+    cityContent.meta &&
+    cityContent.h1 &&
+    cityContent.introSection?.headline &&
+    cityContent.processSection?.headline &&
+    cityContent.finalCTA?.phone;
 
-  if (cityContent) {
+  if (isRenderable) {
     // Render rich city-specific content with ServicePageRenderer
     return (
       <ServicePageRenderer

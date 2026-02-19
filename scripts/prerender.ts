@@ -22,8 +22,8 @@ import { getCityServiceRoutes } from '../data/city-service-map';
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const PORT = 4173;
-const CONCURRENCY = 5;
-const TIMEOUT_MS = 45_000;
+const CONCURRENCY = 3;
+const TIMEOUT_MS = 90_000;
 const PRODUCTION_ORIGIN = 'https://flood.doctor';
 
 // ── City route enumeration (used in --cities mode) ──────────────────────────
@@ -359,21 +359,84 @@ async function mainCities() {
     allResults.push(...results);
   }
 
-  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  let elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   await browser.close();
 
-  const succeeded = allResults.filter(r => r.success);
-  const failed = allResults.filter(r => !r.success);
+  let succeeded = allResults.filter(r => r.success);
+  let failed = allResults.filter(r => !r.success);
 
-  console.log(`\n  Done in ${elapsed}s`);
+  console.log(`\n  Pass 1 done in ${elapsed}s`);
   console.log(`  Succeeded: ${succeeded.length}/${allResults.length}`);
 
+  // Retry failed routes one city at a time with fresh browser (concurrency=1)
   if (failed.length > 0) {
-    console.log(`\n  FAILED ROUTES:`);
+    console.log(`\n  🔄 Retrying ${failed.length} failed routes (concurrency=1, timeout=${TIMEOUT_MS * 2}ms)...\n`);
+
+    // Group failed routes by city
+    const failedByCity = new Map<string, string[]>();
     for (const f of failed) {
-      console.log(`    ${f.route} — ${f.error}`);
+      // Find which city this route belongs to by checking dist-cities dirs
+      for (const cityId of ALL_CITY_IDS) {
+        const cityRoutes = getCityRoutes(cityId);
+        if (cityRoutes.includes(f.route)) {
+          if (!failedByCity.has(cityId)) failedByCity.set(cityId, []);
+          failedByCity.get(cityId)!.push(f.route);
+          break;
+        }
+      }
     }
-    process.exit(1);
+
+    const retryBrowser = await chromium.launch({ headless: true });
+    const retryResults: RenderResult[] = [];
+
+    for (const [cityId, routes] of failedByCity) {
+      const cityDistDir = path.resolve(process.cwd(), `dist-cities/${cityId}`);
+      const origin = `https://${cityId}.flood.doctor`;
+      const shellPath = path.join(cityDistDir, '.spa-shell.html');
+      const spaShellHtml = fs.existsSync(shellPath)
+        ? fs.readFileSync(shellPath, 'utf-8')
+        : fs.readFileSync(path.join(cityDistDir, 'index.html'), 'utf-8');
+
+      const retryPort = CITY_PORT + 1;
+      const server = await startCityServer(cityDistDir, spaShellHtml, retryPort);
+
+      for (const route of routes) {
+        const context = await retryBrowser.newContext();
+        const page = await context.newPage();
+        page.setDefaultTimeout(TIMEOUT_MS * 2);
+        const result = await renderCityRoute(page, route, cityDistDir, origin, retryPort);
+        retryResults.push(result);
+        const status = result.success ? '\x1b[32m OK\x1b[0m' : '\x1b[31mFAIL\x1b[0m';
+        console.log(`    ${status} ${cityId}${route}`);
+        await context.close();
+      }
+
+      await new Promise<void>((resolve) => server.close(() => resolve()));
+    }
+
+    await retryBrowser.close();
+
+    // Replace failed results with retry results
+    const retrySucceeded = retryResults.filter(r => r.success);
+    const retryFailed = retryResults.filter(r => !r.success);
+
+    // Update totals
+    const totalSucceeded = succeeded.length + retrySucceeded.length;
+    const totalRoutes = allResults.length;
+
+    elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    console.log(`\n  Total done in ${elapsed}s`);
+    console.log(`  Succeeded: ${totalSucceeded}/${totalRoutes} (${retrySucceeded.length} recovered in retry)`);
+
+    if (retryFailed.length > 0) {
+      console.log(`\n  STILL FAILED after retry:`);
+      for (const f of retryFailed) {
+        console.log(`    ${f.route} — ${f.error}`);
+      }
+      process.exit(1);
+    }
+  } else {
+    console.log(`\n  Done in ${elapsed}s`);
   }
 
   console.log(`\n  All city routes pre-rendered successfully.\n`);

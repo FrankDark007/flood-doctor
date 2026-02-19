@@ -88,7 +88,7 @@ export const herndonSewageCleanupContent = {
       {
         name: "Sugarland Run Storm Surcharge",
         description: "During sustained rainfall, Sugarland Run's volume prevents the sanitary system from discharging at normal outfall points. Pressurized combined flow reverses into the lowest-elevation homes through every below-grade fixture and drain opening. Contamination is severe because surcharge mixes stormwater pollutants with sanitary sewage from the entire upstream collection area.",
-        commonCauses: "Runoff volume exceeding collection system discharge capacity, groundwater infiltration through degraded pipe joints, tributary overflow during sustained rainfall"",
+        commonCauses: "Runoff volume exceeding collection system discharge capacity, groundwater infiltration through degraded pipe joints, tributary overflow during sustained rainfall",
         affectedAreas: ["Fox Mill Estates", "Chandon", "Reflection Lake", "Properties within 500 feet of Sugarland Run"]
       },
       {

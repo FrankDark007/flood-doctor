@@ -89,8 +89,8 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
   cityName,
   citySlug
 }) => {
-  // Generate FAQ schema
-  const faqSchema = {
+  // Generate FAQ schema (defensive: faqSection may be absent in variant content schemas)
+  const faqSchema = content.faqSection ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": content.faqSection.map(faq => ({
@@ -101,7 +101,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
         "text": faq.answer
       }
     }))
-  };
+  } : undefined;
 
   return (
     <main className="flex-grow bg-white">
@@ -150,7 +150,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
             <div className="flex flex-wrap gap-6 text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-green-400" />
-                <span>{content.serviceAreaSection.responseTime.split('.')[0]}</span>
+                <span>{content.serviceAreaSection?.responseTime?.split('.')[0] || '60-minute response'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-blue-400" />
@@ -203,7 +203,8 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
         </div>
       </section>
 
-      {/* Local Challenges Section */}
+      {/* Local Challenges Section (optional — some content variants use different section names) */}
+      {content.localChallenges && (
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
@@ -229,8 +230,10 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
           </div>
         </div>
       </section>
+      )}
 
-      {/* Equipment Section */}
+      {/* Equipment Section (optional — some content variants omit this) */}
+      {content.equipmentSection && (
       <section className="py-20 lg:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
@@ -259,6 +262,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
           </p>
         </div>
       </section>
+      )}
 
       {/* Service Area Section */}
       <section className="py-20 lg:py-24 bg-white">
@@ -308,6 +312,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
       </section>
 
       {/* FAQ Section */}
+      {content.faqSection && content.faqSection.length > 0 && (
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 lg:px-[72px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12 text-center">
@@ -324,6 +329,7 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* Final CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-r from-[#1a73e8] to-blue-700 text-white">
