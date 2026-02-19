@@ -1519,3 +1519,56 @@ We have 80+ neighborhood content files ready to render.
 **Plan:** `docs/plans/2026-02-18-citylift-p5-canonical-sitemap-cleanup.md`
 
 ---
+
+## CityLift P5.1 — Legacy Canonical Gap + Audit Artifact Cleanup (2026-02-19)
+
+**Goal:** Backfill `meta.canonical` on 9 old-format service files and eliminate audit artifact git noise.
+
+**Phase 1 — Legacy Canonical Gap:**
+- 9 service content files lacked `meta` block entirely (predated the `meta.canonical` pattern)
+  - Alexandria: water-damage, burst-pipe, flood-cleanup, fire-damage, basement-flooding (Format A: `heroSection`/`introduction`)
+  - Tysons: water-damage, burst-pipe, flood-cleanup, basement-flooding (Format B: `heroH1`/`heroP`)
+- Root cause: These files imported from non-existent `../../types` module (transpiler ignores, no runtime impact)
+- Added `meta: { title, description, canonical }` to all 9 files with correct nested paths
+- After fix: 0 service files missing canonical (was 9)
+
+**Phase 2 — Audit Artifact Cleanup:**
+- Added `citylift/audit/` to `.gitignore`
+- Untracked 5 ephemeral analysis JSON artifacts (p3a-duplication-report.json, etc.)
+- Files remain on disk for manual re-runs but no longer create git noise
+
+**Commits:**
+- `4053cf2` — CityLift P5.1 — render canonicals for legacy city pages
+- `aa7a6b1` — CityLift P5.1 — eliminate duplication report rebuild noise
+
+---
+
+## CityLift P6 — Closeout + State Freeze (2026-02-19)
+
+**Goal:** Final verification, source-of-truth doc updates, release tagging.
+
+**Verification Results:**
+- Build: 189/189 ✅
+- Duplicate meta titles: 0
+- Duplicate H1: 0
+- Flat-path canonicals: 0
+- Missing canonicals (service pages): 0
+- Content similarity max cluster avg: 16.5% (water-damage), 0 pairs >50%
+- Known exception: `arlington/emergency-water-removal` (extra page outside standard 8-service matrix)
+
+**Docs Updated:**
+- `docs/PROJECT_STATE.md` — canonical/sitemap/similarity metrics, CityLift timeline
+- `docs/CHANGELOG_AI.md` — P5 + P5.1 entries with commit SHAs and canonical mapping table
+- `docs/OPEN_PRIORITIES.md` — CityLift marked complete, production deployment promoted to P0
+
+**Release:**
+- Tag: `prod_citylift_phase1_2026-02-19` → commit `2c66106`
+- Pushed to origin (tag + main branch)
+- 15-point audit checklist all PASS
+
+**Commits:**
+- `2c66106` — CityLift P6 — closeout docs + state freeze
+
+**Status:** CityLift Phase 1 CLOSED. Production deployment is next action.
+
+---

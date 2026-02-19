@@ -1,13 +1,14 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-02-19 (afternoon)
 
 ---
 
-## 🟢 COMPLETE: CityLift P0–P5 — Full Content Matrix + Structural Cleanup
+## 🟢 COMPLETE: CityLift P0–P6 — Full Content Matrix + Structural Cleanup + Closeout
 
 **Plan:** FD-CITYLIFT-PLAN-005
 **Tracker:** `citylift/STATE.md` (read this first for CityLift work)
+**Release Tag:** `prod_citylift_phase1_2026-02-19` → commit `2c66106`
 
 ### Phase Summary
 | Phase | Status | Key Commits |
@@ -21,16 +22,66 @@
 | P4.1 Boundary Correction | ✅ | `a52fffd` |
 | P4.2 Accuracy + Ceiling + Canonical | ✅ | `99bfc81`, `3dd5e05`, `c98bcba` |
 | P5 Canonical + Sitemap Cleanup | ✅ | `a80ac11`, `8d702ed` |
+| P5.1 Legacy Canonical Gap + Audit Cleanup | ✅ | `4053cf2`, `aa7a6b1` |
+| P6 Closeout Docs + State Freeze | ✅ | `2c66106` |
 
-### P5 Results (This Session — 2026-02-19)
-- **Canonical fixes:** 87 files across 13 cities × 8 services — all flat paths replaced with nested served paths
-- **Sitemap cleanup:** Removed 13 stale city sitemaps from main domain; city sitemaps now solely from `build-cities.ts`
-- **Build:** 189/189 ✅
-- **Flat-path canonicals remaining:** 0
-- **Key finding:** `meta.canonical` in content files is NOT rendered in HTML — `PageMeta` auto-generates from URL path. Fixed for data consistency.
-- **9 files (5 Alexandria, 4 Tysons)** use older `ServicePageContent` format without `meta.canonical` — no action needed, canonical auto-generated correctly by PageMeta.
+### This Session (2026-02-19)
+- **P5.1:** Added `meta.canonical` to 9 old-format service files (5 Alexandria, 4 Tysons). Gitignored `citylift/audit/` directory.
+- **P6:** Final verification (189/189, 0 flat-path canonicals, 0 missing, 0 dup titles/H1). Updated PROJECT_STATE.md, CHANGELOG_AI.md, OPEN_PRIORITIES.md.
+- **Release audit:** 15-point checklist all PASS. Release tag created and pushed.
+- **Git push:** All commits + tag pushed to origin. Main branch up to date.
 
-### Canonical Mapping Applied (P5)
+---
+
+## 🟡 NEXT: Production Deployment
+
+**Status:** Tagged, audited, ready to deploy. NOT YET DEPLOYED.
+
+### Deployment Checklist (ready to execute)
+1. `npm ci && npm run build` → confirm 189/189
+2. `./scripts/deploy.sh <password>` → main site
+3. Deploy dist-city/ to city subdomains
+4. Cloudflare cache purge (zone `7b3b2f087429c5c3e9688253d8df11eb`)
+5. Smoke test 10 URLs (see deployment checklist in conversation history)
+
+### Smoke Test URLs
+1. https://flood.doctor/
+2. https://flood.doctor/sitemaps/sitemap-index.xml
+3. https://flood.doctor/sitemaps/sitemap-main.xml
+4. https://reston.flood.doctor/sitemaps/sitemap-reston.xml
+5. https://herndon.flood.doctor/services/mold-remediation
+6. https://mclean.flood.doctor/services/burst-pipe
+7. https://springfield.flood.doctor/services/sewage-cleanup
+8. https://ashburn.flood.doctor/services/basement-flooding
+9. https://alexandria.flood.doctor/services/flood-cleanup
+10. https://arlington.flood.doctor/services/emergency-water-removal
+
+---
+
+## 🔴 BLOCKED: P2 Strategic Decision
+
+WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
+
+---
+
+## 🔴 ACTIVE: Service Request Form Redesign (SERVICE-FORM-COLLAB-001)
+
+**Status:** Bootstrap created, ready for GPT↔Claude collab loop
+**Bootstrap:** `collab-log/SERVICE-FORM-COLLAB-001-bootstrap.md`
+**To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001`
+
+---
+
+## Next Steps (Beyond CityLift)
+
+- **Deploy CityLift to production** (immediate next action)
+- Client Portal (CompanyCam + Matterport)
+- Neighborhood Page Redesign (68 pages)
+- Blog Content Expansion (5 cities need 2 more posts)
+
+---
+
+## Canonical Mapping Reference (P5)
 | City Slug | Correct Nested Path |
 |---|---|
 | `mold-remediation` | `/services/residential/cleanup-services/mold-remediation/` |
@@ -44,49 +95,6 @@
 
 ---
 
-## Next Steps (CityLift)
-
-1. **Deploy to production** — all P3b through P5 changes committed to main, not yet deployed
-2. **P2 strategic decision** — WordPress vs flood.doctor 301 redirects (still blocked)
-
----
-
-## 🔴 ACTIVE: Service Request Form Redesign (SERVICE-FORM-COLLAB-001)
-
-**Status:** Bootstrap created, ready for GPT↔Claude collab loop
-**Bootstrap:** `collab-log/SERVICE-FORM-COLLAB-001-bootstrap.md`
-
-**Goal:** Redesign the service request form to match approved reference design:
-- Card-style layout with subtle shadow, light gray bg
-- 2-column grid: First/Last Name, Email/Phone, Address 1/Address 2
-- 3-column row: City/State dropdown/Zip
-- Bold uppercase labels, red asterisks for required, icons in fields
-- Phone field with US flag +1 prefix
-- Red "Proceed →" button
-- Must preserve existing submission logic
-
-**To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001`
-
----
-
-## Next Steps (Beyond CityLift)
-
-- Client Portal (CompanyCam + Matterport)
-- Neighborhood Page Redesign (68 pages)
-- Blog Content Expansion (5 cities need 2 more posts)
-
----
-
-## Previous Phases (Reference)
-
-### CityLift Session Continuity
-On resume, always read:
-1. `citylift/STATE.md`
-2. `citylift/DECISIONS.md`
-3. `citylift/ARTIFACTS.md`
-
----
-
 ## Production Info
 
 - **Live URL:** https://flood.doctor
@@ -96,4 +104,4 @@ On resume, always read:
 
 ---
 
-*Updated: 2026-02-19 (CityLift P5 COMPLETE — 87 canonicals fixed, legacy city sitemaps removed)*
+*Updated: 2026-02-19 — CityLift P0–P6 COMPLETE. Tagged + pushed. Deploy pending.*
