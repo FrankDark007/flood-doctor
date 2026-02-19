@@ -36,6 +36,9 @@ flood-doctor-v3.zip
 
 # Test / CI artifacts
 playwright-report/
+
+# CityLift audit artifacts (regenerated on demand)
+citylift/audit/
 test-results/
 screenshots/
 artifacts/
