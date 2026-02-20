@@ -13,9 +13,8 @@ SSH_USER="hubbds2w11bg"
 SSH_PASS="${SSH_PASS:-$1}"
 REMOTE_PATH="~/public_html/flood.doctor/"
 
-# Cloudflare
-CF_EMAIL="darakhshan.farough@gmail.com"
-CF_KEY="ed20b2bc99c97cab0fc1dda3f25795b195e3e"
+# Cloudflare — uses API token (Bearer auth), NOT Global API Key
+# Set CLOUDFLARE_API_TOKEN in environment or ~/.claude/credentials.local
 CF_ZONE="7b3b2f087429c5c3e9688253d8df11eb"
 
 if [ -z "$SSH_PASS" ]; then
@@ -83,19 +82,23 @@ expect eof
 EXPECT_SCRIPT
 echo "   ✅ Permissions set (755 for all, 644 for .htaccess)"
 
-# Step 4: Purge Cloudflare cache
+# Step 4: Purge Cloudflare cache (Bearer token auth)
 echo ""
 echo "🌐 Step 4: Purging Cloudflare cache..."
-CF_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
-  -H "X-Auth-Email: $CF_EMAIL" \
-  -H "X-Auth-Key: $CF_KEY" \
-  -H "Content-Type: application/json" \
-  --data '{"purge_everything":true}')
+if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+    CF_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+      -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+      -H "Content-Type: application/json" \
+      --data '{"purge_everything":true}')
 
-if echo "$CF_RESPONSE" | grep -q '"success":true'; then
-    echo "   ✅ Cache purged"
+    if echo "$CF_RESPONSE" | tr -d ' \n' | grep -q '"success":true'; then
+        echo "   ✅ Cache purged"
+    else
+        echo "   ⚠️ Cache purge failed. Response: $CF_RESPONSE"
+    fi
 else
-    echo "   ⚠️ Cache purge may have failed: $CF_RESPONSE"
+    echo "   ⚠️ CLOUDFLARE_API_TOKEN not set — skipping cache purge"
+    echo "   Set it in your environment or run: export CLOUDFLARE_API_TOKEN=<token>"
 fi
 
 # Step 5: Wait for cache to clear

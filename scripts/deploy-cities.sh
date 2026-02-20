@@ -1,27 +1,42 @@
 #!/bin/bash
 # deploy-cities.sh - Deploy all city subdomain sites
 # Builds city bundle, generates 13 city sites, deploys each to its subdomain
+#
+# Usage:
+#   ./deploy-cities.sh <ssh_password>              # full build + deploy
+#   ./deploy-cities.sh <ssh_password> --skip-build  # deploy only (dist-cities/ must exist)
+#
+# Environment variables (optional):
+#   SSH_PASS               — SSH password (alternative to positional arg)
+#   CLOUDFLARE_API_TOKEN   — Bearer token for cache purge (recommended)
 
 set -e  # Exit on any error
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
+# Parse flags
+SKIP_BUILD=false
+for arg in "$@"; do
+    case "$arg" in
+        --skip-build) SKIP_BUILD=true ;;
+    esac
+done
+
 # SSH credentials
 SSH_HOST="132.148.253.156"
 SSH_USER="hubbds2w11bg"
 SSH_PASS="${SSH_PASS:-$1}"
 
-# Cloudflare
-CF_EMAIL="darakhshan.farough@gmail.com"
-CF_KEY="ed20b2bc99c97cab0fc1dda3f25795b195e3e"
+# Cloudflare — uses API token (Bearer auth), NOT Global API Key
+# Set CLOUDFLARE_API_TOKEN in environment or ~/.claude/credentials.local
 CF_ZONE="7b3b2f087429c5c3e9688253d8df11eb"
 
 # All 13 Virginia cities
 CITIES=("mclean" "arlington" "alexandria" "fairfax" "vienna" "tysons" "reston" "herndon" "ashburn" "springfield" "fallschurch" "greatfalls" "lorton")
 
 if [ -z "$SSH_PASS" ]; then
-    echo "❌ SSH password required. Usage: ./deploy-cities.sh <password>"
+    echo "❌ SSH password required. Usage: ./deploy-cities.sh <password> [--skip-build]"
     echo "   Or set SSH_PASS environment variable"
     exit 1
 fi
@@ -37,15 +52,23 @@ echo "🏙️  FLOOD DOCTOR CITY SUBDOMAIN DEPLOYMENT"
 echo "==========================================="
 echo ""
 
-# Step 1: Build all city sites
-echo "📦 Step 1: Building all city sites..."
+# Step 1: Build all city sites (or skip if --skip-build)
 cd "$PROJECT_DIR"
-npm run build:cities
-if [ $? -ne 0 ]; then
-    echo "❌ City build failed!"
-    exit 1
+if [ "$SKIP_BUILD" = true ] && [ -d "$PROJECT_DIR/dist-cities" ]; then
+    CITY_COUNT=$(ls -d "$PROJECT_DIR/dist-cities"/*/ 2>/dev/null | wc -l | tr -d ' ')
+    echo "📦 Step 1: Skipping build (--skip-build). Found $CITY_COUNT city dirs in dist-cities/"
+    if [ "$CITY_COUNT" -lt 13 ]; then
+        echo "   ⚠️  Expected 13 cities, found $CITY_COUNT — consider rebuilding"
+    fi
+else
+    echo "📦 Step 1: Building all city sites..."
+    npm run build:cities
+    if [ $? -ne 0 ]; then
+        echo "❌ City build failed!"
+        exit 1
+    fi
+    echo "✅ All 13 city sites built"
 fi
-echo "✅ All 13 city sites built"
 
 # Step 2: Deploy each city
 echo ""
@@ -116,19 +139,23 @@ EXPECT_SCRIPT
 done
 echo "   ✅ Permissions set for all cities"
 
-# Step 4: Purge Cloudflare cache
+# Step 4: Purge Cloudflare cache (Bearer token auth)
 echo ""
 echo "🌐 Step 4: Purging Cloudflare cache..."
-CF_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
-  -H "X-Auth-Email: $CF_EMAIL" \
-  -H "X-Auth-Key: $CF_KEY" \
-  -H "Content-Type: application/json" \
-  --data '{"purge_everything":true}')
+if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+    CF_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+      -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+      -H "Content-Type: application/json" \
+      --data '{"purge_everything":true}')
 
-if echo "$CF_RESPONSE" | grep -q '"success":true'; then
-    echo "   ✅ Cache purged"
+    if echo "$CF_RESPONSE" | tr -d ' \n' | grep -q '"success":true'; then
+        echo "   ✅ Cache purged"
+    else
+        echo "   ⚠️ Cache purge failed. Response: $CF_RESPONSE"
+    fi
 else
-    echo "   ⚠️ Cache purge may have failed"
+    echo "   ⚠️ CLOUDFLARE_API_TOKEN not set — skipping cache purge"
+    echo "   Set it in your environment or run: export CLOUDFLARE_API_TOKEN=<token>"
 fi
 
 # Step 5: Verify a sample city
