@@ -1,0 +1,47 @@
+# Gitleaks configuration for flood-doctor
+# Prevents secrets from being committed to the repository
+
+title = "Flood Doctor Secret Scanning"
+
+[extend]
+useDefault = true
+
+# Custom rules for project-specific patterns
+[[rules]]
+id = "cloudflare-global-api-key"
+description = "Cloudflare Global API Key"
+regex = '''X-Auth-Key:\s*[a-f0-9]{37}'''
+keywords = ["x-auth-key"]
+
+[[rules]]
+id = "hardcoded-password-literal"
+description = "Hardcoded password literal in variable assignment"
+regex = '''(?i)(SFTP_PASS|SSH_KEY_PASS|SSH_PASS|SSHPASS|DB_PASS|DB_PASSWORD)\s*=\s*["'][A-Za-z0-9!@#$%^&*()]{8,}["']'''
+keywords = ["sftp_pass", "ssh_key_pass", "ssh_pass", "sshpass", "db_pass", "db_password"]
+
+[[rules]]
+id = "bearer-token-header"
+description = "Bearer token in Authorization header"
+regex = '''Authorization:\s*Bearer\s+[A-Za-z0-9_\-\.]{20,}'''
+keywords = ["bearer"]
+
+# Allowlists — known safe values
+[allowlist]
+description = "Global allowlist"
+
+# Cloudflare Zone IDs are not secrets (they're public identifiers)
+regexes = [
+  '''7b3b2f087429c5c3e9688253d8df11eb''',
+]
+
+# Files that should never be scanned
+paths = [
+  '''node_modules/''',
+  '''dist/''',
+  '''dist-city/''',
+  '''dist-cities/''',
+  '''\.firecrawl/''',
+  '''package-lock\.json''',
+  '''\.claude/''',
+  '''tools/snapshots/''',
+]
