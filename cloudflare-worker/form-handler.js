@@ -6,6 +6,17 @@
  * Deploy: wrangler deploy
  */
 
+// Escape HTML to prevent XSS in email content
+function esc(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export default {
   async fetch(request, env) {
     const RESEND_API_KEY = env.RESEND_API_KEY;
@@ -79,15 +90,15 @@ export default {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; color: #6b7280; width: 120px;">Name:</td>
-                <td style="padding: 8px 0; font-weight: bold;">${data.name}</td>
+                <td style="padding: 8px 0; font-weight: bold;">${esc(data.name)}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Phone:</td>
-                <td style="padding: 8px 0;"><a href="tel:${data.phone}" style="color: #1a73e8; font-weight: bold; font-size: 18px;">${data.phone}</a></td>
+                <td style="padding: 8px 0;"><a href="tel:${esc(data.phone)}" style="color: #1a73e8; font-weight: bold; font-size: 18px;">${esc(data.phone)}</a></td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Email:</td>
-                <td style="padding: 8px 0;">${data.email || 'Not provided'}</td>
+                <td style="padding: 8px 0;">${esc(data.email) || 'Not provided'}</td>
               </tr>
             </table>
           </div>
@@ -97,23 +108,23 @@ export default {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; color: #6b7280; width: 120px;">Service:</td>
-                <td style="padding: 8px 0;">${(data.serviceType || 'Not specified').replace('-', ' ')}</td>
+                <td style="padding: 8px 0;">${esc((data.serviceType || 'Not specified').replace('-', ' '))}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Property:</td>
-                <td style="padding: 8px 0;">${data.propertyType || 'Not specified'}</td>
+                <td style="padding: 8px 0;">${esc(data.propertyType) || 'Not specified'}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Urgency:</td>
-                <td style="padding: 8px 0; ${data.urgency === 'emergency' ? 'color: #dc2626; font-weight: bold;' : ''}">${data.urgency || 'Standard'}</td>
+                <td style="padding: 8px 0; ${data.urgency === 'emergency' ? 'color: #dc2626; font-weight: bold;' : ''}">${esc(data.urgency) || 'Standard'}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Address:</td>
-                <td style="padding: 8px 0;">${data.address || 'Not provided'}${data.city ? ', ' + data.city : ''}${data.zip ? ' ' + data.zip : ''}</td>
+                <td style="padding: 8px 0;">${esc(data.address) || 'Not provided'}${data.city ? ', ' + esc(data.city) : ''}${data.zip ? ' ' + esc(data.zip) : ''}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #6b7280;">Insurance:</td>
-                <td style="padding: 8px 0;">${data.insurance || 'Not specified'}</td>
+                <td style="padding: 8px 0;">${esc(data.insurance) || 'Not specified'}</td>
               </tr>
             </table>
           </div>
@@ -121,13 +132,13 @@ export default {
           ${data.message ? `
           <div style="background: #fffbeb; padding: 20px; border: 1px solid #e5e7eb; border-top: none;">
             <h3 style="margin-top: 0; color: #374151;">Customer Message</h3>
-            <p style="margin: 0; color: #4b5563;">${data.message}</p>
+            <p style="margin: 0; color: #4b5563;">${esc(data.message)}</p>
           </div>
           ` : ''}
 
           <div style="background: #f3f4f6; padding: 15px 20px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px; font-size: 12px; color: #6b7280;">
             <p style="margin: 0;">Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}</p>
-            <p style="margin: 5px 0 0 0;">Source: ${data.sourceUrl || 'flood.doctor'}</p>
+            <p style="margin: 5px 0 0 0;">Source: ${esc(data.sourceUrl) || 'flood.doctor'}</p>
           </div>
         </div>
       `;
@@ -142,7 +153,7 @@ export default {
         body: JSON.stringify({
           from: 'Flood Doctor <noreply@mail.flood.doctor>',
           to: ['help@flood.doctor'],
-          subject: `${urgencyEmoji} Service Request - ${data.name} (${data.phone})`,
+          subject: `${urgencyEmoji} Service Request - ${esc(data.name)} (${esc(data.phone)})`,
           html: emailHtml,
         }),
       });
