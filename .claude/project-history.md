@@ -28,6 +28,31 @@
 
 ## Completed Work
 
+### 2026-02-19: Production Deployment + City Build Pipeline Fix (Full 8-Service Matrix)
+
+**Production Deployment:**
+- Deployed main site (dist/) via rsync to GoDaddy — 189/189 routes
+- Deployed 13 city subdomains (dist-cities/) — all succeeded
+- Cloudflare cache purge — Bearer token auth (Global API Key no longer works)
+- Smoke tests: homepage 200, sitemaps valid (189 entries), 404 check correct, canonical tags present
+- Discovered only 4 of 8 services built per city — triggered P0 investigation
+
+**P0 City Build Pipeline — Root Cause Analysis:**
+1. `herndon/sewage-cleanup.ts` line 91: unterminated string literal (`""` extra quote) — blocked entire city Vite build for some service combinations
+2. `ServicePageRenderer` crashed on content files with variant schemas — accessing `content.localChallenges.headline` on undefined killed the component before `__PRERENDER_READY__` could fire
+3. Alexandria/Tysons old-format content (`heroSection`/`introduction` schema) incompatible with ServicePageRenderer
+
+**Fixes Applied** (commit `773be20`):
+- Fixed herndon/sewage-cleanup.ts syntax error
+- Added defensive null checks to ServicePageRenderer (localChallenges, equipmentSection, faqSection all optional)
+- Added `isRenderable` guard in CityServiceDetail — old-format content falls through to generic ServiceDetail template
+- Added retry mechanism in prerender.ts (sequential retry with fresh browser context for failed routes)
+- Reduced prerender concurrency 5→3, increased timeout 45s→90s
+
+**Result:** 436/436 city routes prerender successfully. 13 cities × 8 services = 104 service pages.
+
+**Cloudflare Auth Note:** Global API Key auth (`X-Auth-Email` + `X-Auth-Key`) returns auth error. Must use Bearer token: `Authorization: Bearer $CLOUDFLARE_API_TOKEN` from credentials.local.
+
 ### 2026-02-18: CityLift P4.2 — Accuracy Correction + Word Ceiling + Canonical Fix — Complete
 
 **What:** Phase lock validation audit revealed 3 issues requiring correction before declaring CityLift content matrix stable.
@@ -1570,5 +1595,59 @@ We have 80+ neighborhood content files ready to render.
 - `2c66106` — CityLift P6 — closeout docs + state freeze
 
 **Status:** CityLift Phase 1 CLOSED. Production deployment is next action.
+
+---
+
+## 2026-02-20: Security P0 — Secret Scanning & Credential Hardening
+
+### Problem
+Deploy scripts had hardcoded Cloudflare Global API Key in git history. Resend API key hardcoded in `cloudflare-worker/form-handler.js`. No automated secret scanning on either repo. Form handler vulnerable to HTML injection via user-supplied inputs.
+
+### Work Done
+
+**Gitleaks Secret Scanning (both repos):**
+- Installed gitleaks 8.30.0 via Homebrew
+- Created `.gitleaks.toml` with custom rules (CF Global API Key, hardcoded passwords, Bearer tokens) + allowlists (CF Zone IDs, tools/snapshots/, node_modules/)
+- Added pre-commit hooks to both `fd-google-redesign` and `Mission-Control-APP`
+- Added GitHub Actions CI workflow (`.github/workflows/gitleaks.yml`) to both repos
+- Tested: inject dummy secret → detected → removed → clean pass
+
+**Resend API Key (Cloudflare Worker):**
+- Removed hardcoded key from `form-handler.js`
+- Now reads from `env.RESEND_API_KEY` (Cloudflare Worker secret binding)
+- Added 500 guard if binding missing
+- Rotated key in Resend dashboard (sending-only, scoped to `mail.flood.doctor`)
+- Set new key via `wrangler secret put RESEND_API_KEY`
+- Deployed and smoke tested
+
+**Input Sanitization:**
+- Added `esc()` HTML escape function to form-handler.js
+- All user inputs (name, phone, email, serviceType, address, message, etc.) now escaped before HTML interpolation
+- Prevents XSS via malicious form submissions rendered in email
+
+**Credential Rotations:**
+- Resend API key: rotated (old deleted from dashboard)
+- Cloudflare API token: rotated by user (day prior)
+- GoDaddy SSH password: rotated
+- All updated in `~/.claude/credentials.local`
+
+**Mission-Control-APP .gitignore:**
+- Added `*.save` pattern (`.env.save` files were not covered)
+- All env/secret files confirmed untracked
+
+**Skipped:**
+- GITLEAKS_LICENSE GitHub secret ($100/yr, works without it)
+- Branch protection on main (user prefers direct-push workflow)
+
+### Commits
+- `4670a34` — Gitleaks secret scanning (hooks + CI) [fd-google-redesign]
+- `602f91f` — Move Resend key to Worker env binding [fd-google-redesign]
+- `c0b819d` — Sanitize form inputs to prevent HTML injection [fd-google-redesign]
+- `4d515c1` — Add gitleaks scanning + fix .gitignore gaps [Mission-Control-APP]
+
+### Key Decisions
+- **Gitleaks over git-secrets:** Better pattern matching, active maintenance, GitHub Action available
+- **No git history rewrite:** Repo is private, secrets already rotated — rewrite risk not worth it
+- **Admin bypass skipped for branch protection:** User pushes directly to main, protection would slow workflow
 
 ---
