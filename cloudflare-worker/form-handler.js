@@ -6,10 +6,25 @@
  * Deploy: wrangler deploy
  */
 
-const RESEND_API_KEY = 're_eVGHfA1T_Pu94b7EQyAzPDiDDpeoxnxYc';
-
 export default {
   async fetch(request, env) {
+    const RESEND_API_KEY = env.RESEND_API_KEY;
+
+    // Guard: fail fast if secret binding is missing
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY env binding is not configured');
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Service configuration error'
+      }), {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
+    }
+
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, {
