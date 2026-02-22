@@ -32,11 +32,9 @@ Last updated: 2026-02-21
 - **Done**: Removed 52-line hardcoded LocalBusiness `<script>` from `index.html`. All pages now have exactly 1 ld+json block (PageMeta-managed).
 - **Commit**: `662c26c`
 
-### 4. Cost Calculator
-- **Goal**: Interactive water damage cost estimation tool using actual price lists
-- **Success metric**: Functional calculator page at /resources/cost-calculator/ with accurate pricing
-- **Files likely touched**: pages/resources/WaterDamageCostCalculator.tsx, possibly new components
-- **Do not break**: Existing resource page structure, PageMeta patterns
+### ~~4. Cost Calculator~~ ✅ Complete (2026-02-21)
+- **Done**: Interactive calculator at /resources/cost-calculator/ with Xactimate-based pricing. Pricing extracted to typed module (`data/pricing/flood-doctor-rates.ts`). All dates data-driven from `currentPricing.lastUpdated`. 7 inputs, itemized breakdown, ±15% ranges, legal disclaimer, WebApplication+FAQPage+Breadcrumb schema, 8+ inbound links.
+- **Commits**: `000df30` (pricing extraction), next commit (date wiring + close)
 
 ### ~~5. Internal Linking Strategy (Phase 1)~~ ✅ Complete (2026-02-15)
 - **Done**: Added 2-3 contextual internal links to each of 10 priority blog posts (30 total links). All link targets verified 200. Service pages deferred (content is string-based, needs rendering refactor).

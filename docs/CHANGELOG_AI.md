@@ -4,6 +4,25 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P1 #4 Cost Calculator: Data-Driven Dates + Close Priority
+
+**Scope**: 1 edited file, 3 doc files
+
+### Changes
+- Hero badge "Updated January 2026" → derives from `currentPricing.lastUpdated`
+- H1 year "[2026]" → derives from `currentPricing.lastUpdated`
+- Comment date → updated to reference data source
+- Schema `dateModified` already wired in previous commit
+- **P1 #4 marked ✅ Complete in OPEN_PRIORITIES.md**
+
+### Verification
+- Badge: "Updated January 2026" ✅
+- H1: "Calculator [2026]" ✅
+- Schema dateModified: "2026-01-01" ✅
+- Build: 189/189 ✅
+
+---
+
 ## 2026-02-21 — P1 #4 Cost Calculator: Pricing Data Extraction
 
 **Scope**: 1 new file, 1 edited file, 2 doc files
