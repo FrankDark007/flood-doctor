@@ -42,11 +42,9 @@ Last updated: 2026-02-21
 
 ## P2 — Backlog
 
-### 6. Standard Project Package
-- **Goal**: Define template/bundle for standard restoration project deliverables
-- **Success metric**: Documented package structure with pricing tiers
-- **Files likely touched**: New pages/resources/ file
-- **Do not break**: Resource hub navigation
+### ~~6. Standard Project Package~~ ✅ Complete (2026-02-16)
+- **Done**: Resource page at /resources/standard-project-package/ with 6 service groups, 12 FAQs, Service+FAQPage+BreadcrumbList schema. Integrated into ResourcesHub as featured resource. Cross-linked from Cost Calculator FAQ.
+- **Commits**: `2577082`, `659c16f`, `a7fed9c`
 
 ### 7. Client Portal (CompanyCam + Matterport)
 - **Goal**: UI for clients to browse/download project files, photos, 3D scans
