@@ -4,6 +4,43 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P2 #8 Phase 1: Neighborhood Schema Expansion + Title Normalization
+
+**Commits**: See below
+**Scope**: 2 files modified (NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx) + 2 doc files
+
+### What Changed
+
+**Title Normalization (normalizeContent in DynamicNeighborhoodPage.tsx)**:
+- All 68 neighborhood page titles normalized to ≤45 chars before PageMeta appends " | Flood Doctor" (total ≤60)
+- Strips pipe-delimited differentiator segments (e.g., "| New Construction Specialists | Flood Doctor")
+- Standard format: "Water Damage Restoration {Neighborhood}"
+- Fallback for long names: "{Neighborhood} Water Damage"
+- 13 titles were previously >60 chars rendered; now 0
+
+**Schema Expansion (NeighborhoodPageRenderer.tsx)**:
+- Added `@graph` schema array with 4 entity types to every neighborhood page:
+  - **BreadcrumbList**: Home → {City} Water Damage → {Neighborhood}
+  - **LocalBusiness**: City-level business with Neighborhood-scoped areaServed, DPOR/IICRC credentials, 24/7 hours
+  - **Service**: Water Damage Restoration for specific neighborhood, with ServiceChannel/ContactPoint
+  - **FAQPage**: Preserved existing FAQ schema (moved into @graph)
+- Imported SITE_PHONE, SITE_INFO, CREDENTIALS, COMPANY_ADDRESS from config/constants
+- PageMeta handles @graph normalization and deduplication
+
+### Verification
+| Check | Result |
+|-------|--------|
+| Main build | 189/189 ✅ |
+| City build | 436/436 ✅ |
+| Titles ≤60 chars | 68/68 ✅ (max: 60) |
+| BreadcrumbList schema | All 68 pages ✅ |
+| LocalBusiness schema | All 68 pages ✅ |
+| Service schema | All 68 pages ✅ |
+| FAQPage schema | All 68 pages ✅ |
+| Files outside scope | 0 modified ✅ |
+
+---
+
 ## 2026-02-21 — P0 #11: Production Deployment of CityLift Changes
 
 **Scope**: 1 file modified (scripts/deploy.sh) + 13 stale files deleted from production server

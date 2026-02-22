@@ -46,6 +46,7 @@ Last updated: 2026-02-19
 
 ## Completed Work (Chronological)
 
+- **2026-02-21**: Neighborhood Phase 1 — schema expansion + title normalization across 68 neighborhood pages. All titles ≤60 chars (max: 60). Added @graph schema with BreadcrumbList, LocalBusiness, Service, FAQPage to every neighborhood page via NeighborhoodPageRenderer. Title normalization via normalizeContent() strips pipe segments and enforces standard format.
 - **2026-02-21**: Production deployment of CityLift changes — 13 stale city sitemaps deleted from production, deploy.sh updated with --delete for sitemaps dir, Cloudflare cache purged, all 189 routes verified
 - **2026-02-19**: CityLift P6 closeout — final verification, state freeze, all phases P0–P5.1 complete
 - **2026-02-19**: CityLift P5.1 — canonical meta added to 9 legacy-format service pages (5 Alexandria, 4 Tysons); audit artifacts gitignored

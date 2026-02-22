@@ -22,6 +22,8 @@ import {
   ProcessTimeline
 } from '../graphics';
 import { getArchetype, type Archetype } from '../../config/archetypeMapping';
+import { SITE_PHONE, SITE_INFO, CREDENTIALS, COMPANY_ADDRESS } from '../../config/constants';
+import { siteConfig } from '../../config/site';
 
 // NeighborhoodPageContent interface matches src/content/cities/{city}/neighborhoods/*.ts
 export interface NeighborhoodPageContent {
@@ -120,26 +122,97 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
     ? breadcrumbItems[breadcrumbItems.length - 1]?.label || ''
     : '';
 
-  // Generate FAQ schema
-  const faqSchema = faqItems.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  } : undefined;
+  // Build @graph schema array: BreadcrumbList + LocalBusiness + Service + FAQPage
+  const schemaGraph: Record<string, any>[] = [];
+
+  // 1. BreadcrumbList — Home → City → Neighborhood
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.SITE_URL },
+      { '@type': 'ListItem', position: 2, name: `${cityName} Water Damage`, item: `https://${citySlug}.flood.doctor/` },
+      ...(neighborhoodLabel ? [{
+        '@type': 'ListItem',
+        position: 3,
+        name: neighborhoodLabel,
+        item: `https://${citySlug}.flood.doctor/neighborhoods/${breadcrumbItems[breadcrumbItems.length - 1]?.url?.split('/').filter(Boolean).pop() || ''}/`,
+      }] : []),
+    ],
+  };
+  schemaGraph.push(breadcrumbSchema);
+
+  // 2. LocalBusiness — city-level business with neighborhood areaServed
+  schemaGraph.push({
+    '@type': 'LocalBusiness',
+    '@id': `${siteConfig.SITE_URL}/#local-business-${citySlug}`,
+    name: `${SITE_INFO.name} - ${cityName}`,
+    description: `24/7 emergency water damage restoration in ${neighborhoodLabel}, ${cityName}, VA. Fast response, IICRC certified, direct insurance billing.`,
+    url: `https://${citySlug}.flood.doctor/`,
+    telephone: phone,
+    priceRange: '$$',
+    image: `${siteConfig.SITE_URL}/og-image.jpg`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: COMPANY_ADDRESS.street,
+      addressLocality: COMPANY_ADDRESS.locality,
+      addressRegion: COMPANY_ADDRESS.region,
+      postalCode: COMPANY_ADDRESS.postalCode,
+      addressCountry: 'US',
+    },
+    areaServed: {
+      '@type': 'Neighborhood',
+      name: neighborhoodLabel,
+      containedInPlace: { '@type': 'City', name: cityName, containedInPlace: { '@type': 'State', name: 'Virginia' } },
+    },
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    }],
+    hasCredential: [
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Professional License', name: CREDENTIALS.dpor.display },
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Professional Certification', name: CREDENTIALS.iicrc.display },
+    ],
+    parentOrganization: { '@id': `${siteConfig.SITE_URL}/#organization` },
+  });
+
+  // 3. Service — Water Damage Restoration for this neighborhood
+  schemaGraph.push({
+    '@type': 'Service',
+    serviceType: 'Water Damage Restoration',
+    name: `Water Damage Restoration in ${neighborhoodLabel}, ${cityName}`,
+    description: content.meta?.description || `Professional water damage restoration services in ${neighborhoodLabel}, ${cityName}, Virginia.`,
+    provider: { '@id': `${siteConfig.SITE_URL}/#local-business-${citySlug}` },
+    areaServed: {
+      '@type': 'Neighborhood',
+      name: neighborhoodLabel,
+      containedInPlace: { '@type': 'City', name: cityName },
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      servicePhone: { '@type': 'ContactPoint', telephone: phone, contactType: 'emergency' },
+    },
+  });
+
+  // 4. FAQPage — preserve existing FAQ schema
+  if (faqItems.length > 0) {
+    schemaGraph.push({
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    });
+  }
 
   return (
     <main className="flex-grow bg-white">
       <PageMeta
         title={content.meta?.title || ''}
         description={content.meta?.description || ''}
-        structuredData={faqSchema}
+        schema={schemaGraph}
       />
 
       {/* Breadcrumbs */}

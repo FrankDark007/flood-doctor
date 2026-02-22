@@ -251,10 +251,21 @@ function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string):
 
   // Extract meta
   const meta = raw.meta || {
-    title: raw.heroH1 || `Water Damage Restoration ${neighborhoodLabel} | Flood Doctor`,
+    title: raw.heroH1 || `Water Damage Restoration ${neighborhoodLabel}`,
     description: raw.heroP || raw.searchDescription || raw.heroSection?.description || raw.heroSection?.tagline || '',
     canonical: '',
   };
+
+  // Normalize title: strip " | Flood Doctor" and differentiator pipes (PageMeta appends brand)
+  // Target: ≤ 45 chars so rendered title ≤ 60 with " | Flood Doctor" suffix
+  let normalizedTitle = (meta.title || '').replace(/\s*\|.*$/g, '').trim();
+  if (!normalizedTitle || normalizedTitle.length > 45) {
+    normalizedTitle = `Water Damage Restoration ${neighborhoodLabel}`;
+  }
+  if (normalizedTitle.length > 45) {
+    normalizedTitle = `${neighborhoodLabel} Water Damage`;
+  }
+  meta.title = normalizedTitle;
 
   // Extract h1
   const h1 = raw.h1 || raw.heroH1 || raw.heroSection?.neighborhood
