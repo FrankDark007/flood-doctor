@@ -4,6 +4,14 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-22 — Go-Live Closeout
+
+- Tags pushed: `go_live_2026-02-21`, `rollback_anchor_2026-02-21` (on `daa9b86`)
+- PROD_HEAD recorded in PROJECT_STATE.md
+- Rollback command documented
+
+---
+
 ## 2026-02-22 — Go-Live Deployment Verification
 
 **Deployed**: HEAD `daa9b86` on main

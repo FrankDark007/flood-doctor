@@ -19,6 +19,9 @@ Last updated: 2026-02-22
   - Fake service (subdomain): 301 → 404
   - City pages (3 sampled): all 200, canonicals match
   - Neighborhood pages (3 sampled): all 200, canonicals match
+- **PROD_HEAD**: `daa9b86` (2026-02-21 11:27 PM EST)
+- **Tags**: `go_live_2026-02-21`, `rollback_anchor_2026-02-21`
+- **Rollback**: `git reset --hard rollback_anchor_2026-02-21` + redeploy
 
 ## Architecture
 
