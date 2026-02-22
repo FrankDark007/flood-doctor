@@ -82,11 +82,18 @@ export interface NeighborhoodPageContent {
   }>;
 }
 
+interface SiblingNeighborhood {
+  slug: string;
+  label: string;
+}
+
 interface NeighborhoodPageRendererProps {
   content: NeighborhoodPageContent;
   cityName: string;
   citySlug: string;
   phone: string;
+  neighborhoodSlug: string;
+  siblingNeighborhoods: SiblingNeighborhood[];
 }
 
 // Map archetype to AnimatedHeroBackground variant
@@ -97,11 +104,21 @@ const archetypeToHeroVariant: Record<Archetype, 'estate' | 'historic' | 'urban' 
   suburban: 'suburban'
 };
 
+// Related services available on all city subdomains
+const RELATED_SERVICES = [
+  { label: 'Water Damage Restoration', path: '/services/residential/restoration-services/water-damage-restoration/' },
+  { label: 'Mold Remediation', path: '/services/residential/cleanup-services/mold-remediation/' },
+  { label: 'Sewage Cleanup', path: '/services/residential/cleanup-services/sewage-cleanup/' },
+  { label: 'Basement Flooding', path: '/services/residential/specialty-services/basement-flooding/' },
+];
+
 const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
   content,
   cityName,
   citySlug,
-  phone
+  phone,
+  neighborhoodSlug,
+  siblingNeighborhoods,
 }) => {
   // Get archetype for this city to use appropriate visual variants
   const archetype = getArchetype(citySlug);
@@ -296,6 +313,9 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
       {/* Neighborhood Intro */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+          <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-normal tracking-[-0.5px] text-[#202124] mb-12">
+            Water Damage Restoration in {neighborhoodLabel}
+          </h2>
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <div className="prose prose-lg max-w-none">
@@ -435,6 +455,28 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 lg:py-20 bg-white border-t border-[#dadce0]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+          <h2 className="text-[24px] sm:text-[28px] font-normal tracking-[-0.5px] text-[#202124] mb-8">
+            Water Damage Services in {cityName}
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-4">
+            {RELATED_SERVICES.map((svc) => (
+              <li key={svc.path}>
+                <Link
+                  to={svc.path}
+                  className="text-[16px] text-[#1a73e8] hover:underline inline-flex items-center gap-2"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  {svc.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Testimonials */}
       {testimonials.length > 0 && (
         <section className="py-20 lg:py-24 bg-white">
@@ -514,6 +556,29 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      )}
+
+      {/* Nearby Neighborhoods */}
+      {siblingNeighborhoods.length > 0 && (
+      <section className="py-16 lg:py-20 bg-[#f8f9fa] border-t border-[#dadce0]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-[72px]">
+          <h2 className="text-[24px] sm:text-[28px] font-normal tracking-[-0.5px] text-[#202124] mb-8">
+            Nearby Neighborhoods in {cityName}
+          </h2>
+          <ul className="flex flex-wrap gap-x-8 gap-y-3">
+            {siblingNeighborhoods.slice(0, 3).map((n) => (
+              <li key={n.slug}>
+                <Link
+                  to={`/neighborhoods/${n.slug}/`}
+                  className="text-[16px] text-[#1a73e8] hover:underline"
+                >
+                  {n.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       )}

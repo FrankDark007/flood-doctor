@@ -456,12 +456,25 @@ const DynamicNeighborhoodPage: React.FC = () => {
   // Normalize content from any of the 4+ content formats
   const content = normalizeContent(rawContent, cityInfo.name, neighborhood || '');
 
+  // Compute sibling neighborhoods (same city, exclude current)
+  const siblingNeighborhoods = useMemo(() => {
+    if (!city || !neighborhood || !contentRegistry[city]) return [];
+    return Object.keys(contentRegistry[city])
+      .filter((slug) => slug !== neighborhood)
+      .map((slug) => ({
+        slug,
+        label: slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+      }));
+  }, [city, neighborhood]);
+
   return (
     <NeighborhoodPageRenderer
       content={content}
       cityName={cityInfo.name}
       citySlug={city || ''}
       phone={cityInfo.phone}
+      neighborhoodSlug={neighborhood || ''}
+      siblingNeighborhoods={siblingNeighborhoods}
     />
   );
 };

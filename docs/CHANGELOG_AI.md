@@ -4,6 +4,48 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P2 #8 Phase 2: Internal Linking + Semantic Hierarchy
+
+**Scope**: 2 files modified (NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx) + 2 doc files
+
+### What Changed
+
+**Intro Heading (NeighborhoodPageRenderer.tsx)**:
+- Added `<h2>Water Damage Restoration in {Neighborhood}</h2>` after hero, before intro content
+- Establishes correct semantic hierarchy: H1 (hero) → H2 (intro) → H2 (services) etc.
+
+**Related Services Block (NeighborhoodPageRenderer.tsx)**:
+- New section after Services Grid with heading "Water Damage Services in {City}"
+- 4 contextual links to city service detail pages using canonical nested paths:
+  - Water Damage Restoration, Mold Remediation, Sewage Cleanup, Basement Flooding
+- Links use existing text styling (blue, underline on hover)
+
+**Nearby Neighborhoods Block (NeighborhoodPageRenderer.tsx)**:
+- New section before Final CTA with heading "Nearby Neighborhoods in {City}"
+- Dynamically populated from contentRegistry with 2-3 sibling neighborhood links
+- Excludes current neighborhood automatically
+- Standard text links (no buttons)
+
+**Props Extended (NeighborhoodPageRenderer.tsx + DynamicNeighborhoodPage.tsx)**:
+- Added `neighborhoodSlug` and `siblingNeighborhoods` props to renderer
+- DynamicNeighborhoodPage computes siblings from contentRegistry via useMemo
+
+### Verification
+| Check | Result |
+|-------|--------|
+| Main build | 189/189 ✅ |
+| City build | 436/436 ✅ |
+| Body links (lorton/laurel-hill) | 139 ✅ |
+| Body links (arlington/ballston) | 140 ✅ |
+| Body links (vienna/clarks-crossing) | 139 ✅ |
+| H2 intro heading | All 68 pages ✅ |
+| Related Services block | All 68 pages ✅ |
+| Nearby Neighborhoods block | All 68 pages ✅ |
+| Schema intact | BreadcrumbList, LocalBusiness, Service, FAQPage ✅ |
+| Files outside scope | 0 modified ✅ |
+
+---
+
 ## 2026-02-21 — P2 #8 Phase 1: Neighborhood Schema Expansion + Title Normalization
 
 **Commits**: See below

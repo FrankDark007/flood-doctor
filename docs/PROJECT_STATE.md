@@ -46,6 +46,7 @@ Last updated: 2026-02-19
 
 ## Completed Work (Chronological)
 
+- **2026-02-21**: Neighborhood Phase 2 — internal linking + semantic hierarchy. Added H2 intro heading, Related Services block (4 city service links), and Nearby Neighborhoods block (2-3 sibling links) to all 68 neighborhood pages via NeighborhoodPageRenderer. Props extended with neighborhoodSlug and siblingNeighborhoods.
 - **2026-02-21**: Neighborhood Phase 1 — schema expansion + title normalization across 68 neighborhood pages. All titles ≤60 chars (max: 60). Added @graph schema with BreadcrumbList, LocalBusiness, Service, FAQPage to every neighborhood page via NeighborhoodPageRenderer. Title normalization via normalizeContent() strips pipe segments and enforces standard format.
 - **2026-02-21**: Production deployment of CityLift changes — 13 stale city sitemaps deleted from production, deploy.sh updated with --delete for sitemaps dir, Cloudflare cache purged, all 189 routes verified
 - **2026-02-19**: CityLift P6 closeout — final verification, state freeze, all phases P0–P5.1 complete
