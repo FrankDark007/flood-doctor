@@ -4,6 +4,33 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P0 #11: Production Deployment of CityLift Changes
+
+**Scope**: 1 file modified (scripts/deploy.sh) + 13 stale files deleted from production server
+
+### What Changed
+- **Deleted 13 stale city sitemap XML files** from production (`~/public_html/flood.doctor/sitemaps/`): alexandria, arlington, ashburn, fairfax, fallschurch, greatfalls, herndon, lorton, mclean, reston, springfield, tysons, vienna
+- **Removed stale `sitemaps/` subdirectory** nested inside the sitemaps directory (artifact from earlier deploy)
+- **Updated `scripts/deploy.sh`** with Step 2b: dedicated rsync with `--delete` flag scoped to `sitemaps/` directory only — prevents stale sitemap accumulation on future deploys without risking deletion of other production files
+- **Fixed expect script** in Step 2b to handle SSH key auth (no password prompt) gracefully via `exp_continue`
+- **Fixed production permissions** (chmod 755/644) after rsync changed file modes
+
+### Verification
+| Check | Result |
+|-------|--------|
+| Homepage | 200 ✅ |
+| sitemap-index.xml | 200 ✅ |
+| sitemap-main.xml | 200 ✅ |
+| reston.flood.doctor sitemap | 200 ✅ |
+| 10 smoke test URLs (following redirects) | All 200 ✅ |
+| 13 stale city sitemaps on flood.doctor | All 404 ✅ |
+| Fake route (main domain) | 404 ✅ |
+| Fake route (city subdomain) | 301→404 ✅ |
+| Canonical spot-check (3 city pages) | All correct nested paths ✅ |
+| Cloudflare cache purge | success: true ✅ |
+
+---
+
 ## 2026-02-19 — CityLift P5.1: Legacy Canonical Gap + Audit Artifact Cleanup
 
 **Commits**: `4053cf2`, `aa7a6b1`

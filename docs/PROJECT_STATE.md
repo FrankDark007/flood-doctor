@@ -28,7 +28,7 @@ Last updated: 2026-02-19
 - **Broken internal links**: 0
 - **Build time**: ~12 seconds
 - **Canonical status**: All 105 city service pages aligned to nested served paths (0 flat-path, 0 missing)
-- **Sitemap status**: Single generator (build-cities.ts) for city sitemaps; legacy flat-slug generator removed
+- **Sitemap status**: Single generator (build-cities.ts) for city sitemaps; legacy flat-slug generator removed; 13 stale city sitemaps purged from production (2026-02-21)
 - **Content similarity**: Geo-normalized bigram, max cluster avg ~16.5% (water-damage), 0 pairs >50%
 
 ## Route Breakdown
@@ -46,6 +46,7 @@ Last updated: 2026-02-19
 
 ## Completed Work (Chronological)
 
+- **2026-02-21**: Production deployment of CityLift changes — 13 stale city sitemaps deleted from production, deploy.sh updated with --delete for sitemaps dir, Cloudflare cache purged, all 189 routes verified
 - **2026-02-19**: CityLift P6 closeout — final verification, state freeze, all phases P0–P5.1 complete
 - **2026-02-19**: CityLift P5.1 — canonical meta added to 9 legacy-format service pages (5 Alexandria, 4 Tysons); audit artifacts gitignored
 - **2026-02-18**: CityLift P5 — 87 canonical URLs fixed to nested paths, legacy city sitemaps removed (13 stale XMLs), generate-sitemaps.ts cleaned to main-site-only

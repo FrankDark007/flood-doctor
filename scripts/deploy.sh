@@ -70,6 +70,27 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ All files uploaded via rsync"
 
+# Step 2b: Sync sitemaps with --delete to remove stale files
+echo ""
+echo "🗺️  Step 2b: Syncing sitemaps (with --delete to remove stale files)..."
+expect << EXPECT_SCRIPT
+set timeout 60
+spawn rsync -avz --delete --progress -e "ssh -o StrictHostKeyChecking=no" dist/sitemaps/ $SSH_USER@$SSH_HOST:${REMOTE_PATH}sitemaps/
+expect {
+    "password:" { send "$SSH_PASS\r"; exp_continue }
+    "total size" { exit 0 }
+    "Permission denied" { exit 1 }
+    timeout { exit 1 }
+    eof
+}
+EXPECT_SCRIPT
+
+if [ $? -ne 0 ]; then
+    echo "❌ Sitemap sync failed!"
+    exit 1
+fi
+echo "✅ Sitemaps synced (stale files removed)"
+
 # Step 3: Fix permissions
 echo ""
 echo "🔐 Step 3: Setting permissions..."
