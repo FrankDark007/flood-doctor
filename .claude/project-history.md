@@ -1692,3 +1692,34 @@ Deploy scripts had hardcoded Cloudflare Global API Key in git history. Resend AP
 - **Admin bypass skipped for branch protection:** User pushes directly to main, protection would slow workflow
 
 ---
+
+## 2026-02-21 — Session: P1 #4 Close + P2 #9 Blog Expansion Batch 1
+
+### P1 #4 Cost Calculator — CLOSED
+- Extracted pricing from inline 70-line object → `data/pricing/flood-doctor-rates.ts`
+- Created `FloodDoctorPricing` TypeScript interface + `currentPricing` export
+- Wired hero badge, H1 year stamp, schema dateModified to `currentPricing.lastUpdated`
+- Zero UI/layout changes, identical calculator outputs confirmed
+- Commits: `000df30`, `359769c`
+
+### P2 #6 Standard Project Package — Marked ✅
+- Was already built 2026-02-16 but not marked complete in OPEN_PRIORITIES
+- Commit: `cb8ef96`
+
+### P2 #9 Blog Expansion Batch 1 (3 of 12 posts)
+- Gap analysis: clustered 45 existing posts into 11 buckets, identified 12 missing topics
+- Created 12-post queue with titles, slugs, internal link maps
+- Wrote batch 1 (3 posts) via parallel agents:
+  - `toilet-overflow-cleanup-guide` — Emergency, ~2200 words, 7 FAQs
+  - `flood-insurance-nfip-virginia` — Insurance/NFIP, ~2300 words, 7 FAQs
+  - `filing-water-damage-insurance-claim` — Insurance/Claims, ~2400 words, 7 FAQs
+- All: Gold Standard styling, generateBlogArticleSchema, MidArticleCTA, 3 internal links out
+- Build: 192/192 routes (was 189)
+- Commit: `ff4fb38`
+
+### Remaining Work
+- 9 more posts (batches 2-4, 3 posts each)
+- Inbound link wiring (~24 edits to existing posts)
+- Full queue saved in `.claude/session.md`
+
+---

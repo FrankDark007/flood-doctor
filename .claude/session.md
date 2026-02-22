@@ -1,65 +1,73 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-21 (late evening)
 
 ---
 
 ## 🟢 COMPLETE THIS SESSION
 
-### P2 #8: Neighborhood Page Redesign — ALL 4 PHASES COMPLETE ✅
+### P1 #4: Cost Calculator ✅ CLOSED
+- Pricing extracted to typed module: `data/pricing/flood-doctor-rates.ts`
+- All dates data-driven from `currentPricing.lastUpdated`
+- Schema dateModified wired
+- Commits: `000df30`, `359769c`
 
-**Phase 1** (`52470ca`): Schema expansion + title normalization
-- @graph schema (BreadcrumbList, LocalBusiness, Service, FAQPage) on all 68 pages
-- Title normalization ≤60 chars via normalizeContent()
+### P2 #6: Standard Project Package ✅ CLOSED (was already done, marked complete)
+- Commit: `cb8ef96`
 
-**Phase 2** (`f1f5e2a`): Internal linking + semantic hierarchy
-- H2 intro heading after hero
-- Related Services block (4 city service links)
-- Nearby Neighborhoods block (2-3 sibling links)
-- New props: neighborhoodSlug, siblingNeighborhoods
-
-**Phase 3** (`63584dc`): Normalization hardening
-- Format C services.servicesList[].features → folded into descriptions
-- Format C intro.paragraphs + hero.* → mapped to renderer fields
-- buildingTypesSection → subdivisions + commonIssues
-- FAQ fallback: 6 standard questions when content file has none
-- 5 content formats (A, A-urban, B, C, D) all normalized
-
-**Phase 4** (`ab4cd55`): QA sweep + close
-- Enhanced validator (8 checks): title, H1, link blocks, schema, word count, canonical, breadcrumb path, related service links
-- 68/68 unique titles, 68/68 unique H1s, 0 canonical mismatches, 0 broken links
-- P2 #8 marked ✅ in OPEN_PRIORITIES.md
-
-**NOT deployed to production yet** — 4 commits ahead of last deploy
+### P2 #9: Blog Expansion Batch 1 ✅ (3 of 12 posts)
+- `toilet-overflow-cleanup-guide` (Emergency)
+- `flood-insurance-nfip-virginia` (Insurance/NFIP)
+- `filing-water-damage-insurance-claim` (Insurance/Claims)
+- Commit: `ff4fb38`
+- Build: 192/192
 
 ---
 
-## 🟡 NEXT: P1 #4 — Cost Calculator
+## 🟡 NEXT: P2 #9 Blog Expansion — Batches 2-4 (9 remaining posts)
 
-**Status:** Page exists at `/resources/cost-calculator/` — was audited + fixed in a prior session (schema, a11y, disclaimer, links). OPEN_PRIORITIES still lists it as open with goal "Interactive water damage cost estimation tool using actual price lists."
+### 12-Post Queue (✅ = done, ○ = pending)
 
-### Audit Plan (do before implementing)
-- Read `pages/resources/WaterDamageCostCalculator.tsx` — assess current state vs. goal
-- Check if actual Flood Doctor price lists exist in repo
-- Verify PageMeta, schema, mobile responsiveness
-- Determine what "actual price lists" means — static ranges or dynamic data from Frank
+| # | Slug | Title | Category | Status |
+|---|------|-------|----------|--------|
+| 1 | `toilet-overflow-cleanup-guide` | Toilet Overflow Cleanup: Steps & Safety | Emergency | ✅ |
+| 2 | `flood-insurance-nfip-virginia` | Flood Insurance in Virginia: NFIP Guide | Insurance | ✅ |
+| 3 | `filing-water-damage-insurance-claim` | Filing a Water Damage Insurance Claim | Insurance | ✅ |
+| 4 | `diy-vs-professional-water-damage` | DIY vs Professional Water Damage Cleanup | Process | ○ |
+| 5 | `how-long-run-dehumidifier-after-water-damage` | How Long to Run a Dehumidifier After Leak | Process | ○ |
+| 6 | `spring-storm-flooding-virginia` | Spring Storm Flooding in Virginia | Emergency | ○ |
+| 7 | `what-to-expect-water-damage-restoration` | What to Expect During Water Restoration | Process | ○ |
+| 8 | `how-to-choose-restoration-company` | How to Choose a Restoration Company | Process | ○ |
+| 9 | `water-damage-categories-explained` | Water Damage Categories 1 2 3 Explained | Education | ○ |
+| 10 | `water-damage-home-value-impact` | Water Damage Impact on Home Value | Real Estate | ○ |
+| 11 | `garage-water-damage-guide` | Garage Water Damage: Causes & Solutions | Water Damage | ○ |
+| 12 | `saving-documents-photos-after-flooding` | Saving Documents & Photos After Flooding | Restoration | ○ |
 
-### Implementation Plan
-- Interactive form: service type → area size → damage severity → estimated range
-- Legal: "estimates only" disclaimer (BUSINESS rule: ranges, never exact)
-- Schema: WebApplication or HowTo
-- Internal links: 3-5 inbound from blog/service pages
-- A11y: ARIA labels, keyboard nav, focus management
+### Per-Post Internal Link Map (for next session)
 
-### Verification Gates
-1. Renders at `/resources/cost-calculator/` with no errors
-2. Produces range estimates (not exact figures)
-3. Legal disclaimer visible
-4. Schema validates
-5. Title ≤60, unique H1, canonical correct
-6. Mobile 375px functional
-7. Build 189/189
-8. ≥3 inbound links
+| # | Slug | Link OUT (3 existing routes) | Link IN (2 existing to edit) |
+|---|------|------------------------------|------------------------------|
+| 4 | `diy-vs-professional-water-damage` | `/blog/professional-drying-dehumidification/`, `/resources/choosing-restoration-company/`, `/blog/mold-growth-after-water-damage-timeline/` | `hidden-water-damage-signs`, `water-damage-restoration-timeline` |
+| 5 | `how-long-run-dehumidifier-after-water-damage` | `/blog/professional-drying-dehumidification/`, `/resources/structural-drying-guide/`, `/blog/wet-carpet-water-damage/` | `professional-drying-dehumidification`, `basement-flooding-guide` |
+| 6 | `spring-storm-flooding-virginia` | `/blog/roof-leak-water-damage-virginia-storms/`, `/blog/sump-pump-failure-basement-flooding-nova/`, `/resources/emergency-preparedness-northern-va/` | `sump-pump-failure-basement-flooding-nova`, `roof-leak-water-damage-virginia-storms` |
+| 7 | `what-to-expect-water-damage-restoration` | `/blog/water-damage-restoration-timeline/`, `/resources/standard-project-package/`, `/blog/water-damage-restoration-cost-fairfax/` | `water-damage-restoration-timeline`, `emergency-water-damage-response-virginia` |
+| 8 | `how-to-choose-restoration-company` | `/resources/choosing-restoration-company/`, `/blog/water-damage-restoration-cost-fairfax/`, `/blog/commercial-water-damage-business-continuity/` | `water-damage-northern-virginia-guide`, `water-damage-restoration-cost-fairfax` |
+| 9 | `water-damage-categories-explained` | `/resources/water-damage-categories/`, `/blog/sewage-backup-cleanup-health-risks-virginia/`, `/blog/professional-drying-dehumidification/` | `mold-after-water-damage-virginia`, `wet-carpet-water-damage` |
+| 10 | `water-damage-home-value-impact` | `/blog/water-damage-home-selling-disclosure/`, `/blog/hidden-water-damage-signs/`, `/resources/cost-calculator/` | `water-damage-home-selling-disclosure`, `hidden-water-damage-signs` |
+| 11 | `garage-water-damage-guide` | `/blog/sump-pump-failure-basement-flooding-nova/`, `/blog/drywall-water-damage-guide/`, `/resources/home-waterproofing-guide/` | `basement-flooding-guide`, `hidden-water-damage-signs` |
+| 12 | `saving-documents-photos-after-flooding` | `/blog/water-damaged-furniture-restoration/`, `/blog/water-damaged-electronics-guide/`, `/blog/emergency-water-damage-response-virginia/` | `water-damaged-furniture-restoration`, `emergency-water-damage-response-virginia` |
+
+### Execution Pattern (proven in batch 1)
+1. Spawn 3 parallel agents — each writes one complete .tsx blog post
+2. Wire routes in `config/routes.ts`, lazy imports + Route in `App.tsx`, entries in `data/blog-articles.ts`
+3. `npm run build` — verify N/N routes
+4. Update `docs/PROJECT_STATE.md` + `docs/CHANGELOG_AI.md`
+5. Commit
+
+### After All 12 Posts
+- Add inbound links (edit 2 existing posts per new post = ~24 edits)
+- Mark P2 #9 complete in OPEN_PRIORITIES.md
+- Deploy to production
 
 ---
 
@@ -98,8 +106,8 @@ WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
 - **CDN:** Cloudflare
 - **Deploy:** `./scripts/deploy.sh <password>`
 - **Tag:** `citylift-production-stable` at `1d736af`
-- **HEAD:** `ab4cd55` on `main` (4 commits ahead of last deploy)
+- **HEAD:** `ff4fb38` on `main` (8 commits ahead of last deploy)
 
 ---
 
-*Updated: 2026-02-21 — P2 #8 complete (all 4 phases). Next: P1 #4 Cost Calculator.*
+*Updated: 2026-02-21 — P1 #4 closed, P2 #6 closed, Blog batch 1 done (3/12). Next: batches 2-4 (posts 4-12).*
