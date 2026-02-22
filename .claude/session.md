@@ -6,42 +6,60 @@
 
 ## 🟢 COMPLETE THIS SESSION
 
-### P2 #8 Phase 1: Schema + Title Normalization ✅
-- **Commit:** `52470ca` — Neighborhood Phase 1: schema expansion + title normalization
-- Added `@graph` schema to all 68 neighborhood pages via NeighborhoodPageRenderer:
-  - BreadcrumbList (Home → City → Neighborhood)
-  - LocalBusiness (city-level with neighborhood areaServed, DPOR/IICRC credentials)
-  - Service (Water Damage Restoration, neighborhood-scoped)
-  - FAQPage (preserved existing)
-- Title normalization in `normalizeContent()` (DynamicNeighborhoodPage.tsx):
-  - Strips pipe-delimited segments ("| Differentiator | Flood Doctor")
-  - Standard format: "Water Damage Restoration {Neighborhood}" (≤45 chars, rendered ≤60)
-  - 13 titles were >60 chars → now 0/68 over limit (max: 60)
-- **Builds:** 189/189 main ✅ | 436/436 cities ✅
-- **Files modified:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, PROJECT_STATE.md, CHANGELOG_AI.md
-- **NOT deployed to production yet**
+### P2 #8: Neighborhood Page Redesign — ALL 4 PHASES COMPLETE ✅
+
+**Phase 1** (`52470ca`): Schema expansion + title normalization
+- @graph schema (BreadcrumbList, LocalBusiness, Service, FAQPage) on all 68 pages
+- Title normalization ≤60 chars via normalizeContent()
+
+**Phase 2** (`f1f5e2a`): Internal linking + semantic hierarchy
+- H2 intro heading after hero
+- Related Services block (4 city service links)
+- Nearby Neighborhoods block (2-3 sibling links)
+- New props: neighborhoodSlug, siblingNeighborhoods
+
+**Phase 3** (`63584dc`): Normalization hardening
+- Format C services.servicesList[].features → folded into descriptions
+- Format C intro.paragraphs + hero.* → mapped to renderer fields
+- buildingTypesSection → subdivisions + commonIssues
+- FAQ fallback: 6 standard questions when content file has none
+- 5 content formats (A, A-urban, B, C, D) all normalized
+
+**Phase 4** (`ab4cd55`): QA sweep + close
+- Enhanced validator (8 checks): title, H1, link blocks, schema, word count, canonical, breadcrumb path, related service links
+- 68/68 unique titles, 68/68 unique H1s, 0 canonical mismatches, 0 broken links
+- P2 #8 marked ✅ in OPEN_PRIORITIES.md
+
+**NOT deployed to production yet** — 4 commits ahead of last deploy
 
 ---
 
-## 🟡 NEXT: P2 #8 — Neighborhood Page Redesign Phase 2
+## 🟡 NEXT: P1 #4 — Cost Calculator
 
-**Status:** Phase 1 complete. Phase 2 ready for implementation.
+**Status:** Page exists at `/resources/cost-calculator/` — was audited + fixed in a prior session (schema, a11y, disclaimer, links). OPEN_PRIORITIES still lists it as open with goal "Interactive water damage cost estimation tool using actual price lists."
 
-### Phase 2: Internal linking (renderer change, no layout change)
-4. Add "Related Services" link block after Services section
-5. Add "Nearby Neighborhoods" link block before Final CTA
-6. Add H2 heading to neighborhood intro section
+### Audit Plan (do before implementing)
+- Read `pages/resources/WaterDamageCostCalculator.tsx` — assess current state vs. goal
+- Check if actual Flood Doctor price lists exist in repo
+- Verify PageMeta, schema, mobile responsiveness
+- Determine what "actual price lists" means — static ranges or dynamic data from Frank
 
-### Phase 3: Content normalization (data files only)
-7. Improve normalizeContent() to extract more from Format C/D
-8. Ensure all 68 pages produce non-empty: intro, services, FAQ, breadcrumbs
+### Implementation Plan
+- Interactive form: service type → area size → damage severity → estimated range
+- Legal: "estimates only" disclaimer (BUSINESS rule: ranges, never exact)
+- Schema: WebApplication or HowTo
+- Internal links: 3-5 inbound from blog/service pages
+- A11y: ARIA labels, keyboard nav, focus management
 
-### Key Context
-- **68 neighborhood pages** across 13 cities
-- **4+ content formats** — normalizeContent() handles all
-- **Files in scope:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, content files
-- **Files NOT in scope:** Homepage, service pages, CTA components, city archetypes
-- Phase 1 schema is in @graph block 2 (block 1 is city-level LocalBusiness from CityApp layout)
+### Verification Gates
+1. Renders at `/resources/cost-calculator/` with no errors
+2. Produces range estimates (not exact figures)
+3. Legal disclaimer visible
+4. Schema validates
+5. Title ≤60, unique H1, canonical correct
+6. Mobile 375px functional
+7. Build 189/189
+8. ≥3 inbound links
 
 ---
 
@@ -80,8 +98,8 @@ WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
 - **CDN:** Cloudflare
 - **Deploy:** `./scripts/deploy.sh <password>`
 - **Tag:** `citylift-production-stable` at `1d736af`
-- **HEAD:** `52470ca` on `main`
+- **HEAD:** `ab4cd55` on `main` (4 commits ahead of last deploy)
 
 ---
 
-*Updated: 2026-02-21 — Neighborhood Phase 1 complete (schema + titles). Phase 2 (internal linking) next.*
+*Updated: 2026-02-21 — P2 #8 complete (all 4 phases). Next: P1 #4 Cost Calculator.*

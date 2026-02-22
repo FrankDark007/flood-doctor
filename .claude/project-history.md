@@ -28,7 +28,23 @@
 
 ## Completed Work
 
-### 2026-02-21: P2 #8 Phase 1 — Neighborhood Schema Expansion + Title Normalization
+### 2026-02-21: P2 #8 Complete — Neighborhood Page Redesign (4 Phases)
+
+**Phase 1** (`52470ca`): Schema expansion + title normalization. Added @graph schema (BreadcrumbList, LocalBusiness, Service, FAQPage) to all 68 neighborhood pages via NeighborhoodPageRenderer. Title normalization in normalizeContent() strips pipes, enforces ≤45 chars (≤60 rendered). 0/68 over limit.
+
+**Phase 2** (`f1f5e2a`): Internal linking + semantic hierarchy. Added H2 intro heading "Water Damage Restoration in {Neighborhood}" after hero. Added Related Services block (4 city service links using canonical nested paths). Added Nearby Neighborhoods block (2-3 sibling links from contentRegistry). New props: neighborhoodSlug, siblingNeighborhoods.
+
+**Phase 3** (`63584dc`): Normalization hardening. Enhanced normalizeContent() to capture Format C services.servicesList[].features (folded as bullets), Format C intro.paragraphs + hero.*, buildingTypesSection → subdivisions/commonIssues, localChallenges → commonIssues. Added FAQ fallback (6 standard neighborhood-specific questions). All 5 content formats (A, A-urban, B, C, D) now produce consistent output.
+
+**Phase 4** (`ab4cd55`): QA sweep + close. Enhanced validator (scripts/validate-neighborhoods.ts) with 8 checks: title ≤60, H1, link blocks, schema types, word count, canonical match, breadcrumb path, related service link resolution. Results: 68/68 unique titles, 68/68 unique H1s, 0 canonical mismatches, 0 broken links, 0 schema gaps. 60 word-count warnings (content volume, not normalization). P2 #8 marked complete in OPEN_PRIORITIES.md.
+
+**Files Modified:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, validate-neighborhoods.ts (new), PROJECT_STATE.md, CHANGELOG_AI.md, OPEN_PRIORITIES.md
+**Builds:** 189/189 main ✅ | 436/436 cities ✅
+**Status:** Complete, not yet deployed to production (4 commits ahead)
+
+---
+
+### 2026-02-21: P2 #8 Phase 1 — Neighborhood Schema Expansion + Title Normalization (SUPERSEDED BY ABOVE)
 
 **What:** Added full @graph JSON-LD schema and normalized titles across all 68 neighborhood pages. Zero content file edits — all changes at renderer/normalizer level.
 
