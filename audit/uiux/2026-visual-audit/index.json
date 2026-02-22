@@ -1,0 +1,370 @@
+{
+  "generated": "2026-02-22T06:57:48.677Z",
+  "pageCount": 12,
+  "breakpoints": [
+    "1440x900",
+    "834x1112",
+    "390x844"
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://flood.doctor/",
+      "pageType": "home",
+      "screenshots": {
+        "desktop": {
+          "full": "home/desktop.png",
+          "fold": "home/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "home/tablet.png",
+          "fold": "home/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "home/mobile.png",
+          "fold": "home/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/",
+      "title": "Emergency Water Damage Restoration | Flood Doctor",
+      "h1": "Water Damage Restoration",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Emergency Checklists"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "svc-water-damage",
+      "url": "https://flood.doctor/services/residential/restoration-services/water-damage-restoration/",
+      "pageType": "service",
+      "screenshots": {
+        "desktop": {
+          "full": "water-damage-restoration/desktop.png",
+          "fold": "water-damage-restoration/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "water-damage-restoration/tablet.png",
+          "fold": "water-damage-restoration/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "water-damage-restoration/mobile.png",
+          "fold": "water-damage-restoration/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "title": "Water Damage Restoration | Flood Doctor",
+      "h1": "Water Damage Restoration Services",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Get a Free Inspection",
+        "Emergency Checklists"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "svc-mold",
+      "url": "https://flood.doctor/services/residential/cleanup-services/mold-remediation/",
+      "pageType": "service",
+      "screenshots": {
+        "desktop": {
+          "full": "mold-remediation/desktop.png",
+          "fold": "mold-remediation/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "mold-remediation/tablet.png",
+          "fold": "mold-remediation/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "mold-remediation/mobile.png",
+          "fold": "mold-remediation/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "title": "Mold Remediation | Flood Doctor",
+      "h1": "Mold Remediation",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Get a Free Inspection",
+        "Emergency Checklists"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "svc-basement",
+      "url": "https://flood.doctor/services/residential/specialty-services/basement-flooding/",
+      "pageType": "service",
+      "screenshots": {
+        "desktop": {
+          "full": "basement-flooding/desktop.png",
+          "fold": "basement-flooding/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "basement-flooding/tablet.png",
+          "fold": "basement-flooding/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "basement-flooding/mobile.png",
+          "fold": "basement-flooding/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "title": "Basement Flooding | Flood Doctor",
+      "h1": "Basement Flooding",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Get a Free Inspection",
+        "Emergency Checklists"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "svc-burst-pipe",
+      "url": "https://flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/",
+      "pageType": "service",
+      "screenshots": {
+        "desktop": {
+          "full": "burst-pipe-cleanup/desktop.png",
+          "fold": "burst-pipe-cleanup/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "burst-pipe-cleanup/tablet.png",
+          "fold": "burst-pipe-cleanup/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "burst-pipe-cleanup/mobile.png",
+          "fold": "burst-pipe-cleanup/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "title": "Burst Pipe Cleanup | Flood Doctor",
+      "h1": "Burst Pipe Cleanup",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Get a Free Inspection",
+        "Emergency Checklists"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "cost-calculator",
+      "url": "https://flood.doctor/resources/cost-calculator/",
+      "pageType": "resource",
+      "screenshots": {
+        "desktop": {
+          "full": "cost-calculator/desktop.png",
+          "fold": "cost-calculator/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "cost-calculator/tablet.png",
+          "fold": "cost-calculator/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "cost-calculator/mobile.png",
+          "fold": "cost-calculator/mobile-fold.png"
+        }
+      },
+      "canonical": "http://localhost:5173/resources/cost-calculator/",
+      "title": "Water Damage Cost Calculator | Flood Doctor",
+      "h1": "Water Damage CostCalculator [2026]",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Get Exact Quote",
+        "Request Free Estimate"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "pageType": "city",
+      "screenshots": {
+        "desktop": {
+          "full": "fairfax-water-damage/desktop.png",
+          "fold": "fairfax-water-damage/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "fairfax-water-damage/tablet.png",
+          "fold": "fairfax-water-damage/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "fairfax-water-damage/mobile.png",
+          "fold": "fairfax-water-damage/mobile-fold.png"
+        }
+      },
+      "canonical": "https://fairfax.flood.doctor/services/residential/restoration-services/water-damage-restoration/",
+      "title": "Water Damage Restoration in Fairfax, VA | Flood Doctor",
+      "h1": "Water Damage Restoration in Fairfax, Virginia",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "pageType": "city",
+      "screenshots": {
+        "desktop": {
+          "full": "arlington-mold-remediation/desktop.png",
+          "fold": "arlington-mold-remediation/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "arlington-mold-remediation/tablet.png",
+          "fold": "arlington-mold-remediation/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "arlington-mold-remediation/mobile.png",
+          "fold": "arlington-mold-remediation/mobile-fold.png"
+        }
+      },
+      "canonical": "https://arlington.flood.doctor/services/residential/cleanup-services/mold-remediation/",
+      "title": "Mold Remediation in Arlington, VA | Flood Doctor",
+      "h1": "Mold Remediation in Arlington, Virginia",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "pageType": "city",
+      "screenshots": {
+        "desktop": {
+          "full": "mclean-basement-flooding/desktop.png",
+          "fold": "mclean-basement-flooding/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "mclean-basement-flooding/tablet.png",
+          "fold": "mclean-basement-flooding/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "mclean-basement-flooding/mobile.png",
+          "fold": "mclean-basement-flooding/mobile-fold.png"
+        }
+      },
+      "canonical": "https://mclean.flood.doctor/services/residential/specialty-services/basement-flooding/",
+      "title": "Basement Flooding Repair in McLean, VA | Flood Doctor",
+      "h1": "Basement Flooding Repair in McLean, Virginia",
+      "primaryCTAs": [
+        "Contact",
+        "Request Services",
+        "Request Service",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "pageType": "neighborhood",
+      "screenshots": {
+        "desktop": {
+          "full": "old-town-alexandria/desktop.png",
+          "fold": "old-town-alexandria/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "old-town-alexandria/tablet.png",
+          "fold": "old-town-alexandria/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "old-town-alexandria/mobile.png",
+          "fold": "old-town-alexandria/mobile-fold.png"
+        }
+      },
+      "canonical": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "title": "Water Damage Restoration Old Town Alexandria | Flood Doctor",
+      "h1": "Water Damage Restoration in Old Town Alexandria",
+      "primaryCTAs": [
+        "Contact",
+        "Request Service",
+        "Request Services",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "pageType": "neighborhood",
+      "screenshots": {
+        "desktop": {
+          "full": "ballston-arlington/desktop.png",
+          "fold": "ballston-arlington/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "ballston-arlington/tablet.png",
+          "fold": "ballston-arlington/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "ballston-arlington/mobile.png",
+          "fold": "ballston-arlington/mobile-fold.png"
+        }
+      },
+      "canonical": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "title": "Water Damage Restoration Ballston | Flood Doctor",
+      "h1": "Water Damage Restoration in Ballston, Arlington",
+      "primaryCTAs": [
+        "Contact",
+        "Request Service",
+        "Request Services",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    },
+    {
+      "id": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "pageType": "neighborhood",
+      "screenshots": {
+        "desktop": {
+          "full": "chesterbrook-mclean/desktop.png",
+          "fold": "chesterbrook-mclean/desktop-fold.png"
+        },
+        "tablet": {
+          "full": "chesterbrook-mclean/tablet.png",
+          "fold": "chesterbrook-mclean/tablet-fold.png"
+        },
+        "mobile": {
+          "full": "chesterbrook-mclean/mobile.png",
+          "fold": "chesterbrook-mclean/mobile-fold.png"
+        }
+      },
+      "canonical": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "title": "Water Damage Restoration Chesterbrook VA | Flood Doctor",
+      "h1": "Water Damage Restoration in Chesterbrook, Virginia",
+      "primaryCTAs": [
+        "Contact",
+        "Request Service",
+        "Request Services",
+        "Emergency Response",
+        "Emergency Guide"
+      ],
+      "inlineCTAsHiddenOnMobile": true
+    }
+  ]
+}

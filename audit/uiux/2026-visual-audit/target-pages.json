@@ -1,0 +1,108 @@
+{
+  "generated": "2026-02-22",
+  "total": 12,
+  "pages": [
+    {
+      "id": "home",
+      "slug": "home",
+      "type": "home",
+      "url": "https://flood.doctor/",
+      "localPath": "/",
+      "description": "Homepage — apex domain"
+    },
+    {
+      "id": "svc-water-damage",
+      "slug": "water-damage-restoration",
+      "type": "service",
+      "url": "https://flood.doctor/services/residential/restoration-services/water-damage-restoration/",
+      "localPath": "/services/residential/restoration-services/water-damage-restoration/",
+      "description": "Water Damage Restoration — highest intent residential service"
+    },
+    {
+      "id": "svc-mold",
+      "slug": "mold-remediation",
+      "type": "service",
+      "url": "https://flood.doctor/services/residential/cleanup-services/mold-remediation/",
+      "localPath": "/services/residential/cleanup-services/mold-remediation/",
+      "description": "Mold Remediation — high-intent cleanup service"
+    },
+    {
+      "id": "svc-basement",
+      "slug": "basement-flooding",
+      "type": "service",
+      "url": "https://flood.doctor/services/residential/specialty-services/basement-flooding/",
+      "localPath": "/services/residential/specialty-services/basement-flooding/",
+      "description": "Basement Flooding — high-intent specialty service"
+    },
+    {
+      "id": "svc-burst-pipe",
+      "slug": "burst-pipe-cleanup",
+      "type": "service",
+      "url": "https://flood.doctor/services/residential/restoration-services/burst-pipe-cleanup/",
+      "localPath": "/services/residential/restoration-services/burst-pipe-cleanup/",
+      "description": "Burst Pipe Cleanup — emergency intent service"
+    },
+    {
+      "id": "city-fairfax-wd",
+      "slug": "fairfax-water-damage",
+      "type": "city",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "localPath": "/services/water-damage/",
+      "subdomain": "fairfax",
+      "description": "Fairfax city subdomain — water damage service"
+    },
+    {
+      "id": "city-arlington-mold",
+      "slug": "arlington-mold-remediation",
+      "type": "city",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "localPath": "/services/mold-remediation/",
+      "subdomain": "arlington",
+      "description": "Arlington city subdomain — mold remediation service"
+    },
+    {
+      "id": "city-mclean-basement",
+      "slug": "mclean-basement-flooding",
+      "type": "city",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "localPath": "/services/basement-flooding/",
+      "subdomain": "mclean",
+      "description": "McLean city subdomain — basement flooding service"
+    },
+    {
+      "id": "nbhd-old-town",
+      "slug": "old-town-alexandria",
+      "type": "neighborhood",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "localPath": "/neighborhoods/old-town/",
+      "subdomain": "alexandria",
+      "description": "Old Town Alexandria neighborhood page"
+    },
+    {
+      "id": "nbhd-ballston",
+      "slug": "ballston-arlington",
+      "type": "neighborhood",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "localPath": "/neighborhoods/ballston/",
+      "subdomain": "arlington",
+      "description": "Ballston Arlington neighborhood page"
+    },
+    {
+      "id": "nbhd-chesterbrook",
+      "slug": "chesterbrook-mclean",
+      "type": "neighborhood",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "localPath": "/neighborhoods/chesterbrook/",
+      "subdomain": "mclean",
+      "description": "Chesterbrook McLean neighborhood page"
+    },
+    {
+      "id": "cost-calculator",
+      "slug": "cost-calculator",
+      "type": "resource",
+      "url": "https://flood.doctor/resources/cost-calculator/",
+      "localPath": "/resources/cost-calculator/",
+      "description": "Cost Calculator — interactive pricing tool"
+    }
+  ]
+}

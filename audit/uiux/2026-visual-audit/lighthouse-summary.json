@@ -1,0 +1,120 @@
+{
+  "generated": "2026-02-22T06:26:56.808Z",
+  "totalAudits": 12,
+  "summaries": [
+    {
+      "page": "home",
+      "breakpoint": "desktop",
+      "performance": 56,
+      "accessibility": 87,
+      "bestPractices": 73,
+      "seo": 100,
+      "reportPath": "lighthouse/home-desktop.json"
+    },
+    {
+      "page": "home",
+      "breakpoint": "mobile",
+      "performance": 55,
+      "accessibility": 92,
+      "bestPractices": 73,
+      "seo": 100,
+      "reportPath": "lighthouse/home-mobile.json"
+    },
+    {
+      "page": "water-damage-restoration",
+      "breakpoint": "desktop",
+      "performance": 57,
+      "accessibility": 89,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/water-damage-restoration-desktop.json"
+    },
+    {
+      "page": "water-damage-restoration",
+      "breakpoint": "mobile",
+      "performance": 54,
+      "accessibility": 93,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/water-damage-restoration-mobile.json"
+    },
+    {
+      "page": "mold-remediation",
+      "breakpoint": "desktop",
+      "performance": 56,
+      "accessibility": 89,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/mold-remediation-desktop.json"
+    },
+    {
+      "page": "mold-remediation",
+      "breakpoint": "mobile",
+      "performance": 54,
+      "accessibility": 93,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/mold-remediation-mobile.json"
+    },
+    {
+      "page": "basement-flooding",
+      "breakpoint": "desktop",
+      "performance": 56,
+      "accessibility": 89,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/basement-flooding-desktop.json"
+    },
+    {
+      "page": "basement-flooding",
+      "breakpoint": "mobile",
+      "performance": 53,
+      "accessibility": 93,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/basement-flooding-mobile.json"
+    },
+    {
+      "page": "burst-pipe-cleanup",
+      "breakpoint": "desktop",
+      "performance": 57,
+      "accessibility": 89,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/burst-pipe-cleanup-desktop.json"
+    },
+    {
+      "page": "burst-pipe-cleanup",
+      "breakpoint": "mobile",
+      "performance": 53,
+      "accessibility": 93,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/burst-pipe-cleanup-mobile.json"
+    },
+    {
+      "page": "cost-calculator",
+      "breakpoint": "desktop",
+      "performance": 41,
+      "accessibility": 91,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/cost-calculator-desktop.json"
+    },
+    {
+      "page": "cost-calculator",
+      "breakpoint": "mobile",
+      "performance": 39,
+      "accessibility": 95,
+      "bestPractices": 96,
+      "seo": 100,
+      "reportPath": "lighthouse/cost-calculator-mobile.json"
+    }
+  ],
+  "averages": {
+    "performance": 53,
+    "accessibility": 91,
+    "bestPractices": 92,
+    "seo": 100
+  }
+}

@@ -1,0 +1,1746 @@
+{
+  "generated": "2026-02-22T06:59:04.429Z",
+  "summary": {
+    "totalIssues": 190,
+    "bySeverity": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 190,
+      "minor": 0
+    },
+    "byCategory": {
+      "contrast": 0,
+      "alt-text": 0,
+      "heading-order": 10,
+      "tap-target": 180,
+      "form-label": 0,
+      "aria": 0
+    },
+    "byPage": {
+      "home": 18,
+      "svc-water-damage": 16,
+      "svc-mold": 16,
+      "svc-basement": 16,
+      "svc-burst-pipe": 16,
+      "city-fairfax-wd": 15,
+      "city-arlington-mold": 15,
+      "city-mclean-basement": 15,
+      "nbhd-old-town": 16,
+      "nbhd-ballston": 16,
+      "nbhd-chesterbrook": 16,
+      "cost-calculator": 15
+    }
+  },
+  "issues": [
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H3>Flood Doctor</H3>",
+      "message": "Heading skips level: expected H2, found H3",
+      "selector": "h3"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H4>Emergency Assessment</H4>",
+      "message": "Heading skips level: expected H3, found H4",
+      "selector": "h4"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H4>Local Expertise Since 2008</H4>",
+      "message": "Heading skips level: expected H3, found H4",
+      "selector": "h4"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"||\" (40x40px)",
+      "message": "Tap target too small: 40x40px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(37)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Order online\" (252x36px)",
+      "message": "Tap target too small: 252x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(39)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ask a question\" (85x18px)",
+      "message": "Tap target too small: 85x18px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(40)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"REQUEST A QUOTE\" (196x32px)",
+      "message": "Tap target too small: 196x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(42)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"PICKUP\" (100x25px)",
+      "message": "Tap target too small: 100x25px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(45)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"DELIVERY\" (100x25px)",
+      "message": "Tap target too small: 100x25px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(46)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Previous testimonial\" (32x32px)",
+      "message": "Tap target too small: 32x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(50)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Next testimonial\" (32x32px)",
+      "message": "Tap target too small: 32x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(51)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"View All Resources ↗\" (143x20px)",
+      "message": "Tap target too small: 143x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(53)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Facebook\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(54)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Twitter\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(55)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"LinkedIn\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(56)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Instagram\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(57)"
+    },
+    {
+      "page": "home",
+      "url": "http://localhost:5173/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"All Services\" (358x36px)",
+      "message": "Tap target too small: 358x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(59)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H3>60-Minute Response</H3>",
+      "message": "Heading skips level: expected H2, found H3",
+      "selector": "h3"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Why Professional Restoration Matters\" (284x36px)",
+      "message": "Tap target too small: 284x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(43)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Science of Structural Drying\" (250x36px)",
+      "message": "Tap target too small: 250x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(44)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Water Categories and Why They Matter\" (296x36px)",
+      "message": "Tap target too small: 296x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(45)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Scroll right\" (34x34px)",
+      "message": "Tap target too small: 34x34px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(46)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Read more reviews →\" (144x17px)",
+      "message": "Tap target too small: 144x17px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Expand all\" (115x32px)",
+      "message": "Tap target too small: 115x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(52)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ashburn Water Damage Restoration\" (236x20px)",
+      "message": "Tap target too small: 236x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(73)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Arlington Water Damage Restoration\" (240x20px)",
+      "message": "Tap target too small: 240x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(74)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Alexandria Water Damage Restoration\" (250x20px)",
+      "message": "Tap target too small: 250x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(75)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Falls Church Water Damage Restoration\" (262x20px)",
+      "message": "Tap target too small: 262x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(76)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Water Damage Restoration\" (226x20px)",
+      "message": "Tap target too small: 226x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(77)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Great Falls Water Damage Restoration\" (251x20px)",
+      "message": "Tap target too small: 251x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(78)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Herndon Water Damage Restoration\" (238x20px)",
+      "message": "Tap target too small: 238x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(79)"
+    },
+    {
+      "page": "svc-water-damage",
+      "url": "http://localhost:5173/services/residential/restoration-services/water-damage-restoration/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Lorton Water Damage Restoration\" (223x20px)",
+      "message": "Tap target too small: 223x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(80)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H3>60-Minute Response</H3>",
+      "message": "Heading skips level: expected H2, found H3",
+      "selector": "h3"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"How Mold Affects Your Health\" (233x36px)",
+      "message": "Tap target too small: 233x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(43)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Why DIY Mold Removal Fails\" (222x36px)",
+      "message": "Tap target too small: 222x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(44)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Containment Imperative\" (222x36px)",
+      "message": "Tap target too small: 222x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(45)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Scroll right\" (34x34px)",
+      "message": "Tap target too small: 34x34px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(46)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Read more reviews →\" (144x17px)",
+      "message": "Tap target too small: 144x17px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Expand all\" (115x32px)",
+      "message": "Tap target too small: 115x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(52)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ashburn Mold Remediation\" (179x20px)",
+      "message": "Tap target too small: 179x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(73)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Arlington Mold Remediation\" (183x20px)",
+      "message": "Tap target too small: 183x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(74)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Alexandria Mold Remediation\" (193x20px)",
+      "message": "Tap target too small: 193x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(75)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Falls Church Mold Remediation\" (205x20px)",
+      "message": "Tap target too small: 205x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(76)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Mold Remediation\" (168x20px)",
+      "message": "Tap target too small: 168x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(77)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Great Falls Mold Remediation\" (193x20px)",
+      "message": "Tap target too small: 193x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(78)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Herndon Mold Remediation\" (180x20px)",
+      "message": "Tap target too small: 180x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(79)"
+    },
+    {
+      "page": "svc-mold",
+      "url": "http://localhost:5173/services/residential/cleanup-services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Lorton Mold Remediation\" (166x20px)",
+      "message": "Tap target too small: 166x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(80)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H3>60-Minute Response</H3>",
+      "message": "Heading skips level: expected H2, found H3",
+      "selector": "h3"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Why Basements Are Vulnerable\" (243x36px)",
+      "message": "Tap target too small: 243x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(43)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Dangers of Standing Water\" (242x36px)",
+      "message": "Tap target too small: 242x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(44)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Concrete Saturation Challenges\" (244x36px)",
+      "message": "Tap target too small: 244x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(45)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Scroll right\" (34x34px)",
+      "message": "Tap target too small: 34x34px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(46)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Read more reviews →\" (144x17px)",
+      "message": "Tap target too small: 144x17px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Expand all\" (115x32px)",
+      "message": "Tap target too small: 115x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(52)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ashburn Basement Flooding\" (187x20px)",
+      "message": "Tap target too small: 187x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(72)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Arlington Basement Flooding\" (191x20px)",
+      "message": "Tap target too small: 191x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(73)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Alexandria Basement Flooding\" (201x20px)",
+      "message": "Tap target too small: 201x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(74)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Falls Church Basement Flooding\" (213x20px)",
+      "message": "Tap target too small: 213x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(75)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Basement Flooding\" (176x20px)",
+      "message": "Tap target too small: 176x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(76)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Great Falls Basement Flooding\" (201x20px)",
+      "message": "Tap target too small: 201x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(77)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Herndon Basement Flooding\" (189x20px)",
+      "message": "Tap target too small: 189x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(78)"
+    },
+    {
+      "page": "svc-basement",
+      "url": "http://localhost:5173/services/residential/specialty-services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Lorton Basement Flooding\" (174x20px)",
+      "message": "Tap target too small: 174x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(79)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H3>60-Minute Response</H3>",
+      "message": "Heading skips level: expected H2, found H3",
+      "selector": "h3"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"How Much Damage Happens How Fast\" (292x36px)",
+      "message": "Tap target too small: 292x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(43)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Common Causes and Prevention\" (250x36px)",
+      "message": "Tap target too small: 250x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(44)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Challenge of Hidden Pipes\" (239x36px)",
+      "message": "Tap target too small: 239x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(45)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Scroll right\" (34x34px)",
+      "message": "Tap target too small: 34x34px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(46)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Read more reviews →\" (144x17px)",
+      "message": "Tap target too small: 144x17px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Expand all\" (115x32px)",
+      "message": "Tap target too small: 115x32px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(52)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ashburn Burst Pipe Cleanup\" (186x20px)",
+      "message": "Tap target too small: 186x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(73)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Arlington Burst Pipe Cleanup\" (190x20px)",
+      "message": "Tap target too small: 190x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(74)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Alexandria Burst Pipe Cleanup\" (200x20px)",
+      "message": "Tap target too small: 200x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(75)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Falls Church Burst Pipe Cleanup\" (212x20px)",
+      "message": "Tap target too small: 212x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(76)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Burst Pipe Cleanup\" (176x20px)",
+      "message": "Tap target too small: 176x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(77)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Great Falls Burst Pipe Cleanup\" (201x20px)",
+      "message": "Tap target too small: 201x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(78)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Herndon Burst Pipe Cleanup\" (188x20px)",
+      "message": "Tap target too small: 188x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(79)"
+    },
+    {
+      "page": "svc-burst-pipe",
+      "url": "http://localhost:5173/services/residential/restoration-services/burst-pipe-cleanup/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Lorton Burst Pipe Cleanup\" (173x20px)",
+      "message": "Tap target too small: 173x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(80)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax City\" (109x39px)",
+      "message": "Tap target too small: 109x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(37)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Burke\" (72x39px)",
+      "message": "Tap target too small: 72x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(38)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Burke Centre\" (121x39px)",
+      "message": "Tap target too small: 121x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(39)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Kings Park\" (105x39px)",
+      "message": "Tap target too small: 105x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(40)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Mantua\" (84x39px)",
+      "message": "Tap target too small: 84x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(41)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Station\" (129x39px)",
+      "message": "Tap target too small: 129x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(42)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Penderbrook\" (120x39px)",
+      "message": "Tap target too small: 120x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(43)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairfax Towne Center\" (176x39px)",
+      "message": "Tap target too small: 176x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(44)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"George Mason\" (131x39px)",
+      "message": "Tap target too small: 131x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(45)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Coffer Woods\" (125x39px)",
+      "message": "Tap target too small: 125x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Braddock Heights\" (152x39px)",
+      "message": "Tap target too small: 152x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairchester\" (108x39px)",
+      "message": "Tap target too small: 108x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Timberly\" (92x39px)",
+      "message": "Tap target too small: 92x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(49)"
+    },
+    {
+      "page": "city-fairfax-wd",
+      "url": "https://fairfax.flood.doctor/services/water-damage/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"South Run\" (102x39px)",
+      "message": "Tap target too small: 102x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Rosslyn\" (86x39px)",
+      "message": "Tap target too small: 86x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(38)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Clarendon\" (102x39px)",
+      "message": "Tap target too small: 102x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(39)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ballston\" (86x39px)",
+      "message": "Tap target too small: 86x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(40)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Crystal City\" (111x39px)",
+      "message": "Tap target too small: 111x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(41)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Pentagon City\" (127x39px)",
+      "message": "Tap target too small: 127x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(42)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Shirlington\" (105x39px)",
+      "message": "Tap target too small: 105x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(43)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Lyon Village\" (114x39px)",
+      "message": "Tap target too small: 114x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(44)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Cherrydale\" (107x39px)",
+      "message": "Tap target too small: 107x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(45)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Bluemont\" (97x39px)",
+      "message": "Tap target too small: 97x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ashton Heights\" (135x39px)",
+      "message": "Tap target too small: 135x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Fairlington\" (103x39px)",
+      "message": "Tap target too small: 103x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Courthouse\" (111x39px)",
+      "message": "Tap target too small: 111x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(49)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Virginia Square\" (134x39px)",
+      "message": "Tap target too small: 134x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "city-arlington-mold",
+      "url": "https://arlington.flood.doctor/services/mold-remediation/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Columbia Heights\" (151x39px)",
+      "message": "Tap target too small: 151x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(51)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Langley\" (86x39px)",
+      "message": "Tap target too small: 86x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(37)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Chesterbrook\" (124x39px)",
+      "message": "Tap target too small: 124x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(38)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Reserve\" (117x39px)",
+      "message": "Tap target too small: 117x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(39)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Woodside Estates\" (152x39px)",
+      "message": "Tap target too small: 152x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(40)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Salona Village\" (127x39px)",
+      "message": "Tap target too small: 127x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(41)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"McLean Hamlet\" (138x39px)",
+      "message": "Tap target too small: 138x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(42)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Balls Hill\" (90x39px)",
+      "message": "Tap target too small: 90x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(43)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"El Nido\" (81x39px)",
+      "message": "Tap target too small: 81x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(44)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Ingleside\" (94x39px)",
+      "message": "Tap target too small: 94x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(45)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Franklin Park\" (120x39px)",
+      "message": "Tap target too small: 120x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Evermay\" (91x39px)",
+      "message": "Tap target too small: 91x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Clearspring Manor\" (157x39px)",
+      "message": "Tap target too small: 157x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Langley Farms\" (131x39px)",
+      "message": "Tap target too small: 131x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(49)"
+    },
+    {
+      "page": "city-mclean-basement",
+      "url": "https://mclean.flood.doctor/services/basement-flooding/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Water Damage Restoration\" (237x39px)",
+      "message": "Tap target too small: 237x39px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(51)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H4>IICRC Certified</H4>",
+      "message": "Heading skips level: expected H2, found H4",
+      "selector": "h4"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Home\" (39x21px)",
+      "message": "Tap target too small: 39x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(35)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Alexandria\" (70x21px)",
+      "message": "Tap target too small: 70x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(36)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Water Damage Restoration\" (226x24px)",
+      "message": "Tap target too small: 226x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(45)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Mold Remediation\" (160x24px)",
+      "message": "Tap target too small: 160x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Sewage Cleanup\" (152x24px)",
+      "message": "Tap target too small: 152x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Basement Flooding\" (169x24px)",
+      "message": "Tap target too small: 169x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Belle Haven\" (89x20px)",
+      "message": "Tap target too small: 89x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(53)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Carlyle\" (53x20px)",
+      "message": "Tap target too small: 53x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(54)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Del Ray\" (57x20px)",
+      "message": "Tap target too small: 57x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(55)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Back to Alexandria Water Damage Services\" (354x24px)",
+      "message": "Tap target too small: 354x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(57)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Facebook\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(58)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Twitter\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(59)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"LinkedIn\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(60)"
+    },
+    {
+      "page": "nbhd-old-town",
+      "url": "https://alexandria.flood.doctor/neighborhoods/old-town/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Instagram\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(61)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H4>IICRC Certified</H4>",
+      "message": "Heading skips level: expected H2, found H4",
+      "selector": "h4"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Home\" (39x21px)",
+      "message": "Tap target too small: 39x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(36)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Neighborhoods\" (102x21px)",
+      "message": "Tap target too small: 102x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(37)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Water Damage Restoration\" (226x24px)",
+      "message": "Tap target too small: 226x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Mold Remediation\" (160x24px)",
+      "message": "Tap target too small: 160x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Sewage Cleanup\" (152x24px)",
+      "message": "Tap target too small: 152x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Basement Flooding\" (169x24px)",
+      "message": "Tap target too small: 169x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(49)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Clarendon\" (78x20px)",
+      "message": "Tap target too small: 78x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(50)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Crystal City\" (88x20px)",
+      "message": "Tap target too small: 88x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(51)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Pentagon City\" (107x20px)",
+      "message": "Tap target too small: 107x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(52)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Back to Arlington Water Damage Services\" (343x24px)",
+      "message": "Tap target too small: 343x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(54)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Facebook\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(55)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Twitter\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(56)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"LinkedIn\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(57)"
+    },
+    {
+      "page": "nbhd-ballston",
+      "url": "https://arlington.flood.doctor/neighborhoods/ballston/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Instagram\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(58)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "heading-order",
+      "severity": "moderate",
+      "element": "<H4>IICRC Certified</H4>",
+      "message": "Heading skips level: expected H2, found H4",
+      "selector": "h4"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Home\" (39x21px)",
+      "message": "Tap target too small: 39x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(35)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"McLean\" (53x21px)",
+      "message": "Tap target too small: 53x21px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(36)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Water Damage Restoration\" (226x24px)",
+      "message": "Tap target too small: 226x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(45)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Mold Remediation\" (160x24px)",
+      "message": "Tap target too small: 160x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(46)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Sewage Cleanup\" (152x24px)",
+      "message": "Tap target too small: 152x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(47)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Basement Flooding\" (169x24px)",
+      "message": "Tap target too small: 169x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(48)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Langley\" (59x20px)",
+      "message": "Tap target too small: 59x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(52)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Salona Village\" (106x20px)",
+      "message": "Tap target too small: 106x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(53)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"The Reserve\" (95x20px)",
+      "message": "Tap target too small: 95x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(54)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Back to McLean Water Damage Services\" (334x24px)",
+      "message": "Tap target too small: 334x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(56)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Facebook\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(57)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Twitter\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(58)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"LinkedIn\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(59)"
+    },
+    {
+      "page": "nbhd-chesterbrook",
+      "url": "https://mclean.flood.doctor/neighborhoods/chesterbrook/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Instagram\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(60)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Skip to content\" (1x1px)",
+      "message": "Tap target too small: 1x1px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(1)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Home\" (39x20px)",
+      "message": "Tap target too small: 39x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(36)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Resources\" (70x20px)",
+      "message": "Tap target too small: 70x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(37)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"How this works\" (123x20px)",
+      "message": "Tap target too small: 123x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(40)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Affected area slider\" (170x8px)",
+      "message": "Tap target too small: 170x8px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "#sqft-range"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"unknown\" (96x42px)",
+      "message": "Tap target too small: 96x42px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "#sqft-input"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Standing water present\" (47x28px)",
+      "message": "Tap target too small: 47x28px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "button:nth-of-type(53)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"(877) 497-0007\" (106x20px)",
+      "message": "Tap target too small: 106x20px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(62)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Facebook\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(77)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Twitter\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(78)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"LinkedIn\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(79)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Instagram\" (24x24px)",
+      "message": "Tap target too small: 24x24px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(80)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"All Services\" (358x36px)",
+      "message": "Tap target too small: 358x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(82)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Residential\" (358x36px)",
+      "message": "Tap target too small: 358x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(83)"
+    },
+    {
+      "page": "cost-calculator",
+      "url": "http://localhost:5173/resources/cost-calculator/",
+      "category": "tap-target",
+      "severity": "moderate",
+      "element": "\"Commercial\" (358x36px)",
+      "message": "Tap target too small: 358x36px — WCAG 2.5.5 requires minimum 44x44px",
+      "selector": "a:nth-of-type(84)"
+    }
+  ]
+}
