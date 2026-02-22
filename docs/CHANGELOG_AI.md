@@ -4,6 +4,17 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-22 — Production Deploy (blog batch 1 + calculator updates)
+
+**Deployed**: 10 commits synced to production (000df30 → e77c896)
+- Blog batch 1: 3 new posts live
+- Cost calculator: pricing extracted to typed module
+- Sitemap: 3 new blog URLs added to sitemap-main.xml
+- Routes: 192/192 verified
+- Post-deploy: all checks passed (200s, 404s, sitemaps)
+
+---
+
 ## 2026-02-21 — P2 #9 Blog Expansion Batch 1 (3 posts)
 
 **Scope**: 3 new blog posts, 3 config files updated
