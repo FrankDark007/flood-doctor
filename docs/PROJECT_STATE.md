@@ -2,6 +2,24 @@
 
 Last updated: 2026-02-22
 
+## Go-Live Deployment
+
+- **Date**: 2026-02-22 04:27 UTC (Feb 21, 11:27 PM EST)
+- **HEAD**: `daa9b86` (main)
+- **Build**: 192/192 routes pre-rendered
+- **Deploy**: rsync SSH — 552 files transferred
+- **Sitemaps**: synced with `--delete` (stale files removed)
+- **Cloudflare**: cache purged (success:true)
+- **Verification**:
+  - Homepage: HTTP/2 200, text/html
+  - Sitemap index: HTTP/2 200, application/xml
+  - Sitemap main: HTTP/2 200, application/xml
+  - Cost calculator: HTTP/2 200, text/html
+  - Fake service (apex): HTTP/2 404
+  - Fake service (subdomain): 301 → 404
+  - City pages (3 sampled): all 200, canonicals match
+  - Neighborhood pages (3 sampled): all 200, canonicals match
+
 ## Architecture
 
 - **Framework**: Vite + React 19 + TypeScript + Tailwind CSS
@@ -22,7 +40,7 @@ Last updated: 2026-02-22
 <!-- METRICS:START -->
 - **Pre-rendered routes**: 192
 - **Titles > 60 chars**: 0
-- **Duplicate titles**: 0
+- **Duplicate titles**: 1
 <!-- METRICS:END -->
 - **Duplicate H1 tags**: 0
 - **Broken internal links**: 0

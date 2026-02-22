@@ -4,6 +4,17 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-22 — Go-Live Deployment Verification
+
+**Deployed**: HEAD `daa9b86` on main
+- Build: 192/192 routes, 0 errors
+- rsync SSH: 552 files synced to production
+- Sitemaps: --delete sync (stale removed)
+- Cloudflare cache purge: success
+- Post-deploy: all checks passed — homepage, sitemaps, calculator, 404s, 3 city pages, 3 neighborhood pages (all 200, canonicals match)
+
+---
+
 ## 2026-02-22 — Production Deploy (blog batch 1 + calculator updates)
 
 **Deployed**: 10 commits synced to production (000df30 → e77c896)
