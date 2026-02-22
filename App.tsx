@@ -191,6 +191,9 @@ const WhatDoesBlackMoldLookLike = lazy(() => import('./pages/blog/what-does-blac
 const MildewVsMoldDifference = lazy(() => import('./pages/blog/mildew-vs-mold-difference'));
 const DoesVinegarKillMold = lazy(() => import('./pages/blog/does-vinegar-kill-mold'));
 const SignsOfWaterDamageBehindWalls = lazy(() => import('./pages/blog/signs-of-water-damage-behind-walls'));
+const ToiletOverflowCleanupGuide = lazy(() => import('./pages/blog/toilet-overflow-cleanup-guide'));
+const FloodInsuranceNfipVirginia = lazy(() => import('./pages/blog/flood-insurance-nfip-virginia'));
+const FilingWaterDamageInsuranceClaim = lazy(() => import('./pages/blog/filing-water-damage-insurance-claim'));
 
 // HowTo Guides
 const GuidesHub = lazy(() => import('./pages/guides/GuidesHub'));
@@ -594,6 +597,11 @@ const AppLayout: React.FC = () => {
               <Route path="/blog/mildew-vs-mold-difference/" element={<MildewVsMoldDifference />} />
               <Route path="/blog/does-vinegar-kill-mold/" element={<DoesVinegarKillMold />} />
               <Route path="/blog/signs-of-water-damage-behind-walls/" element={<SignsOfWaterDamageBehindWalls />} />
+
+              {/* Blog Expansion Batch 1 */}
+              <Route path="/blog/toilet-overflow-cleanup-guide/" element={<ToiletOverflowCleanupGuide />} />
+              <Route path="/blog/flood-insurance-nfip-virginia/" element={<FloodInsuranceNfipVirginia />} />
+              <Route path="/blog/filing-water-damage-insurance-claim/" element={<FilingWaterDamageInsuranceClaim />} />
 
               {/* DEV-ONLY: Variant Gallery at /__variants */}
               {VariantsGallery && <Route path="/__variants/*" element={<Suspense fallback={<PageLoader />}><VariantsGallery /></Suspense>} />}

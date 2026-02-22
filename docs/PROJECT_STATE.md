@@ -46,6 +46,7 @@ Last updated: 2026-02-19
 
 ## Completed Work (Chronological)
 
+- **2026-02-21**: P2 #9 Blog Expansion Batch 1 — 3 new posts: toilet-overflow-cleanup-guide, flood-insurance-nfip-virginia, filing-water-damage-insurance-claim. Routes, BlogIndex, schema all wired. 192/192 build.
 - **2026-02-21**: P1 #4 Cost Calculator — CLOSED. Extracted pricing to typed module (`data/pricing/flood-doctor-rates.ts`). All user-facing dates (H1 year, badge, schema dateModified) now derive from `currentPricing.lastUpdated`. Zero UI/layout changes beyond date derivation.
 - **2026-02-21**: Neighborhood Phase 4 — QA sweep closing P2 #8. Enhanced validator with 8 checks: title ≤60, H1 present, link blocks, schema types, word count, canonical match, breadcrumb path, related service link resolution. 68/68 unique titles, 68/68 unique H1s, 0 canonical mismatches, 0 broken links, 0 schema gaps. City build: 436/436 in 58.8s.
 - **2026-02-21**: Neighborhood Phase 3 — normalization hardening + consistency validation. Enhanced normalizeContent() to capture Format C services.servicesList[].features, buildingTypesSection, intro.paragraphs, and hero fields. Added FAQ fallback (6 standard questions) for pages with no FAQ data. Added build-time validator script (scripts/validate-neighborhoods.ts) checking title, H1, schema, link blocks, and word count across all 68 pages. 0 failures, 60 word-count warnings (content volume, not normalization).

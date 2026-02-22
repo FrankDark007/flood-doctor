@@ -337,6 +337,31 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'Emergency',
     date: 'Jan 2, 2025',
     readTime: '8 min'
+  },
+  // Blog Expansion Batch 1
+  {
+    slug: '/blog/toilet-overflow-cleanup-guide/',
+    title: 'Toilet Overflow Cleanup: Steps & Safety',
+    excerpt: 'Emergency steps for toilet overflow cleanup, contamination categories, health risks, DIY vs professional restoration, and insurance coverage.',
+    category: 'Emergency',
+    date: 'Feb 21, 2026',
+    readTime: '10 min'
+  },
+  {
+    slug: '/blog/flood-insurance-nfip-virginia/',
+    title: 'Flood Insurance in Virginia: NFIP Guide',
+    excerpt: 'What NFIP flood insurance covers that homeowners insurance doesn\'t, costs in Northern Virginia, and how to get coverage.',
+    category: 'Insurance',
+    date: 'Feb 21, 2026',
+    readTime: '11 min'
+  },
+  {
+    slug: '/blog/filing-water-damage-insurance-claim/',
+    title: 'Filing a Water Damage Insurance Claim',
+    excerpt: 'Step-by-step guide to filing water damage insurance claims in Virginia—documentation, adjuster meetings, and maximizing coverage.',
+    category: 'Insurance',
+    date: 'Feb 21, 2026',
+    readTime: '12 min'
   }
 ];
 

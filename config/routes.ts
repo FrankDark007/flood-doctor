@@ -159,6 +159,10 @@ export const BLOG_ROUTES: string[] = [
   '/blog/mildew-vs-mold-difference/',
   '/blog/does-vinegar-kill-mold/',
   '/blog/signs-of-water-damage-behind-walls/',
+  // Blog Expansion Batch 1
+  '/blog/toilet-overflow-cleanup-guide/',
+  '/blog/flood-insurance-nfip-virginia/',
+  '/blog/filing-water-damage-insurance-claim/',
 ];
 
 // ── Resource Routes ─────────────────────────────────────────────────────────

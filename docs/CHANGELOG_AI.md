@@ -4,6 +4,30 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P2 #9 Blog Expansion Batch 1 (3 posts)
+
+**Scope**: 3 new blog posts, 3 config files updated
+
+### New Posts
+| Slug | Title | Category | Words |
+|------|-------|----------|-------|
+| `toilet-overflow-cleanup-guide` | Toilet Overflow Cleanup: Steps & Safety | Emergency | ~2200 |
+| `flood-insurance-nfip-virginia` | Flood Insurance in Virginia: NFIP Guide | Insurance | ~2300 |
+| `filing-water-damage-insurance-claim` | Filing a Water Damage Insurance Claim | Insurance | ~2400 |
+
+### Each Post Includes
+- `generateBlogArticleSchema` (Article + BreadcrumbList + LocalBusiness + FAQPage)
+- 7 FAQ items each
+- 3 contextual internal links out
+- MidArticleCTA + bottom CTA
+- Gold Standard styling (H2 border-b-4, blockquotes, callouts)
+
+### Build
+- Routes: 192/192 ✅ (was 189)
+- Pre-rendered sizes: 74-78KB each
+
+---
+
 ## 2026-02-21 — P1 #4 Cost Calculator: Data-Driven Dates + Close Priority
 
 **Scope**: 1 edited file, 3 doc files
