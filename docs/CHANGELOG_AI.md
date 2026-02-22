@@ -4,6 +4,50 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P2 #8 Phase 3: Content Normalization + Consistency Validation
+
+**Scope**: 1 file modified (DynamicNeighborhoodPage.tsx) + 1 new script + 2 doc files
+
+### Formats Identified
+| Format | Cities | Key Fields |
+|--------|--------|------------|
+| A | McLean, Fairfax, Great Falls, Springfield, Falls Church, Reston, Herndon, Ashburn, Alexandria, Arlington (shirlington), Vienna (tysons-woods) | meta, h1, heroSection, neighborhoodIntro, hyperLocalContent, serviceList, testimonialSection, emergencySection, faq, breadcrumbs |
+| B | Lorton | meta, h1, introSection.paragraphs, processSection, localChallenges.challenges, faqSection, serviceAreaSection |
+| C | Vienna (5 files) | hero, intro.paragraphs, services.servicesList[].features, faq.questions |
+| D | Tysons (5 files) | heroH1, heroP, mainContent.overview.paragraphs, faqSection.faqs, closingContent |
+| A-urban | Arlington (5 files) | Format A + buildingTypesSection.buildingTypes[].commonIssues |
+
+### Normalization Improvements
+- **Format C `services.servicesList[].features`**: Now folded into service descriptions as bullet points
+- **Format C `intro.paragraphs`**: Now captured for intro paragraph (was missing)
+- **Format C `hero.*`**: Now mapped to heroSection and meta (was falling through to defaults)
+- **Format A-urban `buildingTypesSection`**: Building types mapped to subdivisions; commonIssues extracted
+- **Format B `localChallenges`**: Challenges mapped to commonIssues with title + truncated description
+- **FAQ fallback**: Pages with no FAQ data now receive 6 standard neighborhood-specific questions
+- **Testimonials**: Empty array correctly causes section omission (renderer conditional already handles)
+
+### Validation Script
+Added `scripts/validate-neighborhoods.ts` — checks all 68 pages for:
+- Title exists and ≤60 chars (with HTML entity decoding)
+- H1 exists and non-empty
+- At least 1 link block (Related Services or Nearby Neighborhoods)
+- Schema types: BreadcrumbList, LocalBusiness, Service present
+- Word count ≥1200 (warning only)
+
+### Verification
+| Check | Result |
+|-------|--------|
+| Main build | 189/189 ✅ |
+| City build | 436/436 ✅ |
+| Validator failures | 0/68 ✅ |
+| Validator warnings | 60 (word count < 1200 — content volume, not normalization) |
+| Vienna Format C: services populated | ✅ (22 service links per page) |
+| Vienna Format C: testimonials omitted | ✅ (no fabricated data) |
+| Vienna Format C: FAQ present | ✅ (2 source questions preserved) |
+| Files outside scope | 0 modified ✅ |
+
+---
+
 ## 2026-02-21 — P2 #8 Phase 2: Internal Linking + Semantic Hierarchy
 
 **Scope**: 2 files modified (NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx) + 2 doc files

@@ -243,16 +243,45 @@ interface RouteParams {
  *
  * This function extracts what it can and provides safe defaults so the renderer never crashes.
  */
+// Standard FAQ fallback — used when content file provides no FAQ data
+function getStandardFaq(neighborhoodLabel: string, cityName: string): Array<{ question: string; answer: string }> {
+  return [
+    {
+      question: `How quickly can you respond to water damage in ${neighborhoodLabel}?`,
+      answer: `We provide 24/7 emergency response to ${neighborhoodLabel}, ${cityName} with typical arrival times under 60 minutes. Call us immediately when water damage occurs — faster response means less damage and lower restoration costs.`,
+    },
+    {
+      question: `What should I do while waiting for water damage help in ${neighborhoodLabel}?`,
+      answer: `Stop the water source if safe to do so (shut off main valve for plumbing failures). Move valuables to dry areas. Do not use electrical appliances in standing water. Document damage with photos for insurance. Our team will handle everything else upon arrival.`,
+    },
+    {
+      question: 'Do you work with insurance companies?',
+      answer: 'Yes. We work with all major insurance carriers and handle direct billing. Our team documents damage thoroughly with photos, moisture readings, and detailed reports that meet insurance requirements. We can also help you file your claim.',
+    },
+    {
+      question: 'How long does water damage restoration take?',
+      answer: 'Most residential water damage restoration takes 3-5 days for drying, depending on the extent of damage and materials affected. We use industrial dehumidifiers and air movers to accelerate the process while monitoring moisture levels to ensure complete drying.',
+    },
+    {
+      question: 'Will water damage cause mold in my home?',
+      answer: 'Mold can begin growing within 24-48 hours of water exposure. Our rapid response and thorough drying process is specifically designed to prevent mold growth. If mold is already present, we provide professional mold remediation services.',
+    },
+    {
+      question: `Are your technicians certified for water damage restoration in ${neighborhoodLabel}?`,
+      answer: `Yes. Our technicians are IICRC certified in water damage restoration, applied structural drying, and mold remediation. We are licensed by the Virginia DPOR and carry full insurance for all work performed in ${neighborhoodLabel} and throughout ${cityName}.`,
+    },
+  ];
+}
+
 function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string): NeighborhoodPageContent {
-  // Already correct format — but still patch missing sub-fields
-  const neighborhoodLabel = (raw.neighborhoodName || neighborhoodSlug || '')
+  const neighborhoodLabel = (raw.neighborhoodName || raw.neighborhood || neighborhoodSlug || '')
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (c: string) => c.toUpperCase());
 
-  // Extract meta
+  // Extract meta — Format C uses hero.title/hero.description, Format D uses heroH1/heroP
   const meta = raw.meta || {
-    title: raw.heroH1 || `Water Damage Restoration ${neighborhoodLabel}`,
-    description: raw.heroP || raw.searchDescription || raw.heroSection?.description || raw.heroSection?.tagline || '',
+    title: raw.heroH1 || raw.hero?.title || `Water Damage Restoration ${neighborhoodLabel}`,
+    description: raw.heroP || raw.searchDescription || raw.hero?.description || raw.heroSection?.description || raw.heroSection?.tagline || '',
     canonical: '',
   };
 
@@ -267,39 +296,81 @@ function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string):
   }
   meta.title = normalizedTitle;
 
-  // Extract h1
-  const h1 = raw.h1 || raw.heroH1 || raw.heroSection?.neighborhood
-    ? `Water Damage Restoration in ${raw.heroSection?.neighborhood || neighborhoodLabel}, ${raw.heroSection?.city || cityName}`
-    : `Water Damage Restoration in ${neighborhoodLabel}`;
+  // Extract h1 — Format A/B: raw.h1, Format C: hero.title, Format D: heroH1
+  const h1 = raw.h1 || raw.heroH1 || raw.hero?.title
+    || (raw.heroSection?.neighborhood
+      ? `Water Damage Restoration in ${raw.heroSection.neighborhood}, ${raw.heroSection?.city || cityName}`
+      : `Water Damage Restoration in ${neighborhoodLabel}`);
 
-  // Extract heroSection
+  // Extract heroSection — Format C uses hero.subtitle/hero.description
   const heroSection = {
-    headline: raw.heroSection?.headline || raw.heroSection?.tagline || raw.introSection?.header || '',
-    subheadline: raw.heroSection?.subheadline || raw.heroSection?.description || raw.heroP || '',
+    headline: raw.heroSection?.headline || raw.heroSection?.tagline || raw.hero?.subtitle || raw.introSection?.header || raw.introSection?.headline || '',
+    subheadline: raw.heroSection?.subheadline || raw.heroSection?.description || raw.hero?.description || raw.heroP || '',
     responseTime: raw.heroSection?.responseTime || raw.serviceAreaSection?.responseTime || '60-minute emergency response',
     backgroundImage: raw.heroSection?.backgroundImage,
   };
 
-  // Extract neighborhoodIntro
+  // Extract neighborhoodIntro — Format C uses intro.paragraphs, Format D uses mainContent.overview.paragraphs
   const introParagraph = raw.neighborhoodIntro?.paragraph
-    || (raw.introSection?.content || raw.introSection?.paragraphs?.join('\n\n') || raw.mainContent?.overview?.paragraphs?.join('\n\n') || '');
+    || raw.introSection?.content
+    || raw.introSection?.paragraphs?.join('\n\n')
+    || raw.intro?.paragraphs?.join('\n\n')
+    || raw.mainContent?.overview?.paragraphs?.join('\n\n')
+    || '';
+
+  // Extract commonIssues — merge from neighborhoodIntro, localChallenges, buildingTypesSection
+  let commonIssues: string[] = raw.neighborhoodIntro?.commonIssues || [];
+  if (commonIssues.length === 0 && raw.localChallenges?.challenges) {
+    commonIssues = raw.localChallenges.challenges.map((c: any) =>
+      c.title + (c.description ? `: ${c.description.slice(0, 120)}` : '')
+    );
+  }
+  if (commonIssues.length === 0 && raw.buildingTypesSection?.buildingTypes) {
+    // Flatten buildingType commonIssues into a single list
+    commonIssues = raw.buildingTypesSection.buildingTypes
+      .flatMap((bt: any) => (bt.commonIssues || []).slice(0, 2))
+      .slice(0, 5);
+  }
+
   const neighborhoodIntro = {
     paragraph: introParagraph,
     housingTypes: raw.neighborhoodIntro?.housingTypes || [],
-    commonIssues: raw.neighborhoodIntro?.commonIssues || [],
+    commonIssues,
   };
 
-  // Extract hyperLocalContent (handle alternate field names)
+  // Extract hyperLocalContent (handle alternate field names + buildingTypesSection)
   const hlc = raw.hyperLocalContent || {};
+  let subdivisions = hlc.subdivisions || [];
+  if (subdivisions.length === 0 && hlc.businessDistrict) {
+    subdivisions = [hlc.businessDistrict].flat().filter(Boolean);
+  }
+  if (subdivisions.length === 0 && raw.buildingTypesSection?.buildingTypes) {
+    subdivisions = raw.buildingTypesSection.buildingTypes.map((bt: any) => bt.name).filter(Boolean);
+  }
+  if (subdivisions.length === 0 && raw.serviceAreaSection?.neighborhoods) {
+    subdivisions = raw.serviceAreaSection.neighborhoods;
+  }
+
   const hyperLocalContent = {
     landmarks: hlc.landmarks || [],
     schools: hlc.schools || hlc.streets || [],
-    subdivisions: hlc.subdivisions || hlc.businessDistrict ? [hlc.businessDistrict].flat().filter(Boolean) : (raw.serviceAreaSection?.neighborhoods || []),
+    subdivisions,
     localFacts: hlc.localFacts || [],
   };
 
-  // Extract serviceList (handle servicesSection.services with title→name)
+  // Extract serviceList — Format C uses services.servicesList with features
   let serviceList: Array<{ name: string; description: string }> = raw.serviceList || [];
+  if (serviceList.length === 0 && raw.services?.servicesList) {
+    serviceList = raw.services.servicesList.map((s: any) => {
+      let desc = s.description || '';
+      // Fold features into description as bullet points
+      if (Array.isArray(s.features) && s.features.length > 0) {
+        const featureBullets = s.features.slice(0, 4).join(' • ');
+        desc = desc ? `${desc} — ${featureBullets}` : featureBullets;
+      }
+      return { name: s.title || s.name || '', description: desc };
+    });
+  }
   if (serviceList.length === 0 && raw.servicesSection?.services) {
     serviceList = raw.servicesSection.services.map((s: any) => ({
       name: s.title || s.name || '',
@@ -309,11 +380,11 @@ function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string):
   if (serviceList.length === 0 && raw.localChallenges?.challenges) {
     serviceList = raw.localChallenges.challenges.map((c: any) => ({
       name: c.title || '',
-      description: c.description || '',
+      description: c.solution || c.description || '',
     }));
   }
 
-  // Extract testimonialSection
+  // Extract testimonialSection — ensure empty array if no data (renderer conditionally omits)
   const rawTestimonials = raw.testimonialSection?.testimonials || raw.testimonialsSection?.testimonials || [];
   const testimonialSection = {
     headline: raw.testimonialSection?.headline || raw.testimonialsSection?.header || 'What Our Clients Say',
@@ -333,6 +404,7 @@ function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string):
   };
 
   // Extract faq — handle array, object with questions, object with faqs, faqSection
+  // Fall back to standard 6-question set if content file provides nothing
   let faq: Array<{ question: string; answer: string }> = [];
   if (Array.isArray(raw.faq)) {
     faq = raw.faq;
@@ -344,6 +416,9 @@ function normalizeContent(raw: any, cityName: string, neighborhoodSlug: string):
     faq = raw.faqSection.faqs;
   } else if (raw.faqSection?.questions) {
     faq = raw.faqSection.questions;
+  }
+  if (faq.length === 0) {
+    faq = getStandardFaq(neighborhoodLabel, cityName);
   }
 
   // Extract breadcrumbs or generate default

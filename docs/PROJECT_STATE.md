@@ -46,6 +46,7 @@ Last updated: 2026-02-19
 
 ## Completed Work (Chronological)
 
+- **2026-02-21**: Neighborhood Phase 3 — normalization hardening + consistency validation. Enhanced normalizeContent() to capture Format C services.servicesList[].features, buildingTypesSection, intro.paragraphs, and hero fields. Added FAQ fallback (6 standard questions) for pages with no FAQ data. Added build-time validator script (scripts/validate-neighborhoods.ts) checking title, H1, schema, link blocks, and word count across all 68 pages. 0 failures, 60 word-count warnings (content volume, not normalization).
 - **2026-02-21**: Neighborhood Phase 2 — internal linking + semantic hierarchy. Added H2 intro heading, Related Services block (4 city service links), and Nearby Neighborhoods block (2-3 sibling links) to all 68 neighborhood pages via NeighborhoodPageRenderer. Props extended with neighborhoodSlug and siblingNeighborhoods.
 - **2026-02-21**: Neighborhood Phase 1 — schema expansion + title normalization across 68 neighborhood pages. All titles ≤60 chars (max: 60). Added @graph schema with BreadcrumbList, LocalBusiness, Service, FAQPage to every neighborhood page via NeighborhoodPageRenderer. Title normalization via normalizeContent() strips pipe segments and enforces standard format.
 - **2026-02-21**: Production deployment of CityLift changes — 13 stale city sitemaps deleted from production, deploy.sh updated with --delete for sitemaps dir, Cloudflare cache purged, all 189 routes verified
