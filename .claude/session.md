@@ -6,42 +6,26 @@
 
 ## 🟢 COMPLETE THIS SESSION
 
-### 1. CityLift Production Deployment (P0 #11) ✅
-- **Commit:** `18a29f2` — deploy.sh updated with `--delete` for sitemaps/ dir
-- Deleted 13 stale city sitemap XMLs + stale `sitemaps/` subdir from production via SSH
-- Fixed 403 site outage caused by rsync permission changes (chmod 755/644 restored)
-- Cloudflare cache purged, all 10 smoke test URLs verified 200
-- All 13 stale sitemaps confirmed 404
-- **Tag:** `citylift-production-stable` at `1d736af` (pushed to origin)
-- OPEN_PRIORITIES.md #11 marked complete
-
-### 2. Agent Gamma Homepage Changes — REVERTED ✅
-- `pages/Home.tsx` had uncommitted changes violating guardrails:
-  - CTA text changed ("Request Services" → "Get Emergency Help Now")
-  - CTA layout restructured (single → dual button + phone)
-  - Mobile visibility changed (`hidden md:` removed on 2 CTAs)
-  - H1 text modified, hero paragraph rewritten
-- **Decision:** Full revert via `git restore pages/Home.tsx`
-- Homepage restored to original state
-
-### 3. Sitemap Timestamp Regeneration ✅
-- **Commit:** `1d736af` — timestamps updated 2026-02-19 → 2026-02-22 (build artifact only)
-
-### 4. MCP Stdio Auth Fix Verified ✅ (Mission Control)
-- `mcp__mission-control__get_status` returned full integration health JSON (no 401)
-- Commit `1274157` was already pushed to both remotes
+### P2 #8 Phase 1: Schema + Title Normalization ✅
+- **Commit:** `52470ca` — Neighborhood Phase 1: schema expansion + title normalization
+- Added `@graph` schema to all 68 neighborhood pages via NeighborhoodPageRenderer:
+  - BreadcrumbList (Home → City → Neighborhood)
+  - LocalBusiness (city-level with neighborhood areaServed, DPOR/IICRC credentials)
+  - Service (Water Damage Restoration, neighborhood-scoped)
+  - FAQPage (preserved existing)
+- Title normalization in `normalizeContent()` (DynamicNeighborhoodPage.tsx):
+  - Strips pipe-delimited segments ("| Differentiator | Flood Doctor")
+  - Standard format: "Water Damage Restoration {Neighborhood}" (≤45 chars, rendered ≤60)
+  - 13 titles were >60 chars → now 0/68 over limit (max: 60)
+- **Builds:** 189/189 main ✅ | 436/436 cities ✅
+- **Files modified:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, PROJECT_STATE.md, CHANGELOG_AI.md
+- **NOT deployed to production yet**
 
 ---
 
-## 🟡 NEXT: P2 #8 — Neighborhood Page Redesign
+## 🟡 NEXT: P2 #8 — Neighborhood Page Redesign Phase 2
 
-**Status:** Audit complete, micro-scoped redesign plan approved. Ready for implementation.
-
-### Phase 1: Schema + Meta fixes (no layout changes)
-1. Add `@graph` schema to NeighborhoodPageRenderer via PageMeta:
-   - BreadcrumbList, LocalBusiness, Service (keep existing FAQPage)
-2. Enforce title ≤60 chars across all 68 content files
-3. Standardize meta.canonical format
+**Status:** Phase 1 complete. Phase 2 ready for implementation.
 
 ### Phase 2: Internal linking (renderer change, no layout change)
 4. Add "Related Services" link block after Services section
@@ -52,14 +36,12 @@
 7. Improve normalizeContent() to extract more from Format C/D
 8. Ensure all 68 pages produce non-empty: intro, services, FAQ, breadcrumbs
 
-### Key Findings from Audit
-- **68 total neighborhood pages** across 13 cities
-- **4+ incompatible content formats** (Format A: meta/h1/heroSection, B: heroSection/introSection, C: hero/intro/services, D: heroH1/heroP/mainContent)
-- **Schema gaps:** Only FAQPage present; missing BreadcrumbList, LocalBusiness, Service
-- **No contextual internal links** in body (all 97-98 links from nav/footer)
-- **1 title >60 chars:** Ashburn/Brambleton (63 chars)
-- **Files in scope:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, content files (title fixes only)
+### Key Context
+- **68 neighborhood pages** across 13 cities
+- **4+ content formats** — normalizeContent() handles all
+- **Files in scope:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, content files
 - **Files NOT in scope:** Homepage, service pages, CTA components, city archetypes
+- Phase 1 schema is in @graph block 2 (block 1 is city-level LocalBusiness from CityApp layout)
 
 ---
 
@@ -98,8 +80,8 @@ WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
 - **CDN:** Cloudflare
 - **Deploy:** `./scripts/deploy.sh <password>`
 - **Tag:** `citylift-production-stable` at `1d736af`
-- **HEAD:** `1d736af` on `main`
+- **HEAD:** `52470ca` on `main`
 
 ---
 
-*Updated: 2026-02-21 — CityLift deployed to production. Neighborhood redesign audit complete, ready for Phase 1.*
+*Updated: 2026-02-21 — Neighborhood Phase 1 complete (schema + titles). Phase 2 (internal linking) next.*

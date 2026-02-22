@@ -28,6 +28,31 @@
 
 ## Completed Work
 
+### 2026-02-21: P2 #8 Phase 1 — Neighborhood Schema Expansion + Title Normalization
+
+**What:** Added full @graph JSON-LD schema and normalized titles across all 68 neighborhood pages. Zero content file edits — all changes at renderer/normalizer level.
+
+**Schema Expansion (NeighborhoodPageRenderer.tsx):**
+- Built @graph array with 4 entity types: BreadcrumbList, LocalBusiness, Service, FAQPage
+- BreadcrumbList: Home → {City} Water Damage → {Neighborhood}
+- LocalBusiness: City-level with Neighborhood-scoped areaServed, DPOR/IICRC credentials, 24/7 hours
+- Service: Water Damage Restoration with ServiceChannel/ContactPoint
+- FAQPage: Preserved existing FAQ schema, moved into @graph
+
+**Title Normalization (normalizeContent in DynamicNeighborhoodPage.tsx):**
+- Strips all pipe-delimited segments from meta.title (PageMeta appends " | Flood Doctor")
+- Standard format: "Water Damage Restoration {Neighborhood}" (≤45 chars → ≤60 rendered)
+- Fallback for long names: "{Neighborhood} Water Damage"
+- Before: 13 titles >60 chars, 15 files with no meta title
+- After: 0/68 over 60 chars (max: 60 — "Water Damage Restoration Falls Church City VA | Flood Doctor")
+
+**Files Modified:** 2 (NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx) + 2 docs
+**Commit:** `52470ca`
+**Builds:** 189/189 main ✅ | 436/436 cities ✅
+**Status:** Complete, not yet deployed to production
+
+---
+
 ### 2026-02-19: Production Deployment + City Build Pipeline Fix (Full 8-Service Matrix)
 
 **Production Deployment:**
