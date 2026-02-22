@@ -1,52 +1,65 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-20 (evening)
+**Last Updated:** 2026-02-21
 
 ---
 
-## 🟢 COMPLETE: Security P0 — Secret Scanning & Credential Rotation
+## 🟢 COMPLETE THIS SESSION
 
-**Commits pushed to main:**
-- `4670a34` — Gitleaks secret scanning (pre-commit hook + CI workflow)
-- `602f91f` — Resend API key moved to Worker env binding
-- `c0b819d` — Form handler input sanitization (XSS prevention)
+### 1. CityLift Production Deployment (P0 #11) ✅
+- **Commit:** `18a29f2` — deploy.sh updated with `--delete` for sitemaps/ dir
+- Deleted 13 stale city sitemap XMLs + stale `sitemaps/` subdir from production via SSH
+- Fixed 403 site outage caused by rsync permission changes (chmod 755/644 restored)
+- Cloudflare cache purged, all 10 smoke test URLs verified 200
+- All 13 stale sitemaps confirmed 404
+- **Tag:** `citylift-production-stable` at `1d736af` (pushed to origin)
+- OPEN_PRIORITIES.md #11 marked complete
 
-**Gitleaks Setup (both repos):**
-- `.gitleaks.toml` config with custom rules + allowlists
-- Pre-commit hook (local enforcement via `.git/hooks/pre-commit`)
-- GitHub Actions workflow `.github/workflows/gitleaks.yml` (CI enforcement)
-- Installed gitleaks 8.30.0 via Homebrew
+### 2. Agent Gamma Homepage Changes — REVERTED ✅
+- `pages/Home.tsx` had uncommitted changes violating guardrails:
+  - CTA text changed ("Request Services" → "Get Emergency Help Now")
+  - CTA layout restructured (single → dual button + phone)
+  - Mobile visibility changed (`hidden md:` removed on 2 CTAs)
+  - H1 text modified, hero paragraph rewritten
+- **Decision:** Full revert via `git restore pages/Home.tsx`
+- Homepage restored to original state
 
-**Credential Rotations:**
-- ✅ Resend API key rotated (sending-only, scoped to `mail.flood.doctor`)
-- ✅ Cloudflare API token (rotated by user day prior)
-- ✅ GoDaddy SSH password rotated
-- All updated in `~/.claude/credentials.local`
+### 3. Sitemap Timestamp Regeneration ✅
+- **Commit:** `1d736af` — timestamps updated 2026-02-19 → 2026-02-22 (build artifact only)
 
-**Cloudflare Worker (`flood-doctor-forms`):**
-- Resend key now reads from `env.RESEND_API_KEY` (Cloudflare secret binding)
-- 500 guard if binding missing
-- All user inputs HTML-escaped to prevent XSS in email notifications
-- Deployed and smoke tested successfully
-
-**Mission-Control-APP:**
-- `.gitignore` patched (added `*.save` pattern)
-- Gitleaks config + CI workflow + pre-commit hook added
-- Committed `4d515c1` and pushed
-
-**Skipped (by choice):**
-- GITLEAKS_LICENSE GitHub secret (works without it)
-- Branch protection on main (keeps direct-push workflow)
+### 4. MCP Stdio Auth Fix Verified ✅ (Mission Control)
+- `mcp__mission-control__get_status` returned full integration health JSON (no 401)
+- Commit `1274157` was already pushed to both remotes
 
 ---
 
-## 🟡 IMMEDIATE: Re-deploy dist-cities/ with full 8-service matrix
+## 🟡 NEXT: P2 #8 — Neighborhood Page Redesign
 
-The current production deployment only has 4 services per city. Need to:
-1. `npm run build:cities` → rebuild with fixes
-2. Deploy updated dist-cities/ to all 13 city subdomains
-3. Purge Cloudflare cache
-4. Smoke test all 8 services for one city (e.g., herndon)
+**Status:** Audit complete, micro-scoped redesign plan approved. Ready for implementation.
+
+### Phase 1: Schema + Meta fixes (no layout changes)
+1. Add `@graph` schema to NeighborhoodPageRenderer via PageMeta:
+   - BreadcrumbList, LocalBusiness, Service (keep existing FAQPage)
+2. Enforce title ≤60 chars across all 68 content files
+3. Standardize meta.canonical format
+
+### Phase 2: Internal linking (renderer change, no layout change)
+4. Add "Related Services" link block after Services section
+5. Add "Nearby Neighborhoods" link block before Final CTA
+6. Add H2 heading to neighborhood intro section
+
+### Phase 3: Content normalization (data files only)
+7. Improve normalizeContent() to extract more from Format C/D
+8. Ensure all 68 pages produce non-empty: intro, services, FAQ, breadcrumbs
+
+### Key Findings from Audit
+- **68 total neighborhood pages** across 13 cities
+- **4+ incompatible content formats** (Format A: meta/h1/heroSection, B: heroSection/introSection, C: hero/intro/services, D: heroH1/heroP/mainContent)
+- **Schema gaps:** Only FAQPage present; missing BreadcrumbList, LocalBusiness, Service
+- **No contextual internal links** in body (all 97-98 links from nav/footer)
+- **1 title >60 chars:** Ashburn/Brambleton (63 chars)
+- **Files in scope:** NeighborhoodPageRenderer.tsx, DynamicNeighborhoodPage.tsx, content files (title fixes only)
+- **Files NOT in scope:** Homepage, service pages, CTA components, city archetypes
 
 ---
 
@@ -61,15 +74,6 @@ WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
 **Status:** Bootstrap created, ready for GPT↔Claude collab loop
 **Bootstrap:** `collab-log/SERVICE-FORM-COLLAB-001-bootstrap.md`
 **To resume:** Run `/collab resume SERVICE-FORM-COLLAB-001`
-
----
-
-## Next Steps (Beyond CityLift)
-
-- **Deploy CityLift to production** (immediate next action)
-- Client Portal (CompanyCam + Matterport)
-- Neighborhood Page Redesign (68 pages)
-- Blog Content Expansion (5 cities need 2 more posts)
 
 ---
 
@@ -93,7 +97,9 @@ WordPress vs flood.doctor 301 redirects — still awaiting strategic decision.
 - **Hosting:** GoDaddy (132.148.253.156)
 - **CDN:** Cloudflare
 - **Deploy:** `./scripts/deploy.sh <password>`
+- **Tag:** `citylift-production-stable` at `1d736af`
+- **HEAD:** `1d736af` on `main`
 
 ---
 
-*Updated: 2026-02-20 — Security P0 complete. All secrets rotated. Gitleaks on both repos.*
+*Updated: 2026-02-21 — CityLift deployed to production. Neighborhood redesign audit complete, ready for Phase 1.*
