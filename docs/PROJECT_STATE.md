@@ -43,7 +43,7 @@ Last updated: 2026-02-22
 <!-- METRICS:START -->
 - **Pre-rendered routes**: 192
 - **Titles > 60 chars**: 0
-- **Duplicate titles**: 1
+- **Duplicate titles**: 0
 <!-- METRICS:END -->
 - **Duplicate H1 tags**: 0
 - **Broken internal links**: 0

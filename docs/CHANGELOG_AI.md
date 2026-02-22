@@ -4,6 +4,14 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-22 — Go-Live Blocker Fix
+
+- Fixed duplicate title: `/guides/water-damage-insurance-claim/` changed from "Filing a Water Damage Insurance Claim | Flood Doctor" → "Water Damage Insurance Claim Steps | Flood Doctor"
+- Duplicate titles: 1 → 0
+- PROJECT_STATE.md refreshed: 192 routes, 0 duplicates, 0 over-60
+
+---
+
 ## 2026-02-22 — Go-Live Closeout
 
 - Tags pushed: `go_live_2026-02-21`, `rollback_anchor_2026-02-21` (on `daa9b86`)
