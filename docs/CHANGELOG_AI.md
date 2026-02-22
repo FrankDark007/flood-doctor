@@ -4,6 +4,35 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P2 #8 Phase 4: QA Sweep + Close Priority
+
+**Scope**: 1 file updated (validate-neighborhoods.ts) + 3 doc files
+
+### Validator Enhancements (8 checks total)
+| # | Check | Result |
+|---|-------|--------|
+| 1 | Title exists + ≤60 chars | 68/68 ✅ |
+| 2 | H1 exists + non-empty | 68/68 ✅ |
+| 3 | Internal link blocks present | 68/68 ✅ |
+| 4 | Schema: BreadcrumbList, LocalBusiness, Service | 68/68 ✅ |
+| 5 | Word count ≥1200 | 8/68 pass, 60 warnings (content volume) |
+| 6 | Canonical matches `https://{city}.flood.doctor/neighborhoods/{slug}/` | 68/68 ✅ |
+| 7 | Breadcrumb schema: Home → City → Neighborhood | 68/68 ✅ |
+| 8 | Related service link paths exist in build output | 68/68 ✅ |
+
+### Uniqueness Audit
+- Duplicate titles: **0** (68/68 unique)
+- Duplicate H1s: **0** (68/68 unique)
+
+### Build
+- Main: 189/189 ✅
+- Cities: 436/436 ✅ (58.8s)
+
+### Priority Closed
+- P2 #8 (Neighborhood Page Redesign) marked ✅ Complete in OPEN_PRIORITIES.md
+
+---
+
 ## 2026-02-21 — P2 #8 Phase 3: Content Normalization + Consistency Validation
 
 **Scope**: 1 file modified (DynamicNeighborhoodPage.tsx) + 1 new script + 2 doc files
