@@ -33,6 +33,7 @@ import PageMeta from '../../components/ui/PageMeta';
 import Button from '../../components/ui/Button';
 import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import { siteConfig } from '../../config/site';
+import { currentPricing } from '../../data/pricing/flood-doctor-rates';
 
 /**
  * WaterDamageCostCalculator - SEO-Optimized Cost Calculator Tool
@@ -66,75 +67,8 @@ const WaterDamageCostCalculator: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showMethodology, setShowMethodology] = useState<boolean>(false);
 
-  // Actual pricing from Flood Doctor price list (Xactimate-based)
-  const pricing = {
-    // Equipment daily rates
-    equipment: {
-      airMoverStandard: 42.00,      // Standard drying fan per day
-      airMoverAxial: 58.08,         // Axial fan per day
-      dehumidifierMedium: 92.75,    // Medium commercial DH per day
-      dehumidifierLarge: 129.50,    // Large commercial DH per day
-      dehumidifierXLarge: 204.00,   // XLarge LGR per day
-      airScrubber500: 75.00,        // 500 CFM HEPA scrubber per day
-      airScrubber2000: 150.00,      // 2000 CFM HEPA scrubber per day
-      negativeAir: 278.59,          // Negative air machine per day
-      desiccant1000: 575.00,        // Desiccant DH 1000 CFM per day
-      desiccant3000: 875.00,        // Desiccant DH 3000 CFM per day
-    },
-    // Labor hourly rates
-    labor: {
-      skilledTechDay: 55.50,
-      skilledTechNight: 89.50,
-      skilledTechWeekend: 99.50,
-      skilledTechHoliday: 124.50,
-      certifiedTechDay: 74.50,
-      certifiedTechNight: 94.50,
-      extractionTech: 79.34,
-      equipmentMonitoring: 79.34,
-      equipmentMonitoringAfter: 119.13,
-      projectManager: 74.50,        // Residential supervision
-      projectManagerAfter: 125.00,
-      plumber: 177.81,
-      electrician: 147.15,
-    },
-    // Per SF rates
-    perSqFt: {
-      extractionCat1: 0.35,         // Clean water extraction
-      extractionCat2: 0.49,         // Gray water extraction
-      extractionCat2Heavy: 1.15,    // Heavy gray water
-      extractionCat3: 0.85,         // Black water extraction
-      antimicrobial: 0.56,          // Antimicrobial application
-      tearOutCarpet: 1.76,          // Non-salvageable carpet removal
-      tearOutPad: 1.67,             // Carpet pad removal
-      tearOutDrywall: 1.32,         // Wet drywall removal
-      tearOutInsulation: 1.47,      // Wet insulation removal
-      tearOutFlooring: 3.91,        // Floating floor removal
-      tearOutTile: 4.16,            // Tile removal
-      tearOutHardwood: 12.34,       // Hardwood removal
-      containment: 1.23,            // Containment barrier
-      hepaVacLight: 0.48,           // Light HEPA vacuum
-      hepaVacDetailed: 0.96,        // Detailed HEPA vacuum
-      protectPlastic: 0.54,         // Plastic protection
-      finalCleaning: 0.36,          // Final cleaning
-    },
-    // Fixed costs
-    fixed: {
-      emergencyServiceCall: 498.00,
-      thermalImaging: 650.00,
-      matterportScan: 1500.00,
-      digitizedSketch: 750.00,
-      blockAndPadRoom: 66.18,
-      equipmentDecon: 46.50,        // Per piece for Cat 2/3
-    },
-    // Per linear foot rates
-    perLF: {
-      baseboardDetach: 2.98,
-      baseboardTearOut: 2.52,
-      drywallFloodCut2ft: 5.04,
-      tacklessTearOut: 2.91,
-      trimTearOut: 1.24,
-    }
-  };
+  // Pricing from typed data module (data/pricing/flood-doctor-rates.ts)
+  const pricing = currentPricing;
 
   // Equipment requirements by damage class
   const equipmentByClass = {
@@ -466,7 +400,7 @@ const WaterDamageCostCalculator: React.FC = () => {
       url: siteConfig.SITE_URL,
     },
     datePublished: '2025-01-01',
-    dateModified: '2026-01-01',
+    dateModified: currentPricing.lastUpdated,
   };
 
   const breadcrumbSchema = generateBreadcrumbSchema([

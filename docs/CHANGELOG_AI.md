@@ -4,6 +4,27 @@ Running log of major AI-assisted work batches.
 
 ---
 
+## 2026-02-21 — P1 #4 Cost Calculator: Pricing Data Extraction
+
+**Scope**: 1 new file, 1 edited file, 2 doc files
+
+### Changes
+- **Created** `data/pricing/flood-doctor-rates.ts` — typed pricing module with `FloodDoctorPricing` interface and `currentPricing` export
+- **Edited** `pages/resources/WaterDamageCostCalculator.tsx` — replaced inline 70-line pricing object with import from data module; schema `dateModified` now reads `currentPricing.lastUpdated`
+- **Zero UI/layout changes** — calculator inputs, outputs, and copy unchanged
+- **Build**: 189/189 routes ✅
+
+### Pricing Module Structure
+| Export | Type | Purpose |
+|--------|------|---------|
+| `FloodDoctorPricing` | interface | Full rate sheet shape (equipment, labor, perSqFt, fixed, perLF) |
+| `currentPricing` | const | Current Xactimate-based rates (version 2026-01) |
+
+### Verification
+Baseline scenario (residential, 500sqft, class 2, cat 1, regular): $2,770–$3,748 — identical before/after.
+
+---
+
 ## 2026-02-21 — P2 #8 Phase 4: QA Sweep + Close Priority
 
 **Scope**: 1 file updated (validate-neighborhoods.ts) + 3 doc files
