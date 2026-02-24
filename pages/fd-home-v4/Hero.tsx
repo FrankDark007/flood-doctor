@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
                     </div>
 
                     <div className="mt-4 p-3 border rounded-lg text-center text-[#1a73e8] font-medium text-sm">
-                      REQUEST A QUOTE
+                      REQUEST SERVICES
                     </div>
 
                     <div className="mt-3 space-y-2">
