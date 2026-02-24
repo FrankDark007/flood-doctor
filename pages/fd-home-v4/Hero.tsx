@@ -55,8 +55,8 @@ export const Hero: React.FC = () => {
               {/* Slide 1: Business Profile */}
               <div className={`absolute inset-0 transition-opacity duration-700 ${heroSlide === 0 ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
                  {/* Phone Header Image — Team Photo */}
-                 <div className="h-32 overflow-hidden">
-                    <img src="/images/insights/flood-doctor-northern-virginia-restoration-team.png" alt="Flood Doctor restoration team" className="w-full h-full object-cover object-top" />
+                 <div className="h-40 overflow-hidden">
+                    <img src="/images/insights/flood-doctor-northern-virginia-restoration-team.png" alt="Flood Doctor restoration team" className="w-full h-full object-cover object-[center_60%]" />
                  </div>
                  <div className="p-4">
                     <h3 className="text-lg font-medium text-[#202124]">Flood Doctor</h3>
