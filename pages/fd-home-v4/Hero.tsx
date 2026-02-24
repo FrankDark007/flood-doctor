@@ -125,6 +125,30 @@ export const Hero: React.FC = () => {
                           <span>✔ Google Guaranteed</span>
                        </div>
                     </div>
+
+                    {/* Trust Badges */}
+                    <div className="mt-2 pt-4 border-t border-gray-100">
+                       <div className="grid grid-cols-3 gap-2 text-center">
+                          <div className="flex flex-col items-center gap-1.5">
+                             <div className="w-8 h-8 rounded-full bg-[#e8f0fe] flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                             </div>
+                             <span className="text-[8px] font-medium text-[#3c4043] leading-tight">IICRC<br/>Certified</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1.5">
+                             <div className="w-8 h-8 rounded-full bg-[#e6f4ea] flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#188038" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" strokeLinecap="round"/></svg>
+                             </div>
+                             <span className="text-[8px] font-medium text-[#3c4043] leading-tight">60-Min<br/>Response</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1.5">
+                             <div className="w-8 h-8 rounded-full bg-[#fef7e0] flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f9ab00" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                             </div>
+                             <span className="text-[8px] font-medium text-[#3c4043] leading-tight">25+ Years<br/>Experience</span>
+                          </div>
+                       </div>
+                    </div>
                  </div>
               </div>
 
