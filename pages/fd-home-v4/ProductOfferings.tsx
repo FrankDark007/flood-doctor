@@ -113,8 +113,9 @@ export const ProductOfferings: React.FC = () => {
                       {card.desc}
                     </p>
                     <div className="mt-auto pt-[15px] px-[11px]">
-                      <a href="#" className="text-[#1a73e8] font-medium text-[16px] h-[48px] px-[13px] rounded-full inline-flex items-center justify-center transition-colors hover:bg-[#1a73e80a]">
+                      <a href={card.link} className="text-[#1a73e8] font-medium text-[16px] h-[48px] px-[13px] rounded-full inline-flex items-center gap-1 justify-center transition-colors hover:bg-[#1a73e80a] group">
                         Learn more
+                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
                       </a>
                     </div>
                   </div>
