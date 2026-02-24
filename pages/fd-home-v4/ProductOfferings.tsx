@@ -6,21 +6,24 @@ const cards = [
     title: "Water Damage Restoration",
     desc: "From burst pipes to storm flooding, we extract standing water, dry structural materials, and restore your property to pre-loss condition using industrial-grade equipment.",
     bgColor: "bg-[#e8f0fe]",
-    type: 'services',
+    image: "/images/cards/water-damage-restoration-emergency-service.png",
+    alt: "Professional water damage restoration technician extracting standing water with industrial equipment in Northern Virginia home",
     link: "/services/residential/restoration-services/water-damage-restoration/"
   },
   {
     title: "Mold Remediation",
     desc: "Professional mold inspection, containment, and removal following IICRC S520 standards. We identify moisture sources and ensure complete remediation to protect your health.",
     bgColor: "bg-[#e6f4ea]",
-    type: 'products',
+    image: "/images/cards/mold-remediation-professional-inspection.png",
+    alt: "IICRC-certified mold remediation specialist in protective equipment inspecting and treating mold with containment barriers",
     link: "/services/residential/cleanup-services/mold-remediation/"
   },
   {
     title: "Fire & Smoke Damage",
     desc: "Comprehensive fire damage restoration including smoke and soot removal, odor elimination, structural cleaning, and complete reconstruction services.",
     bgColor: "bg-[#fef7e0]",
-    type: 'food',
+    image: "/images/cards/fire-smoke-damage-restoration-cleanup.png",
+    alt: "Fire and smoke damage restoration technicians cleaning and restoring residential property with professional equipment",
     link: "/services/fire-damage-restoration"
   }
 ];
@@ -56,51 +59,6 @@ export const ProductOfferings: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const renderMockup = (type: string) => {
-    switch (type) {
-      case 'services':
-        return (
-          <div className="w-full h-full bg-white rounded-[2rem] p-6 shadow-sm border border-gray-100 flex flex-col">
-            <div className="flex justify-between mb-4">
-              <div className="flex flex-col gap-1">
-                <span className="font-bold text-gray-900 google-sans text-xs">Detroit Voltage</span>
-                <div className="flex items-center gap-1 text-[8px]"><span className="text-[#fbbc04]">★★★★★</span></div>
-              </div>
-              <div className="w-10 h-10 bg-gray-100 rounded-lg overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1621905235294-7500bed49cb3?auto=format&fit=crop&q=80&w=100" className="w-full h-full object-cover" alt="Service" />
-              </div>
-            </div>
-            <div className="flex gap-4 text-[9px] text-[#1a73e8] font-bold border-b border-gray-100 pb-2 mb-4">
-              <span className="border-b-2 border-[#1a73e8] pb-2">Overview</span>
-            </div>
-            <button className="w-full py-2 rounded-full border border-[#1a73e8] text-[#1a73e8] text-[9px] font-bold mb-6">REQUEST A QUOTE</button>
-            <div className="flex items-start gap-3"><div className="w-3 h-3 bg-gray-100 rounded-full mt-1"></div><div className="flex-1 space-y-1.5"><div className="h-1.5 bg-gray-100 rounded w-full"></div><div className="h-1.5 bg-gray-50 rounded w-2/3"></div></div></div>
-          </div>
-        );
-      case 'products':
-        return (
-          <div className="w-full h-full bg-white rounded-[2rem] p-6 shadow-sm border border-gray-100 flex flex-col">
-            <div className="relative mb-4"><div className="h-7 bg-gray-50 border border-gray-100 rounded-full w-full px-3 flex items-center justify-end"><div className="w-3 h-3 text-gray-300">🔍</div></div></div>
-            <div className="grid grid-cols-3 gap-2">
-               {[0, 1, 2].map((idx) => (
-                 <div key={idx} className="flex flex-col border border-gray-100 rounded-lg p-1.5"><div className="aspect-square bg-gray-50 rounded-md mb-1.5"></div><div className="h-1 bg-gray-100 w-3/4 mb-1"></div><div className="h-1 bg-gray-50 w-1/2"></div></div>
-               ))}
-            </div>
-          </div>
-        );
-      case 'food':
-        return (
-          <div className="w-full h-full bg-white rounded-[2rem] p-0 shadow-sm border border-gray-100 flex flex-col overflow-hidden">
-            <div className="h-28 bg-gray-100 relative"></div>
-            <div className="p-4">
-              <div className="mb-3"><span className="font-bold text-[10px] text-gray-900 google-sans">Bobby's BBQ</span><div className="text-[8px] text-yellow-400">★★★★★</div></div>
-              <div className="grid grid-cols-2 gap-2"><button className="py-1.5 rounded-full border border-[#1a73e8] text-[#1a73e8] text-[8px] font-bold">PICKUP</button><button className="py-1.5 rounded-full border border-[#1a73e8] text-[#1a73e8] text-[8px] font-bold">DELIVERY</button></div>
-            </div>
-          </div>
-        );
-      default: return null;
-    }
-  };
 
   return (
     <section ref={containerRef} className="bg-white py-20 lg:py-24">
@@ -138,10 +96,13 @@ export const ProductOfferings: React.FC = () => {
                 <div className={`relative bg-white rounded-[24px] p-[18px_18px_32px] flex flex-col min-h-[500px] border-2 transition-all duration-500 ${
                   activeCard === i ? 'border-[#dadce0]' : 'border-transparent'
                 }`}>
-                  <div className={`${card.bgColor} rounded-[12px] aspect-[1.6/1] mb-6 flex items-center justify-center p-6 lg:p-10 transition-opacity duration-500 ${activeCard === i ? 'opacity-100' : 'opacity-50'}`}>
-                     <div className="w-full max-w-[280px] h-full shadow-lg rounded-[2rem] overflow-hidden">
-                       {renderMockup(card.type)}
-                     </div>
+                  <div className={`rounded-[12px] aspect-[1.6/1] mb-6 overflow-hidden transition-opacity duration-500 ${activeCard === i ? 'opacity-100' : 'opacity-50'}`}>
+                     <img
+                       src={card.image}
+                       alt={card.alt}
+                       className="w-full h-full object-cover"
+                       loading="lazy"
+                     />
                   </div>
                   
                   <div className="flex flex-col flex-1 px-0 lg:px-[22px] mt-6">
