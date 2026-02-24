@@ -80,7 +80,7 @@ FAILED=0
 
 for city in "${CITIES[@]}"; do
     LOCAL_PATH="$PROJECT_DIR/dist-cities/$city/"
-    REMOTE_PATH="~/public_html/flood.doctor/${city}/"
+    REMOTE_PATH="~/public_html/${city}.flood.doctor/"
 
     if [ ! -d "$LOCAL_PATH" ]; then
         echo "   ⚠️  $city: dist-cities/$city/ not found, skipping"
@@ -128,10 +128,10 @@ echo "   📊 Results: $DEPLOYED deployed, $FAILED failed"
 echo ""
 echo "🔐 Step 3: Setting permissions..."
 for city in "${CITIES[@]}"; do
-    REMOTE_PATH="~/public_html/flood.doctor/${city}/"
+    REMOTE_PATH="~/public_html/${city}.flood.doctor/"
     expect << EXPECT_SCRIPT > /dev/null 2>&1
 set timeout 30
-spawn ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "chmod -R 755 ~/public_html/flood.doctor/$city 2>/dev/null; chmod 644 ~/public_html/flood.doctor/$city/.htaccess 2>/dev/null"
+spawn ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "chmod -R 755 ~/public_html/${city}.flood.doctor 2>/dev/null; chmod 644 ~/public_html/${city}.flood.doctor/.htaccess 2>/dev/null"
 expect "password:"
 send "$SSH_PASS\r"
 expect eof

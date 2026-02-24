@@ -40,11 +40,10 @@
 - This includes index.tsx, Hero.tsx, ValueProps.tsx, FeatureSection.tsx, and all other homepage components
 
 ### 5. CITY SUBDOMAIN DEPLOY PATHS — DO NOT GET THIS WRONG
-- City subdomains deploy to: `~/public_html/flood.doctor/{city}/` (e.g. `~/public_html/flood.doctor/ashburn/`)
-- **NEVER** deploy to `~/public_html/{city}.flood.doctor/` — that path exists but is NOT where GoDaddy serves from
+- City subdomains deploy to: `~/public_html/{city}.flood.doctor/` (e.g. `~/public_html/ashburn.flood.doctor/`)
+- **NEVER** deploy to `~/public_html/flood.doctor/{city}/` — that is WRONG and breaks the main site
 - The main site deploys to: `~/public_html/flood.doctor/` (addon domain)
-- City directories are SUBDIRECTORIES of the main addon domain directory
-- GoDaddy routes `{city}.flood.doctor` → `~/public_html/flood.doctor/{city}/`
+- These are SEPARATE directories. City content must NEVER go inside the main site directory.
 
 ---
 
