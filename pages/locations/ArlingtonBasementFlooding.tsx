@@ -161,9 +161,8 @@ const ArlingtonBasementFlooding: React.FC = () => {
               24/7 emergency basement flooding services in Arlington. Rapid water extraction, complete drying, and permanent waterproofing solutions. IICRC certified. Prevent future flooding.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                <Phone size={20} className="mr-2" />
-                (877) 497-0007
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Get Free Estimate
@@ -217,7 +216,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
                   Arlington's location along the Potomac River, clay-heavy soil composition, and aging infrastructure make basement flooding a common problem. From historic neighborhoods like Lyon Village to modern developments in Crystal City and Pentagon City, we've helped thousands of Arlington homeowners recover from basement flooding and prevent recurrence.
                 </p>
                 <p>
-                  Our IICRC-certified team provides complete basement flooding solutions: emergency water extraction, structural drying, mold prevention, and permanent waterproofing. We don't just clean up the mess—we fix the underlying problem so it doesn't happen again. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for 24/7 emergency service.
+                  Our IICRC-certified team provides complete basement flooding solutions: emergency water extraction, structural drying, mold prevention, and permanent waterproofing. We don't just clean up the mess—we fix the underlying problem so it doesn't happen again. <a href="/request/" className="text-[#1a73e8] font-medium hover:underline">Request Services</a> for 24/7 emergency service.
                 </p>
               </div>
             </section>
@@ -324,7 +323,7 @@ const ArlingtonBasementFlooding: React.FC = () => {
                   <span className="font-medium">Safety first:</span> Don't enter a flooded basement if water is near electrical outlets or you suspect electrical hazards
                 </li>
                 <li className="text-gray-800">
-                  <span className="font-medium">Call for help:</span> <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> — our 24/7 emergency team will dispatch immediately
+                  <span className="font-medium">Get help now:</span> <a href="/request/" className="text-[#1a73e8] font-bold hover:underline">Request Services</a> — our 24/7 emergency team will dispatch immediately
                 </li>
                 <li className="text-gray-800">
                   <span className="font-medium">Shut off power:</span> Turn off electricity to the basement at your breaker panel if you can do so safely from outside the flooded area
@@ -428,7 +427,6 @@ const ArlingtonBasementFlooding: React.FC = () => {
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-4">
-                    <Phone size={24} />
                     <span className="text-sm font-bold uppercase tracking-wide">24/7 Emergency</span>
                   </div>
                   <h3 className="font-display text-2xl font-medium mb-2">
@@ -438,9 +436,8 @@ const ArlingtonBasementFlooding: React.FC = () => {
                     Emergency water removal and permanent waterproofing solutions. Call now for immediate help.
                   </p>
 
-                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
-                    <Phone size={18} className="mr-2" />
-                    (877) 497-0007
+                  <Button href="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
+                    Request Services
                   </Button>
 
                   <div className="text-xs text-blue-100 text-center">
@@ -538,9 +535,8 @@ const ArlingtonBasementFlooding: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             Emergency cleanup + permanent waterproofing solutions. Protect your home and your investment.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
-            <Phone size={20} className="mr-2" />
-            (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+            Request Services
           </Button>
         </div>
       </div>

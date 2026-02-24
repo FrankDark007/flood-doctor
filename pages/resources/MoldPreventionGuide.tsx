@@ -208,9 +208,8 @@ const MoldPreventionGuide: React.FC = () => {
               Mold can begin growing within 24-48 hours of water damage. Understanding the timeline and taking immediate action is essential to avoid costly remediation.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Emergency: (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -449,9 +448,8 @@ const MoldPreventionGuide: React.FC = () => {
                   Mold can start growing in 24-48 hours. Don't wait—call now for rapid water extraction and professional drying.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -535,9 +533,8 @@ const MoldPreventionGuide: React.FC = () => {
           <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
             The clock starts the moment water enters your property. Call now for rapid response that stops mold before it starts.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
+            Request Services
           </Button>
         </div>
       </div>

@@ -302,9 +302,8 @@ const StructuralDryingGuide: React.FC = () => {
               Structural drying isn't just running fans and dehumidifiers. It's a precise science based on psychrometrics, material properties, and IICRC standards. This comprehensive guide explains how professionals restore water-damaged buildings.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Professional Assessment
@@ -592,9 +591,8 @@ const StructuralDryingGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our team uses psychrometric science, commercial-grade equipment, and IICRC S500 protocols to ensure complete structural drying. Call 24/7 for rapid response.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

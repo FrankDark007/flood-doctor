@@ -129,7 +129,7 @@ const TypesOfMold: React.FC = () => {
                 moisture source and removing the mold.
               </p>
               <p className="text-emerald-200">
-                Concerned about mold? Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> for a free inspection.
+                Concerned about mold? <a href="/request/" className="underline font-bold">Request Services</a> for a free inspection.
               </p>
             </div>
           </div>
@@ -504,11 +504,10 @@ const TypesOfMold: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
             >
-              <Phone className="w-5 h-5" />
-              (877) 497-0007
+              Request Services
             </a>
             <Link
               to="/services/residential/cleanup-services/mold-remediation/"

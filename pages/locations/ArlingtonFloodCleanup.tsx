@@ -134,9 +134,8 @@ const ArlingtonFloodCleanup: React.FC = () => {
               When flooding strikes, every minute counts. 24/7 emergency response serving all Arlington neighborhoods. IICRC-certified teams arrive within 60-90 minutes with industrial extraction equipment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
-                <Phone size={20} className="mr-2" />
-                CALL NOW: (877) 497-0007
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Request Emergency Service
@@ -190,7 +189,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
                   Arlington's location along the Potomac River and proximity to Four Mile Run, Donaldson Run, and other waterways makes flooding a real risk during heavy rainfall. From historic neighborhoods in Clarendon and Ballston to modern developments in Crystal City and Pentagon City, we've helped Arlington property owners recover from floods of all sizes.
                 </p>
                 <p>
-                  Our IICRC-certified flood cleanup teams respond 24/7/365 with truck-mounted extraction equipment, industrial drying systems, and complete restoration capabilities. We handle everything from initial water removal to final reconstruction—all while working directly with your insurance company. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for immediate emergency dispatch.
+                  Our IICRC-certified flood cleanup teams respond 24/7/365 with truck-mounted extraction equipment, industrial drying systems, and complete restoration capabilities. We handle everything from initial water removal to final reconstruction—all while working directly with your insurance company. <a href="/request/" className="text-[#1a73e8] font-medium hover:underline">Request Services</a> for immediate emergency dispatch.
                 </p>
               </div>
             </section>
@@ -282,7 +281,7 @@ const ArlingtonFloodCleanup: React.FC = () => {
                   <span className="font-medium">Safety first:</span> Don't enter flooded areas if water is above ankle-deep or if electricity is on
                 </li>
                 <li className="text-gray-800">
-                  <span className="font-medium">Call immediately:</span> <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> — we'll dispatch emergency crews and advise on next steps
+                  <span className="font-medium">Act immediately:</span> <a href="/request/" className="text-[#1a73e8] font-bold hover:underline">Request Services</a> — we'll dispatch emergency crews and advise on next steps
                 </li>
                 <li className="text-gray-800">
                   <span className="font-medium">Shut off power:</span> Turn off electricity to flooded areas if you can access the breaker safely
@@ -396,9 +395,8 @@ const ArlingtonFloodCleanup: React.FC = () => {
                     Don't wait. Every minute increases damage. Call now for immediate emergency dispatch.
                   </p>
 
-                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50 mb-4">
-                    <Phone size={18} className="mr-2" />
-                    (877) 497-0007
+                  <Button href="/request/" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50 mb-4">
+                    Request Services
                   </Button>
 
                   <div className="text-xs text-red-100 text-center">
@@ -497,9 +495,8 @@ const ArlingtonFloodCleanup: React.FC = () => {
           <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
             24/7 emergency response. 60-90 minute arrival. IICRC certified teams. Call now.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
-            <Phone size={20} className="mr-2" />
-            (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+            Request Services
           </Button>
         </div>
       </div>

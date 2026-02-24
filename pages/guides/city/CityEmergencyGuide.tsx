@@ -244,9 +244,8 @@ const CityEmergencyGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
-                <Phone size={18} className="mr-2" />
-                Call Now: {phone}
+              <Button to="/request/" variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
+                Request Services
               </Button>
             </div>
           </div>
@@ -270,9 +269,8 @@ const CityEmergencyGuide: React.FC = () => {
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
                     Every hour of delay increases mold risk and restoration costs. Our {city} emergency team arrives in {responseTime} with professional extraction equipment. Don't wait until morning.
                   </p>
-                  <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
-                    <Phone size={16} className="mr-2" />
-                    Call {phone} Now
+                  <Button to="/request/" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
+                    Request Services
                   </Button>
                 </div>
               </div>
@@ -425,9 +423,8 @@ const CityEmergencyGuide: React.FC = () => {
                 <p className="text-red-100 text-sm leading-relaxed mb-6">
                   Our IICRC-certified team arrives in {responseTime} with industrial extraction equipment. Available around the clock.
                 </p>
-                <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50">
-                  <Phone size={18} className="mr-2" />
-                  {phone}
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-red-600 border-none hover:bg-red-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
@@ -514,12 +511,8 @@ const CityEmergencyGuide: React.FC = () => {
             Water damage in {city} can lead to mold growth within 24-48 hours. Our emergency team is standing by to minimize damage and restore your home.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
-              <Phone size={20} className="mr-2" />
-              Call Now: {phone}
-            </Button>
-            <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
-              Request Service Online
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+              Request Services
             </Button>
           </div>
         </div>

@@ -156,9 +156,8 @@ const ArlingtonWaterDamage: React.FC = () => {
               24/7 emergency water damage restoration serving all Arlington neighborhoods. IICRC certified technicians arrive within 60-90 minutes. Direct insurance billing available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                <Phone size={20} className="mr-2" />
-                (877) 497-0007
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Request Service Online
@@ -199,7 +198,7 @@ const ArlingtonWaterDamage: React.FC = () => {
                   Our IICRC-certified technicians understand the unique challenges Arlington properties face—from historic homes in Lyon Village to modern high-rises in Crystal City and Pentagon City. We bring professional-grade equipment and proven restoration techniques to every job, no matter the size or complexity.
                 </p>
                 <p>
-                  We're available 24/7/365 because water damage doesn't wait for business hours. One call to <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> connects you with our emergency dispatch team, and we'll have certified technicians on-site within 60-90 minutes anywhere in Arlington.
+                  We're available 24/7/365 because water damage doesn't wait for business hours. <a href="/request/" className="text-[#1a73e8] font-medium hover:underline">Request Services</a> to connect with our emergency dispatch team, and we'll have certified technicians on-site within 60-90 minutes anywhere in Arlington.
                 </p>
               </div>
             </section>
@@ -303,7 +302,7 @@ const ArlingtonWaterDamage: React.FC = () => {
               </div>
               <ol className="space-y-3 ml-9">
                 <li className="text-gray-800">
-                  <span className="font-medium">Call us first:</span> <a href="tel:8774970007" className="text-[#1a73e8] font-bold hover:underline">(877) 497-0007</a> — we'll advise you on immediate steps while dispatching a team
+                  <span className="font-medium">Contact us first:</span> <a href="/request/" className="text-[#1a73e8] font-bold hover:underline">Request Services</a> — we'll advise you on immediate steps while dispatching a team
                 </li>
                 <li className="text-gray-800">
                   <span className="font-medium">Stop the water source</span> if safe (shut off main water, close supply valves, move items out of leak path)
@@ -338,7 +337,6 @@ const ArlingtonWaterDamage: React.FC = () => {
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-4">
-                    <Phone size={24} />
                     <span className="text-sm font-bold uppercase tracking-wide">24/7 Emergency</span>
                   </div>
                   <h3 className="font-display text-2xl font-medium mb-2">
@@ -348,9 +346,8 @@ const ArlingtonWaterDamage: React.FC = () => {
                     Arlington's trusted water damage experts. Available anytime, anywhere in Arlington County.
                   </p>
 
-                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
-                    <Phone size={18} className="mr-2" />
-                    (877) 497-0007
+                  <Button href="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
+                    Request Services
                   </Button>
 
                   <div className="text-xs text-blue-100 text-center">
@@ -449,9 +446,8 @@ const ArlingtonWaterDamage: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             IICRC certified. 24/7 emergency service. Direct insurance billing. Call now for immediate help.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
-            <Phone size={20} className="mr-2" />
-            (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+            Request Services
           </Button>
         </div>
       </div>

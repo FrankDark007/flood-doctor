@@ -187,12 +187,11 @@ const FairfaxFloodCleanup: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                href="tel:7036650505"
+                href="/request/"
                 variant="primary"
                 className="bg-white text-red-700 hover:bg-gray-100 text-xl h-16 px-10 shadow-2xl font-bold"
               >
-                <Phone size={24} className="mr-3" />
-                CALL (877) 497-0007 NOW
+                Request Services
               </Button>
             </div>
             <div className="flex items-center gap-6 mt-8 text-sm bg-red-800/50 backdrop-blur-sm rounded-xl p-4 inline-flex">
@@ -455,12 +454,11 @@ const FairfaxFloodCleanup: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="tel:7036650505"
+              href="/request/"
               variant="primary"
               className="bg-white text-red-700 hover:bg-gray-100 text-2xl h-20 px-12 shadow-2xl font-bold"
             >
-              <Phone size={28} className="mr-3" />
-              CALL (877) 497-0007 NOW
+              Request Services
             </Button>
           </div>
           <div className="mt-8 text-red-100">

@@ -54,10 +54,10 @@ export default function AshburnMoldRemoval() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition text-center"
               >
-                Call (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -266,7 +266,7 @@ export default function AshburnMoldRemoval() {
                   Don't risk your family's health. Our certified mold remediation experts are available 24/7 for inspections and emergency response throughout Ashburn.
                 </p>
                 <a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition"
                 >
                   Call (877) 497-0007 Now
@@ -360,10 +360,10 @@ export default function AshburnMoldRemoval() {
               Protecting Loudoun County families with safe, effective mold removal
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
             >
-              Call (877) 497-0007
+              Request Services
             </a>
           </div>
         </section>

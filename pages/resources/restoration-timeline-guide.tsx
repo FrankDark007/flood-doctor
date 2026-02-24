@@ -305,9 +305,8 @@ const RestorationTimelineGuide: React.FC = () => {
               Understanding the restoration process helps set realistic expectations. Here's a detailed breakdown of each phase from emergency response through final reconstruction.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                24/7 Emergency Response
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -554,9 +553,8 @@ const RestorationTimelineGuide: React.FC = () => {
                   Every hour counts. Our emergency response team arrives within 60-90 minutes to begin extraction and prevent further damage.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
@@ -659,9 +657,8 @@ const RestorationTimelineGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our certified restoration technicians are standing by 24/7 to respond immediately. Call now to start your restoration timeline.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

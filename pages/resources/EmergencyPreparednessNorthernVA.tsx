@@ -378,9 +378,8 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
               From Potomac River flooding to winter ice storms, Northern Virginia faces unique disaster risks. This comprehensive guide helps you prepare your home, family, and finances for emergencies specific to our region.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Emergency Services
@@ -686,7 +685,6 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="bg-blue-50 rounded-2xl p-6">
               <h4 className="font-medium text-text mb-2 flex items-center gap-2">
-                <Phone size={18} className="text-primary" />
                 Statewide Resources
               </h4>
               <div className="space-y-2 text-sm">
@@ -698,7 +696,7 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500">VA 511 Traffic</div>
-                  <a href="tel:511" className="text-primary hover:underline">511</a> or <a href="https://511virginia.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">511virginia.org</a>
+                  <a href="/request/" className="text-primary hover:underline">511</a> or <a href="https://511virginia.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">511virginia.org</a>
                 </div>
               </div>
             </div>
@@ -717,7 +715,7 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500">Red Cross Shelters</div>
-                  <a href="tel:18007332767" className="text-primary hover:underline">1-800-733-2767</a>
+                  <a href="/request/" className="text-primary hover:underline">1-800-733-2767</a>
                 </div>
               </div>
             </div>
@@ -730,11 +728,11 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
               <div className="space-y-2 text-sm">
                 <div>
                   <div className="text-xs text-gray-500">Dominion Energy</div>
-                  <a href="tel:18663664357" className="text-primary hover:underline">1-866-366-4357</a>
+                  <a href="/request/" className="text-primary hover:underline">1-866-366-4357</a>
                 </div>
                 <div>
                   <div className="text-xs text-gray-500">Washington Gas</div>
-                  <a href="tel:18007526633" className="text-primary hover:underline">1-800-752-6633</a>
+                  <a href="/request/" className="text-primary hover:underline">1-800-752-6633</a>
                 </div>
               </div>
             </div>
@@ -761,9 +759,8 @@ const EmergencyPreparednessNorthernVA: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             When disaster strikes, Flood Doctor provides rapid emergency response throughout Northern Virginia. Call now for immediate assistance.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

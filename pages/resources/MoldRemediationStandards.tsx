@@ -322,9 +322,8 @@ const MoldRemediationStandards: React.FC = () => {
               Professional mold remediation follows strict protocols to protect occupant health and ensure complete removal. This comprehensive guide covers IICRC S520 standards, EPA guidelines, Virginia regulations, and industry best practices.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Mold Assessment
@@ -668,9 +667,8 @@ const MoldRemediationStandards: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Flood Doctor is Virginia-licensed and IICRC-certified for professional mold remediation. We follow S520 standards and provide complete documentation for insurance claims.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

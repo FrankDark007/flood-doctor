@@ -86,7 +86,7 @@ const BasementFloodingPrevention: React.FC = () => {
                 <AlertTriangle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-white mb-1">Already flooded?</p>
-                  <p className="text-red-200">Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> — We specialize in basement flood cleanup.</p>
+                  <p className="text-red-200"><a href="/request/" className="underline font-bold">Request Services</a> — We specialize in basement flood cleanup.</p>
                 </div>
               </div>
             </div>
@@ -511,11 +511,10 @@ const BasementFloodingPrevention: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
-              <Phone className="w-5 h-5" />
-              (877) 497-0007
+              Request Services
             </a>
             <Link
               to="/contact"

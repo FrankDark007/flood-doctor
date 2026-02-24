@@ -54,10 +54,10 @@ export default function AshburnWaterDamage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition text-center"
               >
-                Call (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -218,7 +218,7 @@ export default function AshburnWaterDamage() {
                   Don't wait when water damage strikes. Our Ashburn team is standing by 24/7 to protect your home and belongings.
                 </p>
                 <a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition"
                 >
                   Call (877) 497-0007 Now
@@ -312,10 +312,10 @@ export default function AshburnWaterDamage() {
               Available 24/7 for emergency water damage throughout Loudoun County
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
             >
-              Call (877) 497-0007
+              Request Services
             </a>
           </div>
         </section>

@@ -54,10 +54,10 @@ const FallsChurchWaterDamage: React.FC = () => {
                 24/7 Emergency Response for Falls Church City & Surrounding Areas
               </p>
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <p className="mt-4 text-lg">Available 24 Hours a Day, 7 Days a Week</p>
             </div>
@@ -238,7 +238,7 @@ const FallsChurchWaterDamage: React.FC = () => {
               Don't wait - water damage worsens by the hour. Our Falls Church team is ready to respond immediately to protect your property and begin the restoration process.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
             >
               Call (877) 497-0007 Now

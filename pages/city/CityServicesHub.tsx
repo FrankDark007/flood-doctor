@@ -122,11 +122,10 @@ const CityServicesHub: React.FC<CityServicesHubProps> = ({ city }) => {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full font-semibold text-lg transition-all"
               >
-                <Phone className="w-6 h-6" />
-                (877) 497-0007
+                Request Services
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8 text-sm">
@@ -244,10 +243,10 @@ const CityServicesHub: React.FC<CityServicesHubProps> = ({ city }) => {
                 anywhere in {city.name} and surrounding areas.
               </p>
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="block w-full bg-[#1a73e8] text-white text-center py-4 rounded-xl font-bold text-xl hover:bg-blue-700 transition-all"
               >
-                (877) 497-0007
+                Request Services
               </a>
               <p className="text-center text-gray-500 text-sm mt-4">
                 Available 24/7 · {city.responseTime} Response
@@ -267,11 +266,10 @@ const CityServicesHub: React.FC<CityServicesHubProps> = ({ city }) => {
             Don't wait—water damage spreads fast. Call now for immediate service.
           </p>
           <a
-            href="tel:8774970007"
+            href="/request/"
             className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] px-10 py-5 rounded-full font-bold text-xl hover:bg-blue-50 transition-all"
           >
-            <Phone className="w-7 h-7" />
-            (877) 497-0007
+            Request Services
           </a>
         </div>
       </section>

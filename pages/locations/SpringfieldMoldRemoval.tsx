@@ -57,10 +57,10 @@ const SpringfieldMoldRemoval: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors text-center"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -76,7 +76,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
         <section className="bg-yellow-500 text-gray-900 py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              ⚠️ Mold Problem? Available 24/7 | Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> for Free Inspection
+              ⚠️ Mold Problem? Available 24/7 | <a href="/request/" className="underline font-bold">Request Services</a> for Free Inspection
             </p>
           </div>
         </section>
@@ -459,7 +459,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
                 Experiencing any of these signs in your Springfield home?
               </p>
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-block bg-[#1a73e8] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1557b0] transition-colors"
               >
                 Schedule Free Inspection: (877) 497-0007
@@ -543,7 +543,7 @@ const SpringfieldMoldRemoval: React.FC = () => {
               Don't let mold compromise your family's health or your property value. Get a free professional inspection today.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-xl hover:bg-blue-50 transition-colors"
             >
               Call (877) 497-0007 for Free Inspection

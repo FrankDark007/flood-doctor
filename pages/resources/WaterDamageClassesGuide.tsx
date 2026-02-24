@@ -271,9 +271,8 @@ const WaterDamageClassesGuide: React.FC = () => {
               Understanding water damage classification is essential for proper restoration. This guide explains the IICRC's four water damage classes, how they're determined, and what they mean for drying time and costs.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Get Professional Assessment
@@ -645,9 +644,8 @@ const WaterDamageClassesGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our IICRC-certified technicians accurately classify water damage and implement the right drying strategy for complete restoration. Call 24/7 for rapid response.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

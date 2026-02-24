@@ -261,9 +261,8 @@ const CityInsuranceGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Free Claim Assessment: {phone}
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -478,9 +477,8 @@ const CityInsuranceGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
                   We handle insurance billing directly for {city} homeowners. Get a free damage assessment and let us navigate the claims process for you.
                 </p>
-                <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  {phone}
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
@@ -573,12 +571,8 @@ const CityInsuranceGuide: React.FC = () => {
             {city} homeowners trust Flood Doctor for seamless insurance billing. We document, we communicate with adjusters, you pay only your deductible.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Free Assessment: {phone}
-            </Button>
-            <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
-              Request Service Online
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
           </div>
         </div>

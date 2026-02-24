@@ -53,10 +53,10 @@ const SpringfieldWaterDamage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors text-center"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -72,7 +72,7 @@ const SpringfieldWaterDamage: React.FC = () => {
         <section className="bg-red-600 text-white py-4 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-lg font-semibold">
-              🚨 EMERGENCY? We're Available 24/7/365 | Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> for Immediate Assistance
+              🚨 EMERGENCY? We're Available 24/7/365 | <a href="/request/" className="underline font-bold">Request Services</a> for Immediate Assistance
             </p>
           </div>
         </section>
@@ -387,7 +387,7 @@ const SpringfieldWaterDamage: React.FC = () => {
               Our emergency response team is standing by 24/7 to help you. Don't wait - water damage gets worse every hour.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-xl hover:bg-blue-50 transition-colors"
             >
               Call (877) 497-0007 Now

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, ArrowRight } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from './constants';
+import { ArrowRight } from 'lucide-react';
+import { COMPANY_NAME } from './constants';
 
 const CTAGradient: React.FC = () => {
   return (
@@ -25,16 +25,12 @@ const CTAGradient: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full md:w-auto">
             <a
-              href={PHONE_LINK}
+              href="/request/"
               className="group inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300"
             >
-              <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-              <span>{PHONE_NUMBER}</span>
-            </a>
-            <button className="hidden md:inline-flex group items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300">
-              <span>Request Service</span>
+              <span>Request Services</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK, COMPANY_NAME } from './constants';
+import { COMPANY_NAME } from './constants';
 
 const CTAMinimal: React.FC = () => {
   return (
@@ -16,14 +16,10 @@ const CTAMinimal: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center gap-6">
-          <button className="hidden md:inline-flex group relative items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:ring-4 hover:ring-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
-            <span className="mr-2">Request Service</span>
+          <a href="/request/" className="inline-flex group relative items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:ring-4 hover:ring-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
+            <span className="mr-2">Request Services</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          
-          <div className="text-slate-400 text-sm">
-            Need immediate help? <a href={PHONE_LINK} className="text-blue-600 font-semibold hover:underline decoration-2 underline-offset-2">{PHONE_NUMBER}</a>
-          </div>
+          </a>
         </div>
       </div>
     </section>

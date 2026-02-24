@@ -68,13 +68,10 @@ const CityPageEstate: React.FC<EstatePageProps> = ({ content, service = 'water-d
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href={`tel:${franchise.phone.replace(/[^0-9]/g, '')}`}
+              href="/request/"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-colors shadow-lg"
             >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              {franchise.phone}
+              Request Services
             </a>
             <a
               href="/request-service/"
@@ -348,13 +345,10 @@ const CityPageEstate: React.FC<EstatePageProps> = ({ content, service = 'water-d
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`tel:${franchise.phone.replace(/[^0-9]/g, '')}`}
-              className="inline-flex items-center justify-center px-10 py-5 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-colors shadow-xl text-lg group"
+              href="/request/"
+              className="inline-flex items-center justify-center px-10 py-5 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-colors shadow-xl text-lg"
             >
-              <svg className="w-6 h-6 mr-2 group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              {franchise.phone}
+              Request Services
             </a>
           </div>
           <p className="text-sm text-slate-400 mt-6">

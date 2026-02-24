@@ -220,11 +220,10 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
               <strong>Water emergency in {cityName}?</strong> We respond 24/7.
             </p>
             <a
-              href={`tel:${article.callToAction.phone.replace(/[^0-9]/g, '')}`}
+              href="/request/"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a73e8] text-white rounded-full text-[14px] font-medium hover:bg-[#1557b0] transition-colors"
             >
-              <Phone size={16} />
-              {article.callToAction.phone}
+              Request Services
             </a>
           </div>
         </div>
@@ -275,11 +274,10 @@ const CityBlogArticle: React.FC<CityBlogArticleProps> = ({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`tel:${article.callToAction.phone.replace(/[^0-9]/g, '')}`}
+              href="/request/"
               className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
             >
-              <Phone size={18} className="mr-2" />
-              {article.callToAction.phone}
+              Request Services
             </a>
             <Link
               to="/request/"

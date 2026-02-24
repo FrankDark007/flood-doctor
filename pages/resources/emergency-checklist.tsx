@@ -451,9 +451,8 @@ const EmergencyChecklist: React.FC = () => {
               When water damage strikes, every minute counts. This comprehensive checklist guides you through safety protocols, emergency response, and critical first steps to minimize damage and protect your home.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
-                <Phone size={18} className="mr-2" />
-                Emergency: (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -818,7 +817,6 @@ const EmergencyChecklist: React.FC = () => {
                             : 'bg-blue-600 text-white hover:bg-blue-700'
                         }`}
                       >
-                        <Phone size={18} />
                         {item.number}
                       </a>
                     ) : (
@@ -894,13 +892,12 @@ const EmergencyChecklist: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              href="tel:8774970007"
+              href="/request/"
               variant="secondary"
               size="lg"
               className="bg-white text-red-700 border-none hover:bg-red-50"
             >
-              <Phone size={20} className="mr-2" />
-              Call Now: (877) 497-0007
+              Request Services
             </Button>
             <div className="text-white text-sm">
               <Clock size={16} className="inline mr-2" />

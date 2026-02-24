@@ -58,10 +58,10 @@ export default function HerndonMoldRemoval() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -405,10 +405,10 @@ export default function HerndonMoldRemoval() {
               Professional mold inspection, testing, and remediation throughout Herndon, VA. Our certified specialists are available 24/7 to protect your property and family.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-50 transition inline-block"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
             <p className="mt-6 text-blue-100">
               Free Mold Inspection | Certified Specialists | Insurance Approved

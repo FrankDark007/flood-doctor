@@ -34,7 +34,7 @@ export default function HerndonFloodCleanup() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={`tel:${phoneNumber}`}
+                href="/request/"
                 className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-blue-50 transition-all transform hover:scale-105 text-center"
               >
                 Emergency: {phoneNumber}
@@ -92,7 +92,7 @@ export default function HerndonFloodCleanup() {
                 </p>
               </div>
               <a
-                href={`tel:${phoneNumber}`}
+                href="/request/"
                 className="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-red-700 transition-all whitespace-nowrap"
               >
                 Call {phoneNumber}
@@ -585,7 +585,7 @@ export default function HerndonFloodCleanup() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`tel:${phoneNumber}`}
+                href="/request/"
                 className="inline-block bg-white text-blue-600 px-10 py-5 rounded-lg font-bold text-xl shadow-lg hover:bg-blue-50 transition-all transform hover:scale-105"
               >
                 Emergency: {phoneNumber}

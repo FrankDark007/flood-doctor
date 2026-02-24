@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Clock, Shield, MapPin, CheckCircle, Star, ArrowRight, Building2, Zap, Users } from 'lucide-react';
+import { Clock, Shield, MapPin, CheckCircle, Star, ArrowRight, Building2, Zap, Users } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import { generateLocationPageSchema } from '../../utils/schema';
 
@@ -37,14 +37,13 @@ const TysonsWaterDamage: React.FC = () => {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
               >
-                <Phone className="w-6 h-6" />
-                (877) 497-0007
+                Request Services
               </a>
               <a
-                href="tel:877-497-0007"
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all border border-white/20"
               >
                 <Building2 className="w-5 h-5" />
@@ -133,10 +132,9 @@ const TysonsWaterDamage: React.FC = () => {
                 For Tysons businesses, every minute of downtime costs money. Our commercial team provides priority response with dedicated project managers.
               </p>
               <a
-                href="tel:877-497-0007"
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-blue-50 transition-all w-full justify-center"
               >
-                <Phone className="w-6 h-6" />
                 877-497-0007
               </a>
               <div className="mt-6 pt-6 border-t border-blue-500">
@@ -206,14 +204,13 @@ const TysonsWaterDamage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all"
             >
-              <Phone className="w-6 h-6" />
               Residential: (877) 497-0007
             </a>
             <a
-              href="tel:877-497-0007"
+              href="/request/"
               className="inline-flex items-center justify-center gap-3 bg-blue-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-900 transition-all"
             >
               <Building2 className="w-6 h-6" />

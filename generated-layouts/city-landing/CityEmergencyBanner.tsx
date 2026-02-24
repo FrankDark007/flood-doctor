@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Siren } from 'lucide-react';
+import { Siren } from 'lucide-react';
 import { CityData } from './types';
 
 interface CityEmergencyBannerProps {
@@ -28,12 +28,11 @@ const CityEmergencyBanner: React.FC<CityEmergencyBannerProps> = ({ city }) => {
           </div>
         </div>
 
-        <a 
-          href={`tel:${city.phoneNumber}`} 
+        <a
+          href="/request/"
           className="flex items-center gap-2 bg-white text-red-600 px-5 py-2.5 rounded-full font-bold text-sm md:text-base md:bg-red-600 md:text-white md:hover:bg-red-700 transition-colors shadow-sm whitespace-nowrap"
         >
-          <Phone className="w-4 h-4 md:w-5 md:h-5 fill-current" />
-          <span className="hidden sm:inline">Call Dispatch:</span> {city.phoneNumber}
+          Request Services
         </a>
 
       </div>

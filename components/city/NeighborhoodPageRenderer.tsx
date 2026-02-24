@@ -281,11 +281,10 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
             {/* CTA Buttons with Emergency Badge */}
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <a
-                href={`tel:${phone.replace(/[^0-9]/g, '')}`}
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-[#1a73e8] hover:bg-blue-700 h-12 px-8 rounded-full font-semibold text-lg transition-all"
               >
-                <Phone className="w-5 h-5" />
-                {phone}
+                Request Services
               </a>
               <Link
                 to="/contact"
@@ -520,12 +519,12 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
             {localContacts.map((contact, idx) => (
               <a
                 key={idx}
-                href={`tel:${contact.phone?.replace(/[^0-9]/g, '') || ''}`}
+                href="/request/"
                 className="flex items-center justify-between bg-white rounded-lg p-4 border border-red-200 hover:border-red-400 transition-colors"
               >
                 <div>
                   <div className="text-[14px] font-semibold text-[#202124]">{contact.name}</div>
-                  <div className="text-[14px] text-[#1a73e8]">{contact.phone}</div>
+                  <div className="text-[14px] text-[#1a73e8]">Request Services</div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-[#5f6368]" />
               </a>
@@ -604,11 +603,10 @@ const NeighborhoodPageRenderer: React.FC<NeighborhoodPageRendererProps> = ({
             {content.heroSection?.responseTime || 'Fast response times'}. Call now for immediate help.
           </p>
           <a
-            href={`tel:${phone.replace(/[^0-9]/g, '')}`}
+            href="/request/"
             className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] h-14 px-10 rounded-full font-bold text-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
           >
-            <Phone className="w-6 h-6" />
-            {phone}
+            Request Services
           </a>
         </div>
       </section>

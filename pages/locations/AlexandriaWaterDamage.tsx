@@ -191,9 +191,8 @@ const AlexandriaWaterDamage: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Button href="tel:7036650505" variant="secondary" size="lg" className="bg-white text-[#1a73e8] hover:bg-blue-50 border-none">
-                <Phone size={20} className="mr-2" />
-                (703) 665-0505
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] hover:bg-blue-50 border-none">
+                Request Services
               </Button>
               <Button to="/request/" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                 Get Free Estimate
@@ -234,9 +233,8 @@ const AlexandriaWaterDamage: React.FC = () => {
                 </p>
               </div>
             </div>
-            <Button href="tel:7036650505" variant="primary" size="lg" className="whitespace-nowrap">
-              <Phone size={20} className="mr-2" />
-              Call Now: (703) 665-0505
+            <Button href="/request/" variant="primary" size="lg" className="whitespace-nowrap">
+              Request Services
             </Button>
           </div>
         </div>
@@ -474,13 +472,12 @@ const AlexandriaWaterDamage: React.FC = () => {
                 </p>
 
                 <Button
-                  href="tel:7036650505"
+                  href="/request/"
                   variant="secondary"
                   fullWidth
                   className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-6"
                 >
-                  <Phone size={20} className="mr-2" />
-                  (703) 665-0505
+                  Request Services
                 </Button>
 
                 <div className="space-y-4 relative z-10">
@@ -568,13 +565,12 @@ const AlexandriaWaterDamage: React.FC = () => {
             Don't let water damage destroy your home. Our IICRC-certified team is standing by 24/7 to protect your Alexandria property.
           </p>
           <Button
-            href="tel:7036650505"
+            href="/request/"
             variant="secondary"
             size="lg"
             className="bg-white text-[#1a73e8] border-none hover:bg-blue-50"
           >
-            <Phone size={20} className="mr-2" />
-            Call (703) 665-0505 Now
+            Request Services
           </Button>
         </div>
       </div>

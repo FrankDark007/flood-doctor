@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK, COMPANY_NAME } from './constants';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { COMPANY_NAME } from './constants';
 
 const CTADarkImmersive: React.FC = () => {
   return (
@@ -32,11 +32,10 @@ const CTADarkImmersive: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <a
-            href={PHONE_LINK}
+            href="/request/"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-900/50"
           >
-            <Phone className="w-5 h-5" />
-            <span>Call {PHONE_NUMBER}</span>
+            <span>Request Services</span>
           </a>
           <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-slate-700 transition-all duration-300">
             <span>Our Process</span>

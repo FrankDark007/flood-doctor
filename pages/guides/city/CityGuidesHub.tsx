@@ -194,9 +194,8 @@ const CityGuidesHub: React.FC = () => {
               </div>
             </div>
 
-            <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
-              <Phone size={18} className="mr-2" />
-              24/7 Emergency: {phone}
+            <Button to="/request/" variant="primary" size="lg">
+              Request Services
             </Button>
           </div>
         </div>
@@ -327,12 +326,8 @@ const CityGuidesHub: React.FC = () => {
             Our IICRC-certified team arrives in {responseTime} with industrial extraction equipment. Available 24/7.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Call Now: {phone}
-            </Button>
-            <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
-              Request Service Online
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
           </div>
         </section>

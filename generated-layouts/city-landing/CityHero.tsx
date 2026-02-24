@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, Phone, ShieldCheck } from 'lucide-react';
+import { MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { CityData } from './types';
 
 interface CityHeroProps {
@@ -41,12 +41,11 @@ const CityHero: React.FC<CityHeroProps> = ({ city }) => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <a 
-            href={`tel:${city.phoneNumber}`} 
+          <a
+            href="/request/"
             className="flex items-center justify-center gap-3 bg-[#1a73e8] hover:bg-[#1557b0] text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-blue-900/20 active:scale-95"
           >
-            <Phone className="w-5 h-5" />
-            Call {city.phoneNumber}
+            Request Services
           </a>
           <button className="flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg active:scale-95">
             <MapPin className="w-5 h-5 text-[#1a73e8]" />

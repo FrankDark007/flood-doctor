@@ -273,9 +273,8 @@ const CityPreventionGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Schedule Assessment: {phone}
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -449,9 +448,8 @@ const CityPreventionGuide: React.FC = () => {
                 <p className="text-green-100 text-sm leading-relaxed mb-6">
                   Our IICRC-certified team can assess your {city} home for water damage risks and recommend targeted prevention measures.
                 </p>
-                <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" fullWidth className="bg-white text-green-600 border-none hover:bg-green-50">
-                  <Phone size={18} className="mr-2" />
-                  {phone}
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-green-600 border-none hover:bg-green-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
@@ -538,12 +536,8 @@ const CityPreventionGuide: React.FC = () => {
             A $200 prevention assessment can save thousands in water damage restoration. Let our {city} team identify and address risks before they become emergencies.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href={`tel:${phone.replace(/[^0-9]/g, '')}`} variant="secondary" size="lg" className="bg-white text-green-600 border-none hover:bg-green-50">
-              <Phone size={20} className="mr-2" />
-              Schedule Assessment: {phone}
-            </Button>
-            <Button to="/request/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
-              Request Online
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-green-600 border-none hover:bg-green-50">
+              Request Services
             </Button>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Droplets, CalendarCheck, ArrowRight } from 'lucide-react';
-import { PHONE_LINK } from './constants';
 
 const CTAServiceSelect: React.FC = () => {
   return (
@@ -17,11 +16,11 @@ const CTAServiceSelect: React.FC = () => {
             <p className="text-slate-500 mb-8 flex-1">
               Active flooding, burst pipes, or storm damage? We dispatch our rapid response team immediately to extract water and prevent mold.
             </p>
-            <a 
-              href={PHONE_LINK}
+            <a
+              href="/request/"
               className="w-full inline-flex items-center justify-center gap-2 bg-red-600 text-white px-6 py-3.5 rounded-xl font-bold hover:bg-red-700 transition-colors"
             >
-              Call Emergency Line
+              Request Services
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

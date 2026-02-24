@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Calendar, CheckCircle } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_LINK } from './constants';
+import { Calendar, CheckCircle } from 'lucide-react';
+import { COMPANY_NAME } from './constants';
 
 const CTASplit: React.FC = () => {
   return (
@@ -32,11 +32,10 @@ const CTASplit: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a
-              href={PHONE_LINK}
+              href="/request/"
               className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-3xl font-bold text-lg shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <Phone className="w-5 h-5" />
-              Call Now
+              Request Services
             </a>
             <button className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-3xl font-semibold text-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
               <Calendar className="w-5 h-5" />
@@ -59,11 +58,11 @@ const CTASplit: React.FC = () => {
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-white/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs text-slate-500 font-bold uppercase">Emergency Line</p>
-                  <p className="text-xl font-bold text-slate-900">{PHONE_NUMBER}</p>
+                  <p className="text-xs text-slate-500 font-bold uppercase">Need Help?</p>
+                  <p className="text-xl font-bold text-slate-900">Request Services</p>
                 </div>
                 <div className="h-10 w-10 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
-                  <Phone className="w-5 h-5 text-white" />
+                  <CheckCircle className="w-5 h-5 text-white" />
                 </div>
               </div>
             </div>

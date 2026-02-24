@@ -1,6 +1,5 @@
 import React from 'react';
-import { Award, Shield, Clock, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK } from './constants';
+import { Award, Shield, Clock } from 'lucide-react';
 
 const CTATrustBar: React.FC = () => {
   return (
@@ -46,15 +45,14 @@ const CTATrustBar: React.FC = () => {
           {/* CTA Action Area */}
           <div className="w-full lg:w-auto p-6 md:p-8 bg-slate-50 lg:bg-transparent">
             <div className="flex flex-col items-center gap-3">
-              <a 
-                href={PHONE_LINK} 
+              <a
+                href="/request/"
                 className="w-full sm:w-auto whitespace-nowrap inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-3.5 rounded-full font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-200"
               >
-                <Phone className="w-5 h-5" />
-                <span>Call {PHONE_NUMBER}</span>
+                Request Services
               </a>
               <p className="text-xs text-slate-400 font-medium">
-                Talk to a specialist now
+                Get help from a specialist
               </p>
             </div>
           </div>

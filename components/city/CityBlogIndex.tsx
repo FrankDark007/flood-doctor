@@ -228,11 +228,10 @@ const CityBlogIndex: React.FC<CityBlogIndexProps> = ({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`tel:${phone.replace(/[^0-9]/g, '')}`}
+              href="/request/"
               className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
             >
-              <Phone size={18} className="mr-2" />
-              {phone}
+              Request Services
             </a>
             <Link
               to="/request/"

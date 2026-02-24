@@ -195,9 +195,8 @@ const AlexandriaFloodCleanup: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Button href="tel:7036650505" variant="secondary" size="lg" className="bg-white text-[#1a73e8] hover:bg-blue-50 border-none">
-                <Phone size={20} className="mr-2" />
-                Emergency: (703) 665-0505
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] hover:bg-blue-50 border-none">
+                Request Services
               </Button>
               <Button to="/request/" variant="outline" size="lg" className="hidden md:inline-flex border-white/30 text-white hover:bg-white/10">
                 Request Service
@@ -243,9 +242,8 @@ const AlexandriaFloodCleanup: React.FC = () => {
                 </p>
               </div>
             </div>
-            <Button href="tel:7036650505" size="lg" className="bg-red-600 text-white hover:bg-red-700 border-none whitespace-nowrap">
-              <Phone size={20} className="mr-2" />
-              Call Now
+            <Button href="/request/" size="lg" className="bg-red-600 text-white hover:bg-red-700 border-none whitespace-nowrap">
+              Request Services
             </Button>
           </div>
         </div>
@@ -514,13 +512,12 @@ const AlexandriaFloodCleanup: React.FC = () => {
                 </p>
 
                 <Button
-                  href="tel:7036650505"
+                  href="/request/"
                   variant="secondary"
                   fullWidth
                   className="bg-white text-red-600 border-none hover:bg-red-50 mb-6"
                 >
-                  <Phone size={20} className="mr-2" />
-                  Call (703) 665-0505
+                  Request Services
                 </Button>
 
                 <div className="space-y-3 relative z-10 text-sm">
@@ -592,13 +589,12 @@ const AlexandriaFloodCleanup: React.FC = () => {
             Every minute counts during a flood emergency. Our IICRC-certified teams are standing by with industrial equipment ready to deploy.
           </p>
           <Button
-            href="tel:7036650505"
+            href="/request/"
             variant="secondary"
             size="lg"
             className="bg-white text-[#1a73e8] border-none hover:bg-blue-50"
           >
-            <Phone size={20} className="mr-2" />
-            Emergency: (703) 665-0505
+            Request Services
           </Button>
         </div>
       </div>

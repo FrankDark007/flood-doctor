@@ -207,7 +207,7 @@ const InsuranceGuide: React.FC = () => {
                           We work with all major carriers (State Farm, Allstate, USAA, etc.) every day. We can help you file your claim.
                       </p>
                       
-                      <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                      <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
                           Call for Advice
                       </Button>
                       

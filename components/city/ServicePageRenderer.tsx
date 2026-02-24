@@ -131,11 +131,10 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href={`tel:${content.finalCTA.phone.replace(/[^0-9]/g, '')}`}
+                href="/request/"
                 className="inline-flex items-center gap-3 bg-[#1a73e8] hover:bg-blue-700 h-12 px-8 rounded-full font-semibold text-lg transition-all"
               >
-                <Phone className="w-5 h-5" />
-                {content.finalCTA.phone}
+                Request Services
               </a>
               <Link
                 to="/request/"
@@ -341,11 +340,10 @@ const ServicePageRenderer: React.FC<ServicePageRendererProps> = ({
             {content.finalCTA.paragraph}
           </p>
           <a
-            href={`tel:${content.finalCTA.phone.replace(/[^0-9]/g, '')}`}
+            href="/request/"
             className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] h-14 px-10 rounded-full font-bold text-xl hover:bg-blue-50 transition-all"
           >
-            <Phone className="w-6 h-6" />
-            {content.finalCTA.phone}
+            Request Services
           </a>
         </div>
       </section>

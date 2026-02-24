@@ -216,9 +216,8 @@ const InsuranceClaimsGuide: React.FC = () => {
               Filing a water damage claim can be overwhelming. This comprehensive guide walks you through the entire process—from first call to final payment—so you get the coverage you deserve.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -442,9 +441,8 @@ const InsuranceClaimsGuide: React.FC = () => {
                   Our team has filed thousands of water damage claims with every major carrier. We know what adjusters look for and how to document damage correctly.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
@@ -526,9 +524,8 @@ const InsuranceClaimsGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             We've helped thousands of homeowners get fair settlements. Call now for a free consultation about your water damage claim.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

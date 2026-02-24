@@ -60,7 +60,7 @@ const WinterPipeProtection: React.FC = () => {
                 <AlertTriangle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-white mb-1">Pipe already burst?</p>
-                  <p className="text-red-200">Call <a href="tel:8774970007" className="underline font-bold">(877) 497-0007</a> — 60-minute emergency response 24/7.</p>
+                  <p className="text-red-200"><a href="/request/" className="underline font-bold">Request Services</a> — 60-minute emergency response 24/7.</p>
                 </div>
               </div>
             </div>
@@ -457,11 +457,10 @@ const WinterPipeProtection: React.FC = () => {
             Call Flood Doctor for immediate 24/7 response. We'll stop the damage and restore your home.
           </p>
           <a
-            href="tel:8774970007"
+            href="/request/"
             className="inline-flex items-center justify-center gap-3 bg-white text-[#1a73e8] px-10 py-5 rounded-full font-bold text-xl hover:bg-blue-50 transition-all shadow-lg"
           >
-            <Phone className="w-7 h-7" />
-            (877) 497-0007
+            Request Services
           </a>
           <p className="mt-6 text-blue-200 text-sm">
             8466D Tyco Rd, Vienna, VA 22182 · DPOR License #2705155505

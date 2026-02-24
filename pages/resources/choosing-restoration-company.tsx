@@ -348,9 +348,8 @@ const ChoosingRestorationCompany: React.FC = () => {
               Choosing the right restoration contractor affects your insurance claim, your home's safety, and your long-term costs. This comprehensive guide covers essential certifications, critical questions to ask, red flags to avoid, and how to compare companies effectively.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -810,9 +809,8 @@ const ChoosingRestorationCompany: React.FC = () => {
                   ))}
                 </div>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -887,9 +885,8 @@ const ChoosingRestorationCompany: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Don't settle for unlicensed contractors or unqualified technicians. Call Flood Doctor for certified, professional water damage restoration.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

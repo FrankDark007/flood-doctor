@@ -392,9 +392,8 @@ const InsuranceDocumentationGuide: React.FC = () => {
               Proper documentation is the difference between a denied claim and a full settlement. This comprehensive guide shows you exactly what to document, when to document it, and how to organize evidence for maximum insurance coverage.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call (877) 497-0007
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -797,9 +796,8 @@ const InsuranceDocumentationGuide: React.FC = () => {
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   We provide comprehensive documentation that satisfies insurance requirements and maximizes your settlement. Our process includes thermal imaging, moisture mapping, photographic evidence, Xactimate estimates, and daily monitoring logs—all organized and submitted to your insurance company.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  Call (877) 497-0007
+                <Button href="/request/" variant="secondary" className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
               </div>
             </section>
@@ -830,9 +828,8 @@ const InsuranceDocumentationGuide: React.FC = () => {
                   Every Flood Doctor restoration includes comprehensive documentation: thermal imaging, moisture mapping, photo evidence, and Xactimate estimates that maximize your insurance claim.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
@@ -939,9 +936,8 @@ const InsuranceDocumentationGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Proper documentation is the difference between a partial settlement and full coverage. Call Flood Doctor for professional documentation services that maximize your insurance claim.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { PhoneCall, AlertTriangle, Clock } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_LINK } from './constants';
+import { AlertTriangle, Clock } from 'lucide-react';
 
 const CTAEmergency: React.FC = () => {
   return (
@@ -39,11 +38,10 @@ const CTAEmergency: React.FC = () => {
              </div>
 
              <a
-              href={PHONE_LINK}
+              href="/request/"
               className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white text-red-600 hover:text-red-700 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              <PhoneCall className="w-6 h-6 animate-bounce" />
-              <span>{PHONE_NUMBER}</span>
+              <span>Request Services</span>
             </a>
           </div>
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Droplets, ArrowRight } from 'lucide-react';
-import { PHONE_LINK } from './constants';
 
 const CTAFloating: React.FC = () => {
   return (
@@ -37,14 +36,14 @@ const CTAFloating: React.FC = () => {
 
             <div className="flex flex-col w-full md:w-auto">
                <a 
-                 href={PHONE_LINK}
+                 href="/request/"
                  className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-blue-600 px-8 font-medium text-white shadow-lg shadow-blue-600/30 transition-all duration-300 hover:bg-blue-700 hover:w-full md:hover:w-auto"
                >
                 <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                   <div className="relative h-full w-8 bg-white/20" />
                 </div>
                 <span className="flex items-center gap-2 text-lg">
-                  Get Emergency Help 
+                  Request Services
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>

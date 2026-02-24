@@ -200,9 +200,8 @@ const AlexandriaBasementFlooding: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Button href="tel:7036650505" variant="secondary" size="lg" className="bg-white text-slate-800 hover:bg-slate-100 border-none">
-                <Phone size={20} className="mr-2" />
-                Emergency: (703) 665-0505
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-slate-800 hover:bg-slate-100 border-none">
+                Request Services
               </Button>
               <Button to="/request/" variant="outline" size="lg" className="hidden md:inline-flex border-white/30 text-white hover:bg-white/10">
                 Request Service
@@ -248,9 +247,8 @@ const AlexandriaBasementFlooding: React.FC = () => {
                 </p>
               </div>
             </div>
-            <Button href="tel:7036650505" size="lg" className="bg-red-600 text-white hover:bg-red-700 border-none whitespace-nowrap">
-              <Phone size={20} className="mr-2" />
-              Call Now
+            <Button href="/request/" size="lg" className="bg-red-600 text-white hover:bg-red-700 border-none whitespace-nowrap">
+              Request Services
             </Button>
           </div>
         </div>
@@ -512,13 +510,12 @@ const AlexandriaBasementFlooding: React.FC = () => {
                 </p>
 
                 <Button
-                  href="tel:7036650505"
+                  href="/request/"
                   variant="secondary"
                   fullWidth
                   className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-6"
                 >
-                  <Phone size={20} className="mr-2" />
-                  (703) 665-0505
+                  Request Services
                 </Button>
 
                 <div className="space-y-4 relative z-10">
@@ -618,13 +615,12 @@ const AlexandriaBasementFlooding: React.FC = () => {
             Every hour of standing water increases damage severity and mold risk. Our emergency crews are standing by 24/7 with industrial pumps and drying equipment.
           </p>
           <Button
-            href="tel:7036650505"
+            href="/request/"
             variant="secondary"
             size="lg"
             className="bg-white text-slate-800 border-none hover:bg-slate-100"
           >
-            <Phone size={20} className="mr-2" />
-            Emergency: (703) 665-0505
+            Request Services
           </Button>
         </div>
       </div>

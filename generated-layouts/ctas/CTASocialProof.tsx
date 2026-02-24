@@ -1,6 +1,6 @@
 import React from 'react';
-import { Star, Quote, Phone } from 'lucide-react';
-import { PHONE_LINK, COMPANY_NAME } from './constants';
+import { Star, Quote } from 'lucide-react';
+import { COMPANY_NAME } from './constants';
 
 const CTASocialProof: React.FC = () => {
   return (
@@ -43,12 +43,11 @@ const CTASocialProof: React.FC = () => {
               <h3 className="text-lg font-bold text-slate-900">Have a similar issue?</h3>
               <p className="text-slate-500 text-sm">Our experts are ready to help you now.</p>
             </div>
-            <a 
-              href={PHONE_LINK}
+            <a
+              href="/request/"
               className="whitespace-nowrap inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors"
             >
-              <Phone className="w-4 h-4" />
-              Call for Help
+              Request Services
             </a>
           </div>
 

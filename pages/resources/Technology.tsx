@@ -519,7 +519,7 @@ const Technology: React.FC = () => {
             <h2 className="text-3xl font-semibold text-gray-900 mb-4">Request Service</h2>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                  <Button to="/request/" variant="primary" className="h-14 px-8 text-lg">Request Services</Button>
-                 <Button href="tel:8774970007" variant="secondary" className="h-14 px-8 text-lg">Call (877) 497-0007</Button>
+                 <Button href="/request/" variant="secondary" className="h-14 px-8 text-lg">Call (877) 497-0007</Button>
             </div>
          </div>
       </section>

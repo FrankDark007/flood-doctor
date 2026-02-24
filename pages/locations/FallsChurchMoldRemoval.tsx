@@ -54,10 +54,10 @@ const FallsChurchMoldRemoval: React.FC = () => {
                 Certified Mold Specialists Serving Falls Church City & Surrounding Areas
               </p>
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <p className="mt-4 text-lg">24/7 Emergency Mold Response Available</p>
             </div>
@@ -328,7 +328,7 @@ const FallsChurchMoldRemoval: React.FC = () => {
               Don't let mold compromise your family's health and your property value. Our certified mold specialists are available 24/7 to provide immediate inspection and remediation services throughout Falls Church.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-colors"
             >
               Call (877) 497-0007 Now

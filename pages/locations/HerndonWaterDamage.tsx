@@ -54,10 +54,10 @@ export default function HerndonWaterDamage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center"
               >
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="#contact"
@@ -297,10 +297,10 @@ export default function HerndonWaterDamage() {
               Serving all of Herndon, VA with 24/7 emergency water damage restoration. Our team is standing by to help restore your property.
             </p>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-50 transition inline-block"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
             <p className="mt-6 text-blue-100">
               Available 24/7/365 | Licensed & Insured | Insurance Approved

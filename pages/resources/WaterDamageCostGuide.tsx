@@ -194,9 +194,8 @@ const WaterDamageCostGuide: React.FC = () => {
               Understanding restoration costs helps you budget, evaluate estimates, and avoid overpaying. <Link to="/resources/cost-calculator/" className="text-[#1a73e8] hover:underline">Try our interactive cost calculator</Link> for a personalized estimate, or review the pricing data below.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Get Free Estimate
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -404,9 +403,8 @@ const WaterDamageCostGuide: React.FC = () => {
                   We provide detailed, transparent estimates using Xactimate—the same software insurance companies use. No surprises.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
@@ -495,9 +493,8 @@ const WaterDamageCostGuide: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             Get a detailed estimate before work begins. We use industry-standard pricing and work directly with your insurance.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
-            <Phone size={20} className="mr-2" />
-            Get Free Estimate
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+            Request Services
           </Button>
         </div>
       </div>

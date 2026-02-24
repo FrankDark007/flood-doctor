@@ -53,8 +53,8 @@ const RestonWaterDamage: React.FC = () => {
                 24/7 Emergency Response | 60-Minute Arrival Time
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:8774970007" className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
-                  Call Now: (877) 497-0007
+                <a href="/request/" className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
+                  Request Services
                 </a>
                 <a href="#contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1a73e8] transition">
                   Get Free Quote
@@ -191,8 +191,8 @@ const RestonWaterDamage: React.FC = () => {
                 <div className="bg-[#1a73e8] text-white p-8 rounded-lg mb-8 sticky top-4">
                   <h3 className="text-2xl font-bold mb-4">24/7 Emergency Service</h3>
                   <p className="mb-6">Water damage never waits. Neither do we.</p>
-                  <a href="tel:8774970007" className="block bg-white text-[#1a73e8] text-center px-6 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition mb-4">
-                    (877) 497-0007
+                  <a href="/request/" className="block bg-white text-[#1a73e8] text-center px-6 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition mb-4">
+                    Request Services
                   </a>
                   <p className="text-sm text-blue-100 text-center">Average 60-minute response time</p>
 
@@ -283,8 +283,8 @@ const RestonWaterDamage: React.FC = () => {
             <p className="text-xl mb-8 text-blue-100">
               Call now for immediate 24/7 emergency water damage restoration services
             </p>
-            <a href="tel:8774970007" className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition">
-              (877) 497-0007
+            <a href="/request/" className="inline-block bg-white text-[#1a73e8] px-10 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition">
+              Request Services
             </a>
             <p className="mt-6 text-blue-100">
               Serving all of Reston VA | 60-Minute Response Time | Insurance Accepted

@@ -115,10 +115,10 @@ const EmergencyChecklists: React.FC = () => {
            <div className="inline-flex bg-white rounded-full p-1.5 pl-6 pr-2 items-center gap-4 shadow-xl">
               <span className="text-red-600 font-bold text-lg">Need help now?</span>
               <a 
-                href="tel:8774970007" 
+                href="/request/" 
                 className="flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-colors"
               >
-                <Phone size={18} /> Call (877) 497-0007
+                Request Services
               </a>
            </div>
         </div>
@@ -213,7 +213,7 @@ const EmergencyChecklists: React.FC = () => {
                   Every situation is unique. Call our 24/7 helpline and a certified project manager will walk you through the safety steps for free.
               </p>
               <div className="flex justify-center gap-4">
-                  <Button href="tel:8774970007" variant="primary" className="h-12 px-8">
+                  <Button href="/request/" variant="primary" className="h-12 px-8">
                       Speak to an Expert
                   </Button>
                   <Button to="/contact/" variant="secondary" className="h-12 px-8">

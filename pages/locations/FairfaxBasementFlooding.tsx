@@ -216,12 +216,11 @@ const FairfaxBasementFlooding: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                href="tel:7036650505"
+                href="/request/"
                 variant="primary"
                 className="bg-white text-blue-900 hover:bg-gray-100 text-lg h-14 px-8 shadow-lg"
               >
-                <Phone size={20} className="mr-2" />
-                Call (877) 497-0007 Now
+                Request Services
               </Button>
               <Button
                 href="/request-service"
@@ -260,12 +259,11 @@ const FairfaxBasementFlooding: React.FC = () => {
               </span>
             </div>
             <Button
-              href="tel:7036650505"
+              href="/request/"
               variant="primary"
               className="h-12 px-6"
             >
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
+              Request Services
             </Button>
           </div>
         </div>
@@ -474,12 +472,11 @@ const FairfaxBasementFlooding: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="tel:7036650505"
+              href="/request/"
               variant="primary"
               className="bg-white text-blue-900 hover:bg-gray-100 text-xl h-16 px-10 shadow-lg"
             >
-              <Phone size={24} className="mr-3" />
-              Call (877) 497-0007 Now
+              Request Services
             </Button>
           </div>
           <div className="mt-8 text-blue-200">

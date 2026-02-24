@@ -133,9 +133,8 @@ const ArlingtonMoldRemoval: React.FC = () => {
               IICRC-certified mold remediation serving all Arlington neighborhoods. Professional testing, safe removal, and guaranteed results. Protect your family's health with expert mold removal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                <Phone size={20} className="mr-2" />
-                (877) 497-0007
+              <Button href="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
                 Schedule Inspection
@@ -189,7 +188,7 @@ const ArlingtonMoldRemoval: React.FC = () => {
                   Arlington's proximity to the Potomac River and humid Mid-Atlantic climate creates ideal conditions for mold growth. Basements, crawl spaces, bathrooms, and HVAC systems are particularly vulnerable. Our IICRC-certified technicians understand local mold challenges and use EPA-approved protocols to safely remove contamination and prevent recurrence.
                 </p>
                 <p>
-                  We serve all Arlington neighborhoods including Crystal City, Pentagon City, Columbia Pike, Shirlington, and beyond. Call <a href="tel:8774970007" className="text-[#1a73e8] font-medium hover:underline">(877) 497-0007</a> for a free mold inspection and transparent estimate.
+                  We serve all Arlington neighborhoods including Crystal City, Pentagon City, Columbia Pike, Shirlington, and beyond. <a href="/request/" className="text-[#1a73e8] font-medium hover:underline">Request Services</a> for a free mold inspection and transparent estimate.
                 </p>
               </div>
             </section>
@@ -365,7 +364,6 @@ const ArlingtonMoldRemoval: React.FC = () => {
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-4">
-                    <Phone size={24} />
                     <span className="text-sm font-bold uppercase tracking-wide">Free Inspection</span>
                   </div>
                   <h3 className="font-display text-2xl font-medium mb-2">
@@ -375,9 +373,8 @@ const ArlingtonMoldRemoval: React.FC = () => {
                     Professional mold inspection with air quality testing. Same-day service available throughout Arlington.
                   </p>
 
-                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
-                    <Phone size={18} className="mr-2" />
-                    (877) 497-0007
+                  <Button href="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50 mb-4">
+                    Request Services
                   </Button>
 
                   <div className="text-xs text-blue-100 text-center">
@@ -468,9 +465,8 @@ const ArlingtonMoldRemoval: React.FC = () => {
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             IICRC-certified mold remediation. Safe, guaranteed removal. Free inspection. Call now.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
-            <Phone size={20} className="mr-2" />
-            (877) 497-0007
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-green-700 border-none hover:bg-green-50">
+            Request Services
           </Button>
         </div>
       </div>

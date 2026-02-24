@@ -253,9 +253,8 @@ const SignsOfWaterDamage: React.FC = () => {
               Water damage isn't always obvious. Learning to spot early warning signs—visible and hidden—can save you thousands in repairs and prevent mold growth.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Free Inspection
+              <Button href="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -441,9 +440,8 @@ const SignsOfWaterDamage: React.FC = () => {
                   Unsure if you have water damage? We offer free inspections with moisture meters and thermal imaging to detect hidden problems.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button href="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
@@ -527,9 +525,8 @@ const SignsOfWaterDamage: React.FC = () => {
           <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
             Our technicians use professional moisture detection equipment to find hidden water damage and determine if you need restoration services.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-purple-700 border-none hover:bg-purple-50">
-            <Phone size={20} className="mr-2" />
-            Schedule Free Inspection
+          <Button href="/request/" variant="secondary" size="lg" className="bg-white text-purple-700 border-none hover:bg-purple-50">
+            Request Services
           </Button>
         </div>
       </div>

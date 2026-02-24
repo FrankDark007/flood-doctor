@@ -195,12 +195,11 @@ const FairfaxMoldRemoval: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                href="tel:7036650505"
+                href="/request/"
                 variant="primary"
                 className="bg-primary hover:bg-blue-700 text-lg h-14 px-8 shadow-lg"
               >
-                <Phone size={20} className="mr-2" />
-                Call (877) 497-0007
+                Request Services
               </Button>
               <Button
                 href="/request-service"
@@ -239,12 +238,11 @@ const FairfaxMoldRemoval: React.FC = () => {
               </span>
             </div>
             <Button
-              href="tel:7036650505"
+              href="/request/"
               variant="primary"
               className="h-12 px-6"
             >
-              <Phone size={18} className="mr-2" />
-              Free Inspection
+              Request Services
             </Button>
           </div>
         </div>
@@ -504,12 +502,11 @@ const FairfaxMoldRemoval: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="tel:7036650505"
+              href="/request/"
               variant="primary"
               className="bg-primary hover:bg-blue-700 text-xl h-16 px-10 shadow-lg"
             >
-              <Phone size={24} className="mr-3" />
-              Call (877) 497-0007
+              Request Services
             </Button>
           </div>
           <div className="mt-8 text-gray-300">

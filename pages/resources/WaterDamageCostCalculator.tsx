@@ -478,9 +478,8 @@ const WaterDamageCostCalculator: React.FC = () => {
                   Use Calculator
                   <ArrowRight size={18} className="ml-2" />
                 </a>
-                <Button href="tel:8774970007" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                  <Phone size={18} className="mr-2" />
-                  Get Exact Quote
+                <Button href="/request/" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                  Request Services
                 </Button>
               </div>
             </div>
@@ -810,8 +809,8 @@ const WaterDamageCostCalculator: React.FC = () => {
 
                     <div className="flex items-center justify-center gap-2 mt-4">
                       <span className="text-sm text-white/60">or call</span>
-                      <a href="tel:8774970007" className="text-sm font-medium text-white hover:underline">
-                        (877) 497-0007
+                      <a href="/request/" className="text-sm font-medium text-white hover:underline">
+                        Request Services
                       </a>
                     </div>
                   </div>
@@ -1151,9 +1150,8 @@ const WaterDamageCostCalculator: React.FC = () => {
             <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100">
               Request Free Estimate
             </Button>
-            <Button href="tel:8774970007" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
+            <Button href="/request/" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              Request Services
             </Button>
           </div>
         </div>
