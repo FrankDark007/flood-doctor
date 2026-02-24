@@ -5,7 +5,6 @@ import {
   Clock,
   Award,
   CheckCircle,
-  Phone,
   AlertCircle,
   Zap,
   FileCheck,
@@ -226,11 +225,10 @@ const HealthcareRestoration: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:877-497-0007"
+                  href="/request/"
                   className="inline-flex items-center justify-center bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  877-497-0007
+                  Request Services
                 </a>
                 <a
                   href="#services"
@@ -556,11 +554,10 @@ const HealthcareRestoration: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:877-497-0007"
+              href="/request/"
               className="inline-flex items-center justify-center bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg"
             >
-              <Phone className="w-6 h-6 mr-3" />
-              Call 877-497-0007
+              Request Services
             </a>
             <Link
               to="/services/commercial/"

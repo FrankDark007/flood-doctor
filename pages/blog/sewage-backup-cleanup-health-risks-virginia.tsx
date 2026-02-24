@@ -68,11 +68,11 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
             <p className="text-red-800 mb-4">
               Sewage backups pose immediate health hazards. Professional cleanup prevents disease transmission and structural damage.
             </p>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-red-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-red-700 transition-colors text-lg"
             >
-              Call (877) 497-0007 - 24/7 Emergency Response
+              Request Services
             </a>
           </div>
         </header>
@@ -634,12 +634,12 @@ const SewageBackupCleanupHealthRisksVirginia: React.FC = () => {
               Sewage backups demand immediate professional response. Our IICRC-certified technicians provide rapid emergency service throughout Virginia with advanced equipment, proven antimicrobial protocols, and complete insurance documentation.
             </p>
             <div className="space-y-4">
-              <a
-                href="tel:8774970007"
-                className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
-              >
-                Call (877) 497-0007 Now
-              </a>
+                          <a
+              href="/request/"
+              className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
+            >
+              Request Services
+            </a>
               <p className="text-center text-blue-100">
                 Immediate dispatch • Complete containment • Professional disinfection
               </p>

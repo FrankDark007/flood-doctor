@@ -52,11 +52,11 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
             <p className="text-blue-800 mb-4">
               Understanding your rights and responsibilities is crucial whether you're a tenant or landlord. Professional restoration protects property value and ensures habitability compliance.
             </p>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-[#1a73e8] text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg"
             >
-              Call (877) 497-0007 - 24/7 Emergency Service
+              Request Services
             </a>
           </div>
         </header>
@@ -723,12 +723,12 @@ const RentalPropertyWaterDamageVirginia: React.FC = () => {
               Whether you're a landlord needing immediate repairs or a tenant requiring professional documentation, our certified technicians provide rapid response throughout Northern Virginia with comprehensive restoration and insurance coordination.
             </p>
             <div className="space-y-4">
-              <a
-                href="tel:8774970007"
-                className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
-              >
-                Call (877) 497-0007 Now
-              </a>
+                          <a
+              href="/request/"
+              className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
+            >
+              Request Services
+            </a>
               <p className="text-center text-blue-100">
                 Emergency response • Professional documentation • Insurance direct billing
               </p>

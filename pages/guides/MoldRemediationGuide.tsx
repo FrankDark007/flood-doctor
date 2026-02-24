@@ -5,7 +5,6 @@ import Button from '../../components/ui/Button';
 import GoogleStyleFAQ from '../../components/sections/GoogleStyleFAQ';
 import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
-  Phone,
   AlertTriangle,
   Clock,
   CheckCircle2,
@@ -197,9 +196,8 @@ const MoldRemediationGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Need Professional Help? Call 24/7
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -334,9 +332,8 @@ const MoldRemediationGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
                   For mold areas larger than 10 sq ft or any mold in HVAC systems, professional remediation is required. Our IICRC-certified team follows ANSI/IICRC S520 standards.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -383,9 +380,8 @@ const MoldRemediationGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Professional mold remediation ensures complete removal and prevents regrowth. Our certified team follows ANSI/IICRC S520 standards.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

@@ -99,8 +99,8 @@ const NearMeLanding: React.FC = () => {
                  <Button to="/request/" variant="primary" className="h-14 px-8 text-lg">
                     Request Service
                  </Button>
-                 <Button href="tel:8774970007" variant="secondary" className="h-14 px-8 text-lg">
-                    Call (877) 497-0007
+                 <Button to="/request/" variant="secondary" className="h-14 px-8 text-lg">
+                    Request Services
                  </Button>
              </div>
          </div>

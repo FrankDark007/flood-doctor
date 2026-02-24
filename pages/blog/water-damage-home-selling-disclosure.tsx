@@ -7,27 +7,7 @@ import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/Article
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import { generateBlogArticleSchema } from '../../utils/schema';
-import {
-  Phone,
-  AlertTriangle,
-  FileText,
-  ClipboardCheck,
-  Home,
-  Scale,
-  Shield,
-  CheckCircle2,
-  XCircle,
-  Clock,
-  DollarSign,
-  Search,
-  UserCheck,
-  FileCheck,
-  AlertCircle,
-  ArrowRight,
-  Building2,
-  MapPin,
-  BadgeCheck
-} from 'lucide-react';
+import { AlertTriangle, FileText, ClipboardCheck, Home, Scale, Shield, CheckCircle2, XCircle, Clock, DollarSign, Search, UserCheck, FileCheck, AlertCircle, ArrowRight, Building2, MapPin, BadgeCheck } from 'lucide-react';
 
 const WaterDamageHomeSellingDisclosure: React.FC = () => {
   const faqs = [
@@ -299,9 +279,8 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
               Selling a home with current or past water damage requires careful legal compliance in Virginia. Understanding disclosure requirements, documentation standards, and buyer rights protects sellers from post-closing lawsuits while maintaining property value. This comprehensive guide covers Virginia law, best practices, and how professional restoration documentation safeguards your sale.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Get Documentation Help
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <div className="flex items-center gap-2 text-sm text-muted">
                 <Clock size={16} />
@@ -682,10 +661,9 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                    <Phone size={18} className="mr-2" />
-                    Get Pre-Sale Assessment: (877) 497-0007
-                  </Button>
+                  <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                Request Services
+              </Button>
                 </div>
               </div>
             </section>
@@ -718,10 +696,9 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
                   Get professional documentation that protects your legal position and maximizes buyer confidence.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -832,10 +809,9 @@ const WaterDamageHomeSellingDisclosure: React.FC = () => {
           <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
             Our IICRC-certified restoration and comprehensive documentation packages give buyers confidence and protect sellers from post-closing liability.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-indigo-600 border-none hover:bg-indigo-50">
-            <Phone size={20} className="mr-2" />
-            Schedule Pre-Sale Assessment: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-indigo-600 border-none hover:bg-indigo-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

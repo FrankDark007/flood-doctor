@@ -56,12 +56,12 @@ const VacationWaterDamagePrevention: React.FC = () => {
                 <h2 className="text-2xl font-bold mb-2">Discovered Water Damage After Returning Home?</h2>
                 <p className="text-lg">24/7 emergency water restoration for vacation-related damage in Northern Virginia</p>
               </div>
-              <a
-                href="tel:8774970007"
-                className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap"
-              >
-                Call: (877) 497-0007
-              </a>
+                          <a
+              href="/request/"
+              className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap"
+            >
+              Request Services
+            </a>
             </div>
           </div>
         </header>
@@ -780,12 +780,12 @@ const VacationWaterDamagePrevention: React.FC = () => {
             <p className="text-lg mb-2">✓ Insurance Claims Documentation</p>
             <p className="text-lg">✓ IICRC-Certified Restoration Specialists</p>
           </div>
-          <a
-            href="tel:8774970007"
-            className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            Call Now: (877) 497-0007
-          </a>
+                      <a
+              href="/request/"
+              className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Request Services
+            </a>
           <p className="mt-4 text-lg">
             Serving Arlington, Alexandria, Fairfax, Loudoun, and Prince William Counties
           </p>

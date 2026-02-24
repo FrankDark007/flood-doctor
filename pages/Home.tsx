@@ -4,7 +4,6 @@ import { generateHomepageSchema } from '../utils/schema';
 import { useSubdomainInfo } from '../utils/subdomain';
 import { useFranchiseContext } from '../contexts/FranchiseContext';
 import {
-  Phone,
   MapPin,
   CheckCircle2,
   ChevronDown,
@@ -287,11 +286,10 @@ const Home: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-medium px-6 py-3 rounded-lg transition-colors group"
                 >
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                  Request Services
                   <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </a>
                 <Link
@@ -343,11 +341,10 @@ const Home: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 font-medium px-8 py-4 rounded-lg transition-colors text-lg group"
             >
-              <Phone size={20} className="mr-2" />
-              Call (877) 497-0007
+              Request Services
             </a>
             <Link
               to="/request/"

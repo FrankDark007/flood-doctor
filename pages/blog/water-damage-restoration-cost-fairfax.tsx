@@ -8,24 +8,7 @@ import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/Article
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import { generateBlogArticleSchema } from '../../utils/schema';
-import {
-  Phone,
-  DollarSign,
-  Home,
-  Droplets,
-  AlertTriangle,
-  CheckCircle2,
-  TrendingUp,
-  Shield,
-  Clock,
-  FileText,
-  Calculator,
-  Info,
-  ArrowRight,
-  Layers,
-  Wind,
-  Hammer
-} from 'lucide-react';
+import { DollarSign, Home, Droplets, AlertTriangle, CheckCircle2, TrendingUp, Shield, Clock, FileText, Calculator, Info, ArrowRight, Layers, Wind, Hammer } from 'lucide-react';
 
 const WaterDamageRestorationCostFairfax: React.FC = () => {
   const faqs = [
@@ -256,9 +239,8 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
               Understanding water damage restoration costs helps you budget appropriately and avoid overpaying. Delayed response leads to <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> that significantly increases total costs. This comprehensive guide breaks down average costs, pricing factors, insurance coverage, and how to get accurate estimates in Fairfax County.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Get Free Estimate
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -535,10 +517,9 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
               </div>
 
               <div className="mt-6 text-center">
-                <Button href="tel:8774970007" variant="primary" size="lg">
-                  <Phone size={18} className="mr-2" />
-                  Get Your Free Estimate
-                </Button>
+                <Button to="/request/" variant="primary" size="lg">
+                Request Services
+              </Button>
               </div>
             </section>
 
@@ -604,10 +585,9 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
                   Our certified technicians provide detailed, transparent estimates using industry-standard Xactimate software. No hidden fees, no pressure.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -705,10 +685,9 @@ const WaterDamageRestorationCostFairfax: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Get a detailed, line-item estimate for your water damage restoration project, including <Link to="/services/residential/restoration-services/structural-drying/" className="text-[#1a73e8] hover:underline">structural drying</Link>. We explain every cost and work directly with your insurance.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call for Free Estimate: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

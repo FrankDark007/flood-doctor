@@ -205,9 +205,8 @@ const WaterDamageCleanupGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Need Help Now? Call 24/7
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -231,9 +230,8 @@ const WaterDamageCleanupGuide: React.FC = () => {
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
                     Every hour of delay increases mold risk and restoration costs. Our emergency team arrives in 60 minutes across Northern Virginia—don't wait until tomorrow.
                   </p>
-                  <Button href="tel:8774970007" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
-                    <Phone size={16} className="mr-2" />
-                    Call Emergency Line Now
+                  <Button to="/request/" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
+                    Request Services
                   </Button>
                 </div>
               </div>
@@ -383,9 +381,8 @@ const WaterDamageCleanupGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
                   Water damage escalates quickly. Our IICRC-certified team arrives in 60 minutes with professional extraction equipment.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
@@ -459,9 +456,8 @@ const WaterDamageCleanupGuide: React.FC = () => {
             While DIY cleanup works for minor incidents, professional extraction and drying prevents 80% of secondary damage. Our team is standing by 24/7.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Call 24/7: (877) 497-0007
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
             <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
               Request Service Online

@@ -7,26 +7,7 @@ import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/Article
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import { generateBlogArticleSchema } from '../../utils/schema';
-import {
-  Phone,
-  AlertTriangle,
-  Eye,
-  Droplets,
-  Wind,
-  Home,
-  Search,
-  CheckCircle2,
-  XCircle,
-  Clock,
-  Thermometer,
-  Activity,
-  Waves,
-  Building2,
-  MapPin,
-  ArrowRight,
-  Info,
-  Zap
-} from 'lucide-react';
+import { AlertTriangle, Eye, Droplets, Wind, Home, Search, CheckCircle2, XCircle, Clock, Thermometer, Activity, Waves, Building2, MapPin, ArrowRight, Info, Zap } from 'lucide-react';
 
 const HiddenWaterDamageSignsArlington: React.FC = () => {
   const faqs = [
@@ -285,9 +266,8 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
               Water damage often hides behind walls, under floors, and in crawlspaces—silently causing mold growth, structural deterioration, and health hazards. This expert guide helps Arlington homeowners identify hidden water damage before it becomes a costly emergency.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Request Inspection
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Schedule Assessment
@@ -546,10 +526,9 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
                     <p className="text-sm text-muted leading-relaxed mb-4">
                       If you suspect hidden water damage, we'll perform a comprehensive moisture inspection using thermal imaging and professional-grade moisture meters at no cost. We'll provide a detailed report showing exactly where moisture exists and recommend appropriate next steps.
                     </p>
-                    <Button href="tel:8774970007" variant="primary" size="sm">
-                      <Phone size={16} className="mr-2" />
-                      Schedule Free Inspection
-                    </Button>
+                    <Button to="/request/" variant="primary" size="sm">
+                Request Services
+              </Button>
                   </div>
                 </div>
               </div>
@@ -617,10 +596,9 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
                   Don't guess about hidden water damage. Our certified technicians use thermal imaging and moisture meters to detect problems you can't see.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -714,10 +692,9 @@ const HiddenWaterDamageSignsArlington: React.FC = () => {
           <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
             Early detection saves thousands in repair costs. Our free moisture inspection uses professional equipment to find problems before they worsen.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
-            <Phone size={20} className="mr-2" />
-            Schedule Free Inspection: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

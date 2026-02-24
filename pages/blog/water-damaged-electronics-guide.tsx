@@ -48,11 +48,11 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
           <div className="bg-[#1a73e8] text-white p-6 rounded-lg mb-8">
             <p className="text-lg font-semibold mb-2">24/7 Water Damage Emergency Response</p>
             <p className="mb-4">Professional electronics drying and content restoration services</p>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
           </div>
         </header>
@@ -1118,12 +1118,12 @@ const WaterDamagedElectronicsGuide: React.FC = () => {
                 <p className="text-lg mb-2">✓ Insurance Documentation Assistance</p>
                 <p className="text-lg">✓ Serving Arlington, Alexandria, Fairfax, Loudoun & Prince William</p>
               </div>
-              <a
-                href="tel:8774970007"
-                className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                Call Now: (877) 497-0007
-              </a>
+                          <a
+              href="/request/"
+              className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Request Services
+            </a>
               <p className="mt-4 text-lg">
                 Every hour counts when electronics are exposed to water
               </p>

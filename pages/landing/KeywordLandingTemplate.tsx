@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Phone,
   ArrowRight,
   ArrowUpRight,
   Shield,
@@ -186,13 +185,12 @@ const KeywordLandingTemplate: React.FC<{ config: KeywordLandingConfig }> = ({ co
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                href="tel:8774970007"
+                to="/request/"
                 variant="primary"
                 size="lg"
                 className="bg-white text-slate-900 hover:bg-gray-100 h-16 px-10 text-lg"
               >
-                <Phone size={22} className="mr-3" />
-                Call (877) 497-0007
+                Request Services
               </Button>
               <Button
                 to="/request/"
@@ -534,13 +532,12 @@ const KeywordLandingTemplate: React.FC<{ config: KeywordLandingConfig }> = ({ co
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              href="tel:8774970007"
+              to="/request/"
               variant="secondary"
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 h-16 px-10 text-lg"
             >
-              <Phone size={22} className="mr-3" />
-              (877) 497-0007
+              Request Services
             </Button>
             <Button
               to="/request/"

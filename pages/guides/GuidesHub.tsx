@@ -5,7 +5,6 @@ import Breadcrumbs from '../../components/ui/Breadcrumbs';
 import Button from '../../components/ui/Button';
 import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
-  Phone,
   Droplets,
   AlertTriangle,
   FileText,
@@ -151,9 +150,8 @@ const GuidesHub: React.FC = () => {
               Expert step-by-step guides from IICRC-certified water damage professionals. Learn how to respond to emergencies, prevent future damage, and navigate insurance claims.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Need Help Now? Call 24/7
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -249,9 +247,8 @@ const GuidesHub: React.FC = () => {
             While these guides are helpful for understanding the process, water damage escalates quickly. Our 24/7 emergency team arrives in 60 minutes across Northern Virginia.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Call 24/7: (877) 497-0007
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
             <Button to="/request/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
               Request Emergency Service

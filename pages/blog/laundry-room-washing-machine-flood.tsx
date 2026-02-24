@@ -1107,11 +1107,11 @@ const LaundryRoomWashingMachineFlood: React.FC = () => {
             </ul>
           </div>
           <div className="text-center">
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-yellow-400 text-blue-900 font-bold text-2xl px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
             <p className="mt-4 text-lg">
               Serving Arlington, Alexandria, Fairfax, Loudoun, Prince William • Licensed & Insured • IICRC Certified

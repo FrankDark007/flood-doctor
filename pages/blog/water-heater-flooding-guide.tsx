@@ -56,12 +56,12 @@ const WaterHeaterFloodingGuide: React.FC = () => {
                 <h2 className="text-2xl font-bold mb-2">Water Heater Emergency?</h2>
                 <p className="text-lg">Immediate response for flooding and water damage in Northern Virginia</p>
               </div>
-              <a
-                href="tel:8774970007"
-                className="bg-white text-red-700 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
-              >
-                Call: (877) 497-0007
-              </a>
+                          <a
+              href="/request/"
+              className="bg-white text-red-700 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
+            >
+              Request Services
+            </a>
             </div>
           </div>
         </header>
@@ -909,11 +909,11 @@ const WaterHeaterFloodingGuide: React.FC = () => {
                 <p className="text-sm">Detailed documentation, direct billing, and adjuster coordination maximize claim success</p>
               </div>
             </div>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] font-bold text-xl px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              24/7 Emergency Service: (877) 497-0007
+              Request Services
             </a>
           </div>
         </section>
@@ -1042,11 +1042,11 @@ const WaterHeaterFloodingGuide: React.FC = () => {
           </div>
 
           <div className="text-center">
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-[#1a73e8] text-white px-12 py-5 rounded-lg font-bold text-2xl hover:bg-blue-700 transition-colors shadow-lg"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
             <p className="mt-4 text-sm text-gray-300">
               Free emergency inspection • Direct insurance billing • Complete restoration services

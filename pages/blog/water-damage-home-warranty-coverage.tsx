@@ -58,10 +58,10 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
               <p className="text-lg">24/7 restoration services throughout Northern Virginia</p>
             </div>
             <a
-              href="tel:877-497-0007"
+              href="/request/"
               className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
             >
-              Call: 877-497-0007
+              Request Services
             </a>
           </div>
         </div>
@@ -938,10 +938,10 @@ const WaterDamageHomeWarrantyCoverage: React.FC = () => {
             <p className="text-lg mb-2">✓ Full Restoration & Reconstruction</p>
           </div>
           <a
-            href="tel:877-497-0007"
+            href="/request/"
             className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Call Now: 877-497-0007
+            Request Services
           </a>
           <p className="mt-4 text-lg">
             Serving Arlington, Alexandria, Fairfax, Loudoun, and Prince William Counties

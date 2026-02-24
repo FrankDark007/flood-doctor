@@ -361,9 +361,8 @@ const BasementFloodingGuide: React.FC = () => {
               Comprehensive guide to understanding, preventing, and responding to basement flooding in Northern Virginia. Learn causes specific to NoVA, immediate response steps, when to call professionals, waterproofing options, insurance coverage, and realistic cost estimates.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call 24/7: (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Request Emergency Service
@@ -390,10 +389,9 @@ const BasementFloodingGuide: React.FC = () => {
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
                     Every hour of delay increases mold risk—see our <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth timeline</Link>—along with structural damage and restoration costs. Our emergency response team arrives within 90 minutes across Northern Virginia to begin water extraction and damage mitigation.
                   </p>
-                  <Button href="tel:8774970007" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
-                    <Phone size={16} className="mr-2" />
-                    Call Emergency Line Now
-                  </Button>
+                  <Button to="/request/" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
+                Request Services
+              </Button>
                 </div>
               </div>
             </div>
@@ -805,10 +803,9 @@ const BasementFloodingGuide: React.FC = () => {
                   Basement flooding doesn't wait for business hours. We respond immediately across Northern Virginia with rapid water extraction and damage mitigation.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -941,10 +938,9 @@ const BasementFloodingGuide: React.FC = () => {
             Whether you're dealing with active flooding or want to prevent future incidents, our IICRC-certified team provides 24/7 emergency response and comprehensive waterproofing solutions.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Call 24/7: (877) 497-0007
-            </Button>
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
             <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex bg-transparent text-white border-2 border-white hover:bg-white/10">
               Request Service Online
             </Button>

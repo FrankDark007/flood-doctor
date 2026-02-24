@@ -439,11 +439,10 @@ const AwardsAssociations: React.FC = () => {
                 Request Service
               </Link>
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center justify-center gap-2.5 text-white font-semibold text-[16px] px-8 py-4 rounded-full ring-1 ring-white/25 hover:bg-white/10 hover:ring-white/40 transition-all duration-200"
               >
-                <Phone size={16} />
-                (877) 497-0007
+                Request Services
               </a>
             </div>
 

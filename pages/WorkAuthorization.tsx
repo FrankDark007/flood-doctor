@@ -8,7 +8,6 @@ import {
   FileText,
   Shield,
   AlertTriangle,
-  Phone,
   Mail,
   MapPin,
   CreditCard,
@@ -1608,8 +1607,8 @@ const WorkAuthorization: React.FC = () => {
             </p>
             <div className="p-4 bg-slate-50 rounded-lg">
               <p className="text-sm text-slate-500 mb-1">Need immediate assistance?</p>
-              <a href="tel:+17039331110" className="text-lg font-bold text-[#1a73e8]">
-                (703) 933-1110
+              <a href="/request/" className="text-lg font-bold text-[#1a73e8]">
+                Request Services
               </a>
             </div>
           </div>
@@ -1644,11 +1643,10 @@ const WorkAuthorization: React.FC = () => {
               </div>
             </div>
             <a
-              href="tel:+17039331110"
+              href="/request/"
               className="flex items-center gap-2 text-[#1a73e8] font-semibold text-sm"
             >
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">(703) 933-1110</span>
+              <span>Request Services</span>
             </a>
           </div>
         </header>

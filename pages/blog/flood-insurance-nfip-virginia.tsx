@@ -75,11 +75,11 @@ const FloodInsuranceNfipVirginia: React.FC = () => {
             <p className="text-blue-800 mb-4">
               Whether you have flood insurance or not, rapid professional restoration prevents secondary damage and strengthens your insurance claim. We work directly with NFIP and private carriers.
             </p>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-[#1a73e8] text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg"
             >
-              Call (877) 497-0007 - 24/7 Emergency Service
+              Request Services
             </a>
           </div>
         </header>
@@ -426,12 +426,12 @@ const FloodInsuranceNfipVirginia: React.FC = () => {
               Whether your flood damage is covered by NFIP, private insurance, or you are paying out of pocket, rapid professional restoration prevents mold growth, structural deterioration, and escalating costs. Our IICRC-certified technicians respond immediately and coordinate directly with your flood insurance carrier.
             </p>
             <div className="space-y-4">
-              <a
-                href="tel:8774970007"
-                className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
-              >
-                Call (877) 497-0007 Now
-              </a>
+                          <a
+              href="/request/"
+              className="block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-xl"
+            >
+              Request Services
+            </a>
               <Link
                 to="/request/"
                 className="block bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-center text-lg"

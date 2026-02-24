@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import PageMeta from '../components/ui/PageMeta';
 import { generateBreadcrumbSchema, combineSchemas } from '../utils/schema';
-import { Clock, ArrowRight, Phone } from 'lucide-react';
+import { Clock, ArrowRight } from 'lucide-react';
 import { BLOG_ARTICLES, getCategories } from '../data/blog-articles';
 
 /**
@@ -172,11 +172,10 @@ const BlogIndex: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
             >
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
+              Request Services
             </a>
             <Link
               to="/request/"

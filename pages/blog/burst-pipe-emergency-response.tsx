@@ -340,9 +340,8 @@ const BurstPipeEmergencyResponse: React.FC = () => {
               A burst pipe floods your home with gallons of water per minute, and <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> can begin within 24-48 hours. This expert guide walks you through critical emergency steps to minimize damage, protect your family, and prepare for professional restoration.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call 24/7: (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Request Emergency Service
@@ -673,10 +672,9 @@ const BurstPipeEmergencyResponse: React.FC = () => {
                   We respond to burst pipe emergencies across Northern Virginia within 60-90 minutes, 24/7/365. Don't wait—every minute increases damage.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -774,10 +772,9 @@ const BurstPipeEmergencyResponse: React.FC = () => {
           <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
             Our emergency response team is standing by 24/7 to minimize damage and start restoration immediately. We also help with <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> documentation. Average response time: 60-90 minutes.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
-            <Phone size={20} className="mr-2" />
-            Call Emergency Line: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

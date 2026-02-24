@@ -85,9 +85,7 @@ const CommercialWaterDamageBusinessContinuity: React.FC = () => {
               </svg>
               <div>
                 <div className="text-sm opacity-90">Commercial Emergency Line</div>
-                <a href="tel:877-497-0007" className="text-2xl font-bold hover:underline">
-                  877-497-0007
-                </a>
+                <a href="/request/" className="text-2xl font-bold hover:underline">Request Services</a>
               </div>
             </div>
             <p className="text-sm opacity-90">60-90 minute response time • Professional documentation • Insurance claim support</p>
@@ -990,10 +988,10 @@ const CommercialWaterDamageBusinessContinuity: React.FC = () => {
             <div className="text-center">
               <div className="text-sm text-blue-100 mb-2">Commercial Emergency Line</div>
               <a
-                href="tel:877-497-0007"
+                href="/request/"
                 className="inline-block text-4xl md:text-5xl font-bold hover:text-blue-100 transition-colors mb-4"
               >
-                877-497-0007
+                Request Services
               </a>
               <div className="text-blue-100">
                 Available 24 hours a day, 7 days a week, 365 days a year

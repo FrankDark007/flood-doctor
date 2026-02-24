@@ -394,10 +394,10 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
               Certified water damage restoration specialists serving Fairfax, Arlington, Loudoun, and Prince William counties. Average response time: under 60 minutes.
             </p>
             <a
-              href="tel:7036650505"
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] font-bold text-xl px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
             <p className="mt-4 text-sm">
               Free inspection • Insurance billing assistance • Licensed & insured
@@ -523,10 +523,10 @@ const SumpPumpFailureBasementFloodingNova: React.FC = () => {
             IICRC Certified • Licensed & Insured • 24/7 Emergency Response
           </p>
           <a
-            href="tel:7036650505"
+            href="/request/"
             className="inline-block bg-[#1a73e8] text-white font-bold text-2xl px-10 py-5 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            📞 (877) 497-0007
+            Request Services
           </a>
           <p className="mt-6 text-sm text-gray-300">
             Average emergency response time: Under 60 minutes

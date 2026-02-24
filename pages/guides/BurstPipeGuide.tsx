@@ -6,7 +6,6 @@ import Button from '../../components/ui/Button';
 import LazyFAQ from '../../components/ui/LazyFAQ';
 import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
-  Phone,
   Zap,
   CheckCircle2,
   AlertTriangle,
@@ -228,9 +227,8 @@ const BurstPipeGuide: React.FC = () => {
             <Zap size={18} className="animate-pulse" />
             Pipe burst right now?
           </span>
-          <a href="tel:8774970007" className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-red-50 transition-colors flex items-center gap-2">
-            <Phone size={16} />
-            Call (877) 497-0007 — 60-min response
+          <a href="/request/" className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-red-50 transition-colors flex items-center gap-2">
+            Request Services
           </a>
         </div>
       </div>
@@ -274,9 +272,8 @@ const BurstPipeGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
-                <Phone size={18} className="mr-2" />
-                Call Emergency Line Now
+              <Button to="/request/" variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
+                Request Services
               </Button>
               <Button to="/services/residential/restoration-services/water-damage-restoration/" variant="outline" size="lg">
                 Our Emergency Services
@@ -397,9 +394,8 @@ const BurstPipeGuide: React.FC = () => {
                 <p className="text-red-100 text-sm mb-4">
                   Our emergency team responds in 60 minutes across Northern Virginia. 24/7, including holidays.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" size="lg" className="w-full bg-white text-red-600 border-none hover:bg-red-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" size="lg" className="w-full bg-white text-red-600 border-none hover:bg-red-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -483,9 +479,8 @@ const BurstPipeGuide: React.FC = () => {
             Our IICRC-certified team responds in 60 minutes across Northern Virginia and DC. We work with all major insurance companies.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
-              <Phone size={20} className="mr-2" />
-              Call Now: (877) 497-0007
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-red-600 border-none hover:bg-red-50">
+              Request Services
             </Button>
             <Button to="/request/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
               Request Emergency Service

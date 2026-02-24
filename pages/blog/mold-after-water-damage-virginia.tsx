@@ -8,26 +8,7 @@ import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/Article
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import { generateBlogArticleSchema } from '../../utils/schema';
-import {
-  Phone,
-  AlertTriangle,
-  Clock,
-  Wind,
-  Thermometer,
-  Eye,
-  Shield,
-  Home,
-  CheckCircle2,
-  XCircle,
-  Activity,
-  Droplets,
-  MapPin,
-  ArrowRight,
-  Info,
-  Heart,
-  Search,
-  Layers
-} from 'lucide-react';
+import { AlertTriangle, Clock, Wind, Thermometer, Eye, Shield, Home, CheckCircle2, XCircle, Activity, Droplets, MapPin, ArrowRight, Info, Heart, Search, Layers } from 'lucide-react';
 
 const MoldAfterWaterDamageVirginia: React.FC = () => {
   const faqs = [
@@ -384,9 +365,8 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
               Water damage and mold go hand-in-hand—but understanding the relationship helps you prevent devastating mold growth. Professional <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline">mold remediation</Link> is often necessary when water damage goes unaddressed. This comprehensive guide covers mold growth timelines, health risks, Virginia-specific factors, and how to protect your home and family.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                24/7 Response
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -687,10 +667,9 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
                     <p className="text-sm text-muted leading-relaxed mb-4">
                       When we respond to water damage, mold prevention is built into our <Link to="/services/residential/restoration-services/water-damage-restoration/" className="text-[#1a73e8] hover:underline">water damage restoration</Link> process. We extract water within hours, use industrial drying equipment to reach safe moisture levels within 3-7 days, apply antimicrobial treatments to all affected surfaces, and verify complete drying with moisture meters. This prevents mold from ever growing—saving you thousands in remediation costs.
                     </p>
-                    <Button href="tel:8774970007" variant="primary" size="sm">
-                      <Phone size={16} className="mr-2" />
-                      Call for Water Damage Response
-                    </Button>
+                    <Button to="/request/" variant="primary" size="sm">
+                Request Services
+              </Button>
                   </div>
                 </div>
               </div>
@@ -784,10 +763,9 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
                   Professional water extraction and drying within 24-48 hours prevents mold growth entirely. Our 24/7 emergency response team minimizes damage and protects your health.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -881,10 +859,9 @@ const MoldAfterWaterDamageVirginia: React.FC = () => {
           <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
             The best mold remediation is prevention. Review your <Link to="/blog/homeowners-insurance-water-damage-virginia/" className="text-[#1a73e8] hover:underline">insurance coverage</Link> and call our 24/7 emergency response team to stop mold before it starts with professional extraction and drying.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-purple-600 border-none hover:bg-purple-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-purple-600 border-none hover:bg-purple-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

@@ -5,7 +5,7 @@ import PageMeta from '../components/ui/PageMeta';
 import { generateBreadcrumbSchema } from '../utils/schema';
 import { LOCATIONS, NEARBY_AREAS } from '../data/locations';
 import { LocationsHeroAnimation } from '../components/graphics';
-import { Search, MapPin, Phone, Globe, ArrowRight, Navigation } from 'lucide-react';
+import { Search, MapPin, Globe, ArrowRight, Navigation } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ServiceAreaMap from '../components/ui/ServiceAreaMap';
 import { LocationData } from '../types';
@@ -149,8 +149,8 @@ const LocationsHub: React.FC = () => {
                                <Globe size={16} /> Coming Soon
                             </span>
                          )}
-                         <a href="tel:8774970007" className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-200 text-sm font-medium text-text hover:bg-gray-50 transition-colors whitespace-nowrap">
-                            <Phone size={16} /> Call
+                         <a href="/request/" className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-200 text-sm font-medium text-text hover:bg-gray-50 transition-colors whitespace-nowrap">
+                            Request Services
                          </a>
                       </div>
                    </div>
@@ -166,8 +166,8 @@ const LocationsHub: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-medium text-text">No location found</h3>
                 <p className="text-muted">We serve the entire NoVA region. Call us to verify your zip code.</p>
-                <Button href="tel:8774970007" variant="text" className="mt-2">
-                   Call (877) 497-0007
+                <Button to="/request/" variant="text" className="mt-2">
+                   Request Services
                 </Button>
              </div>
           )}

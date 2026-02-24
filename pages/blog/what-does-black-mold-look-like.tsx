@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
@@ -76,11 +76,10 @@ const WhatDoesBlackMoldLookLike: React.FC = () => {
               </p>
             </div>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors whitespace-nowrap"
             >
-              <Phone className="w-5 h-5" />
-              (877) 497-0007
+              Request Services
             </a>
           </div>
         </div>
@@ -493,11 +492,10 @@ const WhatDoesBlackMoldLookLike: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1a73e8] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                <Phone className="w-5 h-5" />
-                (877) 497-0007
+                Request Services
               </a>
               <a
                 href="/request/"

@@ -419,9 +419,8 @@ const BathroomWaterDamageGuide: React.FC = () => {
               Bathrooms are the #1 source of residential water damage. From toilet overflows and supply line failures to hidden shower pan leaks, bathroom water damage causes thousands of dollars in repairs annually across Northern Virginia. This comprehensive guide covers emergency response, hidden damage detection, professional restoration, and prevention strategies.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call 24/7: (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -444,10 +443,9 @@ const BathroomWaterDamageGuide: React.FC = () => {
                   <h2 className="text-2xl font-bold mb-2">Experiencing Bathroom Water Damage Right Now?</h2>
                   <p className="text-blue-100">24/7 emergency response across Northern Virginia • 60-90 minute arrival</p>
                 </div>
-                <Button href="tel:8774970007" variant="secondary" className="bg-white text-primary border-none hover:bg-blue-50 shrink-0">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" className="bg-white text-primary border-none hover:bg-blue-50 shrink-0">
+                Request Services
+              </Button>
               </div>
             </div>
 
@@ -788,10 +786,9 @@ const BathroomWaterDamageGuide: React.FC = () => {
                   Emergency bathroom restoration across Northern Virginia. We respond within 60-90 minutes to minimize damage and begin professional drying immediately.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50 mb-6">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50 mb-6">
+                Request Services
+              </Button>
 
                 <div className="space-y-4 pt-6 border-t border-white/20">
                   <div className="flex items-center gap-3">
@@ -898,10 +895,9 @@ const BathroomWaterDamageGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our emergency restoration team provides 24/7 response across Northern Virginia. We arrive within 60-90 minutes to extract water, prevent mold, and begin professional restoration.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call Emergency Line: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

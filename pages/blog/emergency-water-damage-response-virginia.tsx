@@ -48,12 +48,12 @@ const EmergencyWaterDamageArticle: React.FC = () => {
         <div className="bg-[#1a73e8] text-white p-6 rounded-lg mb-8">
           <p className="text-lg font-semibold mb-2">24/7 Emergency Water Damage Response</p>
           <p className="mb-4">Serving Northern Virginia with IICRC-certified technicians</p>
-          <a
-            href="tel:8774970007"
-            className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Call Now: (877) 497-0007
-          </a>
+                      <a
+              href="/request/"
+              className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Request Services
+            </a>
         </div>
       </header>
 
@@ -200,9 +200,7 @@ const EmergencyWaterDamageArticle: React.FC = () => {
                 </p>
                 <div className="bg-[#1a73e8] bg-opacity-10 p-4 rounded-lg border-2 border-[#1a73e8]">
                   <p className="font-bold text-gray-900 mb-2">Northern Virginia 24/7 Emergency Response:</p>
-                  <a href="tel:8774970007" className="text-2xl font-bold text-[#1a73e8] hover:underline">
-                    (877) 497-0007
-                  </a>
+                  <a href="/request/" className="text-2xl font-bold text-[#1a73e8] hover:underline">Request Services</a>
                   <p className="text-sm text-gray-600 mt-2">IICRC-certified technicians • Average 60-minute response time</p>
                 </div>
               </div>
@@ -707,12 +705,12 @@ const EmergencyWaterDamageArticle: React.FC = () => {
               IICRC-certified technicians serving Fairfax, Arlington, Loudoun, and Prince William Counties with an average 60-minute response time.
             </p>
             <div className="flex flex-col md:flex-row gap-4 items-center">
-              <a
-                href="tel:8774970007"
-                className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors inline-block"
-              >
-                Emergency: (877) 497-0007
-              </a>
+                          <a
+              href="/request/"
+              className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors inline-block"
+            >
+              Request Services
+            </a>
               <span className="text-lg">or</span>
               <a
                 href="/services/"

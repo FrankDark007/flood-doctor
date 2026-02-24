@@ -1,5 +1,4 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
@@ -76,11 +75,10 @@ const CeilingWaterDamageGuide: React.FC = () => {
               </p>
             </div>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors whitespace-nowrap"
             >
-              <Phone className="w-5 h-5" />
-              (877) 497-0007
+              Request Services
             </a>
           </div>
         </div>
@@ -1018,11 +1016,10 @@ const CeilingWaterDamageGuide: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center gap-2 bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                <Phone className="w-6 h-6" />
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="/services/residential/restoration-services/water-damage-restoration/"

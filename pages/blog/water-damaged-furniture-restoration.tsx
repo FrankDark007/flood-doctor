@@ -1,5 +1,4 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
 import PageMeta from '../../components/ui/PageMeta';
 import ArticleAuthor, { generateAuthorSchema } from '../../components/ui/ArticleAuthor';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
@@ -79,11 +78,10 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
               </p>
             </div>
             <a
-              href="tel:8774970007"
+              href="/request/"
               className="inline-flex items-center gap-2 bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors whitespace-nowrap"
             >
-              <Phone className="w-5 h-5" />
-              (877) 497-0007
+              Request Services
             </a>
           </div>
         </div>
@@ -987,11 +985,10 @@ const WaterDamagedFurnitureRestoration: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a
-                href="tel:8774970007"
+                href="/request/"
                 className="inline-flex items-center gap-2 bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                <Phone className="w-6 h-6" />
-                Call Now: (877) 497-0007
+                Request Services
               </a>
               <a
                 href="/services/residential/cleanup-services/contents-cleaning-packout/"

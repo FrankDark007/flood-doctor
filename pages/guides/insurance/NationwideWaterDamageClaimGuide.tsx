@@ -5,7 +5,6 @@ import Button from '../../../components/ui/Button';
 import GoogleStyleFAQ from '../../../components/sections/GoogleStyleFAQ';
 import { generateBreadcrumbSchema, combineSchemas } from '../../../utils/schema';
 import {
-  Phone,
   Clock,
   CheckCircle2,
   Camera,
@@ -216,9 +215,8 @@ const NationwideWaterDamageClaimGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Need Help? Call (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -325,9 +323,8 @@ const NationwideWaterDamageClaimGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
                   Our team coordinates with Nationwide adjusters regularly. We provide Xactimate estimates, complete documentation, and direct billing.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-blue-600 border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-blue-600 border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
@@ -419,9 +416,8 @@ const NationwideWaterDamageClaimGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             We work directly with Nationwide adjusters throughout Northern Virginia. Focus on your family—we'll handle the documentation, estimates, and coordination.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

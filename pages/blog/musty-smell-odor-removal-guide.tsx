@@ -7,27 +7,7 @@ import ArticleAuthor from '../../components/ui/ArticleAuthor';
 import { generateBlogArticleSchema } from '../../utils/schema';
 import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
-import {
-  Phone,
-  AlertTriangle,
-  Clock,
-  Wind,
-  Thermometer,
-  Eye,
-  Shield,
-  Home,
-  CheckCircle2,
-  XCircle,
-  Activity,
-  Droplets,
-  MapPin,
-  ArrowRight,
-  Info,
-  Layers,
-  Zap,
-  Search,
-  TestTube
-} from 'lucide-react';
+import { AlertTriangle, Clock, Wind, Thermometer, Eye, Shield, Home, CheckCircle2, XCircle, Activity, Droplets, MapPin, ArrowRight, Info, Layers, Zap, Search, TestTube } from 'lucide-react';
 
 const MustySmellOdorRemovalGuide: React.FC = () => {
   const faqs = [
@@ -526,9 +506,8 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
               That persistent musty smell after water damage isn't just unpleasant—it signals active mold growth and hidden moisture problems. This comprehensive guide covers odor sources, professional elimination methods, hidden damage detection, and prevention strategies for Northern Virginia homeowners.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                24/7 Response
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg" className="hidden md:inline-flex">
                 Request Service
@@ -852,10 +831,9 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
                     <p className="text-sm text-muted leading-relaxed mb-4">
                       IICRC-certified restoration companies combine multiple treatment modalities—source removal, antimicrobial treatment, advanced oxidation, structural drying, and air quality verification—to achieve complete odor elimination. This comprehensive approach addresses both symptoms and causes, preventing odor return.
                     </p>
-                    <Button href="tel:8774970007" variant="primary" size="sm">
-                      <Phone size={16} className="mr-2" />
-                      Call for Professional Assessment
-                    </Button>
+                    <Button to="/request/" variant="primary" size="sm">
+                Request Services
+              </Button>
                   </div>
                 </div>
               </div>
@@ -931,10 +909,9 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
                   Don't mask odors—eliminate them permanently. Our IICRC-certified team uses hydroxyl generators, ozone treatment, and thermal fogging to remove odors at the molecular level.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -1028,10 +1005,9 @@ const MustySmellOdorRemovalGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Don't just mask water damage odors. Our advanced hydroxyl, ozone, and thermal fogging treatments eliminate odors at the source for permanent results.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-blue-600 border-none hover:bg-blue-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

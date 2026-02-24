@@ -450,10 +450,9 @@ const FrozenBurstPipesGuide: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button href="tel:8774970007" variant="primary" size="lg">
-                  <Phone size={18} className="mr-2" />
-                  24/7 Emergency: (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="primary" size="lg">
+                Request Services
+              </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="hidden md:block">
                 <Button to="/request/" variant="secondary" size="lg">
@@ -482,10 +481,9 @@ const FrozenBurstPipesGuide: React.FC = () => {
                 When temperatures forecast below 25°F in Northern Virginia, frozen pipe risk increases dramatically. Pipes in crawlspaces, exterior walls, and unheated basements are most vulnerable. Take preventive action before the cold arrives—frozen pipes can burst within hours, releasing 50+ gallons per minute.
               </p>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                <Button href="tel:8774970007" variant="primary" size="sm" className="bg-blue-600 hover:bg-blue-700">
-                  <Phone size={16} className="mr-2" />
-                  Call for Emergency Protection
-                </Button>
+                <Button to="/request/" variant="primary" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                Request Services
+              </Button>
               </motion.div>
             </AnimatedInfoBox>
 
@@ -1156,10 +1154,9 @@ const FrozenBurstPipesGuide: React.FC = () => {
                 </p>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                  <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                    <Phone size={18} className="mr-2" />
-                    (877) 497-0007
-                  </Button>
+                  <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
                 </motion.div>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
@@ -1361,10 +1358,9 @@ const FrozenBurstPipesGuide: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Call 24/7: (877) 497-0007
-            </Button>
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
           </motion.div>
         </div>
       </motion.div>

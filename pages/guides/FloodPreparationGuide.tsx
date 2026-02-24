@@ -6,7 +6,6 @@ import Button from '../../components/ui/Button';
 import LazyFAQ from '../../components/ui/LazyFAQ';
 import { generateBreadcrumbSchema, combineSchemas } from '../../utils/schema';
 import {
-  Phone,
   CloudRain,
   CheckCircle2,
   AlertTriangle,
@@ -302,9 +301,8 @@ const FloodPreparationGuide: React.FC = () => {
                 <Shield size={18} className="mr-2" />
                 Get Home Assessment
               </Button>
-              <Button href="tel:8774970007" variant="outline" size="lg">
-                <Phone size={18} className="mr-2" />
-                Questions? Call Us
+              <Button to="/request/" variant="outline" size="lg">
+                Request Services
               </Button>
             </div>
           </div>
@@ -480,9 +478,8 @@ const FloodPreparationGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm mb-4">
                   If flooding is imminent and you need sandbags, sump pump service, or emergency preparation help, our team is available 24/7.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" size="md" className="w-full bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                  <Phone size={16} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" size="md" className="w-full bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -522,9 +519,8 @@ const FloodPreparationGuide: React.FC = () => {
             If flooding has already occurred, our 24/7 emergency team responds in 60 minutes across Northern Virginia. We handle water extraction, drying, and full restoration.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Emergency: (877) 497-0007
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
             <Button to="/services/residential/restoration-services/flood-cleanup/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
               Flood Restoration Services

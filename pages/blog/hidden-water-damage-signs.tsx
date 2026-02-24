@@ -8,30 +8,7 @@ import MidArticleCTA from '../../components/ui/MidArticleCTA';
 import RelatedArticles from '../../components/ui/RelatedArticles';
 import { Link } from 'react-router-dom';
 import { generateBlogArticleSchema } from '../../utils/schema';
-import {
-  Phone,
-  AlertTriangle,
-  Eye,
-  Droplets,
-  Wind,
-  Home,
-  Search,
-  CheckCircle2,
-  XCircle,
-  Clock,
-  Thermometer,
-  Activity,
-  Waves,
-  Building2,
-  MapPin,
-  ArrowRight,
-  Info,
-  Zap,
-  DollarSign,
-  Shield,
-  FileText,
-  TrendingUp
-} from 'lucide-react';
+import { AlertTriangle, Eye, Droplets, Wind, Home, Search, CheckCircle2, XCircle, Clock, Thermometer, Activity, Waves, Building2, MapPin, ArrowRight, Info, Zap, DollarSign, Shield, FileText, TrendingUp } from 'lucide-react';
 
 const HiddenWaterDamageSigns: React.FC = () => {
   const faqs = [
@@ -375,9 +352,8 @@ const HiddenWaterDamageSigns: React.FC = () => {
               Water damage often hides behind walls, under floors, and in crawlspaces for months before visible signs appear. By then, <Link to="/services/residential/cleanup-services/mold-remediation/" className="text-[#1a73e8] hover:underline">mold growth</Link>, structural rot, and costly repairs are inevitable. This expert guide teaches you to identify hidden water damage early—before it becomes a health hazard and financial crisis.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Free Moisture Inspection
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Schedule Assessment
@@ -574,10 +550,9 @@ const HiddenWaterDamageSigns: React.FC = () => {
                     <p className="text-sm text-muted leading-relaxed mb-4">
                       We provide complimentary moisture inspections using professional thermal imaging and moisture meters. Our certified technicians create detailed moisture maps showing exactly where hidden water damage exists—with no obligation. This allows you to make informed decisions about remediation before problems worsen.
                     </p>
-                    <Button href="tel:8774970007" variant="primary" size="sm">
-                      <Phone size={16} className="mr-2" />
-                      Schedule Free Inspection
-                    </Button>
+                    <Button to="/request/" variant="primary" size="sm">
+                Request Services
+              </Button>
                   </div>
                 </div>
               </div>
@@ -760,10 +735,9 @@ const HiddenWaterDamageSigns: React.FC = () => {
                   <p className="text-sm text-purple-900 mb-4 font-medium">
                     Professional moisture inspections detect hidden damage before visible signs appear
                   </p>
-                  <Button href="tel:8774970007" variant="primary" size="lg">
-                    <Phone size={18} className="mr-2" />
-                    Call for Free Inspection: (877) 497-0007
-                  </Button>
+                  <Button to="/request/" variant="primary" size="lg">
+                Request Services
+              </Button>
                 </div>
               </div>
             </section>
@@ -856,10 +830,9 @@ const HiddenWaterDamageSigns: React.FC = () => {
                   Don't guess about hidden water damage. Our certified technicians use thermal imaging and moisture meters to detect problems invisible to homeowners.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -976,10 +949,9 @@ const HiddenWaterDamageSigns: React.FC = () => {
           <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
             Early detection saves thousands in repair costs and protects your family's health. Our free moisture inspection uses professional equipment to find hidden problems before they worsen.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
-            <Phone size={20} className="mr-2" />
-            Schedule Free Inspection: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-orange-600 border-none hover:bg-orange-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>

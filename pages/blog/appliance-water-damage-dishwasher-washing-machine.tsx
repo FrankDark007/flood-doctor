@@ -69,11 +69,11 @@ const ApplianceWaterDamageGuide: React.FC = () => {
               <h2 className="text-2xl font-bold mb-2">Experiencing an Appliance Leak Emergency?</h2>
               <p className="text-lg">24/7 water damage restoration services in Northern Virginia</p>
             </div>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="bg-white text-[#1a73e8] px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors shadow-md"
             >
-              Call: (877) 497-0007
+              Request Services
             </a>
           </div>
         </div>
@@ -591,12 +591,12 @@ const ApplianceWaterDamageGuide: React.FC = () => {
             <p className="text-lg mb-2">✓ Insurance Documentation Assistance</p>
             <p className="text-lg">✓ Licensed, Insured & Certified Technicians</p>
           </div>
-          <a
-            href="tel:8774970007"
-            className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            Call Now: (877) 497-0007
-          </a>
+                      <a
+              href="/request/"
+              className="inline-block bg-white text-[#1a73e8] px-12 py-5 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Request Services
+            </a>
           <p className="mt-4 text-lg">
             Don't wait—every minute counts when dealing with water damage
           </p>

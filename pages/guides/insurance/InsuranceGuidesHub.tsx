@@ -4,7 +4,6 @@ import Breadcrumbs from '../../../components/ui/Breadcrumbs';
 import Button from '../../../components/ui/Button';
 import { generateBreadcrumbSchema } from '../../../utils/schema';
 import {
-  Phone,
   Shield,
   ArrowRight,
   FileText,
@@ -104,9 +103,8 @@ const InsuranceGuidesHub: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Need Claim Help? (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button href="/guides/water-damage-insurance-claim/" variant="outline" size="lg">
                 <FileText size={18} className="mr-2" />
@@ -263,9 +261,8 @@ const InsuranceGuidesHub: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             No matter who your carrier is, we work with them daily. Xactimate estimates, direct billing, adjuster coordination—we handle it all so you can focus on your family.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call 24/7: (877) 497-0007
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+            Request Services
           </Button>
         </div>
       </div>

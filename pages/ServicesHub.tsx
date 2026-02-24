@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Phone,
   ArrowRight,
   Droplets,
   Flame,
@@ -234,11 +233,10 @@ const AnimatedBottomCTA: React.FC = () => {
         {/* CTA Buttons */}
         <div className="hidden lg:flex flex-row justify-center gap-4">
           <a
-            href="tel:8774970007"
+            href="/request/"
             className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#1a73e8] font-medium px-8 h-12 rounded-full transition-colors"
           >
-            <Phone size={18} className="mr-2" />
-            (877) 497-0007
+            Request Services
           </a>
           <Link
             to="/request/"
@@ -537,13 +535,12 @@ const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, h1, filterAu
                 transition={{ duration: 0.6, delay: 0.4, ease: googleEase }}
               >
                 <motion.a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="inline-flex items-center justify-center bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-8 h-12 rounded-full transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
+                  Request Services
                 </motion.a>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Link

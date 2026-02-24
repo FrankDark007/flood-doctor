@@ -315,9 +315,8 @@ const BasementWaterproofingGuide: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Get Professional Assessment
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="outline" size="lg">
                 Request Estimate
@@ -503,9 +502,8 @@ const BasementWaterproofingGuide: React.FC = () => {
                 <p className="text-blue-100 text-sm mb-4">
                   Free basement assessment from IICRC-certified technicians. We identify the real problem before recommending solutions.
                 </p>
-                <Button href="tel:8774970007" variant="secondary" size="md" className="w-full bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-                  <Phone size={16} className="mr-2" />
-                  (877) 497-0007
+                <Button to="/request/" variant="secondary" size="md" className="w-full bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+                  Request Services
                 </Button>
               </div>
 
@@ -545,9 +543,8 @@ const BasementWaterproofingGuide: React.FC = () => {
             If you're dealing with active flooding or water damage, don't wait for waterproofing—call our 24/7 emergency team for immediate extraction and restoration.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
-              <Phone size={20} className="mr-2" />
-              Emergency: (877) 497-0007
+            <Button to="/request/" variant="secondary" size="lg" className="bg-white text-[#1a73e8] border-none hover:bg-blue-50">
+              Request Services
             </Button>
             <Button to="/services/residential/specialty-services/basement-flooding/" variant="secondary" size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white/10">
               Basement Flooding Services

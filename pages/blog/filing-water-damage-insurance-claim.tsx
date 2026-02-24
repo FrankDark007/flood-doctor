@@ -72,11 +72,11 @@ const FilingWaterDamageInsuranceClaim: React.FC = () => {
           <div className="bg-[#1a73e8] text-white p-6 rounded-lg mb-8">
             <p className="text-lg font-semibold mb-2">Need Help with an Insurance Claim?</p>
             <p className="mb-4">Flood Doctor works directly with your insurance company — call us first.</p>
-            <a
-              href="tel:8774970007"
+                        <a
+              href="/request/"
               className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
             >
-              Call Now: (877) 497-0007
+              Request Services
             </a>
           </div>
         </header>
@@ -384,12 +384,12 @@ const FilingWaterDamageInsuranceClaim: React.FC = () => {
               Flood Doctor's claims coordination team handles the paperwork, documentation, and insurance communication so you can focus on getting your home back to normal. Available 24/7 for emergencies throughout Northern Virginia.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="tel:8774970007"
-                className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Call (877) 497-0007
-              </a>
+                          <a
+              href="/request/"
+              className="inline-block bg-white text-[#1a73e8] px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Request Services
+            </a>
               <Link
                 to="/request/"
                 className="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"

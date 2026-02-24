@@ -243,9 +243,8 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
               Discovering water damage in your home—whether from a <Link to="/blog/burst-pipe-emergency-response/" className="text-[#1a73e8] hover:underline">burst pipe</Link> or appliance failure—is stressful and overwhelming. This comprehensive guide walks Northern Virginia homeowners through immediate emergency steps, regional considerations, and how to minimize damage and restoration costs.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="tel:8774970007" variant="primary" size="lg">
-                <Phone size={18} className="mr-2" />
-                Call 24/7: (877) 497-0007
+              <Button to="/request/" variant="primary" size="lg">
+                Request Services
               </Button>
               <Button to="/request/" variant="secondary" size="lg">
                 Request Emergency Service
@@ -272,10 +271,9 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
                   <p className="text-red-800 text-sm mb-4 leading-relaxed">
                     Water damage escalates exponentially with every passing hour. In Northern Virginia's humid climate, <Link to="/blog/mold-growth-after-water-damage-timeline/" className="text-[#1a73e8] hover:underline">mold growth</Link> can begin within 24-48 hours. Professional restoration companies can typically arrive within 90 minutes and begin emergency mitigation immediately.
                   </p>
-                  <Button href="tel:8774970007" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
-                    <Phone size={16} className="mr-2" />
-                    Call Flood Doctor Now
-                  </Button>
+                  <Button to="/request/" variant="primary" size="sm" className="bg-red-600 hover:bg-red-700">
+                Request Services
+              </Button>
                 </div>
               </div>
             </div>
@@ -580,10 +578,9 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
                   Water damage doesn't wait for business hours. We respond to emergencies across Northern Virginia 24/7/365—including holidays.
                 </p>
 
-                <Button href="tel:8774970007" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
-                  <Phone size={18} className="mr-2" />
-                  (877) 497-0007
-                </Button>
+                <Button to="/request/" variant="secondary" fullWidth className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
 
                 <div className="mt-6 pt-6 border-t border-white/20 space-y-4">
                   <div className="flex items-center gap-3">
@@ -684,10 +681,9 @@ const WaterDamageNorthernVirginiaGuide: React.FC = () => {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our Northern Virginia emergency response team is standing by 24/7 to minimize damage and manage <Link to="/blog/water-damage-restoration-cost-fairfax/" className="text-[#1a73e8] hover:underline">restoration costs</Link>.
           </p>
-          <Button href="tel:8774970007" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
-            <Phone size={20} className="mr-2" />
-            Call Now: (877) 497-0007
-          </Button>
+          <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary border-none hover:bg-blue-50">
+                Request Services
+              </Button>
         </div>
       </div>
     </main>
