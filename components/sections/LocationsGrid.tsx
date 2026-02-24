@@ -107,8 +107,8 @@ const LocationsGrid: React.FC<LocationsGridProps> = ({ locations, id }) => {
 
                             {/* Action Buttons */}
                             <div className="grid grid-cols-2 gap-3">
-                                <a href="tel:8774970007" className="flex items-center justify-center gap-2 py-3 rounded-xl bg-red-600 text-white text-xs font-bold hover:bg-red-700 transition-colors shadow-sm">
-                                    <Phone size={14} fill="currentColor" /> Dispatch
+                                <a href="/request/" className="flex items-center justify-center gap-2 py-3 rounded-xl bg-red-600 text-white text-xs font-bold hover:bg-red-700 transition-colors shadow-sm">
+                                    Request Services
                                 </a>
                                 <a href={loc.url} className="flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 text-gray-700 text-xs font-bold hover:bg-gray-50 transition-colors bg-white">
                                     Local Site <ArrowRight size={14} />

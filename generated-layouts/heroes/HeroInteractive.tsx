@@ -73,12 +73,11 @@ const HeroInteractive: React.FC = () => {
                     <div className="text-5xl font-bold text-blue-600">{result.time} <span className="text-2xl text-slate-400 font-medium">min</span></div>
                   </div>
 
-                  <a 
-                    href="tel:8774970007"
+                  <a
+                    href="/request/"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
                   >
-                    <Phone className="w-5 h-5" />
-                    Call Now to Dispatch
+                    Request Services
                   </a>
                   <button 
                     onClick={() => { setStatus('idle'); setZipCode(''); }}
@@ -155,8 +154,8 @@ const HeroInteractive: React.FC = () => {
 
         {/* Secondary Call Action */}
         <FadeIn delay={800} direction="up" className="mt-8">
-          <a href="tel:8774970007" className="text-slate-500 hover:text-blue-600 font-medium transition-colors">
-            Or call immediately: <span className="font-bold underline decoration-2 underline-offset-4">(877) 497-0007</span>
+          <a href="/request/" className="text-slate-500 hover:text-blue-600 font-medium transition-colors">
+            Or <span className="font-bold underline decoration-2 underline-offset-4">Request Services</span> online
           </a>
         </FadeIn>
 

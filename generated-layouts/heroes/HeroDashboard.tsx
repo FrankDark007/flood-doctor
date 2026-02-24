@@ -135,12 +135,11 @@ const HeroDashboard: React.FC = () => {
                  <h3 className="text-blue-400 text-xs font-mono uppercase tracking-widest mb-1">Emergency Line</h3>
                  <div className="text-3xl lg:text-4xl font-bold tracking-tight text-white">(877) 497-0007</div>
                </div>
-               <a 
-                 href="tel:8774970007"
+               <a
+                 href="/request/"
                  className="mt-6 w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(37,99,235,0.4)]"
                >
-                 <Phone className="w-5 h-5 animate-pulse" />
-                 CONNECT NOW
+                 REQUEST SERVICES
                </a>
             </div>
           </FadeIn>

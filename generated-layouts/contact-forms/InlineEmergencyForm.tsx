@@ -95,7 +95,7 @@ const InlineEmergencyForm: React.FC = () => {
         </form>
         
         <p className="mt-4 text-xs text-slate-500 md:text-center">
-            Prefer to speak to a human? Call <a href="tel:8774970007" className="text-yellow-500 hover:underline font-semibold">(877) 497-0007</a> directly.
+            Need help? <a href="/request/" className="text-yellow-500 hover:underline font-semibold">Request Services</a> online.
         </p>
       </div>
     </div>

@@ -80,11 +80,11 @@ const HeroComparison: React.FC = () => {
           </ul>
 
           <FadeIn delay={700} direction="up" className="flex flex-col gap-4">
-            <a 
-              href="tel:8774970007" 
+            <a
+              href="/request/"
               className="bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-8 rounded-full shadow-xl shadow-blue-600/20 hover:shadow-2xl transition-all hover:-translate-y-1 text-center"
             >
-              (877) 497-0007
+              Request Services
             </a>
             <button className="text-slate-500 font-medium hover:text-blue-600 transition-colors text-sm">
               Request Free Assessment →

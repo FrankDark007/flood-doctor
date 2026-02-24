@@ -41,8 +41,8 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, visual }) => {
                 <Button to="/request/" variant="primary" className="text-lg">
                   Request Service
                 </Button>
-                <Button href="tel:8774970007" variant="secondary" className="text-lg group">
-                  (877) 497-0007 <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <Button to="/request/" variant="secondary" className="text-lg group">
+                  Request Services <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </div>

@@ -327,9 +327,8 @@ const AboutDevA: React.FC = () => {
             <Button to="/request/" variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100">
               Request Service
             </Button>
-            <Button href="tel:8774970007" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
+            <Button to="/request/" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              Request Services
             </Button>
           </div>
         </div>

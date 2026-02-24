@@ -61,9 +61,9 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({ data }) => {
            <a href="#" className="hover:text-primary">Insurance</a>
            <a href="#" className="hover:text-primary">Reviews</a>
         </div>
-        <a href={`tel:${data.emergencyPhone}`} className="text-sm font-bold text-slate-800 flex items-center gap-2">
+        <a href="/request/" className="text-sm font-bold text-slate-800 flex items-center gap-2">
            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-           24/7: {data.emergencyPhone}
+           Request Services
         </a>
       </nav>
 

@@ -65,11 +65,10 @@ const ServiceFormEmergency: React.FC = () => {
 
       <div className="p-8">
         {/* Call CTA */}
-        <a href="tel:5551234567" className="block w-full bg-red-600 hover:bg-red-700 text-white p-4 rounded-xl text-center mb-8 shadow-lg shadow-red-500/20 transition-transform hover:scale-[1.01] active:scale-[0.99] group">
-          <span className="block text-sm opacity-90 mb-1">Fastest Response</span>
+        <a href="/request/" className="block w-full bg-red-600 hover:bg-red-700 text-white p-4 rounded-xl text-center mb-8 shadow-lg shadow-red-500/20 transition-transform hover:scale-[1.01] active:scale-[0.99] group">
+          <span className="block text-sm opacity-90 mb-1">Get Help Now</span>
           <div className="flex items-center justify-center text-2xl font-bold">
-            <Phone className="w-6 h-6 mr-3 animate-pulse" />
-            (555) 123-4567
+            Request Services
           </div>
         </a>
 

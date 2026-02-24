@@ -136,13 +136,12 @@ const ServicesDevA: React.FC = () => {
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
                 <Button
-                  href="tel:8774970007"
+                  to="/request/"
                   variant="outline"
                   size="lg"
                   className="border-white/30 text-white hover:bg-white/10 h-14 px-8"
                 >
-                  <Phone size={18} className="mr-2" />
-                  Emergency Line
+                  Request Services
                 </Button>
               </div>
 
@@ -212,9 +211,8 @@ const ServicesDevA: React.FC = () => {
               ))}
             </div>
 
-            <Button href="tel:8774970007" variant="primary" size="sm">
-              <Phone size={16} className="mr-2" />
-              (877) 497-0007
+            <Button to="/request/" variant="primary" size="sm">
+              Request Services
             </Button>
           </div>
         </div>
@@ -368,13 +366,12 @@ const ServicesDevA: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              href="tel:8774970007"
+              to="/request/"
               variant="secondary"
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 h-14 px-8"
             >
-              <Phone size={20} className="mr-2" />
-              (877) 497-0007
+              Request Services
             </Button>
             <Button
               to="/request/"

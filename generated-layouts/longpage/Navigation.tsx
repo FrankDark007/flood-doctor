@@ -43,16 +43,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ navItems, activeSection, onNav
       </ul>
 
       <div className="mt-8">
-        <div className="p-6 bg-gradient-to-br from-primary to-blue-600 rounded-[28px] shadow-lg shadow-blue-200 text-white relative overflow-hidden group cursor-pointer hover:shadow-xl transition-all" onClick={() => window.location.href = 'tel:8774970007'}>
+        <div className="p-6 bg-gradient-to-br from-primary to-blue-600 rounded-[28px] shadow-lg shadow-blue-200 text-white relative overflow-hidden group cursor-pointer hover:shadow-xl transition-all" onClick={() => window.location.href = '/request/'}>
           <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform"></div>
-          
-          <p className="text-sm font-bold text-blue-100 mb-1">Emergency?</p>
-          <p className="text-2xl font-bold mb-4">Call 24/7</p>
-          <div 
+
+          <p className="text-sm font-bold text-blue-100 mb-1">Need Help?</p>
+          <p className="text-2xl font-bold mb-4">Get Started</p>
+          <div
             className="flex items-center justify-center w-full px-4 py-3 bg-white text-primary text-sm font-bold rounded-xl hover:bg-blue-50 transition-colors"
           >
-            <Phone className="w-4 h-4 mr-2" />
-            (877) 497-0007
+            Request Services
           </div>
           <p className="text-[10px] text-center mt-3 text-blue-200 font-medium">60-min avg response time</p>
         </div>
@@ -116,9 +115,8 @@ export const MobileMenu: React.FC<{
       </ul>
       <div className="mt-8 p-6 bg-blue-50 rounded-[32px]">
         <p className="text-center text-sm text-slate-500 mb-4">Need immediate assistance?</p>
-        <a href="tel:8774970007" className="flex w-full items-center justify-center bg-primary text-white py-4 rounded-full font-bold shadow-lg">
-          <Phone className="w-5 h-5 mr-2" />
-          Call (877) 497-0007
+        <a href="/request/" className="flex w-full items-center justify-center bg-primary text-white py-4 rounded-full font-bold shadow-lg">
+          Request Services
         </a>
       </div>
     </div>
@@ -129,12 +127,11 @@ export const StickyBottomCTA: React.FC = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-slate-200 z-50 lg:hidden shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)] pb-safe-area">
       <div className="flex gap-3 max-w-md mx-auto">
-        <a 
-          href="tel:8774970007" 
+        <a
+          href="/request/"
           className="flex-1 flex items-center justify-center bg-red-600 text-white font-bold text-lg py-3.5 px-4 rounded-full shadow-lg shadow-red-200 active:scale-95 transition-all"
         >
-          <Phone className="w-5 h-5 mr-2 animate-pulse" />
-          Call Now
+          Request Services
         </a>
       </div>
     </div>

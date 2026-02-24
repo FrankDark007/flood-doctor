@@ -119,11 +119,10 @@ const ContactDevA: React.FC = () => {
                   </div>
                 </div>
                 <a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="bg-white text-rose-600 px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors flex items-center gap-2"
                 >
-                  <Phone size={20} />
-                  (877) 497-0007
+                  Request Services
                 </a>
               </div>
             </div>
@@ -161,12 +160,12 @@ const ContactDevA: React.FC = () => {
                 </p>
                 {method.actionType === 'phone' && (
                   <a
-                    href={`tel:${method.action.replace(/\D/g, '')}`}
+                    href="/request/"
                     className={`font-semibold hover:underline ${
                       method.highlight ? 'text-white' : 'text-primary'
                     }`}
                   >
-                    {method.action}
+                    Request Services
                   </a>
                 )}
                 {method.actionType === 'email' && (

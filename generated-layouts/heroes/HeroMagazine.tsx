@@ -78,13 +78,13 @@ const HeroMagazine: React.FC = () => {
         {/* Minimal CTA */}
         <FadeIn delay={300} direction="up">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
-            <a 
-              href="tel:8774970007" 
+            <a
+              href="/request/"
               className="group flex items-center gap-4 text-2xl md:text-4xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
             >
-              <span>(877) 497-0007</span>
+              <span>Request Services</span>
               <span className="inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full bg-blue-600 text-white group-hover:scale-110 transition-transform">
-                <Phone className="w-5 h-5 md:w-7 md:h-7" />
+                <ArrowRight className="w-5 h-5 md:w-7 md:h-7" />
               </span>
             </a>
             <div className="h-px w-12 bg-slate-300 hidden md:block"></div>

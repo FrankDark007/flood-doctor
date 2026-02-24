@@ -447,11 +447,10 @@ const Careers: React.FC = () => {
               careers@flood.doctor
             </a>
             <a
-              href="tel:+17035894369"
+              href="/request/"
               className="inline-flex items-center gap-2 bg-white/10 text-white font-display font-medium px-8 py-4 rounded-full hover:bg-white/20 transition-colors border border-white/20"
             >
-              <Phone size={18} />
-              (703) 589-4369
+              Request Services
             </a>
           </div>
         </div>

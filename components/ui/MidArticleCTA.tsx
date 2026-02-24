@@ -71,12 +71,11 @@ const MidArticleCTA: React.FC<MidArticleCTAProps> = ({
         </div>
 
         <Button
-          href="tel:8774970007"
+          to="/request/"
           variant={config.buttonVariant}
           className={`shrink-0 ${config.buttonClass}`}
         >
-          <Phone size={16} className="mr-2" />
-          (877) 497-0007
+          Request Services
         </Button>
       </div>
     </div>

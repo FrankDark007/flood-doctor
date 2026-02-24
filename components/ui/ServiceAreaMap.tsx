@@ -158,8 +158,8 @@ const ServiceAreaMap: React.FC<ServiceAreaMapProps> = ({ locations, onLocationSe
                     </div>
 
                     <div className="grid grid-cols-2 gap-2">
-                        <a href="tel:8774970007" className="flex items-center justify-center gap-1.5 py-2 rounded-lg bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition-colors">
-                            <Phone size={12} /> Call
+                        <a href="/request/" className="flex items-center justify-center gap-1.5 py-2 rounded-lg bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition-colors">
+                            Request Services
                         </a>
                         <button className="flex items-center justify-center gap-1.5 py-2 rounded-lg border border-gray-200 text-gray-600 text-xs font-medium hover:bg-gray-50 transition-colors">
                             <Globe size={12} /> Website

@@ -59,12 +59,12 @@ const HeroTestimonial: React.FC = () => {
 
         <FadeIn delay={500} direction="up">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="tel:8774970007" 
+            <a
+              href="/request/"
               className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-1 text-lg flex items-center justify-center gap-2"
             >
               <Shield className="w-5 h-5" />
-              Get Emergency Help
+              Request Services
             </a>
             <button className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full font-bold shadow-lg transition-all hover:-translate-y-1 text-lg flex items-center justify-center gap-2 group">
               Read More Stories

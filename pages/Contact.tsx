@@ -87,14 +87,14 @@ const Contact: React.FC = () => {
                         Active water leak, flooding, or sewage backup? Our rapid response team is on standby 24/7.
                     </p>
                     <div className="mt-auto">
-                        <Button 
-                            href="tel:8774970007" 
-                            variant="primary" 
-                            fullWidth 
+                        <Button
+                            to="/request/"
+                            variant="primary"
+                            fullWidth
                             className="h-14 text-lg bg-red-600 hover:bg-red-700 shadow-none border-transparent"
-                            aria-label="Call emergency dispatch at 877-497-0007"
+                            aria-label="Request emergency services"
                         >
-                            Call (877) 497-0007
+                            Request Services
                         </Button>
                         <div className="mt-4 text-center text-xs font-medium flex items-center justify-center gap-1.5 text-gray-500">
                             <Clock size={14} className="text-green-600" aria-hidden="true" />

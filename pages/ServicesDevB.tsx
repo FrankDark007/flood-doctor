@@ -222,9 +222,8 @@ const ServicesDevB: React.FC = () => {
                 <Clock size={16} className="text-primary" />
                 <span className="text-sm font-medium text-primary">60 min response</span>
               </div>
-              <Button href="tel:8774970007" variant="primary" size="sm">
-                <Phone size={16} className="mr-2" />
-                Emergency
+              <Button to="/request/" variant="primary" size="sm">
+                Request Services
               </Button>
             </div>
           </div>
@@ -313,10 +312,10 @@ const ServicesDevB: React.FC = () => {
                   </div>
                 </div>
                 <a
-                  href="tel:8774970007"
+                  href="/request/"
                   className="block text-center py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
                 >
-                  (877) 497-0007
+                  Request Services
                 </a>
               </div>
             </div>
@@ -457,9 +456,8 @@ const ServicesDevB: React.FC = () => {
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
-                  <Button href="tel:8774970007" variant="outline" className="w-full">
-                    <Phone size={16} className="mr-2" />
-                    Call Now
+                  <Button to="/request/" variant="outline" className="w-full">
+                    Request Services
                   </Button>
                 </div>
               </div>
@@ -479,13 +477,12 @@ const ServicesDevB: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              href="tel:8774970007"
+              to="/request/"
               variant="secondary"
               size="lg"
               className="bg-white text-slate-900 hover:bg-gray-100"
             >
-              <Phone size={18} className="mr-2" />
-              (877) 497-0007
+              Request Services
             </Button>
             <Button
               to="/request/"

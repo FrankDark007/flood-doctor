@@ -21,12 +21,11 @@ const ServiceCTASticky: React.FC<ServiceCTAStickyProps> = ({ isVisible, emergenc
           </div>
 
           <div className="flex items-center gap-3 w-full md:w-auto">
-            <a 
-              href={`tel:${emergencyPhone.replace(/\D/g,'')}`}
+            <a
+              href="/request/"
               className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-900 px-4 py-3 rounded-lg font-bold transition-colors"
             >
-              <Phone size={18} className="text-accent" />
-              <span className="whitespace-nowrap">{emergencyPhone}</span>
+              <span className="whitespace-nowrap">Request Services</span>
             </a>
             
             <button 

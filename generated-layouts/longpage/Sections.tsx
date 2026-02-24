@@ -42,9 +42,9 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href="tel:8774970007" className="w-full sm:w-auto">
-              <Button size="xl" icon={Clock} className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white shadow-red-200 hover:shadow-red-300 relative overflow-hidden group">
-                <span className="relative z-10">Emergency: (877) 497-0007</span>
+            <a href="/request/" className="w-full sm:w-auto">
+              <Button size="xl" className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white shadow-red-200 hover:shadow-red-300 relative overflow-hidden group">
+                <span className="relative z-10">Request Services</span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Button>
             </a>
@@ -177,8 +177,8 @@ export const Introduction: React.FC = () => {
                 </li>
               </ul>
               <div className="mt-8 pt-6 border-t border-slate-200">
-                <a href="tel:8774970007" className="flex items-center justify-between text-primary font-bold hover:underline group/link">
-                   Call for Immediate Help
+                <a href="/request/" className="flex items-center justify-between text-primary font-bold hover:underline group/link">
+                   Request Services
                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -749,7 +749,7 @@ export const Footer: React.FC = () => {
                </div>
                <div>
                  <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-1">24/7 Emergency Line</p>
-                 <a href="tel:8774970007" className="text-3xl font-bold hover:text-primary transition-colors block">(877) 497-0007</a>
+                 <a href="/request/" className="text-3xl font-bold hover:text-primary transition-colors block">Request Services</a>
                  <p className="text-xs text-green-400 mt-2 flex items-center font-bold tracking-wide"><span className="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>LIVE DISPATCH AVAILABLE</p>
                </div>
              </div>

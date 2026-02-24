@@ -69,10 +69,9 @@ const ContactModal: React.FC = () => {
             </Button>
             <Button
                 variant="outline"
-                onClick={() => window.location.href = `tel:${CONTACT_INFO.phone}`}
+                onClick={() => window.location.href = '/request/'}
             >
-                <Phone className="w-5 h-5 mr-2" />
-                Call {CONTACT_INFO.phone}
+                Request Services
             </Button>
         </div>
       </div>
