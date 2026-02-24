@@ -126,8 +126,35 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({ layout, title, s
 
   const VisualContent = (
     <div className={`col-span-4 md:col-span-8 lg:col-span-5 flex justify-center items-center order-1 lg:order-none`}>
+      {visualType === 'attributes' ? (
+        /* Restoration Process Visuals — swap image per active step */
+        <div className="relative w-full max-w-[420px] overflow-hidden rounded-2xl shadow-google">
+          <img
+            src="/images/hero-tiles/water-damage-emergency-assessment.png"
+            className={`w-full h-auto object-cover absolute inset-0 transition-opacity duration-500 ${activeIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            alt="Water damage emergency assessment — technician using moisture meter to inspect residential wall damage"
+          />
+          <img
+            src="/images/hero-tiles/water-extraction-drying.png"
+            className={`w-full h-auto object-cover absolute inset-0 transition-opacity duration-500 ${activeIndex === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            alt="Water extraction and structural drying — industrial dehumidifiers and air movers removing moisture from residential property"
+          />
+          <img
+            src="/images/hero-tiles/water-damage-restoration-repairs.png"
+            className={`w-full h-auto object-cover absolute inset-0 transition-opacity duration-500 ${activeIndex === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            alt="Water damage restoration and repairs — technician installing new drywall to restore property to pre-loss condition"
+          />
+          {/* First image also serves as layout anchor for container height */}
+          <img
+            src="/images/hero-tiles/water-damage-emergency-assessment.png"
+            className="w-full h-auto object-cover invisible"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+      ) : (
       <div className="relative w-full max-w-[320px] aspect-[9/19] bg-white rounded-[2.5rem] shadow-[0_0_0_8px_rgb(255,255,255),0_1px_2px_0_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)] border border-gray-100 overflow-hidden ring-1 ring-gray-50">
-        
+
         {/* Status Bar Mockup */}
         <div className="h-8 bg-white w-full flex items-center justify-between px-6 z-20 relative">
             <span className="text-[10px] font-medium text-gray-800">9:30</span>
@@ -138,118 +165,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({ layout, title, s
             </div>
         </div>
 
-        {visualType === 'attributes' ? (
-           /* "Take Charge" Visuals */
-           <div className="flex flex-col h-full bg-white relative">
-              {/* Common Header for Profile */}
-              <div className="relative h-32 bg-gray-200">
-                <img src="https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Cover" />
-              </div>
-              
-              <div className="px-5 pt-4 pb-2">
-                 <h2 className="text-[18px] font-normal google-sans text-[#202124] leading-tight">Cook's Arts & Crafts Shoppe LCC</h2>
-                 <div className="flex items-center gap-1 mt-1 mb-4">
-                    <span className="text-[12px] font-bold text-[#202124]">4.8</span>
-                    <div className="flex text-[#fbbc04] text-[10px]">★★★★★</div>
-                    <span className="text-[12px] text-[#5f6368]">(12)</span>
-                 </div>
-
-                 {/* Action Buttons Row */}
-                 <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-4">
-                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#1a73e8] hover:bg-blue-50">
-                           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        </div>
-                        <span className="text-[10px] text-[#1a73e8] font-medium">Call</span>
-                     </div>
-                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#1a73e8] hover:bg-blue-50">
-                           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
-                        </div>
-                        <span className="text-[10px] text-[#1a73e8] font-medium">Directions</span>
-                     </div>
-                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#1a73e8] hover:bg-blue-50">
-                           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-                        </div>
-                        <span className="text-[10px] text-[#1a73e8] font-medium">Share</span>
-                     </div>
-                     <div className="flex flex-col items-center gap-1">
-                        <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#1a73e8] hover:bg-blue-50">
-                           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                        </div>
-                        <span className="text-[10px] text-[#1a73e8] font-medium">Website</span>
-                     </div>
-                 </div>
-
-                 {/* Tabs */}
-                 <div className="flex gap-6 border-b border-gray-100 text-[13px] font-medium text-[#5f6368] mb-4 overflow-hidden">
-                     <div className={`pb-2 border-b-[2px] ${activeIndex === 0 ? 'text-[#1a73e8] border-[#1a73e8]' : 'border-transparent'}`}>Overview</div>
-                     <div className={`pb-2 border-b-[2px] ${activeIndex === 1 ? 'text-[#1a73e8] border-[#1a73e8]' : 'border-transparent'}`}>Updates</div>
-                     <div className={`pb-2 border-b-[2px] ${activeIndex === 2 ? 'text-[#1a73e8] border-[#1a73e8]' : 'border-transparent'}`}>About</div>
-                 </div>
-
-                 {/* Dynamic Content Area */}
-                 <div className="relative h-[200px]">
-                    {/* Slide 1: Overview Info */}
-                    <div className={`absolute inset-0 transition-opacity duration-500 ${activeIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                        <div className="space-y-4">
-                           <div className="flex gap-3 text-[12px] text-[#3c4043]">
-                              <div className="w-5 h-5 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-                              <span>123 Art Street, Design District</span>
-                           </div>
-                           <div className="flex gap-3 text-[12px] text-[#3c4043]">
-                              <div className="w-5 h-5 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
-                              <span><span className="text-[#188038] font-medium">Open</span> ⋅ Closes 8 PM</span>
-                           </div>
-                           <div className="flex gap-3 text-[12px] text-[#3c4043]">
-                              <div className="w-5 h-5 flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                              <span>Send a message</span>
-                           </div>
-                        </div>
-                    </div>
-
-                    {/* Slide 2: Photos */}
-                    <div className={`absolute inset-0 transition-opacity duration-500 ${activeIndex === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                        <div className="grid grid-cols-2 gap-2">
-                           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                              <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" alt="Photo 1"/>
-                           </div>
-                           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                              <img src="https://images.unsplash.com/photo-1515549832467-8783363e19b6?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" alt="Photo 2"/>
-                           </div>
-                           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" alt="Photo 3"/>
-                           </div>
-                           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative">
-                              <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" alt="Photo 4"/>
-                              <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-xs font-bold">+15</div>
-                           </div>
-                        </div>
-                    </div>
-
-                    {/* Slide 3: Attributes */}
-                    <div className={`absolute bottom-0 left-0 right-0 transform transition-all duration-500 ${activeIndex === 2 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                        <div className="bg-white rounded-xl shadow-[0_2px_15px_rgba(0,0,0,0.1)] border border-gray-100 p-4 space-y-3">
-                           <div className="text-[11px] font-bold text-[#5f6368] uppercase tracking-wider mb-2">From the business</div>
-                           <div className="flex items-center gap-3">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#EA4335] via-[#FBBC04] to-[#4285F4] flex items-center justify-center text-[10px] text-white">🏳️‍🌈</div>
-                              <span className="text-[13px] text-[#202124]">LGBTQ+ friendly</span>
-                           </div>
-                           <div className="flex items-center gap-3">
-                              <div className="w-6 h-6 rounded-full bg-[#1a73e8] flex items-center justify-center text-white text-[12px]">★</div>
-                              <span className="text-[13px] text-[#202124]">Identifies as veteran-led</span>
-                           </div>
-                           <div className="flex items-center gap-3">
-                              <div className="w-6 h-6 rounded-full bg-[#E37400] flex items-center justify-center text-white text-[12px]">♀</div>
-                              <span className="text-[13px] text-[#202124]">Identifies as women-led</span>
-                           </div>
-                        </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        ) : (
+        {(
            /* "Easily Connect" Visuals (Posts, Reviews, Q&A) */
            <div className="flex flex-col h-full bg-[#f8f9fa] relative">
               {/* Fake Chrome Header */}
@@ -335,6 +251,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({ layout, title, s
            </div>
         )}
       </div>
+      )}
     </div>
   );
 
