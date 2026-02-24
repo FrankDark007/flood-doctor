@@ -161,9 +161,8 @@ export const dispatchCenter = {
   note: "24/7 dispatch center serving all Northern Virginia and DC locations"
 };
 
-// Phone number prefix for tracking (replace XXX with actual numbers)
-// Format: Each city gets unique last 4 digits for call tracking
-export const PHONE_PREFIX = "703-656-";
+// Main business phone number — all cities use the same toll-free number
+export const BUSINESS_PHONE = "877-497-0007";
 
 export const franchises: Record<string, FranchiseData> = {
 
@@ -225,7 +224,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "McLean",
     state: "VA",
     zipCodes: ["22101", "22102", "22106"],
-    phone: `${PHONE_PREFIX}0101`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving McLean, Tysons & Great Falls",
     dispatchNote: "Dispatched from our central facility in Falls Church, with rapid response units stationed throughout McLean and Tysons.",
@@ -403,7 +402,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Arlington",
     state: "VA",
     zipCodes: ["22201", "22202", "22203", "22204", "22205", "22206", "22207", "22209", "22213"],
-    phone: `${PHONE_PREFIX}0102`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Arlington, Rosslyn & Clarendon",
     dispatchNote: "Dispatched from our central facility in Falls Church, minutes from all Arlington neighborhoods. Crews experienced with both high-rise and single-family emergencies.",
@@ -581,7 +580,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Alexandria",
     state: "VA",
     zipCodes: ["22301", "22302", "22304", "22305", "22306", "22307", "22308", "22309", "22310", "22311", "22312", "22314", "22315"],
-    phone: `${PHONE_PREFIX}0103`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Alexandria, Old Town & Del Ray",
     dispatchNote: "Dispatched from our central facility, with crews experienced in historic district requirements and BAR compliance for Old Town Alexandria.",
@@ -759,7 +758,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Fairfax",
     state: "VA",
     zipCodes: ["22030", "22031", "22032", "22033", "22035"],
-    phone: `${PHONE_PREFIX}0104`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Fairfax City, Fairfax Corner & Burke",
     dispatchNote: "Dispatched from our Falls Church facility, with rapid response throughout Fairfax City and surrounding communities.",
@@ -937,7 +936,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Vienna",
     state: "VA",
     zipCodes: ["22180", "22181", "22182", "22183"],
-    phone: `${PHONE_PREFIX}0105`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Vienna, Oakton & Dunn Loring",
     dispatchNote: "Dispatched from our central facility, with crews familiar with Vienna's mix of historic town properties and newer developments.",
@@ -1114,7 +1113,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Tysons",
     state: "VA",
     zipCodes: ["22102", "22182"],
-    phone: `${PHONE_PREFIX}0106`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Tysons Corner, Tysons & McLean",
     dispatchNote: "Dispatched from our central facility, with crews experienced in high-rise commercial and residential properties throughout Tysons.",
@@ -1290,7 +1289,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Reston",
     state: "VA",
     zipCodes: ["20190", "20191", "20194"],
-    phone: `${PHONE_PREFIX}0107`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Reston, Reston Town Center & South Lakes",
     dispatchNote: "Dispatched from our central facility, with crews experienced in Reston's unique planned community architecture and HOA requirements.",
@@ -1467,7 +1466,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Herndon",
     state: "VA",
     zipCodes: ["20170", "20171"],
-    phone: `${PHONE_PREFIX}0108`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Herndon, Dulles & Sterling",
     dispatchNote: "Dispatched from our central facility, with crews serving the Dulles corridor and Herndon's mix of residential and commercial properties.",
@@ -1643,7 +1642,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Ashburn",
     state: "VA",
     zipCodes: ["20147", "20148"],
-    phone: `${PHONE_PREFIX}0109`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Ashburn, Broadlands & Brambleton",
     dispatchNote: "Dispatched from our central facility, with crews experienced in Ashburn's new construction communities and HOA-governed developments.",
@@ -1819,7 +1818,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Springfield",
     state: "VA",
     zipCodes: ["22150", "22151", "22152", "22153"],
-    phone: `${PHONE_PREFIX}0110`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Springfield, West Springfield & Franconia",
     dispatchNote: "Dispatched from our central facility, with rapid response throughout Springfield and the I-95 corridor communities.",
@@ -1996,7 +1995,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Falls Church",
     state: "VA",
     zipCodes: ["22041", "22042", "22043", "22044", "22046"],
-    phone: `${PHONE_PREFIX}0111`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Falls Church, Seven Corners & Baileys Crossroads",
     dispatchNote: "Rapid response from our nearby dispatch center, with the fastest response times in our service area.",
@@ -2173,7 +2172,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Great Falls",
     state: "VA",
     zipCodes: ["22066"],
-    phone: `${PHONE_PREFIX}0112`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Great Falls, Forestville & Hickory Farms",
     dispatchNote: "Dispatched from our central facility, with crews trained in estate property restoration and high-value asset protection.",
@@ -2349,7 +2348,7 @@ export const franchises: Record<string, FranchiseData> = {
     city: "Lorton",
     state: "VA",
     zipCodes: ["22079"],
-    phone: `${PHONE_PREFIX}0113`,
+    phone: BUSINESS_PHONE,
 
     serviceAreaLabel: "Serving Lorton, Mason Neck & Laurel Hill",
     dispatchNote: "Dispatched from our central facility, with crews covering the Route 1 corridor and Occoquan River communities.",
