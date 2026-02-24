@@ -51,7 +51,7 @@ const FloodDoctorHomeV4: React.FC = () => {
           title="Why Northern Virginia Trusts Flood Doctor"
           subtitle="When water damage strikes, you need a restoration company that responds fast and does the job right."
           listItems={[
-            { title: "Local Expertise Since 2008", desc: "We know Northern Virginia—from McLean's luxury homes to Arlington's historic properties. Our teams are stationed throughout the region for rapid response." },
+            { title: "Local Expertise Since 1999", desc: "We know Northern Virginia—from McLean's luxury homes to Arlington's historic properties. Our teams are stationed throughout the region for rapid response." },
             { title: "Advanced Equipment & Techniques", desc: "Thermal imaging, moisture meters, and professional-grade drying equipment ensure thorough restoration that prevents secondary damage and mold growth." },
             { title: "Insurance Claims Specialists", desc: "We document everything, communicate directly with adjusters, and handle billing so you can focus on getting back to normal—not paperwork." }
           ]}

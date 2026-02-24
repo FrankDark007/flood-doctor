@@ -186,12 +186,12 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({ layout, title, s
       <div className="mx-[28px] md:mx-[40px] lg:mx-[72px] xl:mx-auto max-w-[1456px]">
         {/* Row 1: Centered Headers */}
         <div className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
-          <h2 className="text-[#202124] text-[48px] font-medium leading-[1.16667] tracking-[-.5px] mb-6">
+          <h2 className="text-[#202124] text-[28px] md:text-[36px] font-normal leading-[1.22] tracking-normal google-sans mb-4">
             {title}
           </h2>
-          <div className="text-[#3c4043] text-[16px] font-normal leading-[1.5] tracking-[.1px] max-w-2xl mx-auto">
+          <p className="text-[#5f6368] text-[16px] md:text-[18px] font-normal leading-[1.56] tracking-[.1px] max-w-2xl mx-auto">
             {subtitle}
-          </div>
+          </p>
         </div>
 
         {/* Row 2: Split Grid */}

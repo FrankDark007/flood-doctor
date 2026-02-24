@@ -30,7 +30,7 @@ export const FAQ: React.FC = () => {
   return (
     <section className="py-20 lg:py-24 max-w-7xl mx-auto px-6 border-t border-gray-100">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold text-[#202124] mb-12">Frequently Asked Questions About Water Damage Restoration</h2>
+        <h2 className="text-[28px] md:text-[36px] font-normal leading-[1.22] tracking-normal google-sans text-[#202124] mb-12">Water Damage Restoration FAQ</h2>
         <div className="flex justify-end mb-4">
            <a href="/resources" className="text-[#1a73e8] text-sm font-bold flex items-center gap-1 hover:underline">
              View All Resources <span className="text-xs">↗</span>
