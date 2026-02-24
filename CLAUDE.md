@@ -39,12 +39,6 @@
 - `pages/fd-home-v4/*` files are protected — do not touch without direct instruction
 - This includes index.tsx, Hero.tsx, ValueProps.tsx, FeatureSection.tsx, and all other homepage components
 
-### 5. CITY SUBDOMAIN DEPLOY PATHS — DO NOT GET THIS WRONG
-- City subdomains deploy to: `~/public_html/{city}.flood.doctor/` (e.g. `~/public_html/ashburn.flood.doctor/`)
-- **NEVER** deploy to `~/public_html/flood.doctor/{city}/` — that is WRONG and breaks the main site
-- The main site deploys to: `~/public_html/flood.doctor/` (addon domain)
-- These are SEPARATE directories. City content must NEVER go inside the main site directory.
-
 ---
 
 Flood Doctor — Water Damage Restoration (Northern VA + Washington, DC)
