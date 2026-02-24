@@ -85,9 +85,9 @@ export const Hero: React.FC = () => {
                        ))}
                     </div>
 
-                    <div className="mt-4 p-3 border rounded-lg text-center text-[#1a73e8] font-medium text-sm">
+                    <Link to="/request/" className="mt-4 p-3 border rounded-lg text-center text-[#1a73e8] font-medium text-sm block hover:bg-blue-50 transition-colors">
                       REQUEST SERVICES
-                    </div>
+                    </Link>
 
                     <div className="mt-3 space-y-2">
                        <div className="flex items-center gap-2 text-xs text-gray-600">
