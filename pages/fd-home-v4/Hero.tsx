@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Shield, Clock } from 'lucide-react';
+import { Star, Clock } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   // Hero animation state - slides between GBP profile and search result
@@ -54,9 +54,9 @@ export const Hero: React.FC = () => {
 
               {/* Slide 1: Business Profile */}
               <div className={`absolute inset-0 transition-opacity duration-700 ${heroSlide === 0 ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
-                 {/* Phone Header Image */}
-                 <div className="h-32 bg-blue-50 flex items-center justify-center">
-                    <Shield size={48} className="text-[#1a73e8]" />
+                 {/* Phone Header Image — Team Photo */}
+                 <div className="h-32 overflow-hidden">
+                    <img src="/images/insights/flood-doctor-northern-virginia-restoration-team.png" alt="Flood Doctor restoration team" className="w-full h-full object-cover object-top" />
                  </div>
                  <div className="p-4">
                     <h3 className="text-lg font-medium text-[#202124]">Flood Doctor</h3>
@@ -110,11 +110,9 @@ export const Hero: React.FC = () => {
                     </div>
                  </div>
                  <div className="p-4">
-                    {/* Map Snippet */}
-                    <div className="h-24 bg-gray-100 rounded-lg mb-4 relative overflow-hidden">
-                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          <div className="w-6 h-6 text-[#ea4335] drop-shadow-md">📍</div>
-                       </div>
+                    {/* Map Snippet — Service Area Map */}
+                    <div className="h-24 rounded-lg mb-4 overflow-hidden">
+                       <img src="/images/hero/flood-doctor-service-area-map-northern-virginia-dc-maryland.png" alt="Flood Doctor service area map covering Northern Virginia, DC, and Maryland" className="w-full h-full object-cover" />
                     </div>
                     {/* Result Item */}
                     <div className="mb-4">
