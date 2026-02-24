@@ -4,6 +4,153 @@
 
 ---
 
+## Session 11 — 2026-02-24 (Deployment Fix)
+
+**Summary:** Fixed production serving stale JS bundles. Homepage and Reviews page now live with correct content.
+
+**Root cause:** Session 10 deploy uploaded an older build. Subsequent local rebuilds created new bundle hashes (`main-BTh8ntfm.js`) that were never deployed — production was still serving `main-BIDf1AFj.js`.
+
+**Fix:**
+- rsync'd full dist/ to production via SSH key (password auth broken)
+- Fixed .htaccess permissions (rsync reset them → 403 Forbidden)
+- Purged Cloudflare cache
+- Verified correct bundle serving on production
+
+**Deployment learnings:**
+- GoDaddy password auth (`sshpass`) no longer works — must use SSH key at `~/.ssh/godaddy_claudecodessh`
+- rsync resets .htaccess permissions — must `chmod 644` after every deploy
+- Always verify JS bundle hash matches between local dist and production after deploy
+
+---
+
+## Session 9 — 2026-02-24 (Homepage Image Overhaul)
+
+**Summary:** Replaced ALL placeholder/stock images across the homepage with AI-generated photorealistic images. 13 commits on main.
+
+**Sections completed:**
+- FeatureSection Row 2: "Good Design Store" mockup → 3 real hero tile images (SEO filenames)
+- ProductOfferings: "Detroit Voltage"/"Bobby's BBQ" mockups → water damage, mold, fire images
+- InsightsSection: Stats card → team photo with gradient overlay; "15 years" → "since 1999"
+- Hero: Shield → team photo; single pin → service area map (16 cities); trust badges added; CTA linked
+- SuccessStory: 4 Unsplash stock → 4 AI restoration scenes (all 2400x1792 landscape)
+
+**Key decisions:**
+- Flood Doctor logo = two-tone medical cross (cyan vertical + purple horizontal) + "FLOOD DOCTOR" text
+- All image filenames SEO-optimized with service + city keywords
+- Team photo regenerated with "FLOOD DOCTOR" on van + shirts
+
+**In progress at session end:**
+- Image-by-image logo placement review (one at a time per Frank's request)
+
+**Commits:** ff09656, d656870, dbbb8d0, e1e71be, aeff49e, fc49ea4, 73521f3, d7d667e, e32fca3, 92e4153, ff960aa, d5f678c, 3696594
+
+---
+
+## Session 8 — Feb 24, 2026 (Restoration Process Section Images)
+
+**Goal:** Replace placeholder phone mockup in first FeatureSection with real AI-generated images
+
+**Work completed:**
+- Generated 3 portrait images via Gemini Nano Banana — technician doing assessment, extraction/drying equipment, drywall repair
+- Removed entire phone mockup (fake GBP for "Cook's Arts & Crafts Shoppe") from `visualType: "attributes"` branch
+- Replaced with simple rounded image container that swaps images on active step change (opacity crossfade)
+- All images: plain blue polo, no logos, SEO alt tags, portrait orientation
+- Commit: `6a2e4a0`
+
+**Key decisions:**
+- Mobile CTA stays hidden in Hero.tsx — MobileStickyCTA handles mobile conversion (sticky bottom bar)
+- Portrait images over landscape — fills the visual column better alongside the text list
+- No phone frame — direct image in rounded container with shadow-google
+
+**Files changed:**
+- `pages/fd-home-v4/FeatureSection.tsx` — replaced phone mockup with image swap for attributes visual type
+- `public/images/hero-tiles/water-damage-emergency-assessment.png` (new)
+- `public/images/hero-tiles/water-extraction-drying.png` (new)
+- `public/images/hero-tiles/water-damage-restoration-repairs.png` (new)
+
+---
+
+## Session 7 — Feb 24, 2026 (Tailwind Plus Redesign Setup)
+
+**Goal:** Set up page-by-page redesign workflow using Tailwind Plus assets
+
+**Work completed:**
+- Discovered Tailwind Plus assets at `~/flood-doctor/tailwind-plus/` (336MB catalog, 657 components)
+- Extracted Catalyst UI Kit ZIP from Desktop → `~/flood-doctor/tailwind-plus/catalyst/` (27 React/TS components)
+- Built catalog index (`CATALOG-INDEX.md`) and lean project instructions (`PROJECT-INSTRUCTIONS.md`)
+- Created Claude Web project upload folder with 14 key component files + instructions
+- Mapped full site: 254 pages (193 main + 61 city subdomains) via Firecrawl
+- **Decision:** Work directly in Claude Code CLI, not Claude Web (faster, no middleman)
+- **Decision:** Don't modify production repo during design — redesign one section at a time, verify, then commit
+
+**Key files created:**
+- `~/flood-doctor/tailwind-plus/CATALOG-INDEX.md` — compact catalog reference
+- `~/flood-doctor/tailwind-plus/CLAUDE-WEB-PROJECT-PROMPT.md` — full project instructions
+- `~/flood-doctor/tailwind-plus/claude-web-upload/` — 16 files for Claude Web (optional)
+- `~/flood-doctor/tailwind-plus/extracted-for-claude-web/` — hero block extracts
+- `.firecrawl/flood-doctor-sitemap.txt` — full 254-page sitemap
+
+**No code changes made. No commits. Setup only.**
+
+---
+
+## 2026-02-22: Milestone 0 Started — Doc Fixes + Questionnaire + Tracker
+
+**What:** Pre-execution prep for fd-next website rebuild.
+
+**Doc fixes applied to ~/Desktop/FD-REDESIGN-MASTER-PLAN-v3.md:**
+1. Find-replace `flood-doctor-site` → `fd-next` (4 occurrences)
+2. Renumbered duplicate §18 sections (18.3→18.8 Style Constraints, 18.4→18.9 Prompt Templates)
+3. Fixed 3 `.htaccess` references → "CF Pages routing" / "CF Pages `_redirects`" (remaining .htaccess mentions correctly describe old site)
+
+**Owner questionnaire (§28) — all 19 questions answered from existing site data:**
+- Key corrections from owner: phone is 877 ONLY (no 703 local), NO free quotes/estimates (free inspections only), anti-spam = honeypot + Turnstile both, contract source at flooddoctorva.com/e-sign (owner provides code later)
+- Full credentials scraped from flood.doctor/awards/ (flooddoctorva.com returned 403/500)
+
+**Project tracker created:** `tools/project-tracker.html` — standalone HTML with 10 milestones, expandable task checklists, localStorage persistence, auto-unlock logic, progress bar.
+
+**Status:** Milestone 0 active — 4/9 tasks complete (doc fixes + questionnaire). Next: BRAND.md, Formspree confirm, trailing-slash confirm, form notifications, blog URL structure.
+
+---
+
+## 2026-02-22: FD-REDESIGN-COLLAB-003 — Master Plan v3.1 Approved
+
+**What:** Ground-up flood.doctor redesign planned via 8-round Claude↔GPT collab, then 4-stage technical review (Claude + GPT coworker + external reviewer + Atlas). Major stack pivot from Vite to Next.js, GoDaddy to Cloudflare Pages.
+
+**Review process (v1.0 → v3.1):**
+- v1.0: Original 8-round Claude↔GPT plan (Vite + Playwright prerender)
+- v2.0: External reviewer + Claude assessment — pivoted to Next.js + `output: "export"`, added pipeline hardening (env safety, parity test, redirect generator, BUILD_ID, content duplication guard)
+- v2.0 reviewer + Claude agreed on all changes
+- v3.1: Atlas review — pivoted to Cloudflare Pages + Cloudflare Images, added layout system (8 recipes + per-layout Zod), simplified to single-agent build, added Sentry + performance budget ≥90
+
+**Key decisions (all locked):**
+- Repo: `fd-next` — zero code from old site
+- Stack: Next.js 16 + React 19 + Tailwind v4 + `output: "export"` (static)
+- Base template: Tailwind Plus Studio
+- Hosting: Cloudflare Pages (atomic deploys, instant rollback, preview deploys)
+- Images: Cloudflare Images for rasters (~$6-8/mo), local SVGs
+- Form backend: Formspree
+- Layout system: 8 layouts with explicit `layoutId` enum, per-layout Zod schemas
+- Section variants: enum-based (2-3 per section max)
+- URLs: `/services/{slug}/` flat 2-level, trailing slash locked
+- No Framer Motion, no next/image optimizer, no dynamic imports
+- Single Claude Code agent for Phase 1, multi-agent + website factory deferred to Phase 2
+
+**Artifacts:**
+- Master plan v3.1: `~/Desktop/FD-REDESIGN-MASTER-PLAN-v3.md` (33 sections)
+- Master plan v2.0: `~/Desktop/FD-REDESIGN-MASTER-PLAN.md` (superseded)
+- Collab log: `collab-log/FD-REDESIGN-COLLAB-003-round-*.md` (8 files)
+- Competitor research: `.firecrawl/competitor-research/`
+
+**Minor fixes needed in v3.1 before execution:**
+1. Find-replace `flood-doctor-site` → `fd-next` throughout doc
+2. Fix duplicate section numbers in §18
+3. Fix .htaccess references (CF Pages doesn't use .htaccess)
+
+**Status:** Plan approved. Awaiting owner questionnaire answers (20 questions) + Milestone 0 execution.
+
+---
+
 ## Project Overview
 
 **Client:** Flood Doctor
@@ -27,6 +174,16 @@
 ---
 
 ## Completed Work
+
+### 2026-02-22: Audit Pack Commit + Lighthouse Re-run + Docroot Wipe Investigation
+
+**Audit Pack Committed** (`8e016a4`): 108 files — 72 screenshots, 24 Lighthouse JSON reports, a11y report, image inventory, must-upgrade checklist, external tool plans, automation scripts. All at `audit/uiux/2026-visual-audit/`.
+
+**Lighthouse Re-run Against Prod Build** (`222c650`): Re-ran Lighthouse against `npx serve dist` (minified) instead of dev server. Results: performance avg unchanged (~53 local, ~49 subdomains). City subdomain mobile perf critically low (18-19). Bottleneck is image sizes and render-blocking resources, not minification. Best Practices 73 on homepage/subdomains vs 96 on service pages.
+
+**Docroot Wipe Investigation:** SSH'd into production (132.148.253.156) and analyzed bash history, file timestamps, cron, malware scan logs, and cPanel datastore. **Finding:** No evidence of user or script action against `flood.doctor`. Bash history shows `rm -rf` only for `flooddoctorva.com` WordPress sites. Deploy script uses `rsync -avz` without `--delete`. Most likely cause: GoDaddy cPanel addon domain reset/re-provisioning (parent dir modified at 21:48 between city deploys and main redeploy). No server-side backup exists for the addon domain. Recommendation: set up daily cron backup + contact GoDaddy support.
+
+---
 
 ### 2026-02-21: P2 #8 Complete — Neighborhood Page Redesign (4 Phases)
 
