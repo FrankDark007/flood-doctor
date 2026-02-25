@@ -190,10 +190,10 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
             })}
           </div>
 
-          {/* Tab Content Panel */}
+          {/* Tab Content Panel — fixed height on desktop prevents layout shift between tabs */}
           <div
             key={activeTabIndex}
-            className="flex-1 bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100 animate-fade-in lg:min-h-[480px]"
+            className="flex-1 bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100 animate-fade-in lg:h-[520px] overflow-hidden"
           >
             <div className="flex items-start justify-between mb-6">
               <div>
@@ -205,15 +205,15 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
               </div>
             </div>
 
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <p className="text-lg text-slate-600 leading-relaxed mb-8 line-clamp-3">
               {activeContent.description}
             </p>
 
             <div className="grid md:grid-cols-2 gap-3 auto-rows-fr">
               {activeContent.listItems.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl min-h-[72px]">
+                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl h-[72px]">
                   <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
-                  <span className="text-sm font-medium text-slate-700">{item}</span>
+                  <span className="text-sm font-medium text-slate-700 line-clamp-2">{item}</span>
                 </div>
               ))}
             </div>

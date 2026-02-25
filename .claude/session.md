@@ -1,6 +1,51 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-24 7:45 PM
+**Last Updated:** 2026-02-24 8:30 PM
+
+## 🔥 CURRENT TASK: Service Detail Pages — 1-by-1 Review
+
+**Working on:** Service detail pages review with Frank. Going through each page to fix:
+1. Hero images (many services missing mapped hero images, falling back to SVG animation)
+2. Any other issues Frank notices
+
+**Workflow agreement:**
+- One change at a time
+- Each commit gets a git tag with exact timestamp and change notes
+- Tags serve as revert points if anything breaks
+
+**Dev server:** http://localhost:3002/ (running on port 3002)
+
+### Current page: `/services/residential/restoration-services/flood-cleanup/`
+
+### Next immediate task: Rewrite ALL 27 service page subtitles
+- `shortDescription` field in `data/services.ts` — one file controls all subtitles
+- Current subtitles are thin (e.g. "Rapid cleanup after storm or basement flooding.")
+- Need SEO-optimized subtitles matching water-damage-restoration pattern:
+  - Keywords the page should rank for
+  - Certifications/trust signals (IICRC, licensed)
+  - Response time / differentiator
+  - Insurance mention
+  - ~20-30 words, 1-2 sentences
+- Frank approved doing all 27 in one pass (not 1-by-1)
+
+### Pending change from earlier session (NOT YET COMMITTED):
+- `generated-layouts/service-page/ServiceTabs.tsx` — changed `lg:min-h-[480px]` → `lg:h-[520px] overflow-hidden` + `line-clamp-3` on description + fixed `h-[72px]` on list items. This fixes the "Local Experts" tab being taller than other tabs. **Needs build verification before commit.**
+
+### Hero image gaps discovered:
+- `flood-cleanup` has `heroVisualKey: 'flood-cleanup'` but `serviceHeroTiles.ts` only has `flood-damage-cleanup`
+- Need to audit ALL services for missing hero image mappings
+
+### Key files:
+- **Service data (subtitles, slugs, keywords):** `data/services.ts`
+- **Hero image mapping:** `data/serviceHeroTiles.ts`
+- **Hero images on disk:** `public/images/services/residential/` and `public/images/services/commercial/`
+- **Service detail template:** `pages/templates/ServiceDetailNew.tsx`
+- **ServiceTabs component:** `generated-layouts/service-page/ServiceTabs.tsx`
+- **Tab data (6 tabs):** `utils/adapters.ts` (DEFAULT_TABS)
+- **Service page overrides:** `data/servicePageOverrides.ts`
+- **Adapter (shortDescription → subtitle):** `utils/adapters.ts` → `adaptServiceToPageData()`
+
+---
 
 ## ⚠️ DEPLOYMENT RULE
 
@@ -50,10 +95,6 @@ Then purge Cloudflare cache (zone `7b3b2f087429c5c3e9688253d8df11eb`).
 - "Write a Review" links to Google Business Profile: https://share.google/AhUTxb7gmJLiVuSIr
 - Removed 1-star review per Frank's request
 
-### Deployment
-- Full deploy ran — 170/192 pages succeeded, 22 city landing pages had pre-existing pre-render timeouts
-- Homepage and Reviews page ARE live on flood.doctor
-
 ---
 
 ## Google Places API
@@ -70,18 +111,6 @@ Then purge Cloudflare cache (zone `7b3b2f087429c5c3e9688253d8df11eb`).
 
 10 images queued — not started yet.
 
-### Images to review for logo placement:
-1. **Team photo** — `public/images/insights/flood-doctor-northern-virginia-restoration-team.png`
-2. **Water damage card** — `public/images/cards/water-damage-restoration-emergency-service.png`
-3. **Mold remediation card** — `public/images/cards/mold-remediation-professional-inspection.png`
-4. **Fire damage card** — `public/images/cards/fire-smoke-damage-restoration-cleanup.png`
-5. **Testimonial: basement** — `public/images/testimonials/basement-water-damage-restoration-mclean-virginia.png`
-6. **Testimonial: insurance** — `public/images/testimonials/insurance-claim-restoration-arlington-virginia.png`
-7. **Testimonial: living room** — `public/images/testimonials/full-home-restoration-alexandria-virginia.png`
-8. **Testimonial: hardwood floors** — `public/images/testimonials/emergency-pipe-burst-restoration-fairfax-virginia.png`
-9. **Hero tiles row 1** — 3 restoration process images
-10. **Hero tiles row 2** — 3 "why choose us" images
-
 ---
 
 ## Redesign Priority (updated)
@@ -93,12 +122,10 @@ Then purge Cloudflare cache (zone `7b3b2f087429c5c3e9688253d8df11eb`).
 6. ~~**SuccessStory**~~ ✅ Done (Session 9)
 7. ~~**Title styling**~~ ✅ Done (Session 10)
 8. ~~**Reviews page**~~ ✅ Done (Session 10)
-9. **Image logo review** — paused, 10 images queued
-10. **CTA Section (new)** — no reusable conversion block exists
-11. **ServicePageRenderer.tsx** — serves 104+ city service pages
-12. **Header.tsx** — functional but could be tighter
-13. **Footer.tsx** — needs CTA strip above links
-14. **ServiceRequestForm.tsx** — needs trust signals
-
-### Dev Server
-- `npx vite --host` runs on port 3003 — http://localhost:3003/
+9. **Service detail pages** — IN PROGRESS (Session 12)
+10. **Image logo review** — paused, 10 images queued
+11. **CTA Section (new)** — no reusable conversion block exists
+12. **ServicePageRenderer.tsx** — serves 104+ city service pages
+13. **Header.tsx** — functional but could be tighter
+14. **Footer.tsx** — needs CTA strip above links
+15. **ServiceRequestForm.tsx** — needs trust signals
