@@ -491,11 +491,6 @@ const StandardProjectPackage: React.FC = () => {
           <div className="mt-8 flex gap-4">
             <Link to="/request/">
               <Button size="lg" className="bg-[#1a73e8] hover:bg-[#1557b0]">
-                Request Service Now
-              </Button>
-            </Link>
-            <Link to="/request/">
-              <Button size="lg" variant="outline" className="border-[#1a73e8] text-[#1a73e8]">
                 Request Services
               </Button>
             </Link>
@@ -826,11 +821,6 @@ const StandardProjectPackage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/request/">
               <Button size="lg" className="bg-white text-[#1a73e8] hover:bg-gray-100">
-                Request Service Now
-              </Button>
-            </Link>
-            <Link to="/request/">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 Request Services
               </Button>
             </Link>
