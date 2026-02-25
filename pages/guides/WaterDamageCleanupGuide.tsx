@@ -375,7 +375,7 @@ const WaterDamageCleanupGuide: React.FC = () => {
 
               {/* Emergency CTA */}
               <div className="bg-[#1a73e8] rounded-[32px] p-8 text-white shadow-lg">
-                <h3 className="font-display text-xl font-medium mb-4">
+                <h3 className="font-display text-xl font-medium mb-4 text-white">
                   24/7 Emergency Response
                 </h3>
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
