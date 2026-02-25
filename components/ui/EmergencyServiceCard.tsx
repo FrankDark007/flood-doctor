@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Truck, AlertTriangle, Activity, Zap, Phone } from 'lucide-react';
+import { Clock, Truck, AlertTriangle, Activity } from 'lucide-react';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
 
 interface EmergencyServiceCardProps {
@@ -86,27 +86,6 @@ const EmergencyServiceCard: React.FC<EmergencyServiceCardProps> = ({
             }
           </div>
 
-          {/* CTA */}
-          <a
-            href="/request/"
-            className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
-              isEmergencyMode
-                ? 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/25'
-                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25'
-            }`}
-          >
-            <Zap size={16} strokeWidth={2.5} />
-            {isEmergencyMode ? 'Request Emergency Service' : 'Request Service Now'}
-          </a>
-
-          {/* Phone link */}
-          <a
-            href="tel:8774970007"
-            className="mt-2.5 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
-          >
-            <Phone size={14} />
-            (877) 497-0007
-          </a>
         </div>
       </div>
     );
