@@ -280,6 +280,9 @@ const WaterDamageRestorationGreatFalls = lazy(() => import('./pages/landing/Wate
 const WaterDamageRestorationFallsChurch = lazy(() => import('./pages/landing/WaterDamageRestorationFallsChurch'));
 const WaterDamageRestorationVienna = lazy(() => import('./pages/landing/WaterDamageRestorationVienna'));
 
+// Preview: City Landing V2 wireframe
+const CityLandingV2Preview = lazy(() => import('./pages/city/CityLandingV2Preview'));
+
 // Keyword Landing Pages - Services
 const WaterDamageRestorationServices = lazy(() => import('./pages/landing/WaterDamageRestorationServices'));
 const WaterDamageCleanupPage = lazy(() => import('./pages/landing/WaterDamageCleanup'));
@@ -477,6 +480,7 @@ const AppLayout: React.FC = () => {
               <Route path="/water-damage-restoration-great-falls-va/" element={<WaterDamageRestorationGreatFalls />} />
               <Route path="/water-damage-restoration-falls-church-va/" element={<WaterDamageRestorationFallsChurch />} />
               <Route path="/water-damage-restoration-vienna-va/" element={<WaterDamageRestorationVienna />} />
+              <Route path="/preview/city-v2/" element={<CityLandingV2Preview />} />
 
               {/* Keyword Landing Pages - Service Specific */}
               <Route path="/water-damage-restoration-services/" element={<WaterDamageRestorationServices />} />
