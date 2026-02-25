@@ -889,7 +889,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Sample Collection',
-        image: `${TILES}/process-39-Asbestos:Lead-Testing.png`,
+        image: `${TILES}/process-39-Asbestos_Lead-Testing.png`,
         tasks: ['Asbestos sampling', 'Lead paint testing', 'Chain of custody'],
         color: 'bg-indigo-50 text-indigo-700'
       },
