@@ -479,7 +479,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Business Restored',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Project management', 'Final walkthrough', 'Documentation package'],
         color: 'bg-green-50 text-green-700'
       }
@@ -527,7 +527,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Phased Response',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Strategic prioritization', 'Multi-team deployment', 'Timeline management'],
         color: 'bg-indigo-50 text-indigo-700'
       },
@@ -629,7 +629,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Business Restored',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Reconstruction coordination', 'Final inspection', 'Reopening support'],
         color: 'bg-green-50 text-green-700'
       }
@@ -750,7 +750,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Revenue Recovery',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Fast room return', 'Quality inspection', 'Management sign-off'],
         color: 'bg-green-50 text-green-700'
       }
@@ -768,7 +768,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'After-Hours Work',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Weekend scheduling', 'Minimal disruption', 'Accelerated timelines'],
         color: 'bg-indigo-50 text-indigo-700'
       },
@@ -810,7 +810,7 @@ export const serviceProcessMaps: Record<string, ServiceProcessMap> = {
       },
       {
         title: 'Production Restored',
-        image: `${TILES}/process-46-project-coordination.png`,
+        image: `${TILES}/_process-46-project-coordination.png`,
         tasks: ['Equipment testing', 'Safety verification', 'Operations resume'],
         color: 'bg-green-50 text-green-700'
       }
