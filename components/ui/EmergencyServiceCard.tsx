@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Truck, AlertTriangle, Activity, Wifi, MapPin } from 'lucide-react';
+import { Clock, Truck, AlertTriangle, Activity, Zap, Phone } from 'lucide-react';
 import { useEmergencyData } from '../../contexts/EmergencyContext';
 
 interface EmergencyServiceCardProps {
@@ -9,89 +9,105 @@ interface EmergencyServiceCardProps {
   variant?: 'compact' | 'expanded';
 }
 
-const EmergencyServiceCard: React.FC<EmergencyServiceCardProps> = ({ 
-  className = '', 
+const EmergencyServiceCard: React.FC<EmergencyServiceCardProps> = ({
+  className = '',
   showPointer = false,
   variant = 'compact'
 }) => {
   const { dateTime, activeCrews, responseTime, isEmergencyMode } = useEmergencyData();
 
   // --- PULSING ORB ---
-  const StatusOrb = () => (
-    <span className="relative flex h-2.5 w-2.5">
+  const StatusOrb = ({ size = 'sm' }: { size?: 'sm' | 'md' }) => (
+    <span className={`relative flex ${size === 'md' ? 'h-3 w-3' : 'h-2 w-2'}`}>
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+      <span className={`relative inline-flex rounded-full ${size === 'md' ? 'h-3 w-3' : 'h-2 w-2'} bg-green-500`}></span>
     </span>
   );
 
   // --- EXPANDED VARIANT (Sidebar) ---
   if (variant === 'expanded') {
     return (
-      <div className={`rounded-3xl shadow-lg border p-6 relative overflow-hidden transition-all duration-500 bg-white border-gray-200 ${className}`}>
-        
-        {/* Header */}
-        <div className="flex justify-between items-start mb-8 relative z-10">
-            <div className="flex items-center gap-4">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-colors duration-300 ${isEmergencyMode ? 'bg-[#fce8e6] text-[#d93025] border border-[#fad2cf]' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}>
-                    {isEmergencyMode ? <AlertTriangle size={28} className="animate-pulse text-[#d93025]" /> : <Activity size={28} />}
-                </div>
-                <div>
-                    <div className={`text-[11px] font-bold uppercase tracking-wider mb-1 ${isEmergencyMode ? 'text-[#d93025]' : 'text-gray-400'}`}>
-                        System Status
-                    </div>
-                    <div className="font-bold text-xl leading-none text-gray-900">
-                        {isEmergencyMode ? 'High Alert' : 'Operational'}
-                    </div>
-                </div>
-            </div>
-            
-            {/* Live Indicator */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border bg-gray-50 border-gray-100 text-gray-600">
-                <span className="text-[10px] font-bold tracking-wider">LIVE</span>
-                <StatusOrb />
-            </div>
-        </div>
+      <div className={`rounded-2xl border relative overflow-hidden transition-all duration-500 ${isEmergencyMode ? 'bg-red-50 border-red-200' : 'bg-gradient-to-b from-slate-50 to-white border-slate-200'} ${className}`}>
 
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-6 relative z-10">
-            {/* Crews - Enhanced Styling */}
-            <div className="p-4 rounded-2xl border bg-indigo-50 border-indigo-100 text-indigo-900 transition-transform hover:scale-[1.02] duration-300">
-                <div className="flex items-center gap-2 mb-3 opacity-90">
-                    <div className="p-1.5 bg-white/60 rounded-lg text-indigo-600">
-                        <Truck size={14} />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wide">Active Crews</span>
-                </div>
-                <div className="text-3xl font-display font-bold text-indigo-950">
-                    {activeCrews}
-                </div>
-            </div>
-            
-            {/* Time - Enhanced Styling */}
-            <div className="p-4 rounded-2xl border bg-emerald-50 border-emerald-100 text-emerald-900 transition-transform hover:scale-[1.02] duration-300">
-                <div className="flex items-center gap-2 mb-3 opacity-90">
-                    <div className="p-1.5 bg-white/60 rounded-lg text-emerald-600">
-                        <Clock size={14} />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wide">Avg Arrival</span>
-                </div>
-                <div className="text-3xl font-display font-bold text-emerald-950">
-                    {responseTime}<span className="text-sm font-medium ml-1 text-emerald-700">min</span>
-                </div>
-            </div>
-        </div>
+        {/* Top accent bar */}
+        <div className={`h-1 w-full ${isEmergencyMode ? 'bg-gradient-to-r from-red-500 to-orange-500' : 'bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600'}`} />
 
-        {/* Footer Text */}
-        <div className="text-xs font-medium leading-relaxed relative z-10 flex items-start gap-2 text-gray-500 bg-gray-50 p-3 rounded-xl border border-gray-100">
-            <div className="mt-0.5 text-blue-500"><Wifi size={14} /></div>
-            <p>
-                {isEmergencyMode 
-                    ? "Priority dispatch channel open. Direct routing to nearest restoration unit active."
-                    : "Normal dispatch conditions. Crews are available in your area for immediate response."
-                }
-            </p>
-        </div>
+        <div className="p-5">
+          {/* Header row */}
+          <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center gap-3">
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isEmergencyMode ? 'bg-red-100 text-red-600' : 'bg-blue-600 text-white'}`}>
+                {isEmergencyMode ? <AlertTriangle size={20} className="animate-pulse" /> : <Activity size={20} strokeWidth={2.5} />}
+              </div>
+              <div>
+                <div className="font-bold text-[15px] text-gray-900 leading-tight">
+                  {isEmergencyMode ? 'High Alert' : 'Dispatch Center'}
+                </div>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <StatusOrb />
+                  <span className="text-[11px] font-semibold text-green-600 uppercase tracking-wide">Live</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          {/* Metrics */}
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            {/* Active Crews */}
+            <div className="relative p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+              <div className="flex items-center gap-1.5 mb-2">
+                <Truck size={13} className="text-blue-600" />
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Crews</span>
+              </div>
+              <div className="flex items-baseline gap-1">
+                <span className="text-3xl font-bold text-gray-900 tabular-nums">{activeCrews}</span>
+                <span className="text-xs font-medium text-slate-400">active</span>
+              </div>
+            </div>
+
+            {/* Avg Arrival */}
+            <div className="relative p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+              <div className="flex items-center gap-1.5 mb-2">
+                <Clock size={13} className="text-emerald-600" />
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">ETA</span>
+              </div>
+              <div className="flex items-baseline gap-1">
+                <span className="text-3xl font-bold text-gray-900 tabular-nums">{responseTime}</span>
+                <span className="text-xs font-medium text-slate-400">min</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Status message */}
+          <div className={`text-[12px] leading-relaxed px-3 py-2.5 rounded-lg mb-4 ${isEmergencyMode ? 'bg-red-100 text-red-700 border border-red-200' : 'bg-slate-50 text-slate-500 border border-slate-100'}`}>
+            {isEmergencyMode
+              ? "⚡ Priority dispatch active. Direct routing to nearest crew."
+              : "Crews standing by in Northern Virginia for immediate dispatch."
+            }
+          </div>
+
+          {/* CTA */}
+          <a
+            href="/request/"
+            className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
+              isEmergencyMode
+                ? 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/25'
+                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25'
+            }`}
+          >
+            <Zap size={16} strokeWidth={2.5} />
+            {isEmergencyMode ? 'Request Emergency Service' : 'Request Service Now'}
+          </a>
+
+          {/* Phone link */}
+          <a
+            href="tel:8774970007"
+            className="mt-2.5 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+          >
+            <Phone size={14} />
+            (877) 497-0007
+          </a>
+        </div>
       </div>
     );
   }
@@ -121,14 +137,14 @@ const EmergencyServiceCard: React.FC<EmergencyServiceCardProps> = ({
                 <Truck size={12} />
                 <span className="font-bold">{activeCrews} Crews Active</span>
             </div>
-            {isEmergencyMode 
+            {isEmergencyMode
                 ? "Your request has been flagged for immediate response."
                 : <span>Avg response time: <strong>{responseTime} min</strong></span>
             }
           </div>
         </div>
       </div>
-      
+
       {showPointer && (
         <div className={`absolute -top-1.5 left-6 w-3 h-3 border-l border-t transform rotate-45 ${isEmergencyMode ? 'bg-[#fce8e6] border-[#fad2cf]' : 'bg-white border-gray-200'}`}></div>
       )}
