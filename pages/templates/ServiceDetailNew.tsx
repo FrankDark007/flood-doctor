@@ -151,7 +151,8 @@ const ServiceDetailNew: React.FC<ServiceDetailNewProps> = ({ service }) => {
   const serviceSlug = service.slug?.split('/').filter(Boolean).pop() || '';
 
   // Check if this service has a custom hero tile (isometric PNG instead of SVG)
-  const heroTile = getHeroTileBySlug(serviceSlug);
+  // Try URL slug first, then heroVisualKey as fallback
+  const heroTile = getHeroTileBySlug(serviceSlug) || getHeroTileBySlug(service.heroVisualKey || '');
 
   // Render hero visual: custom hero image (with WebP) or default SVG animation
   const heroVisual = heroTile ? (

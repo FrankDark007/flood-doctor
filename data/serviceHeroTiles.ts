@@ -53,6 +53,12 @@ export const serviceHeroTiles: Record<string, ServiceHeroTile> = {
     alt: 'Burst pipe cleanup - emergency frozen pipe water damage repair'
   },
 
+  'burst-pipe-cleanup': {
+    image: `${HERO_IMAGES}/residential/burst-pipe-water-damage.jpg`,
+    webp: `${HERO_IMAGES}/residential/burst-pipe-water-damage.webp`,
+    alt: 'Burst pipe cleanup - emergency water extraction for frozen and burst pipes'
+  },
+
   'fire-damage-restoration': {
     image: `${HERO_IMAGES}/residential/fire-damage-restoration.jpg`,
     webp: `${HERO_IMAGES}/residential/fire-damage-restoration.webp`,
