@@ -1,10 +1,41 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-24 8:20 PM
+**Last Updated:** 2026-02-25 12:19 PM
 
-## 🔥 CURRENT TASK: Service Detail Pages — Ongoing Review
+## 🔥 CURRENT TASK: City Landing Page V2 Wireframe — Review & Iterate
 
 **Dev server:** http://localhost:3002/ (running on port 3002)
+**Preview URL:** http://localhost:3002/preview/city-v2/ (Vienna test data)
+
+### Completed this session (Session 13):
+
+1. ✅ **Pushed 28 unpushed commits to GitHub** (Sessions 10-12 work)
+2. ✅ **Deployed to production** — built, rsync'd, .htaccess fixed, CF cache purged
+3. ✅ **Dispatch Center card** — removed CTA button + phone number (redundant with card below) (`34dc02e`)
+4. ✅ **Dispatch Center text** — shortened status message, removed "Northern Virginia" (`844cb7b`)
+5. ✅ **Standard Project Package** — removed duplicate CTA button, renamed to "Request Services" (`a0019bd`)
+6. ✅ **Water damage cleanup guide** — fixed dark h3 text on blue background (`589a967`)
+7. ✅ **CityLandingV2 wireframe** — 9-section city homepage using Tailwind Plus patterns, 2500+ words (`7b693dc`)
+   - Hero (hero-split), Logo Cloud (insurance carriers), Feature/Services (feature-icons),
+     Stats, Long-form Content (SEO), Testimonials (testimonials-grid), Process Timeline,
+     FAQ Accordion, Final CTA (cta-band)
+   - Preview route: `/preview/city-v2/`
+   - Files: `pages/city/CityLandingV2.tsx`, `pages/city/CityLandingV2Preview.tsx`
+
+### What to do next:
+- Frank needs to review CityLandingV2 wireframe at `/preview/city-v2/` and provide feedback
+- Tailwind Plus extracted blocks are at `~/flood-doctor/tailwind-plus/extracted/` (15 components)
+- Once V2 is approved, wire it into CityHome.tsx to replace CityLandingNew for all cities
+- Continue 1-by-1 service page review
+- Remaining redesign items: CTA section, ServicePageRenderer, Header, Footer, ServiceRequestForm
+
+### Key files (Session 13):
+- **CityLandingV2:** `pages/city/CityLandingV2.tsx` (688 lines, 9 sections)
+- **Preview wrapper:** `pages/city/CityLandingV2Preview.tsx`
+- **Tailwind Plus blocks:** `~/flood-doctor/tailwind-plus/extracted/` (hero-split, logo-cloud, feature-icons, stats-simple, testimonials-grid, faq-accordion, cta-band, cta-split, etc.)
+- **City data source:** `config/cities.ts` (CityConfig interface)
+- **Data adapter:** `utils/adapters.ts` → `adaptCityConfigToCityData()`
+- **Extended city content (unused):** `src/content/cities/vienna/homepage.ts` (2200+ words available)
 
 ### Completed this session (Session 12):
 
