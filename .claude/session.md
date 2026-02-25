@@ -1,47 +1,33 @@
 # Flood Doctor fd-google-redesign - Session State
 
-**Last Updated:** 2026-02-24 8:30 PM
+**Last Updated:** 2026-02-24 8:20 PM
 
-## 🔥 CURRENT TASK: Service Detail Pages — 1-by-1 Review
-
-**Working on:** Service detail pages review with Frank. Going through each page to fix:
-1. Hero images (many services missing mapped hero images, falling back to SVG animation)
-2. Any other issues Frank notices
-
-**Workflow agreement:**
-- One change at a time
-- Each commit gets a git tag with exact timestamp and change notes
-- Tags serve as revert points if anything breaks
+## 🔥 CURRENT TASK: Service Detail Pages — Ongoing Review
 
 **Dev server:** http://localhost:3002/ (running on port 3002)
 
-### Current page: `/services/residential/restoration-services/flood-cleanup/`
+### Completed this session (Session 12):
 
-### Next immediate task: Rewrite ALL 27 service page subtitles
-- `shortDescription` field in `data/services.ts` — one file controls all subtitles
-- Current subtitles are thin (e.g. "Rapid cleanup after storm or basement flooding.")
-- Need SEO-optimized subtitles matching water-damage-restoration pattern:
-  - Keywords the page should rank for
-  - Certifications/trust signals (IICRC, licensed)
-  - Response time / differentiator
-  - Insurance mention
-  - ~20-30 words, 1-2 sentences
-- Frank approved doing all 27 in one pass (not 1-by-1)
+1. ✅ **ServiceTabs layout fix** — fixed "Local Experts" tab being taller than others (`f1c1ff1`)
+2. ✅ **SEO subtitles for all 29 services** — rewrote `shortDescription` in `data/services.ts` with keyword-rich, above-the-fold content matching water-damage-restoration pattern (`9b48d47`)
+3. ✅ **Hero image mapping for all 29 services** — added entries to `data/serviceHeroTiles.ts` so every service shows a real photo instead of SVG fallback (`012801a`)
+4. ✅ **Hero lookup fix** — `ServiceDetailNew.tsx` now checks both URL slug AND `heroVisualKey` to resolve images (`151fbd1`)
+5. ✅ **Broken process tile images** — fixed colon in filename (Asbestos:Lead → Asbestos_Lead) and underscore prefix (_process-46) (`1617eb4`, `b706eaa`)
+6. ✅ **Sticky CTA bar** — hidden on desktop, mobile-only single blue pill "Request Services" button linking to /request/ (`3cb4216`)
+7. ✅ **EmergencyServiceCard redesign** — premium "Dispatch Center" look with blue accent bar, clean white metric cards, CTA button + phone link (`0b3080d`)
 
-### Pending change from earlier session (NOT YET COMMITTED):
-- `generated-layouts/service-page/ServiceTabs.tsx` — changed `lg:min-h-[480px]` → `lg:h-[520px] overflow-hidden` + `line-clamp-3` on description + fixed `h-[72px]` on list items. This fixes the "Local Experts" tab being taller than other tabs. **Needs build verification before commit.**
-
-### Hero image gaps discovered:
-- `flood-cleanup` has `heroVisualKey: 'flood-cleanup'` but `serviceHeroTiles.ts` only has `flood-damage-cleanup`
-- Need to audit ALL services for missing hero image mappings
+### What to review next:
+- Frank is reviewing service pages one by one — continue checking each page for issues
+- Services without dedicated hero images reuse closest related image (listed in serviceHeroTiles.ts comments)
+- Eventually need dedicated images for: odor-removal, basement-flooding, crawl-space, hardwood-drying, healthcare, hospitality, municipal, industrial, moisture-mapping, iaq, env-testing
 
 ### Key files:
 - **Service data (subtitles, slugs, keywords):** `data/services.ts`
 - **Hero image mapping:** `data/serviceHeroTiles.ts`
-- **Hero images on disk:** `public/images/services/residential/` and `public/images/services/commercial/`
-- **Service detail template:** `pages/templates/ServiceDetailNew.tsx`
-- **ServiceTabs component:** `generated-layouts/service-page/ServiceTabs.tsx`
-- **Tab data (6 tabs):** `utils/adapters.ts` (DEFAULT_TABS)
+- **Hero lookup logic:** `pages/templates/ServiceDetailNew.tsx` (line ~154)
+- **Process tile images:** `data/serviceProcessMaps.ts`
+- **Sticky CTA:** `generated-layouts/service-page/ServiceCTASticky.tsx`
+- **Dashboard card:** `components/ui/EmergencyServiceCard.tsx`
 - **Service page overrides:** `data/servicePageOverrides.ts`
 - **Adapter (shortDescription → subtitle):** `utils/adapters.ts` → `adaptServiceToPageData()`
 
