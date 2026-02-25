@@ -82,7 +82,7 @@ const EmergencyServiceCard: React.FC<EmergencyServiceCardProps> = ({
           <div className={`text-[12px] leading-relaxed px-3 py-2.5 rounded-lg mb-4 ${isEmergencyMode ? 'bg-red-100 text-red-700 border border-red-200' : 'bg-slate-50 text-slate-500 border border-slate-100'}`}>
             {isEmergencyMode
               ? "⚡ Priority dispatch active. Direct routing to nearest crew."
-              : "Crews standing by in Northern Virginia for immediate dispatch."
+              : "Crews standing by for immediate dispatch."
             }
           </div>
 
