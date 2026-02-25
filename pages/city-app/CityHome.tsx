@@ -5,12 +5,14 @@
  * Uses useCityFranchise() to get the city context (set at build time).
  */
 
-import React from 'react';
+import React, { lazy } from 'react';
 import { useCityFranchise } from '@/contexts/CityFranchiseContext';
 import { getCityBySlug } from '@/config/cities';
 import CityLandingNew from '@/pages/city/CityLandingNew';
 import McLeanHome from './mclean/McLeanHome';
 import PageMeta from '@/components/ui/PageMeta';
+
+const NewAshburnHome = lazy(() => import('./ashburn/NewAshburnHome'));
 
 const CityHome: React.FC = () => {
   const franchise = useCityFranchise();
@@ -23,6 +25,11 @@ const CityHome: React.FC = () => {
   // Get CityConfig from the franchise ID
   // The franchise.id matches the city slug (e.g., 'mclean', 'arlington')
   const cityConfig = getCityBySlug(franchise.id);
+
+  // Ashburn: custom homepage with rich content data
+  if (franchise.id === 'ashburn' && cityConfig) {
+    return <NewAshburnHome city={cityConfig} />;
+  }
 
   if (!cityConfig) {
     return (
