@@ -325,15 +325,15 @@ interface ServicesHubProps {
 const ServicesHub: React.FC<ServicesHubProps> = ({ title, subtitle, h1, filterAudience }) => {
   const isCommercial = filterAudience === 'COMMERCIAL';
 
-  // Service images from Unsplash
+  // Service category images
   const serviceImages = {
-    water: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
-    fire: 'https://images.unsplash.com/photo-1486915309854-ab252002f5f3?w=600&q=80',
-    storm: 'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=600&q=80',
-    mold: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80',
-    sewage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-    commercial: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
-    residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+    water: '/images/blog/first-24-hours-after-water-damage.png',
+    fire: '/images/blog/emergency-flood-response-ashburn.png',
+    storm: '/images/blog/emergency-flood-response-ashburn.png',
+    mold: '/images/blog/signs-of-hidden-mold.png',
+    sewage: '/images/blog/water-damage-restoration-process.png',
+    commercial: '/images/about/office.png',
+    residential: '/images/home/gallery-3.png',
   };
 
   // RESIDENTIAL Services

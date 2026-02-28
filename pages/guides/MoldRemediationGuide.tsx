@@ -106,7 +106,7 @@ const MoldRemediationGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to Handle Mold After Water Damage',
     description: 'Professional mold remediation guide. Learn to identify, contain, and remove mold safely. Includes when to DIY vs call professionals, safety requirements, and prevention strategies.',
-    image: 'https://flood.doctor/images/guides/mold-remediation.jpg',
+    image: '/images/blog/signs-of-hidden-mold.png',
     totalTime: 'P3D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

@@ -205,7 +205,7 @@ const BasementWaterproofingGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to Waterproof Your Basement',
     description: 'Comprehensive guide to basement waterproofing including interior and exterior solutions, sump pumps, French drains, and humidity control.',
-    image: 'https://flood.doctor/images/basement-waterproofing-guide.jpg',
+    image: '/images/blog/sump-pump-maintenance-guide.png',
     totalTime: 'P7D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

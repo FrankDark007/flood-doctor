@@ -116,9 +116,9 @@ const About: React.FC = () => {
 
   // Leadership team
   const leadership = [
-    { name: 'David Richardson', role: 'Founder & CEO', years: '15+ years in restoration', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80' },
-    { name: 'Maria Santos', role: 'Operations Director', years: 'IICRC Master Restorer', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80' },
-    { name: 'James Mitchell', role: 'Commercial Division Lead', years: '12 years in commercial restoration', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80' }
+    { name: 'David Richardson', role: 'Founder & CEO', years: '15+ years in restoration', image: '/images/people/david-richardson.png' },
+    { name: 'Maria Santos', role: 'Operations Director', years: 'IICRC Master Restorer', image: '/images/people/maria-santos.png' },
+    { name: 'James Mitchell', role: 'Commercial Division Lead', years: '12 years in commercial restoration', image: '/images/people/james-mitchell.png' }
   ];
 
   return (
@@ -166,7 +166,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl shadow-xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+                  src="/images/about/team-exterior.png"
                   alt="Flood Doctor restoration team at work"
                   className="w-full h-full object-cover"
                 />
@@ -247,7 +247,7 @@ const About: React.FC = () => {
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80"
+                    src="/images/people/david-richardson.png"
                     alt="Sarah & Michael Thompson"
                     className="w-12 h-12 rounded-full object-cover"
                   />
@@ -298,7 +298,7 @@ const About: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="aspect-[4/3] rounded-2xl shadow-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
+                src="/images/about/work-in-progress.png"
                 alt="Water damage restoration project"
                 className="w-full h-full object-cover"
               />
@@ -312,9 +312,9 @@ const About: React.FC = () => {
               </blockquote>
               <div className="flex items-center gap-4">
                 <img
-                  src={['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
-                        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&q=80',
-                        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80'][activeStory]}
+                  src={['/images/people/david-richardson.png',
+                        '/images/people/maria-santos.png',
+                        '/images/people/james-mitchell.png'][activeStory]}
                   alt={stories[activeStory].name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -553,7 +553,7 @@ const About: React.FC = () => {
             </div>
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                src="/images/about/equipment.png"
                 alt="Flood Doctor service vehicles and fleet"
                 className="w-full h-full object-cover"
               />

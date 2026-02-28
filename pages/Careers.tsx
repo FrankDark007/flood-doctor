@@ -211,7 +211,7 @@ const Careers: React.FC = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80"
+                src="/images/about/work-in-progress.png"
                 alt="Restoration technician working on-site"
                 className="rounded-3xl w-full object-cover aspect-[4/3] shadow-lg"
                 loading="lazy"

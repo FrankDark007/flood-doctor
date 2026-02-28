@@ -26,9 +26,9 @@ import {
 
 // Resource images from Unsplash
 const resourceImages = {
-  insurance: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
-  categories: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
-  signs: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+  insurance: '/images/guides/insurance-claims.png',
+  categories: '/images/blog/water-damage-restoration-process.png',
+  signs: '/images/blog/signs-of-hidden-mold.png',
 };
 
 const ResourcesHub: React.FC = () => {
@@ -41,7 +41,7 @@ const ResourcesHub: React.FC = () => {
       description: "Complete scope of our water damage restoration service—what's included, timelines, and deliverables.",
       icon: Package,
       link: "/resources/standard-project-package/",
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
+      image: "/images/services/hero/water-damage-restoration-hero.png",
     },
     {
       title: "Insurance Claims Guide",

@@ -142,7 +142,7 @@ const USAAWaterDamageClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File a USAA Water Damage Insurance Claim',
     description: 'Complete guide for USAA members filing water damage claims. Step-by-step process covering the USAA app, adjuster inspections, military-specific scenarios like PCS and deployment, and maximizing your settlement.',
-    image: 'https://flood.doctor/images/guides/usaa-water-damage-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P21D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

@@ -142,7 +142,7 @@ const AllstateWaterDamageClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File an Allstate Water Damage Insurance Claim',
     description: 'Complete guide for Allstate policyholders filing water damage claims. Step-by-step process covering the Allstate app, QuickFoto Claim, adjuster inspections, and maximizing your settlement.',
-    image: 'https://flood.doctor/images/guides/allstate-water-damage-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P21D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

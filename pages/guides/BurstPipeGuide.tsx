@@ -158,7 +158,7 @@ const BurstPipeGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to Handle a Burst Pipe Emergency',
     description: 'Emergency response guide for burst pipes. Learn how to stop the water, minimize damage, document for insurance, and get professional help fast.',
-    image: 'https://flood.doctor/images/burst-pipe-emergency-guide.jpg',
+    image: '/images/guides/emergency-response.png',
     totalTime: 'PT2H',
     estimatedCost: {
       '@type': 'MonetaryAmount',

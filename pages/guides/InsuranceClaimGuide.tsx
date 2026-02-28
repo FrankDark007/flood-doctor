@@ -120,7 +120,7 @@ const InsuranceClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File a Water Damage Insurance Claim',
     description: 'Step-by-step guide to filing and maximizing your water damage insurance claim. Learn documentation requirements, timelines, negotiation strategies, and how to get the settlement you deserve.',
-    image: 'https://flood.doctor/images/guides/insurance-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P30D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

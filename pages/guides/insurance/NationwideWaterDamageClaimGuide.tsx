@@ -141,7 +141,7 @@ const NationwideWaterDamageClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File a Nationwide Water Damage Insurance Claim',
     description: 'Complete guide for Nationwide policyholders filing water damage claims. Step-by-step process covering the app, On Your Side service, adjuster inspections, and maximizing your settlement.',
-    image: 'https://flood.doctor/images/guides/nationwide-water-damage-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P21D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

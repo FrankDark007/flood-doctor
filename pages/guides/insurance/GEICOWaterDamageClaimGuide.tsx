@@ -142,7 +142,7 @@ const GEICOWaterDamageClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File a GEICO Water Damage Insurance Claim',
     description: 'Complete guide for GEICO homeowners policyholders filing water damage claims. Step-by-step process covering underwriter identification, claim filing, adjuster inspections, and maximizing your settlement.',
-    image: 'https://flood.doctor/images/guides/geico-water-damage-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P21D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

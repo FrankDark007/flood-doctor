@@ -162,7 +162,7 @@ const CityPreventionGuide: React.FC = () => {
     '@type': 'HowTo',
     name: `Protecting Your ${city} Home from Water Damage`,
     description: `Comprehensive water damage prevention guide for ${city}, Virginia homeowners. 8-step seasonal maintenance plan to prevent flooding, leaks, and water damage.`,
-    image: 'https://flood.doctor/images/guides/prevention-guide.jpg',
+    image: '/images/guides/prevention.png',
     totalTime: 'P1Y',
     estimatedCost: {
       '@type': 'MonetaryAmount',

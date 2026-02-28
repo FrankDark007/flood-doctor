@@ -107,7 +107,7 @@ const WaterDamageCleanupGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to Clean Up Water Damage',
     description: 'Step-by-step guide to clean up water damage in your home. Learn emergency response procedures, extraction techniques, drying methods, and mold prevention from IICRC-certified professionals.',
-    image: 'https://flood.doctor/images/guides/water-damage-cleanup.jpg',
+    image: '/images/blog/water-damage-restoration-process.png',
     totalTime: 'P7D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

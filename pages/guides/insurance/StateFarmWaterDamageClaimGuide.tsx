@@ -149,7 +149,7 @@ const StateFarmWaterDamageClaimGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to File a State Farm Water Damage Insurance Claim',
     description: 'Complete step-by-step guide for State Farm policyholders filing water damage claims. Learn the agent-first approach, documentation requirements, adjuster process, and how to maximize your settlement.',
-    image: 'https://flood.doctor/images/guides/state-farm-water-damage-claim.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P21D',
     step: steps.map((step, index) => ({
       '@type': 'HowToStep',

@@ -129,7 +129,7 @@ const CityEmergencyGuide: React.FC = () => {
     '@type': 'HowTo',
     name: `Emergency Water Damage Response in ${city}`,
     description: `Step-by-step emergency guide for ${city}, Virginia homeowners facing water damage. Learn immediate actions, safety procedures, and how to minimize damage while waiting for professional restoration.`,
-    image: 'https://flood.doctor/images/guides/emergency-response.jpg',
+    image: '/images/guides/emergency-response.png',
     totalTime: 'PT2H',
     estimatedCost: {
       '@type': 'MonetaryAmount',

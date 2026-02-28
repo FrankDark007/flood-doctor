@@ -150,7 +150,7 @@ const CityInsuranceGuide: React.FC = () => {
     '@type': 'HowTo',
     name: `${city} Water Damage Insurance Claims Guide`,
     description: `Step-by-step guide for filing water damage insurance claims in ${city}, Virginia. Learn documentation requirements, coverage details, and how to maximize your settlement.`,
-    image: 'https://flood.doctor/images/guides/insurance-claims.jpg',
+    image: '/images/guides/insurance-claims.png',
     totalTime: 'P14D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

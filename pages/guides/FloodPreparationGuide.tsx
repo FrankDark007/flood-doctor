@@ -192,7 +192,7 @@ const FloodPreparationGuide: React.FC = () => {
     '@type': 'HowTo',
     name: 'How to Prepare Your Home for Flooding',
     description: 'Complete flood preparation guide for Northern Virginia homeowners. Protect your home, family, and belongings before storms hit.',
-    image: 'https://flood.doctor/images/flood-preparation-guide.jpg',
+    image: '/images/guides/prevention.png',
     totalTime: 'P1D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

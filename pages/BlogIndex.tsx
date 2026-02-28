@@ -19,14 +19,14 @@ import { BLOG_ARTICLES, getCategories } from '../data/blog-articles';
 
 // Map categories to relevant Unsplash images
 const categoryImages: Record<string, string> = {
-  'Emergency': 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
-  'Mold': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80',
-  'Insurance': 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
-  'Commercial': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
-  'Prevention': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-  'Biohazard': 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80',
-  'Water Damage': 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
-  'Default': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+  'Emergency': '/images/blog/emergency-flood-response-ashburn.png',
+  'Mold': '/images/blog/signs-of-hidden-mold.png',
+  'Insurance': '/images/blog/water-damage-insurance-claim-guide.png',
+  'Commercial': '/images/blog/water-damage-restoration-process.png',
+  'Prevention': '/images/blog/prevent-water-damage-winter.png',
+  'Biohazard': '/images/blog/black-mold-vs-regular-mold.png',
+  'Water Damage': '/images/blog/first-24-hours-after-water-damage.png',
+  'Default': '/images/blog/sump-pump-maintenance-guide.png',
 };
 
 const BlogIndex: React.FC = () => {
